@@ -1,0 +1,241 @@
+{
+  "date": "2026-10-19",
+  "status": "sample",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 1",
+      "paper_name": "Accounting",
+      "topic": "Depreciation: WDV method",
+      "difficulty": "easy",
+      "question": "A machine is bought for ₹2,00,000 and depreciated at 10% p.a. on the Written Down Value method. What is its book value at the end of the 3rd year?",
+      "options": [
+        "₹1,40,000",
+        "₹1,45,800",
+        "₹1,62,000",
+        "₹1,31,220"
+      ],
+      "correct": "B",
+      "explanation": "Under WDV, each year's depreciation is 10% of the opening book value, so the charge falls every year. Three years of 10% reduction gives ₹2,00,000 × 0.9³ = ₹1,45,800.",
+      "working": [
+        {
+          "label": "Year 1: 2,00,000 − 20,000",
+          "value": "₹1,80,000"
+        },
+        {
+          "label": "Year 2: 1,80,000 − 18,000",
+          "value": "₹1,62,000"
+        },
+        {
+          "label": "Year 3: 1,62,000 − 16,200",
+          "value": "₹1,45,800"
+        }
+      ],
+      "why_not": {
+        "A": "Straight-line: 10% of cost (₹20,000) charged every year.",
+        "C": "This is the value after 2 years, not 3.",
+        "D": "This is the value after 4 years."
+      },
+      "exam_tip": "Shortcut: book value after n years = Cost × (1 − rate)ⁿ.",
+      "applicability": "",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": []
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Bank Reconciliation Statement",
+      "difficulty": "easy",
+      "question": "The Cash Book shows a debit balance of ₹25,000. Cheques of ₹6,000 issued to suppliers are not yet presented, and cheques of ₹4,000 deposited are not yet credited by the bank. What is the balance as per the Pass Book?",
+      "options": [
+        "₹23,000",
+        "₹35,000",
+        "₹15,000",
+        "₹27,000"
+      ],
+      "correct": "D",
+      "explanation": "Cheques issued but not presented have not left the bank account yet, so the Pass Book is higher: add them. Cheques deposited but not credited have not reached the bank account yet: deduct them.",
+      "working": [
+        {
+          "label": "Balance as per Cash Book (Dr)",
+          "value": "₹25,000"
+        },
+        {
+          "label": "Add: issued, not presented",
+          "value": "+ ₹6,000"
+        },
+        {
+          "label": "Less: deposited, not credited",
+          "value": "− ₹4,000"
+        },
+        {
+          "label": "Balance as per Pass Book",
+          "value": "₹27,000"
+        }
+      ],
+      "why_not": {
+        "A": "Signs reversed: issued cheques deducted, deposits added.",
+        "B": "Both items added.",
+        "C": "Both items deducted."
+      },
+      "exam_tip": "Ask one question: has the bank recorded it yet? Not paid out by the bank means a higher Pass Book balance; not received by the bank means lower.",
+      "applicability": "",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": []
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 4",
+      "paper_name": "Cost and Management Accounting",
+      "topic": "Inventory control: EOQ",
+      "difficulty": "easy",
+      "question": "Annual requirement of a material is 20,000 units. Ordering cost is ₹100 per order and carrying cost is ₹4 per unit per year. What is the Economic Order Quantity?",
+      "options": [
+        "707 units",
+        "1,414 units",
+        "1,000 units",
+        "500 units"
+      ],
+      "correct": "C",
+      "explanation": "EOQ = √(2AO ÷ C). With A = 20,000 units, O = ₹100 and C = ₹4, EOQ = √10,00,000 = 1,000 units.",
+      "working": [
+        {
+          "label": "2 × A × O = 2 × 20,000 × 100",
+          "value": "40,00,000"
+        },
+        {
+          "label": "Divide by C (₹4)",
+          "value": "10,00,000"
+        },
+        {
+          "label": "Square root",
+          "value": "1,000 units"
+        }
+      ],
+      "why_not": {
+        "A": "The 2 in the formula is missing.",
+        "B": "Divided by ₹2 instead of ₹4.",
+        "D": "That is average inventory (EOQ ÷ 2), not the order size."
+      },
+      "exam_tip": "At EOQ, total ordering cost equals total carrying cost (₹2,000 each here). Use it to check your answer.",
+      "applicability": "",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": []
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 8",
+      "paper_name": "Cost Accounting",
+      "topic": "Labour: incentive plans",
+      "difficulty": "medium",
+      "question": "Standard time for a job is 10 hours. A worker finishes it in 8 hours. His rate is ₹50 per hour. What are his earnings for the job under the Halsey Premium Plan (50%)?",
+      "options": [
+        "₹450",
+        "₹400",
+        "₹480",
+        "₹500"
+      ],
+      "correct": "A",
+      "explanation": "Halsey pays time wages plus a bonus of 50% of the time saved at the hourly rate. Time saved is 2 hours, so the bonus is 50% × 2 × ₹50 = ₹50.",
+      "working": [
+        {
+          "label": "Time wages: 8 × ₹50",
+          "value": "₹400"
+        },
+        {
+          "label": "Time saved: 10 − 8",
+          "value": "2 hours"
+        },
+        {
+          "label": "Bonus: 50% × 2 × ₹50",
+          "value": "₹50"
+        },
+        {
+          "label": "Total earnings",
+          "value": "₹450"
+        }
+      ],
+      "why_not": {
+        "B": "Time wages only, bonus left out.",
+        "C": "Rowan Plan: bonus = (2 ÷ 10) × 8 × ₹50 = ₹80.",
+        "D": "Pays the full standard time, i.e. 100% of time saved."
+      },
+      "exam_tip": "Halsey shares a fixed 50% of time saved; Rowan uses time saved ÷ time allowed. Revise them together.",
+      "applicability": "",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": []
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 1",
+      "paper_name": "Financial Reporting",
+      "topic": "Ind AS 10: Events after the reporting period",
+      "difficulty": "medium",
+      "question": "Reporting date is 31 March 2026 and the financial statements are approved on 15 May 2026. On 20 April 2026, a customer owing ₹8 lakh at year-end is declared insolvent; its financial trouble already existed at 31 March. How is this treated under Ind AS 10?",
+      "options": [
+        "Non-adjusting event: disclose in the notes only",
+        "Adjusting event: recognise the loss on the receivable in FY 2025-26",
+        "Ignore it, as it happened after the reporting date",
+        "Recognise the loss in FY 2026-27, when the insolvency occurred"
+      ],
+      "correct": "B",
+      "explanation": "Insolvency of a customer after the reporting date usually confirms the receivable was already impaired at that date. It gives evidence about a condition that existed at 31 March, so it is an adjusting event.",
+      "working": [],
+      "why_not": {
+        "A": "Non-adjusting events reflect conditions that arose after year-end, e.g. a later fall in the value of investments.",
+        "C": "Ind AS 10 covers events up to the approval date; they cannot be ignored.",
+        "D": "The loss existed at 31 March; deferring it overstates FY 2025-26 assets."
+      },
+      "exam_tip": "One test decides it: did the condition exist on the reporting date? Yes, adjust. No, disclose if material.",
+      "applicability": "",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": []
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 14",
+      "paper_name": "Strategic Financial Management",
+      "topic": "Cost of equity: CAPM",
+      "difficulty": "easy",
+      "question": "The risk-free rate is 6%, the expected market return is 14% and a share's beta is 1.25. What is the required rate of return on the share as per CAPM?",
+      "options": [
+        "17.5%",
+        "13.5%",
+        "16%",
+        "10%"
+      ],
+      "correct": "C",
+      "explanation": "CAPM: Ke = Rf + β (Rm − Rf). The market risk premium is 8%; beta scales it to 10%; adding the risk-free rate gives 16%.",
+      "working": [
+        {
+          "label": "Market risk premium: 14% − 6%",
+          "value": "8%"
+        },
+        {
+          "label": "Beta × premium: 1.25 × 8%",
+          "value": "10%"
+        },
+        {
+          "label": "Add risk-free rate: 6% + 10%",
+          "value": "16%"
+        }
+      ],
+      "why_not": {
+        "A": "Beta multiplied by Rm (1.25 × 14%), not by the premium.",
+        "B": "Used 6% as the premium instead of 8%.",
+        "D": "Risk-free rate left out."
+      },
+      "exam_tip": "Beta multiplies the premium (Rm − Rf), never Rm itself.",
+      "applicability": "",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": []
+    }
+  ]
+}

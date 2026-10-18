@@ -1,0 +1,161 @@
+# ─────────────────────────────────────────────────────────────
+#  Daily MCQ agent: settings
+#  Change brand, colours, posting times and papers here.
+#  No code changes are needed for any of these.
+# ─────────────────────────────────────────────────────────────
+
+brand:
+  name: "Rahul kp"              # signature on every image
+  handle: ""                    # your Instagram handle, e.g. "@rahulkp.cma" (shown on images + captions)
+  start_date: "2026-10-19"      # Day 1 of the series. Images show "Day N" counted from here.
+  logo: "assets/brand/logo.png" # shown top-right on every image; "" for none.
+                                # Replace with: python -m mcq_agent set-logo path/to/logo.png
+
+timezone: "Asia/Kolkata"
+
+# Claude models used to write and double-check each MCQ.
+models:
+  writer: "claude-sonnet-5-5"   # writes the question, options, explanation
+  checker: "claude-sonnet-5-5"  # solves the question without seeing the answer
+  max_attempts: 3               # rewrites allowed when the checker disagrees
+
+review:
+  # github_pr: the evening job opens a pull request; merging it approves the batch.
+  # local:     run `python -m mcq_agent approve --date YYYY-MM-DD` yourself.
+  mode: "github_pr"
+
+instagram:
+  graph_host: "graph.instagram.com"   # use "graph.facebook.com" if you connect through a Facebook Page
+  api_version: "v26.0"
+  # Where Instagram downloads the images from, tried in order.
+  #   github_raw / jsdelivr : files in this GitHub repo (repo must be public)
+  #   cloudinary            : needs CLOUDINARY_URL secret (use this for a private repo)
+  #   base_url              : any static host you run; set public_base_url
+  image_hosts: ["github_raw", "jsdelivr"]
+  public_base_url: ""
+  max_posts_per_run: 2          # catch-up limit if a run was missed
+  max_hashtags: 5               # Instagram allows at most 5 hashtags per post
+  alt_text: true
+
+# Which law each tax paper follows. The date picks the entry, so tax questions
+# switch to the Income-tax Act, 2025 on their own when the May 2027 attempt nears.
+# Update the CMA entry when ICMAI publishes the applicability notice for each term.
+law_basis:
+  ca_income_tax:
+    - until: "2027-01-31"
+      text: "Income-tax Act, 1961 as applicable for A.Y. 2026-27 (CA exams up to January 2027)"
+    - from: "2027-02-01"
+      text: "Income-tax Act, 2025 for tax year 2026-27 (CA exams from May 2027)"
+  ca_gst:
+    - text: "CGST/IGST law as per ICAI's applicability announcement for the next attempt"
+  cma_tax:
+    - text: "Finance Act, 2025 and GST as per ICMAI's applicability notice for the next term (June 2026 term: amendments up to 30 Nov 2025)"
+  statutory:
+    - text: "Current provisions as per ICMAI CAT study material; avoid recently changed rates and limits"
+
+# ─────────────────────────────────────────────────────────────
+#  Courses. Colour = the "ink" the OMR sheet is printed in.
+#  post_time is IST (24 h). Keep times matched to the cron lines in
+#  .github/workflows/publish.yml (see README, "Changing post times").
+#  Papers rotate one per day, in the order listed.
+# ─────────────────────────────────────────────────────────────
+courses:
+  - id: ca_foundation
+    name: "CA Foundation"
+    short: "CA Fnd"
+    body: "ICAI"
+    emoji: "🟩"
+    color: { ink: "#0E8A4F", deep: "#0A5C35", wash: "#E4F4EA", on_ink: "#FFFFFF" }
+    post_time: "07:55"
+    hashtags: ["#CAFoundation", "#ICAI", "#CAStudents", "#DailyMCQ", "#CAExams"]
+    papers:
+      - { code: "Paper 1", name: "Accounting" }
+      - { code: "Paper 2", name: "Business Laws" }
+      - { code: "Paper 3", name: "Quantitative Aptitude: Business Mathematics" }
+      - { code: "Paper 4", name: "Business Economics" }
+      - { code: "Paper 3", name: "Quantitative Aptitude: Statistics" }
+      - { code: "Paper 1", name: "Accounting" }
+      - { code: "Paper 3", name: "Quantitative Aptitude: Logical Reasoning" }
+
+  - id: cma_cat
+    name: "CMA CAT"
+    short: "CMA CAT"
+    body: "ICMAI"
+    emoji: "🟨"
+    color: { ink: "#E5A800", line: "#A87A00", deep: "#7A5600", wash: "#FDF3D2", on_ink: "#2A2000" }
+    post_time: "09:55"
+    hashtags: ["#CMACAT", "#ICMAI", "#CATCourse", "#DailyMCQ", "#AccountingTechnician"]
+    papers:   # Part I (the examined part, MCQ on OMR)
+      - { code: "Paper 1A", name: "Fundamentals of Financial Accounting" }
+      - { code: "Paper 1B", name: "Applied Business and Industrial Laws" }
+      - { code: "Paper 2A", name: "Financial Accounting-2" }
+      - { code: "Paper 2B", name: "Statutory Compliance", law: statutory }
+
+  - id: ca_inter
+    name: "CA Inter"
+    short: "CA Inter"
+    body: "ICAI"
+    emoji: "🟦"
+    color: { ink: "#1F5FD1", deep: "#163F8C", wash: "#E4ECFB", on_ink: "#FFFFFF" }
+    post_time: "12:25"
+    hashtags: ["#CAInter", "#CAIntermediate", "#ICAI", "#DailyMCQ", "#CAStudents"]
+    papers:
+      - { code: "Paper 1", name: "Advanced Accounting" }
+      - { code: "Paper 4", name: "Cost and Management Accounting" }
+      - { code: "Paper 2", name: "Corporate and Other Laws" }
+      - { code: "Paper 6A", name: "Financial Management" }
+      - { code: "Paper 3A", name: "Income-tax Law", law: ca_income_tax }
+      - { code: "Paper 5", name: "Auditing and Ethics" }
+      - { code: "Paper 3B", name: "Goods and Services Tax", law: ca_gst }
+      - { code: "Paper 6B", name: "Strategic Management" }
+
+  - id: cma_inter
+    name: "CMA Inter"
+    short: "CMA Inter"
+    body: "ICMAI"
+    emoji: "🟧"
+    color: { ink: "#E2621B", deep: "#9A3D0B", wash: "#FCE9DD", on_ink: "#FFFFFF" }
+    post_time: "15:25"
+    hashtags: ["#CMAInter", "#CMAIntermediate", "#ICMAI", "#DailyMCQ", "#CMAStudents"]
+    papers:   # Syllabus 2022
+      - { code: "Paper 8", name: "Cost Accounting" }
+      - { code: "Paper 6", name: "Financial Accounting" }
+      - { code: "Paper 11", name: "Financial Management and Business Data Analytics" }
+      - { code: "Paper 5", name: "Business Laws and Ethics" }
+      - { code: "Paper 12", name: "Management Accounting" }
+      - { code: "Paper 7", name: "Direct and Indirect Taxation", law: cma_tax }
+      - { code: "Paper 10", name: "Corporate Accounting and Auditing" }
+      - { code: "Paper 9", name: "Operations Management and Strategic Management" }
+
+  - id: ca_final
+    name: "CA Final"
+    short: "CA Final"
+    body: "ICAI"
+    emoji: "🟪"
+    color: { ink: "#6B35C9", deep: "#4A238D", wash: "#EEE7FA", on_ink: "#FFFFFF" }
+    post_time: "18:25"
+    hashtags: ["#CAFinal", "#ICAI", "#CAStudents", "#DailyMCQ", "#IndAS"]
+    papers:
+      - { code: "Paper 1", name: "Financial Reporting" }
+      - { code: "Paper 2", name: "Advanced Financial Management" }
+      - { code: "Paper 3", name: "Advanced Auditing, Assurance and Professional Ethics" }
+      - { code: "Paper 4", name: "Direct Tax Laws and International Taxation", law: ca_income_tax }
+      - { code: "Paper 5", name: "Indirect Tax Laws", law: ca_gst }
+
+  - id: cma_final
+    name: "CMA Final"
+    short: "CMA Final"
+    body: "ICMAI"
+    emoji: "🟥"
+    color: { ink: "#C8233A", deep: "#8C1324", wash: "#FAE4E7", on_ink: "#FFFFFF" }
+    post_time: "20:55"
+    hashtags: ["#CMAFinal", "#ICMAI", "#CMAStudents", "#DailyMCQ", "#CostAccountant"]
+    papers:   # Syllabus 2022
+      - { code: "Paper 14", name: "Strategic Financial Management" }
+      - { code: "Paper 16", name: "Strategic Cost Management" }
+      - { code: "Paper 18", name: "Corporate Financial Reporting" }
+      - { code: "Paper 13", name: "Corporate and Economic Laws" }
+      - { code: "Paper 15", name: "Direct Tax Laws and International Taxation", law: cma_tax }
+      - { code: "Paper 17", name: "Cost and Management Audit" }
+      - { code: "Paper 19", name: "Indirect Tax Laws and Practice", law: cma_tax }
+      - { code: "Paper 20A", name: "Strategic Performance Management and Business Valuation" }

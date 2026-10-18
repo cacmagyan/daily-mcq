@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ course.name }} {{ slide }}</title>
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("{{ fonts }}/Inter-Regular.otf"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("{{ fonts }}/Inter-Medium.otf"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("{{ fonts }}/Inter-SemiBold.otf"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("{{ fonts }}/Inter-Bold.otf"); }
+@font-face { font-family: "Heros Cn"; font-weight: 400; src: url("{{ fonts }}/texgyreheroscn-regular.otf"); }
+@font-face { font-family: "Heros Cn"; font-weight: 700; src: url("{{ fonts }}/texgyreheroscn-bold.otf"); }
+@font-face { font-family: "Lora"; font-style: italic; font-weight: 400 700; src: url("{{ fonts }}/Lora-Italic-Variable.ttf"); }
+
+:root {
+  --ink: {{ course.color.ink }};
+  --deep: {{ course.color.deep }};
+  --wash: {{ course.color.wash }};
+  --on-ink: {{ course.color.on_ink }};
+  --line: {{ course.color.line or course.color.ink }};
+  --paper: #FFFFFF;
+  --text: #1C1E23;
+  --muted: #5B606B;
+  --graphite: #2E3036;
+  --s: 1;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; }
+body { background: var(--ink); font-family: "Inter", sans-serif; color: var(--text);
+       -webkit-font-smoothing: antialiased; font-feature-settings: "cv11" 1, "ss01" 1; }
+
+/* The coloured frame is the sheet's ink; it stays visible in the profile grid. */
+.sheet { position: absolute; inset: 26px; background: var(--paper); border-radius: 4px;
+         display: grid; grid-template-columns: 58px 1fr; overflow: hidden; }
+
+/* OMR clock track: the black timing marks scanners read */
+.track { display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+         padding: 40px 0 40px 6px; }
+.track i { display: block; width: 30px; height: 13px; background: var(--graphite); }
+
+.page { display: flex; flex-direction: column; padding: 30px 40px 26px 14px; min-height: 0; }
+
+/* Header band, printed solid in course ink */
+.band { background: var(--ink); color: var(--on-ink); padding: 20px 26px 18px;
+        display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+.band .course { font-family: "Heros Cn"; font-weight: 700; font-size: 84px; line-height: .9; letter-spacing: -.5px; }
+.band .body-name { font-family: "Heros Cn"; font-size: 24px; opacity: .85; margin-top: 8px; letter-spacing: .3px; }
+.band .side { text-align: right; font-family: "Heros Cn"; }
+.band .side b { display: block; font-weight: 700; font-size: 46px; line-height: 1; }
+.band .side span { display: block; font-size: 24px; margin-top: 6px; opacity: .85; }
+
+/* With a logo: band and logo share the top row; the band stacks its text */
+.top { display: flex; gap: 14px; align-items: stretch; }
+.top .band { flex: 1; min-width: 0; flex-direction: column; justify-content: space-between; align-items: stretch;
+             padding: 22px 24px 18px; }
+.top .band .meta { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.top .band .body-name { margin-top: 0; }
+.logo { flex-shrink: 0; width: 224px; height: 218px; object-fit: contain; object-position: center; display: block; }
+
+/* Form fields, like the boxes on an OMR sheet */
+.fields { display: grid; grid-template-columns: 1.25fr 1.45fr .62fr; margin-top: 14px;
+          border: 2.5px solid var(--line); }
+.field { padding: 8px 14px 10px; min-width: 0; }
+.field + .field { border-left: 2.5px solid var(--line); }
+.field label { display: block; font-family: "Heros Cn"; font-size: 19px; color: var(--deep); line-height: 1.1; }
+.field div { font-weight: 600; font-size: 23px; line-height: 1.22; margin-top: 3px;
+             overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.field div em { font-style: normal; color: var(--deep); }
+
+/* Scalable body: everything inside shrinks together if text is long */
+.body { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column;
+        padding-top: calc(var(--s) * 30px); }
+
+.q { display: grid; grid-template-columns: calc(var(--s) * 62px) 1fr; }
+.q .qno { font-family: "Heros Cn"; font-weight: 700; font-size: calc(var(--s) * 50px); line-height: 1; color: var(--line); }
+.q p { font-weight: 500; font-size: calc(var(--s) * 39px); line-height: 1.36; letter-spacing: -.2px; }
+.applies { margin: calc(var(--s) * 12px) 0 0 calc(var(--s) * 62px); font-size: calc(var(--s) * 22px);
+           color: var(--deep); font-weight: 500; }
+
+.opts { margin-top: calc(var(--s) * 26px); }
+.opt { display: grid; grid-template-columns: calc(var(--s) * 62px) 1fr; align-items: center;
+       padding: calc(var(--s) * 15px) 0; border-top: 2px dotted color-mix(in srgb, var(--line) 50%, transparent); }
+.opt:last-child { border-bottom: 2px dotted color-mix(in srgb, var(--line) 50%, transparent); }
+.opt .txt { font-size: calc(var(--s) * 34px); line-height: 1.32; }
+
+.bubble { width: calc(var(--s) * 50px); height: calc(var(--s) * 50px); display: block; }
+.bubble text { font-family: "Heros Cn"; font-weight: 700; font-size: 27px; fill: var(--line); }
+
+/* Question slide call to action */
+.cta { margin-top: auto; padding-top: calc(var(--s) * 22px); display: flex; align-items: center;
+       justify-content: space-between; gap: 20px; }
+.cta p { font-size: calc(var(--s) * 28px); line-height: 1.3; color: var(--text); font-weight: 500; }
+.cta p strong { color: var(--deep); font-weight: 700; }
+.swipe { flex-shrink: 0; display: flex; align-items: center; gap: 12px; background: var(--ink);
+         color: var(--on-ink); padding: 14px 20px 14px 24px; font-family: "Heros Cn"; font-weight: 700;
+         font-size: 30px; line-height: 1; }
+.swipe svg { width: 44px; height: 24px; }
+
+/* Answer slide */
+.key { display: grid; grid-template-columns: auto 1fr; gap: calc(var(--s) * 26px); align-items: center;
+       background: var(--wash); border-left: 10px solid var(--ink); padding: calc(var(--s) * 22px) calc(var(--s) * 26px); }
+.key .row { display: flex; gap: calc(var(--s) * 10px); }
+.key .row .bubble { width: calc(var(--s) * 54px); height: calc(var(--s) * 54px); }
+.key .lbl { font-family: "Heros Cn"; font-size: calc(var(--s) * 24px); color: var(--deep); line-height: 1; }
+.key .ans { font-weight: 700; font-size: calc(var(--s) * 40px); line-height: 1.2; margin-top: calc(var(--s) * 6px); letter-spacing: -.3px; }
+.key.long .ans { font-size: calc(var(--s) * 31px); }
+
+.why { margin-top: calc(var(--s) * 24px); font-size: calc(var(--s) * 29px); line-height: 1.42; }
+
+.rough { position: relative; margin-top: calc(var(--s) * 30px); border: 2.5px dashed var(--line);
+         padding: calc(var(--s) * 22px) calc(var(--s) * 22px) calc(var(--s) * 12px); }
+.rough > label, .tip > label, .others > label { font-family: "Heros Cn"; font-weight: 700; color: var(--deep);
+         font-size: calc(var(--s) * 23px); line-height: 1; }
+.rough > label { position: absolute; top: calc(var(--s) * -13px); left: 16px; background: var(--paper); padding: 0 8px; }
+.rough .ln { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: baseline;
+             font-size: calc(var(--s) * 27px); line-height: 1.3; padding: calc(var(--s) * 7px) 0; font-feature-settings: "tnum" 1; }
+.rough .ln + .ln { border-top: 1.5px solid color-mix(in srgb, var(--line) 20%, transparent); }
+.rough .ln b { font-weight: 600; white-space: nowrap; }
+.rough .ln.total b { color: var(--deep); font-weight: 700; border-bottom: 4px double var(--deep); }
+
+.others { margin-top: calc(var(--s) * 26px); }
+.others .o { display: grid; grid-template-columns: calc(var(--s) * 46px) 1fr; align-items: start;
+             margin-top: calc(var(--s) * 10px); font-size: calc(var(--s) * 25px); line-height: 1.36; color: var(--muted); }
+.others .bubble { width: calc(var(--s) * 33px); height: calc(var(--s) * 33px); margin-top: calc(var(--s) * 1px); }
+
+.tip { margin-top: calc(var(--s) * 26px); background: var(--wash); padding: calc(var(--s) * 16px) calc(var(--s) * 22px) calc(var(--s) * 18px); }
+.tip p { font-weight: 500; font-size: calc(var(--s) * 27px); line-height: 1.38; margin-top: calc(var(--s) * 8px); }
+
+/* Footer: colour key + signature */
+.foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 18px;
+        border-top: 2.5px solid var(--line); padding-top: 14px; margin-top: 18px; }
+.legend { display: grid; grid-template-columns: repeat(3, auto); gap: 6px 16px; }
+.legend span { display: flex; align-items: center; gap: 7px; font-family: "Heros Cn"; font-size: 19px; color: var(--muted); line-height: 1; }
+.legend span i { width: 15px; height: 15px; display: block; }
+.legend span.me { color: var(--text); font-weight: 700; }
+.legend span.me i { outline: 2.5px solid var(--text); outline-offset: 2px; }
+.sign { text-align: right; line-height: 1; }
+.sign small { display: block; font-family: "Heros Cn"; font-size: 18px; color: var(--muted); }
+.sign strong { display: block; font-family: "Lora"; font-style: italic; font-weight: 600; font-size: 40px; color: var(--graphite); margin-top: 2px; }
+.sign em { display: block; font-style: normal; font-size: 19px; color: var(--deep); font-weight: 600; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+{%- macro bubble(letter, filled=False) -%}
+<svg class="bubble" viewBox="0 0 64 64" aria-hidden="true">
+  <circle cx="32" cy="32" r="27.5" fill="#fff" stroke="{{ course.color.line or course.color.ink }}" stroke-width="3.2"/>
+  {%- if filled %}
+  <g filter="url(#graphite)">
+    <path d="M4.6 33.5 C3.8 17.6 16.4 4.2 32.6 4.4 C48.8 4.6 60.4 16.8 59.6 32.4 C58.8 48.6 47.2 60 31.4 59.6 C15.6 59.2 5.4 49.2 4.6 33.5 Z" fill="#202226" transform="rotate(-24 32 32)"/>
+  </g>
+  {%- else %}
+  <text x="32" y="42" text-anchor="middle">{{ letter }}</text>
+  {%- endif %}
+</svg>
+{%- endmacro -%}
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="graphite" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.55 1.4" numOctaves="2" seed="11" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.62  0 0 0 0 0.63  0 0 0 0 0.68  0 0 0 0.42 -0.13" result="specks"/>
+      <feComposite in="specks" in2="SourceGraphic" operator="in" result="sheen"/>
+      <feMerge result="lead"><feMergeNode in="SourceGraphic"/><feMergeNode in="sheen"/></feMerge>
+      <feTurbulence type="turbulence" baseFrequency="0.08" numOctaves="1" seed="4" result="wobble"/>
+      <feDisplacementMap in="lead" in2="wobble" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="sheet">
+  <div class="track">{% for _ in range(16) %}<i></i>{% endfor %}</div>
+
+  <div class="page">
+    {%- set side %}
+      <div class="side">
+        {%- if slide == 'question' %}
+        <b>Day {{ day }}</b><span>MCQ of the day</span>
+        {%- else %}
+        <b>Answer</b><span>Day {{ day }}</span>
+        {%- endif %}
+      </div>
+    {%- endset %}
+    {%- if logo %}
+    <div class="top">
+      <header class="band">
+        <div class="course">{{ course.name }}</div>
+        <div class="meta"><div class="body-name">{{ course.body }}</div>{{ side }}</div>
+      </header>
+      <img class="logo" src="{{ logo }}" alt="">
+    </div>
+    {%- else %}
+    <header class="band">
+      <div>
+        <div class="course">{{ course.name }}</div>
+        <div class="body-name">{{ course.body }}</div>
+      </div>
+      {{ side }}
+    </header>
+    {%- endif %}
+
+    <div class="fields">
+      <div class="field"><label>Paper</label><div><em>{{ item.paper_code }}</em> {{ item.paper_name }}</div></div>
+      <div class="field"><label>Topic</label><div>{{ item.topic }}</div></div>
+      <div class="field"><label>Date</label><div>{{ date_label }}</div></div>
+    </div>
+
+    <main class="body">
+    {%- if slide == 'question' %}
+      <div class="q"><span class="qno">Q.</span><p>{{ item.question }}</p></div>
+      {%- if item.applicability %}<div class="applies">Based on {{ item.applicability }}</div>{% endif %}
+      <div class="opts">
+        {%- for opt in item.options %}
+        <div class="opt">{{ bubble(letters[loop.index0]) }}<div class="txt">{{ opt }}</div></div>
+        {%- endfor %}
+      </div>
+      <div class="cta">
+        <p>Mark your answer in the comments,<br><strong>then swipe for the key.</strong></p>
+        <div class="swipe">Swipe
+          <svg viewBox="0 0 44 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square">
+            <path d="M4 4 L12 12 L4 20"/><path d="M18 4 L26 12 L18 20"/><path d="M32 4 L40 12 L32 20"/>
+          </svg>
+        </div>
+      </div>
+    {%- else %}
+      {%- set ans = item.options[letters.index(item.correct)] %}
+      <section class="key{% if ans|length > 34 %} long{% endif %}">
+        <div class="row">{% for l in letters %}{{ bubble(l, l == item.correct) }}{% endfor %}</div>
+        <div>
+          <div class="lbl">Correct answer: option {{ item.correct }}</div>
+          <div class="ans">{{ ans }}</div>
+        </div>
+      </section>
+
+      <p class="why">{{ item.explanation }}</p>
+
+      {%- if item.working %}
+      <section class="rough">
+        <label>Rough work</label>
+        {%- for w in item.working %}
+        <div class="ln{% if loop.last %} total{% endif %}"><span>{{ w.label }}</span><b>{{ w.value }}</b></div>
+        {%- endfor %}
+      </section>
+      {%- endif %}
+
+      {%- if item.why_not %}
+      <section class="others">
+        <label>Why not the others</label>
+        {%- for l in letters if l in item.why_not %}
+        <div class="o">{{ bubble(l) }}<span>{{ item.why_not[l] }}</span></div>
+        {%- endfor %}
+      </section>
+      {%- endif %}
+
+      {%- if item.exam_tip %}
+      <section class="tip"><label>Exam tip</label><p>{{ item.exam_tip }}</p></section>
+      {%- endif %}
+    {%- endif %}
+    </main>
+
+    <footer class="foot">
+      <div class="legend">
+        {%- for c in courses|sort(attribute='body') %}
+        <span class="{{ 'me' if c.id == course.id }}"><i style="background: {{ c.color.ink }}"></i>{{ c.short }}</span>
+        {%- endfor %}
+      </div>
+      <div class="sign">
+        <small>Prepared by</small>
+        <strong>{{ brand.name }}</strong>
+        {%- if brand.handle %}<em>{{ brand.handle }}</em>{% endif %}
+      </div>
+    </footer>
+  </div>
+</div>
+
+<script>
+// Shrink the body text together until it fits the sheet (floor 62%).
+window.fitSheet = function () {
+  const root = document.documentElement, body = document.querySelector('.body');
+  const set = v => root.style.setProperty('--s', v);
+  const over = () => body.scrollHeight > body.clientHeight + 1;
+  let s = 1; set(s);
+  if (!over()) {                       // room to spare: grow up to 118% for easier reading
+    while (s < 1.18) { set(s + 0.02); if (over()) { set(s); break; } s = Math.round((s + 0.02) * 100) / 100; }
+  }
+  while (over() && s > 0.62) { s = Math.round((s - 0.02) * 100) / 100; set(s); }
+  return { scale: s, overflow: over() };
+};
+</script>
+</body>
+</html>

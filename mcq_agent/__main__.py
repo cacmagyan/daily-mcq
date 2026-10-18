@@ -164,11 +164,23 @@ def _check(cfg: Config) -> int:
 
     from .instagram import Instagram, InstagramError
 
+    from .generator import GenerationError, _call_claude_code, auth_mode
+
     ok = True
-    key = os.environ.get("ANTHROPIC_API_KEY", "")
-    if not key:
-        print("✗ ANTHROPIC_API_KEY is missing"); ok = False
+    mode = auth_mode()
+    if mode == "none":
+        print("✗ No Claude login: add CLAUDE_CODE_OAUTH_TOKEN (subscription) or ANTHROPIC_API_KEY (paid API)")
+        ok = False
+    elif mode == "subscription":
+        try:
+            _call_claude_code(cfg.models.get("writer", "claude-sonnet-5-5"), "Reply as asked.", "Set ok to true.",
+                              {"name": "check", "input_schema": {"type": "object",
+                               "properties": {"ok": {"type": "boolean"}}, "required": ["ok"]}})
+            print("✓ Claude subscription token works (MCQs will use your Claude plan)")
+        except GenerationError as exc:
+            print(f"✗ Claude subscription token: {exc}"); ok = False
     else:
+        key = os.environ["ANTHROPIC_API_KEY"]
         r = requests.get("https://api.anthropic.com/v1/models",
                          headers={"x-api-key": key, "anthropic-version": "2023-06-01"}, timeout=30)
         if r.ok:

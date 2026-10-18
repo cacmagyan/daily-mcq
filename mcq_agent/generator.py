@@ -7,7 +7,11 @@ import json
 import os
 import random
 import re
+import shutil
+import subprocess
+import tempfile
 import time
+from pathlib import Path
 
 import requests
 
@@ -31,7 +35,7 @@ WRITE_TOOL = {
             "correct": {"type": "string", "enum": LETTERS},
             "explanation": {"type": "string", "description": "Why the answer is right, at most 260 characters"},
             "working": {
-                "type": "array", "maxItems": 5,
+                "type": "array", "maxItems": 6,
                 "description": "Calculation steps for numerical questions; empty for theory. Last row = final answer.",
                 "items": {"type": "object",
                           "properties": {"label": {"type": "string"}, "value": {"type": "string"}},
@@ -78,7 +82,7 @@ Rules
 2. Exactly one option is correct. The other three are mistakes real students make; for each wrong option, why_not names that mistake.
 3. Use Indian formats: ₹ with Indian commas (₹1,45,800), lakh and crore, dates like 31 March 2026, FY 2025-26.
 4. Options are shuffled after you write them. So no option may refer to another ("All of the above", "Both (a) and (b)", "None of these"), and the explanation, working, why_not texts and exam tip must never mention option letters.
-5. Numerical questions: choose friendly numbers so the answer is exact; show each step in `working` (at most 5 rows, label at most 40 characters, value at most 14 characters); the last row is the final answer.
+5. Numerical questions: choose friendly numbers so the answer is exact; show each step in `working` (at most 6 rows, label at most 40 characters, value at most 14 characters and holding one figure only, never a calculation); the last row is the final answer on its own.
 6. Theory questions: leave `working` empty; make the options short and parallel in form.
 7. Length limits are strict because the text must fit on a phone screen: question 300 characters, each option 70 (90 for theory), explanation 260, each why_not 90, exam tip 140, topic 40.
 8. Law and tax: follow exactly this basis: {law_text}. Put a short form of it in `applicability` (at most 60 characters). Never invent a section number; if unsure of a number, describe the provision instead. Avoid rates and limits that changed recently unless you are certain. Put anything a reviewer should verify in `reviewer_note`.
@@ -88,7 +92,7 @@ Rules
 
 CHECKER_SYSTEM = """You are a strict examiner checking an MCQ written for {course} ({body}) students, paper: {paper}.
 Solve it yourself from scratch before looking for problems. Then list problems: more than one defensible answer, no correct option, calculation errors, outdated or uncertain law, ambiguous wording, or wording that gives the answer away.
-Severity: "major" if a student could fairly dispute the key or the answer is wrong; "minor" for wording polish; "none" otherwise.
+Severity: "major" if the key is wrong, if a needed fact is missing, or if any reasonable reading of the wording gives a different answer (for example, "interest" that could be charged or credited); "minor" for wording polish only; "none" otherwise.
 {law_line}"""
 
 
@@ -96,7 +100,93 @@ class GenerationError(RuntimeError):
     pass
 
 
+def auth_mode() -> str:
+    """Which way Claude is reached: your Claude subscription (Claude Code token) or a paid API key."""
+    if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN"):
+        return "subscription"
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        return "api_key"
+    return "none"
+
+
 def _call_claude(model: str, system: str, user: str, tool: dict, max_tokens: int = 2000) -> dict:
+    """Asks Claude for one structured answer. Uses the subscription token first, the API key as backup."""
+    mode = auth_mode()
+    if mode == "none":
+        raise GenerationError("No Claude login found. Add the CLAUDE_CODE_OAUTH_TOKEN secret (your Claude "
+                              "subscription) or the ANTHROPIC_API_KEY secret (paid API).")
+    if mode == "subscription":
+        try:
+            return _call_claude_code(model, system, user, tool)
+        except GenerationError as exc:
+            if not os.environ.get("ANTHROPIC_API_KEY"):
+                raise
+            print(f"  ! Claude subscription call failed ({exc}); using the API key instead")
+    return _call_api(model, system, user, tool, max_tokens)
+
+
+def _extract_json(text: str) -> dict | None:
+    if not text:
+        return None
+    text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text.strip())
+    start, end = text.find("{"), text.rfind("}")
+    if start < 0 or end <= start:
+        return None
+    try:
+        out = json.loads(text[start:end + 1])
+    except ValueError:
+        return None
+    return out if isinstance(out, dict) else None
+
+
+def _call_claude_code(model: str, system: str, user: str, tool: dict) -> dict:
+    """Runs Claude Code in print mode with the subscription token (CLAUDE_CODE_OAUTH_TOKEN)."""
+    exe = shutil.which("claude")
+    if not exe:
+        raise GenerationError("Claude Code isn't installed on this machine (needed for the subscription token).")
+    schema = tool["input_schema"]
+    required = schema.get("required", [])
+    env = {k: v for k, v in os.environ.items() if k != "ANTHROPIC_API_KEY"}   # an API key would take precedence
+    err = "no response"
+    with tempfile.TemporaryDirectory() as tmp:                                   # empty folder: nothing to read
+        sys_file = Path(tmp) / "system.txt"
+        sys_file.write_text(system + "\n\nAnswer only with the structured output. Don't use files, the shell "
+                            "or the web.", encoding="utf-8")
+        cmd = [exe, "-p", "--output-format", "json", "--model", model,
+               "--system-prompt-file", str(sys_file), "--json-schema", json.dumps(schema),
+               "--max-turns", "6", "--no-session-persistence",
+               # no built-in or connector tools: keeps each call ~3k tokens instead of ~40k
+               "--tools", "", "--disallowedTools", "mcp__*"]
+        for attempt in range(3):
+            try:
+                r = subprocess.run(cmd, input=user, capture_output=True, text=True, cwd=tmp, env=env, timeout=480)
+            except subprocess.TimeoutExpired:
+                err = "timed out"
+                continue
+            data = None
+            try:
+                data = json.loads(r.stdout)
+            except ValueError:
+                pass
+            if isinstance(data, list):                                           # some versions print every message
+                data = next((m for m in reversed(data) if isinstance(m, dict) and m.get("type") == "result"), None)
+            if isinstance(data, dict):
+                out = data.get("structured_output")
+                if not isinstance(out, dict):
+                    out = _extract_json(str(data.get("result") or ""))
+                if isinstance(out, dict) and all(k in out for k in required):
+                    return out
+                err = f"{data.get('subtype', 'error')}: {str(data.get('result') or '')[:200]}"
+            else:
+                err = (r.stderr or r.stdout or f"exit code {r.returncode}").strip()[-300:]
+            low = err.lower()
+            if any(w in low for w in ("invalid bearer", "authentication", "unauthorized", "401", "oauth")):
+                raise GenerationError(f"The Claude subscription token was refused: {err}")
+            time.sleep(20 * (attempt + 1) if ("limit" in low or "overloaded" in low) else 5)
+    raise GenerationError(f"Claude Code didn't return a usable answer: {err}")
+
+
+def _call_api(model: str, system: str, user: str, tool: dict, max_tokens: int = 2000) -> dict:
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         raise GenerationError("ANTHROPIC_API_KEY is not set. Add it as a GitHub secret or in your .env file.")
@@ -147,6 +237,11 @@ def validate(mcq: dict) -> list[str]:
         problems.append("correct must be A, B, C or D")
     if len(mcq.get("question", "")) > 380:
         problems.append("question is too long")
+    for w in mcq.get("working") or []:
+        if len(str(w.get("value", ""))) > 18 or "=" in str(w.get("value", "")):
+            problems.append(f"working value '{w.get('value')}' must be one short figure; put the step in the label")
+        if len(str(w.get("label", ""))) > 52:
+            problems.append(f"working label '{w.get('label')}' is too long")
     texts = {"explanation": mcq.get("explanation", ""), "exam_tip": mcq.get("exam_tip", ""),
              "why_not": " ".join((mcq.get("why_not") or {}).values())}
     for field, text in texts.items():
@@ -173,7 +268,7 @@ def shuffle_options(mcq: dict, rng: random.Random) -> dict:
 
 def tidy(mcq: dict) -> dict:
     mcq["options"] = [str(o).strip() for o in mcq["options"]]
-    mcq["working"] = [w for w in (mcq.get("working") or []) if w.get("label") or w.get("value")][:5]
+    mcq["working"] = [w for w in (mcq.get("working") or []) if w.get("label") or w.get("value")][:6]
     mcq["why_not"] = {l: t.strip() for l, t in (mcq.get("why_not") or {}).items()
                       if l in LETTERS and l != mcq["correct"] and t and t.strip()}
     for k in ("topic", "question", "explanation", "exam_tip", "applicability", "reviewer_note"):
@@ -236,7 +331,7 @@ def write_mcq(cfg: Config, course: dict, paper: dict, date: dt.date,
             mcq.update(
                 difficulty=difficulty,
                 law_sensitive=bool(law_text),
-                needs_check=bool(mcq.get("confidence") == "low" or mcq.get("reviewer_note")),
+                needs_check=bool(mcq.get("confidence") == "low" or mcq.get("reviewer_note") or notes),
                 check_notes=([f"Writer: {mcq['reviewer_note']}"] if mcq.get("reviewer_note") else []) + notes,
                 attempts=attempt,
             )

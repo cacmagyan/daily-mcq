@@ -44,13 +44,18 @@ jobs:
           cache: pip
 
       - name: Install
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
+          # Claude Code is only needed when MCQs are written with your Claude subscription
+          if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then npm install -g @anthropic-ai/claude-code; claude --version; fi
 
       - name: Rewrite the MCQ
         id: regen
         env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           COMMENT: ${{ github.event.comment.body }}
           DATE: ${{ steps.pr.outputs.date }}

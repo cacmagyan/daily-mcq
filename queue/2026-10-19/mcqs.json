@@ -1,0 +1,366 @@
+{
+  "date": "2026-10-19",
+  "day": 1,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-19T02:51:36+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 1",
+      "paper_name": "Accounting",
+      "topic": "Depreciation Accounting",
+      "question": "A machine was bought on 1 April 2026 for ₹6,00,000. Installation cost was ₹40,000. Estimated useful life is 5 years and estimated residual value is ₹40,000. Using the straight line method, annual depreciation is:",
+      "options": [
+        "₹1,12,000",
+        "₹1,20,000",
+        "₹1,36,000",
+        "₹1,28,000"
+      ],
+      "correct": "B",
+      "explanation": "Depreciable amount is cost (purchase price plus installation) less residual value. Dividing this by the useful life gives the annual straight line charge.",
+      "working": [
+        {
+          "label": "Purchase price",
+          "value": "₹6,00,000"
+        },
+        {
+          "label": "Add: installation",
+          "value": "₹40,000"
+        },
+        {
+          "label": "Cost of machine",
+          "value": "₹6,40,000"
+        },
+        {
+          "label": "Less: residual value",
+          "value": "₹40,000"
+        },
+        {
+          "label": "Depreciable amount",
+          "value": "₹6,00,000"
+        },
+        {
+          "label": "Annual depreciation (÷ 5)",
+          "value": "₹1,20,000"
+        }
+      ],
+      "why_not": {
+        "D": "Ignored residual value: ₹6,40,000 ÷ 5.",
+        "A": "Left out installation cost but still deducted residual value.",
+        "C": "Added residual value to cost instead of deducting it."
+      },
+      "exam_tip": "Depreciable amount = cost including installation minus residual value. Divide by life only after that.",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": [],
+      "attempts": 1,
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 1\nPaper 1: Accounting\nTopic: Depreciation Accounting\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261019"
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Depreciation - Straight Line Method",
+      "question": "A machine costing ₹5,00,000 was bought on 1 April 2025. Estimated useful life is 5 years and residual value is ₹50,000. Using the straight line method, what is the book value of the machine on 31 March 2027?",
+      "options": [
+        "₹4,10,000",
+        "₹3,00,000",
+        "₹3,50,000",
+        "₹3,20,000"
+      ],
+      "correct": "D",
+      "explanation": "Annual depreciation under SLM = (cost - residual value) / life = ₹4,50,000 / 5 = ₹90,000. After 2 years, accumulated depreciation is ₹1,80,000. Book value = ₹5,00,000 - ₹1,80,000 = ₹3,20,000.",
+      "working": [
+        {
+          "label": "Depreciable amount",
+          "value": "₹4,50,000"
+        },
+        {
+          "label": "Annual depreciation",
+          "value": "₹90,000"
+        },
+        {
+          "label": "Years elapsed to 31 March 2027",
+          "value": "2"
+        },
+        {
+          "label": "Accumulated depreciation",
+          "value": "₹1,80,000"
+        },
+        {
+          "label": "Book value on 31 March 2027",
+          "value": "₹3,20,000"
+        }
+      ],
+      "why_not": {
+        "B": "Ignored residual value: used ₹5,00,000/5 = ₹1,00,000 a year, giving ₹3,00,000.",
+        "C": "Deducted only one year of depreciation (₹90,000) and so got ₹4,10,000 is avoided; this is cost less 1.5 years' error.",
+        "A": "Deducted only one year's depreciation of ₹90,000, giving ₹4,10,000 as book value."
+      },
+      "exam_tip": "Book value = cost less accumulated depreciation. Residual value is removed only when finding yearly depreciation.",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Option C (₹3,50,000) is not tied to a clean error; its why_not text is vague. Consider replacing C with ₹3,95,000 or a clearer distractor, e.g. ₹4,50,000 (depreciable amount only).",
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "needs_check": true,
+      "check_notes": [
+        "Writer: Option C (₹3,50,000) is not tied to a clean error; its why_not text is vague. Consider replacing C with ₹3,95,000 or a clearer distractor, e.g. ₹4,50,000 (depreciable amount only)."
+      ],
+      "attempts": 1,
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 1\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Depreciation - Straight Line Method\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261019"
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 1",
+      "paper_name": "Advanced Accounting",
+      "topic": "Ind AS 16 Property, Plant and Equipment",
+      "question": "On 1 July 2026, Rudra Ltd bought a machine with list price ₹20,00,000 less 10% trade discount. GST of 18% is fully recoverable as input credit. It paid freight ₹30,000, installation ₹20,000 and testing cost ₹15,000. Initial operating loss was ₹40,000. What is the cost of the machine?",
+      "options": [
+        "₹21,89,000",
+        "₹18,65,000",
+        "₹20,65,000",
+        "₹19,05,000"
+      ],
+      "correct": "B",
+      "explanation": "Cost includes purchase price net of trade discount and directly attributable costs: freight, installation and testing. Recoverable GST and initial operating losses are not part of cost under Ind AS 16.",
+      "working": [
+        {
+          "label": "List price",
+          "value": "₹20,00,000"
+        },
+        {
+          "label": "Less: trade discount 10%",
+          "value": "₹2,00,000"
+        },
+        {
+          "label": "Net purchase price",
+          "value": "₹18,00,000"
+        },
+        {
+          "label": "Add: freight and installation",
+          "value": "₹50,000"
+        },
+        {
+          "label": "Add: testing cost",
+          "value": "₹15,000"
+        },
+        {
+          "label": "Cost of machine",
+          "value": "₹18,65,000"
+        }
+      ],
+      "why_not": {
+        "D": "Adds initial operating loss of ₹40,000, which Ind AS 16 says is not capitalised.",
+        "C": "Ignores the trade discount and takes the full list price.",
+        "A": "Adds recoverable GST to cost, though input credit is not a cost of the asset."
+      },
+      "exam_tip": "Capitalise: net price plus directly attributable costs. Exclude: recoverable taxes, initial operating losses, admin overheads.",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "needs_check": true,
+      "check_notes": [
+        "Checker: Minor: the question does not say whether the testing cost is a cost of checking that the asset functions properly, which is what makes it capitalisable.",
+        "Checker: Minor: the question does not say that the machine was ready for use on 1 July 2026."
+      ],
+      "attempts": 1,
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 1\nPaper 1: Advanced Accounting\nTopic: Ind AS 16 Property, Plant and Equipment\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261019"
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 8",
+      "paper_name": "Cost Accounting",
+      "topic": "Overheads: Under/Over Absorption",
+      "question": "A factory budgets overheads of ₹6,00,000 and 80,000 direct labour hours for FY 2026-27. Actual overheads are ₹5,98,000 and actual hours worked are 78,000. Overheads are absorbed on direct labour hour rate. Find the under/over absorption.",
+      "options": [
+        "Under-absorbed ₹13,000",
+        "Over-absorbed ₹13,000",
+        "Under-absorbed ₹15,000",
+        "Over-absorbed ₹2,000"
+      ],
+      "correct": "A",
+      "explanation": "Absorption uses the budgeted rate on actual hours. Rate ₹7.50 × 78,000 hours = ₹5,85,000 absorbed. Actual overhead ₹5,98,000 is higher, so ₹13,000 is under-absorbed.",
+      "working": [
+        {
+          "label": "Budgeted rate per hour (₹)",
+          "value": "7.50"
+        },
+        {
+          "label": "Absorbed: 7.50 × 78,000 (₹)",
+          "value": "5,85,000"
+        },
+        {
+          "label": "Actual overhead (₹)",
+          "value": "5,98,000"
+        },
+        {
+          "label": "Under-absorbed (₹)",
+          "value": "13,000"
+        }
+      ],
+      "why_not": {
+        "B": "Reverses the sign; absorbed is less than actual, so it is under-absorbed.",
+        "D": "Compares budgeted and actual overhead only, ignoring the hours actually worked.",
+        "C": "Subtracts absorbed overhead from budgeted overhead instead of actual overhead."
+      },
+      "exam_tip": "Absorbed = budgeted rate × actual base. Absorbed less than actual means under-absorbed.",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": [],
+      "attempts": 1,
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 1\nPaper 8: Cost Accounting\nTopic: Overheads: Under/Over Absorption\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261019"
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 1",
+      "paper_name": "Financial Reporting",
+      "topic": "Ind AS 2 - Inventories: NRV",
+      "question": "On 30 September 2026, Mehta Ltd holds a semi-finished item costing ₹5,00,000. Its estimated selling price after completion is ₹5,40,000. Further cost to complete is ₹25,000 and estimated selling cost is ₹30,000. At what amount should it be carried under Ind AS 2?",
+      "options": [
+        "₹4,85,000",
+        "₹5,00,000",
+        "₹5,10,000",
+        "₹5,15,000"
+      ],
+      "correct": "A",
+      "explanation": "Ind AS 2 requires inventory at the lower of cost and net realisable value. NRV is selling price less cost to complete and cost necessary to make the sale. NRV ₹4,85,000 is below cost ₹5,00,000, so the item is written down.",
+      "working": [
+        {
+          "label": "Estimated selling price",
+          "value": "₹5,40,000"
+        },
+        {
+          "label": "Less: cost to complete",
+          "value": "₹25,000"
+        },
+        {
+          "label": "Less: selling cost",
+          "value": "₹30,000"
+        },
+        {
+          "label": "NRV",
+          "value": "₹4,85,000"
+        },
+        {
+          "label": "Cost",
+          "value": "₹5,00,000"
+        },
+        {
+          "label": "Carrying amount (lower)",
+          "value": "₹4,85,000"
+        }
+      ],
+      "why_not": {
+        "B": "Kept cost; ignored that NRV is lower than cost, so no write-down made.",
+        "D": "Deducted only the cost to complete and forgot the selling cost.",
+        "C": "Deducted only the selling cost and forgot the cost to complete."
+      },
+      "exam_tip": "NRV = selling price - cost to complete - selling costs. Then take the lower of cost and NRV.",
+      "applicability": "Ind AS 2 Inventories",
+      "confidence": "high",
+      "reviewer_note": "",
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": [],
+      "attempts": 1,
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟪 CA Final · MCQ of the day · Day 1\nPaper 1: Financial Reporting\nTopic: Ind AS 2 - Inventories: NRV\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Ind AS 2 Inventories.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261019"
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 14",
+      "paper_name": "Strategic Financial Management",
+      "topic": "Security Analysis and Portfolio - CAPM",
+      "question": "The risk-free rate is 7% p.a. and the expected return on the market portfolio is 13% p.a. A share has a beta of 1.2. As per CAPM, what is the required rate of return on this share?",
+      "options": [
+        "7.2%",
+        "15.6%",
+        "14.2%",
+        "22.6%"
+      ],
+      "correct": "C",
+      "explanation": "CAPM: Ke = Rf + β × (Rm − Rf). Market risk premium is 13% − 7% = 6%. Beta-adjusted premium is 1.2 × 6% = 7.2%. Adding the risk-free rate gives 14.2%.",
+      "working": [
+        {
+          "label": "Market risk premium (Rm − Rf)",
+          "value": "6.0%"
+        },
+        {
+          "label": "Beta × premium (1.2 × 6%)",
+          "value": "7.2%"
+        },
+        {
+          "label": "Add risk-free rate 7%",
+          "value": "14.2%"
+        },
+        {
+          "label": "Required return",
+          "value": "14.2%"
+        }
+      ],
+      "why_not": {
+        "A": "Forgot to add the risk-free rate; this is only the beta-adjusted risk premium.",
+        "B": "Multiplied beta by market return (1.2 × 13%) and ignored the risk-free rate.",
+        "D": "Used Rf + β × Rm instead of β × (Rm − Rf), double counting the risk-free rate."
+      },
+      "exam_tip": "Beta multiplies the risk premium (Rm − Rf), never Rm alone. Then add Rf back.",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": [],
+      "attempts": 1,
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 1\nPaper 14: Strategic Financial Management\nTopic: Security Analysis and Portfolio - CAPM\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261019"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+name: 1. Prepare tomorrow's MCQs
+
+# Every evening: writes 6 MCQs, draws 12 images, opens a pull request for you to review.
+on:
+  schedule:
+    - cron: "17 13 * * *"          # 18:47 IST
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Batch date (YYYY-MM-DD). Leave blank for tomorrow."
+        required: false
+      sample:
+        description: "Use the built-in sample MCQs (no Claude API needed)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: prepare
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Write and draw the MCQs
+        id: prep
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          INPUT_DATE: ${{ inputs.date }}
+          INPUT_SAMPLE: ${{ inputs.sample }}
+        run: |
+          ARGS=(--date "${INPUT_DATE:-tomorrow}")
+          if [ "$INPUT_SAMPLE" = "true" ]; then ARGS+=(--sample); fi
+          python -m mcq_agent prepare "${ARGS[@]}" --github-output "$GITHUB_OUTPUT"
+
+      - name: Open the review pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE: ${{ steps.prep.outputs.batch_date }}
+          BASE: ${{ github.event.repository.default_branch }}
+        run: |
+          BRANCH="batch/$DATE"
+          git config user.name "mcq-agent"
+          git config user.email "mcq-agent@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add "queue/$DATE"
+          git commit -m "MCQs for $DATE"
+          git push --force origin "$BRANCH"
+          python -m mcq_agent pr-body --date "$DATE" --branch "$BRANCH" > "$RUNNER_TEMP/body.md"
+          if [ "$(gh pr view "$BRANCH" --json state -q .state 2>/dev/null)" = "OPEN" ]; then
+            gh pr edit "$BRANCH" --body-file "$RUNNER_TEMP/body.md"
+          else
+            gh pr create --base "$BASE" --head "$BRANCH" \
+              --title "MCQs for $DATE: review, then merge to approve" \
+              --body-file "$RUNNER_TEMP/body.md"
+          fi

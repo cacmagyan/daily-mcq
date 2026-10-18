@@ -1,0 +1,66 @@
+name: 4. Publish due MCQs
+
+# One run per course slot. Each run posts every approved MCQ whose post_time (config.yaml)
+# has passed and that isn't posted yet, so a delayed or missed run catches up.
+# GitHub cron is UTC: IST = UTC + 5:30. Runs start a couple of minutes after each post_time.
+on:
+  schedule:
+    - cron: "27 2 * * *"           # 07:57 IST  CA Foundation  (post_time 07:55)
+    - cron: "27 4 * * *"           # 09:57 IST  CMA CAT        (09:55)
+    - cron: "57 6 * * *"           # 12:27 IST  CA Inter       (12:25)
+    - cron: "57 9 * * *"           # 15:27 IST  CMA Inter      (15:25)
+    - cron: "57 12 * * *"          # 18:27 IST  CA Final       (18:25)
+    - cron: "27 15 * * *"          # 20:57 IST  CMA Final      (20:55)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only show what would be posted"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Post to Instagram
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          # The morning run fails loudly (GitHub emails you) if today's batch was never approved.
+          FIRST_SLOT: ${{ github.event.schedule == '27 2 * * *' }}
+        run: |
+          ARGS=()
+          if [ "$DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
+          if [ "$FIRST_SLOT" = "true" ]; then ARGS+=(--strict); fi
+          python -m mcq_agent publish "${ARGS[@]}"
+
+      - name: Record what was posted
+        if: always()
+        run: |
+          git config user.name "mcq-agent"
+          git config user.email "mcq-agent@users.noreply.github.com"
+          git add queue/*/posted.json 2>/dev/null || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Posted MCQs $(TZ=Asia/Kolkata date +%F_%H%M)"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          exit 1

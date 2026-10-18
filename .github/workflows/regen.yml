@@ -1,0 +1,77 @@
+name: 3. Rewrite one MCQ (/regen comment)
+
+# Comment on a review pull request:  /regen ca_inter            (new MCQ, same paper)
+#                                    /regen cma_final make it a numerical on WACC
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  regen:
+    if: >-
+      github.event.issue.pull_request &&
+      startsWith(github.event.comment.body, '/regen') &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    concurrency:
+      group: regen-${{ github.event.issue.number }}
+      cancel-in-progress: false
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NUMBER: ${{ github.event.issue.number }}
+    steps:
+      - name: Find the batch branch
+        id: pr
+        run: |
+          BRANCH=$(gh pr view "$NUMBER" --repo "$GITHUB_REPOSITORY" --json headRefName -q .headRefName)
+          DATE="${BRANCH#batch/}"
+          [[ "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "Not a batch pull request"; exit 1; }
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ steps.pr.outputs.branch }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Rewrite the MCQ
+        id: regen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          COMMENT: ${{ github.event.comment.body }}
+          DATE: ${{ steps.pr.outputs.date }}
+        run: python -m mcq_agent regen --date "$DATE" --comment "$COMMENT" --github-output "$GITHUB_OUTPUT"
+
+      - name: Save and update the pull request
+        env:
+          DATE: ${{ steps.pr.outputs.date }}
+          BRANCH: ${{ steps.pr.outputs.branch }}
+          COURSE: ${{ steps.regen.outputs.course }}
+        run: |
+          git config user.name "mcq-agent"
+          git config user.email "mcq-agent@users.noreply.github.com"
+          git add "queue/$DATE"
+          git commit -m "Rewrite $COURSE MCQ for $DATE"
+          git push
+          python -m mcq_agent pr-body --date "$DATE" --branch "$BRANCH" > "$RUNNER_TEMP/body.md"
+          gh pr edit "$NUMBER" --body-file "$RUNNER_TEMP/body.md"
+          gh pr comment "$NUMBER" --body "Rewrote the **$COURSE** MCQ. The table and images in the description are updated."
+
+      - name: Report a failure
+        if: failure()
+        run: |
+          gh pr comment "$NUMBER" --body "Couldn't rewrite that MCQ; see the Actions tab for the log. Format: \`/regen <course_id> [instruction]\`"

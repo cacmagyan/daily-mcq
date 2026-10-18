@@ -1,0 +1,41 @@
+name: 5. Keep the Instagram token alive
+
+# Instagram Login tokens expire after 60 days. This renews it every Monday and saves the new
+# one back into the IG_ACCESS_TOKEN secret. Needs the GH_ADMIN_TOKEN secret (see README).
+# If you connect through a Facebook Page with a non-expiring Page token, disable this workflow.
+on:
+  schedule:
+    - cron: "41 3 * * 1"           # Mondays 09:11 IST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Renew and save the token
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Add the GH_ADMIN_TOKEN secret so the renewed token can be saved (README, step 4)."
+            exit 1
+          fi
+          NEW=$(python -m mcq_agent refresh-token)
+          echo "::add-mask::$NEW"
+          gh secret set IG_ACCESS_TOKEN --body "$NEW" --repo "$GITHUB_REPOSITORY"
+          echo "Token renewed for another 60 days."

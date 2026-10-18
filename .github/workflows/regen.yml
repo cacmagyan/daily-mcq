@@ -16,7 +16,7 @@ jobs:
       github.event.issue.pull_request &&
       startsWith(github.event.comment.body, '/regen') &&
       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     concurrency:
       group: regen-${{ github.event.issue.number }}

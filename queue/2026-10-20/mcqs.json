@@ -1,0 +1,382 @@
+{
+  "date": "2026-10-20",
+  "day": 1,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-19T02:32:16+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 1",
+      "paper_name": "Accounting",
+      "topic": "Bank Reconciliation Statement",
+      "question": "On 30 September 2026, the pass book shows a credit balance of ₹45,000. Cheques deposited but not yet collected: ₹12,000. Cheques issued but not yet presented: ₹8,000. A customer's direct deposit of ₹5,000 and bank charges of ₹500 are not yet in the cash book. What is the cash book balance before adjustments?",
+      "options": [
+        "₹43,500 debit",
+        "₹44,500 debit",
+        "₹53,500 debit",
+        "₹49,000 debit"
+      ],
+      "correct": "B",
+      "explanation": "Cash book balance after correction equals ₹49,000 (pass book + uncollected cheques − unpresented cheques). Working back, remove the direct deposit and add back the bank charges, which the cash book has not yet recorded.",
+      "working": [
+        {
+          "label": "Balance as per pass book",
+          "value": "45,000"
+        },
+        {
+          "label": "Add: cheques not yet collected",
+          "value": "12,000"
+        },
+        {
+          "label": "Less: cheques not yet presented",
+          "value": "8,000"
+        },
+        {
+          "label": "Adjusted cash book balance",
+          "value": "49,000"
+        },
+        {
+          "label": "Less direct deposit, add bank charges",
+          "value": "-4,500"
+        },
+        {
+          "label": "Cash book balance before adjustment",
+          "value": "44,500"
+        }
+      ],
+      "why_not": {
+        "A": "Deducted bank charges instead of adding them back while reversing to the old balance.",
+        "D": "Stopped at the adjusted cash book balance and did not reverse the unrecorded items.",
+        "C": "Added the direct deposit and deducted charges, reversing both adjustments the wrong way."
+      },
+      "exam_tip": "Items already in the cash book but not the pass book are timing items. Items missing from the cash book change its balance.",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "needs_check": true,
+      "check_notes": [
+        "Checker: Wording 'before adjustments' is slightly unclear; it means the cash book balance before recording the direct deposit and the bank charges.",
+        "Checker: Distractor D (49,000) is the adjusted cash book balance, so it is a plausible but wrong option. This is acceptable.",
+        "Checker: Students may confuse a credit balance in the pass book with an overdraft. The question is still unambiguous under standard convention."
+      ],
+      "attempts": 1,
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 1\nPaper 1: Accounting\nTopic: Bank Reconciliation Statement\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261020"
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Bank Reconciliation Statement",
+      "question": "On 31 March 2026, the cash book of Meera Traders shows a bank debit balance of ₹50,000. Cheques issued but not yet presented: ₹12,000. Cheques deposited but not yet credited by bank: ₹8,000. Bank charges ₹500 and interest credited ₹1,500 are not yet in cash book. Balance as per pass book is:",
+      "options": [
+        "₹55,000 credit",
+        "₹47,000 credit",
+        "₹54,000 credit",
+        "₹53,000 credit"
+      ],
+      "correct": "A",
+      "explanation": "First correct the cash book for bank charges and interest. Then add back cheques issued but not presented, and deduct cheques deposited but not yet credited, to reach the pass book balance.",
+      "working": [
+        {
+          "label": "Balance as per cash book",
+          "value": "₹50,000"
+        },
+        {
+          "label": "Less: bank charges",
+          "value": "₹500"
+        },
+        {
+          "label": "Add: interest credited",
+          "value": "₹1,500"
+        },
+        {
+          "label": "Adjusted cash book balance",
+          "value": "₹51,000"
+        },
+        {
+          "label": "Add: cheques issued, not presented",
+          "value": "₹12,000"
+        },
+        {
+          "label": "Less: deposited, not credited; Pass book",
+          "value": "₹55,000"
+        }
+      ],
+      "why_not": {
+        "C": "Ignored bank charges and interest, which are not yet in the cash book.",
+        "B": "Reversed the treatment of both timing items: deducted issued cheques and added deposited ones.",
+        "D": "Reversed the signs of bank charges and interest while adjusting the cash book."
+      },
+      "exam_tip": "Starting from cash book: items already in it but not in the bank are reversed; items only in the bank are adjusted first.",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "needs_check": true,
+      "check_notes": [
+        "Checker: The phrase 'credit' for the pass book balance may confuse some students, but it is standard and correct.",
+        "Checker: The wording 'bank debit balance' in the cash book is slightly informal but clear."
+      ],
+      "attempts": 1,
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 74%; consider shortening"
+      ],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 1\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Bank Reconciliation Statement\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261020"
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 1",
+      "paper_name": "Advanced Accounting",
+      "topic": "AS 2 Valuation of Inventories",
+      "question": "At 31 March 2026, a trader has three items. Item P: cost ₹80,000, NRV ₹72,000. Item Q: cost ₹1,20,000, NRV ₹1,35,000. Item R: cost ₹50,000, selling price ₹58,000, selling expenses ₹10,000. As per AS 2, closing inventory is:",
+      "options": [
+        "₹2,50,000",
+        "₹2,40,000",
+        "₹2,42,000",
+        "₹2,65,000"
+      ],
+      "correct": "B",
+      "explanation": "AS 2 values inventory at lower of cost and NRV, item by item. NRV is selling price less estimated costs necessary to make the sale. Q stays at cost because its NRV is higher; unrealised gains are not recognised.",
+      "working": [
+        {
+          "label": "P: lower of 80,000 and 72,000",
+          "value": "₹72,000"
+        },
+        {
+          "label": "Q: lower of 1,20,000 and 1,35,000",
+          "value": "₹1,20,000"
+        },
+        {
+          "label": "R: NRV = 58,000 - 10,000",
+          "value": "₹48,000"
+        },
+        {
+          "label": "R: lower of 50,000 and 48,000",
+          "value": "₹48,000"
+        },
+        {
+          "label": "Closing inventory (72,000+1,20,000+48,000)",
+          "value": "₹2,40,000"
+        }
+      ],
+      "why_not": {
+        "A": "Takes all items at cost and ignores the write-down to NRV.",
+        "C": "Takes R's NRV as selling price (₹58,000), forgetting to deduct selling expenses.",
+        "D": "Takes higher of cost and NRV, which recognises unrealised gains."
+      },
+      "exam_tip": "NRV = selling price minus costs to sell. Then pick the lower of cost and NRV, item by item.",
+      "applicability": "AS 2 Valuation of Inventories",
+      "confidence": "high",
+      "reviewer_note": "",
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": [],
+      "attempts": 1,
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 1\nPaper 1: Advanced Accounting\nTopic: AS 2 Valuation of Inventories\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on AS 2 Valuation of Inventories.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261020"
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 8",
+      "paper_name": "Cost Accounting",
+      "topic": "Material Cost: EOQ",
+      "question": "A firm uses 90,000 units of a material in FY 2025-26. Purchase price is ₹50 per unit, ordering cost is ₹250 per order and carrying cost is 10% of purchase price per unit per year. What is the total of ordering and carrying cost at EOQ?",
+      "options": [
+        "₹15,000",
+        "₹30,000",
+        "₹22,500",
+        "₹7,500"
+      ],
+      "correct": "A",
+      "explanation": "Carrying cost per unit is ₹5. EOQ = √(2×90,000×250/5) = 3,000 units. Orders = 30, so ordering cost ₹7,500. Average stock 1,500 gives carrying cost ₹7,500. Total ₹15,000.",
+      "working": [
+        {
+          "label": "Carrying cost per unit (10% of ₹50)",
+          "value": "₹5"
+        },
+        {
+          "label": "EOQ in units",
+          "value": "3,000"
+        },
+        {
+          "label": "Number of orders (90,000/3,000)",
+          "value": "30"
+        },
+        {
+          "label": "Ordering cost (30 × ₹250)",
+          "value": "₹7,500"
+        },
+        {
+          "label": "Carrying cost (1,500 × ₹5)",
+          "value": "₹7,500"
+        },
+        {
+          "label": "Total relevant cost",
+          "value": "₹15,000"
+        }
+      ],
+      "why_not": {
+        "D": "Counts only one component, ordering or carrying cost, not both.",
+        "B": "Doubles the total, e.g. carrying cost on full EOQ instead of average stock.",
+        "C": "Adds 1.5 times one component; mixes full and average stock wrongly."
+      },
+      "exam_tip": "At EOQ, ordering cost equals carrying cost. Find one and double it.",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": [],
+      "attempts": 1,
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 1\nPaper 8: Cost Accounting\nTopic: Material Cost: EOQ\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261020"
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 1",
+      "paper_name": "Financial Reporting",
+      "topic": "Ind AS 116 - Lessee ROU asset",
+      "question": "On 1 April 2026, Rao Ltd leases a machine for 2 years, paying ₹1,21,000 at the end of each year. Rate implicit in lease is 10%. Rao paid ₹10,000 initial direct costs and received ₹15,000 incentive from lessor on 1 April 2026. ROU asset at commencement is:",
+      "options": [
+        "₹2,35,000",
+        "₹2,20,000",
+        "₹2,05,000",
+        "₹2,10,000"
+      ],
+      "correct": "C",
+      "explanation": "ROU asset = initial lease liability + initial direct costs + payments made at or before commencement − lease incentives received. Liability is the PV of payments at 10%: ₹2,10,000. So ROU = 2,10,000 + 10,000 − 15,000.",
+      "working": [
+        {
+          "label": "PV of year 1 payment (1,21,000/1.10)",
+          "value": "₹1,10,000"
+        },
+        {
+          "label": "PV of year 2 payment (1,21,000/1.21)",
+          "value": "₹1,00,000"
+        },
+        {
+          "label": "Lease liability",
+          "value": "₹2,10,000"
+        },
+        {
+          "label": "Add: initial direct costs",
+          "value": "₹10,000"
+        },
+        {
+          "label": "Less: lease incentive received",
+          "value": "₹15,000"
+        },
+        {
+          "label": "ROU asset",
+          "value": "₹2,05,000"
+        }
+      ],
+      "why_not": {
+        "D": "Takes the lease liability as ROU and ignores direct costs and incentive.",
+        "B": "Adds direct costs but forgets to deduct the incentive received.",
+        "A": "Adds the incentive instead of deducting it from the ROU asset."
+      },
+      "exam_tip": "ROU = liability + IDC + advance payments − incentives received. Costs go up, incentives come down.",
+      "applicability": "Ind AS 116 Leases",
+      "confidence": "high",
+      "reviewer_note": "",
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": [],
+      "attempts": 1,
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟪 CA Final · MCQ of the day · Day 1\nPaper 1: Financial Reporting\nTopic: Ind AS 116 - Lessee ROU asset\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Ind AS 116 Leases.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261020"
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 14",
+      "paper_name": "Strategic Financial Management",
+      "topic": "Foreign Exchange Risk - Interest Rate Parity",
+      "question": "The spot rate is ₹84.00/USD. One-year risk-free rates are 10% p.a. in India and 5% p.a. in the USA. As per interest rate parity, what is the one-year forward rate (₹/USD)?",
+      "options": [
+        "₹80.18",
+        "₹88.20",
+        "₹92.40",
+        "₹88.00"
+      ],
+      "correct": "D",
+      "explanation": "Under interest rate parity, forward = spot × (1 + rate of quoted currency) / (1 + rate of base currency). Here INR is the quoted currency, so the Indian rate goes in the numerator. The USD trades at a premium because India's interest rate is higher.",
+      "working": [
+        {
+          "label": "Spot rate (₹/USD)",
+          "value": "84.00"
+        },
+        {
+          "label": "Indian factor (1 + 0.10)",
+          "value": "1.10"
+        },
+        {
+          "label": "US factor (1 + 0.05)",
+          "value": "1.05"
+        },
+        {
+          "label": "Ratio 1.10 / 1.05",
+          "value": "1.0476"
+        },
+        {
+          "label": "Forward = 84.00 × 1.10 / 1.05",
+          "value": "88.00"
+        }
+      ],
+      "why_not": {
+        "A": "Inverted the ratio, putting the US rate in the numerator; this gives a discount for USD.",
+        "B": "Added the US rate to spot (84 × 1.05) and ignored the Indian rate.",
+        "C": "Used only the Indian rate (84 × 1.10) and ignored the US rate."
+      },
+      "exam_tip": "Higher-interest currency trades at a forward discount; here INR is weaker, so the forward ₹/USD is above spot.",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": [],
+      "attempts": 1,
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 1\nPaper 14: Strategic Financial Management\nTopic: Foreign Exchange Risk - Interest Rate Parity\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261020"
+    }
+  ]
+}

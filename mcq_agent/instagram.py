@@ -32,11 +32,18 @@ class Instagram:
         return cls(
             host=ig_cfg.get("graph_host", "graph.instagram.com"),
             version=ig_cfg.get("api_version", "v26.0"),
-            token=os.environ.get("IG_ACCESS_TOKEN", ""),
+            token="".join(os.environ.get("IG_ACCESS_TOKEN", "").split()),
             user_id=os.environ.get("IG_USER_ID", ""),
         )
 
     # ── low level ──────────────────────────────────────────
+    def _redact(self, text) -> str:
+        """Never let the token appear in logs (the repo is public)."""
+        out = str(text)
+        if self.token:
+            out = out.replace(self.token, "***")
+        return out
+
     def _call(self, method: str, path: str, **params) -> dict:
         params["access_token"] = self.token
         url = f"{self.base}/{path.lstrip('/')}"
@@ -49,13 +56,13 @@ class Instagram:
                     r = requests.post(url, data=params, timeout=60)
                 data = r.json() if r.content else {}
             except (requests.RequestException, ValueError) as exc:
-                last = InstagramError(f"Network problem talking to Instagram: {exc}")
+                last = InstagramError(f"Network problem talking to Instagram: {self._redact(exc)}")
                 time.sleep(5 * 2 ** attempt)
                 continue
             if r.ok and "error" not in data:
                 return data
             err = data.get("error", {}) if isinstance(data, dict) else {}
-            msg = err.get("error_user_msg") or err.get("message") or r.text[:300]
+            msg = self._redact(err.get("error_user_msg") or err.get("message") or r.text[:300])
             last = InstagramError(f"Instagram API error {err.get('code')}/{err.get('error_subcode')}: {msg}",
                                   err.get("code"), err.get("error_subcode"))
             if r.status_code >= 500 or err.get("is_transient") or err.get("code") in TRANSIENT_CODES:
@@ -141,9 +148,12 @@ class Instagram:
     # ── token ─────────────────────────────────────────────
     def refresh_token(self) -> dict:
         """Instagram Login tokens last 60 days; this extends one that is at least a day old."""
-        r = requests.get("https://graph.instagram.com/refresh_access_token",
-                         params={"grant_type": "ig_refresh_token", "access_token": self.token}, timeout=60)
-        data = r.json()
+        try:
+            r = requests.get("https://graph.instagram.com/refresh_access_token",
+                             params={"grant_type": "ig_refresh_token", "access_token": self.token}, timeout=60)
+            data = r.json()
+        except (requests.RequestException, ValueError) as exc:
+            raise InstagramError(f"Token refresh failed: {self._redact(exc)}") from None
         if not r.ok or "access_token" not in data:
-            raise InstagramError(f"Token refresh failed: {data.get('error', data)}")
+            raise InstagramError(f"Token refresh failed: {self._redact(data.get('error', data))}")
         return data

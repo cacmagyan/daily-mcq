@@ -51,7 +51,8 @@ def save_posted(date: dt.date, posted: dict) -> None:
 
 
 def recent_items(course_id: str, before: dt.date, limit: int = 60) -> list[dict]:
-    """Earlier MCQs for a course, newest first, so the writer can avoid repeating topics."""
+    """Other days' MCQs for a course (earlier and already-prepared later days), newest first,
+    so the writer can avoid repeating topics."""
     found = []
     if not QUEUE.exists():
         return found
@@ -60,7 +61,7 @@ def recent_items(course_id: str, before: dt.date, limit: int = 60) -> list[dict]
             day = dt.date.fromisoformat(d.name)
         except ValueError:
             continue
-        if day >= before or not (d / "mcqs.json").exists():
+        if day == before or not (d / "mcqs.json").exists():
             continue
         with open(d / "mcqs.json", encoding="utf-8") as fh:
             for it in json.load(fh).get("items", []):

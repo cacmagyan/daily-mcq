@@ -147,6 +147,8 @@ def _call_claude_code(model: str, system: str, user: str, tool: dict) -> dict:
     schema = tool["input_schema"]
     required = schema.get("required", [])
     env = {k: v for k, v in os.environ.items() if k != "ANTHROPIC_API_KEY"}   # an API key would take precedence
+    # a token copied from a narrow Terminal window can carry a line break; tokens never contain whitespace
+    env["CLAUDE_CODE_OAUTH_TOKEN"] = "".join(env.get("CLAUDE_CODE_OAUTH_TOKEN", "").split())
     err = "no response"
     with tempfile.TemporaryDirectory() as tmp:                                   # empty folder: nothing to read
         sys_file = Path(tmp) / "system.txt"
@@ -250,12 +252,24 @@ def validate(mcq: dict) -> list[str]:
     return problems
 
 
-def shuffle_options(mcq: dict, rng: random.Random) -> dict:
-    """Moves the correct answer to a random position. Skips MCQs whose options refer to each other."""
+def answer_letters(course_ids: list[str], date: dt.date) -> dict:
+    """Spreads a day's answer keys over A-D: every letter used, none more than twice."""
+    rng = random.Random(f"keys:{date.isoformat()}")
+    letters = (LETTERS * ((len(course_ids) + 3) // 4))[:len(course_ids)]
+    rng.shuffle(letters)
+    return dict(zip(course_ids, letters))
+
+
+def shuffle_options(mcq: dict, rng: random.Random, target: str | None = None) -> dict:
+    """Moves the correct answer to `target` (or a random position) and shuffles the rest.
+    Skips MCQs whose options refer to each other."""
     if any(_CROSS_REF.search(o) for o in mcq["options"]):
         return mcq
-    order = list(range(4))
-    rng.shuffle(order)                      # new position i holds old option order[i]
+    old_correct = LETTERS.index(mcq["correct"])
+    others = [i for i in range(4) if i != old_correct]
+    rng.shuffle(others)
+    pos = LETTERS.index(target) if target in LETTERS else rng.randrange(4)
+    order = others[:pos] + [old_correct] + others[pos:]   # new position i holds old option order[i]
     old_letter = {LETTERS[new]: LETTERS[old] for new, old in enumerate(order)}
     new_of_old = {v: k for k, v in old_letter.items()}
     out = dict(mcq)
@@ -284,6 +298,7 @@ def write_mcq(cfg: Config, course: dict, paper: dict, date: dt.date,
     law_text = cfg.law_text(paper, date)
     difficulty = DIFFICULTY_BY_WEEKDAY[date.weekday()]
     rng = random.Random(f"{date.isoformat()}:{course['id']}:{instruction}")
+    target = answer_letters(cfg.course_ids(), date).get(course["id"])
     writer_model = cfg.models.get("writer", "claude-sonnet-5-5")
     checker_model = cfg.models.get("checker", writer_model)
 
@@ -312,7 +327,7 @@ def write_mcq(cfg: Config, course: dict, paper: dict, date: dt.date,
             feedback = "Format problems: " + "; ".join(problems)
             last = draft
             continue
-        mcq = shuffle_options(draft, rng)
+        mcq = shuffle_options(draft, rng, target)
 
         check = _call_claude(
             checker_model,

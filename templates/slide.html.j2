@@ -266,7 +266,7 @@ body { background: var(--ink); font-family: "Inter", sans-serif; color: var(--te
       </div>
       <div class="sign">
         <small>Prepared by</small>
-        <strong>{{ brand.name }}</strong>
+        <strong>{{ item.author or brand.name }}</strong>
         {%- if brand.handle %}<em>{{ brand.handle }}</em>{% endif %}
       </div>
     </footer>

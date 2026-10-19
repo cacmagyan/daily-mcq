@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Concept slide {{ slide }}</title>
+<style>
+{{ font_css|safe }}
+:root { --ink: #1F2A44; --soft: #4A5570; --red: #C8372F; --teal: #1F5566; --hl: #FFE36E;
+        --course: {{ course.color.ink }}; --on-course: {{ course.color.on_ink }}; --wash: {{ course.color.wash }}; }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1080px; height: 1350px; overflow: hidden; background: #FFFBF0; }
+body { font-family: 'Patrick Hand', 'DejaVu Sans', sans-serif; color: var(--ink); }
+svg { display: block; overflow: visible; }
+.ink { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.ink-fill { stroke: var(--ink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.thin { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.thin-fill { stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.red { fill: none; stroke: var(--red); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.dot { fill: var(--ink); stroke: none; }
+
+.page { width: 1080px; height: 1350px; position: relative; overflow: hidden; background-color: #FFFBF0;
+  background-image: repeating-linear-gradient(to bottom, transparent 0px, transparent 46px, #DCE7F5 46px, #DCE7F5 48px);
+  padding: 50px 60px 38px 118px; display: flex; flex-direction: column; gap: 22px; }
+.margin { position: absolute; left: 86px; top: 0; width: 3px; height: 1350px; background: #F4A6A0; }
+.hole { position: absolute; left: 26px; width: 30px; height: 30px; border-radius: 50%; background: #EAE2D0; border: 2px solid #D6CAB0; }
+
+.top { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.kicker { font-family: 'Caveat', cursive; font-weight: 700; font-size: 28px; line-height: 1; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; max-width: 760px; background: var(--course); color: var(--on-course);
+  padding: 8px 20px 10px; border-radius: 999px; transform: rotate(-2deg); }
+.sticker { flex-shrink: 0; font-family: 'Permanent Marker', cursive; font-size: 22px; line-height: 1; background: #BDEBD2;
+  border: 3px solid var(--ink); border-radius: 14px 20px 12px 18px; padding: 8px 16px; box-shadow: 3px 3px 0 var(--ink); transform: rotate(3deg); }
+.sticker.last { background: #FFC2D1; }
+
+.titles { display: flex; flex-direction: column; gap: 4px; }
+.t1, .t2, .st { font-family: 'Permanent Marker', cursive; color: var(--red); white-space: nowrap; }
+.t1 { font-size: 62px; line-height: 1.08; }
+.t2row { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+.t2 { font-size: 62px; line-height: 1.08; padding: 0 12px; background: var(--hl); border-radius: 6px 14px 8px 16px; transform: rotate(-1deg); }
+.hook { font-family: 'Caveat', cursive; font-weight: 700; font-size: 32px; line-height: 1.1; text-align: right;
+  padding-bottom: 6px; max-width: 380px; transform: rotate(-2deg); }
+.subtitle { font-size: 26px; line-height: 1.15; color: var(--soft); }
+.shead { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+.shead-left { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.st { font-size: 58px; line-height: 1.05; }
+
+.content { flex: 1 1 0; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
+.inner { display: flex; flex-direction: column; gap: 24px; }
+
+.hl { background: var(--hl); padding: 0 5px; margin: 0 -5px; border-radius: 6px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.redink { color: var(--red); }
+
+.simple { display: flex; align-items: baseline; gap: 14px; background: #DDF3E6; border: 3px solid var(--ink);
+  border-radius: 14px 20px 13px 18px; padding: 10px 20px 12px; }
+.simple .lab { flex-shrink: 0; font-family: 'Permanent Marker', cursive; font-size: 20px; line-height: 1; }
+.simple .txt { font-family: 'Caveat', cursive; font-weight: 700; font-size: 32px; line-height: 1.15; }
+
+.card { border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); padding: 16px 22px 18px; display: flex; flex-direction: column; gap: 8px; }
+.card.f0 { background: #FFF4C2; border-radius: 18px 26px 20px 28px / 26px 18px 28px 20px; }
+.card.f1 { background: #DDF3E6; border-radius: 26px 18px 28px 20px / 18px 26px 20px 28px; }
+.card.f2 { background: #FFE1E8; border-radius: 18px 28px 20px 26px / 28px 20px 26px 18px; }
+.card.f3 { background: #E1EEFF; border-radius: 22px 16px 24px 18px / 16px 24px 18px 22px; }
+.card.white { background: #FFFFFF; }
+.term-row { display: flex; align-items: center; gap: 12px; }
+.badge { flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; border: 3px solid var(--ink); background: #FFFFFF;
+  display: flex; align-items: center; justify-content: center; font-family: 'Permanent Marker', cursive; font-size: 21px; line-height: 1; }
+.term { font-family: 'Permanent Marker', cursive; font-size: 32px; line-height: 1.1; }
+.meaning { font-size: 28px; line-height: 1.3; }
+.note { font-family: 'Caveat', cursive; font-weight: 700; font-size: 30px; line-height: 1.15; color: var(--red); }
+
+.row { display: flex; gap: 22px; align-items: center; }
+.grow { flex: 1 1 0; min-width: 0; }
+.points { display: flex; flex-direction: column; gap: 10px; font-size: 28px; line-height: 1.3; }
+.point { display: flex; gap: 12px; align-items: flex-start; }
+.num { flex-shrink: 0; width: 38px; height: 38px; margin-top: 1px; border-radius: 50%; border: 3px solid var(--ink); background: #FFFFFF;
+  display: flex; align-items: center; justify-content: center; font-family: 'Permanent Marker', cursive; font-size: 19px; line-height: 1; }
+.doodle { flex-shrink: 0; width: 150px; display: flex; justify-content: center; }
+
+.sec { display: flex; align-items: center; gap: 12px; }
+.sec .name { font-family: 'Permanent Marker', cursive; font-size: 30px; line-height: 1.1; }
+
+.fbox { background: #FFFFFF; border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); padding: 14px 22px 16px;
+  display: flex; flex-direction: column; gap: 10px; }
+.fbox.r0 { border-radius: 16px 24px 18px 26px / 24px 16px 26px 18px; }
+.fbox.r1 { border-radius: 24px 16px 26px 18px / 16px 24px 18px 26px; }
+.fbox.r2 { border-radius: 20px 14px 22px 16px / 14px 22px 16px 20px; }
+.fname { font-family: 'Caveat', cursive; font-weight: 700; font-size: 30px; line-height: 1; color: var(--soft); }
+.fline { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 34px; line-height: 1.2; }
+.fline .lhs { font-family: 'Permanent Marker', cursive; font-size: 30px; color: var(--red); }
+.frac { display: inline-flex; flex-direction: column; align-items: center; }
+.frac .n { border-bottom: 3px solid var(--ink); padding: 0 12px 3px; white-space: nowrap; }
+.frac .d { padding: 3px 12px 0; white-space: nowrap; }
+.root { display: inline-flex; align-items: stretch; }
+.root .sign { font-size: 56px; line-height: 1; margin-right: -2px; align-self: center; font-family: 'DejaVu Sans', sans-serif; font-weight: 300; }
+.root .under { border-top: 3px solid var(--ink); padding-top: 6px; }
+.legend { font-size: 23px; line-height: 1.3; color: var(--soft); }
+
+.tbl { background: #FFFFFF; border: 3px solid var(--ink); border-radius: 14px 20px 12px 18px; box-shadow: 6px 6px 0 var(--ink); overflow: hidden; }
+.grid { display: grid; font-size: 27px; line-height: 1.3; }
+.grid .h { background: #DDF3E6; padding: 11px 16px; border-bottom: 3px solid var(--ink); font-family: 'Permanent Marker', cursive; font-size: 23px; line-height: 1.2; }
+.grid .c { padding: 10px 16px; }
+.grid .rb { border-right: 2.5px solid var(--ink); }
+.grid .tb { border-top: 2px dashed #C9D3E3; }
+.grid .first { font-family: 'Caveat', cursive; font-weight: 700; font-size: 31px; line-height: 1.1; }
+
+.tip { display: flex; align-items: flex-start; gap: 16px; background: #FFF4C2; border: 3px dashed var(--ink);
+  border-radius: 12px 18px 10px 16px; padding: 14px 20px; transform: rotate(-0.6deg); }
+.tip .lab, .doubt .lab { font-family: 'Permanent Marker', cursive; font-size: 24px; line-height: 1.1; }
+.tip .lab { color: var(--red); }
+.tip .txt, .doubt .txt { font-size: 27px; line-height: 1.3; }
+.stack { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+
+.trick { display: flex; align-items: center; gap: 18px; background: var(--hl); border: 3px dashed var(--ink);
+  border-radius: 12px 18px 10px 16px; padding: 16px 22px; transform: rotate(-0.8deg); }
+.trick .mn { font-family: 'Permanent Marker', cursive; font-size: 40px; line-height: 1.1; color: var(--red); }
+.trick .txt { font-size: 28px; line-height: 1.3; }
+.trick .hl, .link .hl { background: #FFFFFF; }
+
+.steps { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 8px; }
+.step { background: #FFFFFF; border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); padding: 8px 16px;
+  font-size: 25px; line-height: 1.2; max-width: 100%; }
+.step.s0 { border-radius: 12px 18px 11px 16px; } .step.s1 { border-radius: 17px 11px 18px 12px; }
+.step .k { font-family: 'Permanent Marker', cursive; font-size: 20px; color: var(--red); margin-right: 4px; }
+
+.doubt { display: flex; align-items: flex-start; gap: 16px; background: #E1EEFF; border: 3px solid var(--ink);
+  border-radius: 20px 13px 18px 12px; box-shadow: 6px 6px 0 var(--ink); padding: 14px 20px; }
+.doubt .q { font-family: 'Caveat', cursive; font-weight: 700; font-size: 32px; line-height: 1.1; }
+
+.mistake { background: #FFFFFF; border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); padding: 14px 20px 16px;
+  display: flex; flex-direction: column; gap: 10px; }
+.mistake.m0 { border-radius: 16px 24px 18px 26px / 24px 16px 26px 18px; }
+.mistake.m1 { border-radius: 24px 16px 26px 18px / 16px 24px 18px 26px; }
+.mrow { display: flex; gap: 14px; align-items: flex-start; font-size: 27px; line-height: 1.3; }
+.ico { flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; border: 3px solid var(--ink); display: flex; align-items: center; justify-content: center; }
+.ico.no { background: #FFC2D1; } .ico.yes { background: #BDEBD2; }
+.wrong { color: var(--red); }
+.link { display: flex; align-items: center; gap: 16px; background: var(--hl); border: 3px dashed var(--ink);
+  border-radius: 12px 18px 10px 16px; padding: 12px 20px; transform: rotate(-0.8deg); font-size: 27px; line-height: 1.25; }
+.link b { font-family: 'Permanent Marker', cursive; font-weight: 400; color: var(--red); }
+
+.foot { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.swipe { display: flex; align-items: center; gap: 10px; font-family: 'Caveat', cursive; font-weight: 700; font-size: 34px; line-height: 1; color: var(--red); }
+.brand { display: flex; align-items: center; gap: 18px; }
+.names { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.bname { font-family: 'Permanent Marker', cursive; font-size: 26px; line-height: 1; color: var(--red); }
+.handle { font-size: 22px; line-height: 1; color: var(--soft); }
+.photo { position: relative; background: #FFFFFF; border: 3px solid var(--ink); padding: 5px; box-shadow: 4px 4px 0 var(--ink); transform: rotate(3deg); }
+.photo img { display: block; width: 82px; height: 80px; object-fit: contain; }
+.tape { position: absolute; top: -13px; left: 50%; width: 60px; height: 22px; margin-left: -30px; background: var(--wash);
+  opacity: 0.92; border: 1.5px solid rgba(31, 42, 68, 0.25); transform: rotate(-6deg); }
+</style>
+</head>
+<body>
+{%- macro squiggle(w=150) -%}
+<svg width="{{ w }}" height="16" viewBox="0 0 160 16" preserveAspectRatio="none"><path class="red" d="M4 10 Q 20 2, 36 10 T 68 10 T 100 10 T 132 10 T 156 8"></path></svg>
+{%- endmacro -%}
+{%- macro bulb(w=34) -%}
+<svg width="{{ w }}" height="{{ (w * 44 / 34)|round|int }}" viewBox="0 0 34 44" style="flex-shrink: 0"><path class="ink-fill" d="M17 3 C 7 3, 3 11, 5 18 C 7 24, 11 25, 11 31 L23 31 C 23 25, 27 24, 29 18 C 31 11, 27 3, 17 3 Z" fill="#FFFFFF"></path><path class="ink" d="M12 36 L22 36"></path><path class="ink" d="M13 41 L21 41"></path></svg>
+{%- endmacro -%}
+{%- macro arrow() -%}
+<svg width="60" height="24" viewBox="0 0 60 24"><path class="red" d="M4 12 C 20 6, 36 16, 54 12"></path><path class="red" d="M44 4 L55 12 L44 20"></path></svg>
+{%- endmacro -%}
+{%- macro small_arrow() -%}
+<svg class="arr" width="30" height="16" viewBox="0 0 30 16" style="flex-shrink: 0"><path class="red" d="M3 8 C 10 5, 18 11, 26 8"></path><path class="red" d="M20 3 L27 8 L20 13"></path></svg>
+{%- endmacro -%}
+
+<div class="page">
+<div class="margin"></div>
+<div class="hole" style="top: 200px"></div>
+<div class="hole" style="top: 660px"></div>
+<div class="hole" style="top: 1120px"></div>
+
+<div class="top">
+  <div class="kicker">{{ course.name }} · {{ c.paper_code }} · Concept of the day</div>
+  <div class="sticker{% if slide == total %} last{% endif %}">{{ slide }} / {{ total }}</div>
+</div>
+
+{% if slide == 1 %}
+<div class="titles">
+  {% if c.title_highlight %}
+  <div class="t1 fit-w">{{ c.title }}</div>
+  <div class="t2row">
+    <div class="t2 fit-w">{{ c.title_highlight }}</div>
+    {% if c.hook %}<div class="hook">{{ c.hook }}</div>{% endif %}
+  </div>
+  {% else %}
+  <div class="t2row">
+    <div class="t1 fit-w">{{ c.title }}</div>
+    {% if c.hook %}<div class="hook">{{ c.hook }}</div>{% endif %}
+  </div>
+  {% endif %}
+  <div class="subtitle">{{ c.paper_name }}</div>
+</div>
+{% else %}
+<div class="shead">
+  <div class="shead-left">
+    <div class="st fit-w">{{ heading }}</div>
+    {{ squiggle(170) }}
+    <div class="subtitle">{{ c.topic }}</div>
+  </div>
+  {% if hook %}<div class="hook">{{ hook }}</div>{% endif %}
+</div>
+{% endif %}
+
+<div class="content" id="content"><div class="inner" id="inner">
+{% if slide == 1 %}
+  <div class="simple"><span class="lab">In simple words</span><span class="txt">{{ c.simple_words|mark }}</span></div>
+  {% for d in c.definitions %}
+  <div class="card f{{ loop.index0 % 4 }}">
+    <div class="term-row"><div class="badge">{{ loop.index }}</div><div class="term">{{ d.term }}</div></div>
+    <div class="meaning">{{ d.meaning|mark }}</div>
+    {% if d.note %}<div class="note">{{ d.note|mark }}</div>{% endif %}
+  </div>
+  {% endfor %}
+  <div class="row">
+    <div class="grow points">
+      {% for p in c.key_points %}
+      <div class="point"><div class="num">{{ loop.index }}</div><div>{{ p|mark }}</div></div>
+      {% endfor %}
+    </div>
+    <div class="doodle">{{ doodle_svg|safe }}</div>
+  </div>
+
+{% elif slide == 2 %}
+  {% for f in c.formulas %}
+  <div class="fbox r{{ loop.index0 % 3 }}">
+    {% if f.name %}<div class="fname">{{ f.name }}</div>{% endif %}
+    <div class="fline">
+      {% if f.lhs %}<span class="lhs">{{ f.lhs }}</span><span>=</span>{% endif %}
+      {% if f.denominator %}
+        {% if f.square_root %}<span class="root"><span class="sign">√</span><span class="under"><span class="frac"><span class="n">{{ f.numerator }}</span><span class="d">{{ f.denominator }}</span></span></span></span>
+        {% else %}<span class="frac"><span class="n">{{ f.numerator }}</span><span class="d">{{ f.denominator }}</span></span>{% endif %}
+        {% if f.suffix %}<span>{{ f.suffix }}</span>{% endif %}
+      {% else %}
+        <span>{{ f.rhs }}</span>
+      {% endif %}
+    </div>
+    {% if f.legend %}<div class="legend">{{ f.legend }}</div>{% endif %}
+  </div>
+  {% endfor %}
+  {% if c.table and c.table.rows %}
+  {% set ncol = c.table.headers|length %}
+  <div class="tbl">
+    <div class="grid" style="grid-template-columns: {% if ncol == 3 %}minmax(0, 1fr) minmax(0, 1.45fr) minmax(0, 1.45fr){% else %}minmax(0, 1fr) minmax(0, 1.8fr){% endif %}">
+      {% for h in c.table.headers %}<div class="h{% if not loop.last %} rb{% endif %}">{{ h }}</div>{% endfor %}
+      {% for r in c.table.rows %}{% set ri = loop.index0 %}
+        {% for cell in r %}<div class="c{% if not loop.last %} rb{% endif %}{% if ri > 0 %} tb{% endif %}{% if loop.first %} first{% endif %}">{{ cell|mark }}</div>{% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  {% if c.insight and c.insight.punchline %}
+  <div class="link">{{ bulb(30) }}<div><b>{{ c.insight.punchline }}</b> {{ c.insight.text|mark }}</div></div>
+  {% endif %}
+
+{% elif slide == 3 %}
+  <div class="trick">
+    <svg width="64" height="78" viewBox="-12 -10 58 64" style="flex-shrink: 0"><path class="ink-fill" d="M17 3 C 7 3, 3 11, 5 18 C 7 24, 11 25, 11 31 L23 31 C 23 25, 27 24, 29 18 C 31 11, 27 3, 17 3 Z" fill="#FFFFFF"></path><path class="ink" d="M12 36 L22 36"></path><path class="ink" d="M13 41 L21 41"></path><path class="red" d="M17 -6 L17 -2"></path><path class="red" d="M-6 12 L-2 13"></path><path class="red" d="M40 12 L36 13"></path><path class="red" d="M0 -2 L3 2"></path><path class="red" d="M34 -2 L31 2"></path></svg>
+    <div class="stack">
+      <div class="mn">{{ c.memory_trick.mnemonic }}</div>
+      <div class="txt">{{ c.memory_trick.explanation|mark }}</div>
+    </div>
+  </div>
+  <div class="stack" style="gap: 12px">
+    <div class="sec"><div class="name">How to attempt it</div>{{ squiggle(120) }}</div>
+    <div class="steps">
+      {% for s in c.steps %}
+      <div class="step s{{ loop.index0 % 2 }}"><span class="k">{{ loop.index }}</span>{{ s }}</div>
+      {% if not loop.last %}{{ small_arrow() }}{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% if c.exam_tip %}
+  <div class="tip">{{ bulb(30) }}<div class="stack"><div class="lab">Exam Tip</div><div class="txt">{{ c.exam_tip|mark }}</div></div></div>
+  {% endif %}
+  {% if c.doubt and c.doubt.question %}
+  <div class="doubt">
+    <svg width="44" height="42" viewBox="0 0 34 32" style="flex-shrink: 0"><path class="ink-fill" d="M4 6 C 4 3, 6 2, 9 2 L 27 2 C 30 2, 32 3, 32 6 L 32 18 C 32 21, 30 22, 27 22 L 14 22 L 7 29 L 8 22 C 5 22, 4 21, 4 18 Z" fill="#FFFFFF"></path><path class="thin" d="M14 9 C 14 5, 22 5, 22 9 C 22 12, 18 12, 18 15"></path><circle class="dot" cx="18" cy="18.5" r="1.6"></circle></svg>
+    <div class="stack"><div class="lab">Doubt Buster</div><div class="txt"><span class="q">{{ c.doubt.question }}</span> {{ c.doubt.answer|mark }}</div></div>
+  </div>
+  {% endif %}
+
+{% else %}
+  {% for m in c.mistakes %}
+  <div class="mistake m{{ loop.index0 % 2 }}">
+    <div class="mrow"><div class="ico no"><svg width="20" height="20" viewBox="0 0 20 20"><path class="red" d="M3 3 L17 17"></path><path class="red" d="M17 3 L3 17"></path></svg></div><div class="wrong">{{ m.wrong|mark }}</div></div>
+    <div class="mrow"><div class="ico yes"><svg width="22" height="20" viewBox="0 0 22 20"><path class="ink" d="M3 11 L9 17 L19 3"></path></svg></div><div>{{ m.right|mark }}</div></div>
+  </div>
+  {% endfor %}
+  <div class="link">{{ bulb(30) }}<div><b>Tomorrow's {{ course.name }} MCQ tests this!</b> Revise it tonight, then try the MCQ.</div></div>
+{% endif %}
+</div></div>
+
+<div class="foot">
+  {% if slide < total %}
+  <div class="swipe"><span>{{ swipe }}</span>{{ arrow() }}</div>
+  {% else %}
+  <div class="swipe"><svg width="26" height="32" viewBox="0 0 26 32"><path class="red" d="M4 3 L22 3 L22 29 L13 21 L4 29 Z"></path></svg><span>Save this for revision!</span></div>
+  {% endif %}
+  <div class="brand">
+    <div class="names">
+      <div class="bname">{{ c.author or brand.name }}</div>
+      {% if brand.handle %}<div class="handle">{{ brand.handle }}</div>{% endif %}
+    </div>
+    {% if logo %}<div class="photo"><div class="tape"></div><img src="{{ logo }}" alt=""></div>{% endif %}
+  </div>
+</div>
+</div>
+
+<script>
+// Waits for the handwriting fonts, shrinks over-wide titles, then fits the content block:
+// shrinks it (down to 84%) if it's too tall, or opens up the gaps if there's room to spare.
+// a step arrow that wrapped to the start of a new line points nowhere: hide it
+function hideWrappedArrows() {
+  for (const a of document.querySelectorAll('.steps .arr')) {
+    a.style.visibility = 'visible';
+    const prev = a.previousElementSibling;
+    if (prev && a.offsetTop > prev.offsetTop + prev.offsetHeight / 2) a.style.visibility = 'hidden';
+  }
+}
+window.fitSlide = async function () {
+  const families = {{ families|tojson }};
+  const fonts = {};
+  for (const f of families) {
+    try { const faces = await document.fonts.load('40px "' + f + '"', 'Aa1'); fonts[f] = faces.length > 0 && faces.every(x => x.status === 'loaded'); }
+    catch (e) { fonts[f] = false; }
+  }
+  await document.fonts.ready;
+  for (const el of document.querySelectorAll('.fit-w')) {
+    const max = el.parentElement.clientWidth - (el.nextElementSibling ? el.nextElementSibling.offsetWidth + 20 : 0);
+    let size = parseFloat(getComputedStyle(el).fontSize);
+    while (el.offsetWidth > max && size > 40) { size -= 2; el.style.fontSize = size + 'px'; }
+  }
+  const box = document.getElementById('content'), inner = document.getElementById('inner');
+  const need = () => inner.getBoundingClientRect().height;
+  const room = box.clientHeight;
+  const setZoom = z => { inner.style.zoom = z; hideWrappedArrows(); };
+  let zoom = 1; setZoom(zoom);
+  if (need() <= room + 1) {             // room to spare: grow up to 130% for easier reading on a phone
+    while (zoom < 1.3) { const z = Math.round((zoom + 0.02) * 100) / 100; setZoom(z); if (need() > room + 1) { setZoom(zoom); break; } zoom = z; }
+    let gap = 24;
+    while (gap < 56) { inner.style.gap = (gap + 4) + 'px'; if (need() > room + 1) { inner.style.gap = gap + 'px'; break; } gap += 4; }
+  }
+  while (need() > room + 1 && zoom > 0.84) { zoom = Math.round((zoom - 0.02) * 100) / 100; setZoom(zoom); }
+  const full = Math.round(need() / zoom);
+  return { zoom: zoom, overflow: need() > room + 1, need: full, room: room, fonts: fonts };
+};
+</script>
+</body>
+</html>

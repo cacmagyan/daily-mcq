@@ -22,7 +22,7 @@ models:
 review:
   # github_pr: the evening job opens a pull request; merging it approves the batch.
   # local:     run `python -m mcq_agent approve --date YYYY-MM-DD` yourself.
-  mode: "github_pr"
+  mode: "auto"
 
 instagram:
   graph_host: "graph.instagram.com"   # use "graph.facebook.com" if you connect through a Facebook Page

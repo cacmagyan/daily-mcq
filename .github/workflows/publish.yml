@@ -35,7 +35,10 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
+      # the latest main, so a run that waited in the queue sees posts made in the meantime
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
 
       - uses: actions/setup-python@v6
         with:
@@ -64,10 +67,23 @@ jobs:
         run: |
           git config user.name "mcq-agent"
           git config user.email "mcq-agent@users.noreply.github.com"
-          git add queue/*/posted.json 2>/dev/null || true
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Posted MCQs $(TZ=Asia/Kolkata date +%F_%H%M)"
-          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          # keep a copy of this run's records, then add them to the newest main (another run may have
+          # recorded posts at the same time; both sets are kept)
+          SAVED="$RUNNER_TEMP/posted"
+          mkdir -p "$SAVED"
+          for f in queue/*/posted.json; do
+            [ -f "$f" ] || continue
+            mkdir -p "$SAVED/$(dirname "$f")" && cp "$f" "$SAVED/$f"
+          done
+          for i in 1 2 3 4; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python -m mcq_agent merge-posted "$SAVED"
+            git add queue/*/posted.json 2>/dev/null || true
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -m "Posted MCQs $(TZ=Asia/Kolkata date +%F_%H%M)"
+            git push -q origin HEAD:main && exit 0
+            sleep 5
+          done
           exit 1
 
       # Ticks off what was posted in the day's report issue, and closes it after the last post.

@@ -116,6 +116,9 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("mode", help="print the review mode (auto, github_pr or local)")
 
+    s = sub.add_parser("todo", help="print what a day still needs: all, concept or none")
+    s.add_argument("--date", default="tomorrow")
+
     s = sub.add_parser("approve", help="approve a batch (review mode: local)")
     s.add_argument("--date", required=True)
 
@@ -178,6 +181,17 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.cmd == "mode":
         print(cfg.review_mode)
+        return 0
+
+    if args.cmd == "todo":
+        from .batch import load_batch, load_concept
+        date = cfg.resolve_date(args.date)
+        if not load_batch(date):
+            print("all")
+        elif cfg.concept_due(date) and not load_concept(date):
+            print("concept")
+        else:
+            print("none")
         return 0
 
     if args.cmd == "command":

@@ -60,11 +60,29 @@ def _finish(cfg: Config, renderer: Renderer, item: dict, date: dt.date) -> None:
     set_hold(item)
 
 
+def tomorrows_mcq(course_id: str, date: dt.date) -> dict | None:
+    """Tomorrow's MCQ for the course, if it is already written (a day prepared ahead)."""
+    nxt = B.load_batch(date + dt.timedelta(days=1))
+    m = B.find_item(nxt, course_id) if nxt else None
+    return m if m and m.get("topic") and not m.get("error") else None
+
+
+def _concept_paper(cfg: Config, item: dict) -> dict:
+    return (cfg.find_paper(item["course_id"], item["paper_code"], item["paper_name"])
+            or {"code": item["paper_code"], "name": item["paper_name"]})
+
+
 def _concept_base(cfg: Config, date: dt.date) -> dict:
     course = cfg.concept_course(date)
     paper = cfg.concept_paper(date)
-    return {"kind": CONCEPT, "course_id": course["id"], "paper_code": paper["code"],
+    m = tomorrows_mcq(course["id"], date)
+    if m:   # tomorrow's MCQ is already written: the note teaches its topic, from its paper
+        paper = cfg.find_paper(course["id"], m.get("paper_code", ""), m.get("paper_name", "")) or paper
+    base = {"kind": CONCEPT, "course_id": course["id"], "paper_code": paper["code"],
             "paper_name": cfg.paper_title(paper), "author": cfg.author_for(paper)}
+    if m:
+        base["linked_mcq"] = m["topic"]
+    return base
 
 
 def _make_concept(cfg: Config, renderer: Renderer, date: dt.date, instruction: str = "", topic: str = "",
@@ -81,7 +99,9 @@ def _make_concept(cfg: Config, renderer: Renderer, date: dt.date, instruction: s
         paper = next((x for x in papers if x["code"] == item.get("paper_code")), {"code": "", "name": ""})
         item["author"] = cfg.author_for(paper)
     else:
-        course, paper = cfg.course(item["course_id"]), cfg.concept_paper(date)
+        course, paper = cfg.course(item["course_id"]), _concept_paper(cfg, item)
+        if not topic and not instruction:
+            topic = item.get("linked_mcq", "")
         note = write_concept(cfg, course, paper, date, B.recent_concepts(course["id"], date), instruction, topic,
                              fit_check=lambda draft: renderer.measure_concept({**item, **draft}, date))
         item.update(note)
@@ -129,8 +149,11 @@ def prepare(cfg: Config, date: dt.date, course_ids: list[str] | None = None, sam
     want_concept = due and (not course_ids or CONCEPT in course_ids)
     ids = [c for c in (course_ids or cfg.course_ids()) if c != CONCEPT]
     if course_ids and not ids:          # only the concept note
+        if not want_concept:
+            raise SystemExit(f"No concept note is due on {date}: check concepts.enabled and concepts.start_date "
+                             "in config.yaml.")
         with Renderer(cfg) as r:
-            _prepare_concept(cfg, r, date, sample) if want_concept else None
+            _prepare_concept(cfg, r, date, sample)
         return B.load_batch(date) or {"date": date.isoformat(), "items": []}
     existing = B.load_batch(date) or {"date": date.isoformat(), "items": []}
     batch = {"date": date.isoformat(), "day": cfg.day_number(date), "status": "pending_review",

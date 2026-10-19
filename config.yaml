@@ -31,7 +31,7 @@ review:
 authors:
   default: "Rahul kp"
   ranjith: "Ranjith Shivahari"
-  show_on_mcqs: false           # true = MCQ images of those papers carry that name too
+  show_on_mcqs: true            # MCQ images also say who prepared them (false = always the brand name)
 
 # Concept of the day: one 4-slide handwritten-notebook post a day (concept, formula,
 # study trick, common mistakes), one course a day in this order. Tomorrow's MCQ for that

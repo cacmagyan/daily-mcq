@@ -1,0 +1,140 @@
+{
+  "kind": "concept",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 2A",
+  "paper_name": "Financial Accounting-2",
+  "author": "Rahul kp",
+  "topic": "Sacrificing Ratio and Premium on Admission",
+  "title": "Sacrificing Ratio",
+  "title_highlight": "on Admission",
+  "hook": "who gives up, gets the premium!",
+  "simple_words": "Old partners give up some profit share to the new partner, so they share his premium in that lost proportion.",
+  "definitions": [
+    {
+      "term": "Sacrificing Ratio",
+      "meaning": "Ratio in which old partners give up their share of profit in favour of the new partner. It is found as old share minus new share.",
+      "note": "Not the same as the new ratio!"
+    },
+    {
+      "term": "Premium for Goodwill",
+      "meaning": "Amount the new partner brings, over his capital, for the right to share in the firm's existing goodwill. Old partners receive it.",
+      "note": "Credited to old partners"
+    }
+  ],
+  "key_points": [
+    "Sacrifice of each old partner = ==Old share − New share==.",
+    "If the question is silent, assume the new partner takes his share from old partners in their old ratio.",
+    "Premium is shared by old partners in the ==sacrificing ratio==, not in the new ratio.",
+    "!!Do not use the old ratio for premium unless the sacrifice is in the old ratio or the question says so.!!"
+  ],
+  "formula_heading": "The Two Formulas",
+  "formula_hook": "sacrifice first, share later",
+  "formulas": [
+    {
+      "name": "Sacrifice of an old partner",
+      "lhs": "Sacrifice",
+      "rhs": "Old share − New share",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Old share = share before admission. New share = share after admission. A negative answer means the partner gains."
+    },
+    {
+      "name": "New partner's goodwill share",
+      "lhs": "Premium due",
+      "rhs": "Goodwill of firm × New partner's share",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Goodwill = value of firm's goodwill. New partner's share = fraction he gets. Premium is split in the sacrificing ratio."
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "insight": {
+    "punchline": "Premium follows sacrifice!",
+    "text": "The partner who gives up more profit share receives more of the premium."
+  },
+  "trick_hook": "Old minus New",
+  "memory_trick": {
+    "mnemonic": "Old Minus New = Sacrifice True",
+    "explanation": "Always subtract the new share from the old share. Think of a pizza: the slice you lose is what you had minus what you now hold."
+  },
+  "steps": [
+    "Write old shares of all partners",
+    "Find the new partner's share",
+    "Fix new shares of old partners",
+    "Old share − New share = sacrifice",
+    "Divide premium in that ratio"
+  ],
+  "exam_tip": "Check the question wording on how the new share is taken. It decides the sacrificing ratio, so read it before calculating.",
+  "doubt": {
+    "question": "Why not share the premium in the new ratio?",
+    "answer": "Premium compensates for profit share lost. Only the loss, which is the sacrifice, matters. The new ratio shows future profit sharing, not what was given up."
+  },
+  "mistakes_hook": "avoid these slips",
+  "mistakes": [
+    {
+      "wrong": "Sharing the premium in the new profit-sharing ratio",
+      "right": "Share it among old partners in the sacrificing ratio."
+    },
+    {
+      "wrong": "Calculating sacrifice as New share − Old share",
+      "right": "Sacrifice = Old share − New share. A negative result means a gain."
+    },
+    {
+      "wrong": "Crediting the premium to the new partner's capital account",
+      "right": "Credit the old partners' capital accounts in the sacrificing ratio."
+    },
+    {
+      "wrong": "Always using the old ratio to divide the premium",
+      "right": "Use the old ratio only if sacrifice is in the old ratio or the question says so."
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "Key point 4 corrected as per examiner: old ratio applies only when sacrifice is in the old ratio or the question says so. Please confirm the premium treatment matches ICMAI study material.",
+  "law_sensitive": false,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Key point 4 corrected as per examiner: old ratio applies only when sacrifice is in the old ratio or the question says so. Please confirm the premium treatment matches ICMAI study material."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.16,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.22,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 2A: Financial Accounting-2\nSacrificing Ratio and Premium on Admission\n\nIn simple words: Old partners give up some profit share to the new partner, so they share his premium in that lost proportion.\n\nSwipe for the formula, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CMA CAT MCQ (9:55 AM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept-261020",
+  "hold": false,
+  "hold_reason": ""
+}

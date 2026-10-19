@@ -38,7 +38,7 @@ authors:
 # course tests the concept.
 concepts:
   enabled: true
-  start_date: "2026-10-26"      # first concept post; the evening before, it is written
+  start_date: "2026-10-19"      # first concept post (normally written the evening before)
   post_time: "19:40"            # IST; keep matched to the 19:40 line in publish.yml
   courses: ["ca_foundation", "cma_cat", "ca_inter", "cma_inter", "ca_final", "cma_final"]
 

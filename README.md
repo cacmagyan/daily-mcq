@@ -50,7 +50,8 @@ One post a day at **19:40**, one course a day in turn (CA Foundation, CMA CAT, C
 - The paper is the one tomorrow's MCQ for that course uses, and **tomorrow's MCQ tests the concept**. Slide 4 tells students so.
 - **Who signs it:** papers marked `author: ranjith` in `config.yaml` (law, Strategic Management and audit papers) say **Ranjith Shivahari**; all others say **Rahul kp**. CMA Inter Papers 9 and 10 are split into their two halves, each with its own author.
 - A second Claude call checks every statement and formula. If it still finds an error after 3 tries, or the text doesn't fit, the note is held and the day's issue tells you, exactly like an MCQ. Use `/approve concept`, `/regen concept` (a new note on the same concept; add an instruction to change it) or `/hold concept`. The text is in `queue/<date>/concept.json`.
-- Settings are under `concepts:` in `config.yaml` (`start_date`, `post_time`, course order). The handwriting fonts (Permanent Marker, Patrick Hand, Caveat; free licences) are downloaded by GitHub the first time they are needed.
+- Settings are under `concepts:` in `config.yaml` (`start_date`, `post_time`, course order).
+- **Adding a note to a day that's already prepared** (for example after moving `start_date` earlier): Actions → 1. Prepare tomorrow's MCQs → Run workflow, type the date, tick **concept only**. The MCQs stay as they are. If tomorrow's MCQ already exists, the note is written on that MCQ's topic and paper. The evening run does this by itself for tomorrow. The handwriting fonts (Permanent Marker, Patrick Hand, Caveat; free licences) are downloaded by GitHub the first time they are needed.
 
 ## What you need
 

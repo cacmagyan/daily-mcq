@@ -6,7 +6,7 @@
 
 brand:
   name: "Rahul kp"              # signature on every image
-  handle: "@cacmagyan"                    # your Instagram handle, e.g. "@rahulkp.cma" (shown on images + captions)
+  handle: "@cacmagyan"          # your Instagram handle, e.g. "@rahulkp.cma" (shown on images + captions)
   start_date: "2026-10-19"      # Day 1 of the series. Images show "Day N" counted from here.
   logo: "assets/brand/logo.png" # shown top-right on every image; "" for none.
                                 # Replace with: python -m mcq_agent set-logo path/to/logo.png
@@ -20,9 +20,27 @@ models:
   max_attempts: 3               # rewrites allowed when the checker disagrees
 
 review:
+  # auto:      MCQs post by themselves. Any MCQ with a serious problem (answer key not
+  #            confirmed, text cut off) is put on hold and you're notified in a GitHub issue.
   # github_pr: the evening job opens a pull request; merging it approves the batch.
   # local:     run `python -m mcq_agent approve --date YYYY-MM-DD` yourself.
   mode: "auto"
+
+# Who prepares each paper. A paper marked `author: ranjith` is signed "Ranjith Shivahari";
+# every other paper is signed with `default`.
+authors:
+  default: "Rahul kp"
+  ranjith: "Ranjith Shivahari"
+  show_on_mcqs: false           # true = MCQ images of those papers carry that name too
+
+# Concept of the day: one 4-slide handwritten-notebook post a day (concept, formula,
+# study trick, common mistakes), one course a day in this order. Tomorrow's MCQ for that
+# course tests the concept.
+concepts:
+  enabled: true
+  start_date: "2026-10-26"      # first concept post; the evening before, it is written
+  post_time: "19:40"            # IST; keep matched to the 19:40 line in publish.yml
+  courses: ["ca_foundation", "cma_cat", "ca_inter", "cma_inter", "ca_final", "cma_final"]
 
 instagram:
   graph_host: "graph.instagram.com"   # use "graph.facebook.com" if you connect through a Facebook Page
@@ -57,7 +75,8 @@ law_basis:
 #  Courses. Colour = the "ink" the OMR sheet is printed in.
 #  post_time is IST (24 h). Keep times matched to the cron lines in
 #  .github/workflows/publish.yml (see README, "Changing post times").
-#  Papers rotate one per day, in the order listed.
+#  Papers rotate one per day, in the order listed. `part` limits a paper to one half
+#  (a mixed paper gets one entry per half); `author` is who prepares it (see authors).
 # ─────────────────────────────────────────────────────────────
 courses:
   - id: ca_foundation
@@ -70,7 +89,7 @@ courses:
     hashtags: ["#CAFoundation", "#ICAI", "#CAStudents", "#DailyMCQ", "#CAExams"]
     papers:
       - { code: "Paper 1", name: "Accounting" }
-      - { code: "Paper 2", name: "Business Laws" }
+      - { code: "Paper 2", name: "Business Laws", author: ranjith }
       - { code: "Paper 3", name: "Quantitative Aptitude: Business Mathematics" }
       - { code: "Paper 4", name: "Business Economics" }
       - { code: "Paper 3", name: "Quantitative Aptitude: Statistics" }
@@ -87,7 +106,7 @@ courses:
     hashtags: ["#CMACAT", "#ICMAI", "#CATCourse", "#DailyMCQ", "#AccountingTechnician"]
     papers:   # Part I (the examined part, MCQ on OMR)
       - { code: "Paper 1A", name: "Fundamentals of Financial Accounting" }
-      - { code: "Paper 1B", name: "Applied Business and Industrial Laws" }
+      - { code: "Paper 1B", name: "Applied Business and Industrial Laws", author: ranjith }
       - { code: "Paper 2A", name: "Financial Accounting-2" }
       - { code: "Paper 2B", name: "Statutory Compliance", law: statutory }
 
@@ -102,12 +121,12 @@ courses:
     papers:
       - { code: "Paper 1", name: "Advanced Accounting" }
       - { code: "Paper 4", name: "Cost and Management Accounting" }
-      - { code: "Paper 2", name: "Corporate and Other Laws" }
+      - { code: "Paper 2", name: "Corporate and Other Laws", author: ranjith }
       - { code: "Paper 6A", name: "Financial Management" }
       - { code: "Paper 3A", name: "Income-tax Law", law: ca_income_tax }
-      - { code: "Paper 5", name: "Auditing and Ethics" }
+      - { code: "Paper 5", name: "Auditing and Ethics", author: ranjith }
       - { code: "Paper 3B", name: "Goods and Services Tax", law: ca_gst }
-      - { code: "Paper 6B", name: "Strategic Management" }
+      - { code: "Paper 6B", name: "Strategic Management", author: ranjith }
 
   - id: cma_inter
     name: "CMA Inter"
@@ -121,11 +140,13 @@ courses:
       - { code: "Paper 8", name: "Cost Accounting" }
       - { code: "Paper 6", name: "Financial Accounting" }
       - { code: "Paper 11", name: "Financial Management and Business Data Analytics" }
-      - { code: "Paper 5", name: "Business Laws and Ethics" }
+      - { code: "Paper 5", name: "Business Laws and Ethics", author: ranjith }
       - { code: "Paper 12", name: "Management Accounting" }
       - { code: "Paper 7", name: "Direct and Indirect Taxation", law: cma_tax }
-      - { code: "Paper 10", name: "Corporate Accounting and Auditing" }
-      - { code: "Paper 9", name: "Operations Management and Strategic Management" }
+      - { code: "Paper 10", name: "Corporate Accounting and Auditing", part: "Corporate Accounting" }
+      - { code: "Paper 9", name: "Operations Management and Strategic Management", part: "Operations Management" }
+      - { code: "Paper 10", name: "Corporate Accounting and Auditing", part: "Auditing", author: ranjith }
+      - { code: "Paper 9", name: "Operations Management and Strategic Management", part: "Strategic Management", author: ranjith }
 
   - id: ca_final
     name: "CA Final"
@@ -138,7 +159,7 @@ courses:
     papers:
       - { code: "Paper 1", name: "Financial Reporting" }
       - { code: "Paper 2", name: "Advanced Financial Management" }
-      - { code: "Paper 3", name: "Advanced Auditing, Assurance and Professional Ethics" }
+      - { code: "Paper 3", name: "Advanced Auditing, Assurance and Professional Ethics", author: ranjith }
       - { code: "Paper 4", name: "Direct Tax Laws and International Taxation", law: ca_income_tax }
       - { code: "Paper 5", name: "Indirect Tax Laws", law: ca_gst }
 
@@ -154,8 +175,8 @@ courses:
       - { code: "Paper 14", name: "Strategic Financial Management" }
       - { code: "Paper 16", name: "Strategic Cost Management" }
       - { code: "Paper 18", name: "Corporate Financial Reporting" }
-      - { code: "Paper 13", name: "Corporate and Economic Laws" }
+      - { code: "Paper 13", name: "Corporate and Economic Laws", author: ranjith }
       - { code: "Paper 15", name: "Direct Tax Laws and International Taxation", law: cma_tax }
-      - { code: "Paper 17", name: "Cost and Management Audit" }
+      - { code: "Paper 17", name: "Cost and Management Audit", author: ranjith }
       - { code: "Paper 19", name: "Indirect Tax Laws and Practice", law: cma_tax }
       - { code: "Paper 20A", name: "Strategic Performance Management and Business Valuation" }

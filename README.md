@@ -1,6 +1,6 @@
 # Daily CA & CMA MCQ agent
 
-Every day this agent writes one MCQ for each of six courses, draws a **question image** and an **answer image** for each, waits for your approval, and posts each pair to Instagram as a two-slide carousel (swipe for the answer).
+Every day this agent writes one MCQ for each of six courses, draws a **question image** and an **answer image** for each, and posts each pair to Instagram as a two-slide carousel (swipe for the answer). It also posts one **Concept of the day**: a 4-slide handwritten-notebook note (see below).
 
 Each course has its own colour, so students can spot their MCQ in the feed and on your profile grid:
 
@@ -37,6 +37,20 @@ To act on a day, comment on its issue:
 - Something already posted can't be changed by the agent; edit or delete it in the Instagram app.
 
 **Prefer to approve every day yourself?** Set `mode: "github_pr"`. The evening job then opens a pull request instead, and nothing posts until you merge it. `/regen` works in the pull request too.
+
+## Concept of the day
+
+One post a day at **19:40**, one course a day in turn (CA Foundation, CMA CAT, CA Inter, CMA Inter, CA Final, CMA Final). It is a 4-slide carousel in the Costing Concept Book style: cream ruled notebook page, red marker titles, handwriting, pastel cards and doodles, with the course colour on the top label.
+
+1. **Concept**: title, "In simple words", definition cards, key points.
+2. **Formula**: formulas with symbol legends, or a comparison table for theory and law topics, plus a key insight.
+3. **Study trick**: a memory trick, how to attempt it in the exam, an exam tip and a doubt buster.
+4. **Common mistakes**: what students write wrongly and the correct way, and "Save this for revision!".
+
+- The paper is the one tomorrow's MCQ for that course uses, and **tomorrow's MCQ tests the concept**. Slide 4 tells students so.
+- **Who signs it:** papers marked `author: ranjith` in `config.yaml` (law, Strategic Management and audit papers) say **Ranjith Shivahari**; all others say **Rahul kp**. CMA Inter Papers 9 and 10 are split into their two halves, each with its own author.
+- A second Claude call checks every statement and formula. If it still finds an error after 3 tries, or the text doesn't fit, the note is held and the day's issue tells you, exactly like an MCQ. Use `/approve concept`, `/regen concept` (a new note on the same concept; add an instruction to change it) or `/hold concept`. The text is in `queue/<date>/concept.json`.
+- Settings are under `concepts:` in `config.yaml` (`start_date`, `post_time`, course order). The handwriting fonts (Permanent Marker, Patrick Hand, Caveat; free licences) are downloaded by GitHub the first time they are needed.
 
 ## What you need
 

@@ -1,7 +1,10 @@
-name: 3. Rewrite one MCQ (/regen comment)
+name: 3. Fix an MCQ (/regen, /approve, /hold)
 
-# Comment on a review pull request:  /regen ca_inter            (new MCQ, same paper)
-#                                    /regen cma_final make it a numerical on WACC
+# Comment on a day's report issue (or a review pull request):
+#   /hold ca_inter                            stop it from posting
+#   /approve ca_inter                         post a held MCQ as it is
+#   /regen ca_inter                           replace it with a new MCQ (posts by itself if the check passes)
+#   /regen cma_final make it a numerical on WACC
 on:
   issue_comment:
     types: [created]
@@ -9,34 +12,44 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
-  regen:
+  command:
     if: >-
-      github.event.issue.pull_request &&
-      startsWith(github.event.comment.body, '/regen') &&
-      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association) &&
+      (startsWith(github.event.comment.body, '/regen') ||
+       startsWith(github.event.comment.body, '/approve') ||
+       startsWith(github.event.comment.body, '/hold')) &&
+      (github.event.issue.pull_request || contains(github.event.issue.title, 'MCQs for '))
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     concurrency:
-      group: regen-${{ github.event.issue.number }}
+      group: command-${{ github.event.issue.number }}
       cancel-in-progress: false
     env:
       GH_TOKEN: ${{ github.token }}
       NUMBER: ${{ github.event.issue.number }}
+      TITLE: ${{ github.event.issue.title }}
+      IS_PR: ${{ github.event.issue.pull_request && 'true' || 'false' }}
     steps:
-      - name: Find the batch branch
-        id: pr
+      - name: Find the day
+        id: target
         run: |
-          BRANCH=$(gh pr view "$NUMBER" --repo "$GITHUB_REPOSITORY" --json headRefName -q .headRefName)
-          DATE="${BRANCH#batch/}"
-          [[ "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "Not a batch pull request"; exit 1; }
+          if [ "$IS_PR" = "true" ]; then
+            BRANCH=$(gh pr view "$NUMBER" --repo "$GITHUB_REPOSITORY" --json headRefName -q .headRefName)
+            DATE="${BRANCH#batch/}"
+          else
+            BRANCH=main
+            DATE=$(printf '%s' "$TITLE" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}' | head -n 1)
+          fi
+          [[ "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "::error::No date in this issue or pull request"; exit 1; }
           echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
       - uses: actions/checkout@v5
         with:
-          ref: ${{ steps.pr.outputs.branch }}
+          ref: ${{ steps.target.outputs.branch }}
 
       - uses: actions/setup-python@v6
         with:
@@ -46,37 +59,50 @@ jobs:
       - name: Install
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          COMMENT: ${{ github.event.comment.body }}
         run: |
           pip install -r requirements.txt
-          python -m playwright install --with-deps chromium
-          # Claude Code is only needed when MCQs are written with your Claude subscription
-          if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then npm install -g @anthropic-ai/claude-code; claude --version; fi
+          # drawing and Claude are only needed for /regen
+          if [[ "$COMMENT" == /regen* ]]; then
+            python -m playwright install --with-deps chromium
+            if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then npm install -g @anthropic-ai/claude-code; fi
+          fi
 
-      - name: Rewrite the MCQ
-        id: regen
+      - name: Run the command
+        id: cmd
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           COMMENT: ${{ github.event.comment.body }}
-          DATE: ${{ steps.pr.outputs.date }}
-        run: python -m mcq_agent regen --date "$DATE" --comment "$COMMENT" --github-output "$GITHUB_OUTPUT"
+          DATE: ${{ steps.target.outputs.date }}
+        run: python -m mcq_agent command --date "$DATE" --comment "$COMMENT" --github-output "$GITHUB_OUTPUT"
 
-      - name: Save and update the pull request
+      - name: Save and report back
         env:
-          DATE: ${{ steps.pr.outputs.date }}
-          BRANCH: ${{ steps.pr.outputs.branch }}
-          COURSE: ${{ steps.regen.outputs.course }}
+          DATE: ${{ steps.target.outputs.date }}
+          BRANCH: ${{ steps.target.outputs.branch }}
+          SUMMARY: ${{ steps.cmd.outputs.summary }}
+          ACTION: ${{ steps.cmd.outputs.action }}
+          COURSE: ${{ steps.cmd.outputs.course }}
         run: |
           git config user.name "mcq-agent"
           git config user.email "mcq-agent@users.noreply.github.com"
           git add "queue/$DATE"
-          git commit -m "Rewrite $COURSE MCQ for $DATE"
-          git push
-          python -m mcq_agent pr-body --date "$DATE" --branch "$BRANCH" > "$RUNNER_TEMP/body.md"
-          gh pr edit "$NUMBER" --body-file "$RUNNER_TEMP/body.md"
-          gh pr comment "$NUMBER" --body "Rewrote the **$COURSE** MCQ. The table and images in the description are updated."
+          if ! git diff --cached --quiet; then
+            git commit -m "/$ACTION $COURSE for $DATE"
+            for i in 1 2 3; do git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH" && break; sleep 5; done
+          fi
+          if [ "$IS_PR" = "true" ]; then
+            python -m mcq_agent pr-body --date "$DATE" --branch "$BRANCH" > "$RUNNER_TEMP/body.md"
+            gh pr edit "$NUMBER" --body-file "$RUNNER_TEMP/body.md"
+          else
+            python -m mcq_agent report --date "$DATE" > "$RUNNER_TEMP/body.md"
+            gh issue edit "$NUMBER" --title "$(python -m mcq_agent report-title --date "$DATE")" --body-file "$RUNNER_TEMP/body.md"
+          fi
+          printf '✅ %s\n\nThe report above is updated.' "$SUMMARY" > "$RUNNER_TEMP/reply.md"
+          gh issue comment "$NUMBER" --body-file "$RUNNER_TEMP/reply.md"
 
       - name: Report a failure
         if: failure()
         run: |
-          gh pr comment "$NUMBER" --body "Couldn't rewrite that MCQ; see the Actions tab for the log. Format: \`/regen <course_id> [instruction]\`"
+          gh issue comment "$NUMBER" --body "❌ Couldn't do that; open the Actions tab for the log. Write it as \`/regen <course> [instruction]\`, \`/approve <course>\` or \`/hold <course>\`."

@@ -1,18 +1,20 @@
 name: 2. Redraw images after an edit
 
-# When you edit queue/<date>/mcqs.json in a review pull request, the images are redrawn.
+# When you edit queue/<date>/mcqs.json (on main or in a review pull request), the images are redrawn
+# and the day's report is updated.
 on:
   push:
-    branches: ["batch/**"]
+    branches: ["main", "batch/**"]
     paths: ["queue/**/mcqs.json"]
 
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 concurrency:
   group: rerender-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   redraw:
@@ -20,6 +22,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
 
       - uses: actions/setup-python@v6
         with:
@@ -31,19 +35,36 @@ jobs:
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
 
-      - name: Redraw and update the pull request
+      - name: Redraw, save and update the report
         env:
           GH_TOKEN: ${{ github.token }}
           BRANCH: ${{ github.ref_name }}
         run: |
-          DATE="${BRANCH#batch/}"
-          [[ "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "Not a batch branch"; exit 1; }
-          python -m mcq_agent render --date "$DATE"
+          if [[ "$BRANCH" == batch/* ]]; then
+            DATES="${BRANCH#batch/}"
+          else
+            DATES=$(git diff --name-only HEAD~1 HEAD -- 'queue/*/mcqs.json' | cut -d/ -f2 | sort -u)
+          fi
           git config user.name "mcq-agent"
           git config user.email "mcq-agent@users.noreply.github.com"
-          git add "queue/$DATE"
-          if git diff --cached --quiet; then echo "Images already up to date"; exit 0; fi
-          git commit -m "Redraw images for $DATE"
-          git push
-          python -m mcq_agent pr-body --date "$DATE" --branch "$BRANCH" > "$RUNNER_TEMP/body.md"
-          gh pr edit "$BRANCH" --body-file "$RUNNER_TEMP/body.md" || true
+          for DATE in $DATES; do
+            [[ "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || continue
+            python -m mcq_agent render --date "$DATE"
+            git add "queue/$DATE"
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m "Redraw images for $(echo $DATES | tr ' ' ',')"
+            for i in 1 2 3; do git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH" && break; sleep 5; done
+          fi
+          for DATE in $DATES; do
+            if [[ "$BRANCH" == batch/* ]]; then
+              python -m mcq_agent pr-body --date "$DATE" --branch "$BRANCH" > "$RUNNER_TEMP/body.md"
+              gh pr edit "$BRANCH" --body-file "$RUNNER_TEMP/body.md" || true
+            else
+              NUM=$(gh issue list --label mcq-day --state open --search "\"MCQs for $DATE\" in:title" --json number -q '.[0].number')
+              if [ -n "$NUM" ]; then
+                python -m mcq_agent report --date "$DATE" > "$RUNNER_TEMP/body.md"
+                gh issue edit "$NUM" --title "$(python -m mcq_agent report-title --date "$DATE")" --body-file "$RUNNER_TEMP/body.md"
+              fi
+            fi
+          done

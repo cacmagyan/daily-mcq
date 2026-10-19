@@ -1,6 +1,9 @@
 name: 1. Prepare tomorrow's MCQs
 
-# Every evening: writes 6 MCQs, draws 12 images, opens a pull request for you to review.
+# Every evening: writes tomorrow's 6 MCQs and draws 12 images.
+#   auto mode (config.yaml):  approves them itself and opens the day's report issue. Any MCQ with a
+#                             serious problem is held back and you're @mentioned the evening before.
+#   github_pr mode:           opens a pull request; merging it approves the batch.
 on:
   schedule:
     - cron: "17 13 * * *"          # 18:47 IST
@@ -14,13 +17,14 @@ on:
         type: boolean
         default: false
       redraw_only:
-        description: "Only redraw an already-approved day (keeps its MCQs; needs the date)"
+        description: "Only redraw an existing day (keeps its MCQs; needs the date)"
         type: boolean
         default: false
 
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 concurrency:
   group: prepare
@@ -33,14 +37,14 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      # The evening run skips a day you have already approved (its folder is on main).
-      - name: Already approved?
+      # The evening run skips a day that is already prepared (its folder is on main).
+      - name: Already prepared?
         id: skip
         if: github.event_name == 'schedule'
         run: |
           NEXT=$(TZ=Asia/Kolkata date -d tomorrow +%F)
           if [ -f "queue/$NEXT/mcqs.json" ]; then
-            echo "::notice::MCQs for $NEXT are already approved, so there is nothing to prepare tonight."
+            echo "::notice::MCQs for $NEXT are already prepared, so there is nothing to do tonight."
             echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
 
@@ -70,6 +74,7 @@ jobs:
           INPUT_SAMPLE: ${{ inputs.sample }}
           INPUT_REDRAW: ${{ inputs.redraw_only }}
         run: |
+          echo "mode=$(python -m mcq_agent mode)" >> "$GITHUB_OUTPUT"
           if [ "$INPUT_REDRAW" = "true" ]; then
             [[ "$INPUT_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "::error::Redraw needs the date, e.g. 2026-10-20"; exit 1; }
             python -m mcq_agent render --date "$INPUT_DATE"
@@ -80,8 +85,32 @@ jobs:
           if [ "$INPUT_SAMPLE" = "true" ]; then ARGS+=(--sample); fi
           python -m mcq_agent prepare "${ARGS[@]}" --github-output "$GITHUB_OUTPUT"
 
+      # Sample MCQs never post by themselves: they always go to a pull request.
+      - name: Approve automatically and post the day's report
+        if: steps.skip.outputs.skip != 'true' && steps.prep.outputs.mode == 'auto' && inputs.sample != true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE: ${{ steps.prep.outputs.batch_date }}
+        run: |
+          git config user.name "mcq-agent"
+          git config user.email "mcq-agent@users.noreply.github.com"
+          git add "queue/$DATE"
+          if ! git diff --cached --quiet; then
+            git commit -m "MCQs for $DATE (approved automatically)"
+            for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
+          fi
+          python -m mcq_agent report --date "$DATE" > "$RUNNER_TEMP/report.md"
+          TITLE=$(python -m mcq_agent report-title --date "$DATE")
+          gh label create mcq-day --color 0E8A16 --description "Daily MCQ report" --force >/dev/null 2>&1 || true
+          NUM=$(gh issue list --label mcq-day --state open --search "\"MCQs for $DATE\" in:title" --json number -q '.[0].number')
+          if [ -n "$NUM" ]; then
+            gh issue edit "$NUM" --title "$TITLE" --body-file "$RUNNER_TEMP/report.md"
+          else
+            gh issue create --title "$TITLE" --label mcq-day --body-file "$RUNNER_TEMP/report.md"
+          fi
+
       - name: Open the review pull request
-        if: steps.skip.outputs.skip != 'true'
+        if: steps.skip.outputs.skip != 'true' && (steps.prep.outputs.mode != 'auto' || inputs.sample == true)
         env:
           GH_TOKEN: ${{ github.token }}
           DATE: ${{ steps.prep.outputs.batch_date }}

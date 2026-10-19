@@ -20,6 +20,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: publish
@@ -64,3 +65,20 @@ jobs:
           git commit -m "Posted MCQs $(TZ=Asia/Kolkata date +%F_%H%M)"
           for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
           exit 1
+
+      # Ticks off what was posted in the day's report issue, and closes it after the last post.
+      - name: Update the day's report
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LAST_SLOT: ${{ github.event.schedule == '27 15 * * *' }}
+        run: |
+          DATE=$(TZ=Asia/Kolkata date +%F)
+          [ -f "queue/$DATE/mcqs.json" ] || exit 0
+          NUM=$(gh issue list --label mcq-day --state open --search "\"MCQs for $DATE\" in:title" --json number -q '.[0].number' || true)
+          [ -n "$NUM" ] || exit 0
+          python -m mcq_agent report --date "$DATE" > "$RUNNER_TEMP/report.md"
+          gh issue edit "$NUM" --title "$(python -m mcq_agent report-title --date "$DATE")" --body-file "$RUNNER_TEMP/report.md"
+          if [ "$LAST_SLOT" = "true" ]; then
+            gh issue close "$NUM" --comment "Day finished. Final status is in the report above."
+          fi

@@ -1,0 +1,309 @@
+{
+  "items": [
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 8",
+      "paper_name": "Cost Accounting",
+      "topic": "Economic Order Quantity (EOQ)",
+      "title": "Economic Order",
+      "title_highlight": "Quantity (EOQ)",
+      "hook": "order the right qty, every time!",
+      "simple_words": "EOQ is the order size at which ordering cost + carrying cost is the lowest.",
+      "definitions": [
+        {
+          "term": "Ordering cost",
+          "meaning": "Cost of placing and receiving an order: ==order processing, transport, receiving and inspection==. Falls as order size rises (fewer orders).",
+          "note": ""
+        },
+        {
+          "term": "Carrying cost",
+          "meaning": "Cost of holding stock: ==storage, insurance, interest on capital, obsolescence==. Rises as order size rises (more average stock).",
+          "note": ""
+        }
+      ],
+      "key_points": [
+        "At EOQ, ==total ordering cost = total carrying cost==.",
+        "Average stock = EOQ ÷ 2 (when there is no safety stock).",
+        "Number of orders in a year = Annual demand ÷ EOQ."
+      ],
+      "formula_heading": "The EOQ Formula",
+      "formula_hook": "write it 3 times!",
+      "formulas": [
+        {
+          "name": "Economic Order Quantity",
+          "lhs": "EOQ",
+          "rhs": "",
+          "numerator": "2 × A × O",
+          "denominator": "C",
+          "square_root": true,
+          "suffix": "",
+          "legend": "A = annual demand (units), O = cost per order, C = carrying cost per unit per year"
+        },
+        {
+          "name": "Carrying cost per unit, when given as %",
+          "lhs": "C",
+          "rhs": "Purchase price per unit × Carrying cost %",
+          "numerator": "",
+          "denominator": "",
+          "square_root": false,
+          "suffix": "",
+          "legend": "Always convert C to ₹ per unit per year before using it"
+        },
+        {
+          "name": "Number of orders in a year",
+          "lhs": "Orders",
+          "rhs": "",
+          "numerator": "A",
+          "denominator": "EOQ",
+          "square_root": false,
+          "suffix": "",
+          "legend": "Use the same annual demand A as in the EOQ formula"
+        }
+      ],
+      "table": {
+        "headers": [],
+        "rows": []
+      },
+      "insight": {
+        "punchline": "Lowest total cost!",
+        "text": "Order more and carrying cost rises; order less and ordering cost rises. ==EOQ balances the two.=="
+      },
+      "trick_hook": "remember it like this",
+      "memory_trick": {
+        "mnemonic": "Two Aunties Order Chai",
+        "explanation": "==2 × A × O== sits on top and ==C (Chai)== at the bottom; then take the square root of the whole thing."
+      },
+      "steps": [
+        "Find A (units a year)",
+        "Find O (₹ per order)",
+        "Convert C to ₹ per unit p.a.",
+        "Put in √(2AO ÷ C)",
+        "Check: ordering = carrying"
+      ],
+      "exam_tip": "If carrying cost is given as a !!% of the purchase price!!, first convert it to ₹ per unit per year.",
+      "doubt": {
+        "question": "Does the purchase price change EOQ?",
+        "answer": "Only through C. Without a quantity discount, the purchase cost is the same at every order size, so it doesn't change EOQ."
+      },
+      "mistakes_hook": "where marks are lost!",
+      "mistakes": [
+        {
+          "wrong": "Taking monthly or quarterly demand as A",
+          "right": "A must be ==annual== demand: convert monthly or quarterly figures first."
+        },
+        {
+          "wrong": "Using the carrying cost % directly as C",
+          "right": "C = purchase price per unit × carrying %, in ₹ per unit per year."
+        },
+        {
+          "wrong": "Forgetting the 2 in the formula",
+          "right": "It is √(2AO ÷ C). Without the 2, the answer is EOQ ÷ √2."
+        }
+      ],
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": ""
+    },
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 1",
+      "paper_name": "Accounting",
+      "topic": "Capital vs Revenue Expenditure",
+      "title": "Capital vs Revenue",
+      "title_highlight": "Expenditure",
+      "hook": "one wrong call changes the profit!",
+      "simple_words": "Capital expenditure gives benefit for many years; revenue expenditure is used up within the year.",
+      "definitions": [
+        {
+          "term": "Capital expenditure",
+          "meaning": "Spent to ==acquire or improve a fixed asset== or to increase earning capacity; the benefit lasts more than one year. Shown in the Balance Sheet.",
+          "note": ""
+        },
+        {
+          "term": "Revenue expenditure",
+          "meaning": "Spent to ==run the business day to day== or to keep assets in working order; the benefit ends within the year. Charged to the P&L A/c.",
+          "note": ""
+        }
+      ],
+      "key_points": [
+        "Test: does it increase the asset's ==capacity, life or efficiency==? Yes means capital.",
+        "Repairs that only keep an asset in working order are revenue.",
+        "Freight and installation of a new machine are part of its cost: capital."
+      ],
+      "formula_heading": "Capital vs Revenue",
+      "formula_hook": "the 5-point comparison",
+      "formulas": [],
+      "table": {
+        "headers": [
+          "Point",
+          "Capital",
+          "Revenue"
+        ],
+        "rows": [
+          [
+            "Benefit",
+            "More than one year",
+            "Within the year"
+          ],
+          [
+            "Purpose",
+            "Acquire or improve an asset",
+            "Run or maintain the business"
+          ],
+          [
+            "Shown in",
+            "Balance Sheet (asset)",
+            "P&L A/c (expense)"
+          ],
+          [
+            "Nature",
+            "Usually non-recurring",
+            "Usually recurring"
+          ],
+          [
+            "Example",
+            "Machine + its installation",
+            "Repairs, wages, rent"
+          ]
+        ]
+      },
+      "insight": {
+        "punchline": "Same machine, two treatments!",
+        "text": "Buying and installing it is ==capital==; servicing and repairing it later is ==revenue==."
+      },
+      "trick_hook": "ask just one question",
+      "memory_trick": {
+        "mnemonic": "Next year too? Capital!",
+        "explanation": "Ask: =='Will this still help the business next year?'== Yes means capital; no means revenue."
+      },
+      "steps": [
+        "Read the item",
+        "Asset bought or improved?",
+        "Benefit beyond 1 year?",
+        "Capital: Balance Sheet",
+        "Revenue: P&L A/c"
+      ],
+      "exam_tip": "Wages paid for installing a new machine are ==capital==: add them to the machine's cost, !!not to the P&L A/c!!.",
+      "doubt": {
+        "question": "Is every repair a revenue expense?",
+        "answer": "No. Normal repairs are revenue, but a major overhaul that increases the asset's life or capacity is capital."
+      },
+      "mistakes_hook": "where marks are lost!",
+      "mistakes": [
+        {
+          "wrong": "Charging installation of a new machine to the P&L A/c",
+          "right": "Installation brings the asset into use: add it to the machine's cost (capital)."
+        },
+        {
+          "wrong": "Treating repairs to a newly bought used asset as revenue",
+          "right": "Repairs to make a second-hand asset fit for use are ==capital==."
+        },
+        {
+          "wrong": "Thinking a large amount must be capital",
+          "right": "The amount doesn't decide it; the ==nature and period of benefit== do."
+        }
+      ],
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1B",
+      "paper_name": "Applied Business and Industrial Laws",
+      "topic": "Offer vs Invitation to Offer",
+      "title": "Offer vs",
+      "title_highlight": "Invitation to Offer",
+      "hook": "who really makes the offer?",
+      "simple_words": "An offer is ready to be accepted; an invitation only asks others to make offers.",
+      "definitions": [
+        {
+          "term": "Offer (Proposal)",
+          "meaning": "Showing willingness to do or not to do something, to get the other person's ==assent==.",
+          "note": "Section 2(a), Indian Contract Act, 1872"
+        },
+        {
+          "term": "Invitation to offer",
+          "meaning": "A statement that asks others to make offers, with ==no intention to be bound== on acceptance.",
+          "note": "Also called invitation to treat"
+        }
+      ],
+      "key_points": [
+        "Quoting the lowest price is not an offer (Harvey v. Facey).",
+        "Goods displayed with price tags only ==invite offers==.",
+        "In an auction, the bidder offers; the fall of the hammer is acceptance."
+      ],
+      "formula_heading": "The 4-Point Comparison",
+      "formula_hook": "spot the difference!",
+      "formulas": [],
+      "table": {
+        "headers": [
+          "Point",
+          "Offer",
+          "Invitation to offer"
+        ],
+        "rows": [
+          [
+            "Intention",
+            "Ready to be bound",
+            "Only invites offers"
+          ],
+          [
+            "On acceptance",
+            "A contract is formed",
+            "Reply is only an offer"
+          ],
+          [
+            "Made to",
+            "One person or the public",
+            "The public at large"
+          ],
+          [
+            "Examples",
+            "Reward advertisement",
+            "Price list, catalogue, tender notice"
+          ]
+        ]
+      },
+      "insight": {
+        "punchline": "Price tag = invite, not offer!",
+        "text": "The customer makes the offer at the counter; the shopkeeper may accept or refuse it (Boots Cash Chemists)."
+      },
+      "trick_hook": "remember A PACT",
+      "memory_trick": {
+        "mnemonic": "A PACT only invites",
+        "explanation": "==A==uction notice, ==P==rice list or tag, ==A==dvertisement, ==C==atalogue, ==T==ender notice: each only invites offers."
+      },
+      "steps": [
+        "Find the statement",
+        "Intention to be bound?",
+        "Yes: offer, No: invite",
+        "Quote the case law",
+        "Write the conclusion"
+      ],
+      "exam_tip": "In case questions, ==name the case law== and !!write a clear conclusion!!; marks are given for both.",
+      "doubt": {
+        "question": "Is every advertisement only an invitation?",
+        "answer": "No. An advertisement promising a reward to anyone who does a set act is a ==general offer== (Carlill v. Carbolic Smoke Ball Co.)."
+      },
+      "mistakes_hook": "where marks are lost!",
+      "mistakes": [
+        {
+          "wrong": "Calling a price tag on goods an offer",
+          "right": "It is an invitation to offer; the buyer makes the offer at the counter."
+        },
+        {
+          "wrong": "Treating a tender notice as an offer",
+          "right": "The notice invites offers; each tender submitted is an offer."
+        },
+        {
+          "wrong": "Saying the auctioneer makes the offer",
+          "right": "The bidder makes the offer; the auctioneer accepts by the fall of the hammer."
+        }
+      ],
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": ""
+    }
+  ]
+}

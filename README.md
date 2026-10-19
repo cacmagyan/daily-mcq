@@ -17,22 +17,32 @@ The images are designed as an OMR answer sheet printed in the course colour. On 
 
 ## How a day works
 
-1. **18:47, every evening.** The agent writes tomorrow's six MCQs with Claude. A second, separate Claude call solves each one *without seeing the answer*. If it gets a different answer, the MCQ is rewritten (up to 3 tries) or flagged for you. Then it draws the 12 images and opens a **pull request** on GitHub with all of them.
-2. **You, any time before 07:55 next morning.** Open the pull request on the GitHub app or website, look at the images, and tap **Merge**. Merging = approved. Nothing is ever posted without it.
-3. **Next day.** Each course posts at its time.
+The agent runs in **auto** mode (`review: mode: "auto"` in `config.yaml`): MCQs post without waiting for you.
 
-To fix something before approving:
-- **Change text:** edit `queue/<date>/mcqs.json` in the pull request (Files changed → ⋯ → Edit file). The images redraw themselves in about two minutes.
-- **Get a new MCQ for one course:** comment `/regen ca_inter`. Add an instruction if you like: `/regen cma_final make it a numerical on WACC`.
-- **Skip a day:** close the pull request.
+1. **18:47, every evening.** The agent writes tomorrow's six MCQs with Claude. A second, separate Claude call solves each one *without seeing the answer*. If it gets a different answer, the MCQ is rewritten (up to 3 tries). Then it draws the 12 images, approves the day itself and opens a GitHub **issue** called "MCQs for <date> (Day N)" with every image.
+2. **If an MCQ has a serious problem**, it is put **on hold** and won't post. The issue title starts with "⛔ Action needed" and you are @mentioned, so GitHub notifies you that evening. Serious means: the checker could not confirm the answer key after 3 tries, or the text doesn't fit the image and is cut off. Smaller notes (shrunk text, ⚖️ law topics) don't stop anything.
+3. **Next day.** Each course posts at its time. The issue shows ✅ and a link as each one goes out, and closes itself after the last post.
 
-Course ids for `/regen`: `ca_foundation`, `cma_cat`, `ca_inter`, `cma_inter`, `ca_final`, `cma_final`.
+To act on a day, comment on its issue:
+
+| Comment | What it does |
+|---|---|
+| `/approve ca_inter` | post a held MCQ as it is |
+| `/regen ca_inter` | replace it with a new MCQ; it posts by itself if the check passes |
+| `/regen cma_final make it a numerical on WACC` | the same, with an instruction |
+| `/hold ca_final` | stop an MCQ from posting (until you `/approve` or `/regen` it) |
+
+- **Change text:** edit `queue/<date>/mcqs.json` on the main branch (pencil icon). The images redraw themselves in about two minutes.
+- Course ids: `ca_foundation`, `cma_cat`, `ca_inter`, `cma_inter`, `ca_final`, `cma_final`.
+- Something already posted can't be changed by the agent; edit or delete it in the Instagram app.
+
+**Prefer to approve every day yourself?** Set `mode: "github_pr"`. The evening job then opens a pull request instead, and nothing posts until you merge it. `/regen` works in the pull request too.
 
 ## What you need
 
 - An Instagram **professional** account (Creator or Business).
 - A free **Meta developer** app, to get an Instagram access token.
-- A **Claude API key** from the Anthropic Console (pay per use).
+- **Claude**: either your existing **Claude Pro or Max subscription** (no extra cost), or a Claude API key (pay per use).
 - A free **GitHub** account. GitHub runs everything on schedule, so your computer can stay off.
 
 ## Setup (once, about 45 minutes)
@@ -48,8 +58,19 @@ In the Instagram app: Settings → Account type and tools → Switch to professi
 
 You are only posting to your own account, so App Review is normally not needed. Meta changes its dashboard often; if a screen looks different, the same steps are in Meta's guide "Instagram API with Instagram Login".
 
-### 3. Claude API key
-At <https://console.anthropic.com>: API keys → Create key. Add some credit under Billing.
+### 3. Claude login (choose one)
+
+**Option A: your Claude Pro or Max subscription (no extra cost).** On your Mac, open Terminal and run:
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+Open a new Terminal window and run `claude setup-token`. Your browser opens; sign in with your Claude account and approve. The terminal then prints a long token. Save it as the GitHub secret `CLAUDE_CODE_OAUTH_TOKEN` (step 4). It lasts one year, so put a reminder in your calendar to make a new one.
+
+**Option B: a Claude API key (pay per use, about $3-6 a month).** At <https://platform.claude.com>: API keys, then Create key. Add credit under Billing. Save it as the secret `ANTHROPIC_API_KEY`.
+
+If you add both, the agent uses your subscription and falls back to the API key only if the subscription token fails.
 
 ### 4. GitHub
 1. Create a new repository. **Make it public.** Instagram downloads the images from it, and it cannot read a private repo. Your keys stay private either way, because they are stored as encrypted secrets. (Want a private repo? See "Private repo" below.)
@@ -58,6 +79,7 @@ At <https://console.anthropic.com>: API keys → Create key. Add some credit und
 
    | Secret | Value |
    |---|---|
+   | `CLAUDE_CODE_OAUTH_TOKEN` | from `claude setup-token` (Claude subscription), **or** |
    | `ANTHROPIC_API_KEY` | your Claude API key |
    | `IG_ACCESS_TOKEN` | the Instagram token from step 2 |
    | `GH_ADMIN_TOKEN` | a GitHub token that can update secrets (below) |
@@ -65,7 +87,7 @@ At <https://console.anthropic.com>: API keys → Create key. Add some credit und
 
    To make `GH_ADMIN_TOKEN`: your GitHub profile → Settings → Developer settings → Fine-grained tokens → Generate new token. Repository access: *only this repository*. Permissions: **Secrets: Read and write**. Choose the longest expiry and put a reminder in your calendar to replace it.
 4. **Settings → Actions → General → Workflow permissions:** choose *Read and write permissions* and tick **Allow GitHub Actions to create and approve pull requests**. Save.
-5. On the repository page, click **Watch → All activity** so the evening pull request reaches your phone.
+5. On the repository page, click **Watch → All activity** so the evening report reaches your phone.
 
 ### 5. Your details
 Open `config.yaml` (pencil icon on GitHub) and set:
@@ -80,11 +102,11 @@ Open `config.yaml` (pencil icon on GitHub) and set:
 
 From then on it runs by itself.
 
-## Your daily routine (about 2 minutes)
+## Your daily routine
 
-- Open the evening pull request. Look at rows flagged ⚠️ (the checker wasn't fully sure) or ⚖️ (tax or law: check rates and sections) first.
-- Merge to approve, or edit or `/regen` first.
-- If you forget, the 07:57 run fails and GitHub emails you. Merge whenever you see it: the remaining courses still post on time, and courses whose time has passed catch up at the next runs (two per run; the 20:57 run posts everything still waiting).
+- **Nothing to do** on most days. Look at the posts on Instagram whenever you like.
+- **When GitHub notifies you** ("⛔ Action needed"), open the issue that evening, read why the MCQ was held, and comment `/approve <course>` or `/regen <course>`. A held MCQ posts at its time if you release it before then; otherwise at the next run (the 20:57 run posts everything still waiting).
+- Turn on notifications: repository page → **Watch → All activity**, and allow notifications in the GitHub app.
 
 ## Accuracy
 
@@ -133,7 +155,7 @@ For local-only use, set `review.mode: local` in `config.yaml` and approve with `
 ## Costs and limits
 
 - **GitHub Actions:** free for public repositories.
-- **Claude:** about 12 API calls a day (6 writes + 6 checks), more when an MCQ is rewritten. Check your usage in the Anthropic Console after the first week.
+- **Claude:** about 12 calls a day (6 writes + 6 checks), more when an MCQ is rewritten. With a subscription token this counts toward your plan's normal usage; each call is small. With an API key, expect roughly $3-6 a month; check usage in the Console after the first week.
 - **Instagram:** the API allows 100 posts per 24 hours; this uses 6. A carousel counts as one post.
 - **Repository size:** images add roughly 2.5 MB a day (about 1 GB a year). That is fine for a long while; switch to Cloudinary if you want the repo to stay small.
 
@@ -146,9 +168,11 @@ For local-only use, set `review.mode: local` in `config.yaml` and approve with `
 | Publish: "No image host worked" | Same as above. Also check the batch was merged into the main branch |
 | Instagram error 190 (token) | Make a new token (setup step 2) and update the `IG_ACCESS_TOKEN` secret. Check `GH_ADMIN_TOKEN` hasn't expired, so renewals can save. |
 | Claude error 401 or 404 | Wrong API key, or the model name in `config.yaml` isn't available to your account |
-| A course shows ❌ in the pull request | Comment `/regen <course_id>` |
+| "Claude subscription token was refused" | The token expired (after a year) or was revoked. Run `claude setup-token` again and update the `CLAUDE_CODE_OAUTH_TOKEN` secret |
+| A course shows ⛔ or ❌ in the day's issue | Comment `/regen <course_id>`, or `/approve <course_id>` to post it anyway |
 | Text looks small on an image | The text was long and was shrunk to fit. Shorten it in `mcqs.json` |
-| Nothing was posted | The pull request wasn't merged. Open Actions → 4. Publish due MCQs to read the log |
+| Nothing was posted | Open Actions → 4. Publish due MCQs to read the log. In github_pr mode, check the pull request was merged |
+| A comment did nothing | It must start with the command, e.g. `/approve ca_inter`, on the issue titled "MCQs for <date>" |
 
 ## Files
 

@@ -349,6 +349,7 @@ def write_mcq(cfg: Config, course: dict, paper: dict, date: dt.date,
                 needs_check=bool(mcq.get("confidence") == "low" or mcq.get("reviewer_note") or notes),
                 check_notes=([f"Writer: {mcq['reviewer_note']}"] if mcq.get("reviewer_note") else []) + notes,
                 attempts=attempt,
+                serious=False,
             )
             return mcq
         feedback = (f"An independent examiner solved it and chose {check.get('answer')}, "
@@ -360,5 +361,7 @@ def write_mcq(cfg: Config, course: dict, paper: dict, date: dt.date,
     if last.get("correct") not in LETTERS or len(last.get("options", [])) != 4:
         raise GenerationError("Claude kept returning badly formed MCQs: " + feedback)
     last.update(difficulty=difficulty, law_sensitive=bool(law_text), needs_check=True,
-                check_notes=[f"Not confirmed after {attempts} attempts"] + notes, attempts=attempts)
+                check_notes=[f"Not confirmed after {attempts} attempts"] + notes, attempts=attempts,
+                serious=True,
+                serious_reason="The checker could not confirm the answer key" + (f" ({notes[0]})" if notes else ""))
     return last

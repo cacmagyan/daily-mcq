@@ -34,6 +34,24 @@ def _finish(cfg: Config, renderer: Renderer, item: dict, date: dt.date) -> None:
     item["images"] = res["images"]
     item["fit_notes"] = res["fit_notes"]
     item["caption"] = build_caption(cfg, item, date)
+    set_hold(item)
+
+
+def auto_hold_reason(item: dict) -> str:
+    """A serious problem that should stop an MCQ from posting until you look at it."""
+    if item.get("serious"):
+        return item.get("serious_reason") or "The checker could not confirm the answer key"
+    if any("cut off" in n for n in item.get("fit_notes", [])):
+        return "The text is too long and gets cut off on the image"
+    return ""
+
+
+def set_hold(item: dict) -> None:
+    if item.get("held_by_you"):
+        item["hold"], item["hold_reason"] = True, "You put this on hold"
+    else:
+        reason = auto_hold_reason(item)
+        item["hold"], item["hold_reason"] = bool(reason), reason
 
 
 def prepare(cfg: Config, date: dt.date, course_ids: list[str] | None = None, sample: bool = False) -> dict:
@@ -90,10 +108,17 @@ def rerender(cfg: Config, date: dt.date, course_ids: list[str] | None = None) ->
     return batch
 
 
+def _not_posted(date: dt.date, course_id: str) -> None:
+    if course_id in B.load_posted(date):
+        raise SystemExit(f"{course_id} is already posted on Instagram for {date}; it can't be changed here. "
+                         "Edit or delete the post in the Instagram app.")
+
+
 def regenerate(cfg: Config, date: dt.date, course_id: str, instruction: str = "") -> dict:
     batch = B.load_batch(date)
     if not batch:
         raise SystemExit(f"No batch for {date}")
+    _not_posted(date, course_id)
     course = cfg.course(course_id)
     item = _fill_item(cfg, course, date, instruction)
     with Renderer(cfg) as r:
@@ -105,6 +130,34 @@ def regenerate(cfg: Config, date: dt.date, course_id: str, instruction: str = ""
     _preview(date, batch)
     print(f"  ✓ new MCQ for {course['name']}: {item['topic']} (answer {item['correct']})")
     return item
+
+
+def release(date: dt.date, course_id: str) -> str:
+    """/approve: post a held MCQ as it is."""
+    batch = B.load_batch(date)
+    item = B.find_item(batch or {"items": []}, course_id)
+    if not item:
+        raise SystemExit(f"No {course_id} MCQ for {date}")
+    if item.get("error"):
+        raise SystemExit(f"{course_id} has no MCQ to approve (it failed to generate); use /regen {course_id}")
+    item["serious"], item["held_by_you"] = False, False
+    item["fit_notes"] = [n for n in item.get("fit_notes", []) if "cut off" not in n]
+    set_hold(item)
+    B.save_batch(date, batch)
+    return f"{course_id} approved for {date}; it posts at its time (or at the next run if that has passed)"
+
+
+def hold(date: dt.date, course_id: str) -> str:
+    """/hold: stop an MCQ from posting."""
+    batch = B.load_batch(date)
+    item = B.find_item(batch or {"items": []}, course_id)
+    if not item:
+        raise SystemExit(f"No {course_id} MCQ for {date}")
+    _not_posted(date, course_id)
+    item["held_by_you"] = True
+    set_hold(item)
+    B.save_batch(date, batch)
+    return f"{course_id} on hold for {date}; it won't post until you comment /approve {course_id} or /regen {course_id}"
 
 
 def approve(date: dt.date) -> None:
@@ -141,20 +194,26 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
     limit = limit or int(cfg.instagram.get("max_posts_per_run", 2))
 
     batch = B.load_batch(date)
-    approved = batch and (cfg.review_mode == "github_pr" or batch.get("approved"))
+    approved = batch and (cfg.review_mode in ("github_pr", "auto") or batch.get("approved"))
     if not approved:
-        why = "no batch on the main branch (the review PR isn't merged)" if cfg.review_mode == "github_pr" \
-            else "the batch isn't approved yet (run the approve command)"
+        why = {"github_pr": "no batch on the main branch (the review PR isn't merged)",
+               "auto": "no batch was prepared for this day"}.get(
+            cfg.review_mode, "the batch isn't approved yet (run the approve command)")
         print(f"Nothing posted for {date}: {why}.")
         return 1 if strict else 0
 
     posted = B.load_posted(date)
     due = [it for it in batch["items"]
-           if it["course_id"] not in posted and not it.get("error") and it.get("images") and _slot(cfg, it) <= at]
+           if it["course_id"] not in posted and not it.get("error") and not it.get("hold")
+           and it.get("images") and _slot(cfg, it) <= at]
     due.sort(key=lambda it: _slot(cfg, it))
     skipped = [it["course_id"] for it in batch["items"] if it.get("error")]
     if skipped:
         print(f"Skipping courses with no MCQ: {', '.join(skipped)}")
+    held = [f"{it['course_id']} ({it.get('hold_reason', '')})" for it in batch["items"]
+            if it.get("hold") and it["course_id"] not in posted]
+    if held:
+        print(f"On hold, not posting: {'; '.join(held)}")
     if not due:
         print(f"Nothing due at {at.strftime('%H:%M')} on {date}.")
         return 0

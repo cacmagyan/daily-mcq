@@ -49,6 +49,28 @@ def parse_regen_comment(text: str, cfg: Config) -> tuple[str, str]:
     raise SystemExit("Write it as: /regen <course_id> [instruction]. Course ids: " + ", ".join(cfg.course_ids()))
 
 
+COMMANDS = ("/regen", "/approve", "/hold")
+
+
+def parse_command(text: str, cfg: Config) -> tuple[str, str, str]:
+    """Returns (command, course_id, instruction) from a comment like '/regen ca_inter make it on CVP'."""
+    for line in text.strip().splitlines():
+        line = line.strip()
+        word = line.split(maxsplit=1)[0].lower() if line else ""
+        if word in COMMANDS:
+            parts = line.split(maxsplit=2)
+            if len(parts) < 2:
+                break
+            course_id = parts[1].strip().lower()
+            try:
+                cfg.course(course_id)
+            except KeyError as exc:
+                raise SystemExit(str(exc).strip('"')) from None
+            return word[1:], course_id, (parts[2].strip() if len(parts) > 2 else "")
+    raise SystemExit("Write one of: /regen <course> [instruction], /approve <course>, /hold <course>. "
+                     "Course ids: " + ", ".join(cfg.course_ids()))
+
+
 def main(argv: list[str] | None = None) -> int:
     _load_dotenv()
     p = argparse.ArgumentParser(prog="mcq_agent", description="Daily CA/CMA MCQ images for Instagram")
@@ -75,6 +97,22 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--date", required=True)
     s.add_argument("--branch", required=True)
     s.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY", "owner/repo"))
+
+    s = sub.add_parser("report", help="print the daily report (auto mode)")
+    s.add_argument("--date", required=True)
+    s.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY", "owner/repo"))
+    s.add_argument("--branch", default="main")
+    s.add_argument("--owner", default=os.environ.get("GITHUB_REPOSITORY_OWNER", ""))
+
+    s = sub.add_parser("report-title", help="print the daily issue title")
+    s.add_argument("--date", required=True)
+
+    s = sub.add_parser("command", help="run a /regen, /approve or /hold comment")
+    s.add_argument("--date", required=True)
+    s.add_argument("--comment", required=True)
+    s.add_argument("--github-output", help=argparse.SUPPRESS)
+
+    sub.add_parser("mode", help="print the review mode (auto, github_pr or local)")
 
     s = sub.add_parser("approve", help="approve a batch (review mode: local)")
     s.add_argument("--date", required=True)
@@ -124,6 +162,38 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "pr-body":
         from .review import pr_body
         print(pr_body(cfg, dt.date.fromisoformat(args.date), args.repo, args.branch))
+        return 0
+
+    if args.cmd == "report":
+        from .review import report
+        print(report(cfg, dt.date.fromisoformat(args.date), args.repo, args.branch, args.owner))
+        return 0
+
+    if args.cmd == "report-title":
+        from .review import report_title
+        print(report_title(cfg, dt.date.fromisoformat(args.date)))
+        return 0
+
+    if args.cmd == "mode":
+        print(cfg.review_mode)
+        return 0
+
+    if args.cmd == "command":
+        from .pipeline import hold, regenerate, release
+        date = dt.date.fromisoformat(args.date)
+        action, course_id, instruction = parse_command(args.comment, cfg)
+        name = cfg.course(course_id)["name"]
+        if action == "regen":
+            item = regenerate(cfg, date, course_id, instruction)
+            summary = f"New {name} MCQ for {date}: {item.get('topic', '')} (answer {item.get('correct', '?')})"
+            if item.get("hold"):
+                summary += f". It is on hold: {item.get('hold_reason')}"
+        elif action == "approve":
+            summary = release(date, course_id)
+        else:
+            summary = hold(date, course_id)
+        print(summary)
+        _write_output(args.github_output, course=course_id, action=action, summary=summary.replace("\n", " "))
         return 0
 
     if args.cmd == "approve":

@@ -12,6 +12,9 @@ on:
     - cron: "57 12 * * *"          # 18:27 IST  CA Final       (18:25)
     - cron: "12 14 * * *"          # 19:42 IST  Concept of the day (concepts post_time 19:40)
     - cron: "27 15 * * *"          # 20:57 IST  CMA Final      (20:55)
+    # Back-up runs every 30 minutes, 07:37 to 22:07 IST. GitHub sometimes starts a timed run late or
+    # skips it; the next back-up run then posts whatever is due. Nothing is ever posted twice.
+    - cron: "7,37 2-16 * * *"
   workflow_dispatch:
     inputs:
       dry_run:

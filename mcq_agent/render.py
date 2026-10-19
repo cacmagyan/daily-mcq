@@ -6,7 +6,10 @@ import datetime as dt
 import tempfile
 from pathlib import Path
 
+import re
+
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup, escape
 from PIL import Image
 
 from .config import LETTERS, ROOT, Config, date_label
@@ -16,6 +19,19 @@ WIDTH, HEIGHT = 1080, 1350
 
 def image_names(course_id: str) -> dict:
     return {"question": f"{course_id}_q.jpg", "answer": f"{course_id}_a.jpg"}
+
+
+def concept_names() -> list[str]:
+    from .concept import SLIDES
+    return [f"concept_{i}.jpg" for i in range(1, SLIDES + 1)]
+
+
+def mark(text: str) -> Markup:
+    """==term== -> yellow highlighter, !!text!! -> red ink (escapes everything else)."""
+    out = str(escape(text or ""))
+    out = re.sub(r"==(.+?)==", r'<span class="hl">\1</span>', out)
+    out = re.sub(r"!!(.+?)!!", r'<span class="redink">\1</span>', out)
+    return Markup(out.replace("==", "").replace("!!", ""))
 
 
 class Renderer:
@@ -29,6 +45,7 @@ class Renderer:
             trim_blocks=True,
             lstrip_blocks=True,
         )
+        self.env.filters["mark"] = mark
         self.template = self.env.get_template("slide.html.j2")
         self.fonts_uri = (ROOT / "assets" / "fonts").as_uri()
         logo = (cfg.brand.get("logo") or "").strip()
@@ -63,7 +80,8 @@ class Renderer:
             logo=self.logo_uri,
         )
 
-    def _shoot(self, html: str, out: Path) -> dict:
+    def _shoot(self, html: str, out: Path | None, fit_fn: str = "fitSheet") -> dict:
+        """Draws one slide; with out=None it only measures how well the text fits."""
         page = self._browser.new_page(viewport={"width": WIDTH, "height": HEIGHT}, device_scale_factor=1)
         with tempfile.NamedTemporaryFile("w", suffix=".html", dir=ROOT / "templates",
                                          delete=False, encoding="utf-8") as fh:
@@ -72,7 +90,9 @@ class Renderer:
         try:
             page.goto(tmp.as_uri(), wait_until="load")
             page.evaluate("document.fonts.ready")
-            fit = page.evaluate("window.fitSheet()")
+            fit = page.evaluate(f"window.{fit_fn}()")
+            if out is None:
+                return fit
             png = out.with_suffix(".png")
             page.screenshot(path=str(png), clip={"x": 0, "y": 0, "width": WIDTH, "height": HEIGHT})
         finally:
@@ -98,6 +118,65 @@ class Renderer:
             elif fit["scale"] < 0.8:
                 notes.append(f"{slide} slide text shrunk to {int(fit['scale'] * 100)}%; consider shortening")
         return {"images": names, "fit_notes": notes}
+
+
+    # ── concept of the day ─────────────────────────────────
+    def concept_html(self, item: dict, date: dt.date, slide: int) -> str:
+        from .concept import SLIDES, doodle
+        from .fonts import FAMILIES, ensure_fonts, font_face_css
+
+        if not hasattr(self, "_concept_tpl"):
+            self._concept_tpl = self.env.get_template("concept.html.j2")
+            self._real_fonts = ensure_fonts()
+        course = self.cfg.course(item["course_id"])
+        headings = {2: item.get("formula_heading") or "The Formula", 3: "Study Trick", 4: "Common Mistakes"}
+        hooks = {2: item.get("formula_hook") or "learn it once, use it always",
+                 3: item.get("trick_hook") or "remember it like this",
+                 4: item.get("mistakes_hook") or "where marks are lost!"}
+        swipes = {1: "Swipe for the formula" if item.get("formulas") else "Swipe for the summary",
+                  2: "Swipe for a memory trick", 3: "Swipe for common mistakes"}
+        return self._concept_tpl.render(
+            c=item, course=course, brand=self.cfg.brand, slide=slide, total=SLIDES,
+            heading=headings.get(slide, ""), hook=hooks.get(slide, ""), swipe=swipes.get(slide, ""),
+            doodle_svg=doodle(item.get("paper_name", "")), logo=self.logo_uri,
+            font_css=font_face_css(self._real_fonts), families=FAMILIES,
+        )
+
+    def _concept_fit(self, item: dict, date: dt.date, slide: int, out: Path | None) -> dict:
+        from .fonts import FontError, fallback_allowed
+
+        fit = self._shoot(self.concept_html(item, date, slide), out, "fitSlide")
+        bad = [f for f, ok in fit.get("fonts", {}).items() if not ok]
+        if bad and not (fallback_allowed() and not self._real_fonts):
+            raise FontError(f"The handwriting fonts didn't load ({', '.join(bad)}); not drawing the concept note.")
+        return fit
+
+    def measure_concept(self, item: dict, date: dt.date) -> list[str]:
+        """Problems for slides whose text doesn't fit even at the smallest allowed size."""
+        from .concept import SLIDE_FIELDS, SLIDE_NAMES, SLIDES
+
+        problems = []
+        for slide in range(1, SLIDES + 1):
+            fit = self._concept_fit(item, date, slide, None)
+            if fit["overflow"]:
+                over = round(100 * fit["need"] / max(1, fit["room"]))   # height at full size
+                problems.append(f"slide {slide} ({SLIDE_NAMES[slide]}) needs about {over}% of the space available; "
+                                f"shorten {SLIDE_FIELDS[slide]} by about {max(10, over - 85)}%")
+        return problems
+
+    def render_concept(self, item: dict, date: dt.date, out_dir: Path) -> dict:
+        from .concept import SLIDE_NAMES
+
+        out_dir.mkdir(parents=True, exist_ok=True)
+        names, notes, fits = concept_names(), [], []
+        for slide, name in enumerate(names, 1):
+            fit = self._concept_fit(item, date, slide, out_dir / name)
+            fits.append({"slide": slide, "zoom": fit["zoom"], "overflow": fit["overflow"]})
+            if fit["overflow"]:
+                notes.append(f"slide {slide} ({SLIDE_NAMES[slide]}) text is too long and is cut off; shorten it")
+            elif fit["zoom"] < 0.9:
+                notes.append(f"slide {slide} ({SLIDE_NAMES[slide]}) text shrunk to {int(fit['zoom'] * 100)}%")
+        return {"images": names, "fit_notes": notes, "fit": fits}
 
 
 def contact_sheet(out_dir: Path, items: list[dict], dest: Path) -> Path:

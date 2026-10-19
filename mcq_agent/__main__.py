@@ -41,10 +41,11 @@ def parse_regen_comment(text: str, cfg: Config) -> tuple[str, str]:
             if len(parts) < 2:
                 break
             course_id = parts[1].strip().lower()
-            try:
-                cfg.course(course_id)
-            except KeyError as exc:
-                raise SystemExit(str(exc).strip('"')) from None
+            if course_id != "concept":
+                try:
+                    cfg.course(course_id)
+                except KeyError as exc:
+                    raise SystemExit(str(exc).strip('"') + ", concept") from None
             return course_id, (parts[2].strip() if len(parts) > 2 else "")
     raise SystemExit("Write it as: /regen <course_id> [instruction]. Course ids: " + ", ".join(cfg.course_ids()))
 
@@ -62,13 +63,14 @@ def parse_command(text: str, cfg: Config) -> tuple[str, str, str]:
             if len(parts) < 2:
                 break
             course_id = parts[1].strip().lower()
-            try:
-                cfg.course(course_id)
-            except KeyError as exc:
-                raise SystemExit(str(exc).strip('"')) from None
+            if course_id != "concept":
+                try:
+                    cfg.course(course_id)
+                except KeyError as exc:
+                    raise SystemExit(str(exc).strip('"') + ", concept") from None
             return word[1:], course_id, (parts[2].strip() if len(parts) > 2 else "")
     raise SystemExit("Write one of: /regen <course> [instruction], /approve <course>, /hold <course>. "
-                     "Course ids: " + ", ".join(cfg.course_ids()))
+                     "Course ids: " + ", ".join(cfg.course_ids()) + ", concept")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -182,10 +184,13 @@ def main(argv: list[str] | None = None) -> int:
         from .pipeline import hold, regenerate, release
         date = dt.date.fromisoformat(args.date)
         action, course_id, instruction = parse_command(args.comment, cfg)
-        name = cfg.course(course_id)["name"]
+        name = "concept note" if course_id == "concept" else cfg.course(course_id)["name"]
         if action == "regen":
             item = regenerate(cfg, date, course_id, instruction)
-            summary = f"New {name} MCQ for {date}: {item.get('topic', '')} (answer {item.get('correct', '?')})"
+            if course_id == "concept":
+                summary = f"New concept note for {date}: {item.get('topic', '')}"
+            else:
+                summary = f"New {name} MCQ for {date}: {item.get('topic', '')} (answer {item.get('correct', '?')})"
             if item.get("hold"):
                 summary += f". It is on hold: {item.get('hold_reason')}"
         elif action == "approve":

@@ -70,3 +70,43 @@ def recent_items(course_id: str, before: dt.date, limit: int = 60) -> list[dict]
         if len(found) >= limit:
             break
     return found[:limit]
+
+
+# ── concept of the day: queue/YYYY-MM-DD/concept.json ───────────────────────
+
+def concept_path(date: dt.date) -> Path:
+    return batch_dir(date) / "concept.json"
+
+
+def load_concept(date: dt.date) -> dict | None:
+    p = concept_path(date)
+    if not p.exists():
+        return None
+    with open(p, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def save_concept(date: dt.date, item: dict) -> Path:
+    p = concept_path(date)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with open(p, "w", encoding="utf-8") as fh:
+        json.dump(item, fh, ensure_ascii=False, indent=2)
+        fh.write("\n")
+    return p
+
+
+def recent_concepts(course_id: str, before: dt.date, limit: int = 60) -> list[str]:
+    """Topics of other days' concept notes for a course, newest first."""
+    found = []
+    if not QUEUE.exists():
+        return found
+    for d in sorted(QUEUE.iterdir(), reverse=True):
+        if d.name == before.isoformat() or not (d / "concept.json").exists():
+            continue
+        with open(d / "concept.json", encoding="utf-8") as fh:
+            it = json.load(fh)
+        if it.get("course_id") == course_id and it.get("topic"):
+            found.append(it["topic"])
+        if len(found) >= limit:
+            break
+    return found

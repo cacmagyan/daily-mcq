@@ -293,7 +293,7 @@ def tidy(mcq: dict) -> dict:
 # ── main entry ─────────────────────────────────────────────────────────────
 
 def write_mcq(cfg: Config, course: dict, paper: dict, date: dt.date,
-              recent: list[dict], instruction: str = "") -> dict:
+              recent: list[dict], instruction: str = "", link: dict | None = None) -> dict:
     """Returns the MCQ plus check results. Raises GenerationError only if no usable MCQ came back."""
     law_text = cfg.law_text(paper, date)
     difficulty = DIFFICULTY_BY_WEEKDAY[date.weekday()]
@@ -309,13 +309,19 @@ def write_mcq(cfg: Config, course: dict, paper: dict, date: dt.date,
     recent_lines = "\n".join(f"- {r.get('topic', '')}: {r.get('question', '')[:90]}" for r in recent[:40]) or "- none yet"
     base_user = (
         f"Course: {course['name']} ({course.get('body', '')})\n"
-        f"Paper: {paper['code']}: {paper['name']}\n"
+        f"Paper: {cfg.paper_prompt(paper)}\n"
         f"Difficulty: {difficulty}\n"
         f"Posting date: {date.strftime('%d %B %Y')}\n\n"
         f"Recently posted for this course (pick a different chapter or concept):\n{recent_lines}\n"
     )
     if instruction:
         base_user += f"\nReviewer's instruction for this MCQ: {instruction}\n"
+    elif link:
+        points = "; ".join(p.replace("==", "").replace("!!", "") for p in link.get("key_points", [])[:4])
+        base_user += (f"\nYesterday's concept note for this course was on: {link['topic']}. "
+                      f"Key points: {points}. Write today's MCQ to test that concept (this overrides the "
+                      "'different chapter' rule). Test understanding with a fresh situation; don't reuse the "
+                      "note's wording.\n")
 
     feedback, last, notes = "", None, []
     attempts = int(cfg.models.get("max_attempts", 3))
@@ -332,7 +338,7 @@ def write_mcq(cfg: Config, course: dict, paper: dict, date: dt.date,
         check = _call_claude(
             checker_model,
             CHECKER_SYSTEM.format(course=course["name"], body=course.get("body", ""),
-                                  paper=f"{paper['code']} {paper['name']}",
+                                  paper=cfg.paper_prompt(paper),
                                   law_line=f"Law basis to apply: {law_text}." if law_text else ""),
             "Question: " + mcq["question"] + "\n" +
             "\n".join(f"{l}. {o}" for l, o in zip(LETTERS, mcq["options"])),

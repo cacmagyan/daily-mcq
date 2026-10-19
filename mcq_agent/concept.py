@@ -1,0 +1,338 @@
+"""Concept of the day: a 4-slide handwritten-notebook carousel (concept, formula, study trick,
+common mistakes), written by Claude and checked by a second Claude call before it can post."""
+
+from __future__ import annotations
+
+import datetime as dt
+import json
+import re
+from typing import Callable
+
+from .config import Config
+
+SLIDES = 4
+SLIDE_NAMES = {1: "concept", 2: "formula", 3: "study trick", 4: "mistakes"}
+SLIDE_FIELDS = {1: "simple_words, the definitions or the key points",
+                2: "the formulas, their legends or the table",
+                3: "the memory trick, the steps, the exam tip or the doubt answer",
+                4: "the mistakes"}
+
+
+def _s(desc: str) -> dict:
+    return {"type": "string", "description": desc}
+
+
+WRITE_TOOL = {
+    "name": "submit_concept",
+    "description": "Submit the finished concept note.",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "topic": _s("The one concept covered, at most 44 characters, e.g. 'Economic Order Quantity (EOQ)'"),
+            "title": _s("Slide 1 title, first line, at most 22 characters"),
+            "title_highlight": _s("Slide 1 title, second line shown in highlighter, at most 20 characters; may be empty"),
+            "hook": _s("Short playful handwritten line beside the title, at most 40 characters, e.g. 'order the right qty!'"),
+            "simple_words": _s("The idea in one line for a weak student, at most 120 characters"),
+            "definitions": {"type": "array", "minItems": 1, "maxItems": 2, "description": "1-2 definition cards",
+                            "items": {"type": "object", "properties": {
+                                "term": _s("Term, at most 40 characters"),
+                                "meaning": _s("Meaning, at most 170 characters"),
+                                "note": _s("Optional red handwritten line, at most 70 characters; may be empty")},
+                                "required": ["term", "meaning", "note"]}},
+            "key_points": {"type": "array", "minItems": 2, "maxItems": 4, "items": _s("At most 100 characters each")},
+            "formula_heading": _s("Slide 2 title, at most 24 characters, different from slide 1, e.g. 'The EOQ Formula' or 'The 5-Point Comparison'"),
+            "formula_hook": _s("Short handwritten line for slide 2, at most 32 characters"),
+            "formulas": {"type": "array", "maxItems": 3,
+                         "description": "0-3 formulas. A fraction uses numerator + denominator (rhs empty); "
+                                        "anything else uses rhs (numerator and denominator empty).",
+                         "items": {"type": "object", "properties": {
+                             "name": _s("Formula name, at most 40 characters"),
+                             "lhs": _s("Left side, at most 24 characters, e.g. 'EOQ'"),
+                             "rhs": _s("Right side when it is not a fraction, at most 70 characters; else empty"),
+                             "numerator": _s("Top of the fraction, at most 40 characters; else empty"),
+                             "denominator": _s("Bottom of the fraction, at most 32 characters; else empty"),
+                             "square_root": {"type": "boolean", "description": "True if the whole fraction is under a square root"},
+                             "suffix": _s("Text after the fraction, e.g. '× 100', at most 14 characters; else empty"),
+                             "legend": _s("What each symbol means, at most 130 characters")},
+                             "required": ["name", "lhs", "rhs", "numerator", "denominator", "square_root", "suffix", "legend"]}},
+            "table": {"type": "object", "description": "Optional small table for theory/law topics; empty headers and rows if not used",
+                      "properties": {
+                          "headers": {"type": "array", "maxItems": 3, "items": _s("At most 20 characters")},
+                          "rows": {"type": "array", "maxItems": 5,
+                                   "items": {"type": "array", "minItems": 2, "maxItems": 3, "items": _s("At most 44 characters")}}},
+                      "required": ["headers", "rows"]},
+            "insight": {"type": "object", "description": "Key-insight callout at the bottom of slide 2",
+                        "properties": {
+                            "punchline": _s("Short punchline in red marker, at most 36 characters, e.g. 'Same machine, two treatments!'"),
+                            "text": _s("One sentence that explains it, at most 120 characters")},
+                        "required": ["punchline", "text"]},
+            "trick_hook": _s("Short handwritten line for slide 3, at most 32 characters"),
+            "memory_trick": {"type": "object", "properties": {
+                "mnemonic": _s("The trick itself, at most 30 characters, e.g. 'Two Aunties Order Chai'"),
+                "explanation": _s("How it maps to the concept, at most 170 characters")},
+                "required": ["mnemonic", "explanation"]},
+            "steps": {"type": "array", "minItems": 2, "maxItems": 5,
+                      "items": _s("Order of working in the exam, at most 34 characters each")},
+            "exam_tip": _s("One exam tip, at most 150 characters"),
+            "doubt": {"type": "object", "properties": {
+                "question": _s("A doubt students usually raise, at most 80 characters"),
+                "answer": _s("Its answer, at most 170 characters")},
+                "required": ["question", "answer"]},
+            "mistakes_hook": _s("Short handwritten line for slide 4, at most 32 characters"),
+            "mistakes": {"type": "array", "minItems": 2, "maxItems": 4,
+                         "items": {"type": "object", "properties": {
+                             "wrong": _s("What students wrongly do or write, at most 90 characters"),
+                             "right": _s("The correct way, at most 110 characters")},
+                             "required": ["wrong", "right"]}},
+            "applicability": _s("Law/standard basis for tax or law topics, at most 60 characters; empty otherwise"),
+            "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+            "reviewer_note": _s("Anything the human reviewer should double-check; empty if nothing"),
+        },
+        "required": ["topic", "title", "title_highlight", "hook", "simple_words", "definitions", "key_points",
+                     "formula_heading", "formula_hook", "formulas", "table", "insight", "trick_hook", "memory_trick", "steps",
+                     "exam_tip", "doubt", "mistakes_hook", "mistakes", "applicability", "confidence", "reviewer_note"],
+    },
+}
+
+CHECK_TOOL = {
+    "name": "submit_check",
+    "description": "Submit the problems found in the concept note.",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "issues": {"type": "array", "items": {"type": "string"},
+                       "description": "Each problem with where it is and the correct version. Empty if none."},
+            "severity": {"type": "string", "enum": ["none", "minor", "major"]},
+        },
+        "required": ["issues", "severity"],
+    },
+}
+
+WRITER_SYSTEM = """You write "Concept of the day" notes for an Instagram page for Indian CA and CMA students; the note is signed by {author}, who teaches this paper. Each note is a 4-slide carousel in his handwritten cartoon notebook style:
+  Slide 1 Concept: title, "In simple words" line, 1-2 definition cards, 2-4 key points.
+  Slide 2 Formula: 1-3 formulas with symbol legends, or a small table for theory and law topics, then a one-line key insight.
+  Slide 3 Study trick: a memory trick, the order of working in the exam, an exam tip, a doubt buster.
+  Slide 4 Common mistakes: 2-4 mistakes students make, each with the correct way.
+
+Rules
+1. Choose ONE core concept from the given paper that is examined often and fits on 4 phone slides; never a whole chapter. Tomorrow's MCQ for this course will test it.
+2. Short and simple: points, cards, formulas, tables. Prose at most 1-2 sentences in any field.
+3. Simple, direct Indian classroom English. Never use filler such as "It is important to note", "Let's dive", "crucial", "pivotal", "in today's world", and no motivational lines. No emoji.
+4. Explain formulas with symbols (A, O, C …) and a legend. No worked numerical examples. If a figure is unavoidable, use Indian formats (₹, lakh, crore).
+5. Slide 2: formulas for numerical topics. For theory or law topics use a table instead (comparison, conditions, or a format with xxx), with a header row and at most 5 rows. At most 3 formulas, or 2 formulas plus a table of at most 3 rows.
+6. Mark at most 3 key terms per slide with ==double equals== (yellow highlighter), and points where students lose marks with !!double exclamation marks!! (red ink). Never nest or leave a mark open.
+7. The memory trick must be truly memorable (a mnemonic, a tiny story or a picture in words) and technically correct. Never a trick that could mislead.
+8. Mistakes are real exam errors for this concept; every "right" text must be fully correct.
+9. Law and tax: follow exactly this basis: {law_text}. Never invent a section number, rate or limit; if unsure, describe the provision without it. Put a short form of the basis in `applicability`. Put anything a reviewer should verify in `reviewer_note`.
+10. Accounting standards: Ind AS / AS as currently applicable. Costing: ICMAI/ICAI study-material terminology.
+11. Original wording. Never copy study material, RTPs, MTPs or past papers.
+12. Length limits in the field descriptions are strict: the text must fit on phone slides.
+"""
+
+CHECKER_SYSTEM = """You are a strict examiner checking a concept note for {course} ({body}) students, paper: {paper}.
+Check every statement, definition, formula, symbol legend, table cell, memory trick, step, exam tip, doubt answer, mistake and correction for technical accuracy against current ICAI/ICMAI study material.
+Severity "major" if anything is wrong or misleading: a wrong formula or legend, a wrong definition or rule, a "mistake" that is actually correct, a wrong "correct way", an invented or wrong section number, rate or limit, outdated law, or a memory trick that teaches something false. "minor" for wording polish only. "none" if it is all correct.
+For each problem say where it is and give the correct version.
+{law_line}"""
+
+_EMOJI = re.compile("[\U0001F300-\U0001FAFF☀-➿️]")
+LIMITS = {"topic": 44, "title": 22, "title_highlight": 20, "hook": 40, "simple_words": 120, "formula_heading": 24,
+          "formula_hook": 32, "trick_hook": 32, "exam_tip": 150, "mistakes_hook": 32}
+GRACE = 1.15    # length limits are checked with 15% grace; the slide fit check is the real test
+
+
+def texts(c: dict) -> list[tuple[str, str]]:
+    """Every visible text with a label, for checks and for the checker prompt."""
+    out = [(k, str(c.get(k) or "")) for k in ("topic", "title", "title_highlight", "hook", "simple_words",
+                                               "formula_heading", "formula_hook", "trick_hook", "exam_tip", "mistakes_hook")]
+    for i, d in enumerate(c.get("definitions") or [], 1):
+        out += [(f"definition {i} term", d.get("term", "")), (f"definition {i} meaning", d.get("meaning", "")),
+                (f"definition {i} note", d.get("note", ""))]
+    out += [(f"key point {i}", p) for i, p in enumerate(c.get("key_points") or [], 1)]
+    for i, f in enumerate(c.get("formulas") or [], 1):
+        out += [(f"formula {i} {k}", str(f.get(k) or "")) for k in ("name", "lhs", "rhs", "numerator", "denominator", "suffix", "legend")]
+    table = c.get("table") or {}
+    out += [("table header", " | ".join(table.get("headers") or []))]
+    out += [(f"table row {i}", " | ".join(r)) for i, r in enumerate(table.get("rows") or [], 1)]
+    insight = c.get("insight") or {}
+    out += [("insight punchline", insight.get("punchline", "")), ("insight text", insight.get("text", ""))]
+    trick = c.get("memory_trick") or {}
+    out += [("memory trick", trick.get("mnemonic", "")), ("memory trick explanation", trick.get("explanation", ""))]
+    out += [(f"step {i}", s) for i, s in enumerate(c.get("steps") or [], 1)]
+    doubt = c.get("doubt") or {}
+    out += [("doubt question", doubt.get("question", "")), ("doubt answer", doubt.get("answer", ""))]
+    for i, m in enumerate(c.get("mistakes") or [], 1):
+        out += [(f"mistake {i} wrong", m.get("wrong", "")), (f"mistake {i} right", m.get("right", ""))]
+    return out
+
+
+def tidy(c: dict) -> dict:
+    def clean(v):
+        if isinstance(v, str):
+            return v.strip()
+        if isinstance(v, list):
+            return [clean(x) for x in v]
+        if isinstance(v, dict):
+            return {k: clean(x) for k, x in v.items()}
+        return v
+    c = clean(c)
+    c["definitions"] = [d for d in c.get("definitions") or [] if d.get("term") and d.get("meaning")][:2]
+    c["key_points"] = [p for p in c.get("key_points") or [] if p][:4]
+    c["formulas"] = [f for f in c.get("formulas") or [] if f.get("rhs") or f.get("denominator")][:3]
+    table = c.get("table") or {}
+    headers = [h for h in table.get("headers") or [] if h][:3]
+    rows = [r[:len(headers)] for r in table.get("rows") or [] if headers and any(r)][:5]
+    c["table"] = {"headers": headers, "rows": [r + [""] * (len(headers) - len(r)) for r in rows]}
+    c["steps"] = [s for s in c.get("steps") or [] if s][:5]
+    c["mistakes"] = [m for m in c.get("mistakes") or [] if m.get("wrong") and m.get("right")][:4]
+    c["doubt"] = c.get("doubt") or {"question": "", "answer": ""}
+    c["insight"] = c.get("insight") or {"punchline": "", "text": ""}
+    c["memory_trick"] = c.get("memory_trick") or {"mnemonic": "", "explanation": ""}
+    return c
+
+
+def validate(c: dict) -> list[str]:
+    problems = []
+    for key, limit in LIMITS.items():
+        if len(str(c.get(key) or "")) > limit * GRACE:
+            problems.append(f"{key} is longer than {limit} characters")
+    for key in ("topic", "title", "simple_words", "exam_tip"):
+        if not c.get(key):
+            problems.append(f"{key} is empty")
+    if not c.get("definitions"):
+        problems.append("needs at least one definition card")
+    if len(c.get("key_points") or []) < 2:
+        problems.append("needs 2-4 key points")
+    if len(c.get("steps") or []) < 2:
+        problems.append("needs 2-5 steps")
+    if len(c.get("mistakes") or []) < 2:
+        problems.append("needs 2-4 mistakes")
+    if not (c.get("memory_trick") or {}).get("mnemonic"):
+        problems.append("the memory trick is empty")
+    table = c.get("table") or {}
+    if not c.get("formulas") and not table.get("rows"):
+        problems.append("slide 2 needs formulas or a table")
+    insight = c.get("insight") or {}
+    if len(insight.get("punchline") or "") > 36 * GRACE or len(insight.get("text") or "") > 120 * GRACE:
+        problems.append("the insight is too long (punchline 36, text 120 characters)")
+    if table.get("rows") and len(table.get("headers") or []) < 2:
+        problems.append("the table needs 2 or 3 headers")
+    if len(c.get("formulas") or []) > 2 and table.get("rows"):
+        problems.append("use at most 2 formulas when there is also a table")
+    for f in c.get("formulas") or []:
+        if f.get("denominator") and not f.get("numerator"):
+            problems.append(f"formula '{f.get('name')}' has a denominator but no numerator")
+    for label, text in texts(c):
+        if text.count("==") % 2 or text.count("!!") % 2:
+            problems.append(f"{label} has an unclosed ==highlight== or !!red ink!! mark")
+        if _EMOJI.search(text):
+            problems.append(f"{label} contains an emoji")
+    return problems
+
+
+def plain(c: dict) -> str:
+    """The note as plain text, for the checker and for alt text."""
+    lines = []
+    for label, text in texts(c):
+        text = text.replace("==", "").replace("!!", "")
+        if text.strip():
+            lines.append(f"{label}: {text}")
+    for i, f in enumerate(c.get("formulas") or [], 1):
+        if f.get("denominator"):
+            expr = f"({f.get('numerator')}) / ({f.get('denominator')})"
+            if f.get("square_root"):
+                expr = f"square root of [{expr}]"
+            lines.append(f"formula {i} as written: {f.get('lhs')} = {expr} {f.get('suffix') or ''}".rstrip())
+    return "\n".join(lines)
+
+
+def doodle(paper_name: str) -> str:
+    """A cartoon ink doodle that suits the subject (factory, scales, calculator, book or bulb)."""
+    p = paper_name.lower()
+    if p.endswith(")") and "(" in p:           # a paper limited to one half: go by the half
+        p = p[p.rindex("(") + 1:-1]
+    if "cost" in p and "law" not in p:
+        return DOODLES["factory"]
+    if any(w in p for w in ("law", "tax", "gst", "audit", "ethic", "compliance")):
+        return DOODLES["scales"]
+    if any(w in p for w in ("financial management", "mathematic", "statistic", "economics", "valuation",
+                            "strategic financial", "data analytics", "aptitude", "logical")):
+        return DOODLES["calculator"]
+    if any(w in p for w in ("accounting", "reporting")):
+        return DOODLES["book"]
+    return DOODLES["bulb"]
+
+
+DOODLES = {
+    "factory": '<svg width="150" height="130" viewBox="0 0 150 130"><rect class="ink-fill" x="104" y="20" width="18" height="40" fill="#FFFFFF"></rect><path class="thin" d="M113 16 C 106 10, 116 4, 123 9 C 131 5, 140 12, 132 16"></path><path class="ink-fill" d="M14 60 L14 118 L136 118 L136 50 L108 64 L108 50 L80 64 L80 50 L52 64 L52 50 L14 60 Z" fill="#DDF3E6"></path><circle class="dot" cx="62" cy="84" r="3"></circle><circle class="dot" cx="84" cy="84" r="3"></circle><path class="ink" d="M65 92 Q73 99 81 92"></path><rect class="ink-fill" x="24" y="96" width="20" height="22" fill="#FFF4C2"></rect><rect class="ink-fill" x="106" y="80" width="20" height="16" fill="#FFFFFF"></rect></svg>',
+    "scales": '<svg width="150" height="150" viewBox="0 0 150 150"><path class="ink" d="M75 34 L75 132"></path><path class="ink-fill" d="M48 132 L102 132 L96 142 L54 142 Z" fill="#FFF4C2"></path><path class="ink" d="M22 46 L128 46"></path><circle class="ink-fill" cx="75" cy="26" r="10" fill="#FFE1C7"></circle><circle class="dot" cx="71" cy="25" r="1.8"></circle><circle class="dot" cx="79" cy="25" r="1.8"></circle><path class="thin" d="M71 30 Q75 33 79 30"></path><path class="thin" d="M22 46 L8 92"></path><path class="thin" d="M22 46 L36 92"></path><path class="ink-fill" d="M4 92 L40 92 Q22 112 4 92 Z" fill="#FFC2D1"></path><path class="thin" d="M128 46 L114 92"></path><path class="thin" d="M128 46 L142 92"></path><path class="ink-fill" d="M110 92 L146 92 Q128 112 110 92 Z" fill="#BDEBD2"></path></svg>',
+    "calculator": '<svg width="130" height="150" viewBox="0 0 130 150"><rect class="ink-fill" x="22" y="8" width="86" height="134" rx="14" fill="#E1EEFF"></rect><rect class="ink-fill" x="34" y="20" width="62" height="38" rx="6" fill="#FFFFFF"></rect><circle class="dot" cx="54" cy="35" r="3"></circle><circle class="dot" cx="76" cy="35" r="3"></circle><path class="thin" d="M56 44 Q65 51 74 44"></path><rect class="thin-fill" x="34" y="70" width="16" height="14" rx="3" fill="#FFFFFF"></rect><rect class="thin-fill" x="57" y="70" width="16" height="14" rx="3" fill="#FFFFFF"></rect><rect class="thin-fill" x="80" y="70" width="16" height="14" rx="3" fill="#FFC2D1"></rect><rect class="thin-fill" x="34" y="93" width="16" height="14" rx="3" fill="#FFFFFF"></rect><rect class="thin-fill" x="57" y="93" width="16" height="14" rx="3" fill="#FFFFFF"></rect><rect class="thin-fill" x="80" y="93" width="16" height="14" rx="3" fill="#FFC2D1"></rect><rect class="thin-fill" x="34" y="116" width="16" height="14" rx="3" fill="#FFFFFF"></rect><rect class="thin-fill" x="57" y="116" width="16" height="14" rx="3" fill="#FFFFFF"></rect><rect class="thin-fill" x="80" y="116" width="16" height="14" rx="3" fill="#BDEBD2"></rect></svg>',
+    "book": '<svg width="120" height="130" viewBox="0 0 120 130"><rect class="ink-fill" x="14" y="10" width="92" height="110" rx="8" fill="#FFFFFF"></rect><path class="ink" d="M30 10 L30 120"></path><path class="thin" d="M42 38 L94 38"></path><path class="thin" d="M42 54 L94 54"></path><path class="thin" d="M42 70 L86 70"></path><path class="thin" d="M42 86 L94 86"></path><path class="red" d="M42 103 L78 103"></path></svg>',
+    "bulb": '<svg width="110" height="130" viewBox="-12 -10 58 64"><path class="ink-fill" d="M17 3 C 7 3, 3 11, 5 18 C 7 24, 11 25, 11 31 L23 31 C 23 25, 27 24, 29 18 C 31 11, 27 3, 17 3 Z" fill="#FFF4C2"></path><path class="ink" d="M12 36 L22 36"></path><path class="ink" d="M13 41 L21 41"></path><path class="red" d="M17 -6 L17 -2"></path><path class="red" d="M-6 12 L-2 13"></path><path class="red" d="M40 12 L36 13"></path></svg>',
+}
+
+
+def write_concept(cfg: Config, course: dict, paper: dict, date: dt.date, recent: list[str],
+                  instruction: str = "", topic: str = "",
+                  fit_check: Callable[[dict], list[str]] | None = None) -> dict:
+    """Returns the checked concept note. `fit_check(draft)` returns problems if a slide doesn't fit.
+    Raises GenerationError only if no usable note came back."""
+    from .generator import GenerationError, _call_claude
+
+    law_text = cfg.law_text(paper, date)
+    writer_model = cfg.models.get("writer", "claude-sonnet-5-5")
+    checker_model = cfg.models.get("checker", writer_model)
+    system = WRITER_SYSTEM.format(author=cfg.author_for(paper),
+                                  law_text=law_text or "not a law paper; leave applicability empty")
+    recent_lines = "\n".join(f"- {t}" for t in recent[:40]) or "- none yet"
+    base_user = (f"Course: {course['name']} ({course.get('body', '')})\n"
+                 f"Paper: {cfg.paper_prompt(paper)}\n"
+                 f"Posting date: {date.strftime('%d %B %Y')}\n\n")
+    if topic:
+        base_user += f"Write the note on this concept: {topic}\n"
+    else:
+        base_user += f"Concepts already covered for this course (choose a different one):\n{recent_lines}\n"
+    if instruction:
+        base_user += f"\nReviewer's instruction for this note: {instruction}\n"
+
+    feedback, last, notes, why = "", None, [], ""
+    attempts = int(cfg.models.get("max_attempts", 3))
+    for attempt in range(1, attempts + 1):
+        user = base_user + (f"\nYour previous draft was rejected:\n{feedback}\nWrite a corrected note.\n" if feedback else "")
+        draft = tidy(_call_claude(writer_model, system, user, WRITE_TOOL, max_tokens=4000))
+        last = draft
+        problems = validate(draft)
+        if problems:
+            why, feedback, notes = "format", "Format problems: " + "; ".join(problems), [f"Format: {p}" for p in problems]
+            continue
+        problems = fit_check(draft) if fit_check else []
+        if problems:
+            why, feedback, notes = "fit", "It doesn't fit the slides: " + "; ".join(problems), [f"Fit: {p}" for p in problems]
+            continue
+        check = _call_claude(
+            checker_model,
+            CHECKER_SYSTEM.format(course=course["name"], body=course.get("body", ""),
+                                  paper=cfg.paper_prompt(paper),
+                                  law_line=f"Law basis to apply: {law_text}." if law_text else ""),
+            plain(draft), CHECK_TOOL, max_tokens=2000)
+        notes = [f"Checker: {i}" for i in check.get("issues", []) if i]
+        if check.get("severity") != "major":
+            draft.update(law_sensitive=bool(law_text), attempts=attempt, serious=False,
+                         needs_check=bool(draft.get("confidence") == "low" or draft.get("reviewer_note") or notes),
+                         check_notes=([f"Writer: {draft['reviewer_note']}"] if draft.get("reviewer_note") else []) + notes)
+            return draft
+        why = "check"
+        feedback = "An independent examiner found these errors: " + "; ".join(check.get("issues", []))
+
+    if not last or why == "format":
+        raise GenerationError("Claude kept returning concept notes that don't fit the format: " + feedback[:300])
+    reason = ("The note stayed too long for the slides, so it wasn't checked" if why == "fit"
+              else "The checker found errors that weren't fixed")
+    last.update(law_sensitive=bool(law_text), attempts=attempts, needs_check=True, serious=True,
+                check_notes=[f"Not confirmed after {attempts} attempts"] + notes,
+                serious_reason=reason + (f" ({notes[0][:160]})" if notes else ""))
+    return last
+
+
+def dump(c: dict) -> str:
+    return json.dumps(c, ensure_ascii=False, indent=2)

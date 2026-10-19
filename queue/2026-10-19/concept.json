@@ -51,23 +51,23 @@
       [
         "Bank charges, not in Cash Book",
         "Deduct",
-        "No effect"
+        "Add"
       ],
       [
         "Direct credit by bank, not in Cash Book",
         "Add",
-        "No effect"
+        "Deduct"
       ],
       [
         "Cheque dishonoured, not in Cash Book",
         "Deduct",
-        "No effect"
+        "Add"
       ]
     ]
   },
   "insight": {
     "punchline": "Flip the sign when you flip the start!",
-    "text": "Timing items affect only the Pass Book side; bank-only items affect only the Cash Book side."
+    "text": "Start from the Pass Book and every sign reverses, including bank charges, direct credits and dishonours."
   },
   "trick_hook": "remember the two cheque types",
   "memory_trick": {

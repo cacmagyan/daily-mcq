@@ -1,0 +1,148 @@
+{
+  "kind": "concept",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 1",
+  "paper_name": "Accounting",
+  "author": "Rahul kp",
+  "linked_mcq": "Bank Reconciliation Statement",
+  "topic": "Bank Reconciliation Statement (BRS)",
+  "title": "Bank Reconciliation",
+  "title_highlight": "Statement (BRS)",
+  "hook": "match your book with the bank!",
+  "simple_words": "BRS explains why the Cash Book bank balance and the Pass Book balance are different.",
+  "definitions": [
+    {
+      "term": "Bank Reconciliation Statement",
+      "meaning": "A statement that reconciles the bank balance in the Cash Book with the balance in the Pass Book on a given date.",
+      "note": "It is not a ledger account!"
+    },
+    {
+      "term": "Pass Book",
+      "meaning": "The bank's copy of the customer's account. A deposit is a credit in it, a withdrawal is a debit.",
+      "note": "Opposite of your Cash Book"
+    }
+  ],
+  "key_points": [
+    "Differences arise from ==timing== (cheques not yet cleared) and from entries made by only one party.",
+    "Cheques issued but not presented, and cheques deposited but not yet credited, are timing differences.",
+    "Bank charges, interest and direct credits are known to the bank first; the Cash Book needs !!adjustment!!.",
+    "Timing items need no entry in books; errors and bank-only items need entries in the Cash Book."
+  ],
+  "formula_heading": "The Sign Table",
+  "formula_hook": "start from Cash Book debit balance",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Item",
+      "Start: Cash Book Dr",
+      "Start: Pass Book Cr"
+    ],
+    "rows": [
+      [
+        "Cheque issued, not presented",
+        "Add",
+        "Deduct"
+      ],
+      [
+        "Cheque deposited, not collected",
+        "Deduct",
+        "Add"
+      ],
+      [
+        "Bank charges, not in Cash Book",
+        "Deduct",
+        "No effect"
+      ],
+      [
+        "Direct credit by bank, not in Cash Book",
+        "Add",
+        "No effect"
+      ],
+      [
+        "Cheque dishonoured, not in Cash Book",
+        "Deduct",
+        "No effect"
+      ]
+    ]
+  },
+  "insight": {
+    "punchline": "Flip the sign when you flip the start!",
+    "text": "Timing items affect only the Pass Book side; bank-only items affect only the Cash Book side."
+  },
+  "trick_hook": "remember the two cheque types",
+  "memory_trick": {
+    "mnemonic": "Issued Add, Deposited Deduct",
+    "explanation": "Starting from the Cash Book balance: Issued-not-presented cheques are Added, Deposited-not-cleared cheques are Deducted. The Pass Book start reverses both."
+  },
+  "steps": [
+    "Note the starting balance and its Dr/Cr",
+    "Tick Cash Book against Pass Book",
+    "List all unticked items",
+    "Apply the sign table to each item",
+    "Total gives the other book's balance"
+  ],
+  "exam_tip": "Read whether the question gives 'overdraft' or 'favourable' balance. An overdraft in the Cash Book reverses every sign.",
+  "doubt": {
+    "question": "Why is an overdraft shown as a credit in the Cash Book?",
+    "answer": "Overdraft means the bank is owed money, so the Cash Book bank column has a credit balance. Pass Book shows it as a debit. All signs reverse."
+  },
+  "mistakes_hook": "avoid these sign slips",
+  "mistakes": [
+    {
+      "wrong": "Passing journal entries for cheques issued but not presented",
+      "right": "No entry is needed. It is a timing difference and appears only in the BRS."
+    },
+    {
+      "wrong": "Adding bank charges to the Cash Book balance",
+      "right": "Bank charges reduce the Cash Book balance, so deduct them."
+    },
+    {
+      "wrong": "Using the same signs for an overdraft balance",
+      "right": "With an overdraft, every sign reverses. Check the balance type first."
+    },
+    {
+      "wrong": "Treating a dishonoured cheque as a Pass Book error",
+      "right": "The bank has debited it. Deduct it in the Cash Book, since the Cash Book is not yet updated."
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": false,
+  "check_notes": [],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.16,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟩 CA Foundation · Concept of the day\nPaper 1: Accounting\nBank Reconciliation Statement (BRS)\n\nIn simple words: BRS explains why the Cash Book bank balance and the Pass Book balance are different.\n\nSwipe for the summary table, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CA Foundation MCQ (7:55 AM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFoundation #ICAI #CAStudents #CAExams\n\nref concept-261019",
+  "hold": false,
+  "hold_reason": ""
+}

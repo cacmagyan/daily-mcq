@@ -116,6 +116,9 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("mode", help="print the review mode (auto, github_pr or local)")
 
+    s = sub.add_parser("merge-posted", help="add saved posted.json records into the current queue")
+    s.add_argument("saved", help="folder holding copies of queue/<date>/posted.json")
+
     s = sub.add_parser("todo", help="print what a day still needs: all, concept or none")
     s.add_argument("--date", default="tomorrow")
 
@@ -181,6 +184,12 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.cmd == "mode":
         print(cfg.review_mode)
+        return 0
+
+    if args.cmd == "merge-posted":
+        from .batch import merge_posted
+        for line in merge_posted(Path(args.saved)):
+            print(f"  recorded {line}")
         return 0
 
     if args.cmd == "todo":

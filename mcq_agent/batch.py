@@ -50,6 +50,28 @@ def save_posted(date: dt.date, posted: dict) -> None:
         fh.write("\n")
 
 
+def merge_posted(saved: Path) -> list[str]:
+    """Adds records from saved copies (saved/queue/<date>/posted.json) to the current queue.
+    A record already in the queue is kept as it is. Returns what was added."""
+    added = []
+    for src in sorted(Path(saved).glob("queue/*/posted.json")):
+        dest = QUEUE / src.parent.name / "posted.json"
+        with open(src, encoding="utf-8") as fh:
+            mine = json.load(fh)
+        theirs = {}
+        if dest.exists():
+            with open(dest, encoding="utf-8") as fh:
+                theirs = json.load(fh)
+        new = sorted(set(mine) - set(theirs))
+        if new:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            with open(dest, "w", encoding="utf-8") as fh:
+                json.dump({**mine, **theirs}, fh, ensure_ascii=False, indent=2)
+                fh.write("\n")
+            added += [f"{src.parent.name}: {k}" for k in new]
+    return added
+
+
 def recent_items(course_id: str, before: dt.date, limit: int = 60) -> list[dict]:
     """Other days' MCQs for a course (earlier and already-prepared later days), newest first,
     so the writer can avoid repeating topics."""

@@ -71,6 +71,12 @@ class Config:
         line = f"{paper['code']}: {paper['name']}"
         return line + (f" (only the {paper['part']} part of this paper)" if paper.get("part") else "")
 
+    def find_paper(self, course_id: str, code: str, title: str = "") -> dict | None:
+        """The paper entry behind an item's paper_code and paper_name (paper_name includes the half, if any)."""
+        papers = self.course(course_id)["papers"]
+        exact = [p for p in papers if p["code"] == code and (not title or self.paper_title(p) == title)]
+        return (exact or [p for p in papers if p["code"] == code] or [None])[0]
+
     def author_for(self, paper: dict) -> str:
         """Who prepares this paper's notes: its `author` key in authors, else the default (brand name)."""
         default = str(self.authors.get("default") or self.brand.get("name") or "").strip()

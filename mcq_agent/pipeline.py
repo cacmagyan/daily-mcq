@@ -17,10 +17,16 @@ CONCEPT = "concept"     # id of the concept note in commands, posted.json and th
 
 def _new_item(cfg: Config, course: dict, date: dt.date) -> dict:
     paper = cfg.paper_for(course, date)
-    item = {"course_id": course["id"], "paper_code": paper["code"], "paper_name": cfg.paper_title(paper)}
+    return {"course_id": course["id"], "paper_code": paper["code"], "paper_name": cfg.paper_title(paper)}
+
+
+def _sign(cfg: Config, item: dict) -> None:
+    """Puts the paper's author on the MCQ (authors.show_on_mcqs); redraws pick up config changes too."""
     if cfg.authors.get("show_on_mcqs"):
-        item["author"] = cfg.author_for(paper)
-    return item
+        paper = cfg.find_paper(item["course_id"], item.get("paper_code", ""), item.get("paper_name", ""))
+        item["author"] = cfg.author_for(paper or {})
+    else:
+        item.pop("author", None)
 
 
 def concept_link(course_id: str, date: dt.date) -> dict | None:
@@ -46,6 +52,7 @@ def _fill_item(cfg: Config, course: dict, date: dt.date, instruction: str = "") 
 
 def _finish(cfg: Config, renderer: Renderer, item: dict, date: dt.date) -> None:
     out = batch_dir(date)
+    _sign(cfg, item)
     res = renderer.render_item(item, date, out)
     item["images"] = res["images"]
     item["fit_notes"] = res["fit_notes"]

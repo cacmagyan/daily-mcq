@@ -33,6 +33,8 @@ def build_caption(cfg: Config, item: dict, date: dt.date) -> str:
     ]
     if item.get("applicability"):
         lines += ["", f"Based on {item['applicability']}."]
+    if item.get("author"):
+        lines += ["", f"Prepared by {item['author']}"]
     lines += ["", "Find your course by colour:", colour_key(cfg)]
     if handle:
         lines += ["", f"Follow {handle} for one MCQ a day in every course."]

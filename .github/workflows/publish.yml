@@ -1,6 +1,6 @@
 name: 4. Publish due MCQs
 
-# One run per course slot. Each run posts every approved MCQ whose post_time (config.yaml)
+# One run per post slot (6 MCQs + the concept of the day). Each run posts every approved post whose time (config.yaml)
 # has passed and that isn't posted yet, so a delayed or missed run catches up.
 # GitHub cron is UTC: IST = UTC + 5:30. Runs start a couple of minutes after each post_time.
 on:
@@ -10,6 +10,7 @@ on:
     - cron: "57 6 * * *"           # 12:27 IST  CA Inter       (12:25)
     - cron: "57 9 * * *"           # 15:27 IST  CMA Inter      (15:25)
     - cron: "57 12 * * *"          # 18:27 IST  CA Final       (18:25)
+    - cron: "12 14 * * *"          # 19:42 IST  Concept of the day (concepts post_time 19:40)
     - cron: "27 15 * * *"          # 20:57 IST  CMA Final      (20:55)
   workflow_dispatch:
     inputs:

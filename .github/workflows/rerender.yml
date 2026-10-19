@@ -1,11 +1,11 @@
 name: 2. Redraw images after an edit
 
-# When you edit queue/<date>/mcqs.json (on main or in a review pull request), the images are redrawn
+# When you edit queue/<date>/mcqs.json or concept.json (on main or in a review pull request), the images are redrawn
 # and the day's report is updated.
 on:
   push:
     branches: ["main", "batch/**"]
-    paths: ["queue/**/mcqs.json"]
+    paths: ["queue/**/mcqs.json", "queue/**/concept.json"]
 
 permissions:
   contents: write
@@ -43,7 +43,7 @@ jobs:
           if [[ "$BRANCH" == batch/* ]]; then
             DATES="${BRANCH#batch/}"
           else
-            DATES=$(git diff --name-only HEAD~1 HEAD -- 'queue/*/mcqs.json' | cut -d/ -f2 | sort -u)
+            DATES=$(git diff --name-only HEAD~1 HEAD -- 'queue/*/mcqs.json' 'queue/*/concept.json' | cut -d/ -f2 | sort -u)
           fi
           git config user.name "mcq-agent"
           git config user.email "mcq-agent@users.noreply.github.com"

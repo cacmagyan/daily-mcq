@@ -1,0 +1,62 @@
+# ─────────────────────────────────────────────────────────────
+#  Known traps: mistakes the agent must never make again.
+#  The writer and the checker read every trap that matches the paper.
+#  `papers`: words or phrases matched against the paper name ("*" = every paper);
+#  `not`: skip papers whose name contains any of these.
+#  Add one whenever a mistake is found, in one or two plain sentences.
+# ─────────────────────────────────────────────────────────────
+
+- papers: ["*"]
+  text: >-
+    Every figure in the correct option must follow only from the data in the question. State the period
+    (per annum, per month) and units, and never rely on an assumption the question doesn't give.
+
+- papers: ["*"]
+  text: >-
+    Exactly one option may be correct under every reasonable reading. If a word can mean two things
+    (interest charged or credited, gross or net, inclusive or exclusive of GST), say which one.
+
+- papers: ["accounting"]
+  not: ["cost", "management", "corporate"]
+  text: >-
+    Bank Reconciliation Statement: starting from the Pass Book balance instead of the Cash Book balance
+    reverses EVERY adjustment, both timing items (cheques issued but not presented, cheques deposited
+    but not collected) and bank-only items (bank charges, interest, direct credits, dishonoured cheques).
+    Starting from an overdraft reverses the signs again.
+
+- papers: ["accounting"]
+  not: ["cost", "management"]
+  text: >-
+    Admission of a partner: sacrifice = old share minus new share. Premium for goodwill brought in by the
+    new partner is credited to the sacrificing partners in their sacrificing ratio, not the new ratio. If the
+    question doesn't say how the new partner gets his share, he takes it from the old partners in their old ratio.
+
+- papers: ["accounting"]
+  not: ["cost", "management"]
+  text: >-
+    Depreciation: the written-down-value method applies the rate to the opening written-down value
+    (cost less accumulated depreciation); the straight-line method applies it to the cost or depreciable
+    amount. Count part-year depreciation only if the question says when the asset was bought or sold.
+
+- papers: ["cost accounting", "cost and management accounting", "strategic cost management"]
+  text: >-
+    EOQ = square root of (2 x A x O / C): A is annual demand in units, O the cost per order, and C the
+    carrying cost per unit per year. Convert a carrying-cost percentage into rupees per unit per year
+    before using it.
+
+- papers: ["business laws", "business and industrial laws", "corporate and other laws"]
+  text: >-
+    Indian Contract Act: goods displayed with price tags, price lists, catalogues, tender notices and auction
+    announcements are invitations to offer. An advertisement promising a reward to anyone who performs a
+    condition is a general offer (Carlill v. Carbolic Smoke Ball Co.).
+
+- papers: ["tax", "taxation", "gst", "income-tax", "statutory"]
+  text: >-
+    Don't base a question on a rate, threshold, limit or due date unless the question itself states it or
+    it is certain for the given law basis. Prefer concepts and treatments that don't change with each
+    Finance Act, and never invent a section number.
+
+- papers: ["reporting", "advanced accounting", "corporate accounting", "auditing", "audit"]
+  text: >-
+    Say whether the question applies AS or Ind AS (or which Standard on Auditing), and use the standard
+    family that this paper examines. Don't mix the two.

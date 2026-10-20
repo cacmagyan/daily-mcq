@@ -125,6 +125,12 @@ From then on it runs by itself.
 
 ## Accuracy
 
+How the agent catches its own mistakes, so you don't have to check every subject:
+- **Arithmetic is re-done in code.** For a numerical MCQ, Claude also writes its calculation as plain arithmetic; the agent runs it, and the answer key must match the result exactly (and no wrong option may match it).
+- **A stronger, separate checker** (`models.checker`, Claude Opus) solves every MCQ without seeing the key. Tax and law MCQs must also be solved correctly by a second checker. Concept notes are checked by two checkers that re-derive every table cell, sign and formula.
+- **Known traps** (`traps.yaml`): every mistake found is written down there once; the writer and the checkers read the matching traps each time, so it can't happen again. Add a trap with one or two plain sentences.
+- **Topic switch before holding:** if an MCQ or note still can't be confirmed after 3 tries, the agent writes one on a different, core topic. Only if that also fails is it held, and you're told.
+
 - Claude writes to strict rules: original questions only (never copied from study material, RTPs, MTPs or past papers), one correct answer, distractors built from real student mistakes, Indian number formats, and no made-up section numbers.
 - A second Claude call solves every MCQ independently. Disagreements are rewritten or flagged.
 - Tax papers follow the law set in `config.yaml → law_basis`, which changes by date. CA tax questions switch from the Income-tax Act, 1961 to the **Income-tax Act, 2025** on 1 Feb 2027, because ICAI examines the new Act from the May 2027 attempt. **Update `law_basis` when ICAI or ICMAI publish each attempt's applicability notice.**

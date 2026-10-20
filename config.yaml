@@ -16,7 +16,8 @@ timezone: "Asia/Kolkata"
 # Claude models used to write and double-check each MCQ.
 models:
   writer: "claude-sonnet-5-5"   # writes the question, options, explanation
-  checker: "claude-sonnet-5-5"  # solves the question without seeing the answer
+  checker: "claude-opus-5-5"    # solves each MCQ blind and re-checks each concept note; a stronger model
+                                # than the writer catches more. If your plan can't use it, the writer model is used.
   max_attempts: 3               # rewrites allowed when the checker disagrees
 
 review:

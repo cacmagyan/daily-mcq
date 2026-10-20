@@ -23,7 +23,7 @@ jobs:
        startsWith(github.event.comment.body, '/hold')) &&
       (github.event.issue.pull_request || contains(github.event.issue.title, 'MCQs for '))
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 50
     concurrency:
       group: command-${{ github.event.issue.number }}
       cancel-in-progress: false

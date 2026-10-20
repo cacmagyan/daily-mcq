@@ -41,7 +41,7 @@ concurrency:
 jobs:
   prepare:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 100           # stronger checking makes more Claude calls
     steps:
       # the latest main, so a back-up run that waited in the queue sees what an earlier run made
       - uses: actions/checkout@v5

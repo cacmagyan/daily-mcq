@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ course.name }} reel</title>
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("{{ fonts }}/Inter-Regular.otf"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("{{ fonts }}/Inter-Medium.otf"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("{{ fonts }}/Inter-SemiBold.otf"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("{{ fonts }}/Inter-Bold.otf"); }
+@font-face { font-family: "Heros Cn"; font-weight: 400; src: url("{{ fonts }}/texgyreheroscn-regular.otf"); }
+@font-face { font-family: "Heros Cn"; font-weight: 700; src: url("{{ fonts }}/texgyreheroscn-bold.otf"); }
+@font-face { font-family: "Lora"; font-style: italic; font-weight: 400 700; src: url("{{ fonts }}/Lora-Italic-Variable.ttf"); }
+
+/* 1080 x 1920 Reel. Instagram draws its buttons over the right edge and the caption over the
+   bottom, and the profile grid shows only y 240-1680, so everything that matters sits in
+   x 40-952, y 236-1550. */
+:root {
+  --ink: {{ course.color.ink }};
+  --deep: {{ course.color.deep }};
+  --wash: {{ course.color.wash }};
+  --on-ink: {{ course.color.on_ink }};
+  --line: {{ course.color.line or course.color.ink }};
+  --paper: #FFFFFF;
+  --text: #1C1E23;
+  --muted: #5B606B;
+  --graphite: #202226;
+  --s: 1;
+  --p: 0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+body { background: var(--ink); font-family: "Inter", sans-serif; color: var(--text);
+       -webkit-font-smoothing: antialiased; font-feature-settings: "cv11" 1, "ss01" 1; position: relative; }
+
+/* faint ruled lines on the ink, so the background isn't flat */
+body::before { content: ""; position: absolute; inset: 0;
+  background: repeating-linear-gradient(180deg, transparent 0 58px, rgba(255,255,255,.07) 58px 60px); }
+
+/* ── header on the ink: logo, course, countdown ─────────────────── */
+.head { position: absolute; left: 40px; top: 238px; width: 912px; height: 192px;
+        display: flex; align-items: center; gap: 22px; color: var(--on-ink); }
+.head .logo { width: 180px; height: 180px; object-fit: contain; flex-shrink: 0;
+              background: #fff; border-radius: 50%; padding: 8px; }
+.head .titles { flex: 1; min-width: 0; }
+.head .course { font-family: "Heros Cn"; font-weight: 700; font-size: 92px; line-height: .9; letter-spacing: -.5px;
+                white-space: nowrap; overflow: hidden; padding-bottom: 4px; }
+.head .sub { font-family: "Heros Cn"; font-weight: 700; font-size: 40px; line-height: 1.1; margin-top: 12px; }
+.head .sub .say-a, .head .sub .say-s { display: none; }
+.revealed .head .sub .say-q { display: none; }
+.revealed .head .sub .say-a { display: inline; }
+.outro .head .sub .say-a { display: none; }
+.outro .head .sub .say-s { display: inline; }
+.head .sub .say-s { font-size: 33px; line-height: 1.12; }
+.head .sub .say-s svg { width: 36px; height: 36px; vertical-align: -7px; margin-left: 4px; }
+
+.clock { position: relative; width: 192px; height: 192px; flex-shrink: 0; transform-origin: 50% 50%; }
+.clock svg { position: absolute; inset: 0; width: 192px; height: 192px; }
+.clock .face { fill: #fff; }
+.clock .track { fill: none; stroke: color-mix(in srgb, var(--line) 22%, #fff); stroke-width: 16; }
+.clock .arc { fill: none; stroke: var(--line); stroke-width: 16; stroke-linecap: round;
+              transform: rotate(-90deg); transform-origin: 105px 105px; }
+.clock .num { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+              font-family: "Heros Cn"; font-weight: 700; font-size: 92px; color: var(--deep); line-height: 1;
+              padding-bottom: 14px; }
+.clock .unit { position: absolute; left: 0; right: 0; bottom: 32px; text-align: center; font-family: "Heros Cn";
+               font-size: 22px; color: var(--muted); letter-spacing: 1px; }
+.clock.hot .num { color: var(--graphite); }
+.clock .done { opacity: 0; }
+.revealed .clock .done { opacity: 1; }
+.revealed .clock .num, .revealed .clock .unit, .revealed .clock .arc, .revealed .clock .track { opacity: 0; }
+.clock .done circle { fill: var(--graphite); }
+.clock .done path { fill: none; stroke: #fff; stroke-width: 15; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── the OMR sheet ──────────────────────────────────────────────── */
+.sheet { position: absolute; left: 40px; top: 446px; width: 912px; height: 1104px; background: var(--paper);
+         border-radius: 6px; display: grid; grid-template-columns: 50px 1fr; overflow: hidden;
+         box-shadow: 0 10px 0 rgba(0,0,0,.12); }
+.marks { display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+         padding: 34px 0 34px 6px; }
+.marks i { display: block; width: 26px; height: 12px; background: var(--graphite); }
+.page { display: flex; flex-direction: column; padding: 28px 34px 22px 12px; min-height: 0; }
+
+.fields { display: grid; grid-template-columns: 1.2fr 1fr .52fr; border: 2.5px solid var(--line); flex-shrink: 0; }
+.field { padding: 8px 14px 10px; min-width: 0; }
+.field + .field { border-left: 2.5px solid var(--line); }
+.field label { display: block; font-family: "Heros Cn"; font-size: 20px; color: var(--deep); line-height: 1.1; }
+.field div { font-weight: 600; font-size: 24px; line-height: 1.22; margin-top: 3px;
+             overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.field div em { font-style: normal; color: var(--deep); }
+
+.body { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column;
+        padding-top: calc(var(--s) * 26px); }
+.q { display: grid; grid-template-columns: calc(var(--s) * 64px) 1fr; }
+.q .qno { font-family: "Heros Cn"; font-weight: 700; font-size: calc(var(--s) * 54px); line-height: 1; color: var(--line); }
+.q p { font-weight: 500; font-size: calc(var(--s) * 43px); line-height: 1.33; letter-spacing: -.2px; }
+.applies { margin: calc(var(--s) * 10px) 0 0 calc(var(--s) * 64px); font-size: calc(var(--s) * 23px);
+           color: var(--deep); font-weight: 500; }
+
+.opts { margin-top: calc(var(--s) * 22px); }
+.opt { display: grid; grid-template-columns: calc(var(--s) * 66px) 1fr; align-items: center;
+       padding: calc(var(--s) * 14px) calc(var(--s) * 10px) calc(var(--s) * 14px) 0;
+       border-top: 2px dotted color-mix(in srgb, var(--line) 50%, transparent); }
+.opt:last-child { border-bottom: 2px dotted color-mix(in srgb, var(--line) 50%, transparent); }
+.opt .txt { font-size: calc(var(--s) * 39px); line-height: 1.3; }
+.revealed .opt:not(.right) { opacity: calc(1 - .55 * var(--p)); }
+.revealed .opt.right { background: color-mix(in srgb, var(--wash) calc(var(--p) * 100%), transparent); }
+.revealed .opt.right .txt { font-weight: 700; }
+
+.bubble { width: calc(var(--s) * 54px); height: calc(var(--s) * 54px); display: block; }
+.bubble text { font-family: "Heros Cn"; font-weight: 700; font-size: 27px; fill: var(--line); }
+.bubble .fill { opacity: 0; transform-origin: 32px 32px; }
+.revealed .opt.right .bubble .fill { opacity: 1; transform: scale(calc(.35 + .65 * var(--p))); }
+
+/* below the options: a prompt while the clock runs (at the foot of the sheet), the reason once the answer shows */
+.slot { margin-top: auto; padding-top: calc(var(--s) * 24px); }
+.revealed .slot { margin-top: 0; }
+.slot .why { display: none; background: var(--wash); border-left: 10px solid var(--ink);
+             padding: calc(var(--s) * 16px) calc(var(--s) * 22px) calc(var(--s) * 18px); }
+.slot .why label { font-family: "Heros Cn"; font-weight: 700; color: var(--deep); font-size: calc(var(--s) * 25px); line-height: 1; }
+.slot .why p { font-size: calc(var(--s) * 31px); line-height: 1.38; margin-top: calc(var(--s) * 8px); }
+.slot .ask { display: flex; align-items: center; gap: calc(var(--s) * 20px); border: 2.5px dashed var(--line);
+             background: var(--wash); padding: calc(var(--s) * 18px) calc(var(--s) * 24px); }
+.slot .ask svg { width: calc(var(--s) * 58px); height: calc(var(--s) * 58px); flex-shrink: 0; color: var(--deep); }
+.slot .ask p { font-size: calc(var(--s) * 34px); line-height: 1.25; font-weight: 600; }
+.slot .ask p strong { color: var(--deep); }
+.revealed .slot .ask { display: none; }
+.revealed .slot .why { display: block; opacity: var(--p); }
+
+.foot { display: flex; justify-content: flex-end; align-items: flex-end; gap: 18px; flex-shrink: 0;
+        border-top: 2.5px solid var(--line); padding-top: 12px; margin-top: 16px; }
+.foot .day { font-family: "Heros Cn"; font-size: 22px; color: var(--muted); line-height: 1.25; }
+.foot .day b { color: var(--text); }
+.sign { text-align: right; line-height: 1; }
+.sign small { display: block; font-family: "Heros Cn"; font-size: 18px; color: var(--muted); }
+.sign strong { display: block; font-family: "Lora"; font-style: italic; font-weight: 600; font-size: 38px; color: var(--graphite); margin-top: 2px; }
+.sign em { display: block; font-style: normal; font-size: 20px; color: var(--deep); font-weight: 600; margin-top: 4px; }
+
+/* ── the presenter: the paper's author stands at the foot of the sheet ─────────── */
+.guy { position: absolute; right: 14px; bottom: 0; height: 440px; width: 300px; z-index: 2; pointer-events: none; }
+.guy img { position: absolute; right: 0; bottom: 0; height: 100%; width: auto; max-width: none; }
+/* thinking while the clock runs, pointing at the reason, thumbs-up for the last couple of seconds */
+.guy img { opacity: 0; }
+.guy img.think { opacity: 1; }
+.revealed .guy img.think { opacity: 0; }
+.revealed .guy img.point { opacity: 1; }
+.outro .guy.has-thumbs img.point { opacity: 0; }
+.outro .guy img.thumbs { opacity: 1; }
+.guy .tag .t2 { display: none; }
+.outro .guy .tag .t1 { display: none; }
+.outro .guy .tag .t2 { display: block; }
+.guy .tag { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); white-space: nowrap;
+            background: var(--ink); color: var(--on-ink); font-family: "Heros Cn"; font-weight: 700; font-size: 24px;
+            line-height: 1; padding: 9px 16px 8px; border-radius: 6px; box-shadow: 0 3px 0 rgba(0,0,0,.18); }
+.guy .tag small { display: block; font-weight: 400; font-size: 16px; opacity: .85; margin-bottom: 3px; }
+.has-guy .sign { display: none; }
+.has-guy .slot { padding-right: 300px; }
+/* while the clock runs, his thought bubble sits beside him, level with his shoulders */
+.has-guy .slot .ask { border-radius: 30px; position: absolute; left: 62px; right: 336px; bottom: 190px; z-index: 3; }
+.has-guy .slot .ask::before, .has-guy .slot .ask::after { content: ""; position: absolute; border-radius: 50%;
+            background: var(--wash); border: 2.5px dashed var(--line); }
+.has-guy .slot .ask::before { width: 26px; height: 26px; right: -40px; top: -6px; }
+.has-guy .slot .ask::after { width: 15px; height: 15px; right: -64px; top: -30px; }
+.has-guy .slot .why { border-left: none; border-radius: 22px; position: relative; }
+.has-guy .slot .why::after { content: ""; position: absolute; right: -30px; top: 36px; border: 16px solid transparent;
+            border-left: 30px solid var(--wash); border-right: 0; }
+</style>
+</head>
+<body>
+
+{%- macro bubble(letter) -%}
+<svg class="bubble" viewBox="0 0 64 64" aria-hidden="true">
+  <circle cx="32" cy="32" r="27.5" fill="#fff" stroke="{{ course.color.line or course.color.ink }}" stroke-width="3.2"/>
+  <text x="32" y="42" text-anchor="middle">{{ letter }}</text>
+  <g class="fill"><g filter="url(#graphite)">
+    <path d="M4.6 33.5 C3.8 17.6 16.4 4.2 32.6 4.4 C48.8 4.6 60.4 16.8 59.6 32.4 C58.8 48.6 47.2 60 31.4 59.6 C15.6 59.2 5.4 49.2 4.6 33.5 Z" fill="#202226" transform="rotate(-24 32 32)"/>
+  </g></g>
+</svg>
+{%- endmacro -%}
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="graphite" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.55 1.4" numOctaves="2" seed="11" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.62  0 0 0 0 0.63  0 0 0 0 0.68  0 0 0 0.42 -0.13" result="specks"/>
+      <feComposite in="specks" in2="SourceGraphic" operator="in" result="sheen"/>
+      <feMerge result="lead"><feMergeNode in="SourceGraphic"/><feMergeNode in="sheen"/></feMerge>
+      <feTurbulence type="turbulence" baseFrequency="0.08" numOctaves="1" seed="4" result="wobble"/>
+      <feDisplacementMap in="lead" in2="wobble" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<header class="head">
+  {%- if logo %}<img class="logo" src="{{ logo }}" alt="">{% endif %}
+  <div class="titles">
+    <div class="course">{{ course.name }}</div>
+    <div class="sub"><span class="say-q">Answer in {{ seconds }} seconds</span><span class="say-a">Answer: option {{ item.correct }}</span>
+      {%- if share %}<span class="say-s">Send this to a friend who'd<br>pick option {{ share }}
+        <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16.5" fill="#FFD43B" stroke="#1C1E23" stroke-width="2"/>
+          <path d="M11 14.5 Q13 11.5 15 14.5 M21 14.5 Q23 11.5 25 14.5" fill="none" stroke="#1C1E23" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M9.5 19.5 Q18 30 26.5 19.5 Z" fill="#1C1E23"/></svg></span>{% endif %}</div>
+  </div>
+  <div class="clock" id="clock">
+    <svg viewBox="0 0 210 210" aria-hidden="true">
+      <circle class="face" cx="105" cy="105" r="103"/>
+      <circle class="track" cx="105" cy="105" r="84"/>
+      <circle class="arc" id="arc" cx="105" cy="105" r="84" stroke-dasharray="527.79" stroke-dashoffset="0"/>
+      <g class="done"><circle cx="105" cy="105" r="88"/><path d="M62 108 L92 138 L150 78"/></g>
+    </svg>
+    <div class="num" id="num">{{ seconds }}</div>
+    <div class="unit">SEC</div>
+  </div>
+</header>
+
+<div class="sheet{% if presenter %} has-guy{% endif %}">
+  {%- if presenter %}
+  <div class="guy{% if presenter.thumbs %} has-thumbs{% endif %}" id="guy">
+    <img class="think" src="{{ presenter.think }}" alt="">
+    <img class="point" src="{{ presenter.answer }}" alt="">
+    {%- if presenter.thumbs %}<img class="thumbs" src="{{ presenter.thumbs }}" alt="">{% endif %}
+    <span class="tag"><span class="t1"><small>Prepared by</small>{{ item.author or brand.name }}</span>
+      {%- if brand.handle %}<span class="t2"><small>Follow for daily MCQs</small>{{ brand.handle }}</span>{% endif %}</span>
+  </div>
+  {%- endif %}
+  <div class="marks">{% for _ in range(18) %}<i></i>{% endfor %}</div>
+  <div class="page">
+    <div class="fields">
+      <div class="field"><label>Paper</label><div><em>{{ item.paper_code }}</em> {{ item.paper_name }}</div></div>
+      <div class="field"><label>Topic</label><div>{{ item.topic }}</div></div>
+      <div class="field"><label>Day {{ day }}</label><div>{{ date_label }}</div></div>
+    </div>
+
+    <main class="body">
+      <div class="q"><span class="qno">Q.</span><p>{{ item.question }}</p></div>
+      {%- if item.applicability %}<div class="applies">Based on {{ item.applicability }}</div>{% endif %}
+      <div class="opts">
+        {%- for opt in item.options %}
+        <div class="opt{% if letters[loop.index0] == item.correct %} right{% endif %}">{{ bubble(letters[loop.index0]) }}<div class="txt">{{ opt }}</div></div>
+        {%- endfor %}
+      </div>
+      <div class="slot">
+        <div class="ask">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 9 H42 V33 H22 L12 41 V33 H6 Z"/><path d="M15 19 H33 M15 26 H27" stroke-linecap="round"/>
+          </svg>
+          <p>Comment your answer<br><strong>before the timer ends!</strong></p>
+        </div>
+        <div class="why"><label>Why</label><p>{{ why }}</p></div>
+      </div>
+    </main>
+
+    {%- if not presenter %}
+    <footer class="foot">
+      <div class="sign">
+        <small>Prepared by</small>
+        <strong>{{ item.author or brand.name }}</strong>
+        {%- if brand.handle %}<em>{{ brand.handle }}</em>{% endif %}
+      </div>
+    </footer>
+    {%- endif %}
+  </div>
+</div>
+
+<script>
+const root = document.documentElement, bodyEl = document.querySelector('.body');
+const C = 2 * Math.PI * 84;
+const setS = v => root.style.setProperty('--s', v);
+const guyEl = document.getElementById('guy'), optsEl = document.querySelector('.opts');
+// too full: text below the bottom of the sheet, or the options running into the presenter's head
+const over = () => bodyEl.scrollHeight > bodyEl.clientHeight + 1 ||
+  (guyEl && optsEl.getBoundingClientRect().bottom > guyEl.getBoundingClientRect().top - 10);
+
+// One text size for the whole reel (no jump when the answer shows): the largest size, up to 125%,
+// at which both the question state and the answer state fit; never below 60%.
+window.fitReel = function () {
+  // a long course name ("CA Foundation") gets smaller rather than running under the clock
+  const name = document.querySelector('.head .course');
+  for (let fs = 92; name.scrollWidth > name.clientWidth + 1 && fs > 50; ) { fs -= 2; name.style.fontSize = fs + 'px'; }
+  const best = () => {
+    let s = 1; setS(s);
+    if (!over()) {
+      while (s < 1.25) { setS(s + 0.02); if (over()) { setS(s); break; } s = Math.round((s + 0.02) * 100) / 100; }
+    }
+    while (over() && s > 0.6) { s = Math.round((s - 0.02) * 100) / 100; setS(s); }
+    return s;
+  };
+  document.body.classList.add('revealed');
+  const a = best();
+  document.body.classList.remove('revealed');
+  const q = best();
+  const s = Math.min(a, q);
+  setS(s);
+  let overflow = over();
+  document.body.classList.add('revealed');
+  overflow = overflow || over();
+  document.body.classList.remove('revealed');
+  return { scale: s, overflow: overflow };
+};
+
+// remaining: seconds left (total .. 0). The number changes on each whole second; the last
+// three seconds pulse.
+window.setClock = function (remaining, total) {
+  document.body.classList.remove('revealed');
+  const arc = document.getElementById('arc'), clock = document.getElementById('clock');
+  arc.style.strokeDashoffset = (C * (1 - Math.max(0, remaining) / total)).toFixed(2);
+  document.getElementById('num').textContent = Math.max(1, Math.ceil(remaining - 1e-6));
+  const hot = remaining <= 3;
+  clock.classList.toggle('hot', hot);
+  const ph = Math.ceil(remaining - 1e-6) - remaining;        // 0 right after the number changes
+  clock.style.transform = hot ? `scale(${(1 + 0.08 * Math.max(0, 1 - ph / 0.4)).toFixed(3)})` : '';
+  if (guyEl) guyEl.style.transform = `translateY(${(4 * Math.sin((total - remaining) * Math.PI)).toFixed(2)}px)`;
+};
+
+// The last seconds: thumbs-up (if there is that picture), "send this to a friend" and "Follow".
+window.outro = function () {
+  window.reveal(1);
+  document.body.classList.add('outro');
+  if (guyEl) guyEl.style.transform = '';
+};
+
+// p: 0..1, how far the answer has appeared (bubble filled in, reason faded in).
+window.reveal = function (p) {
+  document.body.classList.add('revealed');
+  root.style.setProperty('--p', p);
+  const clock = document.getElementById('clock');
+  clock.classList.remove('hot');
+  clock.style.transform = `scale(${(0.7 + 0.3 * p).toFixed(3)})`;
+  if (guyEl) guyEl.style.transform = `translateY(${(10 * (1 - p)).toFixed(2)}px)`;
+};
+</script>
+</body>
+</html>

@@ -41,11 +41,11 @@ def parse_regen_comment(text: str, cfg: Config) -> tuple[str, str]:
             if len(parts) < 2:
                 break
             course_id = parts[1].strip().lower()
-            if course_id != "concept":
+            if course_id not in ("concept", "reel"):
                 try:
                     cfg.course(course_id)
                 except KeyError as exc:
-                    raise SystemExit(str(exc).strip('"') + ", concept") from None
+                    raise SystemExit(str(exc).strip('"') + ", concept, reel") from None
             return course_id, (parts[2].strip() if len(parts) > 2 else "")
     raise SystemExit("Write it as: /regen <course_id> [instruction]. Course ids: " + ", ".join(cfg.course_ids()))
 
@@ -63,14 +63,14 @@ def parse_command(text: str, cfg: Config) -> tuple[str, str, str]:
             if len(parts) < 2:
                 break
             course_id = parts[1].strip().lower()
-            if course_id != "concept":
+            if course_id not in ("concept", "reel"):
                 try:
                     cfg.course(course_id)
                 except KeyError as exc:
-                    raise SystemExit(str(exc).strip('"') + ", concept") from None
+                    raise SystemExit(str(exc).strip('"') + ", concept, reel") from None
             return word[1:], course_id, (parts[2].strip() if len(parts) > 2 else "")
     raise SystemExit("Write one of: /regen <course> [instruction], /approve <course>, /hold <course>. "
-                     "Course ids: " + ", ".join(cfg.course_ids()) + ", concept")
+                     "Course ids: " + ", ".join(cfg.course_ids()) + ", concept, reel")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -119,7 +119,7 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("merge-posted", help="add saved posted.json records into the current queue")
     s.add_argument("saved", help="folder holding copies of queue/<date>/posted.json")
 
-    s = sub.add_parser("todo", help="print what a day still needs: all, concept or none")
+    s = sub.add_parser("todo", help="print what a day still needs: all, none, or the extras (concept,reel)")
     s.add_argument("--date", default="tomorrow")
 
     s = sub.add_parser("approve", help="approve a batch (review mode: local)")
@@ -134,6 +134,9 @@ def main(argv: list[str] | None = None) -> int:
 
     s = sub.add_parser("set-logo", help="use a new logo image (removes a fake checkerboard background)")
     s.add_argument("image", help="path to the logo (PNG with transparency, or JPEG)")
+
+    s = sub.add_parser("reel-demo", help="make demo reels from the sample MCQs (tries the voice); posts nothing")
+    s.add_argument("--out", default="demo", help="folder for the videos (default: demo)")
 
     sub.add_parser("check", help="test the Instagram and Claude connections")
     sub.add_parser("refresh-token", help="print a refreshed Instagram token (stdout only)")
@@ -193,25 +196,32 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.cmd == "todo":
-        from .batch import load_batch, load_concept
+        from .batch import load_batch, load_concept, load_reel
         date = cfg.resolve_date(args.date)
         if not load_batch(date):
             print("all")
-        elif cfg.concept_due(date) and not load_concept(date):
-            print("concept")
-        else:
-            print("none")
+            return 0
+        need = []
+        if cfg.concept_due(date) and not load_concept(date):
+            need.append("concept")
+        reel = load_reel(date)
+        if cfg.reel_due(date) and (not reel or reel.get("error")):     # a failed reel is cheap to retry
+            need.append("reel")
+        print(",".join(need) or "none")
         return 0
 
     if args.cmd == "command":
         from .pipeline import hold, regenerate, release
         date = dt.date.fromisoformat(args.date)
         action, course_id, instruction = parse_command(args.comment, cfg)
-        name = "concept note" if course_id == "concept" else cfg.course(course_id)["name"]
+        name = {"concept": "concept note", "reel": "reel"}.get(course_id) or cfg.course(course_id)["name"]
         if action == "regen":
             item = regenerate(cfg, date, course_id, instruction)
             if course_id == "concept":
                 summary = f"New concept note for {date}: {item.get('topic', '')}"
+            elif course_id == "reel":
+                summary = (f"Reel for {date} could not be made: {item.get('error', '')[:200]}" if item.get("error")
+                           else f"New reel for {date}: {cfg.course(item['course_id'])['name']}, {item.get('topic', '')}")
             else:
                 summary = f"New {name} MCQ for {date}: {item.get('topic', '')} (answer {item.get('correct', '?')})"
             if item.get("hold"):
@@ -243,6 +253,11 @@ def main(argv: list[str] | None = None) -> int:
             raise SystemExit("set-logo needs two extra packages: pip install numpy scipy")
         print(f"Saved {dest.relative_to(ROOT)}. Run: python -m mcq_agent prepare --date today --sample  to see it.")
         return 0
+
+    if args.cmd == "reel-demo":
+        from .pipeline import reel_demo
+        made = reel_demo(cfg, ROOT / args.out)
+        return 0 if made else 1
 
     if args.cmd == "check":
         return _check(cfg)

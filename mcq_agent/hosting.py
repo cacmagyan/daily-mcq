@@ -24,22 +24,24 @@ def _git(*args: str) -> str:
 
 
 def repo_and_commit() -> tuple[str, str]:
+    """The repo and the commit that is checked out. The checked-out commit (the newest main) is used
+    rather than the one that started the run, so files added while the run waited are found."""
     repo = os.environ.get("GITHUB_REPOSITORY", "")
-    sha = os.environ.get("GITHUB_SHA", "")
+    sha = ""
     try:
         if not repo:
             m = re.search(r"github\.com[:/](.+?)(?:\.git)?$", _git("remote", "get-url", "origin"))
             repo = m.group(1) if m else ""
-        if not sha:
-            sha = _git("rev-parse", "HEAD")
+        sha = _git("rev-parse", "HEAD")
     except (subprocess.CalledProcessError, FileNotFoundError):
         pass
+    sha = sha or os.environ.get("GITHUB_SHA", "")
     if not repo or not sha:
         raise HostingError("Can't work out the GitHub repo/commit. Run inside the GitHub repo or set GITHUB_REPOSITORY.")
     return repo, sha
 
 
-def _cloudinary_upload(path: Path) -> str:
+def _cloudinary_upload(path: Path, kind: str = "image") -> str:
     url = os.environ.get("CLOUDINARY_URL", "")
     p = urlparse(url)
     if p.scheme != "cloudinary" or not p.username or not p.password or not p.hostname:
@@ -49,7 +51,7 @@ def _cloudinary_upload(path: Path) -> str:
     to_sign = f"overwrite=true&public_id={public_id}&timestamp={ts}{p.password}"
     with open(path, "rb") as fh:
         r = requests.post(
-            f"https://api.cloudinary.com/v1_1/{p.hostname}/image/upload",
+            f"https://api.cloudinary.com/v1_1/{p.hostname}/{kind}/upload",
             data={"api_key": p.username, "timestamp": ts, "public_id": public_id, "overwrite": "true",
                   "signature": hashlib.sha1(to_sign.encode()).hexdigest()},
             files={"file": fh}, timeout=120,
@@ -73,7 +75,7 @@ def public_url(host: str, path: Path, ig_cfg: dict) -> str:
             raise HostingError("image_hosts has base_url but public_base_url is empty in config.yaml")
         return f"{base}/{rel}"
     if host == "cloudinary":
-        return _cloudinary_upload(path)
+        return _cloudinary_upload(path, "video" if path.suffix.lower() in (".mp4", ".mov") else "image")
     raise HostingError(f"Unknown image host '{host}'")
 
 
@@ -107,3 +109,42 @@ def urls_for(paths: list[Path], ig_cfg: dict) -> tuple[list[str], str]:
     raise HostingError(
         "No image host worked. A private GitHub repo can't serve images to Instagram: make the repo public "
         "or switch image_hosts to cloudinary.\n" + "\n".join(errors))
+
+
+def reachable_video(url: str) -> tuple[bool, str]:
+    try:
+        r = requests.get(url, timeout=45, stream=True)
+        ctype = r.headers.get("content-type", "")
+        size = int(r.headers.get("content-length") or 0)
+        r.close()
+    except (requests.RequestException, ValueError) as exc:
+        return False, str(exc)
+    if r.status_code != 200:
+        return False, f"HTTP {r.status_code}"
+    if "html" in ctype:                     # an error page, not the video
+        return False, f"content-type {ctype}"
+    if size and size < 10_000:
+        return False, f"only {size} bytes"
+    return True, "ok"
+
+
+def video_urls(path: Path, ig_cfg: dict) -> list[str]:
+    """Public addresses of the reel video that answer right now, best first (Instagram is given
+    the next one if it can't process a video from the first)."""
+    good, errors = [], []
+    for host in ig_cfg.get("video_hosts", ["github_raw", "jsdelivr", "cloudinary"]):
+        if host == "cloudinary" and not os.environ.get("CLOUDINARY_URL"):
+            continue
+        try:
+            url = public_url(host, path, ig_cfg)
+        except HostingError as exc:
+            errors.append(f"{host}: {exc}")
+            continue
+        ok, why = reachable_video(url)
+        if ok:
+            good.append(url)
+        else:
+            errors.append(f"{host}: {url} -> {why}")
+    if not good:
+        raise HostingError("No public address for the reel video worked:\n" + "\n".join(errors))
+    return good

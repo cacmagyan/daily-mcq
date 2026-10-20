@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import time
 
@@ -115,7 +116,7 @@ class Instagram:
         return self._call("POST", f"{self.user_id}/media", media_type="CAROUSEL",
                           children=",".join(children), caption=caption)["id"]
 
-    def wait_until_ready(self, container_id: str, timeout: int = 240) -> None:
+    def wait_until_ready(self, container_id: str, timeout: int = 240, every: int = 5) -> None:
         start = time.time()
         while True:
             status = self._call("GET", container_id, fields="status_code,status")
@@ -126,7 +127,7 @@ class Instagram:
                 raise InstagramError(f"Instagram could not process media {container_id}: {status.get('status')}")
             if time.time() - start > timeout:
                 raise InstagramError(f"Media {container_id} still not ready after {timeout}s (status {code})")
-            time.sleep(5)
+            time.sleep(every)
 
     def publish(self, creation_id: str) -> str:
         return self._call("POST", f"{self.user_id}/media_publish", creation_id=creation_id)["id"]
@@ -144,6 +145,42 @@ class Instagram:
         self.wait_until_ready(carousel)
         media_id = self.publish(carousel)
         return {"media_id": media_id, "permalink": self.permalink(media_id)}
+
+    def reel_container(self, video_url: str, caption: str, share_to_feed: bool = True,
+                       trial: str | None = None, audio_name: str = "") -> str:
+        """A REELS container. `trial` (MANUAL or SS_PERFORMANCE) makes it a Trial Reel, shown first
+        only to people who don't follow you. Optional extras are dropped if Instagram rejects them."""
+        params = {"media_type": "REELS", "video_url": video_url, "caption": caption}
+        extras = {}
+        if trial:
+            params["trial_params"] = json.dumps({"graduation_strategy": trial})
+        else:
+            params["share_to_feed"] = "true" if share_to_feed else "false"
+        if audio_name:
+            extras["audio_name"] = audio_name[:100]
+        try:
+            return self._call("POST", f"{self.user_id}/media", **params, **extras)["id"]
+        except InstagramError as exc:
+            if exc.code != 100 or not extras:     # 100 = invalid parameter; try once without the extras
+                raise
+        return self._call("POST", f"{self.user_id}/media", **params)["id"]
+
+    def post_reel(self, video_urls: list[str], caption: str, **options) -> dict:
+        """Posts a reel. Instagram downloads the video itself; each URL is tried until one is
+        processed. Video processing takes a minute or two."""
+        if not video_urls:
+            raise InstagramError("No public address for the reel video")
+        problems = []
+        for url in video_urls:
+            try:
+                container = self.reel_container(url, caption, **options)
+                self.wait_until_ready(container, timeout=600, every=10)
+            except InstagramError as exc:
+                problems.append(f"{url.split('/')[2]}: {exc}")
+                continue
+            media_id = self.publish(container)
+            return {"media_id": media_id, "permalink": self.permalink(media_id), "video_url": url}
+        raise InstagramError("Instagram could not take the reel video. " + " | ".join(problems))
 
     # ── token ─────────────────────────────────────────────
     def refresh_token(self) -> dict:

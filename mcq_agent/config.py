@@ -28,6 +28,7 @@ class Config:
         self.start_date = dt.date.fromisoformat(str(self.brand.get("start_date")))
         self.concepts = self.raw.get("concepts") or {}
         self.authors = self.raw.get("authors") or {}
+        self.reels = self.raw.get("reels") or {}
 
     # ── courses ────────────────────────────────────────────
     def course(self, course_id: str) -> dict:
@@ -100,6 +101,28 @@ class Config:
 
     def concept_time(self) -> str:
         return str(self.concepts.get("post_time", "19:40"))
+
+    # ── MCQ reel of the day ────────────────────────────────
+    def reel_due(self, date: dt.date) -> bool:
+        start = self.reels.get("start_date")
+        return bool(self.reels.get("enabled") and start and date >= dt.date.fromisoformat(str(start)))
+
+    def reel_courses(self) -> list[str]:
+        return list(self.reels.get("courses") or self.course_ids())
+
+    def reel_course_index(self, date: dt.date) -> int:
+        """Whose turn it is: one course a day, in the order of reels.courses."""
+        start = dt.date.fromisoformat(str(self.reels.get("start_date") or self.start_date))
+        return (date - start).days % len(self.reel_courses())
+
+    def reel_time(self) -> str:
+        return str(self.reels.get("post_time", "16:55"))
+
+    def reel_seconds(self) -> tuple[int, float]:
+        """(countdown seconds, seconds the answer stays on screen)."""
+        think = max(3, min(20, int(self.reels.get("think_seconds", 8))))
+        answer = max(3.0, min(20.0, float(self.reels.get("answer_seconds", 7))))
+        return think, answer
 
     def law_text(self, paper: dict, date: dt.date) -> str:
         key = paper.get("law")

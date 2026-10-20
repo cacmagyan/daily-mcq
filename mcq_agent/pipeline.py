@@ -6,13 +6,16 @@ import copy
 import datetime as dt
 import json
 import traceback
+from pathlib import Path
 
 from . import batch as B
-from .caption import alt_texts, build_caption, build_concept_caption, concept_alt_texts, post_ref
+from .caption import alt_texts, build_caption, build_concept_caption, build_reel_caption, concept_alt_texts, post_ref
 from .config import ROOT, Config, batch_dir
 from .render import Renderer, contact_sheet
 
 CONCEPT = "concept"     # id of the concept note in commands, posted.json and the report
+REEL = "reel"           # id of the MCQ reel of the day
+EXTRAS = (CONCEPT, REEL)
 
 
 def _new_item(cfg: Config, course: dict, date: dt.date) -> dict:
@@ -143,17 +146,23 @@ def set_hold(item: dict) -> None:
 
 def prepare(cfg: Config, date: dt.date, course_ids: list[str] | None = None, sample: bool = False) -> dict:
     """Writes queue/DATE/mcqs.json with both images per course, then the day's concept note
-    (queue/DATE/concept.json, 4 images). `course_ids` may include "concept"."""
-    # sample runs always include a concept note (if concepts are on), so you can see one before the start date
-    due = cfg.concept_due(date) or (sample and bool(cfg.concepts.get("enabled")))
-    want_concept = due and (not course_ids or CONCEPT in course_ids)
-    ids = [c for c in (course_ids or cfg.course_ids()) if c != CONCEPT]
-    if course_ids and not ids:          # only the concept note
-        if not want_concept:
-            raise SystemExit(f"No concept note is due on {date}: check concepts.enabled and concepts.start_date "
+    (queue/DATE/concept.json, 4 images) and the MCQ reel (queue/DATE/reel.json + reel.mp4).
+    `course_ids` may include "concept" and "reel"; with only those, the MCQs are left as they are."""
+    # sample runs always include a concept note and a reel (if switched on), so you can see them before the start date
+    concept_due = cfg.concept_due(date) or (sample and bool(cfg.concepts.get("enabled")))
+    reel_due = cfg.reel_due(date) or (sample and bool(cfg.reels.get("enabled")))
+    want_concept = concept_due and (not course_ids or CONCEPT in course_ids)
+    want_reel = reel_due and (not course_ids or REEL in course_ids)
+    ids = [c for c in (course_ids or cfg.course_ids()) if c not in EXTRAS]
+    if course_ids and not ids:          # only the concept note and/or the reel
+        if not (want_concept or want_reel):
+            raise SystemExit(f"Nothing to add on {date}: check enabled and start_date under concepts and reels "
                              "in config.yaml.")
         with Renderer(cfg) as r:
-            _prepare_concept(cfg, r, date, sample)
+            if want_concept:
+                _prepare_concept(cfg, r, date, sample)
+            if want_reel:
+                _prepare_reel(cfg, r, date)
         return B.load_batch(date) or {"date": date.isoformat(), "items": []}
     existing = B.load_batch(date) or {"date": date.isoformat(), "items": []}
     batch = {"date": date.isoformat(), "day": cfg.day_number(date), "status": "pending_review",
@@ -187,6 +196,8 @@ def prepare(cfg: Config, date: dt.date, course_ids: list[str] | None = None, sam
         B.save_batch(date, batch)
         if want_concept:
             _prepare_concept(cfg, r, date, sample)
+        if want_reel:
+            _prepare_reel(cfg, r, date)
 
     _preview(date, batch)
     return batch
@@ -201,6 +212,32 @@ def _prepare_concept(cfg: Config, r: Renderer, date: dt.date, sample: bool) -> d
         item = _concept_error(cfg, date, exc)
         print(f"  ✗ Concept note: {exc}")
     B.save_concept(date, item)
+    return item
+
+
+def _prepare_reel(cfg: Config, r: Renderer, date: dt.date) -> dict | None:
+    """Makes (or remakes) the day's reel from its MCQs. Never touches a reel that is already posted."""
+    from .reel import make_reel
+
+    if REEL in B.load_posted(date):
+        print("  • The reel is already posted; leaving it as it is")
+        return B.load_reel(date)
+    old = B.load_reel(date) or {}
+    try:
+        batch = B.load_batch(date)
+        if not batch:
+            raise RuntimeError(f"no MCQs for {date}")
+        item = make_reel(cfg, r, batch, date)
+        print(f"  ✓ Reel ({cfg.course(item['course_id'])['name']}): {item['topic']}")
+    except Exception as exc:  # the MCQs still post; the report shows the reel failed
+        traceback.print_exc()
+        ids = cfg.reel_courses()
+        item = {"kind": REEL, "course_id": old.get("course_id") or ids[cfg.reel_course_index(date)], "error": str(exc)[:500]}
+        print(f"  ✗ Reel: {exc}")
+    if old.get("held_by_you"):
+        item["held_by_you"] = True
+    set_hold(item)
+    B.save_reel(date, item)
     return item
 
 
@@ -220,8 +257,14 @@ def rerender(cfg: Config, date: dt.date, course_ids: list[str] | None = None) ->
             _finish_concept(cfg, r, concept, date)
             B.save_concept(date, concept)
             print("  ✓ re-rendered the concept note")
+        if batch:
+            B.save_batch(date, batch)
+            reel = B.load_reel(date)
+            wanted = reel is not None or cfg.reel_due(date)
+            if wanted and cfg.reels.get("enabled") and (
+                    not course_ids or REEL in course_ids or (reel or {}).get("course_id") in course_ids):
+                _prepare_reel(cfg, r, date)        # the reel shows an MCQ, so it is remade from the edited text
     if batch:
-        B.save_batch(date, batch)
         _preview(date, batch)
     return batch or {"date": date.isoformat(), "items": []}
 
@@ -245,9 +288,19 @@ def regenerate_concept(cfg: Config, date: dt.date, instruction: str = "") -> dic
     return item
 
 
+def regenerate_reel(cfg: Config, date: dt.date) -> dict:
+    """/regen reel: remakes the reel from the day's MCQs (no new text is written)."""
+    _not_posted(date, REEL)
+    with Renderer(cfg) as r:
+        item = _prepare_reel(cfg, r, date)
+    return item or {}
+
+
 def regenerate(cfg: Config, date: dt.date, course_id: str, instruction: str = "") -> dict:
     if course_id == CONCEPT:
         return regenerate_concept(cfg, date, instruction)
+    if course_id == REEL:
+        return regenerate_reel(cfg, date)
     batch = B.load_batch(date)
     if not batch:
         raise SystemExit(f"No batch for {date}")
@@ -262,6 +315,10 @@ def regenerate(cfg: Config, date: dt.date, course_id: str, instruction: str = ""
     B.save_batch(date, batch)
     _preview(date, batch)
     print(f"  ✓ new MCQ for {course['name']}: {item['topic']} (answer {item['correct']})")
+    reel = B.load_reel(date)
+    if reel and reel.get("course_id") == course_id and REEL not in B.load_posted(date):
+        with Renderer(cfg) as r:              # the reel showed the old MCQ: remake it
+            _prepare_reel(cfg, r, date)
     return item
 
 
@@ -272,6 +329,11 @@ def _target(date: dt.date, course_id: str):
         if not item:
             raise SystemExit(f"No concept note for {date}")
         return item, lambda: B.save_concept(date, item)
+    if course_id == REEL:
+        item = B.load_reel(date)
+        if not item:
+            raise SystemExit(f"No reel for {date}")
+        return item, lambda: B.save_reel(date, item)
     batch = B.load_batch(date)
     item = B.find_item(batch or {"items": []}, course_id)
     if not item:
@@ -282,7 +344,7 @@ def _target(date: dt.date, course_id: str):
 def release(date: dt.date, course_id: str) -> str:
     """/approve: post a held MCQ (or the concept note) as it is."""
     item, save = _target(date, course_id)
-    what = "concept note" if course_id == CONCEPT else "MCQ"
+    what = {CONCEPT: "concept note", REEL: "reel"}.get(course_id, "MCQ")
     if item.get("error"):
         raise SystemExit(f"{course_id} has no {what} to approve (it failed to generate); use /regen {course_id}")
     item["serious"], item["held_by_you"] = False, False
@@ -321,12 +383,14 @@ def _preview(date: dt.date, batch: dict) -> None:
 # ── publishing ──────────────────────────────────────────────────────────────
 
 def _key(item: dict) -> str:
-    return CONCEPT if item.get("kind") == CONCEPT else item["course_id"]
+    return item["kind"] if item.get("kind") in EXTRAS else item["course_id"]
 
 
 def _slot(cfg: Config, item: dict) -> dt.time:
     if item.get("kind") == CONCEPT:
         return dt.time.fromisoformat(cfg.concept_time())
+    if item.get("kind") == REEL:
+        return dt.time.fromisoformat(cfg.reel_time())
     return dt.time.fromisoformat(cfg.course(item["course_id"])["post_time"])
 
 
@@ -343,7 +407,7 @@ def _post_parts(cfg: Config, item: dict, date: dt.date) -> tuple[list, list, str
 def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = None,
                 dry_run: bool = False, strict: bool = False, limit: int | None = None) -> int:
     """Posts every approved MCQ whose time has come and that isn't posted yet. Returns an exit code."""
-    from .hosting import urls_for
+    from .hosting import urls_for, video_urls
     from .instagram import Instagram
 
     now = cfg.now()
@@ -361,11 +425,18 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
         print(f"Nothing posted for {date}: {why}.")
         return 1 if strict else 0
 
+    from .reel import problem as reel_problem
+
     posted = B.load_posted(date)
-    items = list(batch["items"]) + ([concept] if concept else [])
+    reel = B.load_reel(date) if cfg.reels.get("enabled") else None
+    if reel and not reel.get("error") and not reel.get("hold") and REEL not in posted:
+        why = reel_problem(reel, batch)
+        if why:                                  # follows its MCQ: held or changed means no post
+            reel = {**reel, "hold": True, "hold_reason": why}
+    items = list(batch["items"]) + ([concept] if concept else []) + ([reel] if reel else [])
     due = [it for it in items
            if _key(it) not in posted and not it.get("error") and not it.get("hold")
-           and it.get("images") and _slot(cfg, it) <= at]
+           and (it.get("images") or it.get("video")) and _slot(cfg, it) <= at]
     due.sort(key=lambda it: _slot(cfg, it))
     skipped = [_key(it) for it in items if it.get("error")]
     if skipped:
@@ -385,7 +456,13 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
     failures = 0
     for item in due[:limit]:
         cid = _key(item)
-        paths, alts, caption = _post_parts(cfg, item, date)
+        is_reel = item.get("kind") == REEL
+        if is_reel:
+            video = batch_dir(date) / item["video"]
+            paths, alts = [video], []
+            caption = item.get("caption") or build_reel_caption(cfg, item, B.find_item(batch, item["course_id"]), date)
+        else:
+            paths, alts, caption = _post_parts(cfg, item, date)
         ref = post_ref(cid, date)
         if dry_run:
             print(f"[dry run] would post {cid}: {[p.name for p in paths]}\n---\n{caption}\n---")
@@ -394,6 +471,8 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
             already = ig.find_by_ref(ref)
             if already:
                 result = {"media_id": already["id"], "permalink": already.get("permalink", ""), "note": "found existing post"}
+            elif is_reel:
+                result = ig.post_reel(video_urls(video, cfg.instagram), caption, **reel_options(cfg))
             else:
                 urls, host = urls_for(paths, cfg.instagram)
                 result = ig.post_carousel(urls, caption, alts)
@@ -410,3 +489,34 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
     if left:
         print(f"{left} more due; the next run will post them.")
     return 1 if failures else 0
+
+
+def reel_options(cfg: Config) -> dict:
+    """Instagram settings for the reel: a normal reel (feed + Reels tab) or a Trial Reel."""
+    trial = cfg.reels.get("trial")
+    return {"share_to_feed": not trial, "trial": "SS_PERFORMANCE" if trial else None,
+            "audio_name": str(cfg.reels.get("audio_name") or "").strip()}
+
+
+def reel_demo(cfg: Config, out_dir: Path, date: dt.date | None = None) -> list[dict]:
+    """Demo reels from samples/sample_reel.json, one per presenter (with the voice if a voice key is
+    set). Saved as <out_dir>/reel-<name>.mp4; nothing is posted."""
+    from .reel import build
+
+    date = date or cfg.today()
+    with open(ROOT / "samples" / "sample_reel.json", encoding="utf-8") as fh:
+        samples = json.load(fh)["items"]
+    made = []
+    with Renderer(cfg) as r:
+        for src in samples:
+            src = copy.deepcopy(src)
+            _sign(cfg, src)
+            name = (cfg.reels.get("presenters") or {}).get(src.get("author"), src["course_id"])
+            item = build(cfg, r, src, date, out_dir, video=f"reel-{name}.mp4", cover=f"reel-{name}.jpg")
+            if item is None:
+                print(f"  ✗ {name}: the sample text doesn't fit a reel")
+                continue
+            voice = item.get("voice") or item.get("voice_note") or "no voice"
+            print(f"  ✓ {out_dir / item['video']} ({sum(item['seconds'].values()):g} s, {voice})")
+            made.append(item)
+    return made

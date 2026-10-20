@@ -132,3 +132,26 @@ def recent_concepts(course_id: str, before: dt.date, limit: int = 60) -> list[st
         if len(found) >= limit:
             break
     return found
+
+
+# ── MCQ reel of the day: queue/YYYY-MM-DD/reel.json (+ reel.mp4, reel_cover.jpg) ──
+
+def reel_path(date: dt.date) -> Path:
+    return batch_dir(date) / "reel.json"
+
+
+def load_reel(date: dt.date) -> dict | None:
+    p = reel_path(date)
+    if not p.exists():
+        return None
+    with open(p, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def save_reel(date: dt.date, item: dict) -> Path:
+    p = reel_path(date)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with open(p, "w", encoding="utf-8") as fh:
+        json.dump(item, fh, ensure_ascii=False, indent=2)
+        fh.write("\n")
+    return p

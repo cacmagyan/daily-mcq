@@ -90,6 +90,36 @@ def build_concept_caption(cfg: Config, item: dict, date: dt.date) -> str:
     return "\n".join(lines)[:2200]
 
 
+def build_reel_caption(cfg: Config, item: dict, src: dict, date: dt.date) -> str:
+    """Caption for the MCQ reel. `src` is the MCQ it shows."""
+    course = cfg.course(item["course_id"])
+    handle = cfg.brand.get("handle", "").strip()
+    think = (item.get("seconds") or {}).get("think", 8)
+    tags = course.get("hashtags", [])[: int(cfg.instagram.get("max_hashtags", 5))]
+    lines = [
+        f"⏱ {course.get('emoji', '')} {course['name']} · {think}-second MCQ challenge".replace("  ", " "),
+        "",
+        src.get("question", ""),
+        "",
+        "Comment A, B, C or D before the timer ends 👇 Pause if you need more time.",
+        f"Full working: our {course['name']} MCQ post today at {_clock(course['post_time'])}.",
+    ]
+    if item.get("share_option"):
+        lines.append("Send this to a friend who'd get it wrong 😄")       # the reel names the option; no spoiler here
+    lines += [
+        "",
+        f"{item['paper_code']}: {item['paper_name']} · Topic: {item['topic']}",
+    ]
+    if src.get("applicability"):
+        lines.append(f"Based on {src['applicability']}.")
+    if item.get("author"):
+        lines += [f"Prepared by {item['author']}"]
+    if handle:
+        lines += ["", f"Follow {handle} for a daily MCQ in every CA and CMA level."]
+    lines += ["", " ".join(tags), "", post_ref("reel", date)]
+    return "\n".join(lines)[:2200]
+
+
 def concept_alt_texts(item: dict) -> list[str]:
     """One alt text per slide, in slide order."""
     topic = _plain(item.get("topic"))

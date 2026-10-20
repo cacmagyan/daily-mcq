@@ -15,6 +15,7 @@ from PIL import Image
 from .config import LETTERS, ROOT, Config, date_label
 
 WIDTH, HEIGHT = 1080, 1350
+REEL_W, REEL_H = 1080, 1920
 
 
 def image_names(course_id: str) -> dict:
@@ -177,6 +178,64 @@ class Renderer:
             elif fit["zoom"] < 0.9:
                 notes.append(f"slide {slide} ({SLIDE_NAMES[slide]}) text shrunk to {int(fit['zoom'] * 100)}%")
         return {"images": names, "fit_notes": notes, "fit": fits}
+
+
+    # ── MCQ reel ───────────────────────────────────────────
+    def reel_html(self, item: dict, date: dt.date, why: str, seconds: int, with_presenter: bool = True,
+                  share: str = "") -> str:
+        from .reel import presenter
+
+        if not hasattr(self, "_reel_tpl"):
+            self._reel_tpl = self.env.get_template("reel.html.j2")
+        return self._reel_tpl.render(
+            item=item, course=self.cfg.course(item["course_id"]), brand=self.cfg.brand, why=why,
+            presenter=presenter(self.cfg, item.get("author") or self.cfg.brand.get("name", "")) if with_presenter else None,
+            share=share,
+            seconds=seconds, day=self.cfg.day_number(date), date_label=date_label(date), letters=LETTERS,
+            fonts=self.fonts_uri, logo=self.logo_uri,
+        )
+
+    def reel_frames(self, item: dict, date: dt.date, why: str, think: int, answer: float, fps: int,
+                    frames_dir: Path | None, with_presenter: bool = True, outro: float = 2.5,
+                    share: str = "") -> dict:
+        """Draws the reel's frames: the question with the clock running down (`fps` frames a second),
+        the answer appearing and staying for `answer` seconds, then `outro` seconds of thumbs-up with
+        "send this to a friend who'd pick option <share>". With frames_dir=None it only measures the
+        fit. Returns {"fit": {...}, "frames": [(path, seconds), ...]}."""
+        page = self._browser.new_page(viewport={"width": REEL_W, "height": REEL_H}, device_scale_factor=1)
+        with tempfile.NamedTemporaryFile("w", suffix=".html", dir=ROOT / "templates",
+                                         delete=False, encoding="utf-8") as fh:
+            fh.write(self.reel_html(item, date, why, think, with_presenter, share))
+            tmp = Path(fh.name)
+        frames = []
+        try:
+            page.goto(tmp.as_uri(), wait_until="load")
+            page.evaluate("document.fonts.ready")
+            fit = page.evaluate("window.fitReel()")
+            if frames_dir is None or fit["overflow"]:
+                return {"fit": fit, "frames": []}
+            frames_dir.mkdir(parents=True, exist_ok=True)
+            clip = {"x": 0, "y": 0, "width": REEL_W, "height": REEL_H}
+
+            def shot(js: str, secs: float) -> None:
+                page.evaluate(js)
+                path = frames_dir / f"f{len(frames):04d}.png"
+                page.screenshot(path=str(path), clip=clip)
+                frames.append((path, secs))
+
+            step = 1 / fps
+            for k in range(think * fps):
+                shot(f"window.setClock({think - k * step:.4f}, {think})", step)
+            reveal = (0.34, 0.67)
+            for p in reveal:
+                shot(f"window.reveal({p})", step)
+            shot("window.reveal(1)", max(1.0, answer - len(reveal) * step))
+            if outro > 0:
+                shot("window.outro()", outro)                # thumbs-up, "send this to a friend", "Follow"
+        finally:
+            page.close()
+            tmp.unlink(missing_ok=True)
+        return {"fit": fit, "frames": frames}
 
 
 def contact_sheet(out_dir: Path, items: list[dict], dest: Path) -> Path:

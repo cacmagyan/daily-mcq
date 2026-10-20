@@ -1,0 +1,75 @@
+{
+  "note": "Two hand-checked MCQs for the reel demo: one on Ranjith's paper, one on Rahul's.",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 2",
+      "paper_name": "Business Laws",
+      "topic": "Indian Contract Act: offer and invitation to offer",
+      "question": "A bookshop displays a book in its window with a price tag of ₹499. Under the Indian Contract Act, 1872, this display is:",
+      "options": [
+        "A proposal the shop must honour",
+        "A general offer to anyone who sees it",
+        "An invitation to offer",
+        "An acceptance of a customer's offer"
+      ],
+      "correct": "C",
+      "explanation": "A price-tagged display only invites customers to make an offer. The customer makes the offer at the counter, and the shop is free to accept or refuse it.",
+      "why_not": {
+        "A": "A display is not a proposal; the shop can still refuse to sell.",
+        "B": "A general offer promises something to anyone who performs a condition, like a reward (Carlill's case).",
+        "D": "No customer has offered yet, so there is nothing to accept."
+      },
+      "exam_tip": "Display, catalogue, price list, tender notice, auction notice: all invitations to offer.",
+      "applicability": "",
+      "images": {
+        "question": "x",
+        "answer": "y"
+      }
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 4",
+      "paper_name": "Cost and Management Accounting",
+      "topic": "Inventory control: EOQ",
+      "difficulty": "easy",
+      "question": "Annual requirement of a material is 20,000 units. Ordering cost is ₹100 per order and carrying cost is ₹4 per unit per year. What is the Economic Order Quantity?",
+      "options": [
+        "707 units",
+        "1,414 units",
+        "1,000 units",
+        "500 units"
+      ],
+      "correct": "C",
+      "explanation": "EOQ = √(2AO ÷ C). With A = 20,000 units, O = ₹100 and C = ₹4, EOQ = √10,00,000 = 1,000 units.",
+      "working": [
+        {
+          "label": "2 × A × O = 2 × 20,000 × 100",
+          "value": "40,00,000"
+        },
+        {
+          "label": "Divide by C (₹4)",
+          "value": "10,00,000"
+        },
+        {
+          "label": "Square root",
+          "value": "1,000 units"
+        }
+      ],
+      "why_not": {
+        "A": "The 2 in the formula is missing.",
+        "B": "Divided by ₹2 instead of ₹4.",
+        "D": "That is average inventory (EOQ ÷ 2), not the order size."
+      },
+      "exam_tip": "At EOQ, total ordering cost equals total carrying cost (₹2,000 each here). Use it to check your answer.",
+      "applicability": "",
+      "law_sensitive": false,
+      "needs_check": false,
+      "check_notes": [],
+      "images": {
+        "question": "x",
+        "answer": "y"
+      }
+    }
+  ]
+}

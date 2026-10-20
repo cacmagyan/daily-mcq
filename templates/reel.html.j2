@@ -160,9 +160,15 @@ body::before { content: ""; position: absolute; inset: 0;
             line-height: 1; padding: 9px 16px 8px; border-radius: 6px; box-shadow: 0 3px 0 rgba(0,0,0,.18); }
 .guy .tag small { display: block; font-weight: 400; font-size: 16px; opacity: .85; margin-bottom: 3px; }
 .has-guy .sign { display: none; }
+/* a smaller presenter when the question is long */
+.small-guy .guy { height: 330px; width: 226px; }
+.small-guy .guy .tag { font-size: 19px; padding: 7px 11px 6px; bottom: 10px; }
+.small-guy .guy .tag small { font-size: 13px; }
 .has-guy .slot { padding-right: 300px; }
+.small-guy .slot { padding-right: 232px; }
 /* while the clock runs, his thought bubble sits beside him, level with his shoulders */
 .has-guy .slot .ask { border-radius: 30px; position: absolute; left: 62px; right: 336px; bottom: 190px; z-index: 3; }
+.small-guy .slot .ask { right: 268px; bottom: 120px; }
 .has-guy .slot .ask::before, .has-guy .slot .ask::after { content: ""; position: absolute; border-radius: 50%;
             background: var(--wash); border: 2.5px dashed var(--line); }
 .has-guy .slot .ask::before { width: 26px; height: 26px; right: -40px; top: -6px; }
@@ -219,7 +225,7 @@ body::before { content: ""; position: absolute; inset: 0;
   </div>
 </header>
 
-<div class="sheet{% if presenter %} has-guy{% endif %}">
+<div class="sheet{% if presenter %} has-guy{% if compact %} small-guy{% endif %}{% endif %}">
   {%- if presenter %}
   <div class="guy{% if presenter.thumbs %} has-thumbs{% endif %}" id="guy">
     <img class="think" src="{{ presenter.think }}" alt="">
@@ -279,7 +285,7 @@ const setS = v => root.style.setProperty('--s', v);
 const guyEl = document.getElementById('guy'), optsEl = document.querySelector('.opts');
 // too full: text below the bottom of the sheet, or the options running into the presenter's head
 const over = () => bodyEl.scrollHeight > bodyEl.clientHeight + 1 ||
-  (guyEl && optsEl.getBoundingClientRect().bottom > guyEl.getBoundingClientRect().top - 10);
+  !!(guyEl && optsEl.getBoundingClientRect().bottom > guyEl.getBoundingClientRect().top - 10);
 
 // One text size for the whole reel (no jump when the answer shows): the largest size, up to 125%,
 // at which both the question state and the answer state fit; never below 60%.

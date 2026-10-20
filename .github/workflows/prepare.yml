@@ -1,10 +1,10 @@
 name: 1. Prepare tomorrow's MCQs
 
-# Every evening: writes tomorrow's 6 MCQs and the concept of the day, and draws the images.
+# Every evening: writes tomorrow's 6 MCQs and the concept of the day, draws the images and makes the MCQ reel.
 #   auto mode (config.yaml):  approves them itself and opens the day's report issue. Anything with a
 #                             serious problem is held back and you're @mentioned the evening before.
 #   github_pr mode:           opens a pull request; merging it approves the batch.
-# If tomorrow's MCQs already exist, the evening run only adds a missing concept note.
+# If tomorrow's MCQs already exist, the evening run only adds a missing concept note or reel.
 on:
   schedule:
     - cron: "17 13 * * *"          # 18:47 IST
@@ -26,6 +26,10 @@ on:
         default: false
       concept_only:
         description: "Only add the concept note to a day that is already prepared (keeps its MCQs)"
+        type: boolean
+        default: false
+      reel_only:
+        description: "Only make the MCQ reel for a day that is already prepared (keeps its MCQs)"
         type: boolean
         default: false
 
@@ -56,7 +60,7 @@ jobs:
       - name: Install Python packages
         run: pip install -r requirements.txt
 
-      # all = write the whole day; concept = only the concept note; none = nothing to do
+      # all = write the whole day; concept / reel / concept,reel = only those; none = nothing to do
       - name: What's needed?
         id: need
         env:
@@ -64,6 +68,7 @@ jobs:
           INPUT_DATE: ${{ inputs.date }}
           INPUT_REDRAW: ${{ inputs.redraw_only }}
           INPUT_CONCEPT: ${{ inputs.concept_only }}
+          INPUT_REEL: ${{ inputs.reel_only }}
         run: |
           if [ "$EVENT" = "schedule" ]; then
             NEED=$(python -m mcq_agent todo --date tomorrow)
@@ -72,6 +77,9 @@ jobs:
           elif [ "$INPUT_CONCEPT" = "true" ]; then
             [[ "$INPUT_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "::error::Concept only needs the date, e.g. 2026-10-19"; exit 1; }
             NEED=concept
+          elif [ "$INPUT_REEL" = "true" ]; then
+            [[ "$INPUT_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "::error::Reel only needs the date, e.g. 2026-10-20"; exit 1; }
+            NEED=reel
           else
             NEED=all
           fi
@@ -85,6 +93,8 @@ jobs:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
           python -m playwright install --with-deps chromium
+          # ffmpeg turns the reel's frames into a video
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null; }
           # Claude Code is only needed when posts are written with your Claude subscription
           if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then npm install -g @anthropic-ai/claude-code; claude --version; fi
 
@@ -94,6 +104,9 @@ jobs:
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+          GOOGLE_TTS_API_KEY: ${{ secrets.GOOGLE_TTS_API_KEY }}
           INPUT_DATE: ${{ inputs.date }}
           INPUT_SAMPLE: ${{ inputs.sample }}
           NEED: ${{ steps.need.outputs.need }}
@@ -106,7 +119,7 @@ jobs:
           fi
           ARGS=(--date "${INPUT_DATE:-tomorrow}")
           if [ "$INPUT_SAMPLE" = "true" ]; then ARGS+=(--sample); fi
-          if [ "$NEED" = "concept" ]; then ARGS+=(--courses concept); fi
+          if [ "$NEED" != "all" ]; then ARGS+=(--courses "$NEED"); fi
           python -m mcq_agent prepare "${ARGS[@]}" --github-output "$GITHUB_OUTPUT"
 
       # Sample MCQs never post by themselves: they always go to a pull request.

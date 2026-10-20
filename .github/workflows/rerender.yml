@@ -1,7 +1,7 @@
 name: 2. Redraw images after an edit
 
-# When you edit queue/<date>/mcqs.json or concept.json (on main or in a review pull request), the images are redrawn
-# and the day's report is updated.
+# When you edit queue/<date>/mcqs.json or concept.json (on main or in a review pull request), the images and the
+# reel are redrawn and the day's report is updated.
 on:
   push:
     branches: ["main", "batch/**"]
@@ -34,11 +34,15 @@ jobs:
         run: |
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null; }
 
       - name: Redraw, save and update the report
         env:
           GH_TOKEN: ${{ github.token }}
           BRANCH: ${{ github.ref_name }}
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+          GOOGLE_TTS_API_KEY: ${{ secrets.GOOGLE_TTS_API_KEY }}
         run: |
           if [[ "$BRANCH" == batch/* ]]; then
             DATES="${BRANCH#batch/}"

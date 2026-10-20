@@ -1,0 +1,64 @@
+name: 5. Reel demo
+
+# Makes two demo reels from sample MCQs (one presented by Rahul, one by Ranjith), with the AI voice
+# when a voice key is set, and saves them in the demo folder. Nothing is posted to Instagram.
+# Use it to hear the voice after adding a key, or after changing the reel design.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reel-demo
+  cancel-in-progress: false
+
+jobs:
+  demo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null; }
+
+      - name: Make the demo reels
+        env:
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+          GOOGLE_TTS_API_KEY: ${{ secrets.GOOGLE_TTS_API_KEY }}
+        run: python -m mcq_agent reel-demo --out demo | tee "$RUNNER_TEMP/demo.txt"
+
+      - name: Save them and show the links
+        env:
+          REPO: ${{ github.repository }}
+        run: |
+          git config user.name "mcq-agent"
+          git config user.email "mcq-agent@users.noreply.github.com"
+          git add demo
+          if ! git diff --cached --quiet; then
+            git commit -m "Demo reels $(TZ=Asia/Kolkata date +%F_%H%M)"
+            for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+          fi
+          {
+            echo "## Demo reels"
+            echo
+            for f in demo/*.mp4; do
+              echo "- [▶ $(basename "$f")](https://github.com/$REPO/raw/main/$f)"
+            done
+            echo
+            echo '```'
+            cat "$RUNNER_TEMP/demo.txt"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

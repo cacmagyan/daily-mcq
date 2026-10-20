@@ -269,7 +269,7 @@ class Renderer:
         return False
 
 
-def concept_story(slide: Path, out: Path, course: dict) -> Path:
+def concept_story(slide: Path, out: Path, course: dict, handle: str = "") -> Path:
     """A 1080x1920 Story of the concept note's first slide on the course colour, with a pointer to the post."""
     from PIL import ImageDraw, ImageFont
 
@@ -282,10 +282,10 @@ def concept_story(slide: Path, out: Path, course: dict) -> Path:
     draw = ImageDraw.Draw(bg)
     fonts = ROOT / "assets" / "fonts"
     big = ImageFont.truetype(str(fonts / "texgyreheroscn-bold.otf"), 78)
-    small = ImageFont.truetype(str(fonts / "texgyreheroscn-bold.otf"), 44)
+    small = ImageFont.truetype(str(fonts / "texgyreheroscn-bold.otf"), 42)
     ink = course["color"].get("deep", "#222222")
     draw.text((REEL_W // 2, 300), "New concept note", font=big, fill=ink, anchor="ms")
-    label = f"{course['name']} · full note in our latest post"
+    label = f"Tap {handle or 'our name'} at the top for the full note"   # Stories from the API can't link to a post
     draw.rounded_rectangle((90, 1580, 990, 1676), radius=48, fill=course["color"]["ink"])
     draw.text((REEL_W // 2, 1644), label, font=small, fill=course["color"].get("on_ink", "#FFFFFF"), anchor="ms")
     bg.save(out, "JPEG", quality=90, optimize=True)

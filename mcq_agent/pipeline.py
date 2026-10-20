@@ -131,7 +131,7 @@ def _finish_concept(cfg: Config, renderer: Renderer, item: dict, date: dt.date) 
         try:
             from .render import concept_story
             concept_story(batch_dir(date) / item["images"][0], batch_dir(date) / "concept_story.jpg",
-                          cfg.course(item["course_id"]))
+                          cfg.course(item["course_id"]), cfg.brand.get("handle", ""))
             item["story"] = "concept_story.jpg"
         except Exception as exc:  # noqa: BLE001
             print(f"  ! no Story for the concept note: {exc}")

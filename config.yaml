@@ -73,6 +73,15 @@ reels:
       azure:  {"Rahul kp": "en-IN-PrabhatNeural", "Ranjith Shivahari": "en-IN-AaravNeural"}
       google: {"Rahul kp": "en-IN-Neural2-B", "Ranjith Shivahari": "en-IN-Neural2-C"}
 
+# Stories: right after each post goes out, a Story follows (Instagram's API can't add poll stickers
+# or Highlights; add the week's Stories to the course Highlights in the app).
+stories:
+  enabled: true
+  mcqs: true                    # the question, "Reply with A, B, C or D · Answer in today's post"
+  concept: true                 # the concept note's first slide, pointing to the post
+  reel: true                    # the reel itself, shared to the Story
+  within_hours: 6               # a Story more than 6 hours late is skipped
+
 instagram:
   graph_host: "graph.instagram.com"   # use "graph.facebook.com" if you connect through a Facebook Page
   api_version: "v26.0"

@@ -68,6 +68,15 @@ One Reel a day at about **6:00 PM** (`post_time: "17:55"`; Instagram takes a min
 - **Adding a reel to a day that's already prepared:** Actions → 1. Prepare tomorrow's MCQs → Run workflow, type the date, tick **reel only**. The evening run does this by itself for tomorrow.
 - Video files are made with ffmpeg, which the workflows install when GitHub doesn't already have it.
 
+## Stories and Highlights
+
+Right after each post goes out, a **Story** follows: the MCQ's question in its course colour ("Reply with A, B, C or D · Answer in today's post"), the concept note's first slide, and the reel itself. Story replies arrive as DMs. Settings are under `stories:` in `config.yaml`; a Story that fails is tried again on the next run, but not more than 6 hours after its post.
+
+Instagram's API can't add poll stickers or Highlights, so these stay in the app:
+- **Highlights** (once): make one per course plus Concepts and Reels, using the covers `highlight-1-ca_foundation.jpg` … `highlight-8-reels.jpg` (sent separately). Names: CA Foundation, CMA CAT, CA Inter, CMA Inter, CA Final, CMA Final, Concepts, Reels.
+- **Each week (2-3 minutes):** open each Highlight → Add → tick that week's Stories in its colour. Stories stay in your Archive, so nothing is lost if you skip a week.
+- **A real poll** on a day you like: post that Story yourself from the app and add the poll sticker.
+
 ### Reel voice
 
 The voice comes from an official text-to-speech service; add **one** of these as GitHub secrets (Settings → Secrets and variables → Actions). Without a key, reels have ticks and a chime only. A reel uses about 600 characters of speech a day, well inside both free tiers.
@@ -207,7 +216,7 @@ For local-only use, set `review.mode: local` in `config.yaml` and approve with `
 
 - **GitHub Actions:** free for public repositories.
 - **Claude:** about 12 calls a day (6 writes + 6 checks), more when an MCQ is rewritten. With a subscription token this counts toward your plan's normal usage; each call is small. With an API key, expect roughly $3-6 a month; check usage in the Console after the first week.
-- **Instagram:** the API allows 100 posts per 24 hours; this uses 8 (6 MCQs, the concept note and the reel). A carousel counts as one post.
+- **Instagram:** the API allows 100 posts per 24 hours; this uses about 16 (6 MCQs, the concept note, the reel and a Story after each). A carousel counts as one post.
 - **Repository size:** images and the reel add roughly 4 MB a day (about 1.5 GB a year). That is fine for a long while; switch to Cloudinary if you want the repo to stay small.
 
 ## Troubleshooting

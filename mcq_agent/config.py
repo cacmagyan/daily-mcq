@@ -116,7 +116,7 @@ class Config:
         return (date - start).days % len(self.reel_courses())
 
     def reel_time(self) -> str:
-        return str(self.reels.get("post_time", "16:55"))
+        return str(self.reels.get("post_time", "17:55"))
 
     def reel_seconds(self) -> tuple[int, float]:
         """(countdown seconds, seconds the answer stays on screen)."""

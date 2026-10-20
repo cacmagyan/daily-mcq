@@ -9,7 +9,7 @@ on:
     - cron: "27 4 * * *"           # 09:57 IST  CMA CAT        (09:55)
     - cron: "57 6 * * *"           # 12:27 IST  CA Inter       (12:25)
     - cron: "57 9 * * *"           # 15:27 IST  CMA Inter      (15:25)
-    - cron: "27 11 * * *"          # 16:57 IST  MCQ reel       (reels post_time 16:55)
+    - cron: "27 12 * * *"          # 17:57 IST  MCQ reel       (reels post_time 17:55)
     - cron: "57 12 * * *"          # 18:27 IST  CA Final       (18:25)
     - cron: "12 14 * * *"          # 19:42 IST  Concept of the day (concepts post_time 19:40)
     - cron: "27 15 * * *"          # 20:57 IST  CMA Final      (20:55)

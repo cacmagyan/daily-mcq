@@ -181,7 +181,7 @@ class Renderer:
 
 
     # ── MCQ reel ───────────────────────────────────────────
-    def reel_html(self, item: dict, date: dt.date, why: str, seconds: int, with_presenter: bool = True,
+    def reel_html(self, item: dict, date: dt.date, why: str, seconds: int, with_presenter: bool | str = True,
                   share: str = "", story: bool = False) -> str:
         from .reel import presenter
 
@@ -190,13 +190,14 @@ class Renderer:
         return self._reel_tpl.render(
             item=item, course=self.cfg.course(item["course_id"]), brand=self.cfg.brand, why=why,
             presenter=presenter(self.cfg, item.get("author") or self.cfg.brand.get("name", "")) if with_presenter else None,
+            compact=with_presenter == "compact",
             share=share, story=story,
             seconds=seconds, day=self.cfg.day_number(date), date_label=date_label(date), letters=LETTERS,
             fonts=self.fonts_uri, logo=self.logo_uri,
         )
 
     def reel_frames(self, item: dict, date: dt.date, why: str, think: int, answer: float, fps: int,
-                    frames_dir: Path | None, with_presenter: bool = True, outro: float = 2.5,
+                    frames_dir: Path | None, with_presenter: bool | str = True, outro: float = 2.5,
                     share: str = "") -> dict:
         """Draws the reel's frames: the question with the clock running down (`fps` frames a second),
         the answer appearing and staying for `answer` seconds, then `outro` seconds of thumbs-up with
@@ -244,7 +245,7 @@ class Renderer:
         thinking if the text fits beside him. False if the text doesn't fit a Story at all."""
         from .reel import MIN_SCALE
 
-        for with_guy in (True, False):
+        for with_guy in (True, "compact", False):
             page = self._browser.new_page(viewport={"width": REEL_W, "height": REEL_H}, device_scale_factor=1)
             with tempfile.NamedTemporaryFile("w", suffix=".html", dir=ROOT / "templates",
                                              delete=False, encoding="utf-8") as fh:

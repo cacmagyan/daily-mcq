@@ -159,9 +159,13 @@ def build(cfg: Config, renderer, src: dict, date: dt.date, out_dir: Path, video:
     short = short_reason(reasons[0])
     if short and short != reasons[0]:
         reasons.append(short)
-    # with the presenter if he has pictures and the text still fits beside him, else without
-    guy = [True, False] if presenter(cfg, src.get("author") or cfg.brand.get("name", "")) else [False]
-    for with_guy, why in [(g, w) for g in guy for w in reasons]:
+    # the presenter if he has pictures and the text fits beside him (full size, then smaller, with
+    # the full reason before the short one), else without him
+    if presenter(cfg, src.get("author") or cfg.brand.get("name", "")):
+        options = [(g, w) for w in reasons for g in (True, "compact")] + [(False, w) for w in reasons]
+    else:
+        options = [(False, w) for w in reasons]
+    for with_guy, why in options:
         fit = renderer.reel_frames(src, date, why, think, answer_total, FPS, None, with_guy, OUTRO, share)["fit"]
         if not fit["overflow"] and fit["scale"] >= MIN_SCALE:
             break

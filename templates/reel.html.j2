@@ -72,6 +72,12 @@ body::before { content: ""; position: absolute; inset: 0;
 .clock .done circle { fill: var(--graphite); }
 .clock .done path { fill: none; stroke: #fff; stroke-width: 15; stroke-linecap: round; stroke-linejoin: round; }
 
+/* Story: no buttons on the right and only the reply bar at the bottom, so the sheet is wider
+   and taller; the clock shows a question mark. */
+.story .head { width: 1000px; }
+.story .sheet { width: 1000px; height: 1214px; }
+.story .clock .num { padding-bottom: 6px; font-size: 120px; }
+
 /* ── the OMR sheet ──────────────────────────────────────────────── */
 .sheet { position: absolute; left: 40px; top: 446px; width: 912px; height: 1104px; background: var(--paper);
          border-radius: 6px; display: grid; grid-template-columns: 50px 1fr; overflow: hidden;
@@ -166,7 +172,7 @@ body::before { content: ""; position: absolute; inset: 0;
             border-left: 30px solid var(--wash); border-right: 0; }
 </style>
 </head>
-<body>
+<body{% if story %} class="story"{% endif %}>
 
 {%- macro bubble(letter) -%}
 <svg class="bubble" viewBox="0 0 64 64" aria-hidden="true">
@@ -195,7 +201,7 @@ body::before { content: ""; position: absolute; inset: 0;
   {%- if logo %}<img class="logo" src="{{ logo }}" alt="">{% endif %}
   <div class="titles">
     <div class="course">{{ course.name }}</div>
-    <div class="sub"><span class="say-q">Answer in {{ seconds }} seconds</span><span class="say-a">Answer: option {{ item.correct }}</span>
+    <div class="sub"><span class="say-q">{% if story %}MCQ of the day · Day {{ day }}{% else %}Answer in {{ seconds }} seconds{% endif %}</span><span class="say-a">Answer: option {{ item.correct }}</span>
       {%- if share %}<span class="say-s">Send this to a friend who'd<br>pick option {{ share }}
         <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16.5" fill="#FFD43B" stroke="#1C1E23" stroke-width="2"/>
           <path d="M11 14.5 Q13 11.5 15 14.5 M21 14.5 Q23 11.5 25 14.5" fill="none" stroke="#1C1E23" stroke-width="2.4" stroke-linecap="round"/>
@@ -208,8 +214,8 @@ body::before { content: ""; position: absolute; inset: 0;
       <circle class="arc" id="arc" cx="105" cy="105" r="84" stroke-dasharray="527.79" stroke-dashoffset="0"/>
       <g class="done"><circle cx="105" cy="105" r="88"/><path d="M62 108 L92 138 L150 78"/></g>
     </svg>
-    <div class="num" id="num">{{ seconds }}</div>
-    <div class="unit">SEC</div>
+    <div class="num" id="num">{{ "?" if story else seconds }}</div>
+    {%- if not story %}<div class="unit">SEC</div>{% endif %}
   </div>
 </header>
 
@@ -244,7 +250,11 @@ body::before { content: ""; position: absolute; inset: 0;
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" aria-hidden="true">
             <path d="M6 9 H42 V33 H22 L12 41 V33 H6 Z"/><path d="M15 19 H33 M15 26 H27" stroke-linecap="round"/>
           </svg>
+          {%- if story %}
+          <p>Reply with A, B, C or D<br><strong>Answer in today's post ↗</strong></p>
+          {%- else %}
           <p>Comment your answer<br><strong>before the timer ends!</strong></p>
+          {%- endif %}
         </div>
         <div class="why"><label>Why</label><p>{{ why }}</p></div>
       </div>

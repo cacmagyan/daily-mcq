@@ -70,7 +70,7 @@ One Reel a day at about **6:00 PM** (`post_time: "17:55"`; Instagram takes a min
 
 ## Stories and Highlights
 
-Right after each post goes out, a **Story** follows: the MCQ's question in its course colour ("Reply with A, B, C or D · Answer in today's post"), the concept note's first slide, and the reel itself. Story replies arrive as DMs. Settings are under `stories:` in `config.yaml`; a Story that fails is tried again on the next run, but not more than 6 hours after its post.
+Right after each post goes out, a **Story** follows: the MCQ's question in its course colour ("Reply with A, B, C or D · Answer: tap @cacmagyan ↖"; Stories posted by the API can't link straight to a post), the concept note's first slide, and the reel itself. Story replies arrive as DMs. Settings are under `stories:` in `config.yaml`; a Story that fails is tried again on the next run, but not more than 6 hours after its post.
 
 Instagram's API can't add poll stickers or Highlights, so these stay in the app:
 - **Highlights** (once): make one per course plus Concepts and Reels, using the covers `highlight-1-ca_foundation.jpg` … `highlight-8-reels.jpg` (sent separately). Names: CA Foundation, CMA CAT, CA Inter, CMA Inter, CA Final, CMA Final, Concepts, Reels.

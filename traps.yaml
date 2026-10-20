@@ -60,3 +60,11 @@
   text: >-
     Say whether the question applies AS or Ind AS (or which Standard on Auditing), and use the standard
     family that this paper examines. Don't mix the two.
+
+- papers: ["corporate and other laws", "business laws", "corporate and economic laws", "business and industrial laws"]
+  text: >-
+    Companies Act, 2013: many defaults were decriminalised by the Companies (Amendment) Acts 2019 and 2020 and
+    now carry a monetary penalty, not a fine or imprisonment. Section 53 (shares issued at a discount): the issue
+    is void; the company and every officer in default are liable to a penalty up to the amount raised at a
+    discount or Rs 5 lakh, whichever is less, and the company must refund the money with 12% interest a year.
+    Never state imprisonment or a fine as a consequence unless you are certain it applies under the law today.

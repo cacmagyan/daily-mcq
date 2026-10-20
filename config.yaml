@@ -43,6 +43,36 @@ concepts:
   post_time: "19:40"            # IST; keep matched to the 19:40 line in publish.yml
   courses: ["ca_foundation", "cma_cat", "ca_inter", "cma_inter", "ca_final", "cma_final"]
 
+# MCQ reel of the day: one of the day's MCQs as a 15-second vertical video (question with a
+# countdown and ticking, then the answer filled in like an OMR bubble, with the reason).
+# It reuses an MCQ that has already passed every check, one course a day in this order (set so the
+# reel's course is never the concept note's course that day); if that MCQ is on hold, the next course is used.
+reels:
+  enabled: true
+  start_date: "2026-10-20"      # first reel (normally made the evening before)
+  post_time: "16:55"            # IST; goes live by about 5:00 PM. Keep matched to the 16:57 line in publish.yml
+  courses: ["ca_final", "cma_final", "ca_foundation", "cma_cat", "ca_inter", "cma_inter"]
+  think_seconds: 8              # countdown before the answer shows
+  answer_seconds: 7             # how long the answer stays on screen
+  trial: false                  # true = Trial Reel: shown first only to people who don't follow you
+  audio_name: "MCQ countdown · CA CMA Gyan"   # name of the reel's sound on Instagram ("" = Instagram's default)
+  # The paper's author presents the reel: his pictures (transparent PNG, waist-up) are
+  # assets/brand/<name>-think.png (while the clock runs), <name>-point.png (pointing at the reason)
+  # and <name>-thumbs.png (thumbs-up and "Follow" at the end). No pictures = no presenter; if the
+  # text is too long to fit beside him, that reel is drawn without him.
+  presenters:
+    "Rahul kp": "rahul"
+    "Ranjith Shivahari": "ranjith"
+  # AI voiceover: the presenter says a hook, reads the answer and reason, and asks viewers to share.
+  # Needs one voice key as a GitHub secret (README, "Reel voice"); without it reels have ticks only.
+  voice:
+    enabled: true
+    provider: "auto"            # auto = Azure if AZURE_SPEECH_KEY is set, else Google if GOOGLE_TTS_API_KEY is set
+    speed: 1.05                 # 1.0 = normal speaking speed
+    voices:                     # Indian English voices, a different one for each presenter
+      azure:  {"Rahul kp": "en-IN-PrabhatNeural", "Ranjith Shivahari": "en-IN-AaravNeural"}
+      google: {"Rahul kp": "en-IN-Neural2-B", "Ranjith Shivahari": "en-IN-Neural2-C"}
+
 instagram:
   graph_host: "graph.instagram.com"   # use "graph.facebook.com" if you connect through a Facebook Page
   api_version: "v26.0"

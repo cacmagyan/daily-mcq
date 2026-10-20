@@ -55,7 +55,7 @@ One post a day at **19:40**, one course a day in turn (CA Foundation, CMA CAT, C
 
 ## MCQ reel of the day
 
-One Reel a day at about **5:00 PM** (`post_time: "16:55"`; Instagram takes a minute or two to process the video). It shows one of the day's MCQs on the OMR sheet with an **8-second countdown** and ticking (faster for the last 3 seconds). Then a chime plays, the correct bubble is filled in and the reason appears for 7 seconds.
+One Reel a day at about **6:00 PM** (`post_time: "17:55"`; Instagram takes a minute or two to process the video). It shows one of the day's MCQs on the OMR sheet with an **8-second countdown** and ticking (faster for the last 3 seconds). Then a chime plays, the correct bubble is filled in and the reason appears for 7 seconds.
 
 - **The paper's author presents it:** thinking while the clock runs, pointing at the reason when the answer shows, and a thumbs-up with "Follow" at the end. The pictures are `assets/brand/rahul-think.png`, `-point.png`, `-thumbs.png` and the same three for `ranjith-`. If an MCQ's text is too long to fit beside the presenter, that reel is drawn without him.
 - **Share line:** at the end the header says "Send this to a friend who'd pick option B 😄", naming one of the wrong options (it changes daily). Instagram counts shares heavily when deciding whether to show a reel to new people.

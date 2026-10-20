@@ -50,7 +50,7 @@ concepts:
 reels:
   enabled: true
   start_date: "2026-10-20"      # first reel (normally made the evening before)
-  post_time: "16:55"            # IST; goes live by about 5:00 PM. Keep matched to the 16:57 line in publish.yml
+  post_time: "17:55"            # IST; goes live by about 6:00 PM. Keep matched to the 17:57 line in publish.yml
   courses: ["ca_final", "cma_final", "ca_foundation", "cma_cat", "ca_inter", "cma_inter"]
   think_seconds: 8              # countdown before the answer shows
   answer_seconds: 7             # how long the answer stays on screen

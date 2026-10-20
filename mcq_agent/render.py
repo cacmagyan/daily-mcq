@@ -182,7 +182,7 @@ class Renderer:
 
     # ── MCQ reel ───────────────────────────────────────────
     def reel_html(self, item: dict, date: dt.date, why: str, seconds: int, with_presenter: bool = True,
-                  share: str = "") -> str:
+                  share: str = "", story: bool = False) -> str:
         from .reel import presenter
 
         if not hasattr(self, "_reel_tpl"):
@@ -190,7 +190,7 @@ class Renderer:
         return self._reel_tpl.render(
             item=item, course=self.cfg.course(item["course_id"]), brand=self.cfg.brand, why=why,
             presenter=presenter(self.cfg, item.get("author") or self.cfg.brand.get("name", "")) if with_presenter else None,
-            share=share,
+            share=share, story=story,
             seconds=seconds, day=self.cfg.day_number(date), date_label=date_label(date), letters=LETTERS,
             fonts=self.fonts_uri, logo=self.logo_uri,
         )
@@ -236,6 +236,59 @@ class Renderer:
             page.close()
             tmp.unlink(missing_ok=True)
         return {"fit": fit, "frames": frames}
+
+
+    # ── Story of an MCQ ────────────────────────────────────
+    def render_story(self, item: dict, date: dt.date, out: Path) -> bool:
+        """A 1080x1920 Story of the question (no answer), in the reel's style, with the presenter
+        thinking if the text fits beside him. False if the text doesn't fit a Story at all."""
+        from .reel import MIN_SCALE
+
+        for with_guy in (True, False):
+            page = self._browser.new_page(viewport={"width": REEL_W, "height": REEL_H}, device_scale_factor=1)
+            with tempfile.NamedTemporaryFile("w", suffix=".html", dir=ROOT / "templates",
+                                             delete=False, encoding="utf-8") as fh:
+                fh.write(self.reel_html(item, date, "", 8, with_guy, "", story=True))
+                tmp = Path(fh.name)
+            try:
+                page.goto(tmp.as_uri(), wait_until="load")
+                page.evaluate("document.fonts.ready")
+                fit = page.evaluate("window.fitReel()")
+                if fit["overflow"] or fit["scale"] < MIN_SCALE:
+                    continue
+                png = out.with_suffix(".png")
+                page.screenshot(path=str(png), clip={"x": 0, "y": 0, "width": REEL_W, "height": REEL_H})
+            finally:
+                page.close()
+                tmp.unlink(missing_ok=True)
+            with Image.open(png) as im:
+                im.convert("RGB").save(out, "JPEG", quality=90, subsampling=2, optimize=True)
+            png.unlink(missing_ok=True)
+            return True
+        return False
+
+
+def concept_story(slide: Path, out: Path, course: dict) -> Path:
+    """A 1080x1920 Story of the concept note's first slide on the course colour, with a pointer to the post."""
+    from PIL import ImageDraw, ImageFont
+
+    bg = Image.new("RGB", (REEL_W, REEL_H), course["color"].get("wash", "#F5F0E6"))
+    with Image.open(slide) as im:
+        im = im.convert("RGB").resize((920, 1150), Image.LANCZOS)
+    shadow = Image.new("RGB", (920, 1150), course["color"].get("deep", "#333333"))
+    bg.paste(shadow, (88, 392))
+    bg.paste(im, (80, 380))
+    draw = ImageDraw.Draw(bg)
+    fonts = ROOT / "assets" / "fonts"
+    big = ImageFont.truetype(str(fonts / "texgyreheroscn-bold.otf"), 78)
+    small = ImageFont.truetype(str(fonts / "texgyreheroscn-bold.otf"), 44)
+    ink = course["color"].get("deep", "#222222")
+    draw.text((REEL_W // 2, 300), "New concept note", font=big, fill=ink, anchor="ms")
+    label = f"{course['name']} · full note in our latest post"
+    draw.rounded_rectangle((90, 1580, 990, 1676), radius=48, fill=course["color"]["ink"])
+    draw.text((REEL_W // 2, 1644), label, font=small, fill=course["color"].get("on_ink", "#FFFFFF"), anchor="ms")
+    bg.save(out, "JPEG", quality=90, optimize=True)
+    return out
 
 
 def contact_sheet(out_dir: Path, items: list[dict], dest: Path) -> Path:

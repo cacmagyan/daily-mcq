@@ -182,6 +182,13 @@ class Instagram:
             return {"media_id": media_id, "permalink": self.permalink(media_id), "video_url": url}
         raise InstagramError("Instagram could not take the reel video. " + " | ".join(problems))
 
+    def post_story(self, url: str, video: bool = False) -> dict:
+        """Posts one image (JPEG) or video to your Story. Stories can't carry stickers through the API."""
+        params = {"media_type": "STORIES", ("video_url" if video else "image_url"): url}
+        container = self._call("POST", f"{self.user_id}/media", **params)["id"]
+        self.wait_until_ready(container, timeout=600 if video else 240, every=10 if video else 5)
+        return {"media_id": self.publish(container)}
+
     # ── token ─────────────────────────────────────────────
     def refresh_token(self) -> dict:
         """Instagram Login tokens last 60 days; this extends one that is at least a day old."""

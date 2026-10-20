@@ -29,6 +29,7 @@ class Config:
         self.concepts = self.raw.get("concepts") or {}
         self.authors = self.raw.get("authors") or {}
         self.reels = self.raw.get("reels") or {}
+        self.stories = self.raw.get("stories") or {}
 
     # ── courses ────────────────────────────────────────────
     def course(self, course_id: str) -> dict:

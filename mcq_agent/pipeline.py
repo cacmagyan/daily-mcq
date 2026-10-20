@@ -60,6 +60,14 @@ def _finish(cfg: Config, renderer: Renderer, item: dict, date: dt.date) -> None:
     item["images"] = res["images"]
     item["fit_notes"] = res["fit_notes"]
     item["caption"] = build_caption(cfg, item, date)
+    item.pop("story", None)
+    if cfg.stories.get("enabled") and cfg.stories.get("mcqs", True):
+        name = f"{item['course_id']}_story.jpg"
+        try:                                    # a Story is a bonus: never let it stop the MCQ
+            if renderer.render_story(item, date, out / name):
+                item["story"] = name
+        except Exception as exc:  # noqa: BLE001
+            print(f"  ! no Story for {item['course_id']}: {exc}")
     set_hold(item)
 
 
@@ -118,6 +126,15 @@ def _finish_concept(cfg: Config, renderer: Renderer, item: dict, date: dt.date) 
     item["fit_notes"] = res["fit_notes"]
     item["fit"] = res["fit"]
     item["caption"] = build_concept_caption(cfg, item, date)
+    item.pop("story", None)
+    if cfg.stories.get("enabled") and cfg.stories.get("concept", True) and item["images"]:
+        try:
+            from .render import concept_story
+            concept_story(batch_dir(date) / item["images"][0], batch_dir(date) / "concept_story.jpg",
+                          cfg.course(item["course_id"]))
+            item["story"] = "concept_story.jpg"
+        except Exception as exc:  # noqa: BLE001
+            print(f"  ! no Story for the concept note: {exc}")
     set_hold(item)
 
 
@@ -447,6 +464,9 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
         print(f"On hold, not posting: {'; '.join(held)}")
     if not due:
         print(f"Nothing due at {at.strftime('%H:%M')} on {date}.")
+        waiting = [it for it in items if _story_file(cfg, it) and _key(it) in posted and f"{_key(it)}:story" not in posted]
+        if waiting and not dry_run:                # a Story that failed earlier gets another try
+            _post_stories(cfg, Instagram.from_env(cfg.instagram), date, items, posted)
         return 0
 
     last_slot = max(_slot(cfg, it) for it in items)
@@ -488,7 +508,52 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
     left = len(due) - min(len(due), limit)
     if left:
         print(f"{left} more due; the next run will post them.")
+    if not dry_run:
+        _post_stories(cfg, ig, date, items, posted)
     return 1 if failures else 0
+
+
+def _story_file(cfg: Config, item: dict) -> tuple[str, bool] | None:
+    """(file name, is_video) of the Story that follows a post, if Stories are on for its kind."""
+    if not cfg.stories.get("enabled"):
+        return None
+    kind = item.get("kind")
+    if kind == REEL:
+        return (item["video"], True) if cfg.stories.get("reel", True) and item.get("video") else None
+    want = cfg.stories.get("concept", True) if kind == CONCEPT else cfg.stories.get("mcqs", True)
+    return (item["story"], False) if want and item.get("story") else None
+
+
+def _post_stories(cfg: Config, ig, date: dt.date, items: list[dict], posted: dict) -> None:
+    """After a post goes out, its Story follows (in the same run, or a later one if that failed).
+    Stories are extras: a failure is logged and never fails the run. Too late (stories.within_hours
+    after the post) means no Story."""
+    from .hosting import urls_for, video_urls
+
+    hours = float(cfg.stories.get("within_hours", 6))
+    for item in items:
+        key = _key(item)
+        skey = f"{key}:story"
+        story = _story_file(cfg, item)
+        if not story or key not in posted or skey in posted:
+            continue
+        try:
+            when = dt.datetime.fromisoformat(posted[key].get("posted_at", ""))
+        except ValueError:
+            when = cfg.now()
+        if (cfg.now() - when).total_seconds() > hours * 3600:
+            continue
+        path = batch_dir(date) / story[0]
+        if not path.exists():
+            continue
+        try:
+            url = video_urls(path, cfg.instagram)[0] if story[1] else urls_for([path], cfg.instagram)[0][0]
+            res = ig.post_story(url, video=story[1])
+            posted[skey] = {**res, "posted_at": cfg.now().isoformat(timespec="seconds")}
+            B.save_posted(date, posted)
+            print(f"  ✓ Story for {key}")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  ! Story for {key} not posted (tries again next run): {str(exc)[:200]}")
 
 
 def reel_options(cfg: Config) -> dict:

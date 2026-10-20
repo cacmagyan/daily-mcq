@@ -167,6 +167,8 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
         if cid in posted:
             link = posted[cid].get("permalink") or ""
             status = f"✅ [posted]({link})" if link else "✅ posted"
+            if f"{cid}:story" in posted:
+                status += " · 📱 story"
         elif it.get("error"):
             status = "❌ couldn't be made" if is_reel else "❌ couldn't be written"
         elif it.get("hold"):

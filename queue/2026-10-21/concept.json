@@ -1,0 +1,153 @@
+{
+  "kind": "concept",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 6A",
+  "paper_name": "Financial Management",
+  "author": "Rahul kp",
+  "topic": "Operating, Financial & Combined Leverage",
+  "title": "Leverage:",
+  "title_highlight": "DOL, DFL, DCL",
+  "hook": "fixed costs magnify profit!",
+  "simple_words": "Leverage shows how much a small change in sales shakes EBIT and EPS, because of fixed costs.",
+  "definitions": [
+    {
+      "term": "Operating leverage (DOL)",
+      "meaning": "Effect of fixed operating cost: a % change in sales gives a larger % change in EBIT.",
+      "note": "No fixed cost and EBIT positive: DOL = 1"
+    },
+    {
+      "term": "Financial leverage (DFL)",
+      "meaning": "Effect of fixed financing cost (interest, preference dividend): a % change in EBIT gives a larger % change in EPS.",
+      "note": "No interest or pref. dividend: DFL = 1"
+    }
+  ],
+  "key_points": [
+    "==DOL== works on the business risk side: Sales to EBIT.",
+    "==DFL== works on the financial risk side: EBIT to EPS.",
+    "==DCL== = DOL × DFL: Sales to EPS.",
+    "!!DOL is 1 or more only when EBIT is positive (above break-even)!!."
+  ],
+  "formula_heading": "The 3 Leverage Formulas",
+  "formula_hook": "pick the right P&L lines",
+  "formulas": [
+    {
+      "name": "Degree of Operating Leverage",
+      "lhs": "DOL",
+      "rhs": "",
+      "numerator": "Contribution",
+      "denominator": "EBIT",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Contribution = Sales − Variable cost. EBIT = Contribution − Fixed operating cost. Valid when EBIT is not zero."
+    },
+    {
+      "name": "Degree of Financial Leverage",
+      "lhs": "DFL",
+      "rhs": "",
+      "numerator": "EBIT",
+      "denominator": "EBT − Pref. div/(1−t)",
+      "square_root": false,
+      "suffix": "",
+      "legend": "EBT = EBIT − Interest. t = tax rate. Without preference dividend, denominator is just EBT."
+    },
+    {
+      "name": "Degree of Combined Leverage",
+      "lhs": "DCL",
+      "rhs": "",
+      "numerator": "Contribution",
+      "denominator": "EBT",
+      "square_root": false,
+      "suffix": "",
+      "legend": "DCL = DOL × DFL. If preference dividend exists, denominator is EBT − Pref. div/(1−t), same as in DFL."
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "insight": {
+    "punchline": "Fixed cost is the lever!",
+    "text": "Higher fixed operating or financing cost means higher DOL or DFL, so higher risk and higher reward."
+  },
+  "trick_hook": "climb down the P&L ladder",
+  "memory_trick": {
+    "mnemonic": "C-E-E: Contribution, EBIT, EBT",
+    "explanation": "DOL and DFL each divide a P&L line by the line just below it. DCL divides Contribution by EBT, which skips EBIT."
+  },
+  "steps": [
+    "Write the P&L down to EPS",
+    "Find Contribution, EBIT, EBT",
+    "Apply DOL = Contr/EBIT",
+    "Apply DFL = EBIT/EBT",
+    "DCL = DOL × DFL"
+  ],
+  "exam_tip": "Check the question's wording: if it asks for DCL, Contribution/EBT and DOL × DFL must give the same answer.",
+  "doubt": {
+    "question": "Can DOL be negative?",
+    "answer": "Yes. Below break-even, EBIT is negative, so DOL is negative. At break-even EBIT is zero and DOL is undefined."
+  },
+  "mistakes_hook": "don't lose easy marks!",
+  "mistakes": [
+    {
+      "wrong": "DOL = EBIT / Contribution",
+      "right": "DOL = Contribution / EBIT. When EBIT is positive, it is 1 if no fixed cost, more than 1 if there is fixed cost."
+    },
+    {
+      "wrong": "Using EBIT in the denominator of DCL",
+      "right": "DCL = Contribution / EBT, or DOL × DFL."
+    },
+    {
+      "wrong": "Ignoring preference dividend in DFL",
+      "right": "Deduct Pref. dividend/(1 − t) from EBT in the denominator."
+    },
+    {
+      "wrong": "Adding DOL and DFL to get DCL",
+      "right": "DCL = DOL × DFL, not DOL + DFL."
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "Definition note and mistake 1 now state the positive-EBIT condition. Check that DFL/DCL pref dividend grossed-up treatment matches the ICAI study material.",
+  "law_sensitive": false,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Definition note and mistake 1 now state the positive-EBIT condition. Check that DFL/DCL pref dividend grossed-up treatment matches the ICAI study material.",
+    "Checker 1: Step 4 ('Apply DFL = EBIT/EBT') leaves out preference dividend, which contradicts formula 2 and mistake 3. It should read: 'Apply DFL = EBIT / [EBT − Pref. div/(1−t)]; this is just EBIT/EBT when there is no preference dividend.'",
+    "Checker 1: Doubt answer: DOL is negative below break-even only while contribution is still positive (sales above variable cost). Suggested wording: 'Yes. Below break-even (contribution positive, EBIT negative), DOL is negative. At break-even, EBIT is zero and DOL is undefined.'"
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.1,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.2,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.26,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 6A: Financial Management\nOperating, Financial & Combined Leverage\n\nIn simple words: Leverage shows how much a small change in sales shakes EBIT and EPS, because of fixed costs.\n\nSwipe for the formula, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CA Inter MCQ (12:25 PM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept-261021",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

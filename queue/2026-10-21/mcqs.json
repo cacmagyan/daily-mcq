@@ -1,0 +1,355 @@
+{
+  "date": "2026-10-21",
+  "day": 3,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-20T19:22:30+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Business Mathematics",
+      "topic": "Time Value of Money: Effective Rate",
+      "question": "A bank offers a nominal interest rate of 8% per annum, compounded half-yearly. What is the effective annual rate of interest?",
+      "options": [
+        "8.24%",
+        "8.00%",
+        "8.16%",
+        "4.00%"
+      ],
+      "correct": "C",
+      "explanation": "Half-yearly rate = 8/2 = 4%. Effective rate = (1.04)^2 − 1 = 1.0816 − 1 = 0.0816, i.e. 8.16% per annum. It exceeds the nominal rate because interest is earned on interest.",
+      "working": [
+        {
+          "label": "Half-yearly rate",
+          "value": "0.04"
+        },
+        {
+          "label": "Periods per year",
+          "value": "2"
+        },
+        {
+          "label": "Growth factor (1.04)^2",
+          "value": "1.0816"
+        },
+        {
+          "label": "Effective rate = factor − 1",
+          "value": "8.16%"
+        }
+      ],
+      "why_not": {
+        "B": "Takes nominal rate as effective; ignores compounding within the year.",
+        "A": "Uses quarterly compounding (four periods) instead of half-yearly.",
+        "D": "Gives only the half-yearly rate, not the annual effective rate."
+      },
+      "exam_tip": "Effective rate = (1 + i/m)^m − 1. More compounding periods means a higher effective rate.",
+      "calculation": "answer = ((1 + 0.08/2)**2 - 1)*100",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 3\nPaper 3: Quantitative Aptitude: Business Mathematics\nTopic: Time Value of Money: Effective Rate\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261021",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2A",
+      "paper_name": "Financial Accounting-2",
+      "topic": "Admission of a Partner - Premium",
+      "question": "A and B share profits 3:2. C is admitted and the new ratio of A, B and C is 3:3:2. C brings ₹4,00,000 as premium for goodwill, paid in cash. How much of the premium is credited to A's capital account?",
+      "options": [
+        "₹3,60,000",
+        "₹2,00,000",
+        "₹2,40,000",
+        "₹1,50,000"
+      ],
+      "correct": "A",
+      "explanation": "Sacrifice = old share − new share. A: 3/5 − 3/8 = 9/40. B: 2/5 − 3/8 = 1/40. Sacrificing ratio is 9:1, so A gets 9/10 of ₹4,00,000.",
+      "working": [
+        {
+          "label": "A old share",
+          "value": "24/40"
+        },
+        {
+          "label": "A new share (3/8)",
+          "value": "15/40"
+        },
+        {
+          "label": "A sacrifice",
+          "value": "9/40"
+        },
+        {
+          "label": "B sacrifice (16/40 − 15/40)",
+          "value": "1/40"
+        },
+        {
+          "label": "A's share of premium (9/10)",
+          "value": "₹3,60,000"
+        }
+      ],
+      "why_not": {
+        "C": "Shared premium in old ratio 3:2 instead of sacrificing ratio 9:1.",
+        "B": "Shared premium in the A:B new ratio 3:3, equal split.",
+        "D": "Took A's new share 3/8 of the premium; ignores the sacrifice."
+      },
+      "exam_tip": "Premium goes to sacrificing partners only: find old − new for each, then split in that ratio.",
+      "calculation": "sacA = 3/5 - 3/8\nsacB = 2/5 - 3/8\nanswer = 400000 * sacA / (sacA + sacB)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept": "Sacrificing Ratio and Premium on Admission",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 3\nPaper 2A: Financial Accounting-2\nTopic: Admission of a Partner - Premium\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261021",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 2",
+      "paper_name": "Corporate and Other Laws",
+      "topic": "Companies Act: Prospectus / Share Capital",
+      "question": "Under the Companies Act, 2013, a company issued shares at a discount to the public, other than sweat equity shares or shares issued under a approved resolution plan. What is the legal position of such issue?",
+      "options": [
+        "The issue is valid up to 10% discount with Tribunal approval",
+        "The issue is void; the company and officers in default are liable",
+        "The issue is valid if approved by a special resolution",
+        "The issue is valid if the shares are of a listed company"
+      ],
+      "correct": "B",
+      "explanation": "Section 53 prohibits issue of shares at a discount, except sweat equity shares. Any such issue is void. The company and every officer in default are punishable with fine and may also face imprisonment.",
+      "working": [],
+      "why_not": {
+        "C": "Wrongly thinks a special resolution can validate a discount issue; the law bars it.",
+        "A": "Invents a 10% discount limit; that is not a feature of share issue law.",
+        "D": "Believes listing allows discount; listed status gives no exemption."
+      },
+      "exam_tip": "Discount on shares: void, except sweat equity. Premium is allowed.",
+      "calculation": "",
+      "applicability": "Companies Act, 2013 – Section 53",
+      "confidence": "high",
+      "reviewer_note": "Question stem has grammar slip (\"a approved\"); fix to \"an approved\" or simplify to \"other than sweat equity shares\". Section 53 discount exception for sweat equity is certain.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Question stem has grammar slip (\"a approved\"); fix to \"an approved\" or simplify to \"other than sweat equity shares\". Section 53 discount exception for sweat equity is certain.",
+        "Checker: Grammar: 'a approved resolution plan' should read 'an approved resolution plan'.",
+        "Checker: The exception is described imprecisely. Section 53(2A) covers shares issued to creditors when debt is converted into shares under a statutory resolution plan or an RBI debt-restructuring scheme. It does not cover any 'approved resolution plan'.",
+        "Checker: 'To the public' adds nothing: Section 53 applies to any issue at a discount, not only issues to the public."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 3\nPaper 2: Corporate and Other Laws\nTopic: Companies Act: Prospectus / Share Capital\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013 – Section 53.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261021",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 11",
+      "paper_name": "Financial Management and Business Data Analytics",
+      "topic": "Leverage: Combined Leverage",
+      "question": "A firm sells 10,000 units at ₹300 per unit. Variable cost is ₹180 per unit, fixed operating cost ₹6,00,000 and annual interest ₹2,00,000. If sales volume rises by 10%, by what percentage will EBT rise (prices and costs per unit unchanged)?",
+      "options": [
+        "15%",
+        "30%",
+        "20%",
+        "10%"
+      ],
+      "correct": "B",
+      "explanation": "DOL = Contribution/EBIT = 12,00,000/6,00,000 = 2. DFL = EBIT/EBT = 6,00,000/4,00,000 = 1.5. DCL = 2 × 1.5 = 3. EBT rises by 3 × 10% = 30%.",
+      "working": [
+        {
+          "label": "Contribution (₹)",
+          "value": "12,00,000"
+        },
+        {
+          "label": "EBIT (₹)",
+          "value": "6,00,000"
+        },
+        {
+          "label": "EBT (₹)",
+          "value": "4,00,000"
+        },
+        {
+          "label": "DOL",
+          "value": "2"
+        },
+        {
+          "label": "DFL",
+          "value": "1.5"
+        },
+        {
+          "label": "Rise in EBT (%)",
+          "value": "30"
+        }
+      ],
+      "why_not": {
+        "C": "Used only operating leverage (2 × 10%) and ignored the effect of interest.",
+        "A": "Used only financial leverage (1.5 × 10%) and ignored operating leverage.",
+        "D": "Assumed profit moves in the same proportion as sales, ignoring leverage."
+      },
+      "exam_tip": "Change in EBT % = DCL × change in sales %. DCL = Contribution ÷ EBT.",
+      "calculation": "contribution = 10000*(300-180)\nebit = contribution - 600000\nebt = ebit - 200000\ndcl = contribution/ebt\nanswer = dcl*10",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Only the interest is labelled 'annual'. The question doesn't say the 10,000 units of sales and the ₹6,00,000 fixed operating cost are per annum, though that is the obvious reading. Adding 'per annum' would remove the doubt."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 3\nPaper 11: Financial Management and Business Data Analytics\nTopic: Leverage: Combined Leverage\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261021",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 3",
+      "paper_name": "Advanced Auditing, Assurance and Professional Ethics",
+      "topic": "SA 570 - Going Concern",
+      "question": "Under SA 570 (Revised), during the audit of a company, the auditor concludes that a material uncertainty exists on going concern. Management has made adequate disclosure of it in the financial statements. What is the auditor's correct report modification?",
+      "options": [
+        "Adverse opinion, because the entity may not realise its assets",
+        "Qualified opinion, because going concern doubt affects the true and fair view",
+        "Unmodified opinion, with the matter reported only as a Key Audit Matter",
+        "Unmodified opinion, with a separate section 'Material Uncertainty Related to Going Concern'"
+      ],
+      "correct": "D",
+      "explanation": "If a material uncertainty exists and the disclosure is adequate, the auditor gives an unmodified opinion and includes a separate section headed \"Material Uncertainty Related to Going Concern\" in the report, drawing attention to the disclosure.",
+      "working": [],
+      "why_not": {
+        "B": "Qualification is needed only when disclosure is inadequate, not when it is adequate.",
+        "A": "Adverse opinion applies when the going concern basis is inappropriate, or disclosure is wholly missing.",
+        "C": "Such matters are not left to KAM; they get their own separate section instead."
+      },
+      "exam_tip": "Adequate disclosure: unmodified plus separate MUGC section. Inadequate: qualified or adverse.",
+      "calculation": "",
+      "applicability": "SA 570 (Revised), Going Concern",
+      "confidence": "high",
+      "reviewer_note": "Option D: MUGC matters are by SA 701 not KAM; they are reported under the separate section. Verify wording.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Option D: MUGC matters are by SA 701 not KAM; they are reported under the separate section. Verify wording.",
+        "Checker: The stem asks for the 'correct report modification', but the correct answer is an unmodified opinion. The phrasing is inconsistent and could mislead; 'appropriate form of auditor's report' would be better.",
+        "Checker: The stem does not say that using the going concern basis of accounting is appropriate. A material uncertainty implies this, but saying so would rule out an adverse-opinion reading."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 3\nPaper 3: Advanced Auditing, Assurance and Professional Ethics\nTopic: SA 570 - Going Concern\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on SA 570 (Revised), Going Concern.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261021",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 18",
+      "paper_name": "Corporate Financial Reporting",
+      "topic": "Ind AS 116 Leases - Lessee Accounting",
+      "question": "Under Ind AS 116, a lessee signs a 3-year lease on 1 April 2026. It pays ₹2,00,000 at the end of each year. The rate implicit in the lease is 10% p.a. (PV factors: 0.9091, 0.8264, 0.7513). Initial direct costs are ₹15,000. Find the right-of-use asset at commencement.",
+      "options": [
+        "₹5,12,360",
+        "₹6,15,000",
+        "₹4,97,360",
+        "₹5,00,000"
+      ],
+      "correct": "A",
+      "explanation": "Lease liability is the PV of lease payments at the implicit rate. ROU asset equals the lease liability plus payments made at or before commencement plus initial direct costs, less incentives. Here: 4,97,360 + 15,000.",
+      "working": [
+        {
+          "label": "Sum of PV factors",
+          "value": "2.4868"
+        },
+        {
+          "label": "Lease liability (2,00,000 x 2.4868)",
+          "value": "₹4,97,360"
+        },
+        {
+          "label": "Add: initial direct costs",
+          "value": "₹15,000"
+        },
+        {
+          "label": "ROU asset at commencement",
+          "value": "₹5,12,360"
+        }
+      ],
+      "why_not": {
+        "C": "Omits initial direct costs, which are added to the ROU asset cost.",
+        "B": "Uses undiscounted payments (₹6,00,000) plus direct costs; Ind AS 116 requires discounting.",
+        "D": "Rounds the PV and ignores the ₹15,000 direct costs; not derived from given factors."
+      },
+      "exam_tip": "ROU asset = lease liability + advance payments + initial direct costs + restoration costs − incentives.",
+      "calculation": "pv = 200000*(0.9091+0.8264+0.7513)\nidc = 15000\nanswer = pv + idc",
+      "applicability": "Ind AS 116 Leases (lessee accounting)",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Minor: the question does not state that there are no payments before commencement, no lease incentives and no restoration costs (all Ind AS 116 para 24 components). Most readers would assume none, but stating it would remove any doubt."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 3\nPaper 18: Corporate Financial Reporting\nTopic: Ind AS 116 Leases - Lessee Accounting\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Ind AS 116 Leases (lessee accounting).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261021",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

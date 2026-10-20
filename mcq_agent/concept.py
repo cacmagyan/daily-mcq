@@ -127,13 +127,14 @@ Rules
 10. Accounting standards: Ind AS / AS as currently applicable. Costing: ICMAI/ICAI study-material terminology.
 11. Original wording. Never copy study material, RTPs, MTPs or past papers.
 12. Length limits in the field descriptions are strict: the text must fit on phone slides.
-"""
+13. Every table cell, sign (Add/Deduct, Dr/Cr, +/−), formula and "right" statement must be correct in every case the note covers. If a rule has an exception, say it or leave that case out.
+{traps}"""
 
 CHECKER_SYSTEM = """You are a strict examiner checking a concept note for {course} ({body}) students, paper: {paper}.
-Check every statement, definition, formula, symbol legend, table cell, memory trick, step, exam tip, doubt answer, mistake and correction for technical accuracy against current ICAI/ICMAI study material.
-Severity "major" if anything is wrong or misleading: a wrong formula or legend, a wrong definition or rule, a "mistake" that is actually correct, a wrong "correct way", an invented or wrong section number, rate or limit, outdated law, or a memory trick that teaches something false. "minor" for wording polish only. "none" if it is all correct.
+Method: go through the note line by line. For every table cell, every sign or direction (Add/Deduct, Dr/Cr, +/−, increase/decrease), every formula and symbol legend, and every "correct way", first work out from your own knowledge what the correct entry is, and only then compare it with the note. Then check the definitions, key points, memory trick, steps, exam tip, doubt answer and mistakes against current ICAI/ICMAI study material.
+Severity "major" if anything is wrong or misleading: a wrong table cell or sign, a wrong formula or legend, a wrong definition or rule, a "mistake" that is actually correct, a wrong "correct way", an invented or wrong section number, rate or limit, outdated law, or a memory trick that teaches something false. "minor" for wording polish only. "none" if it is all correct.
 For each problem say where it is and give the correct version.
-{law_line}"""
+{law_line}{traps}"""
 
 _EMOJI = re.compile("[\U0001F300-\U0001FAFF☀-➿️]")
 LIMITS = {"topic": 44, "title": 22, "title_highlight": 20, "hook": 40, "simple_words": 120, "formula_heading": 24,
@@ -277,13 +278,18 @@ def write_concept(cfg: Config, course: dict, paper: dict, date: dt.date, recent:
                   fit_check: Callable[[dict], list[str]] | None = None) -> dict:
     """Returns the checked concept note. `fit_check(draft)` returns problems if a slide doesn't fit.
     Raises GenerationError only if no usable note came back."""
-    from .generator import GenerationError, _call_claude
+    from . import traps
+    from .generator import GenerationError, _call_claude, call_checker
 
     law_text = cfg.law_text(paper, date)
     writer_model = cfg.models.get("writer", "claude-sonnet-5-5")
     checker_model = cfg.models.get("checker", writer_model)
-    system = WRITER_SYSTEM.format(author=cfg.author_for(paper),
+    trap_text = traps.block(course, paper)
+    system = WRITER_SYSTEM.format(author=cfg.author_for(paper), traps=trap_text,
                                   law_text=law_text or "not a law paper; leave applicability empty")
+    check_system = CHECKER_SYSTEM.format(course=course["name"], body=course.get("body", ""),
+                                         paper=cfg.paper_prompt(paper), traps=trap_text,
+                                         law_line=f"Law basis to apply: {law_text}." if law_text else "")
     recent_lines = "\n".join(f"- {t}" for t in recent[:40]) or "- none yet"
     base_user = (f"Course: {course['name']} ({course.get('body', '')})\n"
                  f"Paper: {cfg.paper_prompt(paper)}\n"
@@ -295,39 +301,57 @@ def write_concept(cfg: Config, course: dict, paper: dict, date: dt.date, recent:
     if instruction:
         base_user += f"\nReviewer's instruction for this note: {instruction}\n"
 
-    feedback, last, notes, why = "", None, [], ""
+    def attempt_round(user_base: str, attempts: int):
+        feedback, last, notes, why = "", None, [], ""
+        for attempt in range(1, attempts + 1):
+            user = user_base + (f"\nYour previous draft was rejected:\n{feedback}\nWrite a corrected note.\n" if feedback else "")
+            draft = tidy(_call_claude(writer_model, system, user, WRITE_TOOL, max_tokens=4000))
+            last = draft
+            problems = validate(draft)
+            if problems:
+                why, feedback, notes = "format", "Format problems: " + "; ".join(problems), [f"Format: {p}" for p in problems]
+                continue
+            problems = fit_check(draft) if fit_check else []
+            if problems:
+                why, feedback, notes = "fit", "It doesn't fit the slides: " + "; ".join(problems), [f"Fit: {p}" for p in problems]
+                continue
+            # two independent examiners (the checker model and the writer model); both must pass it
+            checks = [call_checker(cfg, check_system, plain(draft), CHECK_TOOL, max_tokens=2500),
+                      call_checker(cfg, check_system, plain(draft), CHECK_TOOL, max_tokens=2500, model=writer_model)]
+            notes = [f"Checker {n}: {i}" for n, c in enumerate(checks, 1) for i in c.get("issues", []) if i]
+            if not any(c.get("severity") == "major" for c in checks):
+                draft.update(law_sensitive=bool(law_text), attempts=attempt, serious=False,
+                             needs_check=bool(draft.get("confidence") == "low" or draft.get("reviewer_note") or notes),
+                             check_notes=([f"Writer: {draft['reviewer_note']}"] if draft.get("reviewer_note") else []) + notes)
+                return draft, last, notes, why, feedback
+            why = "check"
+            feedback = "Independent examiners found these errors: " + "; ".join(
+                i for c in checks if c.get("severity") == "major" for i in c.get("issues", []))
+        return None, last, notes, why, feedback
+
     attempts = int(cfg.models.get("max_attempts", 3))
-    for attempt in range(1, attempts + 1):
-        user = base_user + (f"\nYour previous draft was rejected:\n{feedback}\nWrite a corrected note.\n" if feedback else "")
-        draft = tidy(_call_claude(writer_model, system, user, WRITE_TOOL, max_tokens=4000))
-        last = draft
-        problems = validate(draft)
-        if problems:
-            why, feedback, notes = "format", "Format problems: " + "; ".join(problems), [f"Format: {p}" for p in problems]
-            continue
-        problems = fit_check(draft) if fit_check else []
-        if problems:
-            why, feedback, notes = "fit", "It doesn't fit the slides: " + "; ".join(problems), [f"Fit: {p}" for p in problems]
-            continue
-        check = _call_claude(
-            checker_model,
-            CHECKER_SYSTEM.format(course=course["name"], body=course.get("body", ""),
-                                  paper=cfg.paper_prompt(paper),
-                                  law_line=f"Law basis to apply: {law_text}." if law_text else ""),
-            plain(draft), CHECK_TOOL, max_tokens=2000)
-        notes = [f"Checker: {i}" for i in check.get("issues", []) if i]
-        if check.get("severity") != "major":
-            draft.update(law_sensitive=bool(law_text), attempts=attempt, serious=False,
-                         needs_check=bool(draft.get("confidence") == "low" or draft.get("reviewer_note") or notes),
-                         check_notes=([f"Writer: {draft['reviewer_note']}"] if draft.get("reviewer_note") else []) + notes)
-            return draft
-        why = "check"
-        feedback = "An independent examiner found these errors: " + "; ".join(check.get("issues", []))
+    ok, last, notes, why, feedback = attempt_round(base_user, attempts)
+    if not ok and not topic and not instruction:
+        # the first concept couldn't be confirmed: a fresh, core concept usually can
+        retry = base_user + (f"\nA note on '{(last or {}).get('topic', 'another concept')}' could not be verified. "
+                             "Choose a different, core, frequently examined concept of this paper whose rules are "
+                             "settled, and keep it simple.\n")
+        try:
+            ok2, last2, notes2, why2, feedback2 = attempt_round(retry, 2)
+        except GenerationError as exc:          # e.g. the plan's usage limit: keep the first concept's result
+            print(f"  ! concept switch failed: {exc}")
+            ok2 = last2 = None
+        if ok2:
+            ok2["check_notes"] = ["Switched to a new concept because the first one couldn't be verified"] + ok2.get("check_notes", [])
+        if ok2 or last2:
+            ok, last, notes, why, feedback = ok2, last2 or last, notes2, why2 or why, feedback2
+    if ok:
+        return ok
 
     if not last or why == "format":
         raise GenerationError("Claude kept returning concept notes that don't fit the format: " + feedback[:300])
     reason = ("The note stayed too long for the slides, so it wasn't checked" if why == "fit"
-              else "The checker found errors that weren't fixed")
+              else "The checkers found errors that weren't fixed")
     last.update(law_sensitive=bool(law_text), attempts=attempts, needs_check=True, serious=True,
                 check_notes=[f"Not confirmed after {attempts} attempts"] + notes,
                 serious_reason=reason + (f" ({notes[0][:160]})" if notes else ""))

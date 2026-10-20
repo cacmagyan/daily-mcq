@@ -1,4 +1,5 @@
-"""Writes one MCQ with Claude, then has a second Claude call solve it blind to catch wrong keys."""
+"""Writes one MCQ with Claude, re-does its arithmetic in code, and has a separate Claude call solve it
+blind to catch wrong keys. Tax and law MCQs are solved by two different checkers."""
 
 from __future__ import annotations
 
@@ -47,6 +48,12 @@ WRITE_TOOL = {
                 "properties": {l: {"type": "string"} for l in LETTERS},
             },
             "exam_tip": {"type": "string", "description": "One memorable tip, at most 140 characters"},
+            "calculation": {"type": "string",
+                            "description": "Numerical questions whose answer is one number: plain arithmetic that "
+                                           "computes it from the question's data, one `name = expression` per "
+                                           "line, last line `answer = ...` in the unit of the correct option "
+                                           "(rupees, units, %, years). Only numbers, + - * / ** and sqrt, round, "
+                                           "min, max, abs. Empty for theory questions or ratio answers."},
             "applicability": {"type": "string",
                               "description": "Law/standard basis for tax or law questions, at most 60 characters; empty otherwise"},
             "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
@@ -54,7 +61,7 @@ WRITE_TOOL = {
                               "description": "Anything the human reviewer should double-check; empty if nothing"},
         },
         "required": ["topic", "question", "options", "correct", "explanation", "working",
-                     "why_not", "exam_tip", "applicability", "confidence", "reviewer_note"],
+                     "why_not", "exam_tip", "calculation", "applicability", "confidence", "reviewer_note"],
     },
 }
 
@@ -82,18 +89,18 @@ Rules
 2. Exactly one option is correct. The other three are mistakes real students make; for each wrong option, why_not names that mistake.
 3. Use Indian formats: ₹ with Indian commas (₹1,45,800), lakh and crore, dates like 31 March 2026, FY 2025-26.
 4. Options are shuffled after you write them. So no option may refer to another ("All of the above", "Both (a) and (b)", "None of these"), and the explanation, working, why_not texts and exam tip must never mention option letters.
-5. Numerical questions: choose friendly numbers so the answer is exact; show each step in `working` (at most 6 rows, label at most 40 characters, value at most 14 characters and holding one figure only, never a calculation); the last row is the final answer on its own.
+5. Numerical questions: choose friendly numbers so the answer is exact; show each step in `working` (at most 6 rows, label at most 40 characters, value at most 14 characters and holding one figure only, never a calculation); the last row is the final answer on its own. Also fill `calculation`: the agent runs it, and the correct option must equal its result, so compute from the question's own data only.
 6. Theory questions: leave `working` empty; make the options short and parallel in form.
 7. Length limits are strict because the text must fit on a phone screen: question 300 characters, each option 70 (90 for theory), explanation 260, each why_not 90, exam tip 140, topic 40.
-8. Law and tax: follow exactly this basis: {law_text}. Put a short form of it in `applicability` (at most 60 characters). Never invent a section number; if unsure of a number, describe the provision instead. Avoid rates and limits that changed recently unless you are certain. Put anything a reviewer should verify in `reviewer_note`.
+8. Law and tax: follow exactly this basis: {law_text}. Put a short form of it in `applicability` (at most 60 characters). Never invent a section number; if unsure of a number, describe the provision instead. Prefer concepts and treatments that stay the same from year to year; don't build a question on a rate, threshold, limit or due date unless the question states it or you are certain of it. Put anything a reviewer should verify in `reviewer_note`.
 9. Accounting standards: Ind AS / AS as currently applicable. Costing: ICMAI/ICAI study-material terminology.
 10. Plain, simple Indian classroom English. No filler, no motivational lines, no emoji.
-"""
+{traps}"""
 
 CHECKER_SYSTEM = """You are a strict examiner checking an MCQ written for {course} ({body}) students, paper: {paper}.
 Solve it yourself from scratch before looking for problems. Then list problems: more than one defensible answer, no correct option, calculation errors, outdated or uncertain law, ambiguous wording, or wording that gives the answer away.
 Severity: "major" if the key is wrong, if a needed fact is missing, or if any reasonable reading of the wording gives a different answer (for example, "interest" that could be charged or credited); "minor" for wording polish only; "none" otherwise.
-{law_line}"""
+{law_line}{traps}"""
 
 
 class GenerationError(RuntimeError):
@@ -176,6 +183,10 @@ def _call_claude_code(model: str, system: str, user: str, tool: dict) -> dict:
                 out = data.get("structured_output")
                 if not isinstance(out, dict):
                     out = _extract_json(str(data.get("result") or ""))
+                if isinstance(out, dict):
+                    for k in required:          # a text field left out means "nothing to say"
+                        if k not in out and schema.get("properties", {}).get(k, {}).get("type") == "string":
+                            out[k] = ""
                 if isinstance(out, dict) and all(k in out for k in required):
                     return out
                 err = f"{data.get('subtype', 'error')}: {str(data.get('result') or '')[:200]}"
@@ -223,6 +234,25 @@ def _call_api(model: str, system: str, user: str, tool: dict, max_tokens: int = 
     raise GenerationError(f"Claude API kept failing: {err}")
 
 
+_checker_unavailable: set[str] = set()
+
+
+def call_checker(cfg: Config, system: str, user: str, tool: dict, max_tokens: int = 1500,
+                 model: str | None = None) -> dict:
+    """Runs a check with the checker model; if that model can't be used, falls back to the writer model."""
+    writer = cfg.models.get("writer", "claude-sonnet-5-5")
+    model = model or cfg.models.get("checker", writer)
+    if model != writer and model not in _checker_unavailable:
+        try:
+            return _call_claude(model, system, user, tool, max_tokens=max_tokens)
+        except GenerationError as exc:
+            if "token was refused" in str(exc):
+                raise
+            _checker_unavailable.add(model)
+            print(f"  ! checker model {model} not available ({str(exc)[:120]}); using {writer} for checks")
+    return _call_claude(writer, system, user, tool, max_tokens=max_tokens)
+
+
 # ── validation and shuffling ────────────────────────────────────────────────
 
 _CROSS_REF = re.compile(r"\b(all of the above|none of the above|none of these|both)\b|\([a-dA-D]\)|\boption [a-dA-D]\b", re.I)
@@ -249,6 +279,9 @@ def validate(mcq: dict) -> list[str]:
     for field, text in texts.items():
         if re.search(r"\b[Oo]ption\s*(\([a-dA-D]\)|[A-D]\b)", text):
             problems.append(f"{field} mentions an option letter")
+    if not problems and mcq.get("calculation") and mcq.get("correct") in LETTERS:
+        from .safecalc import check_answer
+        problems += check_answer(mcq["calculation"], opts, LETTERS.index(mcq["correct"]))
     return problems
 
 
@@ -285,27 +318,73 @@ def tidy(mcq: dict) -> dict:
     mcq["working"] = [w for w in (mcq.get("working") or []) if w.get("label") or w.get("value")][:6]
     mcq["why_not"] = {l: t.strip() for l, t in (mcq.get("why_not") or {}).items()
                       if l in LETTERS and l != mcq["correct"] and t and t.strip()}
-    for k in ("topic", "question", "explanation", "exam_tip", "applicability", "reviewer_note"):
+    for k in ("topic", "question", "explanation", "exam_tip", "calculation", "applicability", "reviewer_note"):
         mcq[k] = str(mcq.get(k) or "").strip()
     return mcq
 
 
 # ── main entry ─────────────────────────────────────────────────────────────
 
+def _solve(cfg: Config, course: dict, paper: dict, law_text: str, mcq: dict, model: str | None = None) -> dict:
+    from . import traps
+    return call_checker(
+        cfg,
+        CHECKER_SYSTEM.format(course=course["name"], body=course.get("body", ""), paper=cfg.paper_prompt(paper),
+                              law_line=f"Law basis to apply: {law_text}." if law_text else "",
+                              traps=traps.block(course, paper)),
+        "Question: " + mcq["question"] + "\n" + "\n".join(f"{l}. {o}" for l, o in zip(LETTERS, mcq["options"])),
+        CHECK_TOOL, max_tokens=1500, model=model)
+
+
+def _round(cfg: Config, course: dict, paper: dict, date: dt.date, system: str, base_user: str,
+           attempts: int, rng: random.Random, target: str | None, law_text: str):
+    """Up to `attempts` drafts. Returns (accepted MCQ or None, last draft, notes, feedback)."""
+    writer_model = cfg.models.get("writer", "claude-sonnet-5-5")
+    feedback, last, notes = "", None, []
+    for attempt in range(1, attempts + 1):
+        user = base_user + (f"\nYour previous draft was rejected:\n{feedback}\nWrite a new MCQ that fixes this.\n" if feedback else "")
+        draft = tidy(_call_claude(writer_model, system, user, WRITE_TOOL))
+        problems = validate(draft)
+        if problems:
+            feedback = "Problems: " + "; ".join(problems)
+            last, notes = draft, [f"Format/calculation: {p}" for p in problems]
+            continue
+        mcq = shuffle_options(draft, rng, target)
+        last = mcq
+        checks = [_solve(cfg, course, paper, law_text, mcq)]
+        if law_text:   # tax and law: a second, different solver must agree too
+            checks.append(_solve(cfg, course, paper, law_text, mcq, model=writer_model))
+        notes, wrong = [], []
+        for n, check in enumerate(checks, 1):
+            who = "Checker" if n == 1 else "Second checker"
+            if check.get("answer") != mcq["correct"]:
+                wrong.append(check.get("answer"))
+                notes.append(f"{who} chose {check.get('answer')} (key is {mcq['correct']})")
+            notes += [f"{who}: {i}" for i in check.get("issues", []) if i]
+        major = any(c.get("severity") == "major" for c in checks)
+        if not wrong and not major:
+            mcq.update(attempts=attempt, check_notes=([f"Writer: {mcq['reviewer_note']}"] if mcq.get("reviewer_note") else []) + notes)
+            return mcq, last, notes, feedback
+        issues = [i for c in checks for i in c.get("issues", []) if i]
+        feedback = (f"An independent examiner solved it and chose {', '.join(wrong)}, but your key was "
+                    f"{mcq['correct']}. " if wrong else "") + ("Problems found: " + "; ".join(issues) if issues else "")
+    return None, last, notes, feedback
+
+
 def write_mcq(cfg: Config, course: dict, paper: dict, date: dt.date,
               recent: list[dict], instruction: str = "", link: dict | None = None) -> dict:
-    """Returns the MCQ plus check results. Raises GenerationError only if no usable MCQ came back."""
+    """Returns the MCQ plus check results. If the first topic can't be confirmed, tries a fresh topic
+    before giving up; only then is the MCQ marked serious (held). Raises GenerationError only if no
+    usable MCQ came back."""
+    from . import traps
+
     law_text = cfg.law_text(paper, date)
     difficulty = DIFFICULTY_BY_WEEKDAY[date.weekday()]
     rng = random.Random(f"{date.isoformat()}:{course['id']}:{instruction}")
     target = answer_letters(cfg.course_ids(), date).get(course["id"])
-    writer_model = cfg.models.get("writer", "claude-sonnet-5-5")
-    checker_model = cfg.models.get("checker", writer_model)
-
-    system = WRITER_SYSTEM.format(
-        body=course.get("body", ""),
-        law_text=law_text or "not a law paper; leave applicability empty",
-    )
+    system = WRITER_SYSTEM.format(body=course.get("body", ""),
+                                  law_text=law_text or "not a law paper; leave applicability empty",
+                                  traps=traps.block(course, paper))
     recent_lines = "\n".join(f"- {r.get('topic', '')}: {r.get('question', '')[:90]}" for r in recent[:40]) or "- none yet"
     base_user = (
         f"Course: {course['name']} ({course.get('body', '')})\n"
@@ -314,60 +393,46 @@ def write_mcq(cfg: Config, course: dict, paper: dict, date: dt.date,
         f"Posting date: {date.strftime('%d %B %Y')}\n\n"
         f"Recently posted for this course (pick a different chapter or concept):\n{recent_lines}\n"
     )
+    first_user = base_user
     if instruction:
-        base_user += f"\nReviewer's instruction for this MCQ: {instruction}\n"
+        first_user += f"\nReviewer's instruction for this MCQ: {instruction}\n"
     elif link:
         points = "; ".join(p.replace("==", "").replace("!!", "") for p in link.get("key_points", [])[:4])
-        base_user += (f"\nYesterday's concept note for this course was on: {link['topic']}. "
-                      f"Key points: {points}. Write today's MCQ to test that concept (this overrides the "
-                      "'different chapter' rule). Test understanding with a fresh situation; don't reuse the "
-                      "note's wording.\n")
+        first_user += (f"\nYesterday's concept note for this course was on: {link['topic']}. "
+                       f"Key points: {points}. Write today's MCQ to test that concept (this overrides the "
+                       "'different chapter' rule). Test understanding with a fresh situation; don't reuse the "
+                       "note's wording.\n")
 
-    feedback, last, notes = "", None, []
     attempts = int(cfg.models.get("max_attempts", 3))
-    for attempt in range(1, attempts + 1):
-        user = base_user + (f"\nYour previous draft was rejected:\n{feedback}\nWrite a new MCQ that fixes this.\n" if feedback else "")
-        draft = tidy(_call_claude(writer_model, system, user, WRITE_TOOL))
-        problems = validate(draft)
-        if problems:
-            feedback = "Format problems: " + "; ".join(problems)
-            last = draft
-            continue
-        mcq = shuffle_options(draft, rng, target)
-
-        check = _call_claude(
-            checker_model,
-            CHECKER_SYSTEM.format(course=course["name"], body=course.get("body", ""),
-                                  paper=cfg.paper_prompt(paper),
-                                  law_line=f"Law basis to apply: {law_text}." if law_text else ""),
-            "Question: " + mcq["question"] + "\n" +
-            "\n".join(f"{l}. {o}" for l, o in zip(LETTERS, mcq["options"])),
-            CHECK_TOOL, max_tokens=1500,
-        )
-        agrees = check.get("answer") == mcq["correct"]
-        last = mcq
-        notes = [f"Checker chose {check.get('answer')} (key is {mcq['correct']})"] if not agrees else []
-        notes += [f"Checker: {i}" for i in check.get("issues", []) if i]
-        if agrees and check.get("severity") != "major":
-            mcq.update(
-                difficulty=difficulty,
-                law_sensitive=bool(law_text),
-                needs_check=bool(mcq.get("confidence") == "low" or mcq.get("reviewer_note") or notes),
-                check_notes=([f"Writer: {mcq['reviewer_note']}"] if mcq.get("reviewer_note") else []) + notes,
-                attempts=attempt,
-                serious=False,
-            )
-            return mcq
-        feedback = (f"An independent examiner solved it and chose {check.get('answer')}, "
-                    f"but your key was {mcq['correct']}. " if not agrees else "") + \
-                   ("Problems found: " + "; ".join(check.get("issues", [])) if check.get("issues") else "")
+    ok, last, notes, feedback = _round(cfg, course, paper, date, system, first_user, attempts, rng, target, law_text)
+    switched = False
+    if not ok and not instruction:
+        # the first topic couldn't be confirmed: a fresh, core topic usually can
+        retry_user = base_user + (f"\nA draft on '{(last or {}).get('topic', 'another topic')}' could not be verified. "
+                                  "Choose a different, core, frequently examined topic of this paper whose answer is "
+                                  "settled and unambiguous, and keep it simple.\n")
+        try:
+            ok2, last2, notes2, feedback2 = _round(cfg, course, paper, date, system, retry_user, 2, rng, target, law_text)
+        except GenerationError as exc:          # e.g. the plan's usage limit: keep the first topic's result
+            print(f"  ! topic switch failed: {exc}")
+            ok2 = last2 = None
+        if ok2 or last2:
+            ok, last, notes, feedback, switched = ok2, last2 or last, notes2, feedback2, True
+    if ok:
+        ok.update(difficulty=difficulty, law_sensitive=bool(law_text), serious=False,
+                  needs_check=bool(ok.get("confidence") == "low" or ok.get("reviewer_note") or ok.get("check_notes")))
+        if switched:
+            ok["check_notes"] = ["Switched to a new topic because the first one couldn't be verified"] + ok.get("check_notes", [])
+            if link:
+                ok["linked_concept_missed"] = link.get("topic", "")
+        return ok
 
     if not last:
         raise GenerationError("Claude did not return a usable MCQ")
     if last.get("correct") not in LETTERS or len(last.get("options", [])) != 4:
         raise GenerationError("Claude kept returning badly formed MCQs: " + feedback)
     last.update(difficulty=difficulty, law_sensitive=bool(law_text), needs_check=True,
-                check_notes=[f"Not confirmed after {attempts} attempts"] + notes, attempts=attempts,
+                check_notes=["Not confirmed, even after switching topic"] + notes, attempts=attempts,
                 serious=True,
                 serious_reason="The checker could not confirm the answer key" + (f" ({notes[0]})" if notes else ""))
     return last

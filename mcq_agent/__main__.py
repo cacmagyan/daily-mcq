@@ -275,6 +275,16 @@ def _check(cfg: Config) -> int:
                               {"name": "check", "input_schema": {"type": "object",
                                "properties": {"ok": {"type": "boolean"}}, "required": ["ok"]}})
             print("✓ Claude subscription token works (MCQs will use your Claude plan)")
+            checker = cfg.models.get("checker")
+            if checker and checker != cfg.models.get("writer"):
+                try:
+                    _call_claude_code(checker, "Reply as asked.", "Set ok to true.",
+                                      {"name": "check", "input_schema": {"type": "object",
+                                       "properties": {"ok": {"type": "boolean"}}, "required": ["ok"]}})
+                    print(f"✓ Checker model {checker} works")
+                except GenerationError as exc:
+                    print(f"• Checker model {checker} isn't available on your plan ({str(exc)[:80]}); "
+                          "the writer model will do the checks instead")
         except GenerationError as exc:
             print(f"✗ Claude subscription token: {exc}"); ok = False
     else:

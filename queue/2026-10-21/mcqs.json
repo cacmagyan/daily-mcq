@@ -132,33 +132,31 @@
       "course_id": "ca_inter",
       "paper_code": "Paper 2",
       "paper_name": "Corporate and Other Laws",
-      "topic": "Companies Act: Prospectus / Share Capital",
-      "question": "Under the Companies Act, 2013, a company issued shares at a discount to the public, other than sweat equity shares or shares issued under a approved resolution plan. What is the legal position of such issue?",
+      "topic": "Companies Act: Sec 53 Discount on Shares",
+      "question": "Sigma Ltd, which has no sweat equity plan, issues 1,00,000 equity shares of ₹10 each at ₹8 per share to the public. What is the consequence under Section 53 of the Companies Act, 2013?",
       "options": [
-        "The issue is valid up to 10% discount with Tribunal approval",
-        "The issue is void; the company and officers in default are liable",
-        "The issue is valid if approved by a special resolution",
-        "The issue is valid if the shares are of a listed company"
+        "Issue is void; officers in default face imprisonment up to 6 months and fine",
+        "Issue is void; penalty on company and officers in default; refund with 12% interest",
+        "Issue is voidable; only the company is penalised, with no refund to allottees",
+        "Issue is valid; the ₹2 discount is recovered from allottees as unpaid call money"
       ],
       "correct": "B",
-      "explanation": "Section 53 prohibits issue of shares at a discount, except sweat equity shares. Any such issue is void. The company and every officer in default are punishable with fine and may also face imprisonment.",
+      "explanation": "Section 53 bars issue of shares at a discount, and such an issue is void. The company and every officer in default are liable to a penalty (lower of the amount raised or ₹5 lakh) and must refund the money with 12% interest. No imprisonment.",
       "working": [],
       "why_not": {
-        "C": "Wrongly thinks a special resolution can validate a discount issue; the law bars it.",
-        "A": "Invents a 10% discount limit; that is not a feature of share issue law.",
-        "D": "Believes listing allows discount; listed status gives no exemption."
+        "D": "Believes the issue stays valid and the discount is a call; the issue is void.",
+        "A": "Void is right, but the penalty is monetary only; no imprisonment is provided.",
+        "C": "Issue is void, not voidable; officers in default are liable and refund is due."
       },
-      "exam_tip": "Discount on shares: void, except sweat equity. Premium is allowed.",
+      "exam_tip": "Section 53: discount issue = void + penalty + refund with 12% interest. Sweat equity (Sec 54) is the exception.",
       "calculation": "",
       "applicability": "Companies Act, 2013 – Section 53",
       "confidence": "high",
-      "reviewer_note": "Question stem has grammar slip (\"a approved\"); fix to \"an approved\" or simplify to \"other than sweat equity shares\". Section 53 discount exception for sweat equity is certain.",
+      "reviewer_note": "Penalty: lower of amount raised by the discounted issue or ₹5 lakh, per reviewer instruction. Interest 12% p.a. Sweat equity exception is under Sec 54.",
       "attempts": 1,
       "check_notes": [
-        "Writer: Question stem has grammar slip (\"a approved\"); fix to \"an approved\" or simplify to \"other than sweat equity shares\". Section 53 discount exception for sweat equity is certain.",
-        "Checker: Grammar: 'a approved resolution plan' should read 'an approved resolution plan'.",
-        "Checker: The exception is described imprecisely. Section 53(2A) covers shares issued to creditors when debt is converted into shares under a statutory resolution plan or an RBI debt-restructuring scheme. It does not cover any 'approved resolution plan'.",
-        "Checker: 'To the public' adds nothing: Section 53 applies to any issue at a discount, not only issues to the public."
+        "Writer: Penalty: lower of amount raised by the discounted issue or ₹5 lakh, per reviewer instruction. Interest 12% p.a. Sweat equity exception is under Sec 54.",
+        "Checker: Option B says '12% interest' without 'per annum'. Section 53(3) states 12% per annum from the date of issue, and the option should say so."
       ],
       "difficulty": "medium",
       "law_sensitive": false,
@@ -170,7 +168,7 @@
         "answer": "ca_inter_a.jpg"
       },
       "fit_notes": [],
-      "caption": "🟦 CA Inter · MCQ of the day · Day 3\nPaper 2: Corporate and Other Laws\nTopic: Companies Act: Prospectus / Share Capital\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013 – Section 53.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261021",
+      "caption": "🟦 CA Inter · MCQ of the day · Day 3\nPaper 2: Corporate and Other Laws\nTopic: Companies Act: Sec 53 Discount on Shares\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013 – Section 53.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261021",
       "story": "ca_inter_story.jpg",
       "hold": false,
       "hold_reason": ""

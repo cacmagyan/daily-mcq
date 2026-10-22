@@ -119,7 +119,7 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("merge-posted", help="add saved posted.json records into the current queue")
     s.add_argument("saved", help="folder holding copies of queue/<date>/posted.json")
 
-    s = sub.add_parser("todo", help="print what a day still needs: all, none, or the extras (concept,reel)")
+    s = sub.add_parser("todo", help="print what a day still needs: all, none, or a list like ca_inter,concept,reel")
     s.add_argument("--date", default="tomorrow")
 
     s = sub.add_parser("approve", help="approve a batch (review mode: local)")
@@ -201,8 +201,10 @@ def main(argv: list[str] | None = None) -> int:
         if not load_batch(date):
             print("all")
             return 0
-        need = []
-        if cfg.concept_due(date) and not load_concept(date):
+        # MCQs that failed to be written (e.g. the Claude limit was reached part-way) are tried again
+        need = [it["course_id"] for it in load_batch(date).get("items", []) if it.get("error")]
+        concept = load_concept(date)
+        if cfg.concept_due(date) and (not concept or concept.get("error")):
             need.append("concept")
         reel = load_reel(date)
         if cfg.reel_due(date) and (not reel or reel.get("error")):     # a failed reel is cheap to retry

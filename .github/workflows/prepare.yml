@@ -4,13 +4,18 @@ name: 1. Prepare tomorrow's MCQs
 #   auto mode (config.yaml):  approves them itself and opens the day's report issue. Anything with a
 #                             serious problem is held back and you're @mentioned the evening before.
 #   github_pr mode:           opens a pull request; merging it approves the batch.
-# If tomorrow's MCQs already exist, the evening run only adds a missing concept note or reel.
+# If tomorrow's MCQs already exist, the evening run only redoes what failed or is missing (an MCQ, the
+# concept note, the reel). The early-morning runs do the same for TODAY, so a night when Claude's
+# usage limit was reached is caught up before the first post.
 on:
   schedule:
     - cron: "17 13 * * *"          # 18:47 IST
     # Back-up runs in case GitHub skips or delays the first one; they do nothing if tomorrow is ready.
     - cron: "47 14 * * *"          # 20:17 IST
     - cron: "17 16 * * *"          # 21:47 IST
+    # Morning catch-up for today, in case the evening runs couldn't write it
+    - cron: "17 0 * * *"           # 05:47 IST
+    - cron: "17 1 * * *"           # 06:47 IST
   workflow_dispatch:
     inputs:
       date:
@@ -65,13 +70,17 @@ jobs:
         id: need
         env:
           EVENT: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
           INPUT_DATE: ${{ inputs.date }}
           INPUT_REDRAW: ${{ inputs.redraw_only }}
           INPUT_CONCEPT: ${{ inputs.concept_only }}
           INPUT_REEL: ${{ inputs.reel_only }}
         run: |
+          DAY=tomorrow
+          if [ "$SCHEDULE" = "17 0 * * *" ] || [ "$SCHEDULE" = "17 1 * * *" ]; then DAY=today; fi
+          echo "day=$DAY" >> "$GITHUB_OUTPUT"
           if [ "$EVENT" = "schedule" ]; then
-            NEED=$(python -m mcq_agent todo --date tomorrow)
+            NEED=$(python -m mcq_agent todo --date "$DAY")
           elif [ "$INPUT_REDRAW" = "true" ]; then
             NEED=redraw
           elif [ "$INPUT_CONCEPT" = "true" ]; then
@@ -85,7 +94,7 @@ jobs:
           fi
           echo "need=$NEED" >> "$GITHUB_OUTPUT"
           echo "mode=$(python -m mcq_agent mode)" >> "$GITHUB_OUTPUT"
-          if [ "$NEED" = "none" ]; then echo "::notice::Tomorrow is already prepared, so there is nothing to do tonight."; fi
+          if [ "$NEED" = "none" ]; then echo "::notice::The $DAY's posts are already prepared, so there is nothing to do."; fi
 
       - name: Install the drawing browser and Claude
         if: steps.need.outputs.need != 'none'
@@ -110,6 +119,7 @@ jobs:
           INPUT_DATE: ${{ inputs.date }}
           INPUT_SAMPLE: ${{ inputs.sample }}
           NEED: ${{ steps.need.outputs.need }}
+          DAY: ${{ steps.need.outputs.day }}
         run: |
           if [ "$NEED" = "redraw" ]; then
             [[ "$INPUT_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "::error::Redraw needs the date, e.g. 2026-10-20"; exit 1; }
@@ -117,7 +127,7 @@ jobs:
             echo "batch_date=$INPUT_DATE" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          ARGS=(--date "${INPUT_DATE:-tomorrow}")
+          ARGS=(--date "${INPUT_DATE:-$DAY}")
           if [ "$INPUT_SAMPLE" = "true" ]; then ARGS+=(--sample); fi
           if [ "$NEED" != "all" ]; then ARGS+=(--courses "$NEED"); fi
           python -m mcq_agent prepare "${ARGS[@]}" --github-output "$GITHUB_OUTPUT"

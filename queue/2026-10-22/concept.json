@@ -1,0 +1,153 @@
+{
+  "kind": "concept",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 12",
+  "paper_name": "Management Accounting",
+  "author": "Rahul kp",
+  "topic": "Break-Even Point and Margin of Safety",
+  "title": "Break-Even Point",
+  "title_highlight": "and Margin of Safety",
+  "hook": "no profit, no loss!",
+  "simple_words": "BEP is the sales level where contribution just covers fixed cost. Sales above it is the safety cushion.",
+  "definitions": [
+    {
+      "term": "Break-Even Point (BEP)",
+      "meaning": "The level of sales (units or ₹) at which total contribution equals total fixed cost, so profit is zero.",
+      "note": "Profit = 0 here"
+    },
+    {
+      "term": "Margin of Safety (MoS)",
+      "meaning": "Excess of actual (or budgeted) sales over break-even sales. It shows how far sales can fall before a loss starts.",
+      "note": "Bigger MoS = safer firm"
+    }
+  ],
+  "key_points": [
+    "At BEP: ==Contribution== = Fixed cost, so profit is nil",
+    "Above BEP, each extra unit adds its contribution to profit",
+    "Below BEP, the business runs at a loss",
+    "!!BEP uses contribution, not profit, in the formula!!"
+  ],
+  "formula_heading": "The 3 CVP Formulas",
+  "formula_hook": "learn these three, score!",
+  "formulas": [
+    {
+      "name": "BEP in units",
+      "lhs": "BEP (units)",
+      "rhs": "",
+      "numerator": "F",
+      "denominator": "C per unit",
+      "square_root": false,
+      "suffix": "",
+      "legend": "F = total fixed cost; C per unit = selling price per unit − variable cost per unit"
+    },
+    {
+      "name": "BEP in sales value",
+      "lhs": "BEP (₹)",
+      "rhs": "",
+      "numerator": "F",
+      "denominator": "P/V ratio",
+      "square_root": false,
+      "suffix": "",
+      "legend": "P/V ratio = Contribution ÷ Sales, written as a fraction or %. Use the same ratio form in the formula."
+    },
+    {
+      "name": "Margin of Safety ratio",
+      "lhs": "MoS ratio",
+      "rhs": "",
+      "numerator": "Actual sales − BEP sales",
+      "denominator": "Actual sales",
+      "square_root": false,
+      "suffix": "× 100",
+      "legend": "Both sales figures in the same unit, either units or ₹. Denominator is actual sales."
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "insight": {
+    "punchline": "MoS = Profit ÷ P/V ratio",
+    "text": "Margin of safety in ₹ also equals profit divided by the P/V ratio, a quick check in MCQs."
+  },
+  "trick_hook": "F over C, always!",
+  "memory_trick": {
+    "mnemonic": "Fixed Floats on Contribution",
+    "explanation": "Picture a boat (Fixed cost) floating on water (Contribution). Fixed cost always goes on top, contribution below: F over C for units, F over P/V for ₹."
+  },
+  "steps": [
+    "Find contribution per unit",
+    "Find P/V ratio if ₹ is asked",
+    "Divide fixed cost by C or P/V",
+    "Subtract BEP from actual sales",
+    "Divide MoS by actual sales"
+  ],
+  "exam_tip": "Check the unit asked: units or ₹. Then match the denominator, contribution per unit for units, P/V ratio for ₹.",
+  "doubt": {
+    "question": "Does P/V ratio change if fixed cost rises?",
+    "answer": "No. P/V ratio depends only on selling price and variable cost. A rise in fixed cost raises BEP but leaves P/V ratio unchanged."
+  },
+  "mistakes_hook": "avoid these slips!",
+  "mistakes": [
+    {
+      "wrong": "Dividing fixed cost by selling price per unit",
+      "right": "Divide fixed cost by contribution per unit (selling price − variable cost per unit)."
+    },
+    {
+      "wrong": "Calculating MoS % on break-even sales",
+      "right": "MoS ratio = (Actual sales − BEP sales) ÷ Actual sales × 100."
+    },
+    {
+      "wrong": "Using total variable cost instead of per unit variable cost for contribution per unit",
+      "right": "Use variable cost per unit when finding contribution per unit."
+    },
+    {
+      "wrong": "Mixing units and ₹ in the MoS formula",
+      "right": "Take both actual sales and BEP sales in units, or both in ₹."
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Checker 1: Formula 2 legend: 'written as a fraction or %. Use the same ratio form in the formula' is vague. A student could divide F by 40 instead of 40%. Better wording: 'P/V ratio = Contribution ÷ Sales. If it is given as a %, convert it to a decimal or fraction before dividing (e.g. F ÷ 0.40, not F ÷ 40).'",
+    "Checker 1: Step 5: 'Divide MoS by actual sales' leaves out the ×100 that formula 3 has. Better wording: 'Divide MoS by actual sales and multiply by 100 to get MoS %.'",
+    "Checker 2: trick_hook 'F over C, always!' is slightly loose: for ₹ the denominator is the P/V ratio, not C per unit. Better: 'F over C (or P/V), always!'. This is wording polish only, and the explanation already gives the correct rule."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.14,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.14,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.22,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟧 CMA Inter · Concept of the day\nPaper 12: Management Accounting\nBreak-Even Point and Margin of Safety\n\nIn simple words: BEP is the sales level where contribution just covers fixed cost. Sales above it is the safety cushion.\n\nSwipe for the formula, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CMA Inter MCQ (3:25 PM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref concept-261022",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

@@ -1,0 +1,358 @@
+{
+  "date": "2026-10-22",
+  "day": 4,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-22T06:13:56+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 4",
+      "paper_name": "Business Economics",
+      "topic": "Monopoly: Deadweight Loss",
+      "question": "A single-firm monopolist faces the demand P = 100 − 2Q (P in ₹ per unit) and has constant marginal cost of ₹20 per unit, no fixed cost. Compared with perfect competition, the deadweight loss (in ₹) is:",
+      "options": [
+        "₹800",
+        "₹1,600",
+        "₹200",
+        "₹400"
+      ],
+      "correct": "D",
+      "explanation": "Monopoly: MR = 100 − 4Q = 20, so Q = 20, P = ₹60. Competition: P = MC gives Q = 40. DWL is the triangle with base (40 − 20) and height (60 − 20): ½ × 20 × 40 = ₹400.",
+      "working": [
+        {
+          "label": "Monopoly output (MR = MC)",
+          "value": "20"
+        },
+        {
+          "label": "Monopoly price (₹)",
+          "value": "60"
+        },
+        {
+          "label": "Competitive output (P = MC)",
+          "value": "40"
+        },
+        {
+          "label": "Price − MC at monopoly (₹)",
+          "value": "40"
+        },
+        {
+          "label": "Output lost",
+          "value": "20"
+        },
+        {
+          "label": "DWL = ½ × 20 × 40 (₹)",
+          "value": "400"
+        }
+      ],
+      "why_not": {
+        "A": "Forgot the ½ for the triangle (or gave monopoly profit of ₹800 instead).",
+        "B": "Used full base 40 and height 40 as a rectangle, with no ½.",
+        "C": "Used price gap of 20 or wrong output gap, halving the triangle again."
+      },
+      "exam_tip": "Monopoly: find Q from MR = MC, read P from demand; DWL is a triangle, so always use ½ × base × height.",
+      "calculation": "a = 100\nb = 2\nmc = 20\nqm = (a - mc) / (2 * b)\npm = a - b * qm\nqc = (a - mc) / b\ndwl = 0.5 * (pm - mc) * (qc - qm)\nanswer = dwl",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The question assumes, without saying so, that the competitive benchmark has the same constant marginal cost of ₹20 (that is, the competitive supply curve is MC = 20). This is the standard textbook assumption, so it is only a wording point."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 4\nPaper 4: Business Economics\nTopic: Monopoly: Deadweight Loss\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261022",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2B",
+      "paper_name": "Statutory Compliance",
+      "topic": "Appointment and Rotation of Auditors",
+      "question": "A listed company has had the same audit firm as its statutory auditor for two consecutive terms of five years each, ending at the 2026 AGM. As per the auditor rotation provisions of the Companies Act, 2013, what is the position of that firm?",
+      "options": [
+        "Can be reappointed after a cooling period of three years",
+        "Cannot be reappointed as auditor for five years from the end of its term",
+        "Can be reappointed for a third term if members pass a special resolution",
+        "Can be reappointed if the audit committee recommends and the Board approves"
+      ],
+      "correct": "B",
+      "explanation": "For a listed company, an audit firm can hold office for at most two terms of five consecutive years each. After that, it is not eligible for reappointment as auditor of that company for five years from the end of the term.",
+      "working": [],
+      "why_not": {
+        "C": "Members cannot override the rotation limit, even by special resolution.",
+        "A": "Wrong cooling period; it is five years, not three.",
+        "D": "Audit committee and Board cannot waive the statutory rotation limit."
+      },
+      "exam_tip": "Firm: 5+5 years, then a 5-year break. Individual auditor: 5 years, then a 5-year break.",
+      "calculation": "",
+      "applicability": "Companies Act, 2013 s.139(2); listed companies",
+      "confidence": "high",
+      "reviewer_note": "Stem restricted to a listed company so rotation clearly applies. Five-year cooling period is stated in s.139(2).",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Stem restricted to a listed company so rotation clearly applies. Five-year cooling period is stated in s.139(2).",
+        "Second checker: Option B's phrase 'from the end of its term' is slightly loose, but it is not misleading.",
+        "Second checker: Question says 'ending at the 2026 AGM', which is unnecessary detail but harmless."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 4\nPaper 2B: Statutory Compliance\nTopic: Appointment and Rotation of Auditors\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013 s.139(2); listed companies.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261022",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 6A",
+      "paper_name": "Financial Management",
+      "topic": "Leverages: Combined Leverage",
+      "question": "A firm has sales of ₹50,00,000, variable costs at 60% of sales, fixed operating costs of ₹10,00,000 and interest of ₹2,00,000 per year. It has no preference shares. If sales fall by 8%, by what percentage will EPS fall?",
+      "options": [
+        "16%",
+        "10%",
+        "20%",
+        "26%"
+      ],
+      "correct": "C",
+      "explanation": "DCL = Contribution ÷ EBT = 20,00,000 ÷ 8,00,000 = 2.5. DCL shows the % change in EPS for a 1% change in sales, so EPS falls 2.5 × 8 = 20%.",
+      "working": [
+        {
+          "label": "Contribution (40% of 50,00,000)",
+          "value": "2000000"
+        },
+        {
+          "label": "EBIT (20,00,000 - 10,00,000)",
+          "value": "1000000"
+        },
+        {
+          "label": "EBT (EBIT - interest)",
+          "value": "800000"
+        },
+        {
+          "label": "DOL = 20,00,000 / 10,00,000",
+          "value": "2"
+        },
+        {
+          "label": "DFL = 10,00,000 / 8,00,000",
+          "value": "1.25"
+        },
+        {
+          "label": "Fall in EPS = 2 x 1.25 x 8%",
+          "value": "20%"
+        }
+      ],
+      "why_not": {
+        "A": "Used only DOL (2 × 8%); ignored the effect of interest on EPS.",
+        "B": "Used only DFL (1.25 × 8%); ignored operating leverage.",
+        "D": "Added DOL and DFL (3.25 × 8%) instead of multiplying them."
+      },
+      "exam_tip": "DCL = DOL × DFL, never the sum. It links % change in sales directly to % change in EPS.",
+      "calculation": "contribution = 5000000 * 0.40\nebit = contribution - 1000000\nebt = ebit - 200000\ndol = contribution / ebit\ndfl = ebit / ebt\nanswer = dol * dfl * 8",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept": "Operating, Financial & Combined Leverage",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 4\nPaper 6A: Financial Management\nTopic: Leverages: Combined Leverage\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261022",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 5",
+      "paper_name": "Business Laws and Ethics",
+      "topic": "Indian Contract Act: Offer and Acceptance",
+      "question": "A shop displays a laptop in its window with a price tag of ₹45,000. Ravi enters and tenders ₹45,000 asking for it. The shopkeeper refuses, saying the tag was a mistake. Under the Indian Contract Act, 1872, what is the legal position?",
+      "options": [
+        "No contract; display is an invitation to offer and shopkeeper may refuse",
+        "Shopkeeper is liable for damages as the display was a general offer",
+        "Contract is concluded as Ravi accepted the displayed price",
+        "Contract is voidable at Ravi's option because of the price tag"
+      ],
+      "correct": "A",
+      "explanation": "Goods displayed with a price tag are only an invitation to offer. Ravi's tender of money is the offer; the shopkeeper is free to accept or reject it. No contract arises until acceptance.",
+      "working": [],
+      "why_not": {
+        "C": "Treats the display as an offer; Ravi's tender is the offer, not acceptance.",
+        "B": "Confuses display with a general offer like Carlill v. Carbolic Smoke Ball Co.",
+        "D": "Voidable contracts need consent caused by coercion, fraud etc.; none exists here."
+      },
+      "exam_tip": "Price tag, catalogue, tender notice, auction announcement = invitation to offer. Customer makes the offer.",
+      "calculation": "",
+      "applicability": "Indian Contract Act, 1872; Pharmaceutical Society v. Boots",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Minor: the reason the shopkeeper gives (\"the tag was a mistake\") has nothing to do with the answer and could mislead students into thinking about mistake doctrine. The shopkeeper may refuse for any reason, or none."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 4\nPaper 5: Business Laws and Ethics\nTopic: Indian Contract Act: Offer and Acceptance\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Indian Contract Act, 1872; Pharmaceutical Society v. Boots.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261022",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 4",
+      "paper_name": "Direct Tax Laws and International Taxation",
+      "topic": "Set-off and carry forward of losses",
+      "question": "For FY 2025-26, a resident individual has: loss from non-speculative business ₹4,00,000; speculative business profit ₹1,50,000; house property income ₹2,00,000; LTCG ₹3,00,000. B/f: business loss ₹2,50,000, unabsorbed depreciation ₹1,00,000, LTCL ₹80,000. Gross total income?",
+      "options": [
+        "Nil",
+        "₹70,000",
+        "₹1,50,000",
+        "₹1,70,000"
+      ],
+      "correct": "B",
+      "explanation": "Current business loss goes against speculative profit, house property, then LTCG. Unabsorbed depreciation acts like current depreciation (any head except salary). B/f LTCL goes against LTCG. B/f business loss needs business profit, so it is carried forward.",
+      "working": [
+        {
+          "label": "Loss after speculative profit",
+          "value": "₹2,50,000"
+        },
+        {
+          "label": "Loss after house property",
+          "value": "₹50,000"
+        },
+        {
+          "label": "LTCG after current loss",
+          "value": "₹2,50,000"
+        },
+        {
+          "label": "After unabsorbed depreciation",
+          "value": "₹1,50,000"
+        },
+        {
+          "label": "After b/f LTCL ₹80,000",
+          "value": "₹70,000"
+        },
+        {
+          "label": "Gross total income",
+          "value": "₹70,000"
+        }
+      ],
+      "why_not": {
+        "D": "Forgot to set off unabsorbed depreciation against LTCG, though it is allowed against any head except salary.",
+        "C": "Ignored b/f LTCL, which is set off against the LTCG of the year.",
+        "A": "Set off b/f business loss against LTCG; it can be set off only against business profits."
+      },
+      "exam_tip": "B/f business loss: only business income. Unabsorbed depreciation: any head except salary, and before b/f business loss.",
+      "calculation": "loss_after_spec = 400000 - 150000\nloss_after_hp = loss_after_spec - 200000\nltcg = 300000 - loss_after_hp\nafter_dep = ltcg - 100000\nanswer = after_dep - 80000",
+      "applicability": "Income-tax Act, 1961 as applicable for A.Y. 2026-27",
+      "confidence": "high",
+      "reviewer_note": "Assumes LTCG is a non-exempt long-term gain and the loss is not from a specified business; b/f business loss is within the 8-year limit.",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Assumes LTCG is a non-exempt long-term gain and the loss is not from a specified business; b/f business loss is within the 8-year limit.",
+        "Checker: The question doesn't say that the brought-forward losses came from returns filed on time under s.80, or that they are still within the 8-year carry-forward limit, so students must assume both.",
+        "Checker: 'B/f' and 'LTCG' are abbreviations. It would be clearer to spell them out and say the LTCG is the total long-term gain under any section.",
+        "Second checker: The question does not say that the b/f loss is a non-speculative business loss. Treating it as a business loss is the natural reading, so this is minor.",
+        "Second checker: The question does not say that the unabsorbed depreciation is of the current business. It is nonetheless allowed against any head except salary.",
+        "Second checker: The question does not say whether the LTCG is taxable under section 112 or 112A. This does not affect GTI."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 74%; consider shortening"
+      ],
+      "caption": "🟪 CA Final · MCQ of the day · Day 4\nPaper 4: Direct Tax Laws and International Taxation\nTopic: Set-off and carry forward of losses\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961 as applicable for A.Y. 2026-27.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261022",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 13",
+      "paper_name": "Corporate and Economic Laws",
+      "topic": "Insolvency and Bankruptcy Code, 2016",
+      "question": "An operational creditor delivers a demand notice for an unpaid operational debt to a corporate debtor under the IBC, 2016. Within what period of receiving it must the debtor repay the debt or notify the creditor of an existing dispute?",
+      "options": [
+        "10 days",
+        "14 days",
+        "30 days",
+        "7 days"
+      ],
+      "correct": "A",
+      "explanation": "Under the IBC, the corporate debtor has 10 days from receiving the demand notice to repay the unpaid operational debt or to bring to the creditor's notice a dispute or pending suit/arbitration. After that, the creditor may file with the NCLT.",
+      "working": [],
+      "why_not": {
+        "D": "Picks a shorter period; the Code does not give 7 days for reply to a demand notice.",
+        "B": "Confuses with 14 days allowed for NCLT to admit or reject the application.",
+        "C": "Confuses with 30 days given under other notice provisions, such as the Companies Act."
+      },
+      "exam_tip": "Operational creditor: demand notice, then 10 days to reply. NCLT admits or rejects within 14 days of filing.",
+      "calculation": "",
+      "applicability": "IBC, 2016 - demand notice by operational creditor",
+      "confidence": "high",
+      "reviewer_note": "Verify 10-day period against the current IBC text; the 14-day NCLT admission timeline is directory, not mandatory.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Verify 10-day period against the current IBC text; the 14-day NCLT admission timeline is directory, not mandatory."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 4\nPaper 13: Corporate and Economic Laws\nTopic: Insolvency and Bankruptcy Code, 2016\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on IBC, 2016 - demand notice by operational creditor.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261022",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

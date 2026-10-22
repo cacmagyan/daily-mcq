@@ -1,0 +1,25 @@
+{
+  "kind": "reel",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 1A",
+  "paper_name": "Fundamentals of Financial Accounting",
+  "topic": "Inventory Valuation (AS 2 / Ind AS 2)",
+  "author": "Rahul kp",
+  "correct": "B",
+  "source": "626db1fa8568",
+  "video": "reel.mp4",
+  "cover": "reel_cover.jpg",
+  "seconds": {
+    "think": 8,
+    "answer": 7.0
+  },
+  "scale": 0.72,
+  "short_reason": false,
+  "presenter": true,
+  "share_option": "C",
+  "voice": "",
+  "voice_note": "no voice key yet (see README)",
+  "caption": "⏱ 🟨 CMA CAT · 8-second MCQ challenge\n\nAt 31 March 2026, Kiran Traders holds three items of inventory: X (cost ₹40,000, NRV ₹45,000), Y (cost ₹60,000, NRV ₹50,000), Z (cost ₹30,000, NRV ₹28,000). Items are valued separately. Closing inventory is:\n\nComment A, B, C or D before the timer ends 👇 Pause if you need more time.\nFull working: our CMA CAT MCQ post today at 9:55 AM.\nSend this to a friend who'd get it wrong 😄\n\nPaper 1A: Fundamentals of Financial Accounting · Topic: Inventory Valuation (AS 2 / Ind AS 2)\nBased on AS 2 / Ind AS 2 Inventories.\nPrepared by Rahul kp\n\nFollow @cacmagyan for a daily MCQ in every CA and CMA level.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref reel-261023",
+  "hold": false,
+  "hold_reason": ""
+}

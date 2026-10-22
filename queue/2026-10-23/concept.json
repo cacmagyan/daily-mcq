@@ -1,0 +1,151 @@
+{
+  "kind": "concept",
+  "course_id": "ca_final",
+  "paper_code": "Paper 1",
+  "paper_name": "Financial Reporting",
+  "author": "Rahul kp",
+  "topic": "Recoverable Amount (Ind AS 36)",
+  "title": "Recoverable Amount",
+  "title_highlight": "Ind AS 36",
+  "hook": "higher of two, always!",
+  "simple_words": "If the asset's book value is more than what you can recover from it, write down the extra as impairment loss.",
+  "definitions": [
+    {
+      "term": "Recoverable amount",
+      "meaning": "Higher of an asset's fair value less costs of disposal and its value in use.",
+      "note": "Higher, never lower!"
+    },
+    {
+      "term": "Value in use",
+      "meaning": "Present value of future cash flows expected from continuing use of the asset and its final disposal.",
+      "note": "Use a pre-tax discount rate"
+    }
+  ],
+  "key_points": [
+    "Impairment loss arises when ==carrying amount== is more than recoverable amount.",
+    "Recoverable amount = higher of ==FVLCD== and ==value in use==.",
+    "If either one is above carrying amount, there is no impairment and the other need not be estimated.",
+    "Loss goes to profit or loss, unless the asset is carried at revalued amount (treated as revaluation decrease first)."
+  ],
+  "formula_heading": "The Impairment Test",
+  "formula_hook": "three lines, full marks",
+  "formulas": [
+    {
+      "name": "Fair value less costs of disposal",
+      "lhs": "FVLCD",
+      "rhs": "FV − CD",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "FV = fair value (price in an orderly transaction); CD = incremental costs of disposal"
+    },
+    {
+      "name": "Recoverable amount",
+      "lhs": "RA",
+      "rhs": "Higher of (FVLCD, VIU)",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "RA = recoverable amount; VIU = value in use (PV of future cash flows)"
+    },
+    {
+      "name": "Impairment loss",
+      "lhs": "Loss",
+      "rhs": "CA − RA  (only if CA > RA)",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "CA = carrying amount; RA = recoverable amount. If CA ≤ RA, loss is nil."
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "insight": {
+    "punchline": "Pick the kinder number!",
+    "text": "Ind AS 36 takes the higher of the two values, so the asset is written down by the smaller amount."
+  },
+  "trick_hook": "remember the HIGH road",
+  "memory_trick": {
+    "mnemonic": "Sell or Use? Take the Higher",
+    "explanation": "Management could sell the asset (FVLCD) or keep using it (VIU). A sensible owner picks the better route, so RA is the higher value."
+  },
+  "steps": [
+    "Find carrying amount (CA)",
+    "Find FVLCD = FV − CD",
+    "Compute VIU (PV of cash flows)",
+    "RA = higher of the two",
+    "Loss = CA − RA, if positive"
+  ],
+  "exam_tip": "Write the formula first, then state which of FVLCD or VIU is higher. Marks are given for the choice and the reason.",
+  "doubt": {
+    "question": "Must I always compute both FVLCD and VIU?",
+    "answer": "No. If one of them is already above carrying amount, the asset is not impaired and the other need not be estimated."
+  },
+  "mistakes_hook": "don't lose easy marks",
+  "mistakes": [
+    {
+      "wrong": "Taking the lower of FVLCD and VIU as recoverable amount",
+      "right": "Recoverable amount is the !!higher!! of FVLCD and value in use."
+    },
+    {
+      "wrong": "Using fair value without deducting costs of disposal",
+      "right": "Deduct incremental costs of disposal from fair value to get FVLCD."
+    },
+    {
+      "wrong": "Including finance costs and income tax cash flows in value in use",
+      "right": "VIU cash flows exclude financing activities and income tax receipts or payments."
+    },
+    {
+      "wrong": "Discounting VIU cash flows at a post-tax rate",
+      "right": "Use a !!pre-tax!! discount rate that reflects current market assessments of time value and asset-specific risks."
+    }
+  ],
+  "applicability": "Ind AS 36 Impairment of Assets (as notified, applicable)",
+  "confidence": "high",
+  "reviewer_note": "Confirm the revalued-asset treatment wording in the last key point matches the current Ind AS 36 text. Paper examines Ind AS, so no AS mix.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Confirm the revalued-asset treatment wording in the last key point matches the current Ind AS 36 text. Paper examines Ind AS, so no AS mix."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.06,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.2,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟪 CA Final · Concept of the day\nPaper 1: Financial Reporting\nRecoverable Amount (Ind AS 36)\n\nIn simple words: If the asset's book value is more than what you can recover from it, write down the extra as impairment loss.\n\nSwipe for the formula, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CA Final MCQ (6:25 PM) tests this concept.\n\nBased on Ind AS 36 Impairment of Assets (as notified, applicable).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFinal #ICAI #CAStudents #IndAS\n\nref concept-261023",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

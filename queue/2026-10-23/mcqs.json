@@ -1,0 +1,391 @@
+{
+  "date": "2026-10-23",
+  "day": 5,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-22T19:24:52+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Statistics",
+      "topic": "Statistics: Combined Standard Deviation",
+      "question": "Two groups each have 25 items. Group A has mean 10 and standard deviation 1. Group B has mean 22 and standard deviation 5. What is the standard deviation of the combined group of 50 items?",
+      "options": [
+        "7",
+        "49",
+        "3.6",
+        "13"
+      ],
+      "correct": "A",
+      "explanation": "Combined mean is 16. Combined variance = [n1(σ1² + d1²) + n2(σ2² + d2²)] / (n1 + n2), with d1 = −6 and d2 = 6. This gives 49, so the SD is 7.",
+      "working": [
+        {
+          "label": "Combined mean",
+          "value": "16"
+        },
+        {
+          "label": "d1 = 10 − 16",
+          "value": "-6"
+        },
+        {
+          "label": "d2 = 22 − 16",
+          "value": "6"
+        },
+        {
+          "label": "Sum n(σ² + d²) for A",
+          "value": "925"
+        },
+        {
+          "label": "Sum n(σ² + d²) for B",
+          "value": "1525"
+        },
+        {
+          "label": "Combined SD = √(2450/50)",
+          "value": "7"
+        }
+      ],
+      "why_not": {
+        "D": "Takes the simple average of 1 and 5 and adds nothing sensible; ignores the spread of means.",
+        "C": "Ignores the d² terms: uses √((1+25)/2) only, so misses the gap between group means.",
+        "B": "Gives the combined variance and forgets to take the square root."
+      },
+      "exam_tip": "Combined SD needs both SDs and the distance of each mean from the combined mean. Finish with the square root.",
+      "calculation": "m = (25*10 + 25*22)/50\nd1 = 10 - m\nd2 = 22 - m\nvar = (25*(1**2 + d1**2) + 25*(5**2 + d2**2))/50\nanswer = sqrt(var)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Working rows: A = 25*(1+36)=925; B = 25*(25+36)=1525; total 2450.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Working rows: A = 25*(1+36)=925; B = 25*(25+36)=1525; total 2450."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 5\nPaper 3: Quantitative Aptitude: Statistics\nTopic: Statistics: Combined Standard Deviation\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261023",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Inventory Valuation (AS 2 / Ind AS 2)",
+      "question": "At 31 March 2026, Kiran Traders holds three items of inventory: X (cost ₹40,000, NRV ₹45,000), Y (cost ₹60,000, NRV ₹50,000), Z (cost ₹30,000, NRV ₹28,000). Items are valued separately. Closing inventory is:",
+      "options": [
+        "₹1,30,000",
+        "₹1,18,000",
+        "₹1,35,000",
+        "₹1,23,000"
+      ],
+      "correct": "B",
+      "explanation": "Inventory is valued at the lower of cost and net realisable value. Applied item by item: X at cost ₹40,000, Y at NRV ₹50,000, Z at NRV ₹28,000. Total ₹1,18,000.",
+      "working": [
+        {
+          "label": "X: lower of 40,000 and 45,000",
+          "value": "₹40,000"
+        },
+        {
+          "label": "Y: lower of 60,000 and 50,000",
+          "value": "₹50,000"
+        },
+        {
+          "label": "Z: lower of 30,000 and 28,000",
+          "value": "₹28,000"
+        },
+        {
+          "label": "Closing inventory",
+          "value": "₹1,18,000"
+        }
+      ],
+      "why_not": {
+        "D": "Compares total cost (₹1,30,000) with total NRV (₹1,23,000); items are valued separately.",
+        "A": "Ignores NRV and values all items at cost, so no write-down for Y and Z.",
+        "C": "Takes the higher of cost and NRV for each item, the opposite of the rule."
+      },
+      "exam_tip": "Lower of cost and NRV is applied item by item, not on the total, unless items are similar or related.",
+      "calculation": "x = min(40000,45000)\ny = min(60000,50000)\nz = min(30000,28000)\nanswer = x + y + z",
+      "applicability": "AS 2 / Ind AS 2 Inventories",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 5\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Inventory Valuation (AS 2 / Ind AS 2)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on AS 2 / Ind AS 2 Inventories.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261023",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 3A",
+      "paper_name": "Income-tax Law",
+      "topic": "Set-off of House Property Loss",
+      "question": "Mr. Rao, a resident individual, has opted out of section 115BAC for FY 2025-26. Income under Salaries: ₹8,00,000; interest on bank deposits: ₹1,00,000. Interest of ₹2,40,000 on a housing loan for his self-occupied house. His Gross Total Income is:",
+      "options": [
+        "₹6,60,000",
+        "₹9,00,000",
+        "₹7,00,000",
+        "₹11,00,000"
+      ],
+      "correct": "C",
+      "explanation": "For a self-occupied house, interest is allowed up to ₹2,00,000. The loss under House Property is ₹2,00,000. Under the old regime it can be set off against other heads: 8,00,000 + 1,00,000 − 2,00,000 = ₹7,00,000.",
+      "working": [
+        {
+          "label": "Income from Salaries",
+          "value": "₹8,00,000"
+        },
+        {
+          "label": "Income from Other Sources",
+          "value": "₹1,00,000"
+        },
+        {
+          "label": "Interest allowed (capped)",
+          "value": "₹2,00,000"
+        },
+        {
+          "label": "Loss from house property",
+          "value": "-₹2,00,000"
+        },
+        {
+          "label": "Gross Total Income",
+          "value": "₹7,00,000"
+        }
+      ],
+      "why_not": {
+        "B": "Ignores the house property loss, as if set-off is not allowed under the old regime.",
+        "A": "Sets off the full ₹2,40,000 interest, ignoring the ₹2,00,000 cap.",
+        "D": "Adds the loss to income instead of deducting it."
+      },
+      "exam_tip": "Self-occupied house: interest capped at ₹2,00,000; loss set-off against other heads only if the old regime applies.",
+      "calculation": "salary = 800000\nother = 100000\nhp_loss = min(240000, 200000)\nanswer = salary + other - hp_loss",
+      "applicability": "Income-tax Act, 1961; A.Y. 2026-27 (old regime)",
+      "confidence": "high",
+      "reviewer_note": "Assumes the loan conditions for the ₹2,00,000 cap are met and no brought-forward losses exist. The ₹2,00,000 cap is settled law.",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Assumes the loan conditions for the ₹2,00,000 cap are met and no brought-forward losses exist. The ₹2,00,000 cap is settled law.",
+        "Checker: The question does not give the loan's purpose (buying or building versus repairs), when it was taken (on or after 1.4.1999), or whether the house was finished within 5 years. All of these are needed for the ₹2,00,000 cap. If the loan were for repairs, the cap would be ₹30,000 and GTI would be ₹8,70,000, which is not an option. So the key still holds, but the facts should be stated.",
+        "Checker: 'Income under Salaries ₹8,00,000' should say whether it is after the standard deduction under section 16.",
+        "Second checker: The question does not say when the loan was taken or that the house was acquired or constructed within 5 years. The ₹2,00,000 cap depends on both, so a needed fact is missing. The options make clear that C is intended.",
+        "Second checker: It should say that ₹8,00,000 is the computed income under Salaries, after standard deduction. This is a minor point.",
+        "Second checker: 'Opted out of 115BAC' is slightly indirect. It would be clearer to say he is following the old regime."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 5\nPaper 3A: Income-tax Law\nTopic: Set-off of House Property Loss\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961; A.Y. 2026-27 (old regime).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261023",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 12",
+      "paper_name": "Management Accounting",
+      "topic": "Break-Even Point and Margin of Safety",
+      "question": "A firm sells a product at ₹250 per unit. Variable cost is ₹150 per unit and fixed cost is ₹6,00,000 per annum. Actual sales in FY 2026-27 are 8,000 units. What is the margin of safety (in sales value)?",
+      "options": [
+        "₹3,00,000",
+        "₹5,00,000",
+        "₹15,00,000",
+        "₹2,00,000"
+      ],
+      "correct": "B",
+      "explanation": "BEP units = fixed cost ÷ contribution per unit = 6,00,000 ÷ 100 = 6,000 units. Margin of safety = 8,000 − 6,000 = 2,000 units, i.e. 2,000 × ₹250 = ₹5,00,000 of sales.",
+      "working": [
+        {
+          "label": "Contribution per unit (₹)",
+          "value": "100"
+        },
+        {
+          "label": "BEP (units)",
+          "value": "6,000"
+        },
+        {
+          "label": "Actual sales (units)",
+          "value": "8,000"
+        },
+        {
+          "label": "Margin of safety (units)",
+          "value": "2,000"
+        },
+        {
+          "label": "Margin of safety (₹)",
+          "value": "5,00,000"
+        }
+      ],
+      "why_not": {
+        "D": "This is the profit (2,000 × ₹100), not the margin of safety in sales value.",
+        "C": "This is the break-even sales value (6,000 × ₹250), not the safety margin.",
+        "A": "Values the 2,000 safety units at variable cost ₹150 instead of selling price ₹250."
+      },
+      "exam_tip": "Margin of safety = actual sales − BEP sales. Multiply by P/V ratio to get profit.",
+      "calculation": "contribution = 250 - 150\nbep_units = 600000 / contribution\nmos_units = 8000 - bep_units\nanswer = mos_units * 250",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept": "Break-Even Point and Margin of Safety",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 5\nPaper 12: Management Accounting\nTopic: Break-Even Point and Margin of Safety\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261023",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 5",
+      "paper_name": "Indirect Tax Laws",
+      "topic": "GST - Value of supply (Section 15)",
+      "question": "Hari Ltd sold goods to an unrelated buyer. Listed price ₹6,00,000; trade discount ₹20,000 agreed before supply and shown on invoice; packing charges ₹15,000 billed separately; interest ₹10,000 for late payment. All amounts exclude GST. Transaction value is?",
+      "options": [
+        "₹6,25,000",
+        "₹5,95,000",
+        "₹5,80,000",
+        "₹6,05,000"
+      ],
+      "correct": "D",
+      "explanation": "Transaction value includes incidental expenses like packing and interest for late payment. A discount agreed before supply and shown on the invoice is deducted. So 6,00,000 + 15,000 + 10,000 − 20,000 = 6,05,000.",
+      "working": [
+        {
+          "label": "Listed price",
+          "value": "₹6,00,000"
+        },
+        {
+          "label": "Add: packing charges",
+          "value": "₹15,000"
+        },
+        {
+          "label": "Add: late payment interest",
+          "value": "₹10,000"
+        },
+        {
+          "label": "Less: trade discount",
+          "value": "₹20,000"
+        },
+        {
+          "label": "Transaction value",
+          "value": "₹6,05,000"
+        }
+      ],
+      "why_not": {
+        "B": "Leaves out interest for late payment, which is includible in value of supply.",
+        "A": "Ignores the discount, which was agreed before supply and shown on the invoice.",
+        "C": "Excludes both packing charges and late payment interest; both are includible."
+      },
+      "exam_tip": "Value of supply: add packing, incidental costs and late-payment interest; deduct only discounts agreed before or at supply.",
+      "calculation": "price = 600000\npacking = 15000\ninterest = 10000\ndiscount = 20000\nanswer = price + packing + interest - discount",
+      "applicability": "CGST Act, 2017 as per ICAI applicability for next attempt",
+      "confidence": "high",
+      "reviewer_note": "Based on s.15 CGST (transaction value, inclusions, discount). No rates used.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Based on s.15 CGST (transaction value, inclusions, discount). No rates used.",
+        "Checker: The question doesn't say whether the late-payment interest was actually charged/received or only provided for in the contract, and gives no timing. Saying 'interest charged and received by Hari Ltd' would remove this ambiguity.",
+        "Checker: Interest arises only after the supply, so 'transaction value' at the time of invoicing could be read narrowly. The usual reading under s.15(2)(d) still gives D.",
+        "Second checker: 'Transaction value' is a customs term; the CGST term is 'value of supply' under Section 15. This is a wording point only.",
+        "Second checker: The question does not say that the packing is the supplier's own packing; this has to be assumed."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 5\nPaper 5: Indirect Tax Laws\nTopic: GST - Value of supply (Section 15)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on CGST Act, 2017 as per ICAI applicability for next attempt.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261023",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 15",
+      "paper_name": "Direct Tax Laws and International Taxation",
+      "topic": "Residential Status of a Company",
+      "question": "Zenith Ltd is incorporated in Country X, which is not India. In the previous year, its key management and commercial decisions necessary for conducting the business as a whole were, in substance, made in India. Its residential status in India is:",
+      "options": [
+        "Resident, as its place of effective management is in India",
+        "Not ordinarily resident, as it is a foreign company",
+        "Non-resident, as it is incorporated outside India",
+        "Resident only if Indian shareholders hold a majority"
+      ],
+      "correct": "A",
+      "explanation": "A company is resident in India if it is an Indian company, or if its place of effective management (POEM) in the previous year is in India. POEM is where key management and commercial decisions are in substance made.",
+      "working": [],
+      "why_not": {
+        "C": "Treats place of incorporation as the only test; POEM in India also makes a foreign company resident.",
+        "B": "NOR status applies only to individuals and HUFs, not companies.",
+        "D": "Shareholding pattern is not the test; the location of key decision-making is."
+      },
+      "exam_tip": "Company: Indian company or POEM in India means resident. Only two categories: resident or non-resident.",
+      "calculation": "",
+      "applicability": "Income-tax Act, 1961 as amended by Finance Act, 2025",
+      "confidence": "high",
+      "reviewer_note": "Concept only; no rates or thresholds. Small-company POEM guidance exemptions not tested.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Concept only; no rates or thresholds. Small-company POEM guidance exemptions not tested.",
+        "Checker: The question omits the company's turnover. Under CBDT Circular 8/2017, the POEM test does not apply to a company with turnover or gross receipts of Rs 50 crore or less in the financial year. Stating that turnover exceeds Rs 50 crore, or that the POEM provisions apply, would make it airtight. A is still the only defensible option.",
+        "Checker: The stem repeats the statutory POEM definition almost word for word, and option A names POEM, so the wording partly gives the answer away.",
+        "Checker: The question could state that it applies the Income-tax Act, 1961 (as amended by the Finance Act, 2025); 'previous year' becomes 'tax year' under the Income-tax Act, 2025.",
+        "Second checker: The stem closely paraphrases the statutory POEM definition, which makes option A easy to pick. This is a minor point.",
+        "Second checker: The turnover exemption for POEM is not relevant here. It applies only to foreign companies with a small turnover, and the question doesn't mention it."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 5\nPaper 15: Direct Tax Laws and International Taxation\nTopic: Residential Status of a Company\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961 as amended by Finance Act, 2025.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261023",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

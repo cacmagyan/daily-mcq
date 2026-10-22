@@ -68,5 +68,15 @@
   "concept:story": {
     "media_id": "18160208812520061",
     "posted_at": "2026-10-22T19:41:59+05:30"
+  },
+  "cma_final": {
+    "media_id": "18001173548813606",
+    "permalink": "https://www.instagram.com/p/DezTUR4G-hK/",
+    "image_host": "github_raw",
+    "posted_at": "2026-10-22T20:56:48+05:30"
+  },
+  "cma_final:story": {
+    "media_id": "18638359462000936",
+    "posted_at": "2026-10-22T20:56:59+05:30"
   }
 }

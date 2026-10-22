@@ -21,7 +21,8 @@ The agent runs in **auto** mode (`review: mode: "auto"` in `config.yaml`): MCQs 
 
 1. **18:47, every evening.** The agent writes tomorrow's six MCQs with Claude. A second, separate Claude call solves each one *without seeing the answer*. If it gets a different answer, the MCQ is rewritten (up to 3 tries). Then it draws the 12 images, approves the day itself and opens a GitHub **issue** called "MCQs for <date> (Day N)" with every image.
 2. **If an MCQ has a serious problem**, it is put **on hold** and won't post. The issue title starts with "⛔ Action needed" and you are @mentioned, so GitHub notifies you that evening. Serious means: the checker could not confirm the answer key after 3 tries, or the text doesn't fit the image and is cut off. Smaller notes (shrunk text, ⚖️ law topics) don't stop anything.
-3. **Next day.** Each course posts at its time. The issue shows ✅ and a link as each one goes out, and closes itself after the last post.
+3. **Early next morning (05:47 and 06:47).** If the evening runs couldn't write the day (for example the Claude usage limit was reached), these runs write whatever is missing or failed for today, before the first post.
+4. **Next day.** Each course posts at its time. The issue shows ✅ and a link as each one goes out, and closes itself after the last post.
 
 To act on a day, comment on its issue:
 

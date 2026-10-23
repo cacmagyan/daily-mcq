@@ -68,5 +68,15 @@
   "concept:story": {
     "media_id": "18100751252181302",
     "posted_at": "2026-10-23T19:42:01+05:30"
+  },
+  "cma_final": {
+    "media_id": "18074624423770591",
+    "permalink": "https://www.instagram.com/p/De14HvmG1Ya/",
+    "image_host": "github_raw",
+    "posted_at": "2026-10-23T20:56:52+05:30"
+  },
+  "cma_final:story": {
+    "media_id": "18238020805320863",
+    "posted_at": "2026-10-23T20:57:03+05:30"
   }
 }

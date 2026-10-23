@@ -18,5 +18,15 @@
   "cma_cat:story": {
     "media_id": "18126424829295939",
     "posted_at": "2026-10-23T09:56:58+05:30"
+  },
+  "ca_inter": {
+    "media_id": "17889327183476389",
+    "permalink": "https://www.instagram.com/p/De09vrumwS0/",
+    "image_host": "github_raw",
+    "posted_at": "2026-10-23T12:26:46+05:30"
+  },
+  "ca_inter:story": {
+    "media_id": "17899157919396256",
+    "posted_at": "2026-10-23T12:26:57+05:30"
   }
 }

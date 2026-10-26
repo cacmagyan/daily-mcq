@@ -8,6 +8,7 @@ brand:
   name: "Rahul kp"              # signature on every image
   handle: "@cacmagyan"          # your Instagram handle, e.g. "@rahulkp.cma" (shown on images + captions)
   start_date: "2026-10-19"      # Day 1 of the series. Images show "Day N" counted from here.
+  paused: [["2026-10-24", "2026-10-26"]]   # days with no posts; Day N carries on after them (27 Oct = Day 6)
   logo: "assets/brand/logo.png" # shown top-right on every image; "" for none.
                                 # Replace with: python -m mcq_agent set-logo path/to/logo.png
 

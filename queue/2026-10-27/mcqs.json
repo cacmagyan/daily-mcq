@@ -1,0 +1,342 @@
+{
+  "date": "2026-10-27",
+  "day": 9,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-26T21:34:12+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 2",
+      "paper_name": "Business Laws",
+      "topic": "Indian Contract Act: Offer and Acceptance",
+      "question": "A shop displays a shirt in its window with a price tag of ₹1,200. Ravi enters, picks the shirt and tenders ₹1,200, but the owner refuses to sell it. Under the Indian Contract Act, 1872, what is the legal position?",
+      "options": [
+        "Owner is bound, as the display is a firm offer accepted by Ravi",
+        "Owner is not bound, as the display is only an invitation to offer",
+        "Owner is bound, as Ravi has already paid the price tendered",
+        "Owner is bound only if the shirt was displayed for over one day"
+      ],
+      "correct": "B",
+      "explanation": "Goods displayed with a price tag are only an invitation to offer. Ravi's tender of money is the offer. The owner may accept or refuse it, so no contract exists until acceptance.",
+      "working": [],
+      "why_not": {
+        "A": "Treats the display as an offer; price-tagged goods are an invitation to offer.",
+        "C": "Tender of price does not bind the seller; payment is only Ravi's offer.",
+        "D": "Invents a time condition; duration of display does not change its nature."
+      },
+      "exam_tip": "Price tag, catalogue, tender notice, auction call: all invitations to offer. The customer makes the offer.",
+      "calculation": "",
+      "applicability": "Indian Contract Act, 1872 – offer and invitation to offer",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 9\nPaper 2: Business Laws\nTopic: Indian Contract Act: Offer and Acceptance\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Indian Contract Act, 1872 – offer and invitation to offer.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261027",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Not-for-Profit Organisations",
+      "question": "A club received subscriptions of ₹3,60,000 in FY 2025-26. This includes ₹30,000 for FY 2024-25 and ₹20,000 for FY 2026-27. Subscriptions of ₹40,000 for FY 2025-26 are still due. What is subscription income for FY 2025-26?",
+      "options": [
+        "₹3,10,000",
+        "₹3,60,000",
+        "₹3,90,000",
+        "₹3,50,000"
+      ],
+      "correct": "D",
+      "explanation": "Income uses the accrual basis. Remove receipts for the previous year and the next year, then add dues for the current year: 3,60,000 − 30,000 − 20,000 + 40,000 = ₹3,50,000.",
+      "working": [
+        {
+          "label": "Subscriptions received",
+          "value": "₹3,60,000"
+        },
+        {
+          "label": "Less: arrears of 2024-25",
+          "value": "₹30,000"
+        },
+        {
+          "label": "Less: advance for 2026-27",
+          "value": "₹20,000"
+        },
+        {
+          "label": "Add: outstanding for 2025-26",
+          "value": "₹40,000"
+        },
+        {
+          "label": "Income for 2025-26",
+          "value": "₹3,50,000"
+        }
+      ],
+      "why_not": {
+        "B": "Takes the cash received as income and ignores arrears, advance and outstanding amounts.",
+        "C": "Deducts arrears but adds the advance instead of deducting it.",
+        "A": "Deducts the outstanding subscription instead of adding it."
+      },
+      "exam_tip": "Income and Expenditure Account is accrual based: strip out other years' receipts, add current year dues.",
+      "calculation": "received = 360000\narrears = 30000\nadvance = 20000\noutstanding = 40000\nanswer = received - arrears - advance + outstanding",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The question does not say whether any FY 2025-26 subscriptions were received in advance during FY 2024-25. The key implicitly assumes none; adding 'No subscriptions for FY 2025-26 were received in advance in earlier years' would remove the gap."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 9\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Not-for-Profit Organisations\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261027",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 1",
+      "paper_name": "Advanced Accounting",
+      "topic": "Admission of a Partner: Goodwill Premium",
+      "question": "A and B share profits 3:2. On 1 April 2026, C is admitted for 1/5 share, which he takes entirely from A. C brings ₹1,00,000 as premium for goodwill in cash. What amount is credited to A's capital account for goodwill?",
+      "options": [
+        "₹1,00,000",
+        "₹40,000",
+        "₹50,000",
+        "₹60,000"
+      ],
+      "correct": "A",
+      "explanation": "Only A gives up share (3/5 to 2/5 = 1/5). B's share stays 2/5, so B sacrifices nothing. The whole premium goes to the sacrificing partner, A, in the sacrificing ratio of 1:0.",
+      "working": [
+        {
+          "label": "A old share",
+          "value": "3/5"
+        },
+        {
+          "label": "A new share (3/5 - 1/5)",
+          "value": "2/5"
+        },
+        {
+          "label": "A sacrifice",
+          "value": "1/5"
+        },
+        {
+          "label": "B sacrifice (2/5 - 2/5)",
+          "value": "0"
+        },
+        {
+          "label": "Premium credited to A (₹)",
+          "value": "1,00,000"
+        }
+      ],
+      "why_not": {
+        "D": "Shares premium in old ratio 3:2; premium goes by sacrifice ratio, not old ratio.",
+        "B": "Uses A's new share 2/5; the new ratio is not the basis for sharing premium.",
+        "C": "Splits premium equally between A and B, ignoring that B sacrifices nothing."
+      },
+      "exam_tip": "Sacrifice = old share minus new share. Premium goes to sacrificing partners only, in the sacrificing ratio.",
+      "calculation": "old_A = 3/5\nnew_A = old_A - 1/5\nsac_A = old_A - new_A\nsac_B = 2/5 - 2/5\nanswer = 100000 * sac_A / (sac_A + sac_B)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 9\nPaper 1: Advanced Accounting\nTopic: Admission of a Partner: Goodwill Premium\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261027",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 10",
+      "paper_name": "Corporate Accounting and Auditing (Auditing)",
+      "topic": "Audit Evidence: Assertions",
+      "question": "As per the Standards on Auditing, an auditor selects items from the fixed assets register and physically inspects them at the site. Which assertion about assets is this test mainly designed to address?",
+      "options": [
+        "Existence of the assets",
+        "Cut-off of transactions",
+        "Classification of the assets",
+        "Completeness of the assets"
+      ],
+      "correct": "A",
+      "explanation": "Selecting items from the recorded register and tracing them to the physical asset tests that recorded assets really exist. Completeness needs the opposite direction: from the physical assets to the register.",
+      "working": [],
+      "why_not": {
+        "D": "Completeness needs testing from the floor to the register, not register to floor.",
+        "B": "Cut-off concerns recording in the correct period, not physical presence of assets.",
+        "C": "Classification concerns correct account heads, not whether the asset is present."
+      },
+      "exam_tip": "Register to floor tests existence; floor to register tests completeness.",
+      "calculation": "",
+      "applicability": "SA 500 and SA 315 (Revised): assertions",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The phrase 'As per the Standards on Auditing' is vague. The question could name SA 315 (Revised), which sets out the assertions, or SA 500.",
+        "Checker: Option B (cut-off) is an assertion about transactions, not about account balances. The stem asks about an assertion 'about assets', so B is a weak distractor."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 9\nPaper 10: Corporate Accounting and Auditing (Auditing)\nTopic: Audit Evidence: Assertions\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on SA 500 and SA 315 (Revised): assertions.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261027",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 4",
+      "paper_name": "Direct Tax Laws and International Taxation",
+      "topic": "Residential status - POEM of company",
+      "question": "Zeta Inc. is incorporated in a foreign country. For determining whether Zeta Inc. is resident in India under the Income-tax Act, 1961, which test decides its residence on the basis of place of effective management?",
+      "options": [
+        "Majority of its turnover arises from customers in India",
+        "Majority of its shareholders are residents of India",
+        "Key management and commercial decisions are in substance made in India",
+        "Its books of account are kept at an office in India"
+      ],
+      "correct": "C",
+      "explanation": "A foreign company is resident in India if its place of effective management (POEM) is in India. POEM means the place where key management and commercial decisions necessary for conducting the business as a whole are, in substance, made.",
+      "working": [],
+      "why_not": {
+        "B": "Confuses POEM with ownership; shareholder residence does not decide company residence.",
+        "A": "Confuses POEM with source of income; Indian turnover alone does not make it resident.",
+        "D": "Place of keeping records is administrative, not where key decisions are made."
+      },
+      "exam_tip": "POEM is about where key decisions are made in substance, not where owners, customers or records are.",
+      "calculation": "",
+      "applicability": "Income-tax Act, 1961 as applicable for A.Y. 2026-27",
+      "confidence": "high",
+      "reviewer_note": "Concept only. Assumes the company is not an Indian company. Small-company turnover exception (POEM in India if board meetings held in India) not tested.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Concept only. Assumes the company is not an Indian company. Small-company turnover exception (POEM in India if board meetings held in India) not tested.",
+        "Checker: Wording polish only: option C leaves out parts of the statutory definition, namely 'necessary for the conduct of business of an entity as a whole' and the 'at any time in that year' condition in Section 6(3)(ii). This does not change the answer, because no other option can be defended.",
+        "Second checker: Option C closely mirrors the statutory definition of POEM, so the wording gives the answer away. This is a minor polish point only.",
+        "Second checker: The stem says 'which test decides its residence', which is slightly loose, but only one option is defensible."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 9\nPaper 4: Direct Tax Laws and International Taxation\nTopic: Residential status - POEM of company\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961 as applicable for A.Y. 2026-27.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261027",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 14",
+      "paper_name": "Strategic Financial Management",
+      "topic": "Mergers and Acquisitions - EPS after merger",
+      "question": "A Ltd (17,00,000 shares, EPS ₹20, market price ₹300) acquires B Ltd (10,00,000 shares, EPS ₹10, market price ₹90) by issuing shares at the market price ratio. Assuming no synergy, what is A Ltd's post-merger EPS?",
+      "options": [
+        "₹16.30",
+        "₹22.00",
+        "₹20.00",
+        "₹25.88"
+      ],
+      "correct": "B",
+      "explanation": "Exchange ratio by market price is 90/300 = 0.30 A share per B share, so 3,00,000 new shares. Combined earnings ₹4.40 crore divided by 20,00,000 shares gives ₹22.00.",
+      "working": [
+        {
+          "label": "A Ltd earnings (₹)",
+          "value": "3,40,00,000"
+        },
+        {
+          "label": "B Ltd earnings (₹)",
+          "value": "1,00,00,000"
+        },
+        {
+          "label": "Combined earnings (₹)",
+          "value": "4,40,00,000"
+        },
+        {
+          "label": "New shares issued",
+          "value": "3,00,000"
+        },
+        {
+          "label": "Total shares after merger",
+          "value": "20,00,000"
+        },
+        {
+          "label": "Post-merger EPS (₹)",
+          "value": "22.00"
+        }
+      ],
+      "why_not": {
+        "C": "Assumes EPS stays unchanged; ignores that B's earnings and new shares both change.",
+        "A": "Uses a 1:1 swap (27,00,000 shares) instead of the market price ratio.",
+        "D": "Divides combined earnings by A's old shares, forgetting the new shares issued."
+      },
+      "exam_tip": "Swap ratio = target price ÷ acquirer price; new shares = ratio × target shares. Then combine earnings and shares.",
+      "calculation": "a_earn = 17*100000*20\nb_earn = 10*100000*10\nnew_sh = 10*100000*90/300\ntotal_sh = 17*100000 + new_sh\nanswer = (a_earn + b_earn)/total_sh",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 9\nPaper 14: Strategic Financial Management\nTopic: Mergers and Acquisitions - EPS after merger\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261027",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "kind": "concept",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 4",
+  "paper_name": "Cost and Management Accounting",
+  "author": "Rahul kp",
+  "topic": "Economic Order Quantity (EOQ)",
+  "title": "Economic Order",
+  "title_highlight": "Quantity (EOQ)",
+  "hook": "order the right qty!",
+  "simple_words": "EOQ is the order size where ordering cost and carrying cost for the year are lowest together.",
+  "definitions": [
+    {
+      "term": "EOQ",
+      "meaning": "The ==order quantity== that minimises the total of annual ordering cost and annual carrying cost of inventory.",
+      "note": "At EOQ, ordering cost = carrying cost"
+    },
+    {
+      "term": "Carrying cost",
+      "meaning": "Cost of holding stock: storage, insurance, obsolescence, interest on funds blocked. Stated per unit per year.",
+      "note": "Convert % to ₹ per unit per year"
+    }
+  ],
+  "key_points": [
+    "Total ordering cost for the year rises when orders are many (small order size)",
+    "Total carrying cost (Q/2 × C) rises when the order size is big",
+    "Cost per order (O) stays the same whatever the order size",
+    "At EOQ, total ordering cost equals total carrying cost"
+  ],
+  "formula_heading": "The EOQ Formula",
+  "formula_hook": "one root, C at the bottom",
+  "formulas": [
+    {
+      "name": "Economic Order Quantity",
+      "lhs": "EOQ",
+      "rhs": "",
+      "numerator": "2 × A × O",
+      "denominator": "C",
+      "square_root": true,
+      "suffix": "",
+      "legend": "A = annual demand (units); O = cost per order (₹); C = carrying cost per unit per year (₹)"
+    },
+    {
+      "name": "Total annual ordering cost",
+      "lhs": "Ordering cost",
+      "rhs": "(A / Q) × O",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Q = order quantity (units); A/Q = number of orders in the year"
+    },
+    {
+      "name": "Total annual carrying cost",
+      "lhs": "Carrying cost",
+      "rhs": "(Q / 2) × C",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Q/2 = average stock held, assuming uniform usage and no safety stock"
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "insight": {
+    "punchline": "Many small orders or few big ones?",
+    "text": "EOQ balances the two: more orders cut carrying cost but raise ordering cost, and the reverse."
+  },
+  "trick_hook": "picture it in words",
+  "memory_trick": {
+    "mnemonic": "2-A-O over C, one root",
+    "explanation": "Top of the fraction: 2, A, O multiplied. Carrying cost C is the divisor at the bottom. Put the whole fraction under one square root."
+  },
+  "steps": [
+    "Find A in units per year",
+    "Find O per order",
+    "Make C ₹ per unit per year",
+    "Put 2AO / C under the root",
+    "Check units of the answer"
+  ],
+  "exam_tip": "If carrying cost is given as a % of unit price, first multiply it by price to get C in ₹ per unit per year.",
+  "doubt": {
+    "question": "Why is carrying cost Q/2 and not Q?",
+    "answer": "Stock falls from Q to zero before the next lot arrives, so the average stock held is Q/2, assuming uniform usage."
+  },
+  "mistakes_hook": "avoid these slips",
+  "mistakes": [
+    {
+      "wrong": "Using monthly demand as A with a yearly C",
+      "right": "Keep A and C on the same period: annual demand and carrying cost per unit per year."
+    },
+    {
+      "wrong": "Putting C in % of price directly in the formula",
+      "right": "Convert it first: C = % × price per unit, in ₹ per unit per year."
+    },
+    {
+      "wrong": "Writing EOQ = √(2AC / O)",
+      "right": "EOQ = √(2AO / C): carrying cost is the divisor."
+    },
+    {
+      "wrong": "Saying EOQ is where total cost is highest",
+      "right": "EOQ is where total of ordering and carrying cost is lowest."
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "Fixed key point 1 and mnemonic. EOQ assumes uniform usage, no stock-outs, constant prices.",
+  "law_sensitive": false,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Fixed key point 1 and mnemonic. EOQ assumes uniform usage, no stock-outs, constant prices.",
+    "Checker 1: simple_words: 'where ordering cost and carrying cost for the year are lowest together' can be read as saying each cost is at its own lowest. In fact ordering cost keeps falling and carrying cost keeps rising as the order size grows. Better: 'EOQ is the order size at which the total of annual ordering cost and annual carrying cost is lowest.'"
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.08,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.22,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.24,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 4: Cost and Management Accounting\nEconomic Order Quantity (EOQ)\n\nIn simple words: EOQ is the order size where ordering cost and carrying cost for the year are lowest together.\n\nSwipe for the formula, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CA Inter MCQ (12:25 PM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept-261027",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

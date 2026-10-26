@@ -71,9 +71,13 @@ jobs:
               echo "::notice::Time is up for this run; the next one carries on from $D."; break
             fi
             echo "── Preparing $D (needs: $NEED)"
-            ARGS=(--date "$D")
-            if [ "$NEED" != "all" ]; then ARGS+=(--courses "$NEED"); fi
-            python -m mcq_agent prepare "${ARGS[@]}" || true
+            if [ "$NEED" = "redraw" ]; then
+              python -m mcq_agent render --date "$D" || true      # only the Day number changed: no Claude needed
+            else
+              ARGS=(--date "$D")
+              if [ "$NEED" != "all" ]; then ARGS+=(--courses "$NEED"); fi
+              python -m mcq_agent prepare "${ARGS[@]}" || true
+            fi
             git add "queue/$D"
             if ! git diff --cached --quiet; then
               git commit -q -m "MCQs for $D (prepared ahead)"

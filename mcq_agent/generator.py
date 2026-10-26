@@ -336,6 +336,17 @@ def _solve(cfg: Config, course: dict, paper: dict, law_text: str, mcq: dict, mod
         CHECK_TOOL, max_tokens=1500, model=model)
 
 
+def checker_for(cfg: Config, paper: dict, law_text: str) -> str | None:
+    """The model that solves an MCQ blind. models.strong_checks: "law_tax_audit" keeps the strong checker
+    for tax, law, audit and SM papers (where wording traps hide) and uses the writer model for the rest,
+    whose arithmetic is re-done by code anyway; this roughly halves the Claude usage. None = the checker."""
+    if str(cfg.models.get("strong_checks", "all")) != "law_tax_audit":
+        return None
+    if law_text or paper.get("law") or paper.get("author"):
+        return None
+    return cfg.models.get("writer", "claude-sonnet-5-5")
+
+
 def _round(cfg: Config, course: dict, paper: dict, date: dt.date, system: str, base_user: str,
            attempts: int, rng: random.Random, target: str | None, law_text: str):
     """Up to `attempts` drafts. Returns (accepted MCQ or None, last draft, notes, feedback)."""
@@ -351,7 +362,7 @@ def _round(cfg: Config, course: dict, paper: dict, date: dt.date, system: str, b
             continue
         mcq = shuffle_options(draft, rng, target)
         last = mcq
-        checks = [_solve(cfg, course, paper, law_text, mcq)]
+        checks = [_solve(cfg, course, paper, law_text, mcq, model=checker_for(cfg, paper, law_text))]
         if law_text:   # tax and law: a second, different solver must agree too
             checks.append(_solve(cfg, course, paper, law_text, mcq, model=writer_model))
         notes, wrong = [], []

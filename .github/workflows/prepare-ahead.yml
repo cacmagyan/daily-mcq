@@ -1,0 +1,101 @@
+name: 6. Prepare days ahead
+
+# Prepares the coming days in advance, one day after another (today first, then tomorrow, and so on),
+# until `days` days are ready, Claude's usage limit is reached, or about 4.5 hours have passed.
+# Each finished day is saved at once, so nothing is lost if it stops. Prepared days post by
+# themselves, and posting doesn't need Claude, so a buffer keeps the page going if Claude can't
+# be used for a while. Runs every night at 23:17 IST to top the buffer up; run it by hand any time.
+on:
+  schedule:
+    - cron: "47 17 * * *"          # 23:17 IST
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days ahead to keep ready (1-30)"
+        required: false
+        default: "14"
+
+permissions:
+  contents: write
+  issues: write
+
+# shares the evening job's group, so two preparations never run at the same time
+concurrency:
+  group: prepare
+  cancel-in-progress: false
+
+jobs:
+  ahead:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null; }
+          if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then npm install -g @anthropic-ai/claude-code; fi
+
+      - name: Prepare day by day
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+          GOOGLE_TTS_API_KEY: ${{ secrets.GOOGLE_TTS_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          DAYS: ${{ inputs.days || '14' }}
+        run: |
+          [[ "$DAYS" =~ ^[0-9]+$ ]] && [ "$DAYS" -ge 1 ] && [ "$DAYS" -le 30 ] || DAYS=14
+          git config user.name "mcq-agent"
+          git config user.email "mcq-agent@users.noreply.github.com"
+          gh label create mcq-day --color 0E8A16 --description "Daily MCQ report" --force >/dev/null 2>&1 || true
+          START=$(date +%s)
+          DONE=0
+          for i in $(seq 0 "$DAYS"); do
+            D=$(TZ=Asia/Kolkata date -d "+$i day" +%F)
+            NEED=$(python -m mcq_agent todo --date "$D")
+            if [ "$NEED" = "none" ]; then echo "✓ $D is ready"; continue; fi
+            if [ $(( $(date +%s) - START )) -gt 16200 ]; then
+              echo "::notice::Time is up for this run; the next one carries on from $D."; break
+            fi
+            echo "── Preparing $D (needs: $NEED)"
+            ARGS=(--date "$D")
+            if [ "$NEED" != "all" ]; then ARGS+=(--courses "$NEED"); fi
+            python -m mcq_agent prepare "${ARGS[@]}" || true
+            git add "queue/$D"
+            if ! git diff --cached --quiet; then
+              git commit -q -m "MCQs for $D (prepared ahead)"
+              for t in 1 2 3 4; do git pull -q --rebase && git push -q && break; sleep 5; done
+            fi
+            LEFT=$(python -m mcq_agent todo --date "$D")
+            if [ "$LEFT" != "none" ]; then
+              echo "::warning::$D isn't complete ($LEFT), most likely Claude's usage limit. Stopping; the next run (or the morning catch-up) finishes it."
+              break
+            fi
+            DONE=$((DONE + 1))
+            python -m mcq_agent report --date "$D" > "$RUNNER_TEMP/report.md"
+            TITLE=$(python -m mcq_agent report-title --date "$D")
+            NUM=$(gh issue list --label mcq-day --state open --search "\"MCQs for $D\" in:title" --json number -q '.[0].number')
+            if [ -n "$NUM" ]; then
+              gh issue edit "$NUM" --title "$TITLE" --body-file "$RUNNER_TEMP/report.md"
+            else
+              gh issue create --title "$TITLE" --label mcq-day --body-file "$RUNNER_TEMP/report.md"
+            fi
+          done
+          echo "## Prepared $DONE new day(s) in this run" >> "$GITHUB_STEP_SUMMARY"
+          for i in $(seq 0 "$DAYS"); do
+            D=$(TZ=Asia/Kolkata date -d "+$i day" +%F)
+            [ "$(python -m mcq_agent todo --date "$D")" = "none" ] && echo "- ✅ $D" >> "$GITHUB_STEP_SUMMARY" || { echo "- ⏳ $D and later: not yet" >> "$GITHUB_STEP_SUMMARY"; break; }
+          done

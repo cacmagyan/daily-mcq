@@ -85,8 +85,9 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--github-output", help=argparse.SUPPRESS)
 
     s = sub.add_parser("render", help="redraw images after editing mcqs.json")
-    s.add_argument("--date", required=True)
+    s.add_argument("--date", required=True, help="YYYY-MM-DD, today or tomorrow")
     s.add_argument("--courses")
+    s.add_argument("--github-output", help=argparse.SUPPRESS)
 
     s = sub.add_parser("regen", help="rewrite one course's MCQ")
     s.add_argument("--date", required=True)
@@ -155,7 +156,9 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.cmd == "render":
         from .pipeline import rerender
-        rerender(cfg, dt.date.fromisoformat(args.date), _courses(args.courses))
+        date = cfg.resolve_date(args.date)
+        rerender(cfg, date, _courses(args.courses))
+        _write_output(args.github_output, batch_date=date.isoformat())
         return 0
 
     if args.cmd == "regen":
@@ -201,14 +204,18 @@ def main(argv: list[str] | None = None) -> int:
         if not load_batch(date):
             print("all")
             return 0
+        batch = load_batch(date)
         # MCQs that failed to be written (e.g. the Claude limit was reached part-way) are tried again
-        need = [it["course_id"] for it in load_batch(date).get("items", []) if it.get("error")]
+        need = [it["course_id"] for it in batch.get("items", []) if it.get("error")]
         concept = load_concept(date)
         if cfg.concept_due(date) and (not concept or concept.get("error")):
             need.append("concept")
         reel = load_reel(date)
         if cfg.reel_due(date) and (not reel or reel.get("error")):     # a failed reel is cheap to retry
             need.append("reel")
+        if not need and batch.get("day") and batch["day"] != cfg.day_number(date):
+            print("redraw")              # drawn with an older Day number (e.g. after a pause): redraw it
+            return 0
         print(",".join(need) or "none")
         return 0
 

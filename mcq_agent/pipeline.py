@@ -275,6 +275,8 @@ def rerender(cfg: Config, date: dt.date, course_ids: list[str] | None = None) ->
             B.save_concept(date, concept)
             print("  ✓ re-rendered the concept note")
         if batch:
+            if not course_ids:
+                batch["day"] = cfg.day_number(date)    # the images now show this Day number
             B.save_batch(date, batch)
             reel = B.load_reel(date)
             wanted = reel is not None or cfg.reel_due(date)

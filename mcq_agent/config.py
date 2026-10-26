@@ -55,8 +55,22 @@ class Config:
             return self.today()
         return dt.date.fromisoformat(value)
 
+    def paused_days(self) -> set[dt.date]:
+        """Days with no posts (brand.paused: ["from", "to"] pairs or single dates); Day N skips them."""
+        out = set()
+        for entry in self.brand.get("paused") or []:
+            first, last = (entry, entry) if isinstance(entry, str) else (entry[0], entry[-1])
+            d, end = dt.date.fromisoformat(str(first)), dt.date.fromisoformat(str(last))
+            while d <= end:
+                out.add(d)
+                d += dt.timedelta(days=1)
+        return out
+
     def day_number(self, date: dt.date) -> int:
-        return (date - self.start_date).days + 1
+        """Day N of the series: days since start_date, not counting paused days. The papers rotate
+        by this number too, so a pause doesn't skip any paper."""
+        skipped = sum(1 for d in self.paused_days() if self.start_date <= d < date)
+        return (date - self.start_date).days + 1 - skipped
 
     # ── papers ─────────────────────────────────────────────
     def paper_for(self, course: dict, date: dt.date) -> dict:

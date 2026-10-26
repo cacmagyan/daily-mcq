@@ -19,6 +19,9 @@ models:
   checker: "claude-opus-5-5"    # solves each MCQ blind and re-checks each concept note; a stronger model
                                 # than the writer catches more. If your plan can't use it, the writer model is used.
   max_attempts: 3               # rewrites allowed when the checker disagrees
+  strong_checks: "law_tax_audit"  # "all" = the checker model solves every MCQ; "law_tax_audit" = only tax, law,
+                                  # audit and SM papers (the others use the writer model; their arithmetic is
+                                  # re-done by code). About half the Claude usage, so more days fit in your limit.
 
 review:
   # auto:      MCQs post by themselves. Any MCQ with a serious problem (answer key not

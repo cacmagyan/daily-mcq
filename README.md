@@ -24,6 +24,8 @@ The agent runs in **auto** mode (`review: mode: "auto"` in `config.yaml`): MCQs 
 3. **Early next morning (05:47 and 06:47).** If the evening runs couldn't write the day (for example the Claude usage limit was reached), these runs write whatever is missing or failed for today, before the first post.
 4. **Next day.** Each course posts at its time. The issue shows ✅ and a link as each one goes out, and closes itself after the last post.
 
+**Preparing days ahead.** Actions → **6. Prepare days ahead** → Run workflow (default 14 days). It prepares one day after another, saving each as it finishes, until the days are ready, Claude's usage limit is reached, or about 4.5 hours pass; it also runs every night at 23:17 to top the buffer up. Prepared days post by themselves without Claude, so a buffer keeps the page going if Claude can't be used for a while. `models: strong_checks: "law_tax_audit"` keeps the strong checker for tax, law, audit and SM papers only, which roughly halves the usage.
+
 To act on a day, comment on its issue:
 
 | Comment | What it does |

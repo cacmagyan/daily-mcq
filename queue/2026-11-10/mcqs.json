@@ -1,0 +1,321 @@
+{
+  "date": "2026-11-10",
+  "day": 20,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-28T00:34:08+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 1",
+      "paper_name": "Accounting",
+      "topic": "Rectification of Errors: Suspense Account",
+      "question": "A trial balance did not agree, and the difference was put in a suspense account. Later errors found: sales book overcast ₹8,000; payment of ₹5,000 to Ravi debited to his account as ₹500; purchase book overcast ₹2,000; purchase return ₹3,000 not debited to supplier. What was the original suspense balance?",
+      "options": [
+        "Debit ₹13,500",
+        "Credit ₹13,500",
+        "Debit ₹17,500",
+        "Debit ₹10,500"
+      ],
+      "correct": "A",
+      "explanation": "Credits were more than debits by 8,000 + 4,500 + 3,000 − 2,000 = ₹13,500. To balance the trial balance, suspense was debited ₹13,500. Rectification credits suspense with the same amount.",
+      "working": [
+        {
+          "label": "Sales overcast (credit excess)",
+          "value": "8,000"
+        },
+        {
+          "label": "Ravi short debit (5,000 − 500)",
+          "value": "4,500"
+        },
+        {
+          "label": "Purchase return debit omitted",
+          "value": "3,000"
+        },
+        {
+          "label": "Purchase overcast (debit excess)",
+          "value": "-2,000"
+        },
+        {
+          "label": "Net credit excess = suspense debit",
+          "value": "13,500"
+        }
+      ],
+      "why_not": {
+        "B": "Wrong side: credits exceeded debits, so the balancing figure goes to the debit of suspense.",
+        "D": "Leaves out the purchase return of ₹3,000 that was not debited to the supplier.",
+        "C": "Adds the purchase book overcast instead of deducting it, as it works in the opposite direction."
+      },
+      "exam_tip": "Find which side is short: if debits are short, suspense is debited. Opposite-side errors reduce the difference.",
+      "calculation": "sales = 8000\nravi = 5000 - 500\nreturns = 3000\npurchase = 2000\nanswer = sales + ravi + returns - purchase",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 20\nPaper 1: Accounting\nTopic: Rectification of Errors: Suspense Account\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261110",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2B",
+      "paper_name": "Statutory Compliance",
+      "topic": "Contract Act - Free Consent (Coercion)",
+      "question": "Dinesh threatens to lodge a false criminal complaint against Mahesh unless Mahesh sells his shop to Dinesh. Out of fear, Mahesh signs the sale agreement. Under the Indian Contract Act, 1872, the agreement is:",
+      "options": [
+        "Void ab initio, as consent was not free",
+        "Voidable at the option of Mahesh",
+        "Valid and binding on both parties",
+        "Voidable at the option of Dinesh"
+      ],
+      "correct": "B",
+      "explanation": "Threatening to do an act forbidden by the Indian Penal Code (or its successor criminal law), such as a false complaint, is coercion. Consent is not free, so the agreement is voidable at the option of the party whose consent was caused, Mahesh.",
+      "working": [],
+      "why_not": {
+        "A": "Confuses lack of free consent with absence of consent; such contracts are voidable, not void.",
+        "C": "Ignores that coercion defeats free consent, so Mahesh may avoid the contract.",
+        "D": "Reverses the rule: only the party coerced can rescind, not the wrongdoer."
+      },
+      "exam_tip": "Coercion, undue influence, fraud, misrepresentation: voidable at the victim's option. Mistake makes it void.",
+      "calculation": "",
+      "applicability": "Indian Contract Act, 1872 - free consent provisions",
+      "confidence": "high",
+      "reviewer_note": "Explanation mentions criminal law generically; the Act's text still refers to the Indian Penal Code.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Explanation mentions criminal law generically; the Act's text still refers to the Indian Penal Code.",
+        "Second checker: Coercion vs. undue influence could be debated, but either way the agreement is voidable at Mahesh's option, so the answer is unaffected.",
+        "Second checker: Section 15 refers to the Indian Penal Code, which has been replaced by the BNS. The question does not cite it, so there is no effect on the key."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 20\nPaper 2B: Statutory Compliance\nTopic: Contract Act - Free Consent (Coercion)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Indian Contract Act, 1872 - free consent provisions.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261110",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 6A",
+      "paper_name": "Financial Management",
+      "topic": "Cost of Capital: CAPM and WACC",
+      "question": "Risk-free return is 7%, market return 12% and equity beta 1.2. Capital: equity ₹60,00,000 (market value) and 10% debentures ₹40,00,000 (market value, issued at par). Tax rate 25%. What is the WACC using market-value weights?",
+      "options": [
+        "11.50%",
+        "12.20%",
+        "10.80%",
+        "11.80%"
+      ],
+      "correct": "C",
+      "explanation": "Ke = 7% + 1.2 × (12% − 7%) = 13%. Kd after tax = 10% × (1 − 0.25) = 7.5%. WACC = 0.6 × 13% + 0.4 × 7.5% = 7.8% + 3.0% = 10.8%.",
+      "working": [
+        {
+          "label": "Ke = 7 + 1.2 × 5 (%)",
+          "value": "13"
+        },
+        {
+          "label": "Kd after tax = 10 × 0.75 (%)",
+          "value": "7.5"
+        },
+        {
+          "label": "Equity weight × Ke (%)",
+          "value": "7.8"
+        },
+        {
+          "label": "Debt weight × Kd (%)",
+          "value": "3"
+        },
+        {
+          "label": "WACC (%)",
+          "value": "10.8"
+        }
+      ],
+      "why_not": {
+        "D": "Used pre-tax cost of debt 10% instead of 7.5%: 7.8 + 4.0 = 11.8%.",
+        "A": "Took Ke as market return less nothing, mis-weighting; not derived from CAPM and weights.",
+        "B": "Used market return 12% as Ke... plus 10% debt unadjusted style; ignores CAPM beta and tax shield."
+      },
+      "exam_tip": "CAPM: Ke = Rf + β(Rm − Rf). Premium is Rm − Rf, not Rm. Tax-adjust only debt.",
+      "calculation": "ke = 7 + 1.2*(12-7)\nkd = 10*(1-0.25)\nanswer = 0.6*ke + 0.4*kd",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Distractors C and D are loosely explained; check if you want sharper wrong-option logic.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Distractors C and D are loosely explained; check if you want sharper wrong-option logic."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 20\nPaper 6A: Financial Management\nTopic: Cost of Capital: CAPM and WACC\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261110",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 9",
+      "paper_name": "Operations Management and Strategic Management (Strategic Management)",
+      "topic": "Porter's Five Forces Model",
+      "question": "Many small tyre makers sell to just three large car manufacturers, who can easily switch between suppliers and demand lower prices. Which Porter force is most directly strong here, reducing the tyre makers' profit?",
+      "options": [
+        "Threat of substitutes",
+        "Bargaining power of buyers",
+        "Bargaining power of suppliers",
+        "Threat of new entrants"
+      ],
+      "correct": "B",
+      "explanation": "Tyre makers are the sellers; the car makers are their buyers. Few large buyers, easy switching and price pressure show strong buyer power, which lowers industry profit.",
+      "working": [],
+      "why_not": {
+        "C": "Confuses sides: the car makers buy from the tyre makers, so they are buyers, not suppliers.",
+        "A": "No other product is mentioned that replaces tyres; switching is between tyre sellers.",
+        "D": "No mention of entry barriers or new firms joining; the pressure comes from customers."
+      },
+      "exam_tip": "Identify whose profit is analysed first: the customers of that industry are buyers, and its input providers are suppliers.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The stem lists every textbook sign of buyer power (few concentrated buyers, easy switching, demands for lower prices), so the answer is very easy to spot. This is acceptable for a basic recall question."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Porter's Five Forces Model",
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 20\nPaper 9: Operations Management and Strategic Management (Strategic Management)\nTopic: Porter's Five Forces Model\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261110",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 5",
+      "paper_name": "Indirect Tax Laws",
+      "topic": "GST - Place of supply of services",
+      "question": "Dev & Co., a consultant registered in Delhi, gives management advice to Orion Ltd, registered only in Maharashtra. Advice is delivered online; Orion's staff in Gujarat use it. What is the place of supply and tax charged?",
+      "options": [
+        "Maharashtra; IGST, as the registered recipient's location decides",
+        "Delhi; CGST and Delhi SGST, as the supplier is located in Delhi",
+        "Maharashtra; CGST and Maharashtra SGST, as the recipient's State applies",
+        "Gujarat; IGST, as the place where the advice is actually used"
+      ],
+      "correct": "A",
+      "explanation": "For services to a registered person, the general rule makes the recipient's location the place of supply: Maharashtra. Supplier is in Delhi, so the supply is inter-State and IGST applies. Place of use is irrelevant.",
+      "working": [],
+      "why_not": {
+        "B": "Uses supplier's location; that applies only when the recipient's location is not available.",
+        "D": "Confuses place of use with place of supply; no such rule for general B2B services.",
+        "C": "Gets the place right but ignores that supplier and place are in different States, so IGST applies."
+      },
+      "exam_tip": "B2B service with no special rule: place of supply = recipient's registered location. Compare with supplier's State to pick IGST or CGST+SGST.",
+      "calculation": "",
+      "applicability": "IGST Act, 2017 as per ICAI applicability for next attempt",
+      "confidence": "high",
+      "reviewer_note": "Management advice assumed not covered by any specific place-of-supply provision. Confirm.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Management advice assumed not covered by any specific place-of-supply provision. Confirm.",
+        "Checker: Slight cue: option A repeats the stem's 'registered' wording, which hints at the Sec 12(2)(a) rule. This is polish only.",
+        "Second checker: Minor: 'registered only in Maharashtra' is needed and given; the Gujarat detail is a deliberate distractor.",
+        "Second checker: Minor: option A's rationale 'as the registered recipient's location decides' partly gives away the principle."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 20\nPaper 5: Indirect Tax Laws\nTopic: GST - Place of supply of services\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on IGST Act, 2017 as per ICAI applicability for next attempt.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261110",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 13",
+      "paper_name": "Corporate and Economic Laws",
+      "topic": "Competition Act, 2002 - Anti-competitive",
+      "question": "Under the Competition Act, 2002, which of the following agreements is presumed to have an appreciable adverse effect on competition (AAEC) in India?",
+      "options": [
+        "Tie-in arrangement between a manufacturer and its dealer",
+        "Resale price maintenance between a producer and a distributor",
+        "Exclusive supply agreement between a supplier and a buyer",
+        "Agreement between competing firms to fix the sale price of their goods"
+      ],
+      "correct": "D",
+      "explanation": "Horizontal agreements among competing enterprises on price fixing, output limits, market sharing or bid rigging are presumed to cause AAEC. Vertical agreements are tested on the rule of reason.",
+      "working": [],
+      "why_not": {
+        "A": "Tie-in is a vertical agreement; AAEC must be proved under rule of reason, not presumed.",
+        "C": "Exclusive supply is vertical; AAEC is assessed on stated factors, no presumption applies.",
+        "B": "Resale price maintenance is vertical; it is judged on its actual effect, not presumed."
+      },
+      "exam_tip": "Horizontal cartel-type agreements: AAEC presumed. Vertical agreements: rule of reason.",
+      "calculation": "",
+      "applicability": "Competition Act, 2002 - anti-competitive agreements",
+      "confidence": "high",
+      "reviewer_note": "Presumption applies to horizontal agreements (price fixing, limiting supply, market sharing, bid rigging). Please confirm wording against the current Act as amended in 2023.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Presumption applies to horizontal agreements (price fixing, limiting supply, market sharing, bid rigging). Please confirm wording against the current Act as amended in 2023."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 20\nPaper 13: Corporate and Economic Laws\nTopic: Competition Act, 2002 - Anti-competitive\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Competition Act, 2002 - anti-competitive agreements.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261110",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "date": "2026-11-02",
+  "day": 12,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-28T00:04:52+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Statistics",
+      "topic": "Statistics: Properties of Std Deviation",
+      "question": "A set of observations has mean 40 and standard deviation 5. Each observation is multiplied by 3 and then 4 is subtracted from it. What is the standard deviation of the new observations?",
+      "options": [
+        "15",
+        "11",
+        "5",
+        "19"
+      ],
+      "correct": "A",
+      "explanation": "Standard deviation is independent of change of origin but depends on change of scale. For y = 3x − 4, SD(y) = |3| × SD(x) = 3 × 5 = 15. The subtraction of 4 has no effect.",
+      "working": [
+        {
+          "label": "Original SD",
+          "value": "5"
+        },
+        {
+          "label": "Scale factor (multiplier)",
+          "value": "3"
+        },
+        {
+          "label": "Effect of subtracting 4",
+          "value": "0"
+        },
+        {
+          "label": "New SD = 3 × 5",
+          "value": "15"
+        }
+      ],
+      "why_not": {
+        "B": "Treated the subtraction of 4 as changing SD: 3 × 5 − 4 = 11. Origin shift does not affect SD.",
+        "C": "Assumed SD stays unchanged; forgot that multiplying by 3 scales the SD.",
+        "D": "Added 4 after scaling: 15 + 4 = 19. Change of origin never alters SD."
+      },
+      "exam_tip": "Change of origin: SD unchanged. Change of scale: SD multiplied by the absolute value of the multiplier.",
+      "calculation": "sd_old = 5\nmult = 3\nanswer = abs(mult) * sd_old",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 12\nPaper 3: Quantitative Aptitude: Statistics\nTopic: Statistics: Properties of Std Deviation\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261102",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2B",
+      "paper_name": "Statutory Compliance",
+      "topic": "Ordinary vs Special Resolution",
+      "question": "A company votes on a proposal to alter its articles. Votes cast: 6,00,000 in favour, 2,00,000 against. Holders of 1,50,000 votes abstained and holders of 5,00,000 votes did not attend. What is the result?",
+      "options": [
+        "Passed, as a simple majority of votes cast is enough for this matter",
+        "Fails; favour votes are below 75% of votes cast, abstentions included",
+        "Fails; favour votes are below 75% of all votes of the company",
+        "Passed as a special resolution; favour votes are 3 times the votes against"
+      ],
+      "correct": "D",
+      "explanation": "Altering articles needs a special resolution. Only votes cast count, and votes in favour must be at least 3 times the votes against. 6,00,000 is exactly 3 times 2,00,000, so it is passed.",
+      "working": [],
+      "why_not": {
+        "B": "Counts abstentions as votes; abstainers are ignored and the test is 3 times against.",
+        "C": "Counts absentees too; votes of absent members are not part of the count.",
+        "A": "Treats it as routine; altering articles needs a special resolution, not an ordinary one."
+      },
+      "exam_tip": "Special resolution: votes for must be at least 3 times votes against. Ignore abstainers and absentees.",
+      "calculation": "",
+      "applicability": "Companies Act, 2013 - meaning of special resolution",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The question does not say the notice described the resolution as a special resolution, which s.114(2) requires. It should state that the notice did so and the meeting was properly called.",
+        "Checker: Option D says '3 times' where the law says 'not less than 3 times'. The ratio is exactly 3:1, a borderline case, so the correct option should use the law's wording.",
+        "Checker: The question does not say whether the vote was a show of hands or a poll (this does not change the answer).",
+        "Second checker: Option D's wording ('3 times the votes against') closely mirrors the statutory test, which slightly gives the answer away.",
+        "Second checker: The question does not say the votes were cast at a general meeting with proper notice. This is a reasonable default and does not change the answer.",
+        "Second checker: The boundary case (exactly 3 times) is correct under 'not less than three times', but some students may doubt it. The question is still fair."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Ordinary vs Special Resolution",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 12\nPaper 2B: Statutory Compliance\nTopic: Ordinary vs Special Resolution\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013 - meaning of special resolution.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261102",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 6A",
+      "paper_name": "Financial Management",
+      "topic": "Working Capital: Operating Cycle",
+      "question": "A firm holds raw material for 30 days, WIP for 10 days and finished goods for 20 days. Debtors are collected in 40 days, and creditors are paid in 30 days. What is the length of its operating cycle (gross operating cycle less payables period)?",
+      "options": [
+        "40 days",
+        "70 days",
+        "60 days",
+        "100 days"
+      ],
+      "correct": "B",
+      "explanation": "Operating cycle = raw material period + WIP period + finished goods period + debtors period − creditors period = 30 + 10 + 20 + 40 − 30 = 70 days.",
+      "working": [
+        {
+          "label": "Raw material + WIP + FG (days)",
+          "value": "60"
+        },
+        {
+          "label": "Add debtors period (days)",
+          "value": "100"
+        },
+        {
+          "label": "Less creditors period (days)",
+          "value": "30"
+        },
+        {
+          "label": "Operating cycle (days)",
+          "value": "70"
+        }
+      ],
+      "why_not": {
+        "D": "Ignores the creditors period; this is only the gross operating cycle.",
+        "C": "Wrongly leaves out the debtors period or mis-adds the components.",
+        "A": "Counts only the debtors collection period and ignores stock periods."
+      },
+      "exam_tip": "Net operating cycle = gross cycle minus creditors period. Creditors are deducted, never added.",
+      "calculation": "stock = 30 + 10 + 20\ngross = stock + 40\nanswer = gross - 30",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The parenthetical '(gross operating cycle less payables period)' gives away the method. It also redefines 'operating cycle' as the net cycle, whereas the ICAI term for that is often 'net operating cycle' or 'cash cycle'.",
+        "Checker: Distractor D (100 days) is the gross cycle. This is a plausible distractor, so it is fine.",
+        "Checker: Holding and collection periods are assumed to be on a consistent basis, with no sales versus cost distinction. This is acceptable at this level."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 12\nPaper 6A: Financial Management\nTopic: Working Capital: Operating Cycle\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261102",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 6",
+      "paper_name": "Financial Accounting",
+      "topic": "Bank Reconciliation Statement",
+      "question": "Cash Book shows a debit balance of ₹50,000. Cheques issued ₹8,000 not yet presented; cheques deposited ₹5,000 not yet collected; bank charges ₹500 and a customer's direct deposit ₹3,000 are not in the Cash Book. Pass Book balance (credit) is:",
+      "options": [
+        "₹53,000",
+        "₹55,500",
+        "₹60,500",
+        "₹44,500"
+      ],
+      "correct": "B",
+      "explanation": "Adjust the Cash Book first: 50,000 − 500 + 3,000 = 52,500. Then add cheques issued but not presented (8,000) and deduct cheques deposited but not collected (5,000) to reach the Pass Book balance.",
+      "working": [
+        {
+          "label": "Cash Book balance",
+          "value": "₹50,000"
+        },
+        {
+          "label": "Less: bank charges",
+          "value": "₹500"
+        },
+        {
+          "label": "Add: direct deposit",
+          "value": "₹3,000"
+        },
+        {
+          "label": "Add: cheques not presented",
+          "value": "₹8,000"
+        },
+        {
+          "label": "Less: cheques not collected",
+          "value": "₹5,000"
+        },
+        {
+          "label": "Pass Book balance",
+          "value": "₹55,500"
+        }
+      ],
+      "why_not": {
+        "D": "Reversed every adjustment, as if starting from the Pass Book balance.",
+        "A": "Ignored the bank charges and direct deposit, which are not yet in the Cash Book.",
+        "C": "Forgot to deduct the cheques deposited but not yet collected."
+      },
+      "exam_tip": "From the Cash Book: fix bank-only items first, then apply timing items to reach the Pass Book.",
+      "calculation": "cb = 50000\nadjusted = cb - 500 + 3000\nanswer = adjusted + 8000 - 5000",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 12\nPaper 6: Financial Accounting\nTopic: Bank Reconciliation Statement\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261102",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 2",
+      "paper_name": "Advanced Financial Management",
+      "topic": "Portfolio Management - CAPM",
+      "question": "A share has beta of 1.2. The risk-free return is 6% per annum and the expected return on the market portfolio is 11% per annum. As per CAPM, what is the required return on the share per annum?",
+      "options": [
+        "12.0%",
+        "17.0%",
+        "13.2%",
+        "11.0%"
+      ],
+      "correct": "A",
+      "explanation": "CAPM: Ke = Rf + β × (Rm − Rf). Market risk premium = 11% − 6% = 5%. Ke = 6% + 1.2 × 5% = 12%.",
+      "working": [
+        {
+          "label": "Market risk premium (Rm − Rf) %",
+          "value": "5"
+        },
+        {
+          "label": "Beta × premium %",
+          "value": "6"
+        },
+        {
+          "label": "Add risk-free return %",
+          "value": "6"
+        },
+        {
+          "label": "Required return %",
+          "value": "12"
+        }
+      ],
+      "why_not": {
+        "C": "Multiplied beta by Rm only (1.2 × 11%) and ignored the risk-free rate and premium.",
+        "B": "Added beta × premium to market return instead of risk-free return (11% + 6%).",
+        "D": "Took the market return as the answer, ignoring that beta is not 1."
+      },
+      "exam_tip": "CAPM: start from Rf, add beta times the premium (Rm − Rf), not beta times Rm.",
+      "calculation": "rf = 6\nrm = 11\nbeta = 1.2\nanswer = rf + beta*(rm-rf)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 12\nPaper 2: Advanced Financial Management\nTopic: Portfolio Management - CAPM\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261102",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 13",
+      "paper_name": "Corporate and Economic Laws",
+      "topic": "Companies Act, 2013 - Private Company",
+      "question": "Under the Companies Act, 2013, what is the maximum number of members a private company can have, excluding persons who are or were employees and became members while in employment?",
+      "options": [
+        "500 members",
+        "100 members",
+        "200 members",
+        "50 members"
+      ],
+      "correct": "C",
+      "explanation": "The definition of a private company limits its members to 200. Joint holders count as one member. Present employees, and ex-employees who became members while employed, are excluded from this limit.",
+      "working": [],
+      "why_not": {
+        "D": "50 was the limit under the Companies Act, 1956; the 2013 Act raised it to 200.",
+        "B": "100 is a limit for some other contexts, not the private company member cap.",
+        "A": "500 is not a membership cap for private companies; it is a made-up figure."
+      },
+      "exam_tip": "Private company: minimum 2 members, maximum 200. Joint holders count as one member.",
+      "calculation": "",
+      "applicability": "Companies Act, 2013 - definition of private company",
+      "confidence": "high",
+      "reviewer_note": "Limit of 200 is in the definition of private company (section 2(68)). One Person Company is not tested.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Limit of 200 is in the definition of private company (section 2(68)). One Person Company is not tested.",
+        "Checker: The wording of the exclusion is a little loose. The Act excludes current employees and former employees who were members while employed and remained members after their employment ended. The stem does not mention the 'continued to be members' condition. This does not change the answer.",
+        "Checker: The stem could mention the One Person Company exception and the rule that joint holders count as one member, but this is not needed to answer."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 12\nPaper 13: Corporate and Economic Laws\nTopic: Companies Act, 2013 - Private Company\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013 - definition of private company.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261102",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

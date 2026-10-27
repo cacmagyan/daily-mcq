@@ -1,0 +1,148 @@
+{
+  "kind": "concept",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 3A",
+  "paper_name": "Income-tax Law",
+  "author": "Rahul kp",
+  "topic": "Previous Year and Assessment Year",
+  "title": "Previous Year",
+  "title_highlight": "vs Assessment Year",
+  "hook": "earn first, tax next!",
+  "simple_words": "You earn in the Previous Year. You are taxed on it in the Assessment Year that follows.",
+  "definitions": [
+    {
+      "term": "Previous Year (PY)",
+      "meaning": "The financial year in which income is earned. Its income is generally taxed in the next Assessment Year (s.3).",
+      "note": "PY for AY 2026-27 = 2025-26"
+    },
+    {
+      "term": "Assessment Year (AY)",
+      "meaning": "The 12-month period from 1 April to 31 March that follows the PY. Income of the PY is assessed in it.",
+      "note": "AY 2026-27 = 1 Apr 2026 to 31 Mar 2027"
+    }
+  ],
+  "key_points": [
+    "Income is ==earned in the PY== and ==assessed in the AY==.",
+    "The PY always comes first; the AY follows it.",
+    "The PY is the year just before the AY, so AY 2026-27 means PY 2025-26.",
+    "!!Do not treat FY 2026-27 income as income of AY 2026-27!!."
+  ],
+  "formula_heading": "PY vs AY Table",
+  "formula_hook": "same income, two years",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Previous Year",
+      "Assessment Year"
+    ],
+    "rows": [
+      [
+        "Meaning",
+        "Year income is earned",
+        "Year income is taxed"
+      ],
+      [
+        "Dates",
+        "1 Apr–31 Mar; new source: from its start",
+        "1 Apr–31 Mar after the PY"
+      ],
+      [
+        "Order",
+        "Comes first",
+        "Follows the PY"
+      ],
+      [
+        "Length",
+        "Up to 12 months",
+        "Always 12 months"
+      ]
+    ]
+  },
+  "insight": {
+    "punchline": "Earn in PY, pay in AY!",
+    "text": "A new business or source of income can have a PY shorter than 12 months, but the AY is always a full 12 months."
+  },
+  "trick_hook": "Pehle earn, phir tax",
+  "memory_trick": {
+    "mnemonic": "Previous = Pehle",
+    "explanation": "Previous means Pehle: you earn first. Assessment means Aakhir or Agla: you are taxed afterwards, in the next year. The PY always comes first."
+  },
+  "steps": [
+    "Read the AY given in the question",
+    "Go one year back to find the PY",
+    "Check if the source started mid-year",
+    "Start the PY from that date to 31 Mar",
+    "Tax the PY income in the AY"
+  ],
+  "exam_tip": "Always write both years together, such as PY 2025-26 and AY 2026-27. It avoids the common mix-up.",
+  "doubt": {
+    "question": "Is the PY always 1 April to 31 March?",
+    "answer": "No. For a new business, profession or source of income, the PY starts on the date of setting up or when the source comes into existence, and ends on 31 March."
+  },
+  "mistakes_hook": "PY and AY are not twins!",
+  "mistakes": [
+    {
+      "wrong": "Income earned in 2026-27 is taxed in AY 2026-27",
+      "right": "Income earned in PY 2025-26 is generally taxed in AY 2026-27."
+    },
+    {
+      "wrong": "PY is always 1 April to 31 March",
+      "right": "Normally yes; for a new business or source it runs from the date it starts to 31 March."
+    },
+    {
+      "wrong": "AY comes before the PY",
+      "right": "The PY comes first and the AY follows it."
+    },
+    {
+      "wrong": "AY can be shorter than 12 months",
+      "right": "The AY is always 1 April to 31 March, a full 12 months."
+    }
+  ],
+  "applicability": "Income-tax Act, 1961 – s.3 (PY), s.2(9) (AY); A.Y. 2026-27",
+  "confidence": "high",
+  "reviewer_note": "General rule only: exceptions where income is taxed in the PY itself (e.g. shipping non-residents, persons leaving India, AOPs formed for a short time, discontinued business) are deliberately left out. Please confirm the wording \"generally\" is acceptable.",
+  "law_sensitive": true,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: General rule only: exceptions where income is taxed in the PY itself (e.g. shipping non-residents, persons leaving India, AOPs formed for a short time, discontinued business) are deliberately left out. Please confirm the wording \"generally\" is acceptable.",
+    "Checker 1: Key point 1 / table row 1 ('Meaning'): the rule is stated without any qualifier. Suggested wording: 'Income of the PY is generally assessed in the next AY. In exceptional cases, such as non-resident shipping business, persons leaving India, AOP/BOI formed for a particular event, persons likely to transfer assets to avoid tax, and discontinued business, the income may be taxed in the PY itself.' Definition 1 and mistake 1 already say 'generally'; this would make the note consistent.",
+    "Checker 1: Key point 4: 'Do not treat FY 2026-27 income as income of AY 2026-27' is right as the normal rule, but it would read better as 'Normally, income of FY 2026-27 is assessed in AY 2027-28, not AY 2026-27 (except in the special cases where income is assessed in the PY itself).'",
+    "Checker 1: Definition 2: you could add the section reference for consistency with definition 1: 'Assessment Year [s.2(9)]'. Optional polish only."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.08,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.24,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 3A: Income-tax Law\nPrevious Year and Assessment Year\n\nIn simple words: You earn in the Previous Year. You are taxed on it in the Assessment Year that follows.\n\nSwipe for the summary table, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CA Inter MCQ (12:25 PM) tests this concept.\n\nBased on Income-tax Act, 1961 – s.3 (PY), s.2(9) (AY); A.Y. 2026-27.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept-261102",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

@@ -1,0 +1,139 @@
+{
+  "kind": "concept",
+  "course_id": "ca_final",
+  "paper_code": "Paper 4",
+  "paper_name": "Direct Tax Laws and International Taxation",
+  "author": "Rahul kp",
+  "topic": "Residence of a Company: POEM",
+  "title": "Place of Effective",
+  "title_highlight": "Management (POEM)",
+  "hook": "where the real decisions happen!",
+  "simple_words": "A foreign company becomes an Indian resident if its real decision-making sits in India.",
+  "definitions": [
+    {
+      "term": "Resident company",
+      "meaning": "A company is resident in India in a previous year if it is an Indian company, or its POEM in that year is in India.",
+      "note": "Test it for each previous year"
+    },
+    {
+      "term": "POEM",
+      "meaning": "Place where key management and commercial decisions needed to run the business as a whole are, in substance, actually made.",
+      "note": "Substance over form"
+    }
+  ],
+  "key_points": [
+    "An ==Indian company== is always resident in India, wherever it is managed.",
+    "A ==foreign company== is resident only if its POEM is in India in that year.",
+    "POEM is decided on facts and substance, not on the paperwork.",
+    "!!Place of incorporation does not decide residence of a foreign company!!"
+  ],
+  "formula_heading": "Residence at a Glance",
+  "formula_hook": "three cases, one table",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Company",
+      "POEM",
+      "Status in India"
+    ],
+    "rows": [
+      [
+        "Indian company",
+        "Anywhere",
+        "Resident"
+      ],
+      [
+        "Foreign company",
+        "In India",
+        "Resident"
+      ],
+      [
+        "Foreign company",
+        "Outside India",
+        "Non-resident"
+      ]
+    ]
+  },
+  "insight": {
+    "punchline": "Indian = always resident!",
+    "text": "POEM is a test only for foreign companies; an Indian company never needs it."
+  },
+  "trick_hook": "remember the brain, not the body",
+  "memory_trick": {
+    "mnemonic": "POEM = Brain, not Address",
+    "explanation": "Look for the brain taking key decisions, not the registered address or the place of the meeting room. Brain in India means resident."
+  },
+  "steps": [
+    "Is it an Indian company? Then resident",
+    "If foreign, find who takes key decisions",
+    "Locate where they are made in substance",
+    "POEM in India: resident, else not"
+  ],
+  "exam_tip": "In MCQs, first check Indian or foreign company. Only for a foreign company, read the facts for where key decisions are really made.",
+  "doubt": {
+    "question": "Does a board meeting held in India make POEM India?",
+    "answer": "Not by itself. Meeting place is only one fact. If key decisions are in substance made elsewhere, POEM is elsewhere."
+  },
+  "mistakes_hook": "don't fall for the address trap",
+  "mistakes": [
+    {
+      "wrong": "Foreign company incorporated abroad is always non-resident",
+      "right": "It is resident in India if its POEM is in India in that previous year."
+    },
+    {
+      "wrong": "Indian company with POEM abroad is non-resident",
+      "right": "An Indian company is always resident in India; POEM is not tested for it."
+    },
+    {
+      "wrong": "POEM is where the registered office is",
+      "right": "POEM is where key management and commercial decisions are in substance made."
+    },
+    {
+      "wrong": "Board meeting place alone fixes POEM",
+      "right": "It is a factor only; the decision is based on substance of the facts."
+    }
+  ],
+  "applicability": "Income-tax Act, 1961, A.Y. 2026-27; residence of company",
+  "confidence": "high",
+  "reviewer_note": "Section number deliberately omitted. Small-company POEM threshold and guidelines not covered; verify nothing conflicts with the CBDT guidelines.",
+  "law_sensitive": true,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Section number deliberately omitted. Small-company POEM threshold and guidelines not covered; verify nothing conflicts with the CBDT guidelines."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.02,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.2,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟪 CA Final · Concept of the day\nPaper 4: Direct Tax Laws and International Taxation\nResidence of a Company: POEM\n\nIn simple words: A foreign company becomes an Indian resident if its real decision-making sits in India.\n\nSwipe for the summary table, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CA Final MCQ (6:25 PM) tests this concept.\n\nBased on Income-tax Act, 1961, A.Y. 2026-27; residence of company.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFinal #ICAI #CAStudents #IndAS\n\nref concept-261029",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

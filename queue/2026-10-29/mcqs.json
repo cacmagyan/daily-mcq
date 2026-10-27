@@ -1,0 +1,334 @@
+{
+  "date": "2026-10-29",
+  "day": 8,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-27T23:53:02+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 1",
+      "paper_name": "Accounting",
+      "topic": "Inventories (AS 2 / Ind AS 2)",
+      "question": "On 31 March 2026, a firm holds three items. P: cost ₹2,40,000, selling price ₹2,60,000, selling expenses ₹30,000. Q: cost ₹1,80,000, NRV ₹2,10,000. R: cost ₹1,50,000, NRV ₹1,20,000. Value of closing inventory, item by item?",
+      "options": [
+        "₹5,60,000",
+        "₹5,40,000",
+        "₹5,30,000",
+        "₹5,70,000"
+      ],
+      "correct": "C",
+      "explanation": "Inventory is valued at lower of cost and NRV, item by item. NRV is selling price less selling expenses. P: NRV 2,30,000 is lower. Q: cost 1,80,000. R: NRV 1,20,000. Total ₹5,30,000.",
+      "working": [
+        {
+          "label": "P: lower of 2,40,000 and 2,30,000",
+          "value": "₹2,30,000"
+        },
+        {
+          "label": "Q: lower of 1,80,000 and 2,10,000",
+          "value": "₹1,80,000"
+        },
+        {
+          "label": "R: lower of 1,50,000 and 1,20,000",
+          "value": "₹1,20,000"
+        },
+        {
+          "label": "Closing inventory",
+          "value": "₹5,30,000"
+        }
+      ],
+      "why_not": {
+        "B": "Ignored selling expenses, so took P's NRV as 2,60,000 and kept cost for P.",
+        "A": "Compared total cost with total NRV (aggregate), not item by item.",
+        "D": "Valued everything at cost and ignored the fall in NRV."
+      },
+      "exam_tip": "NRV = selling price minus cost to sell. Apply lower of cost and NRV to each item separately, not to the total.",
+      "calculation": "p = min(240000, 260000-30000)\nq = min(180000, 210000)\nr = min(150000, 120000)\nanswer = p + q + r",
+      "applicability": "AS 2 / Ind AS 2 Inventories: lower of cost and NRV",
+      "confidence": "high",
+      "reviewer_note": "Item-by-item basis is stated in the question; items are not similar so aggregation is not appropriate.",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Item-by-item basis is stated in the question; items are not similar so aggregation is not appropriate."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 8\nPaper 1: Accounting\nTopic: Inventories (AS 2 / Ind AS 2)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on AS 2 / Ind AS 2 Inventories: lower of cost and NRV.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261029",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2B",
+      "paper_name": "Statutory Compliance",
+      "topic": "Sale of Goods Act - Conditions and Warranties",
+      "question": "Ravi buys 100 bags of fertiliser by description under one indivisible contract. He accepts delivery and uses 20 bags. He then finds the goods do not match the description, a breach of a condition. What is his remedy?",
+      "options": [
+        "Reject only the 80 unused bags and pay for 20 bags",
+        "Treat it as breach of warranty and claim damages only",
+        "Rescind the contract and recover the price already paid",
+        "Reject all 100 bags and refuse to pay the price"
+      ],
+      "correct": "B",
+      "explanation": "Where the contract is not severable and the buyer has accepted the goods or part of them, breach of a condition is treated only as breach of warranty. The buyer can claim damages or set up the loss against the price, not reject.",
+      "working": [],
+      "why_not": {
+        "D": "Ignores acceptance; a buyer who has accepted loses the right to repudiate.",
+        "A": "Rescission is not available once goods are accepted in an indivisible contract.",
+        "C": "Splitting is possible only if the contract is severable, which it is not here."
+      },
+      "exam_tip": "Condition + indivisible contract + acceptance = remedy drops to warranty (damages only).",
+      "calculation": "",
+      "applicability": "Sale of Goods Act, 1930 - condition treated as warranty",
+      "confidence": "high",
+      "reviewer_note": "Section 13(2) and acceptance under Section 42 are described, not cited. Using goods is treated as acceptance.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Section 13(2) and acceptance under Section 42 are described, not cited. Using goods is treated as acceptance.",
+        "Second checker: Option B says 'damages only'. Under s.13(2) and s.59, the buyer may also set up the breach to reduce or extinguish the price. This is a minor imprecision, but B is still clearly the best option.",
+        "Second checker: The question doesn't say there is no express or implied term allowing repudiation. This is an implied assumption, but a reasonable one."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 8\nPaper 2B: Statutory Compliance\nTopic: Sale of Goods Act - Conditions and Warranties\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Sale of Goods Act, 1930 - condition treated as warranty.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261029",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 6B",
+      "paper_name": "Strategic Management",
+      "topic": "Strategic Analysis: BCG Matrix",
+      "question": "A firm's product has a relative market share of 0.4 in an industry growing at 3% p.a. It earns modest profits and generates cash just enough to sustain itself. In the BCG matrix, which strategy suits it most?",
+      "options": [
+        "Invest heavily to build share, as it is a Question Mark",
+        "Hold and milk it for cash, as it is a Star",
+        "Retain as a Cash Cow and invest to expand share",
+        "Harvest or divest, as it is a Dog"
+      ],
+      "correct": "D",
+      "explanation": "Relative share below 1 and low market growth place the product in the Dog quadrant. Dogs generate little cash, so harvesting, divestment or liquidation is the usual strategy unless a strategic reason exists to retain.",
+      "working": [],
+      "why_not": {
+        "A": "Question Marks have low share but HIGH market growth; here growth is only 3%.",
+        "B": "Stars have high share and high growth; this product has neither.",
+        "C": "Cash Cows need relative share above 1 in a low-growth market; 0.4 is low."
+      },
+      "exam_tip": "BCG: low share plus low growth = Dog. Check both axes before naming the quadrant.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Growth cut-off is conventionally about 10%; 3% is clearly low.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Growth cut-off is conventionally about 10%; 3% is clearly low."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 8\nPaper 6B: Strategic Management\nTopic: Strategic Analysis: BCG Matrix\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261029",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 9",
+      "paper_name": "Operations Management and Strategic Management (Operations Management)",
+      "topic": "PERT Three Time Estimates",
+      "question": "Project: A precedes both B and C; D follows both B and C. Times in days (a, m, b): A (3, 6, 9), B (4, 10, 16), C (6, 9, 24), D (5, 8, 11). What is the variance of the project completion time?",
+      "options": [
+        "11 days²",
+        "9 days²",
+        "15 days²",
+        "6 days²"
+      ],
+      "correct": "A",
+      "explanation": "te = (a+4m+b)/6. B = 10, C = 11, so path A-C-D (25 days) is critical. Variance = ((b-a)/6)² summed over A, C, D = 1 + 9 + 1 = 11.",
+      "working": [
+        {
+          "label": "te of A",
+          "value": "6"
+        },
+        {
+          "label": "te of B",
+          "value": "10"
+        },
+        {
+          "label": "te of C",
+          "value": "11"
+        },
+        {
+          "label": "te of D",
+          "value": "8"
+        },
+        {
+          "label": "Critical path",
+          "value": "A-C-D"
+        },
+        {
+          "label": "Variance 1+9+1",
+          "value": "11"
+        }
+      ],
+      "why_not": {
+        "D": "Chose path A-B-D because B's most likely time (10) is higher than C's (9); te was ignored.",
+        "C": "Added variances of all four activities, including the non-critical B.",
+        "B": "Took only the variance of C, ignoring other critical activities."
+      },
+      "exam_tip": "Find the critical path with te, never with m; then add variances of critical activities only.",
+      "calculation": "vA = ((9-3)/6)**2\nvC = ((24-6)/6)**2\nvD = ((11-5)/6)**2\nanswer = vA + vC + vD",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept": "PERT Three Time Estimates",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 8\nPaper 9: Operations Management and Strategic Management (Operations Management)\nTopic: PERT Three Time Estimates\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261029",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 3",
+      "paper_name": "Advanced Auditing, Assurance and Professional Ethics",
+      "topic": "SA 710 - Comparative Information",
+      "question": "Under SA 710, the auditor's report on the current period's financial statements of a company includes corresponding figures. The prior-period report was modified, and the matter remains unresolved. What must the auditor do?",
+      "options": [
+        "Modify the current report on the current period and refer to the prior-period matter",
+        "Ignore the prior-period matter, as it was already reported",
+        "Withdraw from the engagement as comparatives are unreliable",
+        "Issue an unmodified report with an Emphasis of Matter on comparatives"
+      ],
+      "correct": "A",
+      "explanation": "Under SA 710, where the prior-period report was modified and the matter is unresolved, the auditor modifies the current report. The basis for modification must describe either the current-period effect or the comparative-figures effect of the matter.",
+      "working": [],
+      "why_not": {
+        "B": "Assumes a past report closes the matter; unresolved matters still affect current report",
+        "C": "Withdrawal is not the required response; the report is modified instead",
+        "D": "Emphasis of Matter cannot replace a required modified opinion"
+      },
+      "exam_tip": "Unresolved prior-year modification with corresponding figures: modify the current opinion too, and explain the basis.",
+      "calculation": "",
+      "applicability": "SA 710 (Comparative Information), ICAI Standards on Auditing",
+      "confidence": "medium",
+      "reviewer_note": "Confirm SA 710 wording: the report is modified regarding the current period; the basis paragraph describes the matter's effect on current figures or comparatives. Simplified for the options.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Confirm SA 710 wording: the report is modified regarding the current period; the basis paragraph describes the matter's effect on current figures or comparatives. Simplified for the options.",
+        "Checker: Option A says 'Modify the current report on the current period', which is awkward and imprecise. SA 710 requires modifying the opinion on the current period's financial statements, not simply 'the report'.",
+        "Checker: The stem says the prior-period report was 'modified'. It would be more precise to say the prior opinion was qualified, adverse or a disclaimer, which is the wording SA 710 para 11 uses.",
+        "Checker: Option A does not mention the two ways the Basis for Modification paragraph can be written (refer to both periods' figures, or explain the effect on comparability). This is acceptable for an MCQ."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 8\nPaper 3: Advanced Auditing, Assurance and Professional Ethics\nTopic: SA 710 - Comparative Information\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on SA 710 (Comparative Information), ICAI Standards on Auditing.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261029",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 20A",
+      "paper_name": "Strategic Performance Management and Business Valuation",
+      "topic": "Economic Value Added (EVA)",
+      "question": "A firm has EBIT of ₹60 crore, tax rate 25%, total assets ₹260 crore and non-interest-bearing current liabilities ₹60 crore. WACC is 12% p.a. Capital employed = total assets less these liabilities. EVA (₹ crore) is:",
+      "options": [
+        "42",
+        "21",
+        "36",
+        "13.8"
+      ],
+      "correct": "B",
+      "explanation": "EVA = NOPAT - WACC × capital employed. NOPAT = 60 × 0.75 = 45. Capital employed = 260 - 60 = 200. Capital charge = 12% × 200 = 24. EVA = 45 - 24 = 21 crore.",
+      "working": [
+        {
+          "label": "NOPAT = 60 × (1 - 0.25)",
+          "value": "45"
+        },
+        {
+          "label": "Capital employed = 260 - 60",
+          "value": "200"
+        },
+        {
+          "label": "Capital charge = 12% × 200",
+          "value": "24"
+        },
+        {
+          "label": "EVA = 45 - 24",
+          "value": "21"
+        }
+      ],
+      "why_not": {
+        "C": "Deducts capital charge from pre-tax EBIT (60 - 24) instead of NOPAT.",
+        "D": "Uses total assets ₹260 crore as capital, so charge is 31.2.",
+        "A": "Takes tax-adjusted capital charge (18) off EBIT; charge is not tax-adjusted."
+      },
+      "exam_tip": "EVA = NOPAT - (WACC × capital employed). Tax the EBIT first, and net off non-interest current liabilities.",
+      "calculation": "nopat = 60 * (1 - 0.25)\nce = 260 - 60\ncharge = 0.12 * ce\nanswer = nopat - charge",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 3,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 8\nPaper 20A: Strategic Performance Management and Business Valuation\nTopic: Economic Value Added (EVA)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261029",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+{
+  "date": "2026-11-03",
+  "day": 13,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-28T00:09:11+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 1",
+      "paper_name": "Accounting",
+      "topic": "Partnership: Admission of a Partner",
+      "question": "A and B share profits 3:2. C is admitted and the new ratio of A, B and C is 5:3:2. C brings ₹2,00,000 as premium for goodwill, all of which is paid to the old partners privately through the firm. How much is credited to A for goodwill?",
+      "options": [
+        "₹1,00,000",
+        "₹80,000",
+        "₹1,20,000",
+        "₹1,25,000"
+      ],
+      "correct": "A",
+      "explanation": "Sacrifice = old share − new share. A: 3/5 − 5/10 = 1/10. B: 2/5 − 3/10 = 1/10. Sacrifice ratio is 1:1, so premium ₹2,00,000 is shared equally. A gets ₹1,00,000.",
+      "working": [
+        {
+          "label": "A old share (in tenths)",
+          "value": "6"
+        },
+        {
+          "label": "A new share (in tenths)",
+          "value": "5"
+        },
+        {
+          "label": "A sacrifice (in tenths)",
+          "value": "1"
+        },
+        {
+          "label": "B sacrifice (in tenths)",
+          "value": "1"
+        },
+        {
+          "label": "Sacrificing ratio A:B",
+          "value": "1:1"
+        },
+        {
+          "label": "A's share of premium (₹)",
+          "value": "1,00,000"
+        }
+      ],
+      "why_not": {
+        "C": "Used old ratio 3:2 instead of the sacrificing ratio.",
+        "D": "Used new ratio 5:3 of A and B instead of the sacrificing ratio.",
+        "B": "Gave A the share of B's old profit ratio (2/5)."
+      },
+      "exam_tip": "Goodwill premium goes to partners in sacrificing ratio: old share minus new share, not old or new ratio.",
+      "calculation": "premium = 200000\na_sac = 3/5 - 5/10\nb_sac = 2/5 - 3/10\nanswer = premium * a_sac / (a_sac + b_sac)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "The stem says the premium is paid privately through the firm. Check that this wording does not confuse students. Simplify it to \"C brings ₹2,00,000 as premium for goodwill\" if needed.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: The stem says the premium is paid privately through the firm. Check that this wording does not confuse students. Simplify it to \"C brings ₹2,00,000 as premium for goodwill\" if needed.",
+        "Checker: The wording \"paid to the old partners privately through the firm\" contradicts itself. A private payment would not pass through the firm's books, so nothing would be credited to A. \"Through the firm\" means it is credited in the firm's books. The stem should say only that the premium is brought into the firm and credited to the sacrificing partners.",
+        "Checker: The old ratio (3:2) is a distractor. It would give ₹1,20,000 (option C), and the new ratio would give ₹1,25,000 (option D). This is acceptable as a distractor, but the stem should say clearly that C's share comes from A and B."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 13\nPaper 1: Accounting\nTopic: Partnership: Admission of a Partner\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261103",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Bills of Exchange - Discounting",
+      "question": "Ravi draws a 3-month bill for ₹1,20,000 on Sunil, who accepts it. On the same day Ravi discounts it with his bank at 12% per annum. What amount does the bank credit to Ravi's account?",
+      "options": [
+        "₹1,05,600",
+        "₹1,16,400",
+        "₹1,20,000",
+        "₹1,23,600"
+      ],
+      "correct": "B",
+      "explanation": "Discount is charged on the bill value for the unexpired period only: 1,20,000 × 12% × 3/12 = ₹3,600. Net proceeds = 1,20,000 − 3,600 = ₹1,16,400.",
+      "working": [
+        {
+          "label": "Bill amount",
+          "value": "₹1,20,000"
+        },
+        {
+          "label": "Annual discount at 12%",
+          "value": "₹14,400"
+        },
+        {
+          "label": "Discount for 3 months",
+          "value": "₹3,600"
+        },
+        {
+          "label": "Net proceeds (1,20,000 − 3,600)",
+          "value": "₹1,16,400"
+        }
+      ],
+      "why_not": {
+        "A": "Charged discount for a full year (₹14,400) instead of 3 months.",
+        "D": "Added the discount to the bill amount instead of deducting it.",
+        "C": "Ignored the discount; the bank pays less than face value."
+      },
+      "exam_tip": "Discounting: bank pays face value minus discount for the unexpired period; the drawer's liability continues till maturity.",
+      "calculation": "bill = 120000\ndiscount = bill * 12 / 100 * 3 / 12\nanswer = bill - discount",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The question doesn't mention days of grace. Under the Negotiable Instruments Act a 3-month bill would normally carry 3 days of grace, so the discount period could be read as slightly longer. Most textbooks ignore this.",
+        "Checker: The question doesn't say that the discount is charged on the face value, though this is standard."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 13\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Bills of Exchange - Discounting\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261103",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 3A",
+      "paper_name": "Income-tax Law",
+      "topic": "Previous Year and Assessment Year",
+      "question": "Under the Income-tax Act, 1961, Mr. Kiran, an existing resident assessee, earned a salary of ₹9,00,000 during 1 April 2025 to 31 March 2026. No special case applies. In which assessment year is this income taxed?",
+      "options": [
+        "AY 2025-26, as the income was earned from April 2025",
+        "AY 2026-27, as PY 2025-26 ends on 31 March 2026",
+        "AY 2027-28, as assessment follows after the filing year",
+        "AY 2026-27 or AY 2027-28, at Kiran's choice"
+      ],
+      "correct": "B",
+      "explanation": "Income of a previous year is taxed in the next assessment year. Salary earned in PY 2025-26 (1-4-2025 to 31-3-2026) is assessed in AY 2026-27. The assessee cannot choose the year.",
+      "working": [],
+      "why_not": {
+        "A": "Takes the year of earning as the AY; the AY always comes after the PY.",
+        "C": "Adds one extra year; the AY is the year immediately after the PY.",
+        "D": "Thinks the assessee can pick the year; the AY is fixed by law."
+      },
+      "exam_tip": "PY first, AY next: income of PY 2025-26 is taxed in AY 2026-27.",
+      "calculation": "",
+      "applicability": "Income-tax Act, 1961 (AY 2026-27)",
+      "confidence": "high",
+      "reviewer_note": "Period is within PY 2025-26 as per 1961 Act basis.",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Period is within PY 2025-26 as per 1961 Act basis.",
+        "Second checker: Option B's rationale partly restates the question, a minor giveaway.",
+        "Second checker: Question says 'earned' while salary is taxed on due/receipt basis, but this does not change the AY.",
+        "Second checker: Option C's wording is vague but is clearly wrong."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Previous Year and Assessment Year",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 13\nPaper 3A: Income-tax Law\nTopic: Previous Year and Assessment Year\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961 (AY 2026-27).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261103",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 11",
+      "paper_name": "Financial Management and Business Data Analytics",
+      "topic": "Cost of Capital: WACC with CAPM",
+      "question": "Risk-free return is 7%, market return 12% and equity beta 1.2. Capital: equity ₹60 lakh (book and market) and 10% debentures ₹40 lakh issued at par. Tax rate is 25%. Using CAPM, WACC (on market-value weights) is:",
+      "options": [
+        "15.84%",
+        "10.20%",
+        "10.80%",
+        "11.80%"
+      ],
+      "correct": "C",
+      "explanation": "Ke = 7% + 1.2 × (12% − 7%) = 13%. Post-tax Kd = 10% × (1 − 0.25) = 7.5%. WACC = 0.6 × 13% + 0.4 × 7.5% = 10.8%.",
+      "working": [
+        {
+          "label": "Ke = 7 + 1.2 × (12 − 7) (%)",
+          "value": "13"
+        },
+        {
+          "label": "Post-tax Kd = 10 × 0.75 (%)",
+          "value": "7.5"
+        },
+        {
+          "label": "Equity weight × Ke (%)",
+          "value": "7.8"
+        },
+        {
+          "label": "Debt weight × post-tax Kd (%)",
+          "value": "3"
+        },
+        {
+          "label": "WACC (%)",
+          "value": "10.8"
+        }
+      ],
+      "why_not": {
+        "D": "Used pre-tax cost of debt 10%, ignoring the tax shield on interest.",
+        "B": "Took Ke as market return 12%, ignoring beta in CAPM.",
+        "A": "Applied Ke = Rf + β × Rm (7 + 1.2 × 12), not the market risk premium."
+      },
+      "exam_tip": "CAPM uses the risk premium (Rm − Rf) times beta; always tax-adjust debt cost before weighting.",
+      "calculation": "ke = 7 + 1.2*(12-7)\nkd = 10*(1-0.25)\nanswer = 0.6*ke + 0.4*kd",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 13\nPaper 11: Financial Management and Business Data Analytics\nTopic: Cost of Capital: WACC with CAPM\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261103",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 3",
+      "paper_name": "Advanced Auditing, Assurance and Professional Ethics",
+      "topic": "SA 701 - Key Audit Matters",
+      "question": "Under SA 701, the auditor of a listed company determines the matters that required significant auditor attention. Which of these is the correct next step in deciding which are Key Audit Matters (KAMs)?",
+      "options": [
+        "Report all matters communicated to those charged with governance",
+        "Report only matters on which management has requested disclosure",
+        "Report only matters that resulted in a modified opinion",
+        "Select those of most significance in the audit of current period financial statements"
+      ],
+      "correct": "D",
+      "explanation": "SA 701 requires the auditor to choose, from matters communicated with those charged with governance, those that required significant auditor attention, and then determine those of most significance in the current audit. These are KAMs.",
+      "working": [],
+      "why_not": {
+        "A": "KAMs are a subset of matters communicated with TCWG, not all of them",
+        "C": "KAMs are separate from modification; a matter causing a qualification is not a KAM",
+        "B": "KAMs are decided by the auditor's judgment, not by management's request"
+      },
+      "exam_tip": "KAMs: TCWG matters, then significant attention, then most significance. It is a funnel.",
+      "calculation": "",
+      "applicability": "SA 701 (Communicating Key Audit Matters)",
+      "confidence": "high",
+      "reviewer_note": "Stem wording \"next step\" is loose; check it fits house style.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Stem wording \"next step\" is loose; check it fits house style.",
+        "Checker: Mild giveaway: the wording of option D ('most significance') echoes the stem's 'significant auditor attention' and is the only option that sounds like the standard, so it can be guessed without knowing SA 701.",
+        "Checker: Wording polish: the stem could add that the matters requiring significant auditor attention are taken from those communicated with TCWG, to match the full filter in SA 701."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 13\nPaper 3: Advanced Auditing, Assurance and Professional Ethics\nTopic: SA 701 - Key Audit Matters\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on SA 701 (Communicating Key Audit Matters).\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261103",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 15",
+      "paper_name": "Direct Tax Laws and International Taxation",
+      "topic": "Set-off and Carry Forward of Losses",
+      "question": "A firm's business income for the year is insufficient to absorb its full depreciation allowance. How is the unabsorbed depreciation treated under the Income-tax Act, 1961?",
+      "options": [
+        "Added to next year's depreciation; carried forward without time limit",
+        "Carried forward up to 8 years; set off only against business income",
+        "Lapses unless the same business continues in the next year",
+        "Carried forward up to 8 years; set off against any head of income"
+      ],
+      "correct": "A",
+      "explanation": "Unabsorbed depreciation is added to the next year's depreciation and treated as part of it. It has no time limit and can be set off against any head of income, even if the business has closed.",
+      "working": [],
+      "why_not": {
+        "B": "Confuses it with brought-forward business loss: 8-year limit and business-only set-off.",
+        "D": "Gets the any-head set-off right but wrongly applies the 8-year limit meant for business loss.",
+        "C": "Wrongly imposes a continuity-of-business condition; none applies to depreciation."
+      },
+      "exam_tip": "Unabsorbed depreciation: no time limit, any head, no need for the business to continue.",
+      "calculation": "",
+      "applicability": "Income-tax Act 1961; Finance Act 2025",
+      "confidence": "high",
+      "reviewer_note": "Concept is long-standing (unabsorbed depreciation added to next year's depreciation). Check the stem fits the Finance Act 2025 basis.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Concept is long-standing (unabsorbed depreciation added to next year's depreciation). Check the stem fits the Finance Act 2025 basis.",
+        "Checker: The stem says only that business income is insufficient. It ignores the rule that, in the same year, unabsorbed depreciation is first set off against income under other heads (except salaries) before anything is carried forward. Option A therefore describes only the carry-forward stage. It is still the only defensible answer.",
+        "Checker: The question names the Income-tax Act, 1961. The Income-tax Act, 2025 takes effect from 1 April 2026, but the stated law basis (Finance Act, 2025) makes the 1961 Act the right reference. This needs no change, but it is worth noting for future terms.",
+        "Second checker: Option A does not mention set-off against other heads of income, but what it states is correct.",
+        "Second checker: The stem says 'firm' where the rule applies to any assessee. This is wording polish only."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 13\nPaper 15: Direct Tax Laws and International Taxation\nTopic: Set-off and Carry Forward of Losses\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act 1961; Finance Act 2025.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261103",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

@@ -1,0 +1,376 @@
+{
+  "date": "2026-11-11",
+  "day": 21,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-28T00:37:55+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Logical Reasoning",
+      "topic": "Permutations and Combinations",
+      "question": "How many different arrangements of all the letters of the word BANKING are possible in which the two letters N are NOT next to each other?",
+      "options": [
+        "2,520",
+        "1,800",
+        "4,320",
+        "720"
+      ],
+      "correct": "B",
+      "explanation": "BANKING has 7 letters with N repeated twice, so total = 7!/2! = 2,520. Treating both N as one block gives 6! = 720 arrangements with N together. Not together = 2,520 − 720 = 1,800.",
+      "working": [
+        {
+          "label": "Total arrangements (7!/2!)",
+          "value": "2520"
+        },
+        {
+          "label": "N together (6!)",
+          "value": "720"
+        },
+        {
+          "label": "Not together (2520 − 720)",
+          "value": "1800"
+        }
+      ],
+      "why_not": {
+        "A": "Gives all arrangements; the condition that N are apart is ignored.",
+        "D": "Gives only arrangements with both N together, the opposite case.",
+        "C": "Treats letters as all different (5040), then subtracts 720; repetition of N ignored."
+      },
+      "exam_tip": "For 'not together', find total arrangements, then subtract the 'together' case, using the block method.",
+      "calculation": "total = 7*6*5*4*3*2*1/2\ntogether = 6*5*4*3*2*1\nanswer = total - together",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 21\nPaper 3: Quantitative Aptitude: Logical Reasoning\nTopic: Permutations and Combinations\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261111",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Royalty Accounts - Shortworking",
+      "question": "A lessee pays royalty ₹5 per unit, minimum rent ₹1,00,000 per year, shortworking recoverable from excess royalty of the next 3 years. Output: Year 1 12,000 units; Year 2 30,000 units. Cash payable to the lessor for Year 2 is:",
+      "options": [
+        "₹1,90,000",
+        "₹1,10,000",
+        "₹1,00,000",
+        "₹1,50,000"
+      ],
+      "correct": "B",
+      "explanation": "Year 1 shortworking = 1,00,000 − 60,000 = 40,000. Year 2 royalty = 1,50,000, above minimum by 50,000, so the full 40,000 is recouped. Cash payable = 1,50,000 − 40,000 = 1,10,000.",
+      "working": [
+        {
+          "label": "Year 1 royalty (12,000 × ₹5)",
+          "value": "₹60,000"
+        },
+        {
+          "label": "Year 1 shortworking",
+          "value": "₹40,000"
+        },
+        {
+          "label": "Year 2 royalty (30,000 × ₹5)",
+          "value": "₹1,50,000"
+        },
+        {
+          "label": "Excess over minimum rent",
+          "value": "₹50,000"
+        },
+        {
+          "label": "Shortworking recouped",
+          "value": "₹40,000"
+        },
+        {
+          "label": "Cash payable Year 2",
+          "value": "₹1,10,000"
+        }
+      ],
+      "why_not": {
+        "D": "Ignores recoupment of Year 1 shortworking from Year 2 excess royalty.",
+        "C": "Pays only the minimum rent, forgetting actual royalty exceeds it.",
+        "A": "Adds shortworking to royalty instead of deducting it."
+      },
+      "exam_tip": "Shortworking is recouped only up to the excess of actual royalty over minimum rent.",
+      "calculation": "y1 = 12000*5\nshort = 100000 - y1\ny2 = 30000*5\nexcess = y2 - 100000\nrec = min(short, excess)\nanswer = y2 - rec",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 21\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Royalty Accounts - Shortworking\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261111",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 3A",
+      "paper_name": "Income-tax Law",
+      "topic": "Clubbing of Income: Gift to Spouse",
+      "question": "On 1 April 2025, Anil gave his wife Rita ₹10,00,000 as a gift, without consideration. She put it in a bank FD at 8% p.a. and received ₹80,000 interest for FY 2025-26. She also earned ₹3,00,000 salary and ₹50,000 interest on her own savings. Amount clubbed in Anil's income for A.Y. 2026-27?",
+      "options": [
+        "₹80,000",
+        "₹1,30,000",
+        "Nil, as the gift is exempt in Rita's hands",
+        "₹4,30,000"
+      ],
+      "correct": "A",
+      "explanation": "Income from assets transferred to a spouse without adequate consideration is clubbed with the transferor. Only the FD interest from the gifted sum is clubbed. Rita's salary and interest on her own savings stay with her.",
+      "working": [
+        {
+          "label": "Gift to wife",
+          "value": "₹10,00,000"
+        },
+        {
+          "label": "FD interest on gifted sum (8%)",
+          "value": "₹80,000"
+        },
+        {
+          "label": "Salary of Rita (not clubbed)",
+          "value": "₹0"
+        },
+        {
+          "label": "Interest on own savings (not clubbed)",
+          "value": "₹0"
+        },
+        {
+          "label": "Amount clubbed with Anil",
+          "value": "₹80,000"
+        }
+      ],
+      "why_not": {
+        "C": "Confuses gift being exempt for the receiver with clubbing; clubbing still applies to income from it.",
+        "B": "Adds Rita's own savings interest, which is not income from the gifted asset.",
+        "D": "Adds all Rita's income including salary; only income from transferred asset is clubbed."
+      },
+      "exam_tip": "Clubbing covers only income from the transferred asset, never the spouse's own salary or own-fund income.",
+      "calculation": "gift = 1000000\nrate = 0.08\nanswer = gift * rate",
+      "applicability": "Income-tax Act, 1961; A.Y. 2026-27 (FY 2025-26)",
+      "confidence": "high",
+      "reviewer_note": "Tests the clubbing provision for transfer to spouse without adequate consideration (s.64(1)(iv)). Assumes spouses are not living apart by agreement.",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Tests the clubbing provision for transfer to spouse without adequate consideration (s.64(1)(iv)). Assumes spouses are not living apart by agreement.",
+        "Checker: The question does not say that the gift was not made under an agreement to live apart, which is the exception in Section 64(1)(iv). This is implied, but it could be stated for completeness.",
+        "Checker: The ₹80,000 is already given, and '8% p.a.' only repeats it. This is fine, but the 8% figure is redundant.",
+        "Second checker: Minor: the question doesn't say Rita's savings were not funded from the gift. A reader could wonder about the ₹50,000, but 'her own savings' makes this clear.",
+        "Second checker: Minor: the FD is stated as 8% p.a. for the full year, which matches ₹80,000. Fine.",
+        "Second checker: Minor: the stem could say 'clubbing under s.64' only if that gave nothing away. It doesn't, so no change is needed."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 21\nPaper 3A: Income-tax Law\nTopic: Clubbing of Income: Gift to Spouse\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961; A.Y. 2026-27 (FY 2025-26).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261111",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 8",
+      "paper_name": "Cost Accounting",
+      "topic": "Joint Products: NRV Method",
+      "question": "Joint cost of ₹4,50,000 yields 5,000 kg of X and 10,000 kg of Y. X is processed further at ₹30 per kg and sold at ₹100 per kg. Y is sold at ₹40 per kg at split-off. Using the NRV method, joint cost apportioned to X is:",
+      "options": [
+        "₹2,10,000",
+        "₹2,40,000",
+        "₹1,50,000",
+        "₹2,50,000"
+      ],
+      "correct": "A",
+      "explanation": "NRV of X = 5,000 × (100 − 30) = ₹3,50,000. NRV of Y = 10,000 × 40 = ₹4,00,000. Ratio 7:8. X's share = 4,50,000 × 7/15 = ₹2,10,000.",
+      "working": [
+        {
+          "label": "NRV of X (₹)",
+          "value": "3,50,000"
+        },
+        {
+          "label": "NRV of Y (₹)",
+          "value": "4,00,000"
+        },
+        {
+          "label": "Total NRV (₹)",
+          "value": "7,50,000"
+        },
+        {
+          "label": "Share of X (7/15) (₹)",
+          "value": "2,10,000"
+        }
+      ],
+      "why_not": {
+        "D": "Used final sales value of X (5:4) and ignored the further processing cost.",
+        "C": "Used physical units (1:2 ratio) instead of NRV.",
+        "B": "Gave X the share that belongs to Y (8/15)."
+      },
+      "exam_tip": "NRV method: final selling price less further processing cost, then apportion the joint cost in that ratio.",
+      "calculation": "nrvx = 5000*(100-30)\nnrvy = 10000*40\nanswer = 450000*nrvx/(nrvx+nrvy)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Minor: the question could say explicitly that the ₹30 per kg is a further processing cost with no other selling costs. This is not needed to solve it."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 21\nPaper 8: Cost Accounting\nTopic: Joint Products: NRV Method\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261111",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 1",
+      "paper_name": "Financial Reporting",
+      "topic": "Ind AS 116 - Lessee initial measurement",
+      "question": "On 1 April 2026, Vega Ltd (lessee) takes a shop on a 2-year lease under Ind AS 116. Fixed rent ₹2,42,000 is payable at each year-end, linked to CPI at commencement. Extra rent of 1% of sales (expected ₹30 lakh a year) is payable. Rate: 10% p.a. Initial lease liability?",
+      "options": [
+        "₹4,80,000",
+        "₹4,84,000",
+        "₹4,20,000",
+        "₹4,30,000"
+      ],
+      "correct": "C",
+      "explanation": "Liability includes PV of fixed payments, with the CPI-linked rent measured at the commencement index. Sales-linked rent is excluded and expensed as incurred. PV = 2,42,000/1.1 + 2,42,000/1.21 = ₹4,20,000.",
+      "working": [
+        {
+          "label": "PV of year 1 rent",
+          "value": "₹2,20,000"
+        },
+        {
+          "label": "PV of year 2 rent",
+          "value": "₹2,00,000"
+        },
+        {
+          "label": "Sales-linked rent included",
+          "value": "₹0"
+        },
+        {
+          "label": "Initial lease liability",
+          "value": "₹4,20,000"
+        }
+      ],
+      "why_not": {
+        "D": "Escalates the rent for expected CPI rises; Ind AS 116 uses the index at commencement only.",
+        "A": "Adds undiscounted sales-linked rent of ₹60,000; such variable rent is not in the liability.",
+        "B": "Adds up the fixed rent undiscounted and ignores the discount rate."
+      },
+      "exam_tip": "Index-linked rent: use today's index. Sales-linked rent: leave out and expense it when incurred.",
+      "calculation": "pv1 = 242000/1.1\npv2 = 242000/1.1**2\nanswer = pv1 + pv2",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Wording 'Fixed rent ... linked to CPI at commencement' is slightly confusing. It is better to say the ₹2,42,000 is the rent at the CPI level at commencement, with later CPI changes ignored for initial measurement.",
+        "Checker: The question could say explicitly that there are no initial direct costs, incentives or restoration costs. These do not affect the liability, so this is minor."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Lessee Initial Measurement (Ind AS 116)",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 21\nPaper 1: Financial Reporting\nTopic: Ind AS 116 - Lessee initial measurement\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261111",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 15",
+      "paper_name": "Direct Tax Laws and International Taxation",
+      "topic": "Capital Gains - Gifted Asset",
+      "question": "Ravi receives a house property as a gift from his father by a registered gift deed. Ravi later sells it. Under the Income-tax Act, 1961, how are the cost of acquisition and the period of holding determined for his capital gains?",
+      "options": [
+        "Nil cost; period counted from date of gift",
+        "Market value on date of gift; period includes previous owner's holding",
+        "Market value on date of gift; period counted from date of gift",
+        "Previous owner's cost; period includes previous owner's holding"
+      ],
+      "correct": "D",
+      "explanation": "A gift is not a transfer, so no gain arises at gifting. On Ravi's sale, cost is the previous owner's cost (plus any improvement cost by them), and the holding period includes the previous owner's period.",
+      "working": [],
+      "why_not": {
+        "C": "Treats the gift as a fresh purchase; the law looks through to the previous owner.",
+        "A": "Nil cost applies only to certain self-generated assets, not to gifted property.",
+        "B": "Takes market value as cost but keeps the donor's period; both must follow the donor."
+      },
+      "exam_tip": "For gifts, inheritance and similar modes: step into the previous owner's shoes for both cost and holding period.",
+      "calculation": "",
+      "applicability": "Income-tax Act, 1961 as amended by Finance Act, 2025",
+      "confidence": "high",
+      "reviewer_note": "Based on the cost-to-previous-owner and holding-period provisions for assets acquired by gift; no section number or rate used.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Based on the cost-to-previous-owner and holding-period provisions for assets acquired by gift; no section number or rate used.",
+        "Second checker: The question could say 'previous owner's cost (plus any improvement cost)', but this does not change the answer.",
+        "Second checker: Market value on the date of gift matters only for s.56(2)(x). That is a distractor, not an ambiguity. Option C is a plausible trap.",
+        "Second checker: The question refers to the 1961 Act. The 2025 Act applies from 1 April 2026, but the question states the 1961 Act, so the key holds."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 21\nPaper 15: Direct Tax Laws and International Taxation\nTopic: Capital Gains - Gifted Asset\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961 as amended by Finance Act, 2025.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261111",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

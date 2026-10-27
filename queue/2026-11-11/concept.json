@@ -1,0 +1,156 @@
+{
+  "kind": "concept",
+  "course_id": "cma_final",
+  "paper_code": "Paper 17",
+  "paper_name": "Cost and Management Audit",
+  "author": "Ranjith Shivahari",
+  "topic": "Cost Audit vs Financial Audit",
+  "title": "Cost Audit",
+  "title_highlight": "vs Financial Audit",
+  "hook": "same company, different lens!",
+  "simple_words": "Financial audit checks the final accounts. Cost audit checks cost records and cost statements.",
+  "definitions": [
+    {
+      "term": "Cost audit",
+      "meaning": "Verification of cost accounts and records, and a check that they follow the cost accounting rules and principles applicable to the company.",
+      "note": "Looks at costs, not the profit figure alone"
+    },
+    {
+      "term": "Financial audit",
+      "meaning": "Examination of financial statements to give an opinion on whether they show a true and fair view.",
+      "note": "Opinion goes to members"
+    }
+  ],
+  "key_points": [
+    "Cost audit is about ==cost records== and cost statements; financial audit is about financial statements.",
+    "Cost auditor is a cost accountant in practice; financial auditor is a chartered accountant.",
+    "!!Cost audit report goes to the Board!!, not to members like the financial audit report.",
+    "Cost audit also helps management with cost control and efficiency."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn the contrast, win the MCQ",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Financial audit",
+      "Cost audit"
+    ],
+    "rows": [
+      [
+        "Subject matter",
+        "Financial statements",
+        "Cost records and cost statements"
+      ],
+      [
+        "Main aim",
+        "True and fair view",
+        "Cost accuracy, compliance, efficiency"
+      ],
+      [
+        "Auditor",
+        "Chartered accountant",
+        "Cost accountant in practice"
+      ],
+      [
+        "Appointed by",
+        "Members",
+        "Board; members ratify the fee"
+      ],
+      [
+        "Report to",
+        "Members",
+        "Board of Directors"
+      ]
+    ]
+  },
+  "insight": {
+    "punchline": "Different eyes, different readers!",
+    "text": "Financial audit serves members and outsiders; cost audit serves the Board and management for cost matters."
+  },
+  "trick_hook": "F for Fee, C for Cost",
+  "memory_trick": {
+    "mnemonic": "Members read F, Board reads C",
+    "explanation": "F: Financial audit report is read by Members. C: Cost audit report is submitted to the Board. Picture two readers at two tables."
+  },
+  "steps": [
+    "Read what is being audited",
+    "Identify the auditor type",
+    "Check who appoints the auditor",
+    "Check who receives the report",
+    "Match with the correct option"
+  ],
+  "exam_tip": "In comparison MCQs, check the recipient of the report and the auditor's qualification first. Options often swap these.",
+  "doubt": {
+    "question": "Does cost audit replace financial audit?",
+    "answer": "No. Both are separate. Cost audit does not give an opinion on true and fair view of the financial statements."
+  },
+  "mistakes_hook": "Don't swap the two audits!",
+  "mistakes": [
+    {
+      "wrong": "Cost audit report is addressed to the members",
+      "right": "The cost auditor submits the report to the Board of Directors."
+    },
+    {
+      "wrong": "Cost auditor can be any chartered accountant",
+      "right": "The cost auditor must be a cost accountant in practice."
+    },
+    {
+      "wrong": "Cost audit gives a true and fair view opinion",
+      "right": "True and fair view is the financial audit's aim; cost audit verifies cost records and statements."
+    },
+    {
+      "wrong": "Cost audit makes financial audit unnecessary",
+      "right": "Each is done separately for its own purpose."
+    }
+  ],
+  "applicability": "Companies Act 2013, Sec 148; Cost Records and Audit Rules",
+  "confidence": "medium",
+  "reviewer_note": "Verify against the current Companies (Cost Records and Audit) Rules: Board appoints cost auditor on Audit Committee recommendation, members ratify remuneration, report submitted to Board. Check the wording for any exceptions.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Verify against the current Companies (Cost Records and Audit) Rules: Board appoints cost auditor on Audit Committee recommendation, members ratify remuneration, report submitted to Board. Check the wording for any exceptions.",
+    "Checker 1: Trick hook ('F for Fee, C for Cost') does not match the memory trick ('Members read F, Board reads C'). 'Fee' has nothing to do with F = Financial audit, and it could make students link the fee ratification to the financial audit. Correct version: 'F for Financial → Members; C for Cost → Board'.",
+    "Checker 1: Table row 3 and key point 2 say only 'Chartered accountant'. Under Sec 141 the financial (statutory) auditor must be a chartered accountant in practice, or a firm or LLP of such CAs. Correct version: 'Chartered accountant in practice (or firm/LLP)'.",
+    "Checker 1: Insight text and key point 3 suggest the cost audit report stays with the Board and management. Under Sec 148(6) and Rule 6(6), the company must file the cost audit report, with full information and explanations on every reservation or qualification, with the Central Government in Form CRA-4 within 30 days of receiving it. Add: 'the report is then filed with the Central Government (CRA-4)'.",
+    "Checker 1: Table row 4 ('Appointed by: Members') should also mention the Board. The first auditor of a non-government company is appointed by the Board (Sec 139(6)), and the C&AG appoints auditors of government companies. Also say the cost auditor is appointed by the Board on the Audit Committee's recommendation (Rule 6(2)) and the members ratify the remuneration (Rule 14).",
+    "Checker 2: trick_hook says \"F for Fee, C for Cost\", but the memory trick is \"Members read F, Board reads C\". The hook teaches nothing about the readers or the fee, and F does not stand for Fee in this topic. Reword it to match, for example \"F for Financial → Members, C for Cost → Board\".",
+    "Checker 2: Table row 4 and step 3 could be more precise. Under Sec 148(3) the Board appoints the cost auditor on the Audit Committee's recommendation, and members only ratify the remuneration (Rule 14). The financial auditor is appointed by members under Sec 139. The facts are right, so this is wording polish only."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.26,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 17: Cost and Management Audit\nCost Audit vs Financial Audit\n\nIn simple words: Financial audit checks the final accounts. Cost audit checks cost records and cost statements.\n\nSwipe for the summary table, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CMA Final MCQ (8:55 PM) tests this concept.\n\nBased on Companies Act 2013, Sec 148; Cost Records and Audit Rules.\n\nNotes by Ranjith Shivahari\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept-261111",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

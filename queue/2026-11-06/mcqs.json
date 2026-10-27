@@ -1,0 +1,348 @@
+{
+  "date": "2026-11-06",
+  "day": 16,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-28T00:21:18+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 2",
+      "paper_name": "Business Laws",
+      "topic": "Partnership Act: Non-Registration",
+      "question": "Sharma & Co., a partnership firm, is not registered. Which of the following legal actions is NOT barred because of non-registration of the firm?",
+      "options": [
+        "A partner suing for dissolution of the firm and for its accounts",
+        "A partner suing another partner for his agreed share of profit",
+        "A partner suing a supplier on behalf of the firm for breach of contract",
+        "The firm suing a customer for the price of goods supplied"
+      ],
+      "correct": "A",
+      "explanation": "Non-registration bars suits to enforce rights from the partnership contract, or from the firm's contracts with third parties. A suit for dissolution of the firm and for accounts is expressly excepted.",
+      "working": [],
+      "why_not": {
+        "D": "Student thinks the firm can sue outsiders; the bar applies to suits on the firm's contracts.",
+        "B": "Student forgets that enforcing a partnership-agreement right, like profit share, is barred.",
+        "C": "Student ignores that a partner suing for the firm is also barred if the firm is unregistered."
+      },
+      "exam_tip": "Unregistered firm can be sued by outsiders but cannot sue them. Dissolution and accounts suits are the exception.",
+      "calculation": "",
+      "applicability": "Indian Partnership Act, 1932 (effect of non-registration)",
+      "confidence": "high",
+      "reviewer_note": "Based on the exceptions to the bar on suits by unregistered firms; no section number cited.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Based on the exceptions to the bar on suits by unregistered firms; no section number cited."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 16\nPaper 2: Business Laws\nTopic: Partnership Act: Non-Registration\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Indian Partnership Act, 1932 (effect of non-registration).\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261106",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2B",
+      "paper_name": "Statutory Compliance",
+      "topic": "Partnership Act - Non-Registration",
+      "question": "Sharma & Co. is an unregistered partnership firm under the Indian Partnership Act, 1932. Which of the following suits is NOT barred by the non-registration of the firm?",
+      "options": [
+        "Suit by the firm against a partner to recover a sum due under the agreement",
+        "Suit by a partner for dissolution of the firm",
+        "Suit by the firm against a customer for the price of goods sold",
+        "Suit by a partner against the firm to enforce a right under the agreement"
+      ],
+      "correct": "B",
+      "explanation": "Non-registration bars suits to enforce contractual rights: by a partner against the firm or partners, and by the firm against third parties. A suit for dissolution or for accounts of a dissolved firm is not barred.",
+      "working": [],
+      "why_not": {
+        "C": "A firm's suit against a third party on a contract is barred if the firm is unregistered.",
+        "D": "Enforcing a right arising from the partnership agreement is barred for an unregistered firm.",
+        "A": "A firm's suit against its own partner on the agreement is also barred."
+      },
+      "exam_tip": "Unregistered firm: contract suits barred; dissolution and accounts-of-dissolved-firm suits are allowed.",
+      "calculation": "",
+      "applicability": "Indian Partnership Act, 1932 (effect of non-registration)",
+      "confidence": "high",
+      "reviewer_note": "Based on the Act's provision on effect of non-registration; no section number quoted.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Based on the Act's provision on effect of non-registration; no section number quoted.",
+        "Checker: Option A says 'suit by the firm against a partner', which is not literally covered by Section 69(1) or 69(2). Section 69(2) only covers suits against third parties. A student might argue A is also not barred. It is barred only if read as a suit by the other partners under Section 69(1). Better wording: 'Suit by a partner against another partner to enforce a right under the partnership agreement'."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 16\nPaper 2B: Statutory Compliance\nTopic: Partnership Act - Non-Registration\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Indian Partnership Act, 1932 (effect of non-registration).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261106",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 6B",
+      "paper_name": "Strategic Management",
+      "topic": "Business Level Strategy: Porter's Generic",
+      "question": "A firm sells a standard product with no frills across the country. It keeps costs lower than rivals through large-scale production and tight control of overheads, and it prices at or slightly below the market. Which generic strategy is it following?",
+      "options": [
+        "Differentiation strategy",
+        "Cost leadership strategy",
+        "Stuck in the middle position",
+        "Focus strategy based on differentiation"
+      ],
+      "correct": "B",
+      "explanation": "The firm serves a broad market, seeks a lower cost than rivals through scale and overhead control, and prices competitively. This is Porter's overall cost leadership strategy.",
+      "working": [],
+      "why_not": {
+        "A": "Differentiation needs unique features valued by buyers; this product is standard and no-frills.",
+        "D": "Focus targets a narrow segment; this firm sells across the whole country.",
+        "C": "Stuck in the middle means no clear advantage; here a clear cost advantage exists."
+      },
+      "exam_tip": "Broad market + lowest cost = cost leadership; narrow segment = focus; unique value = differentiation.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The stem nearly gives the answer away: 'keeps costs lower than rivals' is close to the textbook definition of cost leadership. The item tests recall more than application. Consider removing the explicit cost comparison and leaving only the operational clues (scale, overhead control, no-frills product, broad market).",
+        "Checker: Distractor C (stuck in the middle) is weak, because the stem clearly describes a consistent strategy."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 16\nPaper 6B: Strategic Management\nTopic: Business Level Strategy: Porter's Generic\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261106",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 7",
+      "paper_name": "Direct and Indirect Taxation",
+      "topic": "GST: Value of Taxable Supply",
+      "question": "A registered supplier sells goods at a list price of ₹5,00,000. A 5% trade discount is shown on the invoice. He separately charges packing ₹10,000, freight ₹20,000 and interest ₹6,000 for late payment. GST is billed extra. Transaction value is:",
+      "options": [
+        "₹5,05,000",
+        "₹4,81,000",
+        "₹5,36,000",
+        "₹5,11,000"
+      ],
+      "correct": "D",
+      "explanation": "Discount allowed on the invoice is excluded. Packing, freight (incidental expenses) and interest for late payment are included in the value of supply. GST itself is excluded.",
+      "working": [
+        {
+          "label": "List price",
+          "value": "₹5,00,000"
+        },
+        {
+          "label": "Less: 5% discount on invoice",
+          "value": "₹25,000"
+        },
+        {
+          "label": "Price after discount",
+          "value": "₹4,75,000"
+        },
+        {
+          "label": "Add: packing and freight",
+          "value": "₹30,000"
+        },
+        {
+          "label": "Add: late payment interest",
+          "value": "₹6,000"
+        },
+        {
+          "label": "Transaction value",
+          "value": "₹5,11,000"
+        }
+      ],
+      "why_not": {
+        "C": "Ignores the invoice discount; trade discount shown on invoice is deductible.",
+        "A": "Leaves out interest for late payment, which must be included.",
+        "B": "Leaves out packing and freight charged by the supplier, which are includible."
+      },
+      "exam_tip": "Value of supply: add incidental charges and late-payment interest; deduct only discounts known at or before supply.",
+      "calculation": "price = 500000\ndisc = price*5/100\nnet = price - disc\nanswer = net + 10000 + 20000 + 6000",
+      "applicability": "CGST Act, 2017 as per ICMAI notice (June 2026 term)",
+      "confidence": "high",
+      "reviewer_note": "Based on the value of supply provisions (section 15 of CGST Act): incidental expenses, interest for delayed payment included, discount per invoice excluded.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Based on the value of supply provisions (section 15 of CGST Act): incidental expenses, interest for delayed payment included, discount per invoice excluded.",
+        "Checker: Freight: the question does not say whether the supplier is responsible for delivery, or whether freight is a separate supply or a pure-agent reimbursement. Inclusion is the reasonable reading, but saying so would remove doubt.",
+        "Checker: Late-payment interest only arises if payment is actually late and is usually billed later on a debit note. The question should state the interest was actually charged because payment was late, so it is clearly part of the value.",
+        "Second checker: Minor: the question could say that the discount is known at or before the time of supply, which Section 15(3) requires, and that the supplier is the one charging the freight.",
+        "Second checker: Minor: 'interest' is clear here because it is charged by the supplier for late payment, so it is included."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 16\nPaper 7: Direct and Indirect Taxation\nTopic: GST: Value of Taxable Supply\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on CGST Act, 2017 as per ICMAI notice (June 2026 term).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261106",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 1",
+      "paper_name": "Financial Reporting",
+      "topic": "Ind AS 33 - EPS with bonus issue",
+      "question": "Under Ind AS 33, profit attributable to equity holders for FY 2025-26 is ₹12,25,000. Shares: 4,00,000 on 1 April 2025; 1,20,000 issued at full market price on 1 July 2025; bonus issue of 1 share for every 4 held on 1 January 2026. Basic EPS?",
+      "options": [
+        "₹2.00",
+        "₹2.08",
+        "₹1.88",
+        "₹2.50"
+      ],
+      "correct": "A",
+      "explanation": "A bonus issue is adjusted retrospectively for all periods, as if it happened at the start. Weighted shares before bonus are 4,90,000; multiplied by 1.25 gives 6,12,500. EPS = 12,25,000 / 6,12,500 = ₹2.00.",
+      "working": [
+        {
+          "label": "Weighted shares before bonus",
+          "value": "4,90,000"
+        },
+        {
+          "label": "Bonus factor (5/4)",
+          "value": "1.25"
+        },
+        {
+          "label": "Adjusted weighted shares",
+          "value": "6,12,500"
+        },
+        {
+          "label": "Profit for equity holders",
+          "value": "12,25,000"
+        },
+        {
+          "label": "Basic EPS (₹)",
+          "value": "2.00"
+        }
+      ],
+      "why_not": {
+        "D": "Ignores the bonus issue; divides by 4,90,000 weighted shares without adjustment.",
+        "C": "Uses year-end shares of 6,50,000 instead of the weighted average.",
+        "B": "Applies bonus factor only to opening shares, not to the July issue shares."
+      },
+      "exam_tip": "Bonus issue: restate all earlier shares as if issued on day one; do not time-weight the bonus shares.",
+      "calculation": "w = 400000 + 120000*9/12\nadj = w*5/4\nanswer = 1225000/adj",
+      "applicability": "Ind AS 33 Earnings per Share",
+      "confidence": "high",
+      "reviewer_note": "Option C is 1,225,000/650,000 = 1.8846 rounded; option D is 12,25,000/5,90,000 = 2.076 rounded.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Option C is 1,225,000/650,000 = 1.8846 rounded; option D is 12,25,000/5,90,000 = 2.076 rounded.",
+        "Checker: Minor: the question could state that the share issue on 1 July is for cash at full market value, so there is no bonus element in it. 'Full market price' already implies this.",
+        "Checker: Minor: the question could say that the profit is after preference dividends, if any."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 16\nPaper 1: Financial Reporting\nTopic: Ind AS 33 - EPS with bonus issue\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Ind AS 33 Earnings per Share.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261106",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 20A",
+      "paper_name": "Strategic Performance Management and Business Valuation",
+      "topic": "Business Valuation - Dividend Growth Model",
+      "question": "A company has just paid a dividend (D0) of ₹10 per share. Dividends are expected to grow at a constant 5% p.a. forever. The cost of equity is 15% p.a. What is the intrinsic value per share today (Gordon model)?",
+      "options": [
+        "₹70.00",
+        "₹100.00",
+        "₹105.00",
+        "₹52.50"
+      ],
+      "correct": "C",
+      "explanation": "Gordon model: P0 = D0 × (1+g) / (ke − g). D1 = 10 × 1.05 = ₹10.50. P0 = 10.50 / (0.15 − 0.05) = ₹105.",
+      "working": [
+        {
+          "label": "D0 (₹)",
+          "value": "10"
+        },
+        {
+          "label": "D1 = D0 × 1.05 (₹)",
+          "value": "10.50"
+        },
+        {
+          "label": "ke − g",
+          "value": "0.10"
+        },
+        {
+          "label": "P0 = D1 / (ke − g) (₹)",
+          "value": "105"
+        }
+      ],
+      "why_not": {
+        "B": "Used D0 instead of D1: 10 / 0.10, forgetting to grow the dividend one year.",
+        "D": "Divided by (ke + g) = 0.20 instead of (ke − g).",
+        "A": "Used D1 / ke = 10.50 / 0.15, ignoring growth in the denominator."
+      },
+      "exam_tip": "Gordon model needs next year's dividend D1. If D0 is given, multiply by (1+g) first.",
+      "calculation": "d0 = 10\ng = 0.05\nke = 0.15\nd1 = d0*(1+g)\nanswer = d1/(ke-g)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Switched to a new topic because the first one couldn't be verified"
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept_missed": "Economic Value Added (EVA)",
+      "linked_concept": "Economic Value Added (EVA)",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 16\nPaper 20A: Strategic Performance Management and Business Valuation\nTopic: Business Valuation - Dividend Growth Model\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261106",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

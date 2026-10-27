@@ -1,0 +1,151 @@
+{
+  "kind": "concept",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Business Mathematics",
+  "author": "Rahul kp",
+  "topic": "Compound Interest and Effective Rate",
+  "title": "Compound Interest",
+  "title_highlight": "and Effective Rate",
+  "hook": "interest on interest!",
+  "simple_words": "Each period, interest is added to the principal, so the next interest is earned on a bigger amount.",
+  "definitions": [
+    {
+      "term": "Compound Interest (CI)",
+      "meaning": "Interest calculated on principal plus interest already added in earlier periods. CI = Amount − Principal.",
+      "note": "Not the same as Amount!"
+    },
+    {
+      "term": "Effective Rate",
+      "meaning": "The equivalent annual rate, compounded once a year, that gives the same final amount as the nominal rate compounded m times a year.",
+      "note": ""
+    }
+  ],
+  "key_points": [
+    "For the same rate and time, CI is more than simple interest when time is above one period.",
+    "==Nominal rate== is the stated yearly rate; ==effective rate== shows the true yearly growth.",
+    "More compounding periods in a year means a higher effective rate.",
+    "!!If compounding is yearly, effective rate equals nominal rate.!!"
+  ],
+  "formula_heading": "The CI Formulas",
+  "formula_hook": "rate ÷ m, time × m",
+  "formulas": [
+    {
+      "name": "Amount with compounding",
+      "lhs": "A",
+      "rhs": "P (1 + r/(100m))^(mn)",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "A = amount, P = principal, r = nominal annual rate in %, n = years, m = compounding periods per year"
+    },
+    {
+      "name": "Compound interest",
+      "lhs": "CI",
+      "rhs": "A − P",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "CI = compound interest, A = final amount, P = principal"
+    },
+    {
+      "name": "Effective annual rate",
+      "lhs": "E",
+      "rhs": "(1 + i/m)^m − 1",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "E = effective rate (decimal), i = nominal annual rate (decimal, 8% = 0.08), m = periods per year"
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "insight": {
+    "punchline": "Same rate, different growth!",
+    "text": "Compounding more often within a year raises the effective rate above the nominal rate."
+  },
+  "trick_hook": "divide the rate, multiply the time",
+  "memory_trick": {
+    "mnemonic": "Rate Down, Time Up",
+    "explanation": "Compounding m times a year: divide the annual rate by m and multiply years by m. Half-yearly: half the rate, double the periods."
+  },
+  "steps": [
+    "Note compounding frequency m",
+    "Convert rate to r/m per period",
+    "Convert time to m × n periods",
+    "Find A = P(1 + rate)^periods",
+    "Subtract P if CI is asked"
+  ],
+  "exam_tip": "Read the words \"per annum, compounded half-yearly\" first; options often include the yearly-compounding answer as a trap.",
+  "doubt": {
+    "question": "Is the effective rate always higher than nominal?",
+    "answer": "Only when compounding is more than once a year. With yearly compounding, both are equal."
+  },
+  "mistakes_hook": "avoid these slips",
+  "mistakes": [
+    {
+      "wrong": "Reporting A as the compound interest",
+      "right": "CI = A − P. Subtract the principal at the end."
+    },
+    {
+      "wrong": "Using full annual rate for half-yearly compounding",
+      "right": "Use r/2 per period and 2n periods."
+    },
+    {
+      "wrong": "Putting r = 8 inside the effective rate formula",
+      "right": "Use i = 0.08 in decimal, then E = (1 + i/m)^m − 1."
+    },
+    {
+      "wrong": "Using time in years with a per-period rate",
+      "right": "Rate and time must be in the same period unit."
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Checker 1: Steps 2 and 4: step 2 gives the per-period rate as r/m, and step 4 writes A = P(1 + rate)^periods. Formula 1, however, defines r as a percentage (e.g. 8). Read literally, the steps could give 1 + 4 instead of 1 + 0.04. Correct version: 'Convert the rate to r/(100m) per period (as a decimal)' and 'A = P(1 + r/(100m))^(mn)'. This brings the steps in line with formula 1 and mistake 3."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.08,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.28,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟩 CA Foundation · Concept of the day\nPaper 3: Quantitative Aptitude: Business Mathematics\nCompound Interest and Effective Rate\n\nIn simple words: Each period, interest is added to the principal, so the next interest is earned on a bigger amount.\n\nSwipe for the formula, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CA Foundation MCQ (7:55 AM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFoundation #ICAI #CAStudents #CAExams\n\nref concept-261106",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

@@ -28,5 +28,15 @@
   "ca_inter:story": {
     "media_id": "17895188526654173",
     "posted_at": "2026-10-27T13:25:13+05:30"
+  },
+  "cma_inter": {
+    "media_id": "18095795768247979",
+    "permalink": "https://www.instagram.com/p/De_liPfoMHd/",
+    "image_host": "github_raw",
+    "posted_at": "2026-10-27T15:26:51+05:30"
+  },
+  "cma_inter:story": {
+    "media_id": "17980068908917294",
+    "posted_at": "2026-10-27T15:27:02+05:30"
   }
 }

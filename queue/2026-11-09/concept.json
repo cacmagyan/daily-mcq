@@ -1,0 +1,142 @@
+{
+  "kind": "concept",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 9",
+  "paper_name": "Operations Management and Strategic Management (Strategic Management)",
+  "author": "Ranjith Shivahari",
+  "topic": "Porter's Five Forces Model",
+  "title": "Porter's",
+  "title_highlight": "Five Forces",
+  "hook": "who squeezes your profit?",
+  "simple_words": "Five pressures decide how profitable an industry is. Find which force is strong and plan around it.",
+  "definitions": [
+    {
+      "term": "Porter's Five Forces",
+      "meaning": "A model to analyse industry structure and its attractiveness through five competitive forces that shape long-run profit.",
+      "note": "Industry-level tool, not firm-level"
+    },
+    {
+      "term": "Substitutes",
+      "meaning": "Products from a different industry that meet the same customer need, e.g. tea for coffee, rail for air travel.",
+      "note": "Different industry, same need"
+    }
+  ],
+  "key_points": [
+    "The ==five forces== are: new entrants, supplier power, buyer power, substitutes, rivalry.",
+    "Stronger forces mean lower industry profit; weaker forces mean higher profit.",
+    "High entry barriers (e.g. licensing, scale) reduce the threat of new entrants.",
+    "!!Rivalry is among firms in the same industry; substitutes come from other industries.!!"
+  ],
+  "formula_heading": "The Five Forces Table",
+  "formula_hook": "match situation to force",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Force",
+      "Strong when"
+    ],
+    "rows": [
+      [
+        "Threat of new entrants",
+        "Entry barriers are low"
+      ],
+      [
+        "Power of suppliers",
+        "Few suppliers, switching is costly"
+      ],
+      [
+        "Power of buyers",
+        "Few big buyers, easy to switch"
+      ],
+      [
+        "Threat of substitutes",
+        "Other-industry options meet same need"
+      ],
+      [
+        "Rivalry among firms",
+        "Many equal rivals, low differentiation"
+      ]
+    ]
+  },
+  "insight": {
+    "punchline": "Match the situation to the force!",
+    "text": "Read the case, ask who is pressing on profit, then name that one force."
+  },
+  "trick_hook": "five faces at your shop",
+  "memory_trick": {
+    "mnemonic": "Newcomer, Seller, Buyer, Other, Rival",
+    "explanation": "Picture your shop: newcomers want to open, sellers supply you, buyers bargain, other ways to meet the same need (substitutes) pull customers, rival shops around you compete.",
+    "note": ""
+  },
+  "steps": [
+    "Read the situation in the case",
+    "Ask who is pressing on profit",
+    "Name the matching force",
+    "Say strong or weak, with reason",
+    "Suggest a response"
+  ],
+  "exam_tip": "Same-industry look-alike rivals point to rivalry. A different-industry product meeting the same need points to substitutes.",
+  "doubt": {
+    "question": "Are government and technology also forces?",
+    "answer": "No. Porter's model has exactly five forces. Government and technology matter through their effect on the five (e.g. regulation raising entry barriers); wider macro factors are in PESTEL."
+  },
+  "mistakes_hook": "don't mix up the forces",
+  "mistakes": [
+    {
+      "wrong": "Listing government as the sixth force",
+      "right": "Porter has five forces; government acts through them, e.g. licensing raises entry barriers."
+    },
+    {
+      "wrong": "Calling a rival brand in the same industry a substitute",
+      "right": "Same-industry competitors are rivalry; substitutes come from a different industry meeting the same need."
+    },
+    {
+      "wrong": "Applying the model to one firm's internal strengths",
+      "right": "It analyses the industry; internal strengths and weaknesses belong to other tools such as SWOT."
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "Corrected per examiner feedback: tip, memory trick wording and doubt answer revised.",
+  "law_sensitive": false,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Corrected per examiner feedback: tip, memory trick wording and doubt answer revised.",
+    "Checker 1: Definition 2 example (tea for coffee): the note defines substitutes strictly as products from a different industry. Tea and coffee are often grouped in the same hot-beverages industry, so this example could confuse students about that rule. A safer cross-industry example would be 'video conferencing for business air travel' or 'e-mail for courier service'. Keep 'rail for air travel'."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.06,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟧 CMA Inter · Concept of the day\nPaper 9: Operations Management and Strategic Management (Strategic Management)\nPorter's Five Forces Model\n\nIn simple words: Five pressures decide how profitable an industry is. Find which force is strong and plan around it.\n\nSwipe for the summary table, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CMA Inter MCQ (3:25 PM) tests this concept.\n\nNotes by Ranjith Shivahari\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref concept-261109",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

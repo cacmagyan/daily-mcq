@@ -1,0 +1,149 @@
+{
+  "kind": "concept",
+  "course_id": "cma_final",
+  "paper_code": "Paper 16",
+  "paper_name": "Strategic Cost Management",
+  "author": "Rahul kp",
+  "topic": "Target Costing",
+  "title": "Target Costing",
+  "title_highlight": "Price first, cost next",
+  "hook": "market decides, not you!",
+  "simple_words": "Start with the price customers will pay, deduct the profit you want, and make the product within the cost left.",
+  "definitions": [
+    {
+      "term": "Target Costing",
+      "meaning": "A cost management tool where the allowable cost is fixed as market price minus desired profit, before the product is designed and made.",
+      "note": "Cost is an input, not a result!"
+    },
+    {
+      "term": "Cost Gap",
+      "meaning": "The excess of the current estimated cost of the product over its target cost. It must be closed by value engineering and cost reduction.",
+      "note": "Gap exists only if estimate > target"
+    }
+  ],
+  "key_points": [
+    "Market-driven: ==target selling price== comes from customers and competitors",
+    "Used at the design and planning stage, not after production starts",
+    "Cost reduction is done by ==value engineering== and team effort of design, production and marketing",
+    "Traditional costing: Cost + Profit = Price. Target costing reverses it"
+  ],
+  "formula_heading": "The Target Cost Formulas",
+  "formula_hook": "price down, profit down, cost left",
+  "formulas": [
+    {
+      "name": "Target Cost",
+      "lhs": "Target Cost",
+      "rhs": "TSP − TP",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "TSP = target selling price per unit; TP = target profit per unit"
+    },
+    {
+      "name": "Target Profit (margin on sales)",
+      "lhs": "TP",
+      "rhs": "TSP × m",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "m = desired profit as a fraction of sales price. Use only if the margin is given on sales."
+    },
+    {
+      "name": "Cost Gap",
+      "lhs": "Cost Gap",
+      "rhs": "EC − Target Cost",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "EC = current estimated cost per unit. Positive gap means cost must be cut."
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "insight": {
+    "punchline": "Price is fixed, cost must bend!",
+    "text": "In target costing the market sets the price, so profit is protected only by cutting cost, not by raising price."
+  },
+  "trick_hook": "remember the flow",
+  "memory_trick": {
+    "mnemonic": "Price – Profit = Permitted cost",
+    "explanation": "Think of a thali budget: the restaurant fixes the thali price, keeps its profit aside, and the cook gets only the permitted cost for ingredients."
+  },
+  "steps": [
+    "Find target selling price",
+    "Deduct target profit",
+    "Get target cost",
+    "Compare with estimated cost",
+    "Close gap by value engineering"
+  ],
+  "exam_tip": "Read whether the profit is on sales or on cost or on investment. Then compute target profit before target cost.",
+  "doubt": {
+    "question": "Is the cost gap always a loss?",
+    "answer": "No. It is not a loss yet. It is the cost reduction still needed to earn the target profit. If the gap is zero or negative, the target is met."
+  },
+  "mistakes_hook": "avoid these slips",
+  "mistakes": [
+    {
+      "wrong": "Target cost = Estimated cost + Profit",
+      "right": "Target cost = Target selling price − Target profit"
+    },
+    {
+      "wrong": "Taking profit margin on cost when the question says on sales",
+      "right": "Apply the given base: !!on sales!! means percentage of selling price"
+    },
+    {
+      "wrong": "Cost gap = Target cost − Estimated cost",
+      "right": "Cost gap = Estimated cost − Target cost"
+    },
+    {
+      "wrong": "Raising the price to close the gap",
+      "right": "Price is set by the market; close the gap through value engineering and cost cuts"
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": false,
+  "check_notes": [],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.24,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 16: Strategic Cost Management\nTarget Costing\n\nIn simple words: Start with the price customers will pay, deduct the profit you want, and make the product within the cost left.\n\nSwipe for the formula, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CMA Final MCQ (8:55 PM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept-261030",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

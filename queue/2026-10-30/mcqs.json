@@ -1,0 +1,339 @@
+{
+  "date": "2026-10-30",
+  "day": 9,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-27T23:57:02+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 2",
+      "paper_name": "Business Laws",
+      "topic": "Sale of Goods Act: Condition and Warranty",
+      "question": "Mohan agrees to buy 50 bags of Grade A basmati rice from Seema. On delivery, he finds the rice is Grade B. He chooses to keep the goods and claims only damages. Under the Sale of Goods Act, 1930, the breach of condition is treated as:",
+      "options": [
+        "A breach of warranty, as the buyer elected to treat it so",
+        "A breach of warranty only if the seller agrees to it",
+        "A breach of condition, as description is always essential",
+        "A void contract, as the goods do not match the description"
+      ],
+      "correct": "A",
+      "explanation": "A buyer may waive a condition or elect to treat its breach as breach of warranty. He then cannot reject the goods and can only claim damages. Sale by description is a condition, but the right to repudiate can be given up.",
+      "working": [],
+      "why_not": {
+        "C": "Ignores that the buyer can waive the condition and choose damages only.",
+        "D": "Confuses breach of condition with a void contract; the contract stays valid.",
+        "B": "Wrongly needs seller's consent; the choice is the buyer's alone."
+      },
+      "exam_tip": "Condition breach: buyer may reject or treat it as warranty. Warranty breach: damages only, no rejection.",
+      "calculation": "",
+      "applicability": "Sale of Goods Act, 1930: condition treated as warranty",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 9\nPaper 2: Business Laws\nTopic: Sale of Goods Act: Condition and Warranty\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Sale of Goods Act, 1930: condition treated as warranty.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261030",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Rectification of Errors - Suspense A/c",
+      "question": "A trial balance was forced to agree through a Suspense A/c. Later errors: purchases book overcast by ₹9,000; discount allowed ₹3,000 not posted to Discount A/c; Sales A/c undercast by ₹2,000. What was the original Suspense balance?",
+      "options": [
+        "Debit balance of ₹8,000",
+        "Credit balance of ₹8,000",
+        "Credit balance of ₹4,000",
+        "Credit balance of ₹14,000"
+      ],
+      "correct": "B",
+      "explanation": "Overcast purchases raised debits by 9,000. Unposted discount lowered debits by 3,000. Undercast sales lowered credits by 2,000. Debits exceeded credits by 8,000, so Suspense was credited with 8,000.",
+      "working": [
+        {
+          "label": "Purchases overcast (debit excess)",
+          "value": "9,000"
+        },
+        {
+          "label": "Discount unposted (debit short)",
+          "value": "-3,000"
+        },
+        {
+          "label": "Sales undercast (credit short)",
+          "value": "2,000"
+        },
+        {
+          "label": "Debits exceed credits by",
+          "value": "8,000"
+        },
+        {
+          "label": "Suspense (credit) balance",
+          "value": "8,000"
+        }
+      ],
+      "why_not": {
+        "A": "Wrong side: when debits exceed credits, Suspense is credited, not debited.",
+        "C": "Treated the undercast sales as reducing the difference instead of adding to it.",
+        "D": "Added all three amounts without considering the direction of each error."
+      },
+      "exam_tip": "Net each error's effect on debit and credit totals; the Suspense A/c goes on the lighter side.",
+      "calculation": "purchases = 9000\ndiscount = -3000\nsales = 2000\nanswer = purchases + discount + sales",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 9\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Rectification of Errors - Suspense A/c\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261030",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 1",
+      "paper_name": "Advanced Accounting",
+      "topic": "Buy-back of Securities",
+      "question": "Neel Ltd has 8,00,000 equity shares of ₹10 each fully paid, general reserve ₹50,00,000, Profit and Loss balance ₹30,00,000 and capital reserve ₹10,00,000. It buys back shares at ₹50 each, using the highest limit for paid-up capital and free reserves under a special resolution. Maximum shares it can buy back?",
+      "options": [
+        "2,00,000 shares",
+        "85,000 shares",
+        "40,000 shares",
+        "80,000 shares"
+      ],
+      "correct": "D",
+      "explanation": "Limit is 25% of paid-up capital plus free reserves. Capital reserve is not free reserve. (80,00,000 + 80,00,000) × 25% = ₹40,00,000; at ₹50 per share this gives 80,000 shares, within the 25% share-count limit.",
+      "working": [
+        {
+          "label": "Paid-up equity capital",
+          "value": "₹80,00,000"
+        },
+        {
+          "label": "Free reserves (50L + 30L)",
+          "value": "₹80,00,000"
+        },
+        {
+          "label": "Capital plus free reserves",
+          "value": "₹1,60,00,000"
+        },
+        {
+          "label": "25% limit",
+          "value": "₹40,00,000"
+        },
+        {
+          "label": "Maximum shares at ₹50",
+          "value": "80,000"
+        }
+      ],
+      "why_not": {
+        "B": "Wrongly counts capital reserve as a free reserve, which cannot be distributed as dividend.",
+        "C": "Applies 25% to free reserves alone and ignores paid-up share capital.",
+        "A": "Uses only the 25%-of-shares limit (2,00,000 shares) and ignores the funds limit."
+      },
+      "exam_tip": "Buy-back cap is the lower of the funds test and the share-count test; capital reserve never counts as free reserve.",
+      "calculation": "capital = 8*100000*10/10\ncapital = 800000*10\nfree = 5000000 + 3000000\nlimit = (capital + free) * 0.25\nanswer = limit / 50",
+      "applicability": "Companies Act, 2013 – buy-back provisions (Sec 68)",
+      "confidence": "high",
+      "reviewer_note": "Ignores the debt-equity ratio test; the stem asks only for the paid-up capital and free reserves limit. The calculation reduces to 25% of ₹1,60,00,000 divided by ₹50.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Ignores the debt-equity ratio test; the stem asks only for the paid-up capital and free reserves limit. The calculation reduces to 25% of ₹1,60,00,000 divided by ₹50.",
+        "Checker: The question does not mention the debt-equity ratio test (2:1 after buy-back), so it implicitly assumes no borrowings. This is minor.",
+        "Checker: Option A (25% of shares) and option C (a 10% limit or the capital reserve trap) are plausible distractors, which is fine.",
+        "Checker: Wording could say 'maximum permitted by the Companies Act, 2013 (25%)' to be explicit. This is minor."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 9\nPaper 1: Advanced Accounting\nTopic: Buy-back of Securities\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013 – buy-back provisions (Sec 68).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261030",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 10",
+      "paper_name": "Corporate Accounting and Auditing (Auditing)",
+      "topic": "Audit Planning: Materiality (SA 320)",
+      "question": "As per SA 320 on Materiality in Planning and Performing an Audit, performance materiality is set by the auditor mainly to:",
+      "options": [
+        "Decide the fee payable for the audit engagement",
+        "Fix the amount below which misstatements need not be accumulated",
+        "Reduce to a low level the chance that uncorrected and undetected misstatements exceed materiality",
+        "Replace overall materiality for the financial statements as a whole"
+      ],
+      "correct": "C",
+      "explanation": "Performance materiality is an amount set below materiality for the financial statements as a whole. It lowers to an appropriate level the probability that aggregate uncorrected and undetected misstatements exceed overall materiality.",
+      "working": [],
+      "why_not": {
+        "B": "This describes the clearly trivial threshold (SA 450), not performance materiality.",
+        "D": "It is set in addition to, and lower than, overall materiality; it does not replace it.",
+        "A": "Audit fees are not decided by materiality; this is an unrelated idea."
+      },
+      "exam_tip": "Performance materiality sits below overall materiality; clearly trivial sits far below both.",
+      "calculation": "",
+      "applicability": "SA 320 (Standards on Auditing, ICAI)",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Wording polish only: option C paraphrases the standard and leaves out some of its words. SA 320 says 'appropriately low level' and 'the aggregate of' uncorrected and undetected misstatements exceeding 'materiality for the financial statements as a whole'. The answer is still clear."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 9\nPaper 10: Corporate Accounting and Auditing (Auditing)\nTopic: Audit Planning: Materiality (SA 320)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on SA 320 (Standards on Auditing, ICAI).\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261030",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 4",
+      "paper_name": "Direct Tax Laws and International Taxation",
+      "topic": "Residential status - POEM of company",
+      "question": "Kestrel Pte Ltd is incorporated in Singapore; its turnover in FY 2025-26 is ₹200 crore. Board meetings are held in Singapore, but the key strategic and commercial decisions are actually taken by its promoter in Pune, and the board only signs them. Its status for FY 2025-26 is:",
+      "options": [
+        "Non-resident, as it is incorporated outside India",
+        "Resident, as its place of effective management is in India",
+        "Resident, only if most of its shareholders are Indian residents",
+        "Non-resident, as all board meetings are held outside India"
+      ],
+      "correct": "B",
+      "explanation": "A foreign company is resident in India if its place of effective management is in India in that year. This depends on where key decisions are actually taken, not on incorporation or paperwork. Here the decisions are taken in Pune.",
+      "working": [],
+      "why_not": {
+        "A": "Place of incorporation does not decide residence of a foreign company.",
+        "D": "Board meeting venue is form only; the board merely signs decisions made in India.",
+        "C": "Shareholding pattern is not the test; effective management is."
+      },
+      "exam_tip": "For a foreign company, ask where key decisions are really made. Substance beats incorporation and board-meeting venue.",
+      "calculation": "",
+      "applicability": "Income-tax Act, 1961 - A.Y. 2026-27 (residence of company)",
+      "confidence": "high",
+      "reviewer_note": "Turnover ₹200 crore is stated so the CBDT turnover-based relief from POEM rules (₹50 crore or less) does not apply.",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Turnover ₹200 crore is stated so the CBDT turnover-based relief from POEM rules (₹50 crore or less) does not apply.",
+        "Checker: The question uses the ₹200 crore turnover to signal that the POEM guidelines apply, but it does not state the ₹50 crore limit, which comes from a CBDT circular rather than the Act. The limit is settled law, so this is acceptable but a reliance on unstated data.",
+        "Checker: The question does not say whether the company carries on an active business outside India. The answer is the same either way because the board only signs decisions taken in India, but stating it would tighten the question.",
+        "Checker: 'Promoter in Pune' leaves the reader to infer that decisions are taken in India; saying so directly would be clearer.",
+        "Second checker: The question does not say whether Kestrel is engaged in active business outside India. The facts on where decisions are made still point clearly to B.",
+        "Second checker: Option B's reasoning does not say it applies under s.6(3). This is a minor point and does not affect the answer."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Residence of a Company: POEM",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 9\nPaper 4: Direct Tax Laws and International Taxation\nTopic: Residential status - POEM of company\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961 - A.Y. 2026-27 (residence of company).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261030",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 14",
+      "paper_name": "Strategic Financial Management",
+      "topic": "Derivatives - Futures Pricing",
+      "question": "A share trades at ₹500 in the spot market. The risk-free rate is 8% p.a. (simple interest). A dividend of ₹10 is expected in 3 months; ignore interest on the dividend. What is the fair price of a 6-month futures contract?",
+      "options": [
+        "₹510",
+        "₹490",
+        "₹520",
+        "₹530"
+      ],
+      "correct": "A",
+      "explanation": "Cost of carry: futures price = spot plus financing cost less income received during the contract. Interest is ₹20 and dividend is ₹10, so fair price is ₹510.",
+      "working": [
+        {
+          "label": "Spot price",
+          "value": "₹500"
+        },
+        {
+          "label": "Interest for 6 months (8% x 6/12)",
+          "value": "₹20"
+        },
+        {
+          "label": "Cost of carry total",
+          "value": "₹520"
+        },
+        {
+          "label": "Less: dividend expected",
+          "value": "₹10"
+        },
+        {
+          "label": "Fair futures price",
+          "value": "₹510"
+        }
+      ],
+      "why_not": {
+        "C": "Ignored the dividend; income on the share reduces the futures price.",
+        "D": "Added the dividend instead of subtracting it.",
+        "B": "Subtracted dividend from spot and ignored the interest cost."
+      },
+      "exam_tip": "Futures = Spot + interest - income (dividend). Holding the share earns income, so futures price falls.",
+      "calculation": "spot = 500\ninterest = spot*0.08*6/12\ndividend = 10\nanswer = spot + interest - dividend",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 9\nPaper 14: Strategic Financial Management\nTopic: Derivatives - Futures Pricing\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261030",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

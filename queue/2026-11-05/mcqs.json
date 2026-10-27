@@ -1,0 +1,352 @@
+{
+  "date": "2026-11-05",
+  "day": 15,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-28T00:16:45+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 1",
+      "paper_name": "Accounting",
+      "topic": "Not-for-Profit: Subscription Income",
+      "question": "A club received ₹4,80,000 in cash as subscriptions in FY 2025-26. This includes ₹20,000 for 2024-25 and ₹30,000 for 2026-27. ₹12,000 for 2025-26 was received in 2024-25 (not in the ₹4,80,000). Subscriptions due but unpaid for 2025-26 are ₹40,000. Subscription income for 2025-26 is:",
+      "options": [
+        "₹4,70,000",
+        "₹5,02,000",
+        "₹4,58,000",
+        "₹4,82,000"
+      ],
+      "correct": "D",
+      "explanation": "Income is on accrual basis. Take cash received, remove amounts of other years, add the advance received earlier for this year, and add dues for this year.",
+      "working": [
+        {
+          "label": "Cash received in 2025-26",
+          "value": "480000"
+        },
+        {
+          "label": "Less: arrears for 2024-25",
+          "value": "20000"
+        },
+        {
+          "label": "Less: advance for 2026-27",
+          "value": "30000"
+        },
+        {
+          "label": "Add: advance received in 2024-25",
+          "value": "12000"
+        },
+        {
+          "label": "Add: dues for 2025-26",
+          "value": "40000"
+        },
+        {
+          "label": "Subscription income 2025-26",
+          "value": "482000"
+        }
+      ],
+      "why_not": {
+        "A": "Ignored the ₹12,000 advance received last year that belongs to 2025-26.",
+        "C": "Deducted the earlier advance instead of adding it to income.",
+        "B": "Did not deduct the ₹20,000 arrears relating to 2024-25."
+      },
+      "exam_tip": "Subscription income = cash − other years' items + earlier advance for this year + current dues.",
+      "calculation": "cash = 480000\narrears = 20000\nadvance_next = 30000\nadvance_prev = 12000\ndues = 40000\nanswer = cash - arrears - advance_next + advance_prev + dues",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Dues stated as relating to 2025-26 only; opening advance explicitly excluded from cash.",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Dues stated as relating to 2025-26 only; opening advance explicitly excluded from cash."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 15\nPaper 1: Accounting\nTopic: Not-for-Profit: Subscription Income\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261105",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2A",
+      "paper_name": "Financial Accounting-2",
+      "topic": "Insurance Claims - Loss of Stock",
+      "question": "Fire destroyed a godown on 31 Oct 2026. Stock on 1 April 2026 ₹2,00,000; purchases ₹8,00,000; sales ₹11,00,000 up to the fire; gross profit 25% on sales. Salvage ₹25,000. Policy ₹1,40,000 with average clause. Claim?",
+      "options": [
+        "₹1,05,000",
+        "₹1,20,000",
+        "₹1,40,000",
+        "₹1,50,000"
+      ],
+      "correct": "B",
+      "explanation": "Cost of sales = 75% of 11,00,000 = 8,25,000. Stock at fire = 10,00,000 − 8,25,000 = 1,75,000. Loss after salvage = 1,50,000. Average clause: 1,50,000 × 1,40,000 / 1,75,000 = 1,20,000.",
+      "working": [
+        {
+          "label": "Cost of sales (75% of sales)",
+          "value": "₹8,25,000"
+        },
+        {
+          "label": "Stock at fire (10,00,000 − 8,25,000)",
+          "value": "₹1,75,000"
+        },
+        {
+          "label": "Loss after salvage",
+          "value": "₹1,50,000"
+        },
+        {
+          "label": "Policy ÷ stock at fire",
+          "value": "1,40,000/1,75,000"
+        },
+        {
+          "label": "Claim",
+          "value": "₹1,20,000"
+        }
+      ],
+      "why_not": {
+        "C": "Takes the policy amount as the claim; ignores salvage and the average clause.",
+        "D": "Net loss after salvage, but average clause for under-insurance not applied.",
+        "A": "Applies policy to opening stock (1,40,000/2,00,000) instead of stock at fire."
+      },
+      "exam_tip": "Average clause: claim = loss × policy value ÷ stock value at fire. Gross profit on sales means cost = sales × (1 − GP%).",
+      "calculation": "cos = 1100000*0.75\nstock = 200000+800000-cos\nloss = stock-25000\nanswer = loss*140000/stock",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Assumes salvage is deducted from stock lost before applying the average clause, as in standard ICMAI treatment.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Assumes salvage is deducted from stock lost before applying the average clause, as in standard ICMAI treatment.",
+        "Checker: Salvage treatment under the average clause is not stated. The standard method deducts salvage first and then applies the average ratio. Applying the ratio to the gross loss and then deducting salvage gives 1,15,000, which is not an option, so the key is unaffected.",
+        "Checker: The question does not say whether the gross profit rate is on sales (it does, so this is fine). It also does not say whether purchases are net of returns. Minor.",
+        "Checker: The fire date (31 Oct 2026) is after the current date, so the scenario is hypothetical. This is trivial."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 15\nPaper 2A: Financial Accounting-2\nTopic: Insurance Claims - Loss of Stock\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261105",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 3B",
+      "paper_name": "Goods and Services Tax",
+      "topic": "Place of Supply of Goods (IGST Act)",
+      "question": "Alfa Ltd (registered, Delhi) sold goods to Beta Ltd (registered, principal place of business in Maharashtra). On Beta's written direction, Alfa delivered the goods directly to Beta's customer Gama (registered, Tamil Nadu). What is the place of supply and tax on Alfa's invoice to Beta?",
+      "options": [
+        "Delhi; CGST and SGST of Delhi",
+        "Maharashtra; CGST and SGST of Maharashtra",
+        "Maharashtra; IGST",
+        "Tamil Nadu; IGST"
+      ],
+      "correct": "C",
+      "explanation": "Where the supplier delivers goods to another person on a third person's direction, the third person is deemed to have received them. Place of supply is Beta's principal place of business, Maharashtra. Delhi to Maharashtra is inter-State, so IGST.",
+      "working": [],
+      "why_not": {
+        "A": "Takes the supplier's location as place of supply; that is not the rule for goods delivered on direction.",
+        "D": "Takes the physical delivery point as place of supply, ignoring the third-person direction rule.",
+        "B": "Gets the place right but charges CGST/SGST; supplier is in Delhi, so the supply is inter-State."
+      },
+      "exam_tip": "Bill-to-ship-to: place of supply is the directing buyer's principal place of business, not the delivery point.",
+      "calculation": "",
+      "applicability": "IGST Act, 2017 as per ICAI applicability for next attempt",
+      "confidence": "high",
+      "reviewer_note": "Based on IGST Act section 10(1)(b) (delivery on direction of a third person); section number not cited in question.",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Based on IGST Act section 10(1)(b) (delivery on direction of a third person); section number not cited in question.",
+        "Second checker: The word 'written' in the direction is unnecessary, since the section only requires a direction. It is harmless.",
+        "Second checker: Option D is the standard trap and the other options are clearly wrong, so the question is clean."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 15\nPaper 3B: Goods and Services Tax\nTopic: Place of Supply of Goods (IGST Act)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on IGST Act, 2017 as per ICAI applicability for next attempt.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261105",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 12",
+      "paper_name": "Management Accounting",
+      "topic": "Standard Costing: Labour Variances",
+      "question": "Standard: 5 labour hours per unit at ₹40 per hour. Actual output 2,100 units. Hours paid 11,000, of which 400 hours were idle (abnormal). Actual rate ₹42 per hour. What is the labour efficiency variance?",
+      "options": [
+        "₹4,000 Adverse",
+        "₹16,000 Adverse",
+        "₹20,000 Adverse",
+        "₹4,000 Favourable"
+      ],
+      "correct": "A",
+      "explanation": "Efficiency variance = (Standard hours for actual output - Actual hours worked) × SR. Idle hours are excluded from hours worked and go to the idle time variance. Worked hours exceed standard hours, so adverse.",
+      "working": [
+        {
+          "label": "Std hours for actual output",
+          "value": "10,500"
+        },
+        {
+          "label": "Actual hours worked (11,000-400)",
+          "value": "10,600"
+        },
+        {
+          "label": "Excess hours",
+          "value": "100"
+        },
+        {
+          "label": "Standard rate per hour",
+          "value": "₹40"
+        },
+        {
+          "label": "Efficiency variance (Adverse)",
+          "value": "₹4,000"
+        }
+      ],
+      "why_not": {
+        "C": "Used hours paid (11,000) instead of hours worked; this ignores the separate idle time variance.",
+        "B": "This is the idle time variance (400 × ₹40), not efficiency variance.",
+        "D": "Right amount but wrong direction; worked hours exceed standard hours, so it is adverse."
+      },
+      "exam_tip": "Efficiency uses hours worked; idle hours go to idle time variance. Paid hours = worked + idle.",
+      "calculation": "std_hours = 2100*5\nworked = 11000-400\nrate = 40\nanswer = abs(std_hours-worked)*rate",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 15\nPaper 12: Management Accounting\nTopic: Standard Costing: Labour Variances\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261105",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 5",
+      "paper_name": "Indirect Tax Laws",
+      "topic": "GST - Composite vs Mixed Supply",
+      "question": "A trader supplies a combo pack at one price: a sandwich (taxable at 5%), a packaged juice (18%) and a chocolate (28%). They are bundled only as a promotion, not naturally, and each is also sold separately. How is the combo taxed?",
+      "options": [
+        "Mixed supply; whole combo taxed at 28%, the highest rate among the items",
+        "Mixed supply; each item taxed at its own rate on its share of the price",
+        "Composite supply; whole combo taxed at the average rate of the items",
+        "Composite supply; whole combo taxed at 5%, the rate of the sandwich"
+      ],
+      "correct": "A",
+      "explanation": "The items are not naturally bundled in the ordinary course of business, so it is not a composite supply. Two or more individual supplies made together for a single price form a mixed supply, taxed at the highest rate among them, here 28%.",
+      "working": [],
+      "why_not": {
+        "D": "Treats the sandwich as principal supply; there is no natural bundling to make it composite.",
+        "B": "Splitting by item rate is not the law; a mixed supply takes the highest rate on the whole.",
+        "C": "Averaging of rates has no basis in the CGST Act."
+      },
+      "exam_tip": "No natural bundling means not composite. Mixed supply takes the highest rate on the whole price.",
+      "calculation": "",
+      "applicability": "CGST Act, 2017: composite/mixed supply and Section 8",
+      "confidence": "high",
+      "reviewer_note": "Rates are hypothetical and stated in the question. Check that no notified special rate for such combos applies.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Rates are hypothetical and stated in the question. Check that no notified special rate for such combos applies.",
+        "Checker: Outdated rates: under the GST rate rationalisation effective 22 September 2025, chocolate no longer attracts 28% and the 28% slab has largely gone. The question states the rates, so the answer holds, but the example is unrealistic. Use made-up or neutral rates.",
+        "Checker: A sandwich-and-juice combo could be read as a restaurant supply, which is taxed as a composite service. Say clearly that this is a supply of packaged goods by a trader.",
+        "Second checker: The question doesn't say that the 28% chocolate is the item attracting the highest rate, though this follows from the stated rates.",
+        "Second checker: The sandwich is described as taxable at 5%. A real sandwich sold by a trader could be classified differently, but this is a hypothetical, so it is not a real problem."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Composite vs Mixed Supply (CGST)",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 15\nPaper 5: Indirect Tax Laws\nTopic: GST - Composite vs Mixed Supply\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on CGST Act, 2017: composite/mixed supply and Section 8.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261105",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 19",
+      "paper_name": "Indirect Tax Laws and Practice",
+      "topic": "GST - Place of Supply of Goods",
+      "question": "A, registered in Delhi, sells goods to B, registered in Delhi, and bills B. On B's direction, A ships the goods directly from Delhi to C, registered in Chennai. How is A's supply to B taxed under the GST law?",
+      "options": [
+        "IGST, as the goods move from Delhi to Tamil Nadu",
+        "CGST and Delhi SGST, as place of supply is B's location in Delhi",
+        "CGST and Tamil Nadu SGST, as the goods are delivered in Chennai",
+        "IGST, as C is the final recipient in another State"
+      ],
+      "correct": "B",
+      "explanation": "Where goods are delivered by the supplier to another person on a third person's direction, the third person is deemed to have received them. Place of supply is B's principal place of business, Delhi. Both are in Delhi, so supply is intra-State.",
+      "working": [],
+      "why_not": {
+        "A": "Treats physical movement as decisive; the bill-to-ship-to rule fixes place of supply at B.",
+        "C": "Takes the delivery place as place of supply and also wrongly pairs it with Tamil Nadu SGST.",
+        "D": "Confuses C's role; A's invoice is to B, and C's location does not set this supply's place."
+      },
+      "exam_tip": "Bill-to-ship-to: place of supply is the person who directs delivery, not where goods land.",
+      "calculation": "",
+      "applicability": "IGST Act, 2017 (Sec 10) as amended up to 30 Nov 2025",
+      "confidence": "high",
+      "reviewer_note": "Based on the IGST Act provision on goods delivered on a third person's direction. B's second supply to C (IGST) is not asked.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Based on the IGST Act provision on goods delivered on a third person's direction. B's second supply to C (IGST) is not asked.",
+        "Second checker: The question says B is 'registered in Delhi' but does not say Delhi is B's principal place of business. Section 10(1)(b) uses the principal place of business, so this is a minor gap.",
+        "Second checker: Option B's wording 'B's location' is a little loose, but it does not change the answer."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 15\nPaper 19: Indirect Tax Laws and Practice\nTopic: GST - Place of Supply of Goods\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on IGST Act, 2017 (Sec 10) as amended up to 30 Nov 2025.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261105",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

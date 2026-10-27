@@ -1,0 +1,152 @@
+{
+  "kind": "concept",
+  "course_id": "cma_final",
+  "paper_code": "Paper 20A",
+  "paper_name": "Strategic Performance Management and Business Valuation",
+  "author": "Rahul kp",
+  "topic": "Economic Value Added (EVA)",
+  "title": "Economic Value",
+  "title_highlight": "Added (EVA)",
+  "hook": "profit after charging for capital!",
+  "simple_words": "EVA tells whether profit is enough to pay everyone who gave money, including shareholders.",
+  "definitions": [
+    {
+      "term": "EVA",
+      "meaning": "Net operating profit after tax minus the ==capital charge==. It is the surplus left after paying the cost of all capital used.",
+      "note": "Positive EVA = wealth created"
+    },
+    {
+      "term": "Capital charge",
+      "meaning": "WACC multiplied by capital employed. It includes a cost for equity, which normal accounting profit ignores.",
+      "note": "Equity is not free!"
+    }
+  ],
+  "key_points": [
+    "EVA > 0 means value is created; EVA < 0 means value is destroyed",
+    "Accounting profit ignores the ==cost of equity==; EVA charges it",
+    "!!Use NOPAT (after tax, before interest)!! as the profit figure",
+    "Used for divisional performance and manager bonus linking"
+  ],
+  "formula_heading": "The EVA Formula",
+  "formula_hook": "profit minus capital rent",
+  "formulas": [
+    {
+      "name": "Economic Value Added",
+      "lhs": "EVA",
+      "rhs": "NOPAT − (WACC × CE)",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "NOPAT = net operating profit after tax; WACC = weighted average cost of capital; CE = capital employed"
+    },
+    {
+      "name": "NOPAT",
+      "lhs": "NOPAT",
+      "rhs": "EBIT × (1 − t)",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "EBIT = operating profit before interest and tax; t = tax rate"
+    },
+    {
+      "name": "WACC",
+      "lhs": "WACC",
+      "rhs": "Ke·We + Kd(1 − t)·Wd",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Ke = cost of equity; Kd = pre-tax cost of debt; We, Wd = proportions of equity and debt in capital"
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "insight": {
+    "punchline": "Profit is not always value!",
+    "text": "A firm can show accounting profit and still have negative EVA if profit is below the capital charge."
+  },
+  "trick_hook": "remember the three steps",
+  "memory_trick": {
+    "mnemonic": "Profit pays Rent",
+    "explanation": "Capital is a rented shop: NOPAT is your earning, WACC × CE is the rent. What remains after paying rent is EVA."
+  },
+  "steps": [
+    "Find EBIT, then NOPAT",
+    "Find WACC (Kd after tax)",
+    "Find capital employed",
+    "Capital charge = WACC × CE",
+    "EVA = NOPAT − charge"
+  ],
+  "exam_tip": "Check the question for which capital base is given, then use it as given. Write the capital charge line separately for step marks.",
+  "doubt": {
+    "question": "Why is interest not deducted in NOPAT?",
+    "answer": "Interest is already covered in the capital charge through WACC. Deducting it in NOPAT too would charge debt twice."
+  },
+  "mistakes_hook": "avoid these mark losers",
+  "mistakes": [
+    {
+      "wrong": "Using profit after interest as NOPAT",
+      "right": "Use EBIT × (1 − t); interest is covered by the capital charge in WACC."
+    },
+    {
+      "wrong": "Using pre-tax cost of debt in WACC",
+      "right": "Use Kd × (1 − t) because interest gives a tax shield."
+    },
+    {
+      "wrong": "Ignoring cost of equity in the capital charge",
+      "right": "Include Ke with equity weight in WACC; equity has a cost."
+    },
+    {
+      "wrong": "Saying positive accounting profit means positive EVA",
+      "right": "EVA is positive only if NOPAT exceeds WACC × capital employed."
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "Capital employed definition varies (book values, adjustments); the note says use the base given in the question.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Capital employed definition varies (book values, adjustments); the note says use the base given in the question.",
+    "Checker 2: trick_hook says \"remember the three steps\", but the memory trick \"Profit pays Rent\" has three parts (NOPAT, rent, what remains) and the Steps section has five. Reword the hook, for example \"remember profit, rent, EVA\", or say five steps. This is wording only. All the formulas, signs, definitions and mistakes are correct."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.08,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.28,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.24,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.24,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 20A: Strategic Performance Management and Business Valuation\nEconomic Value Added (EVA)\n\nIn simple words: EVA tells whether profit is enough to pay everyone who gave money, including shareholders.\n\nSwipe for the formula, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CMA Final MCQ (8:55 PM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept-261105",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

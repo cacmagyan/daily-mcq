@@ -1,0 +1,144 @@
+{
+  "kind": "concept",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 1B",
+  "paper_name": "Applied Business and Industrial Laws",
+  "author": "Ranjith Shivahari",
+  "topic": "Offer vs Invitation to Offer",
+  "title": "Offer or Just",
+  "title_highlight": "Invitation?",
+  "hook": "spot the real offer!",
+  "simple_words": "An offer can be accepted to make a contract. An invitation only asks people to make offers.",
+  "definitions": [
+    {
+      "term": "Offer (Proposal)",
+      "meaning": "A person shows willingness to do or not do something, to get the other's assent. Acceptance of it creates a promise.",
+      "note": "Final intention to be bound"
+    },
+    {
+      "term": "Invitation to offer",
+      "meaning": "A step before the offer. It invites others to make offers, and cannot be accepted to form a contract.",
+      "note": "Only an invitation to bargain"
+    }
+  ],
+  "key_points": [
+    "An ==offer== is capable of acceptance; an invitation is not",
+    "Test: did the maker show intention to be bound on simple acceptance?",
+    "Display, catalogue, price list, tender notice, auction call = invitation",
+    "!!A general offer!! (reward advertisement) can be accepted by performing the condition"
+  ],
+  "formula_heading": "Offer Sorting Table",
+  "formula_hook": "same words, different status",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Situation",
+      "Legal status"
+    ],
+    "rows": [
+      [
+        "Goods with price tag on display",
+        "Invitation to offer"
+      ],
+      [
+        "Catalogue or price list",
+        "Invitation to offer"
+      ],
+      [
+        "Tender notice / auction announcement",
+        "Invitation to offer"
+      ],
+      [
+        "Bid in auction / submitted tender",
+        "Offer"
+      ],
+      [
+        "Advertised reward for a condition",
+        "General offer (Carlill case)"
+      ]
+    ]
+  },
+  "insight": {
+    "punchline": "Invite first, offer next!",
+    "text": "The customer's bid or request to buy is the offer; the seller's acceptance completes the contract."
+  },
+  "trick_hook": "think shop window",
+  "memory_trick": {
+    "mnemonic": "Window shows, Bidder offers",
+    "explanation": "A shop window, catalogue, tender notice or auctioneer's call only shows or invites. The bid or buyer's request is the offer; the reward ad is the exception."
+  },
+  "steps": [
+    "Read who is speaking",
+    "Is there intention to be bound?",
+    "Can simple acceptance close the deal?",
+    "Is it an advertisement for a reward?",
+    "Name it and cite the case"
+  ],
+  "exam_tip": "In MCQs, price tag, catalogue, tender notice and auction call mean invitation. A reward promise to anyone who performs means general offer.",
+  "doubt": {
+    "question": "Is a price-tagged item an offer by the shop?",
+    "answer": "No. It is an invitation to offer. The customer offers by bringing it to the counter, and the shopkeeper accepts by taking the price."
+  },
+  "mistakes_hook": "don't fall for the price tag",
+  "mistakes": [
+    {
+      "wrong": "Goods with a price tag in a shop window are an offer",
+      "right": "They are an invitation to offer; the customer makes the offer"
+    },
+    {
+      "wrong": "Auctioneer's announcement is an offer",
+      "right": "It is an invitation; the bidder's bid is the offer"
+    },
+    {
+      "wrong": "A tender notice is an offer to the bidders",
+      "right": "The notice invites tenders; each submitted tender is an offer"
+    },
+    {
+      "wrong": "A reward advertisement is only an invitation",
+      "right": "It is a general offer, accepted by performing the condition (Carlill case)"
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "Basis said \"not a law paper; leave applicability empty\", but this paper is law, so I left it empty as instructed. No section numbers used. Please verify the Indian Contract Act, 1872 basis.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Basis said \"not a law paper; leave applicability empty\", but this paper is law, so I left it empty as instructed. No section numbers used. Please verify the Indian Contract Act, 1872 basis."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.26,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 1B: Applied Business and Industrial Laws\nOffer vs Invitation to Offer\n\nIn simple words: An offer can be accepted to make a contract. An invitation only asks people to make offers.\n\nSwipe for the summary table, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CMA CAT MCQ (9:55 AM) tests this concept.\n\nNotes by Ranjith Shivahari\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept-261107",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

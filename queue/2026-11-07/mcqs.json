@@ -1,0 +1,400 @@
+{
+  "date": "2026-11-07",
+  "day": 17,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-28T00:25:03+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Business Mathematics",
+      "topic": "Compound Interest vs Simple Interest",
+      "question": "Anil invests ₹40,000 for 2 years at 10% per annum, interest compounded yearly. By how much is the compound interest more than the simple interest on the same sum, rate and time?",
+      "options": [
+        "₹400",
+        "₹4,000",
+        "₹8,400",
+        "₹8,000"
+      ],
+      "correct": "A",
+      "explanation": "CI for 2 years = 40,000 × (1.1² − 1) = ₹8,400. SI = 40,000 × 10% × 2 = ₹8,000. The difference is ₹400, which is interest earned on the first year's interest of ₹4,000.",
+      "working": [
+        {
+          "label": "Amount after 2 years (CI)",
+          "value": "₹48,400"
+        },
+        {
+          "label": "Compound interest",
+          "value": "₹8,400"
+        },
+        {
+          "label": "Simple interest",
+          "value": "₹8,000"
+        },
+        {
+          "label": "CI − SI",
+          "value": "₹400"
+        }
+      ],
+      "why_not": {
+        "B": "This is only the first year's interest, not the difference between CI and SI.",
+        "D": "This is the simple interest for 2 years, not the difference.",
+        "C": "This is the compound interest itself; the question asks for the excess over SI."
+      },
+      "exam_tip": "For 2 years, CI − SI = P × (r/100)². Here 40,000 × 0.01 = ₹400.",
+      "calculation": "ci = 40000*(1.1**2-1)\nsi = 40000*0.10*2\nanswer = round(ci - si)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Distractors C (CI value) and D (SI value) are plausible partial-answer traps; this is fine.",
+        "Checker: Option B (4,000) is a weak distractor but harmless."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Compound Interest and Effective Rate",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 17\nPaper 3: Quantitative Aptitude: Business Mathematics\nTopic: Compound Interest vs Simple Interest\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261107",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Capital and Revenue Expenditure",
+      "question": "A trader buys a second-hand machine for ₹2,00,000, pays ₹15,000 for its transport to the factory and ₹10,000 for installation, and ₹6,000 for routine annual repairs. What amount is capitalised as cost of the machine?",
+      "options": [
+        "₹2,10,000",
+        "₹2,25,000",
+        "₹2,31,000",
+        "₹2,15,000"
+      ],
+      "correct": "B",
+      "explanation": "Cost of a fixed asset includes purchase price and expenses to bring it to location and working condition: freight and installation. Routine repairs are revenue expenditure charged to Profit and Loss.",
+      "working": [
+        {
+          "label": "Purchase price",
+          "value": "₹2,00,000"
+        },
+        {
+          "label": "Add: transport",
+          "value": "₹15,000"
+        },
+        {
+          "label": "Add: installation",
+          "value": "₹10,000"
+        },
+        {
+          "label": "Routine repairs (revenue)",
+          "value": "₹0"
+        },
+        {
+          "label": "Capitalised cost",
+          "value": "₹2,25,000"
+        }
+      ],
+      "why_not": {
+        "C": "Adds routine repairs, which are revenue expenditure, to the asset cost.",
+        "D": "Leaves out installation, which is needed to make the machine workable.",
+        "A": "Leaves out transport; counts only installation with price."
+      },
+      "exam_tip": "Capitalise costs to acquire and make ready for use; expense the costs to maintain.",
+      "calculation": "price = 200000\ntransport = 15000\ninstall = 10000\nanswer = price + transport + install",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Option C (2,31,000) is the distractor that includes the repairs, which is plausible but wrong.",
+        "Checker: The question doesn't say the repairs were not needed to bring the machine into use. 'Routine annual repairs' signals a revenue expense, so this is only a minor point.",
+        "Checker: The wording 'second-hand' with routine repairs could in theory suggest the repairs were made before first use, but the word 'annual' rules that out."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 17\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Capital and Revenue Expenditure\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261107",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 1",
+      "paper_name": "Advanced Accounting",
+      "topic": "AS 14 Amalgamation: Purchase Method",
+      "question": "X Ltd is absorbed by Y Ltd in an amalgamation in the nature of purchase (AS 14). Y Ltd takes over assets of ₹40,00,000 and liabilities of ₹12,00,000 at book value. It issues 2,00,000 equity shares of ₹10 each at ₹14 per share, and pays ₹2,00,000 cash. Result?",
+      "options": [
+        "Capital reserve of ₹6,00,000",
+        "Goodwill of ₹2,00,000",
+        "Capital reserve of ₹2,00,000",
+        "Capital reserve of ₹10,00,000"
+      ],
+      "correct": "B",
+      "explanation": "Purchase consideration = shares at issue price ₹28,00,000 + cash ₹2,00,000 = ₹30,00,000. Net assets taken over = ₹28,00,000. Consideration exceeds net assets, so the excess of ₹2,00,000 is goodwill.",
+      "working": [
+        {
+          "label": "Shares issued at ₹14 (₹)",
+          "value": "28,00,000"
+        },
+        {
+          "label": "Add: cash paid (₹)",
+          "value": "2,00,000"
+        },
+        {
+          "label": "Purchase consideration (₹)",
+          "value": "30,00,000"
+        },
+        {
+          "label": "Net assets taken over (₹)",
+          "value": "28,00,000"
+        },
+        {
+          "label": "Goodwill (₹)",
+          "value": "2,00,000"
+        }
+      ],
+      "why_not": {
+        "C": "Treats the excess of consideration over net assets as capital reserve; it is goodwill.",
+        "A": "Values shares at face value ₹10, ignoring the premium, giving a wrong consideration of ₹22,00,000.",
+        "D": "Ignores liabilities taken over, comparing consideration with gross assets of ₹40,00,000."
+      },
+      "exam_tip": "Consideration > net assets = goodwill; consideration < net assets = capital reserve. Shares count at issue price.",
+      "calculation": "shares = 200000*14\ncash = 200000\nconsideration = shares + cash\nnet_assets = 4000000 - 1200000\nanswer = consideration - net_assets",
+      "applicability": "AS 14 Accounting for Amalgamations (purchase method)",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The stem ends with 'Result?', which is vague. It would be better to ask 'What will Y Ltd record on amalgamation?'.",
+        "Checker: The stem does not say that the assets and liabilities are taken over at book value as the agreed fair value. This is implied by the purchase method, so it is only a minor point.",
+        "Checker: Option C has the right amount but the wrong nature, which makes it a reasonable distractor."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 17\nPaper 1: Advanced Accounting\nTopic: AS 14 Amalgamation: Purchase Method\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on AS 14 Accounting for Amalgamations (purchase method).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261107",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 10",
+      "paper_name": "Corporate Accounting and Auditing (Corporate Accounting)",
+      "topic": "Ind AS 33: Basic EPS",
+      "question": "Under Ind AS 33, a company had 1,50,000 equity shares on 1 April 2025 and issued 60,000 shares for cash on 1 October 2025. Profit after tax for FY 2025-26 is ₹20,00,000; preference dividend for the year is ₹2,00,000. Basic EPS is:",
+      "options": [
+        "₹11.11",
+        "₹8.57",
+        "₹10.00",
+        "₹9.52"
+      ],
+      "correct": "C",
+      "explanation": "Earnings for equity = 20,00,000 − 2,00,000 = ₹18,00,000. Weighted shares = 1,50,000 + 60,000 × 6/12 = 1,80,000. EPS = 18,00,000 ÷ 1,80,000 = ₹10.",
+      "working": [
+        {
+          "label": "Earnings for equity (₹)",
+          "value": "1800000"
+        },
+        {
+          "label": "New shares weighted (6/12)",
+          "value": "30000"
+        },
+        {
+          "label": "Weighted average shares",
+          "value": "180000"
+        },
+        {
+          "label": "Basic EPS (₹)",
+          "value": "10"
+        }
+      ],
+      "why_not": {
+        "A": "Did not deduct preference dividend from profit before dividing.",
+        "B": "Used all 2,10,000 shares without time-weighting, and deducted dividend.",
+        "D": "Ignored both preference dividend and time-weighting of shares."
+      },
+      "exam_tip": "Basic EPS = (profit − preference dividend) ÷ time-weighted average equity shares.",
+      "calculation": "earnings = 2000000 - 200000\nshares = 150000 + 60000*6/12\nanswer = earnings/shares",
+      "applicability": "Ind AS 33 Earnings per Share",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The question doesn't say whether the preference shares are cumulative or whether the dividend is declared. Ind AS 33 deducts the dividend in either case if cumulative, but only if declared when non-cumulative. 'Preference dividend for the year' implies it is deducted, so this is a minor wording point.",
+        "Checker: The distractors are clearly built from common errors (ignoring the preference dividend, using the year-end share count)."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 17\nPaper 10: Corporate Accounting and Auditing (Corporate Accounting)\nTopic: Ind AS 33: Basic EPS\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Ind AS 33 Earnings per Share.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261107",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 2",
+      "paper_name": "Advanced Financial Management",
+      "topic": "Mutual Funds - NAV per unit",
+      "question": "An open-ended fund has investments at market value ₹1,50,00,000, cash ₹10,00,000, accrued income ₹2,00,000 and accrued expenses payable ₹12,00,000. It has 5,00,000 units outstanding. What is the NAV per unit?",
+      "options": [
+        "₹28.00",
+        "₹27.60",
+        "₹32.40",
+        "₹30.00"
+      ],
+      "correct": "D",
+      "explanation": "NAV = (market value of investments + cash + accrued income - liabilities) / units outstanding = ₹1,50,00,000 / 5,00,000 = ₹30.",
+      "working": [
+        {
+          "label": "Investments at market value",
+          "value": "₹1,50,00,000"
+        },
+        {
+          "label": "Add cash",
+          "value": "₹10,00,000"
+        },
+        {
+          "label": "Add accrued income",
+          "value": "₹2,00,000"
+        },
+        {
+          "label": "Less accrued expenses",
+          "value": "₹12,00,000"
+        },
+        {
+          "label": "Net assets",
+          "value": "₹1,50,00,000"
+        },
+        {
+          "label": "NAV per unit",
+          "value": "₹30"
+        }
+      ],
+      "why_not": {
+        "C": "Forgot to deduct accrued expenses payable: 1,62,00,000 / 5,00,000.",
+        "A": "Left out cash balance from the net assets.",
+        "B": "Left out cash and accrued income, deducting only liabilities from the investments value."
+      },
+      "exam_tip": "NAV = net assets (all assets less all liabilities) divided by units. Include cash and accruals.",
+      "calculation": "assets = 15000000 + 1000000 + 200000\nliabilities = 1200000\nnet = assets - liabilities\nanswer = net / 500000",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 17\nPaper 2: Advanced Financial Management\nTopic: Mutual Funds - NAV per unit\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261107",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 14",
+      "paper_name": "Strategic Financial Management",
+      "topic": "Capital Budgeting - Profitability Index",
+      "question": "A project needs an outlay of ₹50,00,000 now. Cash inflows are ₹33,00,000 at the end of Year 1 and ₹48,40,000 at the end of Year 2. The cost of capital is 10% p.a. What is the profitability index (PV of inflows ÷ initial outlay)?",
+      "options": [
+        "1.40",
+        "0.71",
+        "0.40",
+        "1.63"
+      ],
+      "correct": "A",
+      "explanation": "PI = PV of inflows ÷ initial outlay. PV = 33,00,000/1.10 + 48,40,000/1.21 = 30,00,000 + 40,00,000 = ₹70,00,000. PI = 70,00,000 ÷ 50,00,000 = 1.40. PI above 1 means accept.",
+      "working": [
+        {
+          "label": "PV of Year 1 inflow (₹)",
+          "value": "30,00,000"
+        },
+        {
+          "label": "PV of Year 2 inflow (₹)",
+          "value": "40,00,000"
+        },
+        {
+          "label": "Total PV of inflows (₹)",
+          "value": "70,00,000"
+        },
+        {
+          "label": "Initial outlay (₹)",
+          "value": "50,00,000"
+        },
+        {
+          "label": "Profitability index",
+          "value": "1.40"
+        }
+      ],
+      "why_not": {
+        "C": "This is NPV ÷ outlay (20 ÷ 50); PI is PV of inflows ÷ outlay, not net of outlay.",
+        "D": "Uses undiscounted inflows (81,40,000 ÷ 50,00,000), ignoring time value of money.",
+        "B": "Inverts the ratio: outlay ÷ PV of inflows (50 ÷ 70)."
+      },
+      "exam_tip": "PI = 1 + NPV/Outlay. If NPV is positive, PI is above 1.",
+      "calculation": "pv1 = 3300000/1.10\npv2 = 4840000/1.10**2\nanswer = round((pv1+pv2)/5000000, 2)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 17\nPaper 14: Strategic Financial Management\nTopic: Capital Budgeting - Profitability Index\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261107",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

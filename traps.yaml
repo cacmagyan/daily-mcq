@@ -17,7 +17,7 @@
     (interest charged or credited, gross or net, inclusive or exclusive of GST), say which one.
 
 - papers: ["accounting"]
-  not: ["cost", "management", "corporate"]
+  not: ["cost", "management", "corporate", "advanced accounting"]
   text: >-
     Bank Reconciliation Statement: starting from the Pass Book balance instead of the Cash Book balance
     reverses EVERY adjustment, both timing items (cheques issued but not presented, cheques deposited
@@ -25,7 +25,7 @@
     Starting from an overdraft reverses the signs again.
 
 - papers: ["accounting"]
-  not: ["cost", "management"]
+  not: ["cost", "management", "advanced accounting", "corporate accounting"]
   text: >-
     Admission of a partner: sacrifice = old share minus new share. Premium for goodwill brought in by the
     new partner is credited to the sacrificing partners in their sacrificing ratio, not the new ratio. If the
@@ -68,3 +68,11 @@
     is void; the company and every officer in default are liable to a penalty up to the amount raised at a
     discount or Rs 5 lakh, whichever is less, and the company must refund the money with 12% interest a year.
     Never state imprisonment or a fine as a consequence unless you are certain it applies under the law today.
+
+- papers: ["advanced accounting"]
+  text: >-
+    Syllabus: CA Intermediate Paper 1 Advanced Accounting (ICAI new scheme) tests the Accounting Standards
+    (AS, not Ind AS; Ind AS belongs to CA Final), company financial statements under Schedule III, buy-back
+    of securities, amalgamation, internal reconstruction and branch accounts including foreign branches.
+    Partnership accounts (admission, retirement, death, goodwill), not-for-profit organisations, bank
+    reconciliation and other CA Foundation topics are NOT in this paper: never set a question on them here.

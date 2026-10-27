@@ -1,0 +1,394 @@
+{
+  "date": "2026-10-28",
+  "day": 7,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-27T19:30:06+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Logical Reasoning",
+      "topic": "Logical Reasoning: Direction Sense",
+      "question": "Meera starts from her house and walks 10 km north. She turns right and walks 6 km. She again turns right and walks 2 km. How far is she from her house, and in which direction from the house?",
+      "options": [
+        "10 km, north-east",
+        "14 km, north-east",
+        "10 km, south-east",
+        "8 km, north-east"
+      ],
+      "correct": "A",
+      "explanation": "House is origin. 10 km north gives (0, 10). Right turn is east: 6 km gives (6, 10). Right turn is south: 2 km gives (6, 8). Distance = √(6² + 8²) = 10 km, and she is north and east of the house.",
+      "working": [],
+      "why_not": {
+        "B": "Added 6 + 8 as the distance; the shortest distance is the hypotenuse, not the sum.",
+        "D": "Took only the net northward distance of 8 km and ignored the 6 km east.",
+        "C": "Misjudged the final position; she is still north of the house, not south."
+      },
+      "exam_tip": "Draw a quick x-y sketch: right of north is east, right of east is south. Then use Pythagoras.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: \"North-east\" is approximate, since the bearing is about 53° from north. It is the only option with a north-east direction and a distance of 10 km, so this causes no ambiguity.",
+        "Checker: The distractor B (14 km) is the sum 10+6−2, and D (8 km) is only the north displacement. Both are plausible and fine."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 7\nPaper 3: Quantitative Aptitude: Logical Reasoning\nTopic: Logical Reasoning: Direction Sense\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261028",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2A",
+      "paper_name": "Financial Accounting-2",
+      "topic": "Hire Purchase Accounting",
+      "question": "A machine of cash price ₹2,40,000 is bought on hire purchase on 1 April 2025. ₹60,000 is paid on signing; ₹1,00,000 is paid on 31 March 2026 and the rest later. Interest is 10% p.a. on the opening balance due. Interest for FY 2026-27 is:",
+      "options": [
+        "₹8,000",
+        "₹18,000",
+        "₹24,000",
+        "₹9,800"
+      ],
+      "correct": "D",
+      "explanation": "Interest accrues on the balance outstanding, including interest already added. Balance after the first instalment is ₹98,000, so FY 2026-27 interest is 10% of it, ₹9,800.",
+      "working": [
+        {
+          "label": "Cash price",
+          "value": "₹2,40,000"
+        },
+        {
+          "label": "Balance after down payment",
+          "value": "₹1,80,000"
+        },
+        {
+          "label": "Interest FY 2025-26 (10%)",
+          "value": "₹18,000"
+        },
+        {
+          "label": "Balance after 31 Mar 2026 payment",
+          "value": "₹98,000"
+        },
+        {
+          "label": "Interest FY 2026-27 (10%)",
+          "value": "₹9,800"
+        }
+      ],
+      "why_not": {
+        "B": "This is the first year's interest, on ₹1,80,000, not the second year's.",
+        "A": "Deducts the full instalment from ₹1,80,000 and forgets year-1 interest added to the balance.",
+        "C": "Applies 10% to the full cash price instead of the outstanding balance."
+      },
+      "exam_tip": "In hire purchase, interest runs on the balance due: add interest, then deduct the instalment, then find next year's interest.",
+      "calculation": "bal0 = 240000 - 60000\nint1 = bal0 * 0.10\nbal1 = bal0 + int1 - 100000\nanswer = bal1 * 0.10",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The question doesn't say that the 1,00,000 paid on 31 March 2026 includes interest. If it were read as a pure principal payment, the opening balance would be 80,000 and the interest 8,000 (option A). The standard hire purchase convention is that instalments include interest, so D stands, but this should be stated.",
+        "Checker: 'The rest later' is vague about how the final payment is made. It doesn't affect the answer, but it should be clarified.",
+        "Checker: The question doesn't say whether the 10% p.a. interest is on the cash price balance. This is implied, though."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 7\nPaper 2A: Financial Accounting-2\nTopic: Hire Purchase Accounting\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261028",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 3B",
+      "paper_name": "Goods and Services Tax",
+      "topic": "Value of Supply under GST",
+      "question": "Zed Traders (registered) sold goods to a registered buyer in the same State. Agreed price ₹2,00,000 (before discount); trade discount ₹10,000 shown on the invoice; packing charges ₹5,000 billed separately; interest ₹6,000 for late payment. GST is charged extra. Transaction value is?",
+      "options": [
+        "₹2,11,000",
+        "₹1,95,000",
+        "₹2,01,000",
+        "₹1,90,000"
+      ],
+      "correct": "C",
+      "explanation": "Transaction value includes incidental expenses like packing and interest or late fee for delayed payment. A discount given before or at supply and shown on the invoice is deducted. GST is excluded.",
+      "working": [
+        {
+          "label": "Agreed price",
+          "value": "₹2,00,000"
+        },
+        {
+          "label": "Less: invoice trade discount",
+          "value": "₹10,000"
+        },
+        {
+          "label": "Add: packing charges",
+          "value": "₹5,000"
+        },
+        {
+          "label": "Add: interest for late payment",
+          "value": "₹6,000"
+        },
+        {
+          "label": "Transaction value",
+          "value": "₹2,01,000"
+        }
+      ],
+      "why_not": {
+        "B": "Leaves out late payment interest, but it forms part of value of supply.",
+        "A": "Ignores the invoice discount, which is allowed as a deduction.",
+        "D": "Drops both packing and interest; both are includible in value."
+      },
+      "exam_tip": "Value = price + incidental costs + late fee/interest − eligible discount; GST itself is never included.",
+      "calculation": "price = 200000\ndiscount = 10000\npacking = 5000\ninterest = 6000\nanswer = price - discount + packing + interest",
+      "applicability": "CGST Act, 2017 as per ICAI applicability for next attempt",
+      "confidence": "high",
+      "reviewer_note": "The EOQ note was skipped because the paper is GST. The question tests value of supply, with no rates or thresholds.",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: The EOQ note was skipped because the paper is GST. The question tests value of supply, with no rates or thresholds.",
+        "Checker: Stem does not explicitly state the ₹6,000 late-payment interest was actually charged to and paid by the buyer; a student might treat it as a contingent or future amount and exclude it, giving ₹1,95,000 (B). Suggest: 'buyer paid late and was charged interest of ₹6,000'.",
+        "Checker: 'Billed separately' for packing could mislead some students into excluding it; better to say it was charged by the supplier to the buyer.",
+        "Second checker: Minor: the question doesn't say the discount was agreed before or at the time of supply. The words 'shown on the invoice' imply it, so this is only a wording point.",
+        "Second checker: Minor: the interest is clearly charged to the buyer by the supplier, but the wording could say so explicitly."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Economic Order Quantity (EOQ)",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 7\nPaper 3B: Goods and Services Tax\nTopic: Value of Supply under GST\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on CGST Act, 2017 as per ICAI applicability for next attempt.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261028",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 10",
+      "paper_name": "Corporate Accounting and Auditing (Corporate Accounting)",
+      "topic": "Forfeiture and Reissue of Shares",
+      "question": "A company issued 1,000 shares of ₹10 each at ₹12 (premium ₹2 received with allotment). All money except the final call of ₹4 per share was received. The shares were forfeited and 600 of them were reissued at ₹9 per share as fully paid. Capital reserve on reissue is:",
+      "options": [
+        "₹4,200",
+        "₹3,000",
+        "₹3,600",
+        "₹5,400"
+      ],
+      "correct": "B",
+      "explanation": "On forfeiture only share capital paid (₹10 − ₹4 = ₹6 per share) goes to Forfeited Shares A/c; premium stays. For 600 shares: ₹3,600. Reissue discount is 600 × ₹1 = ₹600. Capital reserve = ₹3,000.",
+      "working": [
+        {
+          "label": "Paid-up capital per share forfeited",
+          "value": "₹6"
+        },
+        {
+          "label": "Forfeiture balance for 600 shares",
+          "value": "₹3,600"
+        },
+        {
+          "label": "Discount on reissue (₹10 − ₹9) × 600",
+          "value": "₹600"
+        },
+        {
+          "label": "Capital reserve (3,600 − 600)",
+          "value": "₹3,000"
+        }
+      ],
+      "why_not": {
+        "C": "Forgets to deduct the discount allowed on reissue.",
+        "A": "Treats the ₹2 premium as forfeited too (₹8 per share) before the discount.",
+        "D": "Uses forfeiture on all 1,000 shares (₹6,000) instead of only the 600 reissued."
+      },
+      "exam_tip": "Premium already received is never forfeited; capital reserve = forfeiture on reissued shares − discount.",
+      "calculation": "paid_per_share = 10 - 4\nforfeit_600 = paid_per_share * 600\ndiscount = (10 - 9) * 600\nanswer = forfeit_600 - discount",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Wording 'issued at ₹12 (premium ₹2 received with allotment)' is slightly clumsy; it could say the premium was received in full.",
+        "Checker: Option A is a distractor that treats the premium as forfeited, which is incorrect when premium has been received.",
+        "Checker: Capital reserve is stated to be on reissue; the usual treatment also calls for stating that it is net of the discount."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 7\nPaper 10: Corporate Accounting and Auditing (Corporate Accounting)\nTopic: Forfeiture and Reissue of Shares\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261028",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 2",
+      "paper_name": "Advanced Financial Management",
+      "topic": "Foreign exchange - Interest rate parity",
+      "question": "The spot rate is ₹84 per USD. One-year risk-free rates are 10% per annum in India and 5% per annum in the USA. Using interest rate parity (annual compounding), what is the one-year forward rate per USD?",
+      "options": [
+        "₹88.00",
+        "₹92.40",
+        "₹88.20",
+        "₹80.18"
+      ],
+      "correct": "A",
+      "explanation": "Under interest rate parity, Forward = Spot × (1 + rate of home currency) / (1 + rate of foreign currency). So 84 × 1.10 / 1.05 = ₹88.00. The USD is at a forward premium as India's interest rate is higher.",
+      "working": [
+        {
+          "label": "Spot rate (₹/USD)",
+          "value": "84"
+        },
+        {
+          "label": "India factor (1 + 10%)",
+          "value": "1.10"
+        },
+        {
+          "label": "USA factor (1 + 5%)",
+          "value": "1.05"
+        },
+        {
+          "label": "Spot ÷ USA factor",
+          "value": "80"
+        },
+        {
+          "label": "Forward rate (₹/USD)",
+          "value": "88"
+        }
+      ],
+      "why_not": {
+        "C": "Used the shortcut 84 × (1 + 10% − 5%); this ignores dividing by the USA factor.",
+        "D": "Inverted the ratio: 84 × 1.05 / 1.10, treating the USD as the higher-rate currency.",
+        "B": "Only compounded spot at the Indian rate and ignored the USA interest rate."
+      },
+      "exam_tip": "Forward = Spot × (1 + i of the quoted currency) / (1 + i of the base currency). Higher-rate currency trades at a forward discount.",
+      "calculation": "spot = 84\nforward = spot * 1.10 / 1.05\nanswer = round(forward, 2)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 7\nPaper 2: Advanced Financial Management\nTopic: Foreign exchange - Interest rate parity\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261028",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 19",
+      "paper_name": "Indirect Tax Laws and Practice",
+      "topic": "GST - Value of Supply (Section 15)",
+      "question": "A registered manufacturer sells goods intra-State at a list price of ₹5,00,000. Invoice also shows packing charges ₹20,000, freight ₹10,000 and a pre-agreed trade discount of ₹30,000. Buyer paid late and was charged ₹5,000 as late payment charges. At 18% GST (CGST+SGST), total GST is:",
+      "options": [
+        "₹84,600",
+        "₹90,900",
+        "₹96,300",
+        "₹90,000"
+      ],
+      "correct": "B",
+      "explanation": "Transaction value includes incidental expenses (packing, freight) and charges for delayed payment. Trade discount allowed as per prior agreement and shown on invoice is excluded. Value ₹5,05,000; GST at 18% is ₹90,900.",
+      "working": [
+        {
+          "label": "List price",
+          "value": "₹5,00,000"
+        },
+        {
+          "label": "Add packing and freight",
+          "value": "₹30,000"
+        },
+        {
+          "label": "Add late payment charges",
+          "value": "₹5,000"
+        },
+        {
+          "label": "Less trade discount",
+          "value": "₹30,000"
+        },
+        {
+          "label": "Taxable value",
+          "value": "₹5,05,000"
+        },
+        {
+          "label": "GST at 18%",
+          "value": "₹90,900"
+        }
+      ],
+      "why_not": {
+        "D": "Left out late payment charges, which form part of value of supply.",
+        "C": "Ignored the trade discount, which is deductible, giving value ₹5,35,000.",
+        "A": "Excluded packing, freight and late charges and also deducted discount wrongly."
+      },
+      "exam_tip": "Value of supply: add incidental charges and late fees; deduct only pre-agreed, invoiced discount.",
+      "calculation": "value = 500000 + 20000 + 10000 + 5000 - 30000\nanswer = value * 0.18",
+      "applicability": "CGST Act, 2017 s.15 as amended up to 30 Nov 2025",
+      "confidence": "high",
+      "reviewer_note": "Rate 18% is given in the question. Discount treatment assumes it was agreed before or at supply and linked to invoice.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Rate 18% is given in the question. Discount treatment assumes it was agreed before or at supply and linked to invoice.",
+        "Checker: The question doesn't say whether the ₹5,000 late payment charge is inclusive or exclusive of GST. It should say it is exclusive of GST.",
+        "Checker: The late charge is raised after the invoice, but the question doesn't say how it is billed (for example, by a debit note). Saying that 'total GST' covers both the invoice and the late charge would remove any pull towards D.",
+        "Second checker: Minor: the question doesn't say the freight is charged to the buyer, though the invoice shows it. Freight is included only if the supplier is liable for it or charges it.",
+        "Second checker: Minor: the question doesn't say the trade discount is recorded in the agreement before or at the time of supply, though 'pre-agreed' implies it. The invoice-based condition is met because the discount is shown on the invoice."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 7\nPaper 19: Indirect Tax Laws and Practice\nTopic: GST - Value of Supply (Section 15)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on CGST Act, 2017 s.15 as amended up to 30 Nov 2025.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261028",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

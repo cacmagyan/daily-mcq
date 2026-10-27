@@ -1,0 +1,151 @@
+{
+  "kind": "concept",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 9",
+  "paper_name": "Operations Management and Strategic Management (Operations Management)",
+  "author": "Rahul kp",
+  "topic": "PERT Three Time Estimates",
+  "title": "PERT Time",
+  "title_highlight": "Estimates",
+  "hook": "three guesses, one time!",
+  "simple_words": "When activity time is uncertain, PERT takes three guesses and finds one weighted average time.",
+  "definitions": [
+    {
+      "term": "Optimistic (a), Pessimistic (b)",
+      "meaning": "a is the shortest time if all goes well. b is the longest time if almost everything goes wrong.",
+      "note": "a is the minimum, b is the maximum"
+    },
+    {
+      "term": "Most likely time (m)",
+      "meaning": "The time the activity usually takes under normal conditions. It is the most probable estimate.",
+      "note": "m gets the heavy weight of 4"
+    }
+  ],
+  "key_points": [
+    "PERT is used when activity times are ==uncertain==, such as in research or new projects.",
+    "Expected time (te) is a weighted average of a, m and b, using beta distribution weights.",
+    "Variance shows the uncertainty of an activity: a wider gap between b and a means higher variance.",
+    "Critical path is found using te values; !!project variance uses critical activities only!!."
+  ],
+  "formula_heading": "The PERT Formulas",
+  "formula_hook": "learn all three, score full",
+  "formulas": [
+    {
+      "name": "Expected time of an activity",
+      "lhs": "te",
+      "rhs": "",
+      "numerator": "a + 4m + b",
+      "denominator": "6",
+      "square_root": false,
+      "suffix": "",
+      "legend": "te = expected time; a = optimistic; m = most likely; b = pessimistic"
+    },
+    {
+      "name": "Variance of an activity",
+      "lhs": "σ²",
+      "rhs": "",
+      "numerator": "(b − a)²",
+      "denominator": "36",
+      "square_root": false,
+      "suffix": "",
+      "legend": "σ² = variance; b − a = range of estimates; 36 = 6 squared"
+    },
+    {
+      "name": "Probability of completion (Z value)",
+      "lhs": "Z",
+      "rhs": "",
+      "numerator": "Ts − Te",
+      "denominator": "√(Σσ² of critical path)",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Ts = scheduled time; Te = expected project time (critical path total); Σσ² = sum of critical activity variances"
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "insight": {
+    "punchline": "Variance adds, SD does not!",
+    "text": "Add the variances of critical activities, then take the square root to get the project standard deviation."
+  },
+  "trick_hook": "1-4-1 over 6",
+  "memory_trick": {
+    "mnemonic": "One-Four-One, Six is done",
+    "explanation": "Weights are 1 for a, 4 for m, 1 for b. They total 6, so divide by 6. Variance uses the gap (b − a) over 6, squared."
+  },
+  "steps": [
+    "Find te for every activity",
+    "Draw network, find critical path",
+    "Add te on critical path = Te",
+    "Find σ² of critical activities, add",
+    "Compute Z, read probability"
+  ],
+  "exam_tip": "In MCQs, first check whether the question asks for te, variance or standard deviation, then pick the matching formula.",
+  "doubt": {
+    "question": "Why is m multiplied by 4 and not a or b?",
+    "answer": "The most likely time is assumed to be the most probable value, so it gets more weight. a and b are rare extremes and get weight 1 each."
+  },
+  "mistakes_hook": "avoid these slips!",
+  "mistakes": [
+    {
+      "wrong": "Using (a + m + b) / 3 for expected time",
+      "right": "PERT uses te = (a + 4m + b) / 6. The simple average ignores the weights."
+    },
+    {
+      "wrong": "Writing variance as (b − a) / 6",
+      "right": "That is the standard deviation. Variance = [(b − a) / 6]²."
+    },
+    {
+      "wrong": "Adding variances of all activities for the project",
+      "right": "Add variances of ==critical path== activities only."
+    },
+    {
+      "wrong": "Adding standard deviations of critical activities",
+      "right": "Add the variances first, then take the square root for project standard deviation."
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "In the Z formula legend, the denominator is the square root of the sum of critical path variances. The square_root flag is false because the root is written in the denominator text only.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: In the Z formula legend, the denominator is the square root of the sum of critical path variances. The square_root flag is false because the root is written in the denominator text only."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.1,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.24,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.22,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟧 CMA Inter · Concept of the day\nPaper 9: Operations Management and Strategic Management (Operations Management)\nPERT Three Time Estimates\n\nIn simple words: When activity time is uncertain, PERT takes three guesses and finds one weighted average time.\n\nSwipe for the formula, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CMA Inter MCQ (3:25 PM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref concept-261028",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

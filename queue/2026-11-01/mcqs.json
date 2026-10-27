@@ -1,0 +1,398 @@
+{
+  "date": "2026-11-01",
+  "day": 11,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-28T00:00:48+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 4",
+      "paper_name": "Business Economics",
+      "topic": "Elasticity of Demand",
+      "question": "The demand function for a good is Q = 120 − 4P, where Q is quantity in units and P is price in ₹ per unit. What is the point price elasticity of demand (in absolute value) at P = ₹20?",
+      "options": [
+        "2",
+        "4",
+        "0.5",
+        "0.25"
+      ],
+      "correct": "A",
+      "explanation": "Point elasticity = (dQ/dP) × (P/Q). Slope dQ/dP = −4. At P = 20, Q = 120 − 80 = 40. So |e| = 4 × 20/40 = 2. Demand is elastic at this point.",
+      "working": [
+        {
+          "label": "Slope dQ/dP (absolute)",
+          "value": "4"
+        },
+        {
+          "label": "Q at P = 20",
+          "value": "40"
+        },
+        {
+          "label": "Ratio P/Q",
+          "value": "0.5"
+        },
+        {
+          "label": "Elasticity = 4 × 0.5",
+          "value": "2"
+        }
+      ],
+      "why_not": {
+        "C": "Used Q/P inverted ratio logic: took P/Q only and ignored the slope of 4.",
+        "B": "Took the slope alone as elasticity, forgetting to multiply by P/Q.",
+        "D": "Divided P/Q by the slope instead of multiplying: 0.5 ÷ 4 is wrong, giving 0.125-type error."
+      },
+      "exam_tip": "Point elasticity = slope × P/Q. Slope of the demand line alone is never elasticity.",
+      "calculation": "slope = 4\nq = 120 - 4*20\nanswer = slope * 20 / q",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Option D why_not wording: 0.25 may arise from (P/Q)/slope ×... check; minor.",
+      "attempts": 2,
+      "check_notes": [
+        "Switched to a new topic because the first one couldn't be verified",
+        "Writer: Option D why_not wording: 0.25 may arise from (P/Q)/slope ×... check; minor."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 11\nPaper 4: Business Economics\nTopic: Elasticity of Demand\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261101",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2A",
+      "paper_name": "Financial Accounting-2",
+      "topic": "Forfeiture and Reissue of Shares",
+      "question": "A company issued shares of ₹10 each at par. Holder of 800 shares paid only ₹4 per share (application) and defaulted on the rest; the shares were forfeited. Later 500 of them were reissued as fully paid at ₹8 per share. Capital reserve on reissue is:",
+      "options": [
+        "₹1,500",
+        "₹2,000",
+        "₹3,200",
+        "₹1,000"
+      ],
+      "correct": "D",
+      "explanation": "Forfeited amount is ₹4 per share. Discount on reissue is ₹10 − ₹8 = ₹2. Gain per share is ₹2, so for 500 reissued shares capital reserve is ₹1,000. Only the reissued shares' share of forfeiture is transferred.",
+      "working": [
+        {
+          "label": "Forfeited amount per share",
+          "value": "₹4"
+        },
+        {
+          "label": "Reissue discount per share",
+          "value": "₹2"
+        },
+        {
+          "label": "Gain per share",
+          "value": "₹2"
+        },
+        {
+          "label": "Shares reissued",
+          "value": "500"
+        },
+        {
+          "label": "Capital reserve",
+          "value": "₹1,000"
+        }
+      ],
+      "why_not": {
+        "B": "Takes full ₹4 per share on 500 shares and ignores the discount allowed on reissue.",
+        "C": "Uses all 800 shares' forfeited amount (₹4 × 800), not the reissued part net of discount.",
+        "A": "Wrongly takes ₹3 per share gain, mixing up discount or shares count."
+      },
+      "exam_tip": "Capital reserve = forfeited amount on reissued shares minus discount allowed on them. Never use unsold shares.",
+      "calculation": "forfeited = 4\ndiscount = 10 - 8\ngain = forfeited - discount\nanswer = gain * 500",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Option C (₹3,200) is the total forfeited amount on all 800 shares, a plausible distractor. Option B is the forfeited amount on 500 shares, also a plausible distractor.",
+        "Checker: Minor: the wording 'paid only ₹4 per share (application)' is slightly informal. It is clear enough that no premium or allotment money was received."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 11\nPaper 2A: Financial Accounting-2\nTopic: Forfeiture and Reissue of Shares\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261101",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 2",
+      "paper_name": "Corporate and Other Laws",
+      "topic": "Sale of Goods Act: Condition and Warranty",
+      "question": "Asha bought a specific used car from Bala, described in the contract as \"2022 model\". She took delivery, used it for four months, then found it was a 2021 model. The contract has no term on this point. What is Asha's legal position?",
+      "options": [
+        "She may only treat the breach as a breach of warranty and claim damages",
+        "The contract is void because of mutual mistake about the model year",
+        "She may reject the car and recover the full price paid",
+        "She has no remedy because of the rule of caveat emptor"
+      ],
+      "correct": "A",
+      "explanation": "Description of goods is a condition. But once the buyer has accepted the goods in a non-severable contract, the breach of condition can only be treated as a breach of warranty, unless the contract says otherwise. So only damages are available.",
+      "working": [],
+      "why_not": {
+        "C": "Right to repudiate is lost once the buyer accepts the goods; she overlooks acceptance by use.",
+        "B": "Wrong description by seller is not a mutual mistake; the contract stays valid.",
+        "D": "Caveat emptor does not protect a seller who sells goods that do not match the description."
+      },
+      "exam_tip": "Condition breached + goods accepted (non-severable contract) = treat as warranty breach: damages only, no rejection.",
+      "calculation": "",
+      "applicability": "Sale of Goods Act, 1930 – condition vs warranty",
+      "confidence": "high",
+      "reviewer_note": "Based on Sale of Goods Act s.13(2) (breach of condition treated as breach of warranty after acceptance); no section number used in text.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Based on Sale of Goods Act s.13(2) (breach of condition treated as breach of warranty after acceptance); no section number used in text.",
+        "Checker: \"The contract has no term on this point\" is unclear. It could be read as no express term on the model year, which seems to clash with the \"2022 model\" description. It is probably meant to say the contract does not exclude the s.13(2) rule, and it should say that directly.",
+        "Checker: The question doesn't say whether Asha could reasonably have checked the model year at delivery (for example from the registration papers). That would help settle that she accepted the car, though four months of use and passing of ownership already support the key."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 11\nPaper 2: Corporate and Other Laws\nTopic: Sale of Goods Act: Condition and Warranty\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Sale of Goods Act, 1930 – condition vs warranty.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261101",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 8",
+      "paper_name": "Cost Accounting",
+      "topic": "Process Costing: Abnormal Loss",
+      "question": "Process X: 10,000 units input; material ₹4,01,000, conversion ₹2,12,500. Normal loss 1,000 units (scrap ₹5/unit). Output 7,500 units; closing WIP 1,000 (materials 100%, conversion 50%); abnormal loss 500 units (fully worked). Net cost of abnormal loss, after its scrap value, is:",
+      "options": [
+        "₹19,500",
+        "₹34,500",
+        "₹32,000",
+        "₹25,750"
+      ],
+      "correct": "C",
+      "explanation": "Normal loss scrap reduces material cost. Equivalent units: materials 9,000; conversion 8,500. Abnormal loss is valued at full cost per unit (₹69), then its scrap value of ₹5 per unit is deducted.",
+      "working": [
+        {
+          "label": "Net material cost (4,01,000 − 5,000)",
+          "value": "₹3,96,000"
+        },
+        {
+          "label": "Material cost per equivalent unit",
+          "value": "₹44"
+        },
+        {
+          "label": "Conversion cost per equivalent unit",
+          "value": "₹25"
+        },
+        {
+          "label": "Abnormal loss cost (500 × ₹69)",
+          "value": "₹34,500"
+        },
+        {
+          "label": "Less scrap value (500 × ₹5)",
+          "value": "₹2,500"
+        },
+        {
+          "label": "Net cost of abnormal loss",
+          "value": "₹32,000"
+        }
+      ],
+      "why_not": {
+        "B": "Forgot to deduct the scrap value of abnormal loss units.",
+        "D": "Treated abnormal loss as only 50% complete for conversion cost.",
+        "A": "Counted only material cost of abnormal loss and ignored conversion cost."
+      },
+      "exam_tip": "Normal loss scrap lowers the pool; abnormal loss is costed like good units, then credited with its own scrap value.",
+      "calculation": "mat = (401000 - 1000*5)/(7500+1000+500)\nconv = 212500/(7500+1000*0.5+500)\nanswer = 500*(mat+conv) - 500*5",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Assumes abnormal loss is 100% complete for materials and conversion, stated in the question.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Assumes abnormal loss is 100% complete for materials and conversion, stated in the question.",
+        "Checker: The question doesn't say that normal-loss scrap is credited against material cost. This is the standard treatment, and the alternative treatments are unlikely to be used.",
+        "Checker: Option B (₹34,500) is the gross cost of abnormal loss, which is a plausible distractor. The wording \"after its scrap value\" makes it clear that B is not the answer."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 11\nPaper 8: Cost Accounting\nTopic: Process Costing: Abnormal Loss\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261101",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 1",
+      "paper_name": "Financial Reporting",
+      "topic": "Ind AS 36 - CGU impairment allocation",
+      "question": "Under Ind AS 36, a CGU has goodwill ₹20 lakh, plant ₹60 lakh and building ₹40 lakh. Its recoverable amount is ₹90 lakh. Plant's fair value less costs of disposal is ₹57 lakh (value in use not determinable). Carrying amount of building after impairment?",
+      "options": [
+        "₹30,00,000",
+        "₹33,00,000",
+        "₹36,00,000",
+        "₹37,00,000"
+      ],
+      "correct": "B",
+      "explanation": "Loss ₹30 lakh. Goodwill absorbs ₹20 lakh. Balance ₹10 lakh goes pro rata: plant ₹6 lakh, building ₹4 lakh. Plant cannot fall below ₹57 lakh, so only ₹3 lakh; excess ₹3 lakh goes to building. Building loss ₹7 lakh.",
+      "working": [
+        {
+          "label": "Total carrying amount (₹ lakh)",
+          "value": "120"
+        },
+        {
+          "label": "Impairment loss (₹ lakh)",
+          "value": "30"
+        },
+        {
+          "label": "Balance after goodwill (₹ lakh)",
+          "value": "10"
+        },
+        {
+          "label": "Building share pro rata (₹ lakh)",
+          "value": "4"
+        },
+        {
+          "label": "Plant excess reallocated (₹ lakh)",
+          "value": "3"
+        },
+        {
+          "label": "Building carrying amount (₹ lakh)",
+          "value": "33"
+        }
+      ],
+      "why_not": {
+        "C": "Ignored the floor on plant; did not reallocate the excess loss to building.",
+        "A": "Spread whole loss pro rata including goodwill instead of writing off goodwill first.",
+        "D": "Reduced building by only the reallocated ₹3 lakh and forgot its own pro rata share."
+      },
+      "exam_tip": "Ind AS 36 order: goodwill first, then pro rata; no asset below its FVLCD, VIU or zero; reallocate the excess.",
+      "calculation": "total = 6000000+4000000+2000000\nloss = total - 9000000\nrem = loss - 2000000\nbshare = rem*4000000/(6000000+4000000)\nplantmax = 6000000 - 5700000\nplantshare = rem*6000000/10000000\nexcess = plantshare - plantmax\nanswer = 4000000 - bshare - excess",
+      "applicability": "Ind AS 36 Impairment of Assets",
+      "confidence": "high",
+      "reviewer_note": "Reallocation of excess loss is pro rata to other assets; only building remains, so it takes all of it.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Reallocation of excess loss is pro rata to other assets; only building remains, so it takes all of it."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟪 CA Final · MCQ of the day · Day 11\nPaper 1: Financial Reporting\nTopic: Ind AS 36 - CGU impairment allocation\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Ind AS 36 Impairment of Assets.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261101",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 18",
+      "paper_name": "Corporate Financial Reporting",
+      "topic": "Ind AS 33 - EPS with Rights Issue",
+      "question": "FY 2026-27: 10,00,000 equity shares at 1 April 2026. On 1 October 2026 a 1-for-4 rights issue at ₹60 was made; fair value just before exercise was ₹110. Profit for equity holders ₹1,41,00,000. Basic EPS under Ind AS 33 is:",
+      "options": [
+        "₹12.53",
+        "₹12.00",
+        "₹11.39",
+        "₹11.28"
+      ],
+      "correct": "B",
+      "explanation": "Rights issue has a bonus element. TERP = ₹100, so the factor is 110/100 = 1.10. Pre-issue shares are weighted at 1.10 for 6 months; all shares for 6 months. Weighted shares 11,75,000; EPS = ₹12.00.",
+      "working": [
+        {
+          "label": "Rights shares (1 for 4)",
+          "value": "2,50,000"
+        },
+        {
+          "label": "TERP (₹)",
+          "value": "100"
+        },
+        {
+          "label": "Bonus factor",
+          "value": "1.10"
+        },
+        {
+          "label": "Pre-issue part: 10,00,000×1.10×6/12",
+          "value": "5,50,000"
+        },
+        {
+          "label": "Post-issue part: 12,50,000×6/12",
+          "value": "6,25,000"
+        },
+        {
+          "label": "EPS (₹) = 1,41,00,000/11,75,000",
+          "value": "12.00"
+        }
+      ],
+      "why_not": {
+        "A": "Ignored the bonus element; simple time-weighting of 11,25,000 shares.",
+        "D": "Used all 12,50,000 shares for the full year, ignoring the issue date.",
+        "C": "Applied the bonus factor to the rights shares as well as the old shares."
+      },
+      "exam_tip": "Rights issue: TERP first, factor = FV before ÷ TERP, apply only to shares outstanding before the issue.",
+      "calculation": "terp = (4*110+60)/5\nfactor = 110/terp\nw = 1000000*factor*6/12 + 1250000*6/12\nanswer = 14100000/w",
+      "applicability": "Ind AS 33 Earnings per Share",
+      "confidence": "high",
+      "reviewer_note": "Option D is approx 11.39 (1,41,00,000/12,37,500 = 11.39).",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Option D is approx 11.39 (1,41,00,000/12,37,500 = 11.39)."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 11\nPaper 18: Corporate Financial Reporting\nTopic: Ind AS 33 - EPS with Rights Issue\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Ind AS 33 Earnings per Share.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261101",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

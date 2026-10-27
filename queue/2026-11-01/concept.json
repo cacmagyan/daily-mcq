@@ -1,0 +1,148 @@
+{
+  "kind": "concept",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 2B",
+  "paper_name": "Statutory Compliance",
+  "author": "Rahul kp",
+  "topic": "Ordinary vs Special Resolution",
+  "title": "Ordinary vs",
+  "title_highlight": "Special Resolution",
+  "hook": "count the votes, not the members!",
+  "simple_words": "Ordinary needs more votes for than against. Special needs for-votes at least three times the against-votes.",
+  "definitions": [
+    {
+      "term": "Ordinary Resolution",
+      "meaning": "Passed when votes cast in favour are ==more than== votes cast against, by members voting in person, by proxy or electronically.",
+      "note": "Simple majority of votes cast"
+    },
+    {
+      "term": "Special Resolution",
+      "meaning": "Passed when votes in favour are ==at least three times== the votes against, and the notice states the intention to propose it as special.",
+      "note": "Think 3 : 1 at least"
+    }
+  ],
+  "key_points": [
+    "Only votes actually cast are counted; !!abstentions and absentees are ignored!!",
+    "Special resolution majority is 3 times the votes against, not 75% of all members",
+    "Matters of routine business usually need an ordinary resolution",
+    "Fundamental changes, like altering the articles, need a special resolution"
+  ],
+  "formula_heading": "The Comparison Table",
+  "formula_hook": "same meeting, different majority",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Ordinary",
+      "Special"
+    ],
+    "rows": [
+      [
+        "Votes needed",
+        "For is more than against",
+        "For is at least 3 times against"
+      ],
+      [
+        "Notice",
+        "Normal notice of meeting",
+        "Must state intent to propose as special"
+      ],
+      [
+        "Typical matter",
+        "Declaring dividend on recommendation",
+        "Altering articles of association"
+      ]
+    ]
+  },
+  "insight": {
+    "punchline": "Compare For with Against only!",
+    "text": "Both majorities are measured on votes cast, so non-voters never change the result."
+  },
+  "trick_hook": "O = Over, S = Same times three",
+  "memory_trick": {
+    "mnemonic": "Ordinary: One more. Special: Thrice",
+    "explanation": "Ordinary needs just one more vote for than against. Special needs for-votes to be three times against-votes."
+  },
+  "steps": [
+    "Read the matter to be decided",
+    "Check the Act: ordinary or special?",
+    "Count votes cast for and against",
+    "Apply: For > Against, or For ≥ 3 × Against",
+    "State the result clearly"
+  ],
+  "exam_tip": "In MCQs, if the option says majority of members present or on roll, it is wrong. The test is votes cast.",
+  "doubt": {
+    "question": "Are abstaining members counted as against?",
+    "answer": "No. Abstaining members do not cast a vote, so they are in neither the for nor the against count."
+  },
+  "mistakes_hook": "three-fourths trap ahead!",
+  "mistakes": [
+    {
+      "wrong": "Special resolution needs 75% of all members on the register",
+      "right": "For-votes must be at least three times the against-votes, counted among votes cast."
+    },
+    {
+      "wrong": "Ordinary resolution needs more than 50% of total members",
+      "right": "It needs only more votes for than against among votes cast."
+    },
+    {
+      "wrong": "Abstention is treated as a vote against",
+      "right": "Abstention is not a vote; it is left out of both counts."
+    },
+    {
+      "wrong": "Notice need not mention that a resolution is special",
+      "right": "The notice must state the intention to propose the resolution as a special resolution."
+    }
+  ],
+  "applicability": "Companies Act 2013 as per ICMAI CAT material",
+  "confidence": "high",
+  "reviewer_note": "Dividend and articles examples are standard; confirm they match the ICMAI material's classification. No section numbers used.",
+  "law_sensitive": true,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Dividend and articles examples are standard; confirm they match the ICMAI material's classification. No section numbers used.",
+    "Checker 1: Definition 1 (Ordinary Resolution): this leaves out parts of Section 114(1) of the Companies Act, 2013. The correct version is: votes cast in favour, including the chairman's casting vote if any, by members entitled to vote and voting on a show of hands, electronically or on a poll, in person or by proxy or by postal ballot, are more than the votes cast against. Add the casting vote and postal ballot.",
+    "Checker 1: Definition 2 (Special Resolution): add the third condition in Section 114(2). The intention is stated in the notice, the notice is duly given, AND the votes in favour (cast the same ways, including postal ballot) are at least three times the votes against.",
+    "Checker 1: trick_hook 'O = Over, S = Same times three': 'Same times three' makes no clear sense and does not match the memory trick that follows. Use something like 'O = One more, S = Simply three times (For ≥ 3 × Against)'.",
+    "Checker 1: Memory trick explanation 'just one more vote': on a poll, votes are counted by voting rights (shares), not by heads. Reword to 'votes in favour must exceed votes against (even by one vote)'.",
+    "Checker 1: Insight text 'non-voters never change the result': members who are present still count towards quorum, even if they don't vote. Qualify it to say they don't affect the majority count.",
+    "Checker 2: Memory trick 'O = Over, S = Same times three' is unclear. 'Same times three' does not say what is multiplied. Better: 'O = Over (For > Against); S = Smash it, For ≥ 3 × Against'.",
+    "Checker 2: Memory trick explanation 'Ordinary needs just one more vote' could be read as exactly one extra vote. Better: 'For-votes only need to exceed against-votes (even by one)'.",
+    "Checker 2: Definition 1 lists the modes of voting as in person, by proxy or electronically. Section 114 also covers postal ballot, and only members entitled to vote count. Better: 'members entitled to vote, in person, by proxy, by postal ballot or by electronic voting'."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.02,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.16,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.22,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 2B: Statutory Compliance\nOrdinary vs Special Resolution\n\nIn simple words: Ordinary needs more votes for than against. Special needs for-votes at least three times the against-votes.\n\nSwipe for the summary table, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CMA CAT MCQ (9:55 AM) tests this concept.\n\nBased on Companies Act 2013 as per ICMAI CAT material.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept-261101",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

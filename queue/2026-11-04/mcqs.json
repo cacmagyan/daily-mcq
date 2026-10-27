@@ -1,0 +1,294 @@
+{
+  "date": "2026-11-04",
+  "day": 14,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-28T00:12:54+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Logical Reasoning",
+      "topic": "Logical Reasoning: Blood Relations",
+      "question": "Pointing to a man, Rekha says, \"His mother is the only daughter of my mother's father.\" How is the man related to Rekha?",
+      "options": [
+        "Maternal cousin",
+        "Brother",
+        "Maternal uncle",
+        "Nephew"
+      ],
+      "correct": "B",
+      "explanation": "Rekha's mother's father has only one daughter, and she is Rekha's own mother. So the man's mother is Rekha's mother, which makes the man Rekha's brother.",
+      "working": [],
+      "why_not": {
+        "A": "Treats the daughter as Rekha's mother's sister; 'only daughter' rules this out.",
+        "C": "Confuses the generation; a maternal uncle is the son of Rekha's mother's father.",
+        "D": "Moves the man one generation down; he is of Rekha's own generation."
+      },
+      "exam_tip": "'Only daughter of my mother's father' means your own mother. Resolve such phrases first, then read the relation.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 14\nPaper 3: Quantitative Aptitude: Logical Reasoning\nTopic: Logical Reasoning: Blood Relations\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261104",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1B",
+      "paper_name": "Applied Business and Industrial Laws",
+      "topic": "Contract Act - Minor's Agreement",
+      "question": "Aman, aged 17, borrowed ₹50,000 from Ram and signed a promissory note. On turning 18, Aman signed a fresh writing promising to repay, but Ram gave no new consideration. Ram sues Aman. What is the legal position?",
+      "options": [
+        "Agreement void ab initio; later ratification has no effect",
+        "Agreement valid, as the new promise is in writing",
+        "Agreement valid, as the money benefited Aman",
+        "Agreement voidable; Aman's ratification makes it binding"
+      ],
+      "correct": "A",
+      "explanation": "A minor's agreement is void ab initio (Mohori Bibee v. Dharmodas Ghose). A minor cannot ratify it on majority, and a fresh promise without fresh consideration is void under s.25. Ram cannot recover.",
+      "working": [],
+      "why_not": {
+        "D": "Confuses minor's agreement with voidable contracts; it is void, not voidable.",
+        "C": "Benefit to the minor does not validate a loan; only necessaries are recoverable from property.",
+        "B": "Writing does not supply consideration; the earlier void agreement cannot support it."
+      },
+      "exam_tip": "Minor's agreement: void ab initio, no estoppel, no ratification. Only necessaries are charged on his property.",
+      "calculation": "",
+      "applicability": "Indian Contract Act, 1872; Mohori Bibee case",
+      "confidence": "high",
+      "reviewer_note": "Section 25 reference is for agreement without consideration being void; verify if you want to keep the number.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Section 25 reference is for agreement without consideration being void; verify if you want to keep the number."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 14\nPaper 1B: Applied Business and Industrial Laws\nTopic: Contract Act - Minor's Agreement\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Indian Contract Act, 1872; Mohori Bibee case.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261104",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 5",
+      "paper_name": "Auditing and Ethics",
+      "topic": "SA 505 External Confirmations",
+      "question": "Under SA 505, management refuses to let the auditor send a confirmation request to a debtor. The auditor finds the refusal unreasonable. What should the auditor do first?",
+      "options": [
+        "Issue an adverse opinion at once",
+        "Evaluate the implications for risk assessment and consider alternative procedures",
+        "Send the request without informing management",
+        "Accept the refusal and rely on the debtor's ledger balance"
+      ],
+      "correct": "B",
+      "explanation": "If management's refusal is unreasonable, the auditor evaluates its implications for risks of fraud, risk assessment and nature, timing and extent of other procedures, and performs alternative procedures. Where evidence stays insufficient, modification follows.",
+      "working": [],
+      "why_not": {
+        "D": "Ignores that an unreasonable refusal is a red flag; ledger is internal evidence only",
+        "C": "Auditor does not bypass management; the refusal must first be evaluated and communicated",
+        "A": "Modification comes only if alternative procedures fail to give sufficient evidence"
+      },
+      "exam_tip": "Unreasonable refusal: communicate with TCWG, evaluate, do alternatives; modify opinion only if evidence stays insufficient.",
+      "calculation": "",
+      "applicability": "SA 505, External Confirmations (ICAI)",
+      "confidence": "high",
+      "reviewer_note": "Standard SA 505 para on management refusal; also requires communication with those charged with governance.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Standard SA 505 para on management refusal; also requires communication with those charged with governance.",
+        "Checker: The stem says the auditor has already found the refusal unreasonable. That brings in SA 505 para 9: communicate with TCWG (SA 260) and decide the effect on the opinion (SA 705). No option covers this. Option B describes the para 8 steps, which come before the auditor reaches that conclusion. The stem's order of events does not match the key.",
+        "Checker: 'First' is imprecise. Under para 8(a), the first step is to ask about management's reasons and seek evidence of whether they are valid. Option B leaves this out."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 14\nPaper 5: Auditing and Ethics\nTopic: SA 505 External Confirmations\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on SA 505, External Confirmations (ICAI).\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261104",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 5",
+      "paper_name": "Business Laws and Ethics",
+      "topic": "Offer vs Invitation to Offer",
+      "question": "A publisher's catalogue lists a law dictionary at ₹900. Meena posts a letter saying, \"I accept your offer to sell the dictionary at ₹900.\" The publisher refuses to supply. What is the legal position?",
+      "options": [
+        "Contract formed once the letter was posted",
+        "Contract formed, as Meena accepted the catalogue offer",
+        "No contract; a catalogue price can never be accepted by anyone",
+        "No contract; catalogue is an invitation and Meena's letter is only an offer"
+      ],
+      "correct": "D",
+      "explanation": "A catalogue is an invitation to offer. Meena's letter is therefore the offer. No contract arises until the publisher accepts it, so the publisher may refuse.",
+      "working": [],
+      "why_not": {
+        "B": "Treats the catalogue as an offer; it only invites offers.",
+        "A": "Applies the postal rule to an acceptance, but there was no offer to accept.",
+        "C": "Overstates: the buyer's response is an offer, which the seller may accept."
+      },
+      "exam_tip": "Catalogue, price tag, price list, tender notice: invitation. The customer's response is the offer.",
+      "calculation": "",
+      "applicability": "Indian Contract Act, 1872 (offer and invitation)",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept": "Offer vs Invitation to Offer",
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 14\nPaper 5: Business Laws and Ethics\nTopic: Offer vs Invitation to Offer\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Indian Contract Act, 1872 (offer and invitation).\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261104",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 4",
+      "paper_name": "Direct Tax Laws and International Taxation",
+      "topic": "Capital Gains - Section 50C",
+      "question": "Asha sold land (a capital asset) to Ravi. Agreement dated 10 January 2026 fixed price ₹50 lakh; ₹5 lakh was received that day by account payee cheque. Registration was on 20 October 2026. Stamp duty value: ₹80 lakh on 10 January 2026, ₹90 lakh on 20 October 2026. Full value of consideration for Asha?",
+      "options": [
+        "₹80,00,000",
+        "₹85,00,000",
+        "₹90,00,000",
+        "₹50,00,000"
+      ],
+      "correct": "A",
+      "explanation": "Where the price is fixed on the agreement date and part payment is received by non-cash (banking) mode on or before that date, the stamp duty value on the agreement date is adopted under section 50C. So ₹80 lakh applies.",
+      "working": [
+        {
+          "label": "Agreement price",
+          "value": "₹50,00,000"
+        },
+        {
+          "label": "Stamp value on agreement date",
+          "value": "₹80,00,000"
+        },
+        {
+          "label": "Stamp value on registration date",
+          "value": "₹90,00,000"
+        },
+        {
+          "label": "Value adopted (agreement date)",
+          "value": "₹80,00,000"
+        }
+      ],
+      "why_not": {
+        "D": "Ignores section 50C; actual price is used only when it is not lower than stamp value.",
+        "C": "Uses registration-date value, but the agreement-date value is allowed given the bank advance.",
+        "B": "Averages the two stamp values; the Act has no such averaging."
+      },
+      "exam_tip": "Section 50C: agreement-date stamp value if part payment is by banking mode on or before that date.",
+      "calculation": "agreement_date_value = 8000000\nanswer = agreement_date_value",
+      "applicability": "Income-tax Act, 1961 - A.Y. 2026-27",
+      "confidence": "high",
+      "reviewer_note": "Large gap chosen so any tolerance band does not matter. Section 50C proviso on agreement date and banking-mode payment.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Large gap chosen so any tolerance band does not matter. Section 50C proviso on agreement date and banking-mode payment.",
+        "Checker: Registration/transfer on 20 Oct 2026 falls in P.Y. 2026-27 (A.Y. 2027-28), which is governed by the Income-tax Act, 2025, not the stated law basis of A.Y. 2026-27 under the 1961 Act. The equivalent provision (believed to be s.78 of the 2025 Act) gives the same answer, so the key is unaffected. Dates should be moved into F.Y. 2025-26.",
+        "Checker: The question does not say whether possession was handed over (s.2(47)(v)). This does not affect the answer.",
+        "Second checker: The question doesn't say whether the land is a capital asset held as such. It does say 'capital asset', so this is fine.",
+        "Second checker: Option B (₹85 lakh) is the average of 80 and 90, which makes it a weak distractor.",
+        "Second checker: The wording is minor polish only. The ₹5 lakh cheque and the date-of-agreement rule are clearly set out."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 14\nPaper 4: Direct Tax Laws and International Taxation\nTopic: Capital Gains - Section 50C\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961 - A.Y. 2026-27.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261104",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 17",
+      "paper_name": "Cost and Management Audit",
+      "topic": "Cost Audit - Appointment and Remuneration",
+      "question": "A company must get its cost records audited under Section 148 of the Companies Act, 2013. The Board appoints the cost auditor. How is the cost auditor's remuneration finally approved?",
+      "options": [
+        "Members approve it by a special resolution",
+        "Board fixes it; no further approval is needed",
+        "Members ratify it by an ordinary resolution",
+        "Central Government fixes it by an order"
+      ],
+      "correct": "C",
+      "explanation": "The Board appoints the cost auditor on the Audit Committee's recommendation. The remuneration must then be ratified by the members, and an ordinary resolution is enough.",
+      "working": [],
+      "why_not": {
+        "B": "Board's decision alone is not final; the Act requires ratification by members.",
+        "A": "Confuses it with matters needing a special resolution; an ordinary resolution suffices.",
+        "D": "Central Government orders the cost audit but does not fix the auditor's fee."
+      },
+      "exam_tip": "Cost auditor: Board appoints, members ratify the fee by ordinary resolution.",
+      "calculation": "",
+      "applicability": "Companies Act, 2013 s.148; Cost Records and Audit Rules",
+      "confidence": "high",
+      "reviewer_note": "Confirm ordinary resolution requirement under the Companies (Cost Records and Audit) Rules, 2014.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Confirm ordinary resolution requirement under the Companies (Cost Records and Audit) Rules, 2014."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 14\nPaper 17: Cost and Management Audit\nTopic: Cost Audit - Appointment and Remuneration\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013 s.148; Cost Records and Audit Rules.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261104",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

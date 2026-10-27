@@ -1,0 +1,149 @@
+{
+  "kind": "concept",
+  "course_id": "ca_final",
+  "paper_code": "Paper 5",
+  "paper_name": "Indirect Tax Laws",
+  "author": "Rahul kp",
+  "topic": "Composite vs Mixed Supply (CGST)",
+  "title": "Composite vs",
+  "title_highlight": "Mixed Supply",
+  "hook": "bundle: natural or forced?",
+  "simple_words": "If items naturally go together, tax follows the main item. If they are just packed together, tax follows the highest-taxed item.",
+  "definitions": [
+    {
+      "term": "Composite supply",
+      "meaning": "A supply by a taxable person to a recipient of two or more taxable supplies that are naturally bundled and supplied together in the ordinary course of business, one being the principal supply.",
+      "note": "Natural bundling is the test"
+    },
+    {
+      "term": "Mixed supply",
+      "meaning": "Two or more individual supplies made together for a single price, which are not naturally bundled (not a composite supply). Single price alone does not make it mixed.",
+      "note": "Check natural bundling first"
+    }
+  ],
+  "key_points": [
+    "Section 8(a) CGST: ==composite supply== is taxed as the ==principal supply==.",
+    "Section 8(b) CGST: ==mixed supply== is taxed as the supply with the highest rate of tax.",
+    "Composite supply needs natural bundling in the ordinary course of business.",
+    "!!Single price is necessary for mixed supply, but it does not decide the type!!"
+  ],
+  "formula_heading": "The 2-Way Comparison",
+  "formula_hook": "same box, different tax!",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Composite",
+      "Mixed"
+    ],
+    "rows": [
+      [
+        "Natural bundling",
+        "Yes",
+        "No"
+      ],
+      [
+        "Principal supply",
+        "Exists",
+        "Does not exist"
+      ],
+      [
+        "Tax treatment",
+        "Rate of principal supply",
+        "Highest-rate supply"
+      ],
+      [
+        "Governing clause",
+        "Section 8(a)",
+        "Section 8(b)"
+      ]
+    ]
+  },
+  "insight": {
+    "punchline": "Bundling decides, not the price!",
+    "text": "Ask first if the supplies are naturally bundled; only then look at the price and the tax treatment."
+  },
+  "trick_hook": "picture the gift box",
+  "memory_trick": {
+    "mnemonic": "Natural = Principal; Packed = Peak",
+    "explanation": "Naturally bundled goes with the Principal supply. Merely packed together takes the Peak (highest) rate."
+  },
+  "steps": [
+    "Identify all supplies together",
+    "Check natural bundling",
+    "If yes: find the principal supply",
+    "If no: pick the highest-rate supply",
+    "Apply Section 8 treatment"
+  ],
+  "exam_tip": "Write the test in words: naturally bundled in the ordinary course of business. Then name Section 8(a) or 8(b).",
+  "doubt": {
+    "question": "Single price is there, so is it always mixed supply?",
+    "answer": "No. A composite supply can also be at one price. Check natural bundling first; if it is bundled naturally, it is composite."
+  },
+  "mistakes_hook": "don't pack the wrong box",
+  "mistakes": [
+    {
+      "wrong": "Mixed supply is taxed at the principal supply rate",
+      "right": "Mixed supply is taxed as the supply with the highest rate of tax."
+    },
+    {
+      "wrong": "Composite supply is taxed at the highest rate",
+      "right": "Composite supply is taxed as the principal supply."
+    },
+    {
+      "wrong": "Single price means mixed supply",
+      "right": "Single price is necessary but not decisive; if naturally bundled, it is composite."
+    },
+    {
+      "wrong": "Any combo sold together is composite",
+      "right": "It is composite only if naturally bundled in the ordinary course of business."
+    }
+  ],
+  "applicability": "CGST Act, 2017: Sections 2(30), 2(74), 8",
+  "confidence": "high",
+  "reviewer_note": "Check that the definitions match Sections 2(30) and 2(74) wording and that Section 8(a)/(b) mapping is right for the applicable attempt.",
+  "law_sensitive": true,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Check that the definitions match Sections 2(30) and 2(74) wording and that Section 8(a)/(b) mapping is right for the applicable attempt.",
+    "Checker 1: Steps 3–4 (and simple_words): 'If no: pick the highest-rate supply' skips the single-price test. Correct version: 'If not naturally bundled, check whether the supplies are made together for a single price. If yes, it is a mixed supply taxed at the highest rate (Section 8(b)). If no, tax each supply separately at its own rate.' simple_words should also say 'packed together for a single price', not 'just packed together'.",
+    "Checker 1: Mistake 3 right: 'Single price is necessary but not decisive' could be read as applying to composite supply too. Reword: 'A single price is a necessary condition only for mixed supply and is not decisive. A composite supply can also be at a single price. If the supplies are naturally bundled, it is composite.'",
+    "Checker 1: Definition 2 (Mixed supply): leaves out 'by a taxable person' and 'goods or services, or any combination thereof' from Section 2(74). Suggested wording: 'Two or more individual supplies of goods or services, or any combination thereof, made in conjunction with each other by a taxable person for a single price, where such supply does not constitute a composite supply.'",
+    "Checker 1: Definition 1 / key points: the note could cite the definition sections, Section 2(30) for composite supply and Section 2(74) for mixed supply, alongside Section 8."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 0.98,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.16,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.22,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟪 CA Final · Concept of the day\nPaper 5: Indirect Tax Laws\nComposite vs Mixed Supply (CGST)\n\nIn simple words: If items naturally go together, tax follows the main item. If they are just packed together, tax follows the highest-taxed item.\n\nSwipe for the summary table, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CA Final MCQ (6:25 PM) tests this concept.\n\nBased on CGST Act, 2017: Sections 2(30), 2(74), 8.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFinal #ICAI #CAStudents #IndAS\n\nref concept-261104",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

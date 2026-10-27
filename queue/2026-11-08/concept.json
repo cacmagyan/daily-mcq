@@ -1,0 +1,152 @@
+{
+  "kind": "concept",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 2",
+  "paper_name": "Corporate and Other Laws",
+  "author": "Ranjith Shivahari",
+  "topic": "Offer vs Invitation to Offer",
+  "title": "Offer or",
+  "title_highlight": "Just an Invitation?",
+  "hook": "price tag is not a promise!",
+  "simple_words": "An offer can be accepted to make a contract. An invitation only asks others to make offers.",
+  "definitions": [
+    {
+      "term": "Proposal (Offer)",
+      "meaning": "A person shows willingness to do or not do something, to get the other's assent, and intends to be bound on that assent.",
+      "note": "Intention to be bound is the test"
+    },
+    {
+      "term": "Invitation to offer",
+      "meaning": "A step before an offer. The person invites others to make offers, and keeps the right to accept or refuse them.",
+      "note": "Acceptance of it makes no contract"
+    }
+  ],
+  "key_points": [
+    "An offer needs ==intention to be bound== once the other party accepts",
+    "Goods with price tags, price lists, catalogues and ==tender notices== are invitations",
+    "At an auction, the announcement invites; the ==bid is the offer==, accepted by fall of hammer",
+    "!!A general offer (reward advertisement) is a real offer!!, accepted by performing the condition"
+  ],
+  "formula_heading": "Offer vs Invitation",
+  "formula_hook": "spot the difference fast",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Offer",
+      "Invitation to offer"
+    ],
+    "rows": [
+      [
+        "Intention",
+        "To be bound on acceptance",
+        "To invite offers from others"
+      ],
+      [
+        "Acceptance gives",
+        "A binding contract",
+        "No contract; only an offer follows"
+      ],
+      [
+        "Examples",
+        "Auction bid; reward advertisement",
+        "Price tag, catalogue, tender notice"
+      ],
+      [
+        "Case law",
+        "Carlill v. Carbolic Smoke Ball Co.",
+        "Pharmaceutical Society v. Boots"
+      ],
+      [
+        "Who makes offer",
+        "Seller or buyer",
+        "Customer or bidder makes it"
+      ]
+    ]
+  },
+  "insight": {
+    "punchline": "Display invites, customer offers!",
+    "text": "In a shop, the customer offers to buy at the tag price, and the shopkeeper accepts at the counter."
+  },
+  "trick_hook": "think of a shop window",
+  "memory_trick": {
+    "mnemonic": "Window shows, hand offers",
+    "explanation": "The shop window or catalogue only shows goods (invitation). The customer's hand at the counter makes the offer; the seller's yes is acceptance."
+  },
+  "steps": [
+    "Find who speaks first",
+    "Ask: intends to be bound on yes?",
+    "Match with known invitations",
+    "Check for a general offer reward",
+    "Name the case and conclude"
+  ],
+  "exam_tip": "In an MCQ, a price tag, catalogue, tender notice or auction announcement means invitation to offer. A reward advertisement means offer.",
+  "doubt": {
+    "question": "Is a shopkeeper bound to sell at the displayed price?",
+    "answer": "No. The display is an invitation. The customer's request to buy is the offer, and the shopkeeper may accept or refuse it."
+  },
+  "mistakes_hook": "don't fall for the price tag",
+  "mistakes": [
+    {
+      "wrong": "Price tag on goods is an offer, so shop must sell",
+      "right": "A price tag is an invitation to offer. The customer makes the offer."
+    },
+    {
+      "wrong": "Tender notice is an offer; bidder accepts it",
+      "right": "The notice invites tenders. The tender submitted is the offer."
+    },
+    {
+      "wrong": "Auctioneer's announcement is the offer",
+      "right": "The announcement is an invitation. The bid is the offer."
+    },
+    {
+      "wrong": "Reward advertisement is only an invitation",
+      "right": "It is a general offer, accepted by performing the condition (Carlill case)."
+    }
+  ],
+  "applicability": "Indian Contract Act, 1872 – proposal, S.2(a)",
+  "confidence": "high",
+  "reviewer_note": "Check S.2(a) reference and that case names match the ICAI study material. Auction rule assumes no reserve or special terms.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Check S.2(a) reference and that case names match the ICAI study material. Auction rule assumes no reserve or special terms.",
+    "Checker 1: Step 1 ('Find who speaks first') is vague and could mislead: the party who speaks first often makes only an invitation (shop display, tender notice, auction announcement). Better: 'Identify the first statement or act and who made it, then test whether it is an offer or only an invitation.'",
+    "Checker 1: Table row 5, Offer column ('Seller or buyer') is correct but terse. Clearer: 'Either party, seller or buyer (e.g. promisor in a reward advertisement)'."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.22,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 2: Corporate and Other Laws\nOffer vs Invitation to Offer\n\nIn simple words: An offer can be accepted to make a contract. An invitation only asks others to make offers.\n\nSwipe for the summary table, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CA Inter MCQ (12:25 PM) tests this concept.\n\nBased on Indian Contract Act, 1872 – proposal, S.2(a).\n\nNotes by Ranjith Shivahari\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept-261108",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

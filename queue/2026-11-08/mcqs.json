@@ -1,0 +1,364 @@
+{
+  "date": "2026-11-08",
+  "day": 18,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-28T00:27:19+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 4",
+      "paper_name": "Business Economics",
+      "topic": "Theory of Cost: AVC, ATC and MC",
+      "question": "A firm's total fixed cost is ₹3,600. Its total cost is ₹9,000 at 50 units and ₹10,200 at 60 units of output. What is the average variable cost (AVC) per unit at 60 units?",
+      "options": [
+        "₹170",
+        "₹60",
+        "₹110",
+        "₹120"
+      ],
+      "correct": "C",
+      "explanation": "Total variable cost = total cost − total fixed cost = 10,200 − 3,600 = ₹6,600. AVC = TVC ÷ output = 6,600 ÷ 60 = ₹110 per unit.",
+      "working": [
+        {
+          "label": "TC at 60 units",
+          "value": "₹10,200"
+        },
+        {
+          "label": "Fixed cost",
+          "value": "₹3,600"
+        },
+        {
+          "label": "TVC at 60 units",
+          "value": "₹6,600"
+        },
+        {
+          "label": "Output (units)",
+          "value": "60"
+        },
+        {
+          "label": "AVC per unit",
+          "value": "₹110"
+        }
+      ],
+      "why_not": {
+        "D": "Marginal cost of the extra 10 units (1,200 ÷ 10), not average variable cost.",
+        "A": "This is average total cost (10,200 ÷ 60); fixed cost was not removed.",
+        "B": "This is average fixed cost (3,600 ÷ 60), not AVC."
+      },
+      "exam_tip": "ATC = AFC + AVC. Subtract fixed cost first to get TVC, then divide by output.",
+      "calculation": "tvc = 10200 - 3600\nanswer = tvc / 60",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Switched to a new topic because the first one couldn't be verified"
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 18\nPaper 4: Business Economics\nTopic: Theory of Cost: AVC, ATC and MC\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261108",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1B",
+      "paper_name": "Applied Business and Industrial Laws",
+      "topic": "Offer vs Invitation to Offer",
+      "question": "A municipal body publishes a notice inviting tenders for supply of 500 benches. Sita submits a tender at ₹2,000 per bench, the lowest received. The body has not yet issued any acceptance. Which statement is correct?",
+      "options": [
+        "The notice is an invitation; Sita's tender is a binding contract as it is the lowest",
+        "The notice is an offer; Sita's tender is a counter-offer",
+        "The notice is an offer and Sita's tender is acceptance",
+        "The notice is an invitation; Sita's tender is an offer that the body may accept or reject"
+      ],
+      "correct": "D",
+      "explanation": "A tender notice only invites offers. Sita's tender is the offer. A contract arises only when the body accepts it. Being the lowest bid gives Sita no right to acceptance.",
+      "working": [],
+      "why_not": {
+        "C": "Treats the notice as an offer; a tender notice is only an invitation to offer.",
+        "A": "Thinks the lowest tender binds the body automatically; acceptance by the body is still needed.",
+        "B": "Calls the notice an offer, so tender becomes a counter-offer; the notice is not an offer."
+      },
+      "exam_tip": "Tender notice invites; the tender is the offer; the body's acceptance makes the contract.",
+      "calculation": "",
+      "applicability": "Indian Contract Act, 1872 - offer and acceptance",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept": "Offer vs Invitation to Offer",
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 18\nPaper 1B: Applied Business and Industrial Laws\nTopic: Offer vs Invitation to Offer\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Indian Contract Act, 1872 - offer and acceptance.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261108",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 4",
+      "paper_name": "Cost and Management Accounting",
+      "topic": "Standard Costing: Labour Variances",
+      "question": "Standard: 4 labour hours per unit at ₹60 per hour. Actual output 2,000 units. Hours paid 8,600 at ₹62 per hour, of which 400 hours were idle (abnormal). Find the labour efficiency variance.",
+      "options": [
+        "₹12,000 Adverse",
+        "₹24,000 Adverse",
+        "₹17,200 Adverse",
+        "₹36,000 Adverse"
+      ],
+      "correct": "A",
+      "explanation": "Efficiency variance uses hours actually worked (8,200), not hours paid. Standard hours for actual output are 8,000. Excess 200 hours x standard rate ₹60 = ₹12,000 Adverse.",
+      "working": [
+        {
+          "label": "Std hours for actual output",
+          "value": "8,000"
+        },
+        {
+          "label": "Actual hours worked (8,600-400)",
+          "value": "8,200"
+        },
+        {
+          "label": "Excess hours",
+          "value": "200"
+        },
+        {
+          "label": "Std rate per hour (₹)",
+          "value": "60"
+        },
+        {
+          "label": "Efficiency variance (₹ Adverse)",
+          "value": "12,000"
+        }
+      ],
+      "why_not": {
+        "B": "This is the idle time variance (400 x ₹60), not efficiency variance.",
+        "D": "Uses hours paid (8,600) instead of hours worked, mixing idle time into efficiency.",
+        "C": "This is the labour rate variance (8,600 x ₹2), not efficiency variance."
+      },
+      "exam_tip": "Efficiency variance: hours worked vs standard hours. Idle hours go to idle time variance.",
+      "calculation": "std_hours = 2000*4\nworked = 8600-400\nanswer = (worked - std_hours)*60",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 18\nPaper 4: Cost and Management Accounting\nTopic: Standard Costing: Labour Variances\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261108",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 9",
+      "paper_name": "Operations Management and Strategic Management (Operations Management)",
+      "topic": "Learning Curve (Cumulative Average)",
+      "question": "The first unit of a product takes 1,000 labour hours. An 80% learning curve (cumulative average time model) applies. Labour costs ₹50 per hour. What is the labour cost of the 3rd and 4th units together, after the first 2 units are made?",
+      "options": [
+        "₹80,000",
+        "₹48,000",
+        "₹1,28,000",
+        "₹64,000"
+      ],
+      "correct": "B",
+      "explanation": "Cumulative average for 2 units = 800 hrs, total 1,600. For 4 units = 640 hrs, total 2,560. Hours for units 3 and 4 = 960. Cost = 960 × ₹50 = ₹48,000.",
+      "working": [
+        {
+          "label": "Avg time for 2 units (hrs)",
+          "value": "800"
+        },
+        {
+          "label": "Total time for 2 units (hrs)",
+          "value": "1,600"
+        },
+        {
+          "label": "Avg time for 4 units (hrs)",
+          "value": "640"
+        },
+        {
+          "label": "Total time for 4 units (hrs)",
+          "value": "2,560"
+        },
+        {
+          "label": "Hours for units 3 and 4",
+          "value": "960"
+        },
+        {
+          "label": "Labour cost (₹)",
+          "value": "48,000"
+        }
+      ],
+      "why_not": {
+        "D": "Took 640 hrs average for just 2 units: 1,280 hrs × ₹50, ignoring that 640 is the 4-unit average.",
+        "A": "Used 800 hrs average for 2 units (1,600 hrs), which is the cost of the first 2 units.",
+        "C": "Costed all 4 units (2,560 hrs) instead of only the 3rd and 4th."
+      },
+      "exam_tip": "Cumulative average: each doubling of output cuts the average time to the learning rate. Incremental = total at new level minus total before.",
+      "calculation": "avg2 = 1000*0.8\ntotal2 = avg2*2\navg4 = 1000*0.8*0.8\ntotal4 = avg4*4\nhours = total4 - total2\nanswer = hours*50",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 18\nPaper 9: Operations Management and Strategic Management (Operations Management)\nTopic: Learning Curve (Cumulative Average)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261108",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 3",
+      "paper_name": "Advanced Auditing, Assurance and Professional Ethics",
+      "topic": "SA 600 - Group Audits (Component Auditor)",
+      "question": "Under SA 600 (Revised), the group engagement partner plans to use the work of a component auditor. Which statement best describes the group engagement partner's responsibility for the group audit opinion?",
+      "options": [
+        "Sole responsibility for the group audit, even when component auditors are used",
+        "Responsibility only for components audited by the group team itself",
+        "Responsibility shared equally with each component auditor",
+        "Responsibility for the group opinion passes to the component auditor for that component"
+      ],
+      "correct": "A",
+      "explanation": "Under SA 600 (Revised), the group engagement partner is responsible for the direction, supervision and performance of the group audit and for the opinion. The report must not refer to component auditors as a way of dividing that responsibility.",
+      "working": [],
+      "why_not": {
+        "B": "Assumes work done by component auditors falls outside the partner's responsibility.",
+        "C": "Assumes responsibility is split among auditors; SA 600 does not allow dividing it.",
+        "D": "Assumes responsibility moves to the component auditor; it stays with the group partner."
+      },
+      "exam_tip": "Group audit opinion: the group engagement partner owns it fully. Component auditors do not dilute it.",
+      "calculation": "",
+      "applicability": "SA 600 (Revised) - Special Considerations: Group Audits",
+      "confidence": "high",
+      "reviewer_note": "Question is conceptual and the stem is easy. Check the SA 600 (Revised) effective date and wording if you want to make it harder.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Question is conceptual and the stem is easy. Check the SA 600 (Revised) effective date and wording if you want to make it harder.",
+        "Checker: The question relies on 'SA 600 (Revised)' (Special Considerations – Audits of Group Financial Statements). The older ICAI SA 600 (Using the Work of Another Auditor) let the principal auditor refer to the other auditor's work. Depending on exam applicability, students may still be examined on the old SA 600, so the label 'Revised' carries the whole answer. To my knowledge the revised standard applies from 1 April 2026, but I could not check this here.",
+        "Checker: The word 'sole' in option A is stronger than the standard's wording, which says the partner is 'responsible for the direction, supervision and performance of the group audit'. It is still the only defensible option."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 18\nPaper 3: Advanced Auditing, Assurance and Professional Ethics\nTopic: SA 600 - Group Audits (Component Auditor)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on SA 600 (Revised) - Special Considerations: Group Audits.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261108",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 16",
+      "paper_name": "Strategic Cost Management",
+      "topic": "Learning Curve - Cumulative Average Model",
+      "question": "A firm's 80% learning curve follows the cumulative average time model. The first unit takes 100 labour hours. Labour costs ₹500 per hour. What is the labour cost of producing the 5th to 8th units (4 units) together?",
+      "options": [
+        "₹2,04,800",
+        "₹76,800",
+        "₹1,28,000",
+        "₹1,02,400"
+      ],
+      "correct": "B",
+      "explanation": "Under the cumulative average model, doubling output cuts the cumulative average time by 20%. Total for 8 units is 409.6 hours and for 4 units 256 hours. The difference of 153.6 hours at ₹500 gives ₹76,800.",
+      "working": [
+        {
+          "label": "Avg time, 4 units (100 x 0.8 x 0.8)",
+          "value": "64 hrs"
+        },
+        {
+          "label": "Total hours, 4 units",
+          "value": "256 hrs"
+        },
+        {
+          "label": "Avg time, 8 units (64 x 0.8)",
+          "value": "51.2 hrs"
+        },
+        {
+          "label": "Total hours, 8 units",
+          "value": "409.6 hrs"
+        },
+        {
+          "label": "Hours for units 5 to 8",
+          "value": "153.6 hrs"
+        },
+        {
+          "label": "Labour cost at ₹500 per hour",
+          "value": "₹76,800"
+        }
+      ],
+      "why_not": {
+        "D": "Costed 4 units at the 8-unit cumulative average of 51.2 hours, ignoring that units 5-8 are incremental.",
+        "C": "Used the 4-unit total of 256 hours; this is the cost of units 1 to 4, not units 5 to 8.",
+        "A": "Costed all 8 units (409.6 hours) instead of deducting the first 4 units."
+      },
+      "exam_tip": "Cumulative average model: find total hours at both cumulative levels, then subtract. Never cost the average directly.",
+      "calculation": "avg4 = 100 * 0.8 ** 2\ntotal4 = 4 * avg4\navg8 = 100 * 0.8 ** 3\ntotal8 = 8 * avg8\nhours = total8 - total4\nanswer = round(hours * 500)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 74%; consider shortening"
+      ],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 18\nPaper 16: Strategic Cost Management\nTopic: Learning Curve - Cumulative Average Model\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261108",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

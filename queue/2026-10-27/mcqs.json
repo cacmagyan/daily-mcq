@@ -118,64 +118,58 @@
       "course_id": "ca_inter",
       "paper_code": "Paper 1",
       "paper_name": "Advanced Accounting",
-      "topic": "Admission of a Partner: Goodwill Premium",
-      "question": "A and B share profits 3:2. On 1 April 2026, C is admitted for 1/5 share, which he takes entirely from A. C brings ₹1,00,000 as premium for goodwill in cash. What amount is credited to A's capital account for goodwill?",
+      "topic": "AS 16 Borrowing Costs: capitalisation period",
+      "question": "On 1 April 2024, Sun Ltd borrowed ₹50,00,000 at 10% p.a. specifically to construct a factory building, a qualifying asset. The building was ready for its intended use on 31 December 2025. In FY 2025-26, temporary investment of the unused borrowed funds earned ₹60,000 up to that date. Under AS 16, what borrowing cost is capitalised for FY 2025-26?",
       "options": [
-        "₹1,00,000",
-        "₹40,000",
-        "₹50,000",
-        "₹60,000"
+        "₹5,00,000",
+        "₹3,75,000",
+        "₹3,15,000",
+        "₹4,40,000"
       ],
-      "correct": "A",
-      "explanation": "Only A gives up share (3/5 to 2/5 = 1/5). B's share stays 2/5, so B sacrifices nothing. The whole premium goes to the sacrificing partner, A, in the sacrificing ratio of 1:0.",
+      "correct": "C",
+      "explanation": "For a specific borrowing, capitalise the actual interest only until the asset is substantially ready (31 December 2025), less income from temporarily investing those funds. Interest for January to March 2026 is an expense.",
       "working": [
         {
-          "label": "A old share",
-          "value": "3/5"
+          "label": "Interest Apr–Dec 2025 (50,00,000 × 10% × 9/12)",
+          "value": "₹3,75,000"
         },
         {
-          "label": "A new share (3/5 - 1/5)",
-          "value": "2/5"
+          "label": "Less: income on temporary investment",
+          "value": "− ₹60,000"
         },
         {
-          "label": "A sacrifice",
-          "value": "1/5"
-        },
-        {
-          "label": "B sacrifice (2/5 - 2/5)",
-          "value": "0"
-        },
-        {
-          "label": "Premium credited to A (₹)",
-          "value": "1,00,000"
+          "label": "Borrowing cost capitalised",
+          "value": "₹3,15,000"
         }
       ],
       "why_not": {
-        "D": "Shares premium in old ratio 3:2; premium goes by sacrifice ratio, not old ratio.",
-        "B": "Uses A's new share 2/5; the new ratio is not the basis for sharing premium.",
-        "C": "Splits premium equally between A and B, ignoring that B sacrifices nothing."
+        "A": "Full year's interest; capitalisation stops when the asset is ready.",
+        "B": "Forgets to deduct the income on temporary investment.",
+        "D": "Deducts the income but still counts January to March 2026."
       },
-      "exam_tip": "Sacrifice = old share minus new share. Premium goes to sacrificing partners only, in the sacrificing ratio.",
-      "calculation": "old_A = 3/5\nnew_A = old_A - 1/5\nsac_A = old_A - new_A\nsac_B = 2/5 - 2/5\nanswer = 100000 * sac_A / (sac_A + sac_B)",
-      "applicability": "",
+      "exam_tip": "Specific borrowing: interest for the capitalisation period minus temporary investment income. Stop on the date the asset is substantially ready.",
+      "calculation": "principal = 5000000\nrate = 0.10\nmonths = 9\nincome = 60000\nanswer = principal * rate * months / 12 - income",
+      "applicability": "AS 16 Borrowing Costs",
       "confidence": "high",
-      "reviewer_note": "",
-      "attempts": 1,
-      "check_notes": [],
       "difficulty": "medium",
       "law_sensitive": false,
-      "serious": false,
+      "reviewer_note": "",
       "needs_check": false,
+      "serious": false,
+      "attempts": 1,
+      "check_notes": [
+        "Replacement written on 27 Oct: the first CA Inter MCQ (partnership goodwill) was outside the CA Inter syllabus. Answer checked by hand and by the code calculator."
+      ],
       "author": "Rahul kp",
       "images": {
         "question": "ca_inter_q.jpg",
         "answer": "ca_inter_a.jpg"
       },
       "fit_notes": [],
-      "caption": "🟦 CA Inter · MCQ of the day · Day 6\nPaper 1: Advanced Accounting\nTopic: Admission of a Partner: Goodwill Premium\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261027",
+      "caption": "🟦 CA Inter · MCQ of the day · Day 6\nPaper 1: Advanced Accounting\nTopic: AS 16 Borrowing Costs: capitalisation period\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on AS 16 Borrowing Costs.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261027",
+      "story": "ca_inter_story.jpg",
       "hold": false,
-      "hold_reason": "",
-      "story": "ca_inter_story.jpg"
+      "hold_reason": ""
     },
     {
       "course_id": "cma_inter",

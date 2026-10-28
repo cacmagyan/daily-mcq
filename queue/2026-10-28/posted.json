@@ -38,5 +38,15 @@
   "cma_inter:story": {
     "media_id": "17997353166042840",
     "posted_at": "2026-10-28T15:27:09+05:30"
+  },
+  "reel": {
+    "media_id": "17867823357678582",
+    "permalink": "https://www.instagram.com/reel/DfCbkNVkWuU/",
+    "video_url": "https://raw.githubusercontent.com/cacmagyan/daily-mcq/7abc1d485832b9ca30c432217d3f30c20f499f94/queue/2026-10-28/reel.mp4",
+    "posted_at": "2026-10-28T17:57:47+05:30"
+  },
+  "reel:story": {
+    "media_id": "18225120664327595",
+    "posted_at": "2026-10-28T17:58:22+05:30"
   }
 }

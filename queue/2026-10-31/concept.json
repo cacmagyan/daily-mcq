@@ -1,0 +1,154 @@
+{
+  "kind": "concept",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 4",
+  "paper_name": "Business Economics",
+  "author": "Rahul kp",
+  "linked_mcq": "Elasticity of Demand",
+  "topic": "Price Elasticity of Demand (PED)",
+  "title": "Price Elasticity",
+  "title_highlight": "of Demand",
+  "hook": "how fast buyers react!",
+  "simple_words": "Elasticity tells us by what percent demand changes when price changes by 1 percent.",
+  "definitions": [
+    {
+      "term": "Price elasticity of demand",
+      "meaning": "Responsiveness of quantity demanded of a good to a change in its own price, other factors remaining constant.",
+      "note": "Ceteris paribus always!"
+    },
+    {
+      "term": "Elastic vs inelastic",
+      "meaning": "Elastic: |Ed| > 1, quantity changes proportionately more than price. Inelastic: |Ed| < 1, quantity changes proportionately less.",
+      "note": "Unitary: |Ed| = 1"
+    }
+  ],
+  "key_points": [
+    "Ed is a pure number: it has no units, so it does not depend on ₹ or kg.",
+    "For a normal downward-sloping demand curve, Ed is negative; we usually read its ==absolute value==.",
+    "Necessities tend to be inelastic; luxuries and goods with many substitutes tend to be elastic.",
+    "!!Perfectly elastic = infinity (horizontal curve); perfectly inelastic = 0 (vertical curve).!!"
+  ],
+  "formula_heading": "The Ed Formula",
+  "formula_hook": "percent over percent!",
+  "formulas": [
+    {
+      "name": "Percentage method",
+      "lhs": "Ed",
+      "rhs": "",
+      "numerator": "% change in quantity demanded",
+      "denominator": "% change in price",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Ed = price elasticity of demand; quantity demanded is of the same good; sign is negative on a normal demand curve."
+    },
+    {
+      "name": "Change-in-values form",
+      "lhs": "Ed",
+      "rhs": "",
+      "numerator": "ΔQ × P",
+      "denominator": "ΔP × Q",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Q = original quantity, P = original price, ΔQ = change in quantity, ΔP = change in price."
+    },
+    {
+      "name": "Total outlay link",
+      "lhs": "Ed",
+      "rhs": "Price up: outlay falls if |Ed|>1, rises if <1, same if =1",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Outlay = P × Q, which equals the seller's total revenue."
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "insight": {
+    "punchline": "Elastic: price and outlay move opposite!",
+    "text": "If |Ed| > 1, a price rise cuts total revenue; if |Ed| < 1, the same price rise increases total revenue."
+  },
+  "trick_hook": "remember the three cases",
+  "memory_trick": {
+    "mnemonic": "Elastic = Escapes quickly",
+    "explanation": "Elastic buyers escape when price rises, so revenue falls. Inelastic buyers stay stuck, so revenue rises. Unitary buyers: revenue stays same."
+  },
+  "steps": [
+    "Find ΔQ and ΔP from the data",
+    "Use original Q and original P",
+    "Apply ΔQ/Q ÷ ΔP/P",
+    "Ignore the sign; compare with 1",
+    "Name it: elastic, unitary or inelastic"
+  ],
+  "exam_tip": "In MCQs, first compare |Ed| with 1, then match the revenue effect. Check whether the question gives a price rise or fall.",
+  "doubt": {
+    "question": "Why is a flat demand curve not simply 'more elastic' at every point?",
+    "answer": "Only a horizontal line is perfectly elastic. For a straight-line demand curve, Ed changes from point to point, high at top and low at bottom."
+  },
+  "mistakes_hook": "avoid these slips!",
+  "mistakes": [
+    {
+      "wrong": "Elasticity is the same as the slope of the demand curve",
+      "right": "Slope is ΔP/ΔQ in absolute units; Ed uses percentage changes, so it is unit-free and changes along a straight line."
+    },
+    {
+      "wrong": "Perfectly inelastic demand means Ed = infinity",
+      "right": "Perfectly inelastic means Ed = 0 (vertical curve); perfectly elastic means Ed = infinity (horizontal curve)."
+    },
+    {
+      "wrong": "If |Ed| < 1, a price rise reduces total revenue",
+      "right": "If |Ed| < 1 (inelastic), a price rise increases total revenue because quantity falls proportionately less."
+    },
+    {
+      "wrong": "Using the new price and quantity in the denominator",
+      "right": "In the basic formula, use the original price P and original quantity Q unless the question asks for the arc method."
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "Formula 3 is a revenue rule shown in the rhs field; check it fits on the slide. Note covers price elasticity only; cross and income elasticity are left out.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Formula 3 is a revenue rule shown in the rhs field; check it fits on the slide. Note covers price elasticity only; cross and income elasticity are left out.",
+    "Checker 1: simple_words: 'by what percent demand changes' mixes up a change in demand with a change in quantity demanded. Correct version: 'Elasticity tells us by what percent the quantity demanded changes when the price changes by 1 percent.'",
+    "Checker 1: Doubt question vs answer: the question asks about a 'flat' curve, but the answer talks about a horizontal line and a straight-line curve without connecting them. Correct version: 'A flatter curve is more elastic than a steeper one only when compared at the same price-quantity point. Along any single straight-line demand curve, Ed varies from point to point: it is greater than 1 above the midpoint, equal to 1 at the midpoint and less than 1 below it. Only a perfectly horizontal line has Ed = infinity at every point.'"
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.14,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.12,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟩 CA Foundation · Concept of the day\nPaper 4: Business Economics\nPrice Elasticity of Demand (PED)\n\nIn simple words: Elasticity tells us by what percent demand changes when price changes by 1 percent.\n\nSwipe for the formula, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CA Foundation MCQ (7:55 AM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFoundation #ICAI #CAStudents #CAExams\n\nref concept-261031",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

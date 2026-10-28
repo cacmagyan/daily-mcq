@@ -1,0 +1,327 @@
+{
+  "date": "2026-10-31",
+  "day": 10,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-28T23:54:25+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Business Mathematics",
+      "topic": "Sequences and Series: GP",
+      "question": "The first term of a geometric progression is 3 and the common ratio is 2. What is the sum of the first 6 terms of this progression?",
+      "options": [
+        "93",
+        "192",
+        "189",
+        "378"
+      ],
+      "correct": "C",
+      "explanation": "For a GP with r > 1, S_n = a(r^n − 1)/(r − 1). Here a = 3, r = 2, n = 6, so S = 3 × 63 / 1 = 189.",
+      "working": [
+        {
+          "label": "2^6",
+          "value": "64"
+        },
+        {
+          "label": "r^n − 1",
+          "value": "63"
+        },
+        {
+          "label": "r − 1",
+          "value": "1"
+        },
+        {
+          "label": "Sum = 3 × 63 / 1",
+          "value": "189"
+        }
+      ],
+      "why_not": {
+        "B": "Took the 7th term (3 × 64 = 192) as the sum instead of using the sum formula.",
+        "A": "Used 3 × (2^5 − 1) = 93, taking n − 1 as the power.",
+        "D": "Used a(r^n − 1)/(r − 1) with an extra factor of 2, which doubles the answer."
+      },
+      "exam_tip": "Use a(r^n − 1)/(r − 1) when r > 1, and a(1 − r^n)/(1 − r) when r < 1.",
+      "calculation": "a = 3\nr = 2\nn = 6\nanswer = a*(r**n - 1)/(r - 1)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 10\nPaper 3: Quantitative Aptitude: Business Mathematics\nTopic: Sequences and Series: GP\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261031",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1B",
+      "paper_name": "Applied Business and Industrial Laws",
+      "topic": "Contract Act - Restraint of Trade",
+      "question": "Anil sells his bakery business and goodwill to Bimal. He agrees not to carry on a similar bakery business within the same city for 5 years. Under the Indian Contract Act, 1872, this agreement is:",
+      "options": [
+        "Illegal, as it is against public policy",
+        "Valid, if the limits are reasonable",
+        "Voidable at Bimal's option",
+        "Void, as it restrains lawful trade"
+      ],
+      "correct": "B",
+      "explanation": "An agreement in restraint of trade is void, but sale of goodwill is an exception. The seller may agree not to carry on a similar business within specified local limits, if the limits are reasonable.",
+      "working": [],
+      "why_not": {
+        "D": "Applies the general rule of restraint of trade and ignores the goodwill exception.",
+        "C": "Confuses void with voidable; voidable arises from lack of free consent.",
+        "A": "Treats the restraint as unlawful; it is a recognised exception, not illegal."
+      },
+      "exam_tip": "Restraint of trade is void, except on sale of goodwill within reasonable local limits.",
+      "calculation": "",
+      "applicability": "Indian Contract Act, 1872 - restraint of trade",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Minor wording point: Exception 1 is framed around 'specified local limits'. It does not mention a time limit, although courts do consider duration when judging reasonableness. Option B's condition 'if the limits are reasonable' covers both readings, so there is still only one correct answer.",
+        "Checker: The exception also requires that the buyer (or a person deriving title to the goodwill from him) carries on a like business within those limits. The question doesn't say Bimal continues the bakery business, but selling a business with its goodwill implies it. This doesn't affect the key."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 10\nPaper 1B: Applied Business and Industrial Laws\nTopic: Contract Act - Restraint of Trade\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Indian Contract Act, 1872 - restraint of trade.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261031",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 4",
+      "paper_name": "Cost and Management Accounting",
+      "topic": "Overheads: Under/Over Absorption",
+      "question": "Budgeted factory overheads for FY 2025-26 were ₹12,00,000 for 40,000 machine hours. Actual machine hours were 38,000 and actual factory overheads were ₹12,10,000. Overheads are absorbed on machine hour rate. Find the under-absorbed overhead.",
+      "options": [
+        "₹70,000",
+        "₹80,000",
+        "₹60,000",
+        "₹10,000"
+      ],
+      "correct": "A",
+      "explanation": "Rate = budgeted overheads ÷ budgeted hours = ₹30 per hour. Absorbed = 38,000 × ₹30 = ₹11,40,000. Under-absorption = actual ₹12,10,000 − absorbed ₹11,40,000 = ₹70,000.",
+      "working": [
+        {
+          "label": "Rate per machine hour (₹)",
+          "value": "30"
+        },
+        {
+          "label": "Absorbed overhead (₹)",
+          "value": "11,40,000"
+        },
+        {
+          "label": "Actual overhead (₹)",
+          "value": "12,10,000"
+        },
+        {
+          "label": "Under-absorbed overhead (₹)",
+          "value": "70,000"
+        }
+      ],
+      "why_not": {
+        "D": "Compares actual with budgeted overhead only; ignores the hours shortfall in absorption.",
+        "C": "Compares budget with absorbed overhead; ignores the extra actual spending of ₹10,000.",
+        "B": "Adds the spending excess to the correct figure, double counting it."
+      },
+      "exam_tip": "Under-absorption = actual overhead − (actual hours × pre-determined rate). Never use budget ₹ directly.",
+      "calculation": "rate = 1200000/40000\nabsorbed = rate*38000\nanswer = 1210000 - absorbed",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 10\nPaper 4: Cost and Management Accounting\nTopic: Overheads: Under/Over Absorption\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261031",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 9",
+      "paper_name": "Operations Management and Strategic Management (Strategic Management)",
+      "topic": "Strategic Management: Levels of Strategy",
+      "question": "In a diversified company, the strategy that explains how a particular strategic business unit will compete in its own market to build competitive advantage is called:",
+      "options": [
+        "Operational-level strategy",
+        "Functional-level strategy",
+        "Corporate-level strategy",
+        "Business-level strategy"
+      ],
+      "correct": "D",
+      "explanation": "Business-level (SBU) strategy deals with how a unit competes in its chosen market and builds competitive advantage. Corporate level decides the portfolio of businesses; functional level supports it.",
+      "working": [],
+      "why_not": {
+        "C": "Corporate strategy decides which businesses to be in, not how one SBU competes.",
+        "B": "Functional strategy covers areas like marketing or finance, supporting the SBU strategy.",
+        "A": "Operational strategy is day-to-day execution, not competitive positioning of an SBU."
+      },
+      "exam_tip": "Corporate = where to compete; Business = how to compete; Functional = how to support.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Mild cue: 'strategic business unit' in the stem points straight to 'Business-level strategy'. Rewording it as 'each division' would test understanding rather than word matching.",
+        "Checker: Options A and B (operational and functional) are close to the same thing in ICMAI material, so each is a weaker distractor. Neither one is correct, though."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 10\nPaper 9: Operations Management and Strategic Management (Strategic Management)\nTopic: Strategic Management: Levels of Strategy\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261031",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 5",
+      "paper_name": "Indirect Tax Laws",
+      "topic": "GST - Blocked credits (ITC)",
+      "question": "Ganga Ltd is a regular taxpayer making only taxable supplies. All conditions for claiming ITC (invoice, receipt, return, tax paid) are met. ITC on which inward supply is blocked under the CGST Act?",
+      "options": [
+        "Machinery installed in the factory for taxable production",
+        "Goods purchased and later stolen from the godown",
+        "Motor vehicle bought to transport goods to customers",
+        "Raw materials purchased and used in manufacture of taxable goods"
+      ],
+      "correct": "B",
+      "explanation": "The blocked credit provision denies ITC on goods lost, stolen, destroyed, written off or given as gifts or free samples. The other three are used in the course or furtherance of taxable business and are allowed.",
+      "working": [],
+      "why_not": {
+        "D": "Inputs used for taxable outward supply are the basic case of eligible ITC.",
+        "C": "Confuses with vehicles for passenger transport; vehicles for transporting goods are not blocked.",
+        "A": "Thinks all capital goods are blocked; factory machinery for taxable output is eligible."
+      },
+      "exam_tip": "Blocked list covers loss, theft, gifts, personal use, food, clubs and immovable property, not ordinary business inputs.",
+      "calculation": "",
+      "applicability": "CGST Act, 2017 as per ICAI applicability for next attempt",
+      "confidence": "high",
+      "reviewer_note": "Concept-only; no rates or dates. Provision is s.17(5)(h) (not cited in question). Machinery in option D is not a plant-and-machinery-on-immovable-property construction case.",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Concept-only; no rates or dates. Provision is s.17(5)(h) (not cited in question). Machinery in option D is not a plant-and-machinery-on-immovable-property construction case.",
+        "Second checker: Option C says 'motor vehicle' without saying it is a goods carriage. A student could read it as a car, which would be blocked under 17(5)(a). The intended reading is a goods vehicle, but this adds slight ambiguity.",
+        "Second checker: The stem does not say the stolen goods were not insured, but the blocking applies either way."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 10\nPaper 5: Indirect Tax Laws\nTopic: GST - Blocked credits (ITC)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on CGST Act, 2017 as per ICAI applicability for next attempt.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261031",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 16",
+      "paper_name": "Strategic Cost Management",
+      "topic": "Target Costing",
+      "question": "A firm plans a new gadget. Market research says customers will pay ₹1,200 per unit. The firm needs a profit of 25% on selling price. The current design costs ₹980 per unit. What cost reduction per unit must value engineering achieve?",
+      "options": [
+        "₹80",
+        "₹180",
+        "₹300",
+        "₹245"
+      ],
+      "correct": "A",
+      "explanation": "Target cost = market price − required profit = 1,200 − 300 = ₹900. The current cost is ₹980, so the gap to be closed by value engineering is ₹80 per unit.",
+      "working": [
+        {
+          "label": "Target selling price per unit",
+          "value": "₹1,200"
+        },
+        {
+          "label": "Required profit (25% of 1,200)",
+          "value": "₹300"
+        },
+        {
+          "label": "Target cost (1,200 − 300)",
+          "value": "₹900"
+        },
+        {
+          "label": "Current estimated cost",
+          "value": "₹980"
+        },
+        {
+          "label": "Cost reduction needed (980 − 900)",
+          "value": "₹80"
+        }
+      ],
+      "why_not": {
+        "B": "Compares the price with current cost (1,200 − 980 = 220 is not it); ignores the profit and mixes figures.",
+        "D": "Takes 25% as markup on the current cost (980 × 25%), the traditional cost-plus idea.",
+        "C": "Gives the required profit itself, not the gap between current cost and target cost."
+      },
+      "exam_tip": "Target cost = target price − target profit. Cost reduction = current cost − target cost. Margin on sales means on price.",
+      "calculation": "price = 1200\nprofit = price * 25 / 100\ntarget_cost = price - profit\nanswer = 980 - target_cost",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept": "Target Costing",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 10\nPaper 16: Strategic Cost Management\nTopic: Target Costing\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261031",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

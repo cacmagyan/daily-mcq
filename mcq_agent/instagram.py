@@ -94,6 +94,48 @@ class Instagram:
         return self._call("GET", f"{self.user_id}/media", fields="id,caption,permalink,timestamp",
                           limit=limit).get("data", [])
 
+    # ── insights, comments and DMs ────────────────────────
+    def followers(self) -> int:
+        me = self._call("GET", self.user_id if "instagram" not in self.host else "me", fields="followers_count")
+        return int(me.get("followers_count") or 0)
+
+    def media_list(self, limit: int = 30) -> list[dict]:
+        return self._call("GET", f"{self.user_id}/media", limit=limit,
+                          fields="id,caption,permalink,timestamp,comments_count,media_product_type").get("data", [])
+
+    def media_insights(self, media_id: str, metrics: list[str]) -> dict:
+        """{metric: value}. Metrics Instagram doesn't offer for this post are dropped and asked again."""
+        want = list(metrics)
+        while want:
+            try:
+                data = self._call("GET", f"{media_id}/insights", metric=",".join(want)).get("data", [])
+            except InstagramError as exc:
+                bad = [m for m in want if m in str(exc)]
+                if exc.code != 100 or len(want) == 1:
+                    raise
+                want = [m for m in want if m not in bad] if bad else want[:-1]
+                continue
+            out = {}
+            for row in data:
+                vals = row.get("values") or [{}]
+                v = row.get("total_value", {}).get("value", vals[0].get("value"))
+                if isinstance(v, (int, float)):
+                    out[row["name"]] = v
+            return out
+        return {}
+
+    def comments(self, media_id: str) -> list[dict]:
+        return self._call("GET", f"{media_id}/comments", limit=50,
+                          fields="id,text,username,timestamp,replies{username}").get("data", [])
+
+    def private_reply(self, comment_id: str, text: str) -> dict:
+        """One DM to the person who wrote the comment (allowed once per comment, within 7 days)."""
+        return self._call("POST", f"{self.user_id}/messages", recipient=json.dumps({"comment_id": comment_id}),
+                          message=json.dumps({"text": text}))
+
+    def reply_to_comment(self, comment_id: str, text: str) -> dict:
+        return self._call("POST", f"{comment_id}/replies", message=text)
+
     def find_by_ref(self, ref: str) -> dict | None:
         for m in self.recent_media():
             if ref in (m.get("caption") or ""):
@@ -147,7 +189,7 @@ class Instagram:
         return {"media_id": media_id, "permalink": self.permalink(media_id)}
 
     def reel_container(self, video_url: str, caption: str, share_to_feed: bool = True,
-                       trial: str | None = None, audio_name: str = "") -> str:
+                       trial: str | None = None, audio_name: str = "", thumb_offset: int | None = None) -> str:
         """A REELS container. `trial` (MANUAL or SS_PERFORMANCE) makes it a Trial Reel, shown first
         only to people who don't follow you. Optional extras are dropped if Instagram rejects them."""
         params = {"media_type": "REELS", "video_url": video_url, "caption": caption}
@@ -158,6 +200,8 @@ class Instagram:
             params["share_to_feed"] = "true" if share_to_feed else "false"
         if audio_name:
             extras["audio_name"] = audio_name[:100]
+        if thumb_offset:
+            extras["thumb_offset"] = str(int(thumb_offset))    # cover frame, in milliseconds
         try:
             return self._call("POST", f"{self.user_id}/media", **params, **extras)["id"]
         except InstagramError as exc:

@@ -148,6 +148,8 @@ def _extract_json(text: str) -> dict | None:
 
 def _call_claude_code(model: str, system: str, user: str, tool: dict) -> dict:
     """Runs Claude Code in print mode with the subscription token (CLAUDE_CODE_OAUTH_TOKEN)."""
+    if _stopped:                       # the usage limit was reached earlier in this run: don't wait on it again
+        raise GenerationError(_stopped["reason"])
     exe = shutil.which("claude")
     if not exe:
         raise GenerationError("Claude Code isn't installed on this machine (needed for the subscription token).")
@@ -166,11 +168,14 @@ def _call_claude_code(model: str, system: str, user: str, tool: dict) -> dict:
                "--max-turns", "6", "--no-session-persistence",
                # no built-in or connector tools: keeps each call ~3k tokens instead of ~40k
                "--tools", "", "--disallowedTools", "mcp__*"]
+        timeouts = 0
         for attempt in range(3):
             try:
-                r = subprocess.run(cmd, input=user, capture_output=True, text=True, cwd=tmp, env=env, timeout=480)
+                r = subprocess.run(cmd, input=user, capture_output=True, text=True, cwd=tmp, env=env, timeout=300)
             except subprocess.TimeoutExpired:
-                err = "timed out"
+                err, timeouts = "timed out", timeouts + 1
+                if timeouts >= 2:
+                    break
                 continue
             data = None
             try:
@@ -188,6 +193,7 @@ def _call_claude_code(model: str, system: str, user: str, tool: dict) -> dict:
                         if k not in out and schema.get("properties", {}).get(k, {}).get("type") == "string":
                             out[k] = ""
                 if isinstance(out, dict) and all(k in out for k in required):
+                    _strikes["n"] = 0
                     return out
                 err = f"{data.get('subtype', 'error')}: {str(data.get('result') or '')[:200]}"
             else:
@@ -195,8 +201,23 @@ def _call_claude_code(model: str, system: str, user: str, tool: dict) -> dict:
             low = err.lower()
             if any(w in low for w in ("invalid bearer", "authentication", "unauthorized", "401", "oauth")):
                 raise GenerationError(f"The Claude subscription token was refused: {err}")
+            if "usage limit" in low or "limit reached" in low:
+                break                          # waiting won't help: the limit resets after hours
             time.sleep(20 * (attempt + 1) if ("limit" in low or "overloaded" in low) else 5)
+    low = err.lower()
+    if "timed out" in low or "usage limit" in low or "limit reached" in low:
+        _strikes["n"] += 1
+        if _strikes["n"] >= STOP_AFTER:
+            _stopped["reason"] = ("Claude's usage limit was reached or Claude stopped answering, so this run made no "
+                                  "more calls; the next run carries on where it stopped")
     raise GenerationError(f"Claude Code didn't return a usable answer: {err}")
+
+
+# A run stops calling Claude once the usage limit is reached (or calls keep timing out), instead of waiting
+# on every remaining call; what's left is marked as failed and the next run (or the morning catch-up) redoes it.
+STOP_AFTER = 3
+_strikes = {"n": 0}
+_stopped: dict = {}
 
 
 def _call_api(model: str, system: str, user: str, tool: dict, max_tokens: int = 2000) -> dict:

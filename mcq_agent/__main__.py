@@ -41,11 +41,11 @@ def parse_regen_comment(text: str, cfg: Config) -> tuple[str, str]:
             if len(parts) < 2:
                 break
             course_id = parts[1].strip().lower()
-            if course_id not in ("concept", "reel"):
+            if course_id not in ("concept", "reel", "explainer"):
                 try:
                     cfg.course(course_id)
                 except KeyError as exc:
-                    raise SystemExit(str(exc).strip('"') + ", concept, reel") from None
+                    raise SystemExit(str(exc).strip('"') + ", concept, reel, explainer") from None
             return course_id, (parts[2].strip() if len(parts) > 2 else "")
     raise SystemExit("Write it as: /regen <course_id> [instruction]. Course ids: " + ", ".join(cfg.course_ids()))
 
@@ -63,14 +63,14 @@ def parse_command(text: str, cfg: Config) -> tuple[str, str, str]:
             if len(parts) < 2:
                 break
             course_id = parts[1].strip().lower()
-            if course_id not in ("concept", "reel"):
+            if course_id not in ("concept", "reel", "explainer"):
                 try:
                     cfg.course(course_id)
                 except KeyError as exc:
-                    raise SystemExit(str(exc).strip('"') + ", concept, reel") from None
+                    raise SystemExit(str(exc).strip('"') + ", concept, reel, explainer") from None
             return word[1:], course_id, (parts[2].strip() if len(parts) > 2 else "")
     raise SystemExit("Write one of: /regen <course> [instruction], /approve <course>, /hold <course>. "
-                     "Course ids: " + ", ".join(cfg.course_ids()) + ", concept, reel")
+                     "Course ids: " + ", ".join(cfg.course_ids()) + ", concept, reel, explainer")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -120,7 +120,7 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("merge-posted", help="add saved posted.json records into the current queue")
     s.add_argument("saved", help="folder holding copies of queue/<date>/posted.json")
 
-    s = sub.add_parser("todo", help="print what a day still needs: all, none, or a list like ca_inter,concept,reel")
+    s = sub.add_parser("todo", help="print what a day still needs: all, none, or a list like ca_inter,concept,reel,explainer")
     s.add_argument("--date", default="tomorrow")
 
     s = sub.add_parser("approve", help="approve a batch (review mode: local)")
@@ -138,6 +138,19 @@ def main(argv: list[str] | None = None) -> int:
 
     s = sub.add_parser("reel-demo", help="make demo reels from the sample MCQs (tries the voice); posts nothing")
     s.add_argument("--out", default="demo", help="folder for the videos (default: demo)")
+
+    s = sub.add_parser("explainer-demo", help="draw the sample explainer (samples/sample_story.json, or sample_explainer.json for the classic style); no Claude, posts nothing")
+    s.add_argument("--out", default="demo", help="folder for the video (default: demo)")
+
+    s = sub.add_parser("replies", help="DM the concept note PDF to everyone who commented NOTES")
+    s.add_argument("--dry-run", action="store_true")
+
+    s = sub.add_parser("make-pdfs", help="make PDFs of recent concept notes (for the comment DMs)")
+    s.add_argument("--days", type=int, default=8)
+
+    s = sub.add_parser("weekly-report", help="last week's Instagram numbers, as the text of an issue")
+    s.add_argument("--out", help="write the report here (default: print it)")
+    s.add_argument("--no-summary", action="store_true", help="skip Claude's notes")
 
     sub.add_parser("check", help="test the Instagram and Claude connections")
     sub.add_parser("refresh-token", help="print a refreshed Instagram token (stdout only)")
@@ -213,6 +226,11 @@ def main(argv: list[str] | None = None) -> int:
         reel = load_reel(date)
         if cfg.reel_due(date) and (not reel or reel.get("error")):     # a failed reel is cheap to retry
             need.append("reel")
+        from .explainer import load as load_explainer
+        ex = load_explainer(date)
+        if cfg.explainer_due(date) and (not ex or ex.get("error") or "concept" in need
+                                        or (concept and ex.get("concept_topic") != concept.get("topic"))):
+            need.append("explainer")
         if not need and batch.get("day") and batch["day"] != cfg.day_number(date):
             print("redraw")              # drawn with an older Day number (e.g. after a pause): redraw it
             return 0
@@ -223,11 +241,14 @@ def main(argv: list[str] | None = None) -> int:
         from .pipeline import hold, regenerate, release
         date = dt.date.fromisoformat(args.date)
         action, course_id, instruction = parse_command(args.comment, cfg)
-        name = {"concept": "concept note", "reel": "reel"}.get(course_id) or cfg.course(course_id)["name"]
+        name = {"concept": "concept note", "reel": "reel", "explainer": "explainer"}.get(course_id) or cfg.course(course_id)["name"]
         if action == "regen":
             item = regenerate(cfg, date, course_id, instruction)
             if course_id == "concept":
                 summary = f"New concept note for {date}: {item.get('topic', '')}"
+            elif course_id == "explainer":
+                summary = (f"Explainer for {date} could not be made: {item.get('error', '')[:200]}" if item.get("error")
+                           else f"New explainer for {date}: {item.get('topic', '')} ({item.get('seconds', 0):g} s)")
             elif course_id == "reel":
                 summary = (f"Reel for {date} could not be made: {item.get('error', '')[:200]}" if item.get("error")
                            else f"New reel for {date}: {cfg.course(item['course_id'])['name']}, {item.get('topic', '')}")
@@ -267,6 +288,35 @@ def main(argv: list[str] | None = None) -> int:
         from .pipeline import reel_demo
         made = reel_demo(cfg, ROOT / args.out)
         return 0 if made else 1
+
+    if args.cmd == "explainer-demo":
+        from . import explainer as X
+        out = ROOT / args.out
+        out.mkdir(parents=True, exist_ok=True)
+        script = X.sample_script(cfg)
+        item = X.make(cfg, cfg.today(), script["concept"], out, script=script)
+        print(f"  ✓ {out / item['video']} ({item['seconds']:g} s)\n---\n{item['caption']}")
+        return 0
+
+    if args.cmd == "replies":
+        from .replies import run
+        counts = run(cfg, dry_run=args.dry_run)
+        return 1 if counts["failed"] and not counts["sent"] else 0
+
+    if args.cmd == "make-pdfs":
+        from .replies import make_pdfs
+        for p in make_pdfs(cfg, args.days):
+            print(f"  ✓ {p.relative_to(ROOT)}")
+        return 0
+
+    if args.cmd == "weekly-report":
+        from .insights import weekly
+        text = weekly(cfg, with_summary=not args.no_summary)
+        if args.out:
+            Path(args.out).write_text(text, encoding="utf-8")
+        else:
+            print(text)
+        return 0
 
     if args.cmd == "check":
         return _check(cfg)

@@ -63,6 +63,11 @@ def _clock(hhmm: str) -> str:
     return f"{(t.hour % 12) or 12}:{t.minute:02d} {'AM' if t.hour < 12 else 'PM'}"
 
 
+def _notes_cta(cfg: Config) -> str:
+    from .replies import cta
+    return cta(cfg)
+
+
 def build_concept_caption(cfg: Config, item: dict, date: dt.date) -> str:
     course = cfg.course(item["course_id"])
     handle = cfg.brand.get("handle", "").strip()
@@ -78,6 +83,7 @@ def build_concept_caption(cfg: Config, item: dict, date: dt.date) -> str:
         "",
         f"Swipe for {slide2}, a memory trick and the mistakes that cost marks.",
         "Save 🔖 this for revision.",
+        *([_cta] if (_cta := _notes_cta(cfg)) else []),
         f"Tomorrow's {course['name']} MCQ ({_clock(course['post_time'])}) tests this concept.",
     ]
     if item.get("applicability"):

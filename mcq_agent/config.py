@@ -30,6 +30,7 @@ class Config:
         self.authors = self.raw.get("authors") or {}
         self.reels = self.raw.get("reels") or {}
         self.stories = self.raw.get("stories") or {}
+        self.explainer = self.raw.get("explainer") or {}
 
     # ── courses ────────────────────────────────────────────
     def course(self, course_id: str) -> dict:
@@ -138,6 +139,16 @@ class Config:
         think = max(3, min(20, int(self.reels.get("think_seconds", 8))))
         answer = max(3.0, min(20.0, float(self.reels.get("answer_seconds", 7))))
         return think, answer
+
+    # ── cartoon explainer reel of the day ──────────────────
+    def explainer_due(self, date: dt.date) -> bool:
+        start = self.explainer.get("start_date")
+        return bool(self.explainer.get("enabled") and start and date >= dt.date.fromisoformat(str(start))
+                    and self.concept_due(date))
+
+    def explainer_time(self) -> str:
+        """It takes the reel's slot: the MCQ reel posts at this time only when there is no explainer."""
+        return str(self.explainer.get("post_time") or self.reel_time())
 
     def law_text(self, paper: dict, date: dt.date) -> str:
         key = paper.get("law")

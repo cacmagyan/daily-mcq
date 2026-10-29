@@ -1,0 +1,339 @@
+{
+  "date": "2026-11-12",
+  "day": 22,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-10-29T23:56:05+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 1",
+      "paper_name": "Accounting",
+      "topic": "Bills of Exchange: Renewal",
+      "question": "A 3-month bill of ₹60,000 accepted by Sunil falls due. He pays ₹20,000 in cash and asks for renewal of the balance. A new 3-month bill is drawn for the balance plus interest for 3 months at 12% p.a. on the balance. Find the new bill's amount.",
+      "options": [
+        "₹41,200",
+        "₹42,400",
+        "₹61,800",
+        "₹40,000"
+      ],
+      "correct": "A",
+      "explanation": "Balance after part payment is ₹40,000. Interest is charged only on this balance for 3 months: 40,000 × 12% × 3/12 = ₹1,200. The new bill is drawn for ₹41,200.",
+      "working": [
+        {
+          "label": "Old bill",
+          "value": "₹60,000"
+        },
+        {
+          "label": "Cash paid",
+          "value": "₹20,000"
+        },
+        {
+          "label": "Balance renewed",
+          "value": "₹40,000"
+        },
+        {
+          "label": "Interest for 3 months",
+          "value": "₹1,200"
+        },
+        {
+          "label": "New bill amount",
+          "value": "₹41,200"
+        }
+      ],
+      "why_not": {
+        "D": "Ignores the interest that is added to the new bill.",
+        "C": "Charges interest on the full ₹60,000 and forgets the cash paid.",
+        "B": "Uses interest for a full year on ₹40,000 at 12% p.a. instead of 3 months."
+      },
+      "exam_tip": "In renewal, interest runs on the unpaid balance only, for the new bill's period, and is added to the new bill.",
+      "calculation": "balance = 60000 - 20000\ninterest = balance * 12 / 100 * 3 / 12\nanswer = balance + interest",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 2,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 22\nPaper 1: Accounting\nTopic: Bills of Exchange: Renewal\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261112",
+      "story": "ca_foundation_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1B",
+      "paper_name": "Applied Business and Industrial Laws",
+      "topic": "Contract of Guarantee - Discharge of Surety",
+      "question": "Anu guarantees repayment of Bala's ₹5,00,000 loan from a bank. Without Anu's knowledge, the bank agrees with Bala, for a consideration, to extend the repayment date by six months. Bala later defaults. What is Anu's position?",
+      "options": [
+        "Anu stays liable, as the extension did not harm her",
+        "Anu stays liable, but only for the interest of the extra six months",
+        "Anu stays liable, but only after the bank sues Bala first",
+        "Anu is discharged, as the bank gave time to Bala without her consent"
+      ],
+      "correct": "D",
+      "explanation": "Under the Indian Contract Act, a contract between creditor and principal debtor to give time to the debtor discharges the surety, unless the surety consents. Anu did not consent, so she is discharged.",
+      "working": [],
+      "why_not": {
+        "A": "Assumes harm must be proved; the discharge is automatic without surety's consent.",
+        "B": "Invents a partial liability; the law gives full discharge, not a reduced liability.",
+        "C": "Confuses with surety's co-extensive liability; creditor need not sue debtor first, and here she is discharged."
+      },
+      "exam_tip": "Binding time-extension to the principal debtor without surety's consent discharges the surety. A mere forbearance to sue does not.",
+      "calculation": "",
+      "applicability": "Indian Contract Act, 1872 - contract of guarantee",
+      "confidence": "high",
+      "reviewer_note": "Based on the section on discharge of surety by creditor's contract with principal debtor to give time (s.135). Verify if desired.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Based on the section on discharge of surety by creditor's contract with principal debtor to give time (s.135). Verify if desired.",
+        "Checker: Wording only: the stem says 'without Anu's knowledge' and option D says 'without her consent', which closely mirrors the stem and slightly gives the answer away. Section 135 turns on consent, not knowledge, but lack of knowledge necessarily means lack of consent, so the key is still correct."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 22\nPaper 1B: Applied Business and Industrial Laws\nTopic: Contract of Guarantee - Discharge of Surety\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Indian Contract Act, 1872 - contract of guarantee.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261112",
+      "story": "cma_cat_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 5",
+      "paper_name": "Auditing and Ethics",
+      "topic": "SA 570 Going Concern",
+      "question": "Under SA 570, an auditor finds material uncertainty about going concern. The financial statements adequately disclose it. What is the correct audit report treatment?",
+      "options": [
+        "Unmodified opinion with a separate section 'Material Uncertainty Related to Going Concern'",
+        "Qualified opinion, as the entity's future viability is doubtful",
+        "Adverse opinion, as the going concern basis is inappropriate",
+        "Unmodified opinion with only an Emphasis of Matter paragraph"
+      ],
+      "correct": "A",
+      "explanation": "When use of the going concern basis is appropriate and a material uncertainty exists and is adequately disclosed, the auditor gives an unmodified opinion and adds a separate section headed Material Uncertainty Related to Going Concern.",
+      "working": [],
+      "why_not": {
+        "B": "Qualification applies only if disclosure is inadequate, not merely because uncertainty exists.",
+        "C": "Adverse opinion is for inappropriate going concern basis, not for adequately disclosed uncertainty.",
+        "D": "Emphasis of Matter was the older approach; SA 570 now requires a separate dedicated section."
+      },
+      "exam_tip": "Adequate disclosure: unmodified plus separate MU section. Inadequate: qualified/adverse. Basis inappropriate: adverse.",
+      "calculation": "",
+      "applicability": "SA 570 (Revised), Going Concern",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The stem does not say that management's use of the going concern basis is appropriate; this is only implied by 'material uncertainty'. Stating it would rule out C more clearly."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 22\nPaper 5: Auditing and Ethics\nTopic: SA 570 Going Concern\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on SA 570 (Revised), Going Concern.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261112",
+      "story": "ca_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 6",
+      "paper_name": "Financial Accounting",
+      "topic": "Insurance Claims: Loss of Stock",
+      "question": "Fire destroyed stock on 30 September 2026. Stock on 1 April 2026 ₹4,00,000; purchases ₹6,00,000; net sales ₹9,00,000; gross profit 25% on sales. Salvage ₹25,000. Policy amount ₹2,60,000 with average clause. Claim?",
+      "options": [
+        "₹2,60,000",
+        "₹2,40,000",
+        "₹3,00,000",
+        "₹2,04,000"
+      ],
+      "correct": "B",
+      "explanation": "Cost of sales = 75% of sales = ₹6,75,000. Stock at fire = ₹3,25,000. Loss after salvage = ₹3,00,000. Average clause: claim = loss × policy amount ÷ stock value = 3,00,000 × 2,60,000 ÷ 3,25,000.",
+      "working": [
+        {
+          "label": "Cost of sales (75% of 9,00,000)",
+          "value": "675000"
+        },
+        {
+          "label": "Stock at fire (4,00,000+6,00,000-6,75,000)",
+          "value": "325000"
+        },
+        {
+          "label": "Loss after salvage",
+          "value": "300000"
+        },
+        {
+          "label": "Policy amount",
+          "value": "260000"
+        },
+        {
+          "label": "Claim = 3,00,000 × 2,60,000 ÷ 3,25,000",
+          "value": "240000"
+        }
+      ],
+      "why_not": {
+        "C": "Ignores the average clause; pays the full loss though the stock was under-insured.",
+        "A": "Takes the policy amount as the claim; applies the clause to stock, not to the loss after salvage.",
+        "D": "Takes gross profit as 25% on cost, giving a wrong stock figure."
+      },
+      "exam_tip": "Under-insured? Claim = net loss × policy amount ÷ stock value at loss. Gross profit on sales: cost = 75%.",
+      "calculation": "cos = 900000*(1-0.25)\nstock = 400000+600000-cos\nloss = stock-25000\nanswer = loss*260000/stock",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The question doesn't say that the sales figure covers 1 April to 30 September 2026. This is implied but should be stated.",
+        "Checker: It doesn't say that the average clause compares the policy with the stock value before salvage (₹3,25,000). If it were compared with the net loss, the claim would be ₹2,60,000 (option A). The standard textbook treatment gives ₹2,40,000.",
+        "Checker: The question doesn't say whether the gross profit is on sales or on cost. It does say 'on sales', so this is fine."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 22\nPaper 6: Financial Accounting\nTopic: Insurance Claims: Loss of Stock\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261112",
+      "story": "cma_inter_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 2",
+      "paper_name": "Advanced Financial Management",
+      "topic": "Mergers - Post-merger EPS",
+      "question": "Alfa Ltd (18 lakh shares, earnings ₹2.7 crore, market price ₹300) acquires Beta Ltd (5 lakh shares, earnings ₹1.3 crore, market price ₹120) by issuing shares at market prices. No premium, no synergy. Post-merger EPS of Alfa is:",
+      "options": [
+        "₹15.00",
+        "₹22.22",
+        "₹20.00",
+        "₹17.39"
+      ],
+      "correct": "C",
+      "explanation": "Exchange ratio = 120/300 = 0.4 Alfa share per Beta share, so 2 lakh new shares are issued. Combined earnings ₹4 crore divided by 20 lakh shares gives ₹20.",
+      "working": [
+        {
+          "label": "Exchange ratio (Alfa per Beta share)",
+          "value": "0.4"
+        },
+        {
+          "label": "New Alfa shares issued (lakh)",
+          "value": "2"
+        },
+        {
+          "label": "Total shares after merger (lakh)",
+          "value": "20"
+        },
+        {
+          "label": "Combined earnings (₹ lakh)",
+          "value": "400"
+        },
+        {
+          "label": "Post-merger EPS (₹)",
+          "value": "20"
+        }
+      ],
+      "why_not": {
+        "B": "Divided combined earnings by Alfa's old 18 lakh shares, ignoring the new shares issued.",
+        "D": "Added all 5 lakh Beta shares instead of converting them at the exchange ratio.",
+        "A": "Took Alfa's pre-merger EPS (₹2.7 crore / 18 lakh) as unchanged."
+      },
+      "exam_tip": "Convert target shares into acquirer shares by price ratio first; only then divide combined earnings.",
+      "calculation": "ratio = 120/300\nnew = 5*ratio\ntotal = 18+new\nanswer = (270+130)/total",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 22\nPaper 2: Advanced Financial Management\nTopic: Mergers - Post-merger EPS\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261112",
+      "story": "ca_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 17",
+      "paper_name": "Cost and Management Audit",
+      "topic": "Cost Audit vs Financial Audit",
+      "question": "Which statement correctly distinguishes a statutory cost audit under the Companies Act, 2013 from the statutory financial audit of the same company?",
+      "options": [
+        "Cost audit report is submitted to the Board; financial audit report goes to members",
+        "Both reports are addressed to members and laid at the general meeting",
+        "Cost audit covers financial statements; financial audit covers cost records",
+        "Both audits must be done by the same practising professional"
+      ],
+      "correct": "A",
+      "explanation": "The cost auditor, a practising cost accountant, reports to the Board on cost records and cost statements. The financial auditor reports to members on the financial statements. The two audits differ in scope and auditor.",
+      "working": [],
+      "why_not": {
+        "B": "Confuses the two reports; the cost audit report is made to the Board, not to members.",
+        "C": "Swaps the scope; cost audit examines cost records, not the financial statements.",
+        "D": "Cost auditor must be a cost accountant; the financial auditor is a chartered accountant."
+      },
+      "exam_tip": "Cost audit: cost accountant, cost records, report to Board. Financial audit: CA, financial statements, report to members.",
+      "calculation": "",
+      "applicability": "Companies Act, 2013 - cost audit provisions",
+      "confidence": "high",
+      "reviewer_note": "Cost auditor files the report with the Board, and the company then furnishes it to the Central Government in the prescribed form. Option D says the same professional, which is wrong, as the cost auditor must be a cost accountant in practice.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Cost auditor files the report with the Board, and the company then furnishes it to the Central Government in the prescribed form. Option D says the same professional, which is wrong, as the cost auditor must be a cost accountant in practice.",
+        "Checker: Option A leaves out that the company must then file the cost audit report with the Central Government (CRA-4). This does not make A wrong; it is wording polish only."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Cost Audit vs Financial Audit",
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 22\nPaper 17: Cost and Management Audit\nTopic: Cost Audit vs Financial Audit\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013 - cost audit provisions.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261112",
+      "story": "cma_final_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "concept": {"course_id": "cma_final", "paper_code": "Paper 16", "paper_name": "Strategic Cost Management",
+              "topic": "Target Costing"},
+  "title": "Target costing in 40 seconds",
+  "caption_hook": "The market fixes the price first. Then the cost has to fit.",
+  "scenes": [
+    {"template": "hook", "say": "What if the price comes before the product?", "stamp": "PRICE FIRST?", "pose": "excited"},
+    {"template": "talk", "say": "Customers say: we will pay ₹10,000 for this phone, and not a rupee more.", "speech": "Max ₹10,000!", "pose": "worried"},
+    {"template": "calc", "say": "The company wants ₹2,000 profit on each phone, so the phone must cost at most ₹8,000.", "top": "₹10,000 − ₹2,000", "big": "₹8,000", "pose": "present"},
+    {"template": "sign", "say": "That ₹8,000 is the target cost.", "lines": ["TARGET", "COST"], "pose": "explain"},
+    {"template": "formula", "say": "Target cost equals target selling price, minus target profit.", "formula": "Target Cost = TSP − TP", "sub": "TSP: target price · TP: target profit"},
+    {"template": "versus", "say": "Normal costing adds profit to cost. Target costing starts from the price.", "joiner": "VS", "right_on": "Target",
+     "left": {"title": "NORMAL", "lines": ["Cost + Profit", "= Price"], "icon": "factory", "color": "navy"},
+     "right": {"title": "TARGET", "lines": ["Price − Profit", "= Cost"], "icon": "people", "color": "green"}},
+    {"template": "flow", "say": "But the engineers estimate ₹9,000. That extra ₹1,000 is the cost gap.", "from": "₹9,000", "from_note": "estimate", "to": "₹8,000", "to_note": "target", "label": "−₹1,000", "to_on": "gap"},
+    {"template": "board", "say": "They close it by value engineering: same features, smarter design, lower cost.", "title": "VALUE ENGINEERING", "lines": ["Same features", "Smarter design", "Lower cost"]},
+    {"template": "sign", "say": "So remember: price first, cost last.", "lines": ["PRICE FIRST", "COST LAST"], "pose": "thumbs"},
+    {"template": "follow", "say": "Follow for one concept every day!"}
+  ]
+}

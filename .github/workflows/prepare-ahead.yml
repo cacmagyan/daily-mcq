@@ -3,11 +3,9 @@ name: 6. Prepare days ahead
 # Prepares the coming days in advance, one day after another (today first, then tomorrow, and so on),
 # until `days` days are ready, Claude's usage limit is reached, or about 4.5 hours have passed.
 # Each finished day is saved at once, so nothing is lost if it stops. Prepared days post by
-# themselves, and posting doesn't need Claude, so a buffer keeps the page going if Claude can't
-# be used for a while. Runs every night at 23:17 IST to top the buffer up; run it by hand any time.
+# themselves, and posting doesn't need Claude. It runs only when you start it by hand
+# (Actions → 6. Prepare days ahead → Run workflow); the nightly schedule is off.
 on:
-  schedule:
-    - cron: "47 17 * * *"          # 23:17 IST
   workflow_dispatch:
     inputs:
       days:
@@ -44,8 +42,16 @@ jobs:
         run: |
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
-          command -v ffmpeg >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null; }
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng >/dev/null
           if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then npm install -g @anthropic-ai/claude-code; fi
+
+      # the free explainer voice (Kokoro, ~340 MB): downloaded once, then kept in GitHub's cache
+      - name: Voice model cache
+        if: always()
+        uses: actions/cache@v4
+        with:
+          path: .kokoro
+          key: kokoro-v1.0
 
       - name: Prepare day by day
         env:

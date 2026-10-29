@@ -1,0 +1,60 @@
+name: 8. Reply to NOTES comments
+
+# Every 30 minutes: anyone who commented NOTES (or note / pdf) on a recent explainer reel or concept
+# post gets the day's full concept note as a PDF link by DM, and a public "Sent! Check your DMs 📩"
+# under the comment. Needs the comments and messages permissions on the Instagram token (README).
+on:
+  schedule:
+    - cron: "13,43 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only show who would get a DM"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: replies
+  cancel-in-progress: false
+
+jobs:
+  replies:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install requests PyYAML Pillow Jinja2
+
+      # the DM links to a PDF of the note, so the PDF must be on GitHub before the DM goes out
+      - name: Make the note PDFs
+        run: |
+          python -m mcq_agent make-pdfs --days 8
+          git config user.name "mcq-agent"
+          git config user.email "mcq-agent@users.noreply.github.com"
+          git add queue/*/concept.pdf 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -q -m "Concept note PDFs"
+            for i in 1 2 3 4; do git pull -q --rebase && git push -q && break; sleep 5; done
+          fi
+
+      - name: Answer NOTES comments
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          ARGS=()
+          if [ "$DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
+          python -m mcq_agent replies "${ARGS[@]}"

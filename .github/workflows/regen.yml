@@ -66,9 +66,17 @@ jobs:
           # drawing and Claude are only needed for /regen
           if [[ "$COMMENT" == /regen* ]]; then
             python -m playwright install --with-deps chromium
-            command -v ffmpeg >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null; }
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng >/dev/null
             if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then npm install -g @anthropic-ai/claude-code; fi
           fi
+
+      # the free explainer voice (Kokoro, ~340 MB): downloaded once, then kept in GitHub's cache
+      - name: Voice model cache
+        if: startsWith(github.event.comment.body, '/regen')
+        uses: actions/cache@v4
+        with:
+          path: .kokoro
+          key: kokoro-v1.0
 
       - name: Run the command
         id: cmd

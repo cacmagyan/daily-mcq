@@ -77,6 +77,38 @@ reels:
       azure:  {"Rahul kp": "en-IN-PrabhatNeural", "Ranjith Shivahari": "en-IN-AaravNeural"}
       google: {"Rahul kp": "en-IN-Neural2-B", "Ranjith Shivahari": "en-IN-Neural2-C"}
 
+# Cartoon explainer reel: a one-minute classroom scene on the day's concept of the day. The page's
+# two students ask and react, the elephant teacher explains at a chalkboard (each with their own free
+# Kokoro voice, no key needed). It takes the reel's 6 PM slot; the MCQ reel above is still made each
+# day and posts only if the explainer can't (failed or held). Claude writes the scene from the checked
+# concept note; a second call checks it.
+explainer:
+  enabled: true
+  start_date: "2026-10-30"      # first explainer reel
+  post_time: "17:55"            # same slot as the reel (keep matched to the 17:57 line in publish.yml)
+  style: "story"                # "story": classroom scene · "classic": the elephant alone, ~40 s
+  voice: "af_heart"             # classic style only (the story's voices are in story_video.py)
+  speed: 1.05                   # 1.0 = normal speaking speed
+  music: true                   # soft plucked tune under the voices
+  max_attempts: 3               # script rewrites if the format or the checker finds a problem
+
+# Comment NOTES → DM: the explainer reel and the concept post ask students to comment NOTES; every
+# 30 minutes the agent DMs each of them the day's full concept note as a PDF and replies "Sent! Check
+# your DMs" under the comment. Needs two extra permissions on the Instagram token (README).
+comment_dm:
+  enabled: true
+  keywords: ["notes", "note", "pdf"]   # a comment with any of these words gets the PDF (the first is shown in the call to action)
+  posts: ["explainer", "concept"]      # which posts it answers on
+  days: 7                              # Instagram allows the DM up to 7 days after the comment
+  public_reply: "Sent! Check your DMs 📩"
+
+# Weekly report: every Sunday evening an issue with last week's numbers per kind of post (views,
+# reach, saves, shares, watch time), the best and weakest posts, follower growth and a few lines from
+# Claude on what worked (1 Claude call a week). Needs the insights permission on the token (README).
+weekly_report:
+  enabled: true
+  summary: true
+
 # Stories: right after each post goes out, a Story follows (Instagram's API can't add poll stickers
 # or Highlights; add the week's Stories to the course Highlights in the app).
 stories:

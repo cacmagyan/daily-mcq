@@ -1,6 +1,6 @@
 # Daily CA & CMA MCQ agent
 
-Every day this agent writes one MCQ for each of six courses, draws a **question image** and an **answer image** for each, and posts each pair to Instagram as a two-slide carousel (swipe for the answer). It also posts one **Concept of the day**: a 4-slide handwritten-notebook note, and one **MCQ reel**: a 15-second video of one of the day's MCQs (both below).
+Every day this agent writes one MCQ for each of six courses, draws a **question image** and an **answer image** for each, and posts each pair to Instagram as a two-slide carousel (swipe for the answer). It also posts one **Concept of the day**: a 4-slide handwritten-notebook note, and one **cartoon explainer reel**: the elephant explains the concept in about 40 seconds with a voice (the **MCQ reel** is its backup). All below.
 
 Each course has its own colour, so students can spot their MCQ in the feed and on your profile grid:
 
@@ -26,7 +26,7 @@ The agent runs in **auto** mode (`review: mode: "auto"` in `config.yaml`): MCQs 
 
 **A pause in posting** (e.g. the Claude subscription lapsed): add the dates to `brand: paused` in `config.yaml` and the Day numbers carry on after them (no gap). Days already drawn with the old number are redrawn by the next run, without Claude.
 
-**Preparing days ahead.** Actions → **6. Prepare days ahead** → Run workflow (default 14 days). It prepares one day after another, saving each as it finishes, until the days are ready, Claude's usage limit is reached, or about 4.5 hours pass; it also runs every night at 23:17 to top the buffer up. Prepared days post by themselves without Claude, so a buffer keeps the page going if Claude can't be used for a while. `models: strong_checks: "law_tax_audit"` keeps the strong checker for tax, law, audit and SM papers only, which roughly halves the usage.
+**Preparing days ahead.** Actions → **6. Prepare days ahead** → Run workflow (default 14 days). It prepares one day after another, saving each as it finishes, until the days are ready, Claude's usage limit is reached, or about 4.5 hours pass. It only runs when you start it. Prepared days post by themselves without Claude, so a buffer keeps the page going if Claude can't be used for a while. `models: strong_checks: "law_tax_audit"` keeps the strong checker for tax, law, audit and SM papers only, which roughly halves the usage.
 
 To act on a day, comment on its issue:
 
@@ -58,7 +58,53 @@ One post a day at **19:40**, one course a day in turn (CA Foundation, CMA CAT, C
 - Settings are under `concepts:` in `config.yaml` (`start_date`, `post_time`, course order).
 - **Adding a note to a day that's already prepared** (for example after moving `start_date` earlier): Actions → 1. Prepare tomorrow's MCQs → Run workflow, type the date, tick **concept only**. The MCQs stay as they are. If tomorrow's MCQ already exists, the note is written on that MCQ's topic and paper. The evening run does this by itself for tomorrow. The handwriting fonts (Permanent Marker, Patrick Hand, Caveat; free licences) are downloaded by GitHub the first time they are needed.
 
-## MCQ reel of the day
+## Cartoon explainer reel (6 PM)
+
+One Reel a day at about **6:00 PM**, on the day's **concept of the day** (the full note follows at 19:40). It is a short cartoon **classroom scene** of about a minute:
+
+- the page's two students (the boy in the blue hoodie and the girl in the pink hoodie, from your character sheets) ask about the concept, react ("Wait…", "Hmm,", "Oh!") and guess,
+- the elephant teacher explains it at a **chalkboard**, where the example, the formula, a worked sum or a comparison is drawn as it is said,
+- it opens with a **hook** (a student's surprised question, also stamped on screen) and ends with a one-line **recap** and "Comment NOTES for the full note, and follow for one concept every day!" (see Comment NOTES → DM).
+
+It only explains: no exam traps or mistakes. Every character speaks in their own voice, their mouths move with it and they blink, short subtitles in a box (coloured by who is speaking) show what is said, the camera cuts between the desk, close-ups and the board and pushes in slowly, and a soft tune plays under the voices.
+
+- **Voices:** free and need no key or card: the open Kokoro voice model runs on GitHub itself. Teacher `af_heart`, girl `af_sarah`, boy `am_fenrir` (in `mcq_agent/story_video.py`, `CAST`). The workflows install `espeak-ng` and keep the model (about 340 MB, downloaded once from GitHub) in GitHub's cache.
+- **The students** are the poses cut from your two character sheets, sharpened and packed into `assets/brand/students.webp` (`mcq_agent/students_art.py` says where each pose's eyes and mouth are, for blinking and talking).
+- **Writing:** Claude writes the scene (who says what, which shot, which pose, which board drawing) from the day's checked concept note. Board drawings come from a fixed set (title, price, calc, formula, versus, flow, list, words), so everything fits. A second Claude call checks every fact and number. That is two Claude calls a day.
+- **Backup:** the MCQ reel is still made every day. If the explainer can't be made (e.g. Claude's usage limit), its checker isn't satisfied, or its concept note changed, the MCQ reel posts at 6 PM instead, as before. Only one reel posts a day.
+- The day's issue shows the explainer's cover, a **▶ Watch it** link and who says what. Commands: `/regen explainer` (new script; you can add an instruction), `/hold explainer`, `/approve explainer`.
+- **Adding it to a day that's already prepared:** Actions → 1. Prepare tomorrow's MCQs → Run workflow, type the date, tick **explainer only**. The evening and morning runs do this by themselves.
+- **See it without Claude:** Actions → **5. Reel demo** → Run workflow draws `samples/sample_story.json` (Target Costing).
+- **The older style** (the elephant alone, about 40 seconds, one big word on screen at a time) is still there: set `explainer: style: "classic"` in `config.yaml`.
+- Settings are under `explainer:` in `config.yaml` (`start_date`, `style`, speed, music). Files: `queue/<date>/explainer.json`, `explainer.mp4`, `explainer_cover.jpg`. Drawing code: `mcq_agent/story_video.py` (the scene), `story_sets.py` (classroom and board drawings), `students_art.py` (the students), `elephant.py` (the teacher), `cartoon_*.py` (the classic style).
+
+## Comment NOTES → DM
+
+The explainer reel ends with "Comment NOTES for the full note", its end card says **Comment NOTES for the PDF**, and the explainer and concept captions say "💬 Comment NOTES and we'll DM you the full concept note (PDF)". Every 30 minutes (**8. Reply to NOTES comments**) the agent finds new comments with *notes*, *note* or *pdf* on the last week's explainer and concept posts and:
+
+1. sends the commenter a DM with a link to that day's concept note as a 4-page PDF (`queue/<date>/concept.pdf`, made from the slides),
+2. replies under the comment: "Sent! Check your DMs 📩", so others see it works and comment too.
+
+Each person gets one DM per post. Instagram allows the DM up to 7 days after the comment. Comments and DMs both help the reel's reach, and replies to the DM open a conversation you can continue in the app. Settings are under `comment_dm:` in `config.yaml` (words, which posts, the public reply). To try it safely: Actions → 8 → Run workflow with **dry run** ticked; it only lists who would get a DM.
+
+**One-time setup:** the token needs two extra permissions.
+1. developers.facebook.com → your app → **Use cases** (or **Instagram** → **API setup with Instagram login**) → Permissions: add `instagram_business_manage_comments`, `instagram_business_manage_messages` and `instagram_business_manage_insights` (the last one is for the weekly report).
+2. **Generate access tokens** → your account → **Generate token**, approve the new permissions, and paste the new token into the GitHub secret `IG_ACCESS_TOKEN` (Settings → Secrets and variables → Actions → IG_ACCESS_TOKEN → Update).
+3. In the Instagram app: Settings → Messages and story replies → Message controls → Connected tools → turn on **Allow access to messages**.
+
+Until then the job logs "the token needs … permissions" and does nothing else.
+
+## Weekly report
+
+Every Sunday at about 9 PM (**7. Weekly report**) the agent opens an issue "Weekly report: <dates>" and @mentions you:
+
+- **Each kind of post side by side**: cartoon explainer, MCQ reel, concept note and MCQ posts, with average views, reach, saves, shares, likes and (for reels) average watch time. This is the answer to "is the explainer better than the MCQ?".
+- **MCQ posts by course**, the **5 best** and **3 weakest** posts with links, and **follower growth** since last week.
+- **What the numbers say**: 3-6 lines from Claude on what worked and what to try next (one Claude call a week).
+
+The numbers are saved in `stats/week-<date>.json`. Reach and views keep growing for days, so the last days of a week look smaller. It needs the `instagram_business_manage_insights` permission (see the setup above). Run it any time from Actions → 7 → Run workflow.
+
+## MCQ reel of the day (backup)
 
 One Reel a day at about **6:00 PM** (`post_time: "17:55"`; Instagram takes a minute or two to process the video). It shows one of the day's MCQs on the OMR sheet with an **8-second countdown** and ticking (faster for the last 3 seconds). Then a chime plays, the correct bubble is filled in and the reason appears for 7 seconds.
 
@@ -111,7 +157,7 @@ In the Instagram app: Settings → Account type and tools → Switch to professi
 ### 2. Instagram access token
 1. Go to <https://developers.facebook.com>, log in, and create an app (type **Business**).
 2. Add the **Instagram** product and open **API setup with Instagram login**.
-3. Under *Generate access tokens*, add your Instagram account and generate a token. It needs the permissions `instagram_business_basic` and `instagram_business_content_publish`.
+3. Under *Generate access tokens*, add your Instagram account and generate a token. It needs the permissions `instagram_business_basic` and `instagram_business_content_publish`, plus `instagram_business_manage_insights` (weekly report), `instagram_business_manage_comments` and `instagram_business_manage_messages` (Comment NOTES → DM).
 4. Copy the token. It lasts 60 days, and workflow 5 renews it every week, so you only do this once.
 
 You are only posting to your own account, so App Review is normally not needed. Meta changes its dashboard often; if a screen looks different, the same steps are in Meta's guide "Instagram API with Instagram Login".
@@ -220,9 +266,9 @@ For local-only use, set `review.mode: local` in `config.yaml` and approve with `
 ## Costs and limits
 
 - **GitHub Actions:** free for public repositories.
-- **Claude:** about 12 calls a day (6 writes + 6 checks), more when an MCQ is rewritten. With a subscription token this counts toward your plan's normal usage; each call is small. With an API key, expect roughly $3-6 a month; check usage in the Console after the first week.
-- **Instagram:** the API allows 100 posts per 24 hours; this uses about 16 (6 MCQs, the concept note, the reel and a Story after each). A carousel counts as one post.
-- **Repository size:** images and the reel add roughly 4 MB a day (about 1.5 GB a year). That is fine for a long while; switch to Cloudinary if you want the repo to stay small.
+- **Claude:** about 16 calls a day (6 MCQs and the concept note, each written and checked, plus the explainer script and its check), more when something is rewritten. With a subscription token this counts toward your plan's normal usage; each call is small. With an API key, expect roughly $3-6 a month; check usage in the Console after the first week.
+- **Instagram:** the API allows 100 posts per 24 hours; this uses about 16 (6 MCQs, the concept note, the reel and a Story after each). A carousel counts as one post. Comment DMs and the weekly report use reading calls, far inside the limits.
+- **Repository size:** images and the two reels add roughly 8 MB a day (about 3 GB a year). That is fine for some months; GitHub prefers repositories under 5 GB, so plan a clean-up (or switch to Cloudinary) after about a year.
 
 ## Troubleshooting
 
@@ -244,11 +290,15 @@ For local-only use, set `review.mode: local` in `config.yaml` and approve with `
 ```
 config.yaml                 courses, colours, times, papers, law basis
 mcq_agent/                  the agent (generator, renderer, Instagram publisher)
+mcq_agent/story_*.py, students_art.py, elephant.py   the explainer reel: classroom, board, students, teacher
+mcq_agent/cartoon_*.py      the classic explainer style (and the props the board uses)
+mcq_agent/kokoro.py         the free explainer voice (Kokoro model, run on GitHub)
 templates/slide.html.j2     the image design (reel.html.j2: the reel, concept.html.j2: the concept note)
-assets/fonts/               bundled fonts, so images look identical everywhere
-assets/brand/logo.png       your logo, background removed
-samples/sample_batch.json   six hand-checked sample MCQs
-queue/<date>/               each day's MCQs (mcqs.json), images, concept note, reel (reel.json, reel.mp4), and what was posted
+assets/fonts/               bundled fonts, so images look identical everywhere (Poppins: captions; Caveat: chalk)
+assets/brand/logo.png       your logo, background removed (students.webp: the two students' poses)
+samples/sample_batch.json   six hand-checked sample MCQs (sample_story.json: the demo explainer)
+queue/<date>/               each day's MCQs (mcqs.json), images, concept note (+ concept.pdf for DMs), reels (explainer.json/.mp4, reel.json/.mp4), and what was posted
+stats/                      the weekly report's numbers
 .github/workflows/          the scheduled jobs (and 5. Reel demo, run by hand)
 demo/                       demo reels made by "5. Reel demo"
 tests/                      offline tests

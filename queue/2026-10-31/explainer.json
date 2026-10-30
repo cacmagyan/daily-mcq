@@ -1,9 +1,187 @@
 {
   "kind": "explainer",
   "course_id": "ca_foundation",
+  "paper_code": "Paper 4",
+  "paper_name": "Business Economics",
   "topic": "Price Elasticity of Demand (PED)",
   "concept_topic": "Price Elasticity of Demand (PED)",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 4: board sub is 51 characters; at most 44; line 11: board left needs at most 2 lines of at most 14 characters",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 75.86,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Price Elasticity of Demand",
+    "caption_hook": "Why does petrol use barely drop when the price rises? Price elasticity explains it.",
+    "hook_label": "PRICE UP, QUANTITY?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Why does the quantity of petrol demanded barely drop when price rises?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Good question! That's price elasticity of demand: how much buyers react to a price change.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Price Elasticity",
+          "sub": "how much buyers react"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So how do we measure that reaction?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Compare two percentages: percentage change in quantity demanded divided by percentage change in price.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "The Ed Formula",
+          "formula": "Ed = %ΔQ / %ΔP",
+          "sub": "Q = quantity demanded, P = price"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Can you show an example?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Sure. A pen costs ₹10 and you buy 100. Price rises to ₹11. Now you buy 80.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "Price ₹10 → ₹11",
+          "big": "+10%"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So price rose 10%, and quantity fell 20%, right?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Exactly. Divide 20% by 10%. Ignoring the minus sign, the magnitude is 2.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "calc",
+          "top": "−20% ÷ +10%",
+          "big": "|Ed| = 2"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Is 2 big or small?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Compare with 1. Above 1 is elastic: big reaction. Below 1 is inelastic. Exactly 1 is unitary.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Elastic",
+            "lines": [
+              "|Ed| > 1",
+              "Big reaction"
+            ],
+            "icon": "chart_down",
+            "color": "red"
+          },
+          "right": {
+            "title": "Inelastic",
+            "lines": [
+              "|Ed| < 1",
+              "Small reaction"
+            ],
+            "icon": "scale",
+            "color": "green"
+          },
+          "right_on": "inelastic"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Oh! So petrol must be inelastic, since people need it?",
+        "shot": "close",
+        "pose": "excited"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, necessities are inelastic. Now revenue: for our elastic pen, the price rise cut revenue from ₹1,000 to ₹880.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "flow",
+          "from": "₹1,000",
+          "from_note": "at ₹10",
+          "to": "₹880",
+          "to_note": "at ₹11",
+          "label": "Price up",
+          "to_on": "₹880"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So with inelastic demand, a price rise increases revenue?",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, when price rises. Elastic buyers escape, inelastic buyers stay stuck. Exactly 1 keeps revenue the same.",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Elastic =",
+            "Escapes"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Example: price ₹10→₹11 (+10%), quantity 100→80 (−20%), |Ed|=2; revenue ₹1,000→₹880. Hook stamp shortened to 22-char limit. The 'words' recap board shows the memory trick \"Elastic = Escapes\". Check pose/board fit and word count (about 170).",
+    "Checker: Line 10 board (versus): the voice line names three cases (elastic, inelastic, unitary) but the board shows only two. Add a third panel: 'Unitary: |Ed| = 1, proportionate reaction'.",
+    "Checker: Line 6: quantity is given with no period ('you buy 100'). Give a time frame, e.g. 'you buy 100 pens a month… now you buy 80 a month'.",
+    "Checker: Line 14: 'Yes, when price rises' just repeats the boy's question. A clearer version: 'Yes. With inelastic demand, a price rise increases total revenue; with elastic demand it reduces it; with unitary elasticity revenue stays the same.'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "Example: price ₹10→₹11 (+10%), quantity 100→80 (−20%), |Ed|=2; revenue ₹1,000→₹880. Hook stamp shortened to 22-char limit. The 'words' recap board shows the memory trick \"Elastic = Escapes\". Check pose/board fit and word count (about 170).",
+  "caption": "🎬 🟩 CA Foundation · Price Elasticity of Demand\n\nWhy does petrol use barely drop when the price rises? Price elasticity explains it.\n\n📒 Full concept note today at 7:40 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 4: Business Economics\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFoundation #ICAI #CAStudents #CAExams\n\nref explainer-261031",
   "hold": false,
   "hold_reason": ""
 }

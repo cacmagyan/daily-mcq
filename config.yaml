@@ -52,7 +52,7 @@ concepts:
 # It reuses an MCQ that has already passed every check, one course a day in this order (set so the
 # reel's course is never the concept note's course that day); if that MCQ is on hold, the next course is used.
 reels:
-  enabled: true
+  enabled: false                # off: the classroom explainer is the only reel (true = make the MCQ reel again, as its backup)
   start_date: "2026-10-20"      # first reel (normally made the evening before)
   post_time: "17:55"            # IST; goes live by about 6:00 PM. Keep matched to the 17:57 line in publish.yml
   courses: ["ca_final", "cma_final", "ca_foundation", "cma_cat", "ca_inter", "cma_inter"]

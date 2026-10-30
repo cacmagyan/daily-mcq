@@ -104,7 +104,10 @@ Every Sunday at about 9 PM (**7. Weekly report**) the agent opens an issue "Week
 
 The numbers are saved in `stats/week-<date>.json`. Reach and views keep growing for days, so the last days of a week look smaller. It needs the `instagram_business_manage_insights` permission (see the setup above). Run it any time from Actions → 7 → Run workflow.
 
-## MCQ reel of the day (backup)
+## MCQ reel of the day (switched off)
+
+Switched off since 31 Oct 2026 (`reels: enabled: false`): the classroom explainer is the only reel. Set it to `true` to make the MCQ reel again as the explainer's backup.
+
 
 One Reel a day at about **6:00 PM** (`post_time: "17:55"`; Instagram takes a minute or two to process the video). It shows one of the day's MCQs on the OMR sheet with an **8-second countdown** and ticking (faster for the last 3 seconds). Then a chime plays, the correct bubble is filled in and the reason appears for 7 seconds.
 

@@ -1,0 +1,193 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_final",
+  "paper_code": "Paper 16",
+  "paper_name": "Strategic Cost Management",
+  "topic": "Target Costing",
+  "concept_topic": "Target Costing",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 74.08,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Target Costing: price first, cost next",
+    "caption_hook": "The market sets your price. So who sets your cost?",
+    "hook_label": "MARKET DECIDES COST?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Ma'am, why does the market decide my product's cost?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Because customers pay the price. So we start with price, then fix cost. That's target costing.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Target Costing",
+          "sub": "Price first, cost next"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "But normally we add profit to cost, right?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, traditional costing is cost plus profit equals price. Target costing reverses it.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Old way",
+            "icon": "cross",
+            "color": "red",
+            "lines": [
+              "Cost + Profit",
+              "gives Price"
+            ]
+          },
+          "right": {
+            "title": "Target",
+            "icon": "check",
+            "color": "green",
+            "lines": [
+              "Price − Profit",
+              "gives Cost"
+            ]
+          },
+          "right_on": "reverses"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Okay, can you give a simple example?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Say a phone. Customers will pay only ₹10,000. That's the target selling price.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "price",
+          "who": "people",
+          "says": "Only ₹10,000"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And our profit? We can't work for free!",
+        "shot": "close",
+        "pose": "worried"
+      },
+      {
+        "who": "teacher",
+        "say": "Right. Target cost equals target selling price minus target profit. Say you want 20% profit on sales.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Target Cost",
+          "formula": "TC = TSP − TP",
+          "sub": "TSP = selling price, TP = target profit"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So profit is 20% of ₹10,000, that's ₹2,000?",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Exactly. ₹10,000 minus ₹2,000, so target cost is ₹8,000.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "calc",
+          "top": "₹10,000 − ₹2,000",
+          "big": "₹8,000"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "But what if our design costs ₹8,500 now?",
+        "shot": "close",
+        "pose": "worried"
+      },
+      {
+        "who": "teacher",
+        "say": "Then cost gap is estimated cost minus target cost: ₹500. Value engineering must close it.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "₹8,500",
+          "from_note": "Estimated",
+          "to": "₹8,000",
+          "to_note": "Target",
+          "label": "Gap ₹500",
+          "to_on": "target"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So the gap is a loss?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Not yet. It's the cost cut still needed. Price stays fixed, because the market sets it.",
+        "shot": "board",
+        "pose": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: price minus profit equals permitted cost. Price is fixed, cost must bend!",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Price − Profit",
+            "= Target cost"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Example: price ₹10,000, 20% profit on sales = ₹2,000, target cost ₹8,000, estimated ₹8,500, gap ₹500. Per unit assumed (a phone). Word count about 160.",
+    "Checker: Line 14 (voice): 'Not yet' suggests the gap will turn into a loss. It won't: at ₹8,500 the phone still earns ₹1,500, which is ₹500 below the ₹2,000 target profit. Better: 'No. It's a shortfall against target profit, the cost cut still needed. At ₹8,500 you still earn ₹1,500, just not the ₹2,000 target.'",
+    "Checker: Line 8 board sub: 'TSP = selling price' should say 'TSP = target selling price', so it matches the voice line and the abbreviation.",
+    "Checker: Line 12 (voice): 'Value engineering must close it' makes VE sound like the only tool. Better: 'Value engineering (with tools such as kaizen and design changes) is used to close it.'",
+    "Checker: Line 4 board: the red cross on 'Old way' suggests cost-plus is wrong. It's a different approach, not an error. A neutral icon would be better (wording/visual only)."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Example: price ₹10,000, 20% profit on sales = ₹2,000, target cost ₹8,000, estimated ₹8,500, gap ₹500. Per unit assumed (a phone). Word count about 160.",
+  "caption": "🎬 🟥 CMA Final · Target Costing: price first, cost next\n\nThe market sets your price. So who sets your cost?\n\n📒 Full concept note today at 7:40 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 16: Strategic Cost Management\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref explainer-261030",
+  "hold": false,
+  "hold_reason": ""
+}

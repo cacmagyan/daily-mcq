@@ -100,9 +100,14 @@ def run(cfg: Config, ig=None, dry_run: bool = False) -> dict:
     ig = ig or Instagram.from_env(cfg.instagram)
     me = (ig.account().get("username") or "").lower()
     now = dt.datetime.now(dt.timezone.utc)
-    for m in ig.media_list(int(s.get("look_back_posts", 30))):
+    media = ig.media_list(int(s.get("look_back_posts", 30)))
+    print(f"Checking {len(media)} recent posts for {', '.join(keywords)} comments")
+    for m in media:
         ref = _post_date(m.get("caption") or "")
-        if not ref or ref[0] not in kinds or not m.get("comments_count"):
+        if not ref or ref[0] not in kinds:
+            continue
+        print(f"  • {ref[0]} {ref[1]}: {m.get('comments_count', 0)} comments")
+        if not m.get("comments_count"):
             continue
         try:
             posted = dt.datetime.strptime(m["timestamp"], "%Y-%m-%dT%H:%M:%S%z")
@@ -113,16 +118,23 @@ def run(cfg: Config, ig=None, dry_run: bool = False) -> dict:
         concept = B.load_concept(ref[1])
         pdf = concept_pdf(ref[1]) if concept else None
         if not pdf:
+            print("    no concept note PDF for that day")
             continue
         url = public_url(s.get("host", "jsdelivr"), pdf, cfg.instagram)
         done_users = set()
         comments = ig.comments(m["id"])
+        asking = sum(1 for c in comments if wants_notes(c.get("text", ""), keywords))
+        print(f"    {len(comments)} comments readable, {asking} ask for the note")
         for c in comments:                          # who already got our answer on this post
             if any((r.get("username") or "").lower() == me for r in (c.get("replies") or {}).get("data", [])):
                 done_users.add((c.get("username") or "").lower())
         for c in comments:
             user = (c.get("username") or "").lower()
-            if not user or user == me or user in done_users or not wants_notes(c.get("text", ""), keywords):
+            if not wants_notes(c.get("text", ""), keywords):
+                continue
+            if not user or user == me or user in done_users:
+                why = "no username (Instagram hid it)" if not user else "our own account" if user == me else "already answered"
+                print(f"    skipped one: {why}")
                 continue
             try:
                 when = dt.datetime.strptime(c["timestamp"], "%Y-%m-%dT%H:%M:%S%z")

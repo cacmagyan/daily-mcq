@@ -267,11 +267,13 @@ def write_script(cfg: Config, concept: dict, course: dict, paper: dict, date: dt
             continue
         check = call_checker(cfg, check_system, plain_fn(draft), CHECK_TOOL, max_tokens=2500)
         notes = [f"Checker: {i}" for i in check.get("issues", []) if i]
-        if check.get("severity") != "major":
+        minor_left = check.get("severity") == "minor" and check.get("issues") and attempt < attempts
+        if check.get("severity") != "major" and not minor_left:
             draft.update(attempts=attempt, checked=True, serious=False,
                          check_notes=([f"Writer: {draft['reviewer_note']}"] if draft.get("reviewer_note") else []) + notes)
             return draft
-        feedback = "An independent examiner found these errors: " + "; ".join(check.get("issues", []))
+        feedback = ("An independent examiner found these errors: " if check.get("severity") == "major" else
+                    "An independent examiner asks for these wording fixes (keep everything else): ") + "; ".join(check.get("issues", []))
     if not last or check_fn(last):
         raise GenerationError("Claude's explainer scripts didn't fit the format: " + feedback[:300])
     last.update(attempts=attempts, checked=False, serious=True,

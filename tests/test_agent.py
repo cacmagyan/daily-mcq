@@ -1923,3 +1923,19 @@ class ConceptRepeatTests(TempQueue):
                 P._make_concept(self.cfg, None, dt.date(2026, 11, 8))
         self.assertEqual(captured["topic"], "")                     # not the repeated MCQ topic
         self.assertIn("Offer vs Invitation to Offer", captured["recent"])
+
+
+class ExplainerMinorFixTests(TempQueue):
+    def test_minor_wording_issues_get_one_more_pass(self):
+        from mcq_agent import explainer as X
+        good = X.story_tidy(self.cfg, json.loads(json.dumps(X.sample_script(self.cfg))))
+        checks = iter([{"issues": ["say 'how much', not 'how fast'"], "severity": "minor"}, {"issues": [], "severity": "none"}])
+        with mock.patch("mcq_agent.generator._call_claude", side_effect=lambda *a, **k: json.loads(json.dumps(good))) as write, \
+             mock.patch("mcq_agent.generator.call_checker", side_effect=lambda *a, **k: next(checks)):
+            course = self.cfg.course("cma_final")
+            out = X.write_script(self.cfg, {"topic": "Target Costing", "simple_words": "x"}, course, course["papers"][1], self.DATE)
+        self.assertEqual(write.call_count, 2)
+        self.assertIn("wording fixes", write.call_args_list[1].args[2])
+        self.assertTrue(out["checked"])
+
+    DATE = dt.date(2026, 11, 5)

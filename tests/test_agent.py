@@ -59,6 +59,7 @@ class TempQueue(unittest.TestCase):
         for p in self.patches:
             p.start()
         self.cfg = C.Config()
+        self.cfg.reels["enabled"] = True          # most tests cover the MCQ reel too (switched off in config.yaml)
 
     def tearDown(self):
         for p in self.patches:
@@ -1564,6 +1565,14 @@ class ExplainerTests(TempQueue):
         text = report(self.cfg, self.DATE, "me/r")
         self.assertIn("🎬 Explainer", text)
         self.assertIn("backup", text.lower())
+
+    def test_with_reels_off_only_the_explainer_posts(self):
+        self.cfg.reels["enabled"] = False
+        self._items()
+        post = self._publish(dt.time(17, 56))
+        self.assertEqual(post.call_count, 1)
+        self.assertEqual(post.call_args.args[0], ["https://v/explainer.mp4"])
+        self.assertNotIn("reel", B.load_posted(self.DATE))
 
     def test_mcq_reel_posts_when_the_explainer_failed(self):
         self._items(error="usage limit reached")

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 from pathlib import Path
 
 from .config import QUEUE, batch_dir
@@ -132,6 +133,31 @@ def recent_concepts(course_id: str, before: dt.date, limit: int = 60) -> list[st
         if len(found) >= limit:
             break
     return found
+
+
+def concepts_near(date: dt.date, days: int = 30) -> list[str]:
+    """Concept topics of every course within `days` of the date (before or after, as later days may be
+    prepared ahead), so the page doesn't repeat a concept under another course."""
+    found = []
+    if not QUEUE.exists():
+        return found
+    for d in sorted(QUEUE.iterdir()):
+        try:
+            day = dt.date.fromisoformat(d.name)
+        except ValueError:
+            continue
+        if day == date or abs((day - date).days) > days or not (d / "concept.json").exists():
+            continue
+        with open(d / "concept.json", encoding="utf-8") as fh:
+            topic = (json.load(fh).get("topic") or "").strip()
+        if topic and topic not in found:
+            found.append(topic)
+    return found
+
+
+def same_topic(a: str, b: str) -> bool:
+    norm = lambda t: " ".join(re.sub(r"[^a-z0-9 ]", " ", t.lower()).split())
+    return bool(a and b) and norm(a) == norm(b)
 
 
 # ── MCQ reel of the day: queue/YYYY-MM-DD/reel.json (+ reel.mp4, reel_cover.jpg) ──

@@ -290,14 +290,15 @@ def write_concept(cfg: Config, course: dict, paper: dict, date: dt.date, recent:
     check_system = CHECKER_SYSTEM.format(course=course["name"], body=course.get("body", ""),
                                          paper=cfg.paper_prompt(paper), traps=trap_text,
                                          law_line=f"Law basis to apply: {law_text}." if law_text else "")
-    recent_lines = "\n".join(f"- {t}" for t in recent[:40]) or "- none yet"
+    recent_lines = "\n".join(f"- {t}" for t in recent[:80]) or "- none yet"
     base_user = (f"Course: {course['name']} ({course.get('body', '')})\n"
                  f"Paper: {cfg.paper_prompt(paper)}\n"
                  f"Posting date: {date.strftime('%d %B %Y')}\n\n")
     if topic:
         base_user += f"Write the note on this concept: {topic}\n"
     else:
-        base_user += f"Concepts already covered for this course (choose a different one):\n{recent_lines}\n"
+        base_user += (f"Concepts already covered on the page, for this or another course (choose a "
+                      f"different one):\n{recent_lines}\n")
     if instruction:
         base_user += f"\nReviewer's instruction for this note: {instruction}\n"
 

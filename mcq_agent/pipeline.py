@@ -112,9 +112,14 @@ def _make_concept(cfg: Config, renderer: Renderer, date: dt.date, instruction: s
         item["author"] = cfg.author_for(paper)
     else:
         course, paper = cfg.course(item["course_id"]), _concept_paper(cfg, item)
+        near = B.concepts_near(date)                # every course's concepts this month: no repeats on the page
         if not topic and not instruction:
             topic = item.get("linked_mcq", "")
-        note = write_concept(cfg, course, paper, date, B.recent_concepts(course["id"], date), instruction, topic,
+            if any(B.same_topic(topic, t) for t in near):
+                print(f"  • '{topic}' was already a concept this month; choosing another")
+                topic = ""
+        recent = B.recent_concepts(course["id"], date) + [t for t in near if t not in B.recent_concepts(course["id"], date)]
+        note = write_concept(cfg, course, paper, date, recent, instruction, topic,
                              fit_check=lambda draft: renderer.measure_concept({**item, **draft}, date))
         item.update(note)
     _finish_concept(cfg, renderer, item, date)

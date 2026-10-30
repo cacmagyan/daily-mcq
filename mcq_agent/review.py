@@ -31,7 +31,9 @@ def _explainer_block(cfg: Config, e: dict, repo: str, branch: str, date: dt.date
     course = cfg.course(e["course_id"]) if e.get("course_id") else {"name": "", "emoji": ""}
     out = [f"### 🎬 Cartoon explainer ({course.get('emoji', '')} {course['name']}): {e.get('topic', '')}"]
     if e.get("error"):
-        return out + [f"❌ Could not make it: `{e['error'][:200]}`. The MCQ reel posts at {cfg.reel_time()} instead.",
+        backup = (f"The MCQ reel posts at {cfg.reel_time()} instead." if cfg.reels.get("enabled")
+                  else "No reel posts today unless it is made again.")
+        return out + [f"❌ Could not make it: `{e['error'][:200]}`. {backup}",
                       "Comment `/regen explainer` to try again.", ""]
     video = f"https://github.com/{repo}/raw/{branch}/queue/{date.isoformat()}/{e.get('video', 'explainer.mp4')}"
     script = e.get("script") or {}

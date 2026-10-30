@@ -1901,3 +1901,25 @@ class WeeklyReportTests(TempQueue):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ConceptRepeatTests(TempQueue):
+    def test_a_concept_used_by_another_course_is_not_repeated(self):
+        for i, (course, topic) in enumerate([("cma_inter", "Offer vs Invitation to Offer"), ("ca_final", "POEM")]):
+            d = dt.date(2026, 11, 3 + i)
+            B.save_concept(d, {"course_id": course, "topic": topic})
+        near = B.concepts_near(dt.date(2026, 11, 8))
+        self.assertIn("Offer vs Invitation to Offer", near)
+        self.assertTrue(B.same_topic("Offer vs. invitation to offer", near[0]))
+        self.assertEqual(B.concepts_near(dt.date(2026, 12, 30)), [])
+        captured = {}
+        def fake_write(cfg, course, paper, date, recent, instruction, topic, **k):
+            captured.update(recent=recent, topic=topic)
+            raise RuntimeError("stop")
+        with mock.patch.object(P, "_concept_base", return_value={"course_id": "ca_inter", "linked_mcq": "Offer vs Invitation to Offer"}), \
+             mock.patch.object(P, "_concept_paper", return_value={"code": "P2", "name": "Corporate and Other Laws"}), \
+             mock.patch("mcq_agent.concept.write_concept", side_effect=fake_write):
+            with self.assertRaises(RuntimeError):
+                P._make_concept(self.cfg, None, dt.date(2026, 11, 8))
+        self.assertEqual(captured["topic"], "")                     # not the repeated MCQ topic
+        self.assertIn("Offer vs Invitation to Offer", captured["recent"])

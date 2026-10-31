@@ -50,13 +50,13 @@ concepts:
   # evening note, so CA and CMA students both get a note and a video each day.
   second:
     enabled: true
-    start_date: "2026-11-01"
+    start_date: "2026-10-31"
     post_time: "13:40"          # IST; keep matched to the 13:42 line in publish.yml
 
 # Which MCQs post: with alternate on, the three CA courses one day and the three CMA courses the next.
 mcqs:
   alternate: true
-  start_date: "2026-11-01"      # the first family below posts on this date, the second the next day, ...
+  start_date: "2026-10-31"      # the first family below posts on this date, the second the next day, ...
   families:
     - ["ca_foundation", "ca_inter", "ca_final"]
     - ["cma_cat", "cma_inter", "cma_final"]

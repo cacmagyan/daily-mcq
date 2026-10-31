@@ -345,7 +345,7 @@ Each line has who (teacher, girl, boy), say, shot, pose, and optionally react an
   formula: title (18), formula (28; ^ for a power), sub (44, what the symbols mean)
   versus: left and right cards {{title (10), lines (1-2 of 14), icon, color}}, right_on
   flow: from (9), from_note (12), to (9), to_note (12), label (12), to_on; two amounts starting with ₹ are drawn as cash bundles
-  list: title (20), lines (1-4 of 24) with ticks
+  list: title (20), lines (1-4 of 24) with ticks. A journal entry on the board is a list in the two-line journal form: "Share Capital A/c Dr", then "To Forfeited Shares A/c" (amounts may follow). Never write "Dr Share Capital" / "Cr Forfeited Shares" or a Debit/Credit table.
   words: lines (1-2 of 14) in big chalk letters
 - A field ending in _on names one word of that line: that part appears when the word is spoken.
 Icons: money, calendar, clock, door, doc, check, cross, chart_up, chart_down, scale, factory, bank, people, bulb. Colors: navy, green, red, blue, yellow.

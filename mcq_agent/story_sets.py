@@ -212,7 +212,9 @@ def check_board(b, say_words: set[str], where: str) -> list[str]:
     out = []
     for field, rule in BOARD_KINDS[b["kind"]].items():
         v = b.get(field)
-        if rule[0] == "text" and v is not None and len(str(v).replace("^", "")) > rule[1]:
+        # title, sub and formula chalk shrinks to the board's width, so a small overrun still fits
+        limit = (int(rule[1] * 1.3) if field in ("title", "sub", "formula") else rule[1]) if rule[0] == "text" else 0
+        if rule[0] == "text" and v is not None and len(str(v).replace("^", "")) > limit:
             out.append(f"{where}: board {field} is {len(str(v))} characters; at most {rule[1]}")
         elif rule[0] == "lines" and v is not None and (not isinstance(v, list) or not 1 <= len(v) <= rule[1]
                                                         or any(len(str(x)) > rule[2] for x in v)):

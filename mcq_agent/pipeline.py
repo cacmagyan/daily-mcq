@@ -16,7 +16,14 @@ from .render import Renderer, contact_sheet
 CONCEPT = "concept"     # id of the concept note in commands, posted.json and the report
 REEL = "reel"           # id of the MCQ reel of the day
 EXPLAINER = "explainer" # id of the cartoon explainer reel (takes the reel's slot; the MCQ reel is its backup)
-EXTRAS = (CONCEPT, REEL, EXPLAINER)
+CONCEPT2, EXPLAINER2 = "concept2", "explainer2"     # the day's second note and its video
+EXTRAS = (CONCEPT, REEL, EXPLAINER, CONCEPT2, EXPLAINER2)
+CONCEPTS, EXPLAINERS = (CONCEPT, CONCEPT2), (EXPLAINER, EXPLAINER2)
+
+
+def slot_of(key: str) -> str:
+    """"2" for the second note/video of the day ("concept2", "explainer2"), else ""."""
+    return "2" if key in (CONCEPT2, EXPLAINER2) else ""
 
 
 def _new_item(cfg: Config, course: dict, date: dt.date) -> dict:
@@ -34,10 +41,11 @@ def _sign(cfg: Config, item: dict) -> None:
 
 
 def concept_link(course_id: str, date: dt.date) -> dict | None:
-    """Yesterday's concept note, if it was for this course: today's MCQ then tests it."""
-    c = B.load_concept(date - dt.timedelta(days=1))
-    if c and c.get("course_id") == course_id and c.get("topic") and not c.get("error"):
-        return c
+    """Yesterday's concept note (either of them), if it was for this course: today's MCQ then tests it."""
+    for slot in ("", "2"):
+        c = B.load_concept(date - dt.timedelta(days=1), slot)
+        if c and c.get("course_id") == course_id and c.get("topic") and not c.get("error"):
+            return c
     return None
 
 
@@ -84,13 +92,13 @@ def _concept_paper(cfg: Config, item: dict) -> dict:
             or {"code": item["paper_code"], "name": item["paper_name"]})
 
 
-def _concept_base(cfg: Config, date: dt.date) -> dict:
-    course = cfg.concept_course(date)
-    paper = cfg.concept_paper(date)
+def _concept_base(cfg: Config, date: dt.date, slot: str = "") -> dict:
+    course = cfg.concept_course(date, slot)
+    paper = cfg.concept_paper(date, slot)
     m = tomorrows_mcq(course["id"], date)
     if m:   # tomorrow's MCQ is already written: the note teaches its topic, from its paper
         paper = cfg.find_paper(course["id"], m.get("paper_code", ""), m.get("paper_name", "")) or paper
-    base = {"kind": CONCEPT, "course_id": course["id"], "paper_code": paper["code"],
+    base = {"kind": CONCEPT + slot, "course_id": course["id"], "paper_code": paper["code"],
             "paper_name": cfg.paper_title(paper), "author": cfg.author_for(paper)}
     if m:
         base["linked_mcq"] = m["topic"]
@@ -98,21 +106,22 @@ def _concept_base(cfg: Config, date: dt.date) -> dict:
 
 
 def _make_concept(cfg: Config, renderer: Renderer, date: dt.date, instruction: str = "", topic: str = "",
-                  sample: bool = False) -> dict:
+                  sample: bool = False, slot: str = "") -> dict:
     from .concept import write_concept
 
-    item = _concept_base(cfg, date)
+    item = _concept_base(cfg, date, slot)
     if sample:
         with open(ROOT / "samples" / "sample_concept.json", encoding="utf-8") as fh:
             samples = json.load(fh)["items"]
         pick = next((x for x in samples if x["course_id"] == item["course_id"]), samples[0])
         item.update(copy.deepcopy(pick))           # the sample's own course and paper, so they match its text
+        item["kind"] = CONCEPT + slot
         papers = cfg.course(item["course_id"])["papers"]
         paper = next((x for x in papers if x["code"] == item.get("paper_code")), {"code": "", "name": ""})
         item["author"] = cfg.author_for(paper)
     else:
         course, paper = cfg.course(item["course_id"]), _concept_paper(cfg, item)
-        near = B.concepts_near(date)                # every course's concepts this month: no repeats on the page
+        near = B.concepts_near(date, skip=f"concept{slot}.json")   # every course's concepts this month, the day's other note too
         if not topic and not instruction:
             topic = item.get("linked_mcq", "")
             if any(B.same_topic(topic, t) for t in near):
@@ -127,35 +136,36 @@ def _make_concept(cfg: Config, renderer: Renderer, date: dt.date, instruction: s
 
 
 def _finish_concept(cfg: Config, renderer: Renderer, item: dict, date: dt.date) -> None:
+    slot = slot_of(item.get("kind") or CONCEPT)
     res = renderer.render_concept(item, date, batch_dir(date))
     item["images"] = res["images"]
     item["fit_notes"] = res["fit_notes"]
     item["fit"] = res["fit"]
     item["caption"] = build_concept_caption(cfg, item, date)
-    pdf = batch_dir(date) / "concept.pdf"
+    pdf = batch_dir(date) / f"concept{slot}.pdf"
     if pdf.exists():
         pdf.unlink()                            # the slides changed: the PDF for comment DMs is made again
     if item["images"] and not item.get("error"):
         try:
             from .replies import concept_pdf
-            B.save_concept(date, item)
-            concept_pdf(date)
+            B.save_concept(date, item, slot)
+            concept_pdf(date, slot)
         except Exception as exc:  # noqa: BLE001 - the PDF is a bonus
             print(f"  ! no PDF of the concept note: {exc}")
     item.pop("story", None)
     if cfg.stories.get("enabled") and cfg.stories.get("concept", True) and item["images"]:
         try:
             from .render import concept_story
-            concept_story(batch_dir(date) / item["images"][0], batch_dir(date) / "concept_story.jpg",
+            concept_story(batch_dir(date) / item["images"][0], batch_dir(date) / f"concept{slot}_story.jpg",
                           cfg.course(item["course_id"]), cfg.brand.get("handle", ""))
-            item["story"] = "concept_story.jpg"
+            item["story"] = f"concept{slot}_story.jpg"
         except Exception as exc:  # noqa: BLE001
             print(f"  ! no Story for the concept note: {exc}")
     set_hold(item)
 
 
-def _concept_error(cfg: Config, date: dt.date, exc: Exception) -> dict:
-    item = _concept_base(cfg, date)
+def _concept_error(cfg: Config, date: dt.date, exc: Exception, slot: str = "") -> dict:
+    item = _concept_base(cfg, date, slot)
     item["error"] = str(exc)[:500]
     return item
 
@@ -189,18 +199,24 @@ def prepare(cfg: Config, date: dt.date, course_ids: list[str] | None = None, sam
     want_reel = reel_due and (not course_ids or REEL in course_ids)
     explainer_due = cfg.explainer_due(date) or (sample and bool(cfg.explainer.get("enabled")))
     want_explainer = explainer_due and (not course_ids or EXPLAINER in course_ids)
-    ids = [c for c in (course_ids or cfg.course_ids()) if c not in EXTRAS]
-    if course_ids and not ids:          # only the concept note and/or the reel
-        if not (want_concept or want_reel or want_explainer):
+    want_concept2 = cfg.concept_due(date, "2") and not sample and (not course_ids or CONCEPT2 in course_ids)
+    want_explainer2 = cfg.explainer_due(date, "2") and not sample and (not course_ids or EXPLAINER2 in course_ids)
+    ids = [c for c in (course_ids or cfg.mcq_course_ids(date)) if c not in EXTRAS]
+    if course_ids and not ids:          # only the concept notes, the reel and/or the explainers
+        if not (want_concept or want_reel or want_explainer or want_concept2 or want_explainer2):
             raise SystemExit(f"Nothing to add on {date}: check enabled and start_date under concepts, reels "
                              "and explainer in config.yaml.")
         with Renderer(cfg) as r:
             if want_concept:
                 _prepare_concept(cfg, r, date, sample)
+            if want_concept2:
+                _prepare_concept(cfg, r, date, sample, "2")
             if want_reel:
                 _prepare_reel(cfg, r, date)
         if want_explainer:
             _prepare_explainer(cfg, date, sample)
+        if want_explainer2:
+            _prepare_explainer(cfg, date, slot="2")
         return B.load_batch(date) or {"date": date.isoformat(), "items": []}
     existing = B.load_batch(date) or {"date": date.isoformat(), "items": []}
     batch = {"date": date.isoformat(), "day": cfg.day_number(date), "status": "pending_review",
@@ -234,24 +250,29 @@ def prepare(cfg: Config, date: dt.date, course_ids: list[str] | None = None, sam
         B.save_batch(date, batch)
         if want_concept:
             _prepare_concept(cfg, r, date, sample)
+        if want_concept2:
+            _prepare_concept(cfg, r, date, sample, "2")
         if want_reel:
             _prepare_reel(cfg, r, date)
     if want_explainer:
         _prepare_explainer(cfg, date, sample)
+    if want_explainer2:
+        _prepare_explainer(cfg, date, slot="2")
 
     _preview(date, batch)
     return batch
 
 
-def _prepare_concept(cfg: Config, r: Renderer, date: dt.date, sample: bool) -> dict:
+def _prepare_concept(cfg: Config, r: Renderer, date: dt.date, sample: bool, slot: str = "") -> dict:
+    label = "Concept note" + (" 2" if slot else "")
     try:
-        item = _make_concept(cfg, r, date, sample=sample)
-        print(f"  ✓ Concept note ({cfg.course(item['course_id'])['name']}): {item['topic']}")
+        item = _make_concept(cfg, r, date, sample=sample, slot=slot)
+        print(f"  ✓ {label} ({cfg.course(item['course_id'])['name']}): {item['topic']}")
     except Exception as exc:  # keep going; the reviewer can /regen concept
         traceback.print_exc()
-        item = _concept_error(cfg, date, exc)
-        print(f"  ✗ Concept note: {exc}")
-    B.save_concept(date, item)
+        item = _concept_error(cfg, date, exc, slot)
+        print(f"  ✗ {label}: {exc}")
+    B.save_concept(date, item, slot)
     return item
 
 
@@ -282,18 +303,19 @@ def _prepare_reel(cfg: Config, r: Renderer, date: dt.date) -> dict | None:
 
 
 def _prepare_explainer(cfg: Config, date: dt.date, sample: bool = False, instruction: str = "",
-                       new_script: bool = False) -> dict | None:
+                       new_script: bool = False, slot: str = "") -> dict | None:
     """Makes (or remakes) the day's cartoon explainer from its concept note. A script that was written
     but not drawn (e.g. the drawing failed) is drawn again without asking Claude. Never touches an
     explainer that is posted, or a day whose MCQ reel already took the slot."""
     from . import explainer as X
 
+    key = EXPLAINER + slot
     posted = B.load_posted(date)
-    if EXPLAINER in posted or REEL in posted:
-        print("  • The day's reel is already posted; leaving the explainer as it is")
-        return X.load(date)
-    old = X.load(date) or {}
-    concept = B.load_concept(date)
+    if key in posted or (not slot and REEL in posted):
+        print(f"  • That reel is already posted; leaving {key} as it is")
+        return X.load(date, slot)
+    old = X.load(date, slot) or {}
+    concept = B.load_concept(date, slot)
     script = None
     try:
         if sample:
@@ -310,11 +332,11 @@ def _prepare_explainer(cfg: Config, date: dt.date, sample: bool = False, instruc
             course = cfg.course(concept["course_id"])
             paper = _concept_paper(cfg, concept)
             script = X.write_script(cfg, concept, course, paper, date, instruction)
-        item = X.make(cfg, date, concept, script=script)
-        print(f"  ✓ Explainer ({cfg.course(item['course_id'])['name']}): {item['topic']} · {item['seconds']:g} s")
+        item = X.make(cfg, date, concept, script=script, slot=slot)
+        print(f"  ✓ Explainer{' 2' if slot else ''} ({cfg.course(item['course_id'])['name']}): {item['topic']} · {item['seconds']:g} s")
     except Exception as exc:  # the MCQ reel posts in its place; the report says why
         traceback.print_exc()
-        item = {"kind": EXPLAINER, "course_id": (concept or {}).get("course_id") or old.get("course_id", ""),
+        item = {"kind": key, "course_id": (concept or {}).get("course_id") or old.get("course_id", ""),
                 "topic": (concept or {}).get("topic", ""), "concept_topic": (concept or {}).get("topic", ""),
                 "error": str(exc)[:500]}
         if script:                      # keep the written script: the next run only draws it again
@@ -326,14 +348,14 @@ def _prepare_explainer(cfg: Config, date: dt.date, sample: bool = False, instruc
     if old.get("held_by_you"):
         item["held_by_you"] = True
     set_hold(item)
-    X.save(date, item)
+    X.save(date, item, slot)
     return item
 
 
 def rerender(cfg: Config, date: dt.date, course_ids: list[str] | None = None) -> dict:
     """Use after hand-editing mcqs.json: redraws the images and refreshes captions."""
     batch = B.load_batch(date)
-    concept = B.load_concept(date)
+    concept = B.load_concept(date) or B.load_concept(date, "2")
     if not batch and not concept:
         raise SystemExit(f"No batch for {date}")
     with Renderer(cfg) as r:
@@ -342,10 +364,12 @@ def rerender(cfg: Config, date: dt.date, course_ids: list[str] | None = None) ->
                 continue
             _finish(cfg, r, item, date)
             print(f"  ✓ re-rendered {item['course_id']}")
-        if concept and not concept.get("error") and (not course_ids or CONCEPT in course_ids):
-            _finish_concept(cfg, r, concept, date)
-            B.save_concept(date, concept)
-            print("  ✓ re-rendered the concept note")
+        for slot, key in (("", CONCEPT), ("2", CONCEPT2)):
+            c = B.load_concept(date, slot)
+            if c and not c.get("error") and (not course_ids or key in course_ids):
+                _finish_concept(cfg, r, c, date)
+                B.save_concept(date, c, slot)
+                print(f"  ✓ re-rendered {key}")
         if batch:
             if not course_ids:
                 batch["day"] = cfg.day_number(date)    # the images now show this Day number
@@ -355,8 +379,9 @@ def rerender(cfg: Config, date: dt.date, course_ids: list[str] | None = None) ->
             if wanted and cfg.reels.get("enabled") and (
                     not course_ids or REEL in course_ids or (reel or {}).get("course_id") in course_ids):
                 _prepare_reel(cfg, r, date)        # the reel shows an MCQ, so it is remade from the edited text
-    if course_ids and EXPLAINER in course_ids:
-        _prepare_explainer(cfg, date)            # draws the saved script again (no new text)
+    for slot, key in (("", EXPLAINER), ("2", EXPLAINER2)):
+        if course_ids and key in course_ids:
+            _prepare_explainer(cfg, date, slot=slot)     # draws the saved script again (no new text)
     if batch:
         _preview(date, batch)
     return batch or {"date": date.isoformat(), "items": []}
@@ -368,28 +393,29 @@ def _not_posted(date: dt.date, course_id: str) -> None:
                          "Edit or delete the post in the Instagram app.")
 
 
-def regenerate_concept(cfg: Config, date: dt.date, instruction: str = "") -> dict:
-    """/regen concept: a new note on the same concept (so tomorrow's MCQ still matches),
+def regenerate_concept(cfg: Config, date: dt.date, instruction: str = "", slot: str = "") -> dict:
+    """/regen concept (or concept2): a new note on the same concept (so tomorrow's MCQ still matches),
     unless your instruction asks for something else."""
-    _not_posted(date, CONCEPT)
-    old = B.load_concept(date) or {}
+    _not_posted(date, CONCEPT + slot)
+    old = B.load_concept(date, slot) or {}
     topic = "" if instruction else old.get("topic", "")
     with Renderer(cfg) as r:
-        item = _make_concept(cfg, r, date, instruction, topic)
-    B.save_concept(date, item)
-    print(f"  ✓ new concept note: {item['topic']}")
+        item = _make_concept(cfg, r, date, instruction, topic, slot=slot)
+    B.save_concept(date, item, slot)
+    print(f"  ✓ new {CONCEPT + slot}: {item['topic']}")
     from . import explainer as X
-    ex = X.load(date)
-    if ex and ex.get("concept_topic") != item.get("topic") and EXPLAINER not in B.load_posted(date):
-        _prepare_explainer(cfg, date, new_script=True)     # the explainer showed the old concept
+    ex = X.load(date, slot)
+    if ex and ex.get("concept_topic") != item.get("topic") and EXPLAINER + slot not in B.load_posted(date):
+        _prepare_explainer(cfg, date, new_script=True, slot=slot)     # the video showed the old concept
     return item
 
 
-def regenerate_explainer(cfg: Config, date: dt.date, instruction: str = "") -> dict:
-    """/regen explainer: a new script and video from the day's concept note."""
-    _not_posted(date, EXPLAINER)
-    _not_posted(date, REEL)
-    return _prepare_explainer(cfg, date, instruction=instruction, new_script=True) or {}
+def regenerate_explainer(cfg: Config, date: dt.date, instruction: str = "", slot: str = "") -> dict:
+    """/regen explainer (or explainer2): a new script and video from the note."""
+    _not_posted(date, EXPLAINER + slot)
+    if not slot:
+        _not_posted(date, REEL)
+    return _prepare_explainer(cfg, date, instruction=instruction, new_script=True, slot=slot) or {}
 
 
 def regenerate_reel(cfg: Config, date: dt.date) -> dict:
@@ -401,12 +427,12 @@ def regenerate_reel(cfg: Config, date: dt.date) -> dict:
 
 
 def regenerate(cfg: Config, date: dt.date, course_id: str, instruction: str = "") -> dict:
-    if course_id == CONCEPT:
-        return regenerate_concept(cfg, date, instruction)
+    if course_id in CONCEPTS:
+        return regenerate_concept(cfg, date, instruction, slot_of(course_id))
     if course_id == REEL:
         return regenerate_reel(cfg, date)
-    if course_id == EXPLAINER:
-        return regenerate_explainer(cfg, date, instruction)
+    if course_id in EXPLAINERS:
+        return regenerate_explainer(cfg, date, instruction, slot_of(course_id))
     batch = B.load_batch(date)
     if not batch:
         raise SystemExit(f"No batch for {date}")
@@ -430,22 +456,24 @@ def regenerate(cfg: Config, date: dt.date, course_id: str, instruction: str = ""
 
 def _target(date: dt.date, course_id: str):
     """(item, save) for an MCQ or the concept note."""
-    if course_id == CONCEPT:
-        item = B.load_concept(date)
+    if course_id in CONCEPTS:
+        slot = slot_of(course_id)
+        item = B.load_concept(date, slot)
         if not item:
-            raise SystemExit(f"No concept note for {date}")
-        return item, lambda: B.save_concept(date, item)
+            raise SystemExit(f"No {course_id} note for {date}")
+        return item, lambda: B.save_concept(date, item, slot)
     if course_id == REEL:
         item = B.load_reel(date)
         if not item:
             raise SystemExit(f"No reel for {date}")
         return item, lambda: B.save_reel(date, item)
-    if course_id == EXPLAINER:
+    if course_id in EXPLAINERS:
         from . import explainer as X
-        item = X.load(date)
+        slot = slot_of(course_id)
+        item = X.load(date, slot)
         if not item:
-            raise SystemExit(f"No explainer for {date}")
-        return item, lambda: X.save(date, item)
+            raise SystemExit(f"No {course_id} for {date}")
+        return item, lambda: X.save(date, item, slot)
     batch = B.load_batch(date)
     item = B.find_item(batch or {"items": []}, course_id)
     if not item:
@@ -456,7 +484,8 @@ def _target(date: dt.date, course_id: str):
 def release(date: dt.date, course_id: str) -> str:
     """/approve: post a held MCQ (or the concept note) as it is."""
     item, save = _target(date, course_id)
-    what = {CONCEPT: "concept note", REEL: "reel", EXPLAINER: "explainer"}.get(course_id, "MCQ")
+    what = {CONCEPT: "concept note", CONCEPT2: "second concept note", REEL: "reel", EXPLAINER: "explainer",
+            EXPLAINER2: "second explainer"}.get(course_id, "MCQ")
     if item.get("error"):
         raise SystemExit(f"{course_id} has no {what} to approve (it failed to generate); use /regen {course_id}")
     item["serious"], item["held_by_you"] = False, False
@@ -499,18 +528,19 @@ def _key(item: dict) -> str:
 
 
 def _slot(cfg: Config, item: dict) -> dt.time:
-    if item.get("kind") == CONCEPT:
-        return dt.time.fromisoformat(cfg.concept_time())
-    if item.get("kind") == REEL:
+    kind = item.get("kind")
+    if kind in CONCEPTS:
+        return dt.time.fromisoformat(cfg.concept_time(slot_of(kind)))
+    if kind == REEL:
         return dt.time.fromisoformat(cfg.reel_time())
-    if item.get("kind") == EXPLAINER:
-        return dt.time.fromisoformat(cfg.explainer_time())
+    if kind in EXPLAINERS:
+        return dt.time.fromisoformat(cfg.explainer_time(slot_of(kind)))
     return dt.time.fromisoformat(cfg.course(item["course_id"])["post_time"])
 
 
 def _post_parts(cfg: Config, item: dict, date: dt.date) -> tuple[list, list, str]:
     """Image paths, alt texts and caption for one post."""
-    if item.get("kind") == CONCEPT:
+    if item.get("kind") in CONCEPTS:
         return ([batch_dir(date) / n for n in item["images"]], concept_alt_texts(item),
                 item.get("caption") or build_concept_caption(cfg, item, date))
     alts = alt_texts(item)
@@ -531,6 +561,7 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
 
     batch = B.load_batch(date)
     concept = B.load_concept(date)
+    concept2 = B.load_concept(date, "2") if cfg.concept_due(date, "2") else None
     approved = batch and (cfg.review_mode in ("github_pr", "auto") or batch.get("approved"))
     if not approved:
         why = {"github_pr": "no batch on the main branch (the review PR isn't merged)",
@@ -550,8 +581,11 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
     explainer = _explainer_for_slot(cfg, date, concept, posted)
     if explainer is not None:
         reel = None                      # one reel a day: the explainer, with the MCQ reel as its backup
-    items = (list(batch["items"]) + ([concept] if concept else []) + ([reel] if reel else [])
-             + ([explainer] if explainer else []))
+    explainer2 = _explainer_for_slot(cfg, date, concept2, posted, "2") if concept2 else None
+    todays = set(cfg.mcq_course_ids(date))          # e.g. only the CA courses today
+    mcqs = [it for it in batch["items"] if it["course_id"] in todays or it["course_id"] in posted]
+    items = (mcqs + [c for c in (concept, concept2) if c] + ([reel] if reel else [])
+             + [e for e in (explainer, explainer2) if e])
     due = [it for it in items
            if _key(it) not in posted and not it.get("error") and not it.get("hold")
            and (it.get("images") or it.get("video")) and _slot(cfg, it) <= at]
@@ -577,8 +611,8 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
     failures = 0
     for item in due[:limit]:
         cid = _key(item)
-        is_reel = item.get("kind") in (REEL, EXPLAINER)
-        if item.get("kind") == EXPLAINER:
+        is_reel = item.get("kind") in (REEL, *EXPLAINERS)
+        if item.get("kind") in EXPLAINERS:
             from . import explainer as X
             video = batch_dir(date) / item["video"]
             paths, alts = [video], []
@@ -624,9 +658,9 @@ def _story_file(cfg: Config, item: dict) -> tuple[str, bool] | None:
     if not cfg.stories.get("enabled"):
         return None
     kind = item.get("kind")
-    if kind in (REEL, EXPLAINER):
+    if kind in (REEL, *EXPLAINERS):
         return (item["video"], True) if cfg.stories.get("reel", True) and item.get("video") else None
-    want = cfg.stories.get("concept", True) if kind == CONCEPT else cfg.stories.get("mcqs", True)
+    want = cfg.stories.get("concept", True) if kind in CONCEPTS else cfg.stories.get("mcqs", True)
     return (item["story"], False) if want and item.get("story") else None
 
 
@@ -667,24 +701,26 @@ def reel_options(cfg: Config, item: dict | None = None) -> dict:
     trial = cfg.reels.get("trial")
     opts = {"share_to_feed": not trial, "trial": "SS_PERFORMANCE" if trial else None,
             "audio_name": str(cfg.reels.get("audio_name") or "").strip()}
-    if item and item.get("kind") == EXPLAINER:
+    if item and item.get("kind") in EXPLAINERS:
         opts["audio_name"] = str(cfg.explainer.get("audio_name") or "Concept explained · CA CMA Gyan").strip()
         if item.get("thumb_ms"):
             opts["thumb_offset"] = int(item["thumb_ms"])        # the cover: the hook with its stamp
     return opts
 
 
-def _explainer_for_slot(cfg: Config, date: dt.date, concept: dict | None, posted: dict) -> dict | None:
-    """The day's explainer if it is the one to post in the reel slot (made, not held, video present, and
-    the MCQ reel not posted already); marked held if its concept note changed. None = post the MCQ reel."""
+def _explainer_for_slot(cfg: Config, date: dt.date, concept: dict | None, posted: dict,
+                        slot: str = "") -> dict | None:
+    """The day's explainer (or second explainer) if it can post (made, not held, video present, and
+    for the evening one, the MCQ reel not posted already). None = it doesn't post (the evening slot
+    then falls back to the MCQ reel, if that is switched on)."""
     from . import explainer as X
 
-    if not cfg.explainer.get("enabled") or REEL in posted:
+    if not cfg.explainer.get("enabled") or (not slot and REEL in posted):
         return None
-    ex = X.load(date)
+    ex = X.load(date, slot)
     if not ex:
         return None
-    if EXPLAINER in posted:
+    if EXPLAINER + slot in posted:
         return ex
     if ex.get("error") or ex.get("hold") or not ex.get("video") or not (batch_dir(date) / ex["video"]).exists():
         return None

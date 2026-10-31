@@ -22,9 +22,9 @@ def image_names(course_id: str) -> dict:
     return {"question": f"{course_id}_q.jpg", "answer": f"{course_id}_a.jpg"}
 
 
-def concept_names() -> list[str]:
+def concept_names(prefix: str = "concept") -> list[str]:
     from .concept import SLIDES
-    return [f"concept_{i}.jpg" for i in range(1, SLIDES + 1)]
+    return [f"{prefix}_{i}.jpg" for i in range(1, SLIDES + 1)]
 
 
 def mark(text: str) -> Markup:
@@ -169,7 +169,7 @@ class Renderer:
         from .concept import SLIDE_NAMES
 
         out_dir.mkdir(parents=True, exist_ok=True)
-        names, notes, fits = concept_names(), [], []
+        names, notes, fits = concept_names(item.get("kind") or "concept"), [], []
         for slide, name in enumerate(names, 1):
             fit = self._concept_fit(item, date, slide, out_dir / name)
             fits.append({"slide": slide, "zoom": fit["zoom"], "overflow": fit["overflow"]})

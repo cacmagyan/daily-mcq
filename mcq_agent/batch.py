@@ -95,27 +95,39 @@ def recent_items(course_id: str, before: dt.date, limit: int = 60) -> list[dict]
     return found[:limit]
 
 
-# ── concept of the day: queue/YYYY-MM-DD/concept.json ───────────────────────
+# ── concept of the day: queue/YYYY-MM-DD/concept.json (the second note of the day: concept2.json) ──
 
-def concept_path(date: dt.date) -> Path:
-    return batch_dir(date) / "concept.json"
+CONCEPT_FILES = ("concept.json", "concept2.json")
 
 
-def load_concept(date: dt.date) -> dict | None:
-    p = concept_path(date)
+def concept_path(date: dt.date, slot: str = "") -> Path:
+    return batch_dir(date) / f"concept{slot}.json"
+
+
+def load_concept(date: dt.date, slot: str = "") -> dict | None:
+    p = concept_path(date, slot)
     if not p.exists():
         return None
     with open(p, encoding="utf-8") as fh:
         return json.load(fh)
 
 
-def save_concept(date: dt.date, item: dict) -> Path:
-    p = concept_path(date)
+def save_concept(date: dt.date, item: dict, slot: str = "") -> Path:
+    p = concept_path(date, slot)
     p.parent.mkdir(parents=True, exist_ok=True)
     with open(p, "w", encoding="utf-8") as fh:
         json.dump(item, fh, ensure_ascii=False, indent=2)
         fh.write("\n")
     return p
+
+
+def _concepts_in(d: Path) -> list[dict]:
+    out = []
+    for name in CONCEPT_FILES:
+        if (d / name).exists():
+            with open(d / name, encoding="utf-8") as fh:
+                out.append(json.load(fh))
+    return out
 
 
 def recent_concepts(course_id: str, before: dt.date, limit: int = 60) -> list[str]:
@@ -124,20 +136,20 @@ def recent_concepts(course_id: str, before: dt.date, limit: int = 60) -> list[st
     if not QUEUE.exists():
         return found
     for d in sorted(QUEUE.iterdir(), reverse=True):
-        if d.name == before.isoformat() or not (d / "concept.json").exists():
+        if d.name == before.isoformat():
             continue
-        with open(d / "concept.json", encoding="utf-8") as fh:
-            it = json.load(fh)
-        if it.get("course_id") == course_id and it.get("topic"):
-            found.append(it["topic"])
+        for it in _concepts_in(d):
+            if it.get("course_id") == course_id and it.get("topic"):
+                found.append(it["topic"])
         if len(found) >= limit:
             break
-    return found
+    return found[:limit]
 
 
-def concepts_near(date: dt.date, days: int = 30) -> list[str]:
+def concepts_near(date: dt.date, days: int = 30, skip: str | None = None) -> list[str]:
     """Concept topics of every course within `days` of the date (before or after, as later days may be
-    prepared ahead), so the page doesn't repeat a concept under another course."""
+    prepared ahead), so the page doesn't repeat a concept under another course. The same day's other
+    note counts too (`skip` = the file being rewritten)."""
     found = []
     if not QUEUE.exists():
         return found
@@ -146,12 +158,15 @@ def concepts_near(date: dt.date, days: int = 30) -> list[str]:
             day = dt.date.fromisoformat(d.name)
         except ValueError:
             continue
-        if day == date or abs((day - date).days) > days or not (d / "concept.json").exists():
+        if abs((day - date).days) > days:
             continue
-        with open(d / "concept.json", encoding="utf-8") as fh:
-            topic = (json.load(fh).get("topic") or "").strip()
-        if topic and topic not in found:
-            found.append(topic)
+        for name in CONCEPT_FILES:
+            if (day == date and (skip is None or name == skip)) or not (d / name).exists():
+                continue
+            with open(d / name, encoding="utf-8") as fh:
+                topic = (json.load(fh).get("topic") or "").strip()
+            if topic and topic not in found:
+                found.append(topic)
     return found
 
 

@@ -11,17 +11,18 @@ from .config import LETTERS, Config, batch_dir
 CONCEPT = "concept"
 REEL = "reel"
 EXPLAINER = "explainer"
+SLOTS = ("", "2")              # the evening note and video, and the day's second note and video
 
 
-def _explainer(cfg: Config, date: dt.date) -> dict | None:
+def _explainer(cfg: Config, date: dt.date, slot: str = "") -> dict | None:
     """The day's explainer record, marked held when its concept note changed after it was made."""
     from . import explainer as X
 
     if not cfg.explainer.get("enabled"):
         return None
-    ex = X.load(date)
+    ex = X.load(date, slot)
     if ex and not ex.get("error") and not ex.get("hold"):
-        why = X.problem(ex, load_concept(date))
+        why = X.problem(ex, load_concept(date, slot))
         if why:
             ex = {**ex, "hold": True, "hold_reason": why}
     return ex
@@ -29,12 +30,13 @@ def _explainer(cfg: Config, date: dt.date) -> dict | None:
 
 def _explainer_block(cfg: Config, e: dict, repo: str, branch: str, date: dt.date) -> list[str]:
     course = cfg.course(e["course_id"]) if e.get("course_id") else {"name": "", "emoji": ""}
+    key = e.get("kind") or EXPLAINER
     out = [f"### 🎬 Cartoon explainer ({course.get('emoji', '')} {course['name']}): {e.get('topic', '')}"]
     if e.get("error"):
-        backup = (f"The MCQ reel posts at {cfg.reel_time()} instead." if cfg.reels.get("enabled")
-                  else "No reel posts today unless it is made again.")
+        backup = (f"The MCQ reel posts at {cfg.reel_time()} instead." if cfg.reels.get("enabled") and key == EXPLAINER
+                  else "This video doesn't post unless it is made again.")
         return out + [f"❌ Could not make it: `{e['error'][:200]}`. {backup}",
-                      "Comment `/regen explainer` to try again.", ""]
+                      f"Comment `/regen {key}` to try again.", ""]
     video = f"https://github.com/{repo}/raw/{branch}/queue/{date.isoformat()}/{e.get('video', 'explainer.mp4')}"
     script = e.get("script") or {}
     out += [f'<a href="{video}"><img src="{_img(repo, branch, date, e.get("cover", "explainer_cover.jpg"))}" width="220"></a>', "",
@@ -83,10 +85,11 @@ def _reel_block(cfg: Config, r: dict, repo: str, branch: str, date: dt.date) -> 
 
 def _concept_block(cfg: Config, c: dict, repo: str, branch: str, date: dt.date) -> list[str]:
     course = cfg.course(c["course_id"])
-    out = [f"### 📒 Concept of the day ({course.get('emoji', '')} {course['name']}): {c.get('topic', '')}"]
+    key = c.get("kind") or CONCEPT
+    out = [f"### 📒 Concept note ({course.get('emoji', '')} {course['name']}): {c.get('topic', '')}"]
     if c.get("error"):
         return out + [f"❌ Could not write the concept note: `{c['error'][:200]}`",
-                      "Comment `/regen concept` to try again.", ""]
+                      f"Comment `/regen {key}` to try again.", ""]
     imgs = " ".join(f'<img src="{_img(repo, branch, date, n)}" width="220">' for n in c.get("images", []))
     out += [imgs, "", f"**Paper:** {c.get('paper_code', '')} {c.get('paper_name', '')} · **Signed:** {c.get('author', '')}"]
     notes = list(c.get("check_notes", [])) + list(c.get("fit_notes", []))
@@ -116,7 +119,9 @@ def pr_body(cfg: Config, date: dt.date, repo: str, branch: str) -> str:
         "|---|---|---|---|---|---|",
     ]
     details = []
-    for it in sorted(batch["items"], key=lambda i: cfg.course(i["course_id"])["post_time"]):
+    todays = set(cfg.mcq_course_ids(date))
+    for it in sorted([i for i in batch["items"] if i["course_id"] in todays],
+                     key=lambda i: cfg.course(i["course_id"])["post_time"]):
         c = cfg.course(it["course_id"])
         if it.get("error"):
             lines.append(f"| {c['post_time']} | {c.get('emoji','')} {c['name']} | {it['paper_code']} | – | – | ❌ failed |")
@@ -144,23 +149,25 @@ def pr_body(cfg: Config, date: dt.date, repo: str, branch: str) -> str:
         if notes:
             block += [""] + [f"- {n}" for n in notes]
         details.append("\n".join(block) + "\n")
-    concept = load_concept(date)
-    if concept:
-        lines.append(f"| {cfg.concept_time()} | 📒 Concept ({cfg.course(concept['course_id'])['name']}) | "
-                     f"{concept.get('paper_code', '')} | {concept.get('topic', '–')} | – | "
-                     f"{'❌ failed' if concept.get('error') else '⚠️ look closely' if concept.get('needs_check') else '✅'} |")
-        details.append("\n".join(_concept_block(cfg, concept, repo, branch, date)))
+    for slot in SLOTS:
+        concept = load_concept(date, slot)
+        if concept:
+            lines.append(f"| {cfg.concept_time(slot)} | 📒 Concept ({cfg.course(concept['course_id'])['name']}) | "
+                         f"{concept.get('paper_code', '')} | {concept.get('topic', '–')} | – | "
+                         f"{'❌ failed' if concept.get('error') else '⚠️ look closely' if concept.get('needs_check') else '✅'} |")
+            details.append("\n".join(_concept_block(cfg, concept, repo, branch, date)))
     reel = _reel(cfg, date, batch)
     if reel:
         lines.append(f"| {cfg.reel_time()} | 🎬 Reel ({cfg.course(reel['course_id'])['name']}) | – | "
                      f"{reel.get('topic', '–')} | {reel.get('correct', '–')} | "
                      f"{'❌ failed' if reel.get('error') else '⛔ ' + reel.get('hold_reason', '') if reel.get('hold') else '✅'} |")
         details.append("\n".join(_reel_block(cfg, reel, repo, branch, date)))
-    ex = _explainer(cfg, date)
-    if ex:
-        lines.append(f"| {cfg.explainer_time()} | 🎬 Explainer | – | {ex.get('topic', '–')} | – | "
-                     f"{'❌ failed' if ex.get('error') else '⛔ ' + ex.get('hold_reason', '') if ex.get('hold') else '✅'} |")
-        details.append("\n".join(_explainer_block(cfg, ex, repo, branch, date)))
+    for slot in SLOTS:
+        ex = _explainer(cfg, date, slot)
+        if ex:
+            lines.append(f"| {cfg.explainer_time(slot)} | 🎬 Explainer | – | {ex.get('topic', '–')} | – | "
+                         f"{'❌ failed' if ex.get('error') else '⛔ ' + ex.get('hold_reason', '') if ex.get('hold') else '✅'} |")
+            details.append("\n".join(_explainer_block(cfg, ex, repo, branch, date)))
     lines += ["", *details,
               "---",
               "### To change something",
@@ -180,16 +187,21 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
     if not batch:
         return f"No MCQs were prepared for {date}."
     posted = load_posted(date)
-    items = sorted(batch["items"], key=lambda i: cfg.course(i["course_id"])["post_time"])
-    concept = load_concept(date)
+    todays = set(cfg.mcq_course_ids(date))
+    items = sorted([i for i in batch["items"] if i["course_id"] in todays or i["course_id"] in posted],
+                   key=lambda i: cfg.course(i["course_id"])["post_time"])
+    concepts = [c for c in (load_concept(date, slot) for slot in SLOTS) if c]
+    concept = concepts[0] if concepts else None
     held = [it for it in items if (it.get("hold") or it.get("error")) and it["course_id"] not in posted]
-    concept_held = bool(concept and (concept.get("hold") or concept.get("error")) and CONCEPT not in posted)
+    concepts_held = [c for c in concepts if (c.get("hold") or c.get("error")) and (c.get("kind") or CONCEPT) not in posted]
+    concept_held = bool(concepts_held)
     reel = _reel(cfg, date, batch)
+    exs = [e for e in (_explainer(cfg, date, slot) for slot in SLOTS) if e]
     ex = _explainer(cfg, date)
     ex_ok = bool(ex and REEL not in posted and (EXPLAINER in posted or (not ex.get("error") and not ex.get("hold"))))
     reel_held = bool(reel and not ex_ok and (reel.get("hold") or reel.get("error")) and REEL not in posted)
-    n_held = len(held) + concept_held + reel_held
-    n_posts = len(items) + bool(concept) + bool(reel or ex)
+    n_held = len(held) + len(concepts_held) + reel_held
+    n_posts = len(items) + len(concepts) + bool(reel or ex) + len([e for e in exs if e.get("kind") != EXPLAINER])
     mention = f"@{owner} " if owner else ""
 
     lines = [f"## MCQs for {date.strftime('%A %d %B %Y')} · Day {cfg.day_number(date)}", ""]
@@ -201,33 +213,41 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
         words = {5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"}
         lines += [f"**All {words.get(n_posts, n_posts)} post automatically** at the times below. Nothing needs your action.", ""]
     lines += ["| Time | Course | Topic | Key | Status |", "|---|---|---|---|---|"]
-    rows = [(cfg.course(it["course_id"])["post_time"], it) for it in items]
-    if concept:
-        rows.append((cfg.concept_time(), concept))
-    if reel:
-        rows.append((cfg.reel_time(), reel))
-    if ex:
-        rows.append((cfg.explainer_time(), ex))
-    for _, it in sorted(rows, key=lambda r: r[0]):
-        is_concept = it.get("kind") == CONCEPT
-        is_reel = it.get("kind") in (REEL, EXPLAINER)
+
+    def when_of(it: dict) -> str:
+        kind = it.get("kind") or ""
+        slot = "2" if kind.endswith("2") else ""
+        if kind.startswith(CONCEPT):
+            return cfg.concept_time(slot)
+        if kind.startswith(EXPLAINER):
+            return cfg.explainer_time(slot)
+        if kind == REEL:
+            return cfg.reel_time()
+        return cfg.course(it["course_id"])["post_time"]
+
+    rows = [(when_of(it), it) for it in items + concepts + exs + ([reel] if reel else [])]
+    for when, it in sorted(rows, key=lambda r: r[0]):
+        kind = it.get("kind") or ""
+        is_concept = kind.startswith(CONCEPT)
+        is_ex = kind.startswith(EXPLAINER)
+        is_reel = kind == REEL or is_ex
         c = cfg.course(it["course_id"]) if it.get("course_id") else {"name": "", "emoji": "", "post_time": ""}
-        cid = it["kind"] if (is_concept or is_reel) else it["course_id"]
+        cid = kind if (is_concept or is_reel) else it["course_id"]
         if cid in posted:
             link = posted[cid].get("permalink") or ""
             status = f"✅ [posted]({link})" if link else "✅ posted"
             if f"{cid}:story" in posted:
                 status += " · 📱 story"
-        elif it.get("kind") == REEL and ex_ok:
+        elif kind == REEL and ex_ok:
             status = "backup: posts only if the explainer can't"
-        elif it.get("kind") == EXPLAINER and REEL in posted:
+        elif kind == EXPLAINER and REEL in posted:
             status = "not posted: the MCQ reel took the slot"
         elif it.get("error"):
             status = ("❌ couldn't be made" if is_reel else "❌ couldn't be written") + (
-                ", so the MCQ reel posts instead" if it.get("kind") == EXPLAINER else "")
+                ", so the MCQ reel posts instead" if kind == EXPLAINER and cfg.reels.get("enabled") else "")
         elif it.get("hold"):
             status = f"⛔ on hold: {it.get('hold_reason', '')}" + (
-                ", so the MCQ reel posts instead" if it.get("kind") == EXPLAINER else "")
+                ", so the MCQ reel posts instead" if kind == EXPLAINER and cfg.reels.get("enabled") else "")
         else:
             notes = []
             if it.get("needs_check"):
@@ -236,9 +256,8 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
                 notes.append("⚖️ law")
             status = "🕒 will post" + (f" ({', '.join(notes)})" if notes else "")
         key = it.get("correct", "–")
-        when = cfg.concept_time() if is_concept else cfg.reel_time() if is_reel else c["post_time"]
         label = (f"📒 Concept ({c['name']})" if is_concept else f"🎬 Explainer ({c['name']})"
-                 if it.get("kind") == EXPLAINER else f"🎬 MCQ reel ({c['name']})" if is_reel
+                 if is_ex else f"🎬 MCQ reel ({c['name']})" if is_reel
                  else f"{c.get('emoji', '')} {c['name']}")
         lines.append(f"| {when} | {label} | {it.get('topic', '–')} | {key} | {status} |")
 
@@ -269,23 +288,26 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
         lines += _reel_block(cfg, reel, repo, branch, date) + [
             "**To fix:** comment `/regen reel` to make it again (it uses another MCQ if this one is on hold), "
             "or `/approve reel` if you put it on hold yourself.", ""]
-    if concept_held:
-        if not held and not reel_held:
+    for c in concepts_held:
+        k = c.get("kind") or CONCEPT
+        if not held and not reel_held and c is concepts_held[0]:
             lines += ["", "## ⛔ On hold: please look", ""]
-        lines += _concept_block(cfg, concept, repo, branch, date) + [
-            "**To fix:** comment `/approve concept` to post it as it is, `/regen concept` for a new note on the same "
-            f"concept (add an instruction to change it), or edit `queue/{date.isoformat()}/concept.json`.", ""]
+        lines += _concept_block(cfg, c, repo, branch, date) + [
+            f"**To fix:** comment `/approve {k}` to post it as it is, `/regen {k}` for a new note on the same "
+            f"concept (add an instruction to change it), or edit `queue/{date.isoformat()}/{k}.json`.", ""]
     rest = [it for it in items if it not in held]
     if rest:
         lines += ["", "## All MCQs for the day", ""]
         for it in rest:
             lines += block(it)
-    if concept and not concept_held:
-        lines += ["", "## Concept of the day", ""] + _concept_block(cfg, concept, repo, branch, date)
-    if ex:
-        lines += ["", "## Cartoon explainer (6 PM reel)", ""] + _explainer_block(cfg, ex, repo, branch, date)
-        if ex.get("hold") and not ex.get("error") and EXPLAINER not in posted:
-            lines += ["**To post it anyway:** comment `/approve explainer`. `/regen explainer` writes a new one.", ""]
+    for c in concepts:
+        if c not in concepts_held:
+            lines += ["", f"## Concept note ({when_of(c)})", ""] + _concept_block(cfg, c, repo, branch, date)
+    for e in exs:
+        k = e.get("kind") or EXPLAINER
+        lines += ["", f"## Cartoon explainer ({when_of(e)} reel)", ""] + _explainer_block(cfg, e, repo, branch, date)
+        if e.get("hold") and not e.get("error") and k not in posted:
+            lines += [f"**To post it anyway:** comment `/approve {k}`. `/regen {k}` writes a new one.", ""]
     if reel and not reel_held:
         lines += ["", "## MCQ reel" + (" (backup)" if ex_ok else ""), ""] + _reel_block(cfg, reel, repo, branch, date)
     lines += ["---", "### Commands (comment on this issue)",
@@ -293,9 +315,11 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
               "- `/approve <course>`: post a held MCQ as it is",
               "- `/regen <course> [instruction]`: replace it with a new MCQ; it posts automatically if the check passes",
               f"- Edit `queue/{date.isoformat()}/mcqs.json` to change text; the images redraw by themselves",
-              f"- Course ids: {', '.join(cfg.course_ids())}" + (", `concept` for the concept note" if concept else "")
+              f"- Course ids: {', '.join(cfg.course_ids())}" + (", `concept` for the evening concept note" if concept else "")
+              + (", `concept2` for the second note" if len(concepts) > 1 else "")
               + (", `reel` for the reel (`/regen reel` remakes it)" if reel else "")
-              + (", `explainer` for the cartoon explainer (`/regen explainer` writes a new one)" if ex else ""),
+              + (", `explainer` for the 6 PM video" if ex else "")
+              + (", `explainer2` for the second video" if any(e.get("kind") == "explainer2" for e in exs) else ""),
               "", "_Posted MCQs can't be changed from here; edit or delete them in the Instagram app._"]
     return "\n".join(lines)
 
@@ -306,10 +330,13 @@ def report_title(cfg: Config, date: dt.date) -> str:
 
     batch = load_batch(date) or {"items": []}
     posted = load_posted(date)
-    held = [it for it in batch["items"] if (it.get("hold") or it.get("error")) and it["course_id"] not in posted]
-    concept = load_concept(date)
-    if concept and (concept.get("hold") or concept.get("error")) and CONCEPT not in posted:
-        held.append(concept)
+    todays = set(cfg.mcq_course_ids(date))
+    held = [it for it in batch["items"] if (it.get("hold") or it.get("error")) and it["course_id"] not in posted
+            and it["course_id"] in todays]
+    for slot in SLOTS:
+        concept = load_concept(date, slot)
+        if concept and (concept.get("hold") or concept.get("error")) and (concept.get("kind") or CONCEPT) not in posted:
+            held.append(concept)
     reel = _reel(cfg, date, load_batch(date))
     ex = _explainer(cfg, date)
     ex_ok = bool(ex and (EXPLAINER in posted or (not ex.get("error") and not ex.get("hold"))))

@@ -100,22 +100,58 @@ class Config:
         key = paper.get("author")
         return str(self.authors.get(key) or default).strip() if key else default
 
-    # ── concept of the day ─────────────────────────────────
-    def concept_due(self, date: dt.date) -> bool:
-        start = self.concepts.get("start_date")
-        return bool(self.concepts.get("enabled") and start and date >= dt.date.fromisoformat(str(start)))
+    # ── which MCQs post on a day ───────────────────────────
+    def mcq_course_ids(self, date: dt.date) -> list[str]:
+        """The courses whose MCQ posts on this date: with `mcqs: alternate` on, one family a day
+        (e.g. the three CA courses one day, the three CMA courses the next); otherwise every course."""
+        m = self.raw.get("mcqs") or {}
+        fams = m.get("families") or []
+        start = m.get("start_date")
+        if not (m.get("alternate") and fams and start) or date < dt.date.fromisoformat(str(start)):
+            return self.course_ids()
+        fam = set(fams[(date - dt.date.fromisoformat(str(start))).days % len(fams)])
+        return [c for c in self.course_ids() if c in fam]
 
-    def concept_course(self, date: dt.date) -> dict:
-        """One course a day, in the order of `concepts.courses` (default: the course list)."""
+    def family_of(self, course_id: str) -> list[str]:
+        for fam in (self.raw.get("mcqs") or {}).get("families") or []:
+            if course_id in fam:
+                return list(fam)
+        return self.course_ids()
+
+    # ── concept of the day (slot "" = the evening note, "2" = the second note of the day) ──
+    def _second(self) -> dict:
+        return self.concepts.get("second") or {}
+
+    def concept_due(self, date: dt.date, slot: str = "") -> bool:
+        start = self.concepts.get("start_date")
+        due = bool(self.concepts.get("enabled") and start and date >= dt.date.fromisoformat(str(start)))
+        if slot == "2":
+            s2 = self._second()
+            due = due and bool(s2.get("enabled") and s2.get("start_date")
+                               and date >= dt.date.fromisoformat(str(s2["start_date"])))
+        return due
+
+    def concept_course(self, date: dt.date, slot: str = "") -> dict:
+        """The evening note: one course a day, in the order of `concepts.courses`. The second note: a
+        course from the other family (so both CA and CMA students get a note and a video every day)."""
         ids = self.concepts.get("courses") or self.course_ids()
         start = dt.date.fromisoformat(str(self.concepts.get("start_date") or self.start_date))
-        return self.course(ids[(date - start).days % len(ids)])
+        first = ids[(date - start).days % len(ids)]
+        if slot != "2":
+            return self.course(first)
+        fams = (self.raw.get("mcqs") or {}).get("families") or []
+        other = next((f for f in fams if first not in f), None) or [c for c in ids if c != first]
+        other = [c for c in ids if c in other]                      # in the concepts.courses order
+        s2 = dt.date.fromisoformat(str(self._second().get("start_date") or start))
+        return self.course(other[(date - s2).days % len(other)])
 
-    def concept_paper(self, date: dt.date) -> dict:
+    def concept_paper(self, date: dt.date, slot: str = "") -> dict:
         """The paper of tomorrow's MCQ for that course, so tomorrow's MCQ can test today's concept."""
-        return self.paper_for(self.concept_course(date), date + dt.timedelta(days=1))
+        return self.paper_for(self.concept_course(date, slot), date + dt.timedelta(days=1))
 
-    def concept_time(self) -> str:
+    def concept_time(self, slot: str = "") -> str:
+        if slot == "2":
+            return str(self._second().get("post_time", "13:40"))
         return str(self.concepts.get("post_time", "19:40"))
 
     # ── MCQ reel of the day ────────────────────────────────
@@ -141,13 +177,15 @@ class Config:
         return think, answer
 
     # ── cartoon explainer reel of the day ──────────────────
-    def explainer_due(self, date: dt.date) -> bool:
+    def explainer_due(self, date: dt.date, slot: str = "") -> bool:
         start = self.explainer.get("start_date")
         return bool(self.explainer.get("enabled") and start and date >= dt.date.fromisoformat(str(start))
-                    and self.concept_due(date))
+                    and self.concept_due(date, slot))
 
-    def explainer_time(self) -> str:
-        """It takes the reel's slot: the MCQ reel posts at this time only when there is no explainer."""
+    def explainer_time(self, slot: str = "") -> str:
+        """The evening video takes the reel's slot; the second video has its own time."""
+        if slot == "2":
+            return str(self.explainer.get("second_post_time") or "11:25")
         return str(self.explainer.get("post_time") or self.reel_time())
 
     def law_text(self, paper: dict, date: dt.date) -> str:

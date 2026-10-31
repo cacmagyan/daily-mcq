@@ -15,8 +15,7 @@ from pathlib import Path
 from . import batch as B
 from .config import Config, batch_dir
 
-REF = re.compile(r"\bref ([a-z-]+)-(\d{6})\b")
-PDF = "concept.pdf"
+REF = re.compile(r"\bref ([a-z][a-z0-9-]*?)-(\d{6})\b")
 
 
 def settings(cfg: Config) -> dict:
@@ -32,14 +31,15 @@ def cta(cfg: Config) -> str:
     return f"💬 Comment {word} and we'll DM you the full concept note (PDF)."
 
 
-def concept_pdf(date: dt.date) -> Path | None:
-    """queue/DATE/concept.pdf from the concept note's slides (made once). None if there is no note."""
+def concept_pdf(date: dt.date, slot: str = "") -> Path | None:
+    """queue/DATE/concept.pdf (concept2.pdf for the second note) from the note's slides, made once.
+    None if there is no note."""
     from PIL import Image
 
-    c = B.load_concept(date)
+    c = B.load_concept(date, slot)
     if not c or c.get("error") or not c.get("images"):
         return None
-    out = batch_dir(date) / PDF
+    out = batch_dir(date) / f"concept{slot}.pdf"
     if out.exists():
         return out
     pages = [Image.open(batch_dir(date) / n).convert("RGB") for n in c["images"] if (batch_dir(date) / n).exists()]
@@ -55,10 +55,11 @@ def make_pdfs(cfg: Config, days: int = 8) -> list[Path]:
     made = []
     for k in range(-days, 2):
         d = today + dt.timedelta(days=k)
-        before = (batch_dir(d) / PDF).exists()
-        p = concept_pdf(d)
-        if p and not before:
-            made.append(p)
+        for slot in ("", "2"):
+            before = (batch_dir(d) / f"concept{slot}.pdf").exists()
+            p = concept_pdf(d, slot)
+            if p and not before:
+                made.append(p)
     return made
 
 
@@ -95,7 +96,7 @@ def run(cfg: Config, ig=None, dry_run: bool = False) -> dict:
         print("Comment DMs are switched off (comment_dm: enabled in config.yaml).")
         return counts
     keywords = [k for k in s.get("keywords") or ["notes", "note", "pdf"]]
-    kinds = set(s.get("posts") or ["explainer", "concept"])
+    kinds = set(s.get("posts") or ["explainer", "concept", "explainer2", "concept2"])
     window = dt.timedelta(days=min(7, int(s.get("days", 7))))
     ig = ig or Instagram.from_env(cfg.instagram)
     me = (ig.account().get("username") or "").lower()
@@ -115,8 +116,9 @@ def run(cfg: Config, ig=None, dry_run: bool = False) -> dict:
             continue
         if now - posted > window + dt.timedelta(days=1):
             continue
-        concept = B.load_concept(ref[1])
-        pdf = concept_pdf(ref[1]) if concept else None
+        slot = "2" if ref[0].endswith("2") else ""
+        concept = B.load_concept(ref[1], slot)
+        pdf = concept_pdf(ref[1], slot) if concept else None
         if not pdf:
             print("    no concept note PDF for that day")
             continue

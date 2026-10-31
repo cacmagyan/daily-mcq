@@ -33,6 +33,9 @@ def _courses(value: str | None) -> list[str] | None:
     return [c.strip() for c in value.split(",") if c.strip()] if value else None
 
 
+EXTRA_IDS = ("concept", "concept2", "reel", "explainer", "explainer2")
+
+
 def parse_regen_comment(text: str, cfg: Config) -> tuple[str, str]:
     for line in text.strip().splitlines():
         line = line.strip()
@@ -41,11 +44,11 @@ def parse_regen_comment(text: str, cfg: Config) -> tuple[str, str]:
             if len(parts) < 2:
                 break
             course_id = parts[1].strip().lower()
-            if course_id not in ("concept", "reel", "explainer"):
+            if course_id not in EXTRA_IDS:
                 try:
                     cfg.course(course_id)
                 except KeyError as exc:
-                    raise SystemExit(str(exc).strip('"') + ", concept, reel, explainer") from None
+                    raise SystemExit(str(exc).strip('"') + ", " + ", ".join(EXTRA_IDS)) from None
             return course_id, (parts[2].strip() if len(parts) > 2 else "")
     raise SystemExit("Write it as: /regen <course_id> [instruction]. Course ids: " + ", ".join(cfg.course_ids()))
 
@@ -63,14 +66,14 @@ def parse_command(text: str, cfg: Config) -> tuple[str, str, str]:
             if len(parts) < 2:
                 break
             course_id = parts[1].strip().lower()
-            if course_id not in ("concept", "reel", "explainer"):
+            if course_id not in EXTRA_IDS:
                 try:
                     cfg.course(course_id)
                 except KeyError as exc:
-                    raise SystemExit(str(exc).strip('"') + ", concept, reel, explainer") from None
+                    raise SystemExit(str(exc).strip('"') + ", " + ", ".join(EXTRA_IDS)) from None
             return word[1:], course_id, (parts[2].strip() if len(parts) > 2 else "")
     raise SystemExit("Write one of: /regen <course> [instruction], /approve <course>, /hold <course>. "
-                     "Course ids: " + ", ".join(cfg.course_ids()) + ", concept, reel, explainer")
+                     "Course ids: " + ", ".join(cfg.course_ids()) + ", " + ", ".join(EXTRA_IDS))
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -220,17 +223,23 @@ def main(argv: list[str] | None = None) -> int:
         batch = load_batch(date)
         # MCQs that failed to be written (e.g. the Claude limit was reached part-way) are tried again
         need = [it["course_id"] for it in batch.get("items", []) if it.get("error")]
-        concept = load_concept(date)
-        if cfg.concept_due(date) and (not concept or concept.get("error")):
-            need.append("concept")
+        todays = set(cfg.mcq_course_ids(date))
+        need = [c for c in need if c in todays]
+        need += [c for c in cfg.mcq_course_ids(date) if not any(it["course_id"] == c for it in batch.get("items", []))]
+        from .explainer import load as load_explainer
+        concepts = {}
+        for slot in ("", "2"):
+            concept = concepts[slot] = load_concept(date, slot)
+            if cfg.concept_due(date, slot) and (not concept or concept.get("error")):
+                need.append("concept" + slot)
         reel = load_reel(date)
         if cfg.reel_due(date) and (not reel or reel.get("error")):     # a failed reel is cheap to retry
             need.append("reel")
-        from .explainer import load as load_explainer
-        ex = load_explainer(date)
-        if cfg.explainer_due(date) and (not ex or ex.get("error") or "concept" in need
-                                        or (concept and ex.get("concept_topic") != concept.get("topic"))):
-            need.append("explainer")
+        for slot in ("", "2"):
+            ex, concept = load_explainer(date, slot), concepts[slot]
+            if cfg.explainer_due(date, slot) and (not ex or ex.get("error") or "concept" + slot in need
+                                                  or (concept and ex.get("concept_topic") != concept.get("topic"))):
+                need.append("explainer" + slot)
         if not need and batch.get("day") and batch["day"] != cfg.day_number(date):
             print("redraw")              # drawn with an older Day number (e.g. after a pause): redraw it
             return 0
@@ -241,12 +250,13 @@ def main(argv: list[str] | None = None) -> int:
         from .pipeline import hold, regenerate, release
         date = dt.date.fromisoformat(args.date)
         action, course_id, instruction = parse_command(args.comment, cfg)
-        name = {"concept": "concept note", "reel": "reel", "explainer": "explainer"}.get(course_id) or cfg.course(course_id)["name"]
+        name = {"concept": "concept note", "concept2": "second concept note", "reel": "reel", "explainer": "explainer",
+                "explainer2": "second explainer"}.get(course_id) or cfg.course(course_id)["name"]
         if action == "regen":
             item = regenerate(cfg, date, course_id, instruction)
-            if course_id == "concept":
-                summary = f"New concept note for {date}: {item.get('topic', '')}"
-            elif course_id == "explainer":
+            if course_id in ("concept", "concept2"):
+                summary = f"New {name} for {date}: {item.get('topic', '')}"
+            elif course_id in ("explainer", "explainer2"):
                 summary = (f"Explainer for {date} could not be made: {item.get('error', '')[:200]}" if item.get("error")
                            else f"New explainer for {date}: {item.get('topic', '')} ({item.get('seconds', 0):g} s)")
             elif course_id == "reel":

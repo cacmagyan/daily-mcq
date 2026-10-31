@@ -84,7 +84,8 @@ def build_concept_caption(cfg: Config, item: dict, date: dt.date) -> str:
         f"Swipe for {slide2}, a memory trick and the mistakes that cost marks.",
         "Save 🔖 this for revision.",
         *([_cta] if (_cta := _notes_cta(cfg)) else []),
-        f"Tomorrow's {course['name']} MCQ ({_clock(course['post_time'])}) tests this concept.",
+        *([f"Tomorrow's {course['name']} MCQ ({_clock(course['post_time'])}) tests this concept."]
+          if course["id"] in cfg.mcq_course_ids(date + dt.timedelta(days=1)) else []),
     ]
     if item.get("applicability"):
         lines += ["", f"Based on {item['applicability']}."]
@@ -92,7 +93,7 @@ def build_concept_caption(cfg: Config, item: dict, date: dt.date) -> str:
         lines += ["", f"Notes by {item['author']}"]
     if handle:
         lines += ["", f"Follow {handle} for daily MCQs and concept notes."]
-    lines += ["", " ".join(tags[:n]), "", post_ref("concept", date)]
+    lines += ["", " ".join(tags[:n]), "", post_ref(item.get("kind") or "concept", date)]
     return "\n".join(lines)[:2200]
 
 

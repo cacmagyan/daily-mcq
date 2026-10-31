@@ -38,21 +38,25 @@ class ExplainerError(RuntimeError):
     pass
 
 
-# ── files ───────────────────────────────────────────────────
-def path(date: dt.date) -> Path:
-    return batch_dir(date) / "explainer.json"
+# ── files (slot "" = the evening video, "2" = the second video of the day: explainer2.*) ──
+def path(date: dt.date, slot: str = "") -> Path:
+    return batch_dir(date) / f"explainer{slot}.json"
 
 
-def load(date: dt.date) -> dict | None:
-    p = path(date)
+def load(date: dt.date, slot: str = "") -> dict | None:
+    p = path(date, slot)
     if not p.exists():
         return None
     with open(p, encoding="utf-8") as fh:
         return json.load(fh)
 
 
-def save(date: dt.date, item: dict) -> Path:
-    p = path(date)
+def slot_of(item: dict) -> str:
+    return "2" if str(item.get("kind", "")).endswith("2") else ""
+
+
+def save(date: dt.date, item: dict, slot: str | None = None) -> Path:
+    p = path(date, slot_of(item) if slot is None else slot)
     p.parent.mkdir(parents=True, exist_ok=True)
     with open(p, "w", encoding="utf-8") as fh:
         json.dump(item, fh, ensure_ascii=False, indent=2)
@@ -416,7 +420,7 @@ def tag_for(cfg: Config, concept: dict) -> str:
 
 
 def make(cfg: Config, date: dt.date, concept: dict, out_dir: Path | None = None, script: dict | None = None,
-         instruction: str = "") -> dict:
+         instruction: str = "", slot: str = "") -> dict:
     """Writes (unless `script` is given) and renders the day's explainer. Returns its record (not saved)."""
     from . import cartoon_video as engine
 
@@ -433,6 +437,7 @@ def make(cfg: Config, date: dt.date, concept: dict, out_dir: Path | None = None,
     from .replies import settings as dm_settings
     word = ((dm_settings(cfg).get("keywords") or ["notes"])[0].upper() if dm_settings(cfg).get("enabled") else "")
     logo = (cfg.brand.get("logo") or "").strip()
+    video, cover = f"explainer{slot}.mp4", f"explainer{slot}_cover.jpg"
     common = dict(tag=tag_for(cfg, concept), handle=cfg.brand.get("handle", "").strip(),
                   logo=(ROOT / logo) if logo else None, with_music=bool(ex.get("music", True)),
                   crf=int(ex.get("crf", 28)), cta=f"Comment {word} for the PDF" if word else "",
@@ -440,15 +445,15 @@ def make(cfg: Config, date: dt.date, concept: dict, out_dir: Path | None = None,
     if is_story(script):
         from . import story_video
         script = story_tidy(cfg, script)
-        res = story_video.render(script, out_dir / VIDEO, out_dir / COVER, **common)
+        res = story_video.render(script, out_dir / video, out_dir / cover, **common)
         voice = ", ".join(f"{who}: {c['voice']}" for who, c in story_video.CAST.items())
     else:
         voice = str(ex.get("voice", "af_heart"))
-        res = engine.render(script, out_dir / VIDEO, out_dir / COVER, voice=voice,
+        res = engine.render(script, out_dir / video, out_dir / cover, voice=voice,
                             lang=str(ex.get("lang") or ("hi" if voice.startswith("h") else "en-us")), **common)
-    item = {"kind": EXPLAINER, "course_id": concept["course_id"], "paper_code": concept.get("paper_code", ""),
+    item = {"kind": EXPLAINER + slot, "course_id": concept["course_id"], "paper_code": concept.get("paper_code", ""),
             "paper_name": concept.get("paper_name", ""), "topic": concept.get("topic", ""),
-            "concept_topic": concept.get("topic", ""), "video": VIDEO, "cover": COVER,
+            "concept_topic": concept.get("topic", ""), "video": video, "cover": cover,
             "style": "story" if is_story(script) else "classic",
             "seconds": res["seconds"], "thumb_ms": res["thumb_ms"], "voice": voice,
             "script": {k: script[k] for k in SCRIPT_KEYS if k in script}}
@@ -480,13 +485,13 @@ def caption(cfg: Config, item: dict, date: dt.date) -> str:
     if script.get("caption_hook"):
         lines += ["", script["caption_hook"]]
     from .replies import cta
-    lines += ["", f"📒 Full concept note today at {_clock(cfg.concept_time())}. Save 🔖 this for revision."]
+    lines += ["", f"📒 Full concept note today at {_clock(cfg.concept_time(slot_of(item)))}. Save 🔖 this for revision."]
     if cta(cfg):
         lines.append(cta(cfg))
     lines.append(f"{item['paper_code']}: {item['paper_name']}")
     if handle:
         lines += ["", f"Follow {handle} for one concept every day."]
-    lines += ["", " ".join(tags[:n]), "", post_ref(EXPLAINER, date)]
+    lines += ["", " ".join(tags[:n]), "", post_ref(item.get("kind") or EXPLAINER, date)]
     return "\n".join(lines)[:2200]
 
 

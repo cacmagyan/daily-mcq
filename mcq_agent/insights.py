@@ -34,13 +34,13 @@ def posts_between(start: dt.date, end: dt.date) -> list[dict]:
     while d <= end:
         posted = B.load_posted(d)
         batch = B.load_batch(d) or {"items": []}
-        concept = B.load_concept(d) or {}
         for key, rec in posted.items():
             if ":" in key or not rec.get("media_id"):
                 continue                                     # Stories have no lasting numbers
-            if key in ("explainer", "reel", "concept"):
-                kind = key
-                topic = concept.get("topic", "") if key in ("explainer", "concept") else ""
+            concept = B.load_concept(d, "2" if key.endswith("2") else "") or {}
+            if key in ("explainer", "reel", "concept", "explainer2", "concept2"):
+                kind = key.rstrip("2")
+                topic = concept.get("topic", "") if kind in ("explainer", "concept") else ""
                 if key == "reel":
                     topic = (B.load_reel(d) or {}).get("topic", "")
                 course = concept.get("course_id", "") if key != "reel" else (B.load_reel(d) or {}).get("course_id", "")

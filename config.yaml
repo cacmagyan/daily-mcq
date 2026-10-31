@@ -196,9 +196,34 @@ courses:
     post_time: "07:30"
     hashtags: ["#CMACAT", "#ICMAI", "#CATCourse", "#DailyMCQ", "#AccountingTechnician"]
     papers:   # Part I (the examined part, MCQ on OMR)
-      - { code: "Paper 1A", name: "Fundamentals of Financial Accounting" }
+      - code: "Paper 1A"
+        name: "Fundamentals of Financial Accounting"
+        syllabus: >-
+          Process of accounting (accounting terms, GAAP, concepts and conventions, events and transactions,
+          vouchers, types of accounts, accounting equation, accrual vs cash basis, capital vs revenue
+          transactions, accounting standards basics, double entry, books of prime entry, subsidiary books,
+          cash and bank transactions, ledger, trial balance, measurement, valuation and accounting estimates,
+          opening, closing, transfer and rectification entries); reconciliation statements (bank
+          reconciliation, receivables and payables reconciliation); depreciation (methods, provision for
+          depreciation account, disposal of assets, change of method, AS 6 and AS 10); final accounts of sole
+          proprietors and partnership firms (trading, profit and loss account, balance sheet, bad debts,
+          provision for doubtful debts, provision for discount on debtors and creditors) and of non-profit
+          organisations (receipts and payments, income and expenditure, balance sheet); cash flow and fund
+          flow statements; ratio analysis
       - { code: "Paper 1B", name: "Applied Business and Industrial Laws", author: ranjith }
-      - { code: "Paper 2A", name: "Financial Accounting-2" }
+      - code: "Paper 2A"
+        name: "Financial Accounting-2"
+        syllabus: >-
+          Payroll accounting (concept and process, pay and gross earnings, statutory and non-statutory
+          deductions, EPF, ESI, income tax, professional tax and their accounting, bonus and gratuity, wages
+          and direct expenses); store accounting (pricing of purchases of materials, issue of materials from
+          stores, pricing of returned materials, issue to other formations, issue for disposal); sales
+          accounting (revenue recognition, cash and credit sales, sales returns and allowances, sales
+          discounts, bank credit card sales, managing cash, estimating uncollectible accounts receivable,
+          assessing receivables, internal control procedures); asset accounting (current asset accounting,
+          fixed asset accounting, project accounting); accounting for special transactions (bills of
+          exchange, consignment, joint venture, sale of goods on approval or return basis). Company accounts
+          (shares, debentures, forfeiture) are NOT in this paper.
       - { code: "Paper 2B", name: "Statutory Compliance", law: statutory }
 
   - id: ca_inter

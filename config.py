@@ -1,0 +1,215 @@
+"""Loads config.yaml and answers simple questions about it (dates, courses, papers, law basis)."""
+
+from __future__ import annotations
+
+import datetime as dt
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+import yaml
+
+ROOT = Path(__file__).resolve().parent.parent
+QUEUE = ROOT / "queue"
+LETTERS = ["A", "B", "C", "D"]
+
+
+class Config:
+    def __init__(self, path: Path | None = None):
+        path = path or ROOT / "config.yaml"
+        with open(path, encoding="utf-8") as fh:
+            self.raw = yaml.safe_load(fh)
+        self.brand = self.raw["brand"]
+        self.tz = ZoneInfo(self.raw.get("timezone", "Asia/Kolkata"))
+        self.models = self.raw.get("models", {})
+        self.review_mode = self.raw.get("review", {}).get("mode", "github_pr")
+        self.instagram = self.raw.get("instagram", {})
+        self.courses = self.raw["courses"]
+        self.law_basis = self.raw.get("law_basis", {})
+        self.start_date = dt.date.fromisoformat(str(self.brand.get("start_date")))
+        self.concepts = self.raw.get("concepts") or {}
+        self.authors = self.raw.get("authors") or {}
+        self.reels = self.raw.get("reels") or {}
+        self.stories = self.raw.get("stories") or {}
+        self.explainer = self.raw.get("explainer") or {}
+
+    # ── courses ────────────────────────────────────────────
+    def course(self, course_id: str) -> dict:
+        for c in self.courses:
+            if c["id"] == course_id:
+                return c
+        raise KeyError(f"Unknown course id '{course_id}'. Known: {', '.join(self.course_ids())}")
+
+    def course_ids(self) -> list[str]:
+        return [c["id"] for c in self.courses]
+
+    # ── dates ──────────────────────────────────────────────
+    def now(self) -> dt.datetime:
+        return dt.datetime.now(self.tz)
+
+    def today(self) -> dt.date:
+        return self.now().date()
+
+    def resolve_date(self, value: str | None) -> dt.date:
+        if not value or value == "tomorrow":
+            return self.today() + dt.timedelta(days=1)
+        if value == "today":
+            return self.today()
+        return dt.date.fromisoformat(value)
+
+    def paused_days(self) -> set[dt.date]:
+        """Days with no posts (brand.paused: ["from", "to"] pairs or single dates); Day N skips them."""
+        out = set()
+        for entry in self.brand.get("paused") or []:
+            first, last = (entry, entry) if isinstance(entry, str) else (entry[0], entry[-1])
+            d, end = dt.date.fromisoformat(str(first)), dt.date.fromisoformat(str(last))
+            while d <= end:
+                out.add(d)
+                d += dt.timedelta(days=1)
+        return out
+
+    def day_number(self, date: dt.date) -> int:
+        """Day N of the series: days since start_date, not counting paused days. The papers rotate
+        by this number too, so a pause doesn't skip any paper."""
+        skipped = sum(1 for d in self.paused_days() if self.start_date <= d < date)
+        return (date - self.start_date).days + 1 - skipped
+
+    # ── papers ─────────────────────────────────────────────
+    def paper_for(self, course: dict, date: dt.date) -> dict:
+        """One paper per day per course, cycling through the list in config order."""
+        papers = course["papers"]
+        return papers[(self.day_number(date) - 1) % len(papers)]
+
+    def paper_title(self, paper: dict) -> str:
+        """'Corporate Accounting and Auditing (Auditing)' for a paper limited to one half."""
+        return f"{paper['name']} ({paper['part']})" if paper.get("part") else paper["name"]
+
+    def paper_prompt(self, paper: dict) -> str:
+        """The paper line for Claude, limited to the half when the paper has a `part`."""
+        line = f"{paper['code']}: {paper['name']}"
+        line += f" (only the {paper['part']} part of this paper)" if paper.get("part") else ""
+        if paper.get("syllabus"):
+            line += (f". Syllabus of this paper: {' '.join(str(paper['syllabus']).split())} "
+                     "Use only topics from this syllabus; anything outside it is wrong for these students")
+        return line
+
+    def find_paper(self, course_id: str, code: str, title: str = "") -> dict | None:
+        """The paper entry behind an item's paper_code and paper_name (paper_name includes the half, if any)."""
+        papers = self.course(course_id)["papers"]
+        exact = [p for p in papers if p["code"] == code and (not title or self.paper_title(p) == title)]
+        return (exact or [p for p in papers if p["code"] == code] or [None])[0]
+
+    def author_for(self, paper: dict) -> str:
+        """Who prepares this paper's notes: its `author` key in authors, else the default (brand name)."""
+        default = str(self.authors.get("default") or self.brand.get("name") or "").strip()
+        key = paper.get("author")
+        return str(self.authors.get(key) or default).strip() if key else default
+
+    # ── which MCQs post on a day ───────────────────────────
+    def mcq_course_ids(self, date: dt.date) -> list[str]:
+        """The courses whose MCQ posts on this date: with `mcqs: alternate` on, one family a day
+        (e.g. the three CA courses one day, the three CMA courses the next); otherwise every course."""
+        m = self.raw.get("mcqs") or {}
+        fams = m.get("families") or []
+        start = m.get("start_date")
+        if not (m.get("alternate") and fams and start) or date < dt.date.fromisoformat(str(start)):
+            return self.course_ids()
+        fam = set(fams[(date - dt.date.fromisoformat(str(start))).days % len(fams)])
+        return [c for c in self.course_ids() if c in fam]
+
+    def family_of(self, course_id: str) -> list[str]:
+        for fam in (self.raw.get("mcqs") or {}).get("families") or []:
+            if course_id in fam:
+                return list(fam)
+        return self.course_ids()
+
+    # ── concept of the day (slot "" = the evening note, "2" = the second note of the day) ──
+    def _second(self) -> dict:
+        return self.concepts.get("second") or {}
+
+    def concept_due(self, date: dt.date, slot: str = "") -> bool:
+        start = self.concepts.get("start_date")
+        due = bool(self.concepts.get("enabled") and start and date >= dt.date.fromisoformat(str(start)))
+        if slot == "2":
+            s2 = self._second()
+            due = due and bool(s2.get("enabled") and s2.get("start_date")
+                               and date >= dt.date.fromisoformat(str(s2["start_date"])))
+        return due
+
+    def concept_course(self, date: dt.date, slot: str = "") -> dict:
+        """The evening note: one course a day, in the order of `concepts.courses`. The second note: a
+        course from the other family (so both CA and CMA students get a note and a video every day)."""
+        ids = self.concepts.get("courses") or self.course_ids()
+        start = dt.date.fromisoformat(str(self.concepts.get("start_date") or self.start_date))
+        first = ids[(date - start).days % len(ids)]
+        if slot != "2":
+            return self.course(first)
+        fams = (self.raw.get("mcqs") or {}).get("families") or []
+        other = next((f for f in fams if first not in f), None) or [c for c in ids if c != first]
+        other = [c for c in ids if c in other]                      # in the concepts.courses order
+        s2 = dt.date.fromisoformat(str(self._second().get("start_date") or start))
+        return self.course(other[(date - s2).days % len(other)])
+
+    def concept_paper(self, date: dt.date, slot: str = "") -> dict:
+        """The paper of tomorrow's MCQ for that course, so tomorrow's MCQ can test today's concept."""
+        return self.paper_for(self.concept_course(date, slot), date + dt.timedelta(days=1))
+
+    def concept_time(self, slot: str = "") -> str:
+        if slot == "2":
+            return str(self._second().get("post_time", "13:40"))
+        return str(self.concepts.get("post_time", "19:40"))
+
+    # ── MCQ reel of the day ────────────────────────────────
+    def reel_due(self, date: dt.date) -> bool:
+        start = self.reels.get("start_date")
+        return bool(self.reels.get("enabled") and start and date >= dt.date.fromisoformat(str(start)))
+
+    def reel_courses(self) -> list[str]:
+        return list(self.reels.get("courses") or self.course_ids())
+
+    def reel_course_index(self, date: dt.date) -> int:
+        """Whose turn it is: one course a day, in the order of reels.courses."""
+        start = dt.date.fromisoformat(str(self.reels.get("start_date") or self.start_date))
+        return (date - start).days % len(self.reel_courses())
+
+    def reel_time(self) -> str:
+        return str(self.reels.get("post_time", "17:55"))
+
+    def reel_seconds(self) -> tuple[int, float]:
+        """(countdown seconds, seconds the answer stays on screen)."""
+        think = max(3, min(20, int(self.reels.get("think_seconds", 8))))
+        answer = max(3.0, min(20.0, float(self.reels.get("answer_seconds", 7))))
+        return think, answer
+
+    # ── cartoon explainer reel of the day ──────────────────
+    def explainer_due(self, date: dt.date, slot: str = "") -> bool:
+        start = self.explainer.get("start_date")
+        return bool(self.explainer.get("enabled") and start and date >= dt.date.fromisoformat(str(start))
+                    and self.concept_due(date, slot))
+
+    def explainer_time(self, slot: str = "") -> str:
+        """The evening video takes the reel's slot; the second video has its own time."""
+        if slot == "2":
+            return str(self.explainer.get("second_post_time") or "11:25")
+        return str(self.explainer.get("post_time") or self.reel_time())
+
+    def law_text(self, paper: dict, date: dt.date) -> str:
+        key = paper.get("law")
+        if not key:
+            return ""
+        for entry in self.law_basis.get(key, []):
+            start = entry.get("from")
+            end = entry.get("until")
+            if start and date < dt.date.fromisoformat(str(start)):
+                continue
+            if end and date > dt.date.fromisoformat(str(end)):
+                continue
+            return entry["text"]
+        return ""
+
+
+def batch_dir(date: dt.date) -> Path:
+    return QUEUE / date.isoformat()
+
+
+def date_label(date: dt.date) -> str:
+    return f"{date.day} {date.strftime('%b %Y')}"

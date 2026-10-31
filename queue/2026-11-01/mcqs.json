@@ -71,64 +71,71 @@
       "course_id": "cma_cat",
       "paper_code": "Paper 2A",
       "paper_name": "Financial Accounting-2",
-      "topic": "Forfeiture and Reissue of Shares",
-      "question": "A company issued shares of ₹10 each at par. Holder of 800 shares paid only ₹4 per share (application) and defaulted on the rest; the shares were forfeited. Later 500 of them were reissued as fully paid at ₹8 per share. Capital reserve on reissue is:",
+      "topic": "Consignment - Valuation of Unsold Stock",
+      "question": "Consignor sent 2,000 units at cost ₹150 each. Consignor paid freight ₹20,000 and transit insurance ₹10,000. Consignee paid octroi at godown ₹10,000, godown rent ₹12,000 and selling expenses ₹8,000. 1,600 units were sold. Value of unsold stock?",
       "options": [
-        "₹1,500",
-        "₹2,000",
-        "₹3,200",
-        "₹1,000"
+        "₹60,000",
+        "₹72,000",
+        "₹66,000",
+        "₹68,000"
       ],
       "correct": "D",
-      "explanation": "Forfeited amount is ₹4 per share. Discount on reissue is ₹10 − ₹8 = ₹2. Gain per share is ₹2, so for 500 reissued shares capital reserve is ₹1,000. Only the reissued shares' share of forfeiture is transferred.",
+      "explanation": "Add all non-recurring expenses up to the godown, paid by consignor or consignee. Godown rent and selling expenses are recurring and excluded. Cost per unit ₹170; 400 unsold units give ₹68,000.",
       "working": [
         {
-          "label": "Forfeited amount per share",
-          "value": "₹4"
+          "label": "Cost of 2,000 units",
+          "value": "₹3,00,000"
         },
         {
-          "label": "Reissue discount per share",
-          "value": "₹2"
+          "label": "Freight and insurance (consignor)",
+          "value": "₹30,000"
         },
         {
-          "label": "Gain per share",
-          "value": "₹2"
+          "label": "Octroi at godown (consignee)",
+          "value": "₹10,000"
         },
         {
-          "label": "Shares reissued",
-          "value": "500"
+          "label": "Total cost of consignment",
+          "value": "₹3,40,000"
         },
         {
-          "label": "Capital reserve",
-          "value": "₹1,000"
+          "label": "Cost per unit",
+          "value": "₹170"
+        },
+        {
+          "label": "Unsold 400 units",
+          "value": "₹68,000"
         }
       ],
       "why_not": {
-        "B": "Takes full ₹4 per share on 500 shares and ignores the discount allowed on reissue.",
-        "C": "Uses all 800 shares' forfeited amount (₹4 × 800), not the reissued part net of discount.",
-        "A": "Wrongly takes ₹3 per share gain, mixing up discount or shares count."
+        "B": "Added godown rent and selling expenses too; these recurring items are never added to stock.",
+        "C": "Ignored the octroi paid by the consignee; all non-recurring expenses up to godown count.",
+        "A": "Took goods cost only (400 × ₹150) and left out non-recurring expenses."
       },
-      "exam_tip": "Capital reserve = forfeited amount on reissued shares minus discount allowed on them. Never use unsold shares.",
-      "calculation": "forfeited = 4\ndiscount = 10 - 8\ngain = forfeited - discount\nanswer = gain * 500",
+      "exam_tip": "Ask: is the expense non-recurring and incurred up to the godown? If yes, load it into stock, whoever paid.",
+      "calculation": "goods = 2000*150\nnonrec = 20000+10000+10000\nperunit = (goods+nonrec)/2000\nanswer = perunit*400",
       "applicability": "",
       "confidence": "high",
       "reviewer_note": "",
       "attempts": 1,
       "check_notes": [
-        "Checker: Option C (₹3,200) is the total forfeited amount on all 800 shares, a plausible distractor. Option B is the forfeited amount on 500 shares, also a plausible distractor.",
-        "Checker: Minor: the wording 'paid only ₹4 per share (application)' is slightly informal. It is clear enough that no premium or allotment money was received."
+        "Checker: Treating godown rent as excluded relies on the standard rule that storage costs are not part of stock value. The question doesn't state this, but it is the usual ICMAI/AS-2 treatment.",
+        "Checker: The wording is slightly ambiguous: 'octroi at godown' could be read as a post-arrival cost. The standard treatment includes it, because it is incurred to bring the goods to their location."
       ],
       "difficulty": "hard",
       "law_sensitive": false,
       "serious": false,
       "needs_check": true,
+      "linked_concept": "Valuation of Unsold Stock on Consignment",
       "author": "Rahul kp",
       "images": {
         "question": "cma_cat_q.jpg",
         "answer": "cma_cat_a.jpg"
       },
-      "fit_notes": [],
-      "caption": "🟨 CMA CAT · MCQ of the day · Day 11\nPaper 2A: Financial Accounting-2\nTopic: Forfeiture and Reissue of Shares\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261101",
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 11\nPaper 2A: Financial Accounting-2\nTopic: Consignment - Valuation of Unsold Stock\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261101",
       "story": "cma_cat_story.jpg",
       "hold": false,
       "hold_reason": ""

@@ -8,7 +8,7 @@ import re
 from functools import lru_cache
 from pathlib import Path
 
-DIR = Path(__file__).resolve().parent.parent / "pyq"
+DIR = Path(__file__).resolve().parent.parent
 MAX_LINES = 140          # past-paper lines shown to the writer when it chooses its own concept
 TOPIC_LINES = 40         # lines shown when the concept is already decided
 _STOP = set("a an and the of to in on for by with from as at or is are its into vs v under per its".split())

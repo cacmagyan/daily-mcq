@@ -1,9 +1,170 @@
 {
   "kind": "explainer2",
   "course_id": "ca_inter",
+  "paper_code": "Paper 6A",
+  "paper_name": "Financial Management",
   "topic": "Operating Cycle (Gross and Net)",
   "concept_topic": "Operating Cycle (Gross and Net)",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 6: board sub is 58 characters; at most 44",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 67.0,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Operating Cycle: Gross and Net",
+    "caption_hook": "How long is your cash stuck in the business? The operating cycle explains it.",
+    "hook_label": "CASH STUCK HOW LONG?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Ma'am, how long is our cash stuck in a business?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Imagine a factory buying raw material, making goods, selling on credit and finally collecting cash.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Operating Cycle",
+          "sub": "How long cash stays blocked"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So that whole journey takes time?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "It starts when cash is spent on raw material, moves through work in progress, finished goods and debtors, until cash comes back.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Stages of the cycle",
+          "lines": [
+            "R: raw material stock",
+            "W: work in progress",
+            "F: finished goods",
+            "D: debtors"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And that's the gross cycle?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes. Gross cycle is R plus W plus F plus D, each in days.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "formula",
+          "title": "Gross cycle",
+          "formula": "Gross = R + W + F + D",
+          "sub": "Each item counted in days"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "But suppliers give us credit too, right?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Exactly. We deduct the creditors period C, because supplier credit postpones our cash going out. That gives the net cycle.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "formula",
+          "title": "Net cycle",
+          "formula": "O = R + W + F + D − C",
+          "sub": "O = net days; C = creditors period"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Can we try some numbers?",
+        "shot": "close",
+        "pose": "excited"
+      },
+      {
+        "who": "teacher",
+        "say": "Say R is 30 days, W 10, F 20, D 40 and C 30. Gross is 100 days.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "calc",
+          "top": "30+10+20+40",
+          "big": "100 days"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So net is 100 minus 30?",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, 70 days. If cost per day is ₹1,000, working capital needed is ₹70,000.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "calc",
+          "top": "₹1,000 × 70 days",
+          "big": "₹70,000"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So a longer net cycle needs more working capital?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes. Remember: net cycle equals R plus W plus F plus D minus C. Supplier credit shortens it.",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Net cycle =",
+            "R+W+F+D − C"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Worked example: R 30 + W 10 + F 20 + D 40 = 100 gross days; minus C 30 = 70 net days; 70 x ₹1,000 cost per day = ₹70,000. Line 4 shortened slightly to fit the 22-word limit while keeping the examiner's sequence.",
+    "Checker: Line 12 (voice and board): 'cost per day' doesn't say what cost or over what period, so it's ambiguous (purchase cost? sales value?). Suggested wording: 'If total operating cost is ₹1,000 per day (annual operating cost ÷ 360), working capital needed is ₹1,000 × 70 days = ₹70,000.' Add a board label such as 'Operating cost/day'. It is also worth saying this is a simplified estimate: it uses one cost rate for every stage and leaves out any minimum cash balance."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Worked example: R 30 + W 10 + F 20 + D 40 = 100 gross days; minus C 30 = 70 net days; 70 x ₹1,000 cost per day = ₹70,000. Line 4 shortened slightly to fit the 22-word limit while keeping the examiner's sequence.",
+  "caption": "🎬 🟦 CA Inter · Operating Cycle: Gross and Net\n\nHow long is your cash stuck in the business? The operating cycle explains it.\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 6A: Financial Management\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAInter #CAIntermediate #ICAI #CAStudents\n\nref explainer2-261101",
   "hold": false,
   "hold_reason": ""
 }

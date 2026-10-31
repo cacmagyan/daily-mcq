@@ -1,0 +1,82 @@
+{
+  "kind": "news",
+  "date": "2026-10-31",
+  "stories": [
+    {
+      "tag": "RBI",
+      "headline": "RBI rules to compensate digital fraud victims from Jan 1, 2027",
+      "points": [
+        "Victims get 85% of net loss or ₹25,000, whichever is lower, if the fraud is up to ₹50,000; once per lifetime.",
+        "Rules start January 1, 2027 and stay in force for one year. Banks must now prove customer liability in disputed e-transfers.",
+        "For maximum compensation, report to the bank within five calendar days and also file on the cyber crime portal or 1930."
+      ],
+      "why_it_matters": "Fraud liability, bank compensation rules and reporting timelines are part of banking law and compliance work CA/CMA students handle.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "RBI digital fraud new rules Jan 1, 2027: How much compensation can you claim? Check complaint filing deadline",
+      "link": "https://www.livemint.com/money/rbi-digital-fraud-new-rules-jan-1-2027-how-much-compensation-can-you-claim-check-complaint-filing-deadline-11793443343615.html",
+      "published": "2026-10-31T17:18:20+05:30",
+      "check": "minor",
+      "check_notes": [
+        "The 'Why it matters' line about CA/CMA students is the outlet's own framing and doesn't come from the source. It isn't a factual error, but it is unsupported commentary.",
+        "'Disputed e-transfers' is a loose paraphrase. The source says the rule covers complaints about fraudulent electronic banking transfers (EBTs), such as POS, ATM, phone, internet and card transactions."
+      ]
+    },
+    {
+      "tag": "ICAI",
+      "headline": "ICAI bars CA for three months over medical trust audit disclosure",
+      "points": [
+        "ICAI's Disciplinary Committee reprimanded CA Bikash Kumar Gupta, removed his name for three months and fined him ₹1 lakh.",
+        "The complaint concerned his audit of the Shipping Corporation of India Post-Retirement Medical Trust for FY 2016-17.",
+        "Medical expense reimbursement rose to ₹12,38,02,297 from ₹47,33,930, with the merger of two schemes allegedly not explained."
+      ],
+      "why_it_matters": "Shows that auditors must ensure clear disclosure of material transactions, even when management already knows about them.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "CA, CS, CMA | ICAI Removes CA for Three Months Over ₹12.38 Crore Trust Disclosure Failure",
+      "link": "https://taxguru.in/chartered-accountant/icai-removes-ca-months-rs-12-38-crore-trust-disclosure-failure.html",
+      "published": "2026-10-31T05:50:23+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "ICAI",
+      "headline": "ICAI reprimands CA and fines ₹2 lakh over audit lapses",
+      "points": [
+        "ICAI Disciplinary Committee reprimanded CA Gopal Subhashchandra Saboo and fined him ₹2 lakh, payable within 60 days.",
+        "It found he did not properly contact the previous auditor before accepting the FY 2017-18 audit of Santosh Packaging.",
+        "It also found independence concerns and not enough audit evidence; he admitted his mistake and sought leniency."
+      ],
+      "why_it_matters": "Shows that incoming auditors must communicate with the previous auditor themselves, stay independent and keep proper audit evidence.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "CA, CS, CMA | ICAI Reprimands CA, Imposes ₹2 Lakh Fine for Audit Misconduct",
+      "link": "https://taxguru.in/chartered-accountant/icai-reprimands-ca-imposes-rs-2-lakh-fine-audit-misconduct.html",
+      "published": "2026-10-31T05:15:05+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'Income Tax Form 3CEB deadline today: Who must file transfer ': a point is longer than 110 characters",
+    "dropped 'ICAI to issue guidance note on audit reporting for multi-sta': Point 1 copies the source's first sentence word for word: \"ICAI is set to release a guidance note on the new audit reporting framework for multi-state cooperative societies.\"; Point 2 copies the sourc",
+    "skipped 'Income Tax | CBDT Prescribes Merger Conditions for Registere': a point is longer than 110 characters",
+    "skipped 'Corporate Law | IBBI Issues Guidelines on RERA Compliance an': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'CA, CS, CMA | ICAI Reprimands CA for ₹57.77 Crore Non-Cash C': a point is longer than 110 characters",
+    "skipped 'CBIC holds outreach programme in Chandigarh to discuss GST 2': why_it_matters is longer than 120 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 31 Oct 2026\n\n1️⃣ RBI rules to compensate digital fraud victims from Jan 1, 2027 (Mint)\n2️⃣ ICAI bars CA for three months over medical trust audit disclosure (TaxGuru)\n3️⃣ ICAI reprimands CA and fines ₹2 lakh over audit lapses (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Mint, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261031",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

@@ -3,158 +3,150 @@
   "course_id": "cma_cat",
   "paper_code": "Paper 2A",
   "paper_name": "Financial Accounting-2",
-  "topic": "Forfeiture and Reissue of Shares",
-  "concept_topic": "Forfeiture and Reissue of Shares",
+  "topic": "Valuation of Unsold Stock on Consignment",
+  "concept_topic": "Valuation of Unsold Stock on Consignment",
   "video": "explainer2.mp4",
   "cover": "explainer2_cover.jpg",
   "style": "story",
-  "seconds": 79.17,
+  "seconds": 74.68,
   "thumb_ms": 1300,
   "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
   "script": {
-    "title": "Forfeiture and Reissue of Shares",
-    "caption_hook": "They cancel your shares but keep your money? Here's how forfeiture works.",
-    "hook_label": "KEEPS YOUR MONEY?",
+    "title": "Valuation of Unsold Stock on Consignment",
+    "caption_hook": "Unsold goods in the consignee's godown still carry expenses. Here's how much.",
+    "hook_label": "STOCK CARRIES",
     "lines": [
       {
         "who": "boy",
-        "say": "Ma'am, company cancels my shares but keeps my money? How's that fair?",
+        "say": "Unsold goods lying in the consignee's godown still carry expenses?",
         "shot": "close",
-        "pose": "shocked"
+        "pose": "doubt"
       },
       {
         "who": "teacher",
-        "say": "If a member doesn't pay a call, the company cancels the shares. Money already received stays.",
+        "say": "Yes! Unsold goods are valued at cost plus their share of non-recurring expenses incurred to bring them to the godown.",
         "shot": "board",
-        "pose": "explain",
+        "pose": "present",
         "board": {
           "kind": "title",
-          "title": "Forfeiture & Reissue",
-          "sub": "Paid stays, unpaid goes"
+          "title": "Unsold Stock Value",
+          "sub": "Consignment"
         }
       },
       {
         "who": "girl",
-        "say": "What about the unpaid part?",
+        "say": "Which expenses count as non-recurring?",
         "shot": "desk",
         "pose": "ask",
         "react": "listen"
       },
       {
         "who": "teacher",
-        "say": "Say 100 shares of ₹10. Called up ₹8, paid ₹6. Unpaid ₹2 each is ₹200, calls in arrear.",
-        "shot": "board",
-        "pose": "present",
-        "board": {
-          "kind": "calc",
-          "top": "Arrear 100×(₹8−₹6)",
-          "big": "₹200"
-        }
-      },
-      {
-        "who": "boy",
-        "say": "Okay, and how do we record that?",
-        "shot": "desk",
-        "pose": "think",
-        "react": "think"
-      },
-      {
-        "who": "teacher",
-        "say": "Debit share capital ₹800, the called-up amount. Credit forfeited shares ₹600 and calls in arrear ₹200.",
+        "say": "One-time costs up to the godown: freight, cartage, unloading. Rent and selling costs stay out.",
         "shot": "board",
         "pose": "explain",
         "board": {
           "kind": "list",
-          "title": "On forfeiture",
+          "title": "Added to stock",
           "lines": [
-            "Share Capital A/c Dr 800",
-            "To Forfeited Shares A/c 600",
-            "To Calls in Arrear A/c 200"
+            "Freight",
+            "Cartage and unloading",
+            "Godown rent: NOT added"
           ]
         }
       },
       {
+        "who": "boy",
+        "say": "Okay. Can we see a simple example?",
+        "shot": "desk",
+        "pose": "talk",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "1,000 units cost ₹1,00,000. Freight is ₹6,000, cartage and unloading ₹4,000. Expenses total ₹10,000.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "₹1,00,000+₹10,000",
+          "big": "₹1,10,000"
+        }
+      },
+      {
         "who": "girl",
-        "say": "Can they sell those shares again?",
+        "say": "So only the 200 unsold units' share of expenses goes in?",
+        "shot": "close",
+        "pose": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, just their share. Take units unsold times cost plus expenses, over units sent.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Closing stock",
+          "formula": "U × (C + E) / Q",
+          "sub": "U unsold, Q sent, C cost, E expenses"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So 200 times ₹1,10,000, divided by 1,000?",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Exactly! That's ₹22,000: ₹20,000 cost plus ₹2,000 expenses.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "calc",
+          "top": "200×1,10,000÷1,000",
+          "big": "₹22,000"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And if goods were sent at invoice price?",
         "shot": "close",
         "pose": "ask"
       },
       {
         "who": "teacher",
-        "say": "Yes! Reissue them as fully paid ₹10 shares at ₹7. Bank gets ₹700; ₹300 discount comes from forfeited shares.",
+        "say": "Take loaded invoice value plus expenses. Then create Stock Reserve for the loading on unsold goods.",
         "shot": "board",
-        "pose": "happy",
+        "pose": "explain",
         "board": {
           "kind": "list",
-          "title": "On reissue",
+          "title": "Sent at invoice price",
           "lines": [
-            "Bank A/c Dr 700",
-            "Forfeited Shares A/c Dr 300",
-            "To Share Capital A/c 1,000"
+            "Invoice value + expenses",
+            "Then take U over Q",
+            "Reserve for the loading"
           ]
         }
       },
       {
         "who": "boy",
-        "say": "Can they give any discount they want?",
+        "say": "How do I remember what goes in?",
         "shot": "desk",
-        "pose": "doubt",
+        "pose": "ask",
         "react": "listen"
       },
       {
         "who": "teacher",
-        "say": "Only up to the amount forfeited on those shares. Here ₹600, so ₹300 is fine.",
-        "shot": "board",
-        "pose": "think"
-      },
-      {
-        "who": "girl",
-        "say": "Where does the leftover forfeited money go?",
-        "shot": "close",
-        "pose": "think"
-      },
-      {
-        "who": "teacher",
-        "say": "Capital reserve equals forfeited amount minus discount. ₹600 minus ₹300 is ₹300.",
-        "shot": "board",
-        "pose": "excited",
-        "board": {
-          "kind": "formula",
-          "title": "Capital Reserve",
-          "formula": "F − D",
-          "sub": "F = amount forfeited, D = discount on reissue"
-        }
-      },
-      {
-        "who": "boy",
-        "say": "Oh! So it goes to Capital Reserve, not profit?",
-        "shot": "close",
-        "pose": "aha"
-      },
-      {
-        "who": "teacher",
-        "say": "Yes. Debit forfeited shares, credit capital reserve ₹300.",
+        "say": "Till the door, not the floor. Stock carries its share of one-time expenses.",
         "shot": "board",
         "pose": "thumbs",
         "board": {
-          "kind": "list",
-          "title": "Gain transferred",
-          "lines": [
-            "Forfeited Shares A/c Dr 300",
-            "To Capital Reserve A/c 300"
-          ]
-        }
-      },
-      {
-        "who": "teacher",
-        "say": "Remember: paid stays, unpaid goes. Forfeit first, then reissue!",
-        "shot": "board",
-        "pose": "wink",
-        "board": {
           "kind": "words",
           "lines": [
-            "Paid stays,",
-            "unpaid goes"
+            "Till the door,",
+            "not the floor"
           ]
         }
       },
@@ -162,20 +154,21 @@
         "who": "teacher",
         "say": "Comment NOTES for the full note, and follow for one concept every day!",
         "shot": "follow",
-        "pose": "happy"
+        "pose": "wink"
       }
     ]
   },
   "checked": true,
   "serious": false,
   "check_notes": [
-    "Writer: Example: 100 shares of ₹10, called up ₹8, paid ₹6. Forfeiture: Share Capital Dr 800, Forfeited Shares 600, Calls in Arrear 200. Reissue at ₹7 as fully paid: Bank 700, Forfeited Shares Dr 300, Share Capital 1,000. Capital Reserve 600 − 300 = 300. Calc board label now reads \"Arrear 100×(₹8−₹6)\" (18-character limit), and the voice line says ₹200 is calls in arrear.",
-    "Checker: Line 2 (voice): 'If a member doesn't pay a call, the company cancels the shares' makes forfeiture sound automatic. Forfeiture is optional. It needs authority in the Articles (Table F), a notice of at least 14 days to the defaulting member, and a board resolution. Suggested wording: 'If a member doesn't pay a call even after notice, the company may forfeit the shares as its Articles allow. Money already received stays with the company.'",
-    "Checker: Line 12 (board formula F − D): the sub-text should make clear that this applies only to shares that have been reissued. Suggested wording: 'F = amount forfeited on the shares reissued, D = discount on reissue.' The ₹300 result is correct here because all 100 shares were reissued, but with a partial reissue the formula as written would give the wrong figure."
+    "Writer: Example: 1,000 units sent at cost ₹1,00,000; expenses ₹6,000 freight + ₹4,000 cartage/unloading = ₹10,000; 200 unsold gives ₹22,000 (₹20,000 + ₹2,000). Octroi replaced by cartage/unloading per feedback. Line 8 now answers \"Yes\" to the boy's question. Word count about 170 before the follow line.",
+    "Checker: Line 6/7 (example data): the example never says how many units were sold or remain unsold. The figure of 200 unsold units first appears in the student's question in Line 7, and the teacher simply confirms it. Correct version: state it in Line 6, for example '1,000 units sent costing ₹1,00,000; 800 sold, 200 remain unsold at the consignee's godown.' The ₹22,000 then follows only from data given in the example.",
+    "Checker: Line 8 board (formula): the key 'C cost, E expenses' doesn't say whether C and E are per-unit or total figures. The formula U × (C + E) / Q only works with totals. Correct key: 'C = total cost of goods sent, E = total non-recurring expenses, U = units unsold, Q = units sent.'",
+    "Checker: Line 7 (wording): 'only the 200 unsold units' share of expenses goes in' sounds as if only expenses are taken. The unsold units also carry their share of the cost. Better: 'So the 200 unsold units carry their share of cost and expenses?'"
   ],
   "attempts": 3,
-  "reviewer_note": "Example: 100 shares of ₹10, called up ₹8, paid ₹6. Forfeiture: Share Capital Dr 800, Forfeited Shares 600, Calls in Arrear 200. Reissue at ₹7 as fully paid: Bank 700, Forfeited Shares Dr 300, Share Capital 1,000. Capital Reserve 600 − 300 = 300. Calc board label now reads \"Arrear 100×(₹8−₹6)\" (18-character limit), and the voice line says ₹200 is calls in arrear.",
-  "caption": "🎬 🟨 CMA CAT · Forfeiture and Reissue of Shares\n\nThey cancel your shares but keep your money? Here's how forfeiture works.\n\n📒 Full concept note today at 1:40 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 2A: Financial Accounting-2\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref explainer2-261031",
+  "reviewer_note": "Example: 1,000 units sent at cost ₹1,00,000; expenses ₹6,000 freight + ₹4,000 cartage/unloading = ₹10,000; 200 unsold gives ₹22,000 (₹20,000 + ₹2,000). Octroi replaced by cartage/unloading per feedback. Line 8 now answers \"Yes\" to the boy's question. Word count about 170 before the follow line.",
+  "caption": "🎬 🟨 CMA CAT · Valuation of Unsold Stock on Consignment\n\nUnsold goods in the consignee's godown still carry expenses. Here's how much.\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 2A: Financial Accounting-2\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref explainer2-261031",
   "hold": false,
   "hold_reason": ""
 }

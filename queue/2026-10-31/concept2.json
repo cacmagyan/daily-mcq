@@ -5,41 +5,41 @@
   "paper_name": "Financial Accounting-2",
   "author": "Rahul kp",
   "linked_mcq": "Forfeiture and Reissue of Shares",
-  "topic": "Forfeiture and Reissue of Shares",
-  "title": "Forfeiture &",
-  "title_highlight": "Reissue of Shares",
-  "hook": "paid stays, unpaid goes!",
-  "simple_words": "Company cancels shares when a call is unpaid, keeps the money received, and later sells the shares again.",
+  "topic": "Valuation of Unsold Stock on Consignment",
+  "title": "Consignment",
+  "title_highlight": "Unsold Stock Value",
+  "hook": "stock carries its share of cost!",
+  "simple_words": "Unsold goods with the consignee are valued at their cost plus their share of the expenses spent to bring them to the godown.",
   "definitions": [
     {
-      "term": "Forfeiture of shares",
-      "meaning": "Cancelling a defaulting member's shares for non-payment of a call, as per Articles. The amount already received is not refunded.",
-      "note": "Share capital is debited at called-up amount"
+      "term": "Consignment stock",
+      "meaning": "Goods sent to the consignee but not sold by the end of the period. They still belong to the consignor and are shown in his books.",
+      "note": "Ownership stays with consignor"
     },
     {
-      "term": "Reissue of shares",
-      "meaning": "Selling the forfeited shares again, often as fully paid, at par or at a discount. Discount cannot exceed the forfeited amount on those shares.",
-      "note": "Gain goes to Capital Reserve"
+      "term": "Non-recurring expenses",
+      "meaning": "One-time costs up to the godown: freight, insurance, loading, octroi, unloading. They are added to the value of stock.",
+      "note": "Godown rent and selling cost are not added"
     }
   ],
   "key_points": [
-    "On forfeiture, debit ==Share Capital== at the !!called-up amount!!, not the face value.",
-    "Credit ==Forfeited Shares A/c== with the amount actually received; credit Calls in Arrear for the unpaid part.",
-    "Premium already received stays in Securities Premium A/c. If premium was !!not received!!, debit Securities Premium too.",
-    "After reissue, the gain on those shares is transferred to ==Capital Reserve==."
+    "Value unsold stock at ==cost== (or loaded invoice value) plus its proportionate non-recurring expenses.",
+    "Add !!all non-recurring expenses up to the godown for the whole consignment!!, whoever paid them: consignor or consignee.",
+    "Recurring expenses (godown rent, salary, selling expenses) are never added to stock.",
+    "If goods were sent at invoice price above cost, take stock at invoice value plus expenses, then remove the loading through ==Stock Reserve==."
   ],
-  "formula_heading": "Entries and Capital Reserve",
-  "formula_hook": "three entries, every time",
+  "formula_heading": "Stock Value and Entries",
+  "formula_hook": "take the unsold share, U over Q",
   "formulas": [
     {
-      "name": "Capital Reserve on reissue",
-      "lhs": "Capital Reserve",
-      "rhs": "F − D",
-      "numerator": "",
-      "denominator": "",
+      "name": "Value of unsold stock",
+      "lhs": "Closing stock",
+      "rhs": "",
+      "numerator": "U × (C + E)",
+      "denominator": "Q",
       "square_root": false,
       "suffix": "",
-      "legend": "F = amount forfeited on the shares reissued (received amount); D = discount allowed on reissue of those shares."
+      "legend": "U = units unsold, Q = units sent, C = cost (or loaded invoice value) of goods sent, E = non-recurring expenses up to godown"
     }
   ],
   "table": {
@@ -48,107 +48,77 @@
   },
   "entries": [
     {
-      "label": "On forfeiture",
+      "label": "Closing stock at year end",
       "debit": [
-        "Equity Share Capital A/c",
-        "Securities Premium A/c"
+        "Consignment Stock A/c"
       ],
       "credit": [
-        "Forfeited Shares A/c",
-        "Calls in Arrear A/c"
+        "Consignment A/c"
       ],
-      "narration": "Being shares forfeited; premium debited only if unpaid"
+      "narration": "Being unsold stock at cost (or loaded invoice value) plus proportionate expenses"
     },
     {
-      "label": "On reissue at a discount",
+      "label": "Goods sent at loaded price",
       "debit": [
-        "Bank A/c",
-        "Forfeited Shares A/c"
+        "Consignment A/c"
       ],
       "credit": [
-        "Equity Share Capital A/c"
+        "Stock Reserve A/c"
       ],
-      "narration": "Being forfeited shares reissued as fully paid at a discount"
-    },
-    {
-      "label": "Gain on reissued shares",
-      "debit": [
-        "Forfeited Shares A/c"
-      ],
-      "credit": [
-        "Capital Reserve A/c"
-      ],
-      "narration": "Being gain on reissued shares transferred to Capital Reserve"
+      "narration": "Being loading on unsold stock removed by reserve"
     }
   ],
   "insight": {
-    "punchline": "Forfeit first, then reissue!",
-    "text": "Only the Forfeited Shares balance of the reissued shares, after discount, becomes Capital Reserve."
+    "punchline": "Whole expenses, unsold share!",
+    "text": "First total all non-recurring expenses for the whole consignment, then take only the U/Q portion into stock."
   },
-  "trick_hook": "remember with a small story",
+  "trick_hook": "picture the godown door",
   "memory_trick": {
-    "mnemonic": "Paid stays, unpaid goes",
-    "explanation": "Money received stays in Forfeited Shares A/c; unpaid amount goes out through Calls in Arrear. Reissue surplus then moves to Capital Reserve."
+    "mnemonic": "Till the Door, Not the Floor",
+    "explanation": "Expenses up to the godown door go into stock. Expenses after the door, on the godown floor (rent, selling), go to the Consignment A/c as expenses."
   },
   "steps": [
-    "Find called-up amount per share",
-    "Find amount received per share",
-    "Debit Capital; credit Forfeited, Arrear",
-    "Reissue: Bank + discount = Capital",
-    "Move surplus to Capital Reserve"
+    "Find Q, U and the unsold ratio U/Q",
+    "List non-recurring expenses to godown",
+    "Add them to cost or invoice value",
+    "Multiply the total by U/Q",
+    "Pass stock entry; reserve if loaded"
   ],
-  "exam_tip": "In MCQs, profit on forfeiture and reissue goes to Capital Reserve, never to the Profit and Loss account.",
+  "exam_tip": "Check whether goods were sent at cost or invoice price. If at invoice price, create Stock Reserve on the loading in unsold stock.",
   "doubt": {
-    "question": "Is the whole Forfeited Shares balance Capital Reserve?",
-    "answer": "No. Only the part for the shares reissued, after discount, is transferred. Balance for unissued shares stays in Forfeited Shares A/c."
+    "question": "Should consignee's unloading expenses go into stock?",
+    "answer": "Yes, if they are non-recurring and incurred up to the godown. Octroi and unloading paid by the consignee are added, the same as the consignor's freight."
   },
-  "mistakes_hook": "avoid these lost marks",
+  "mistakes_hook": "small slips, big marks lost",
   "mistakes": [
     {
-      "wrong": "Debiting Share Capital at face value on forfeiture",
-      "right": "Debit Share Capital at the amount actually called up on the forfeited shares."
+      "wrong": "Adding expenses only for the unsold units, or leaving out the consignee's unloading and octroi",
+      "right": "Add all non-recurring expenses up to the godown for the whole consignment, whoever paid them, then take unsold proportion U/Q."
     },
     {
-      "wrong": "Transferring the full Forfeited Shares balance to Capital Reserve after a part reissue",
-      "right": "Transfer only the amount relating to the shares reissued, less discount allowed."
+      "wrong": "Adding godown rent or selling expenses to the value of closing stock",
+      "right": "Only non-recurring expenses up to the godown go into stock. Recurring expenses are charged to Consignment A/c."
     },
     {
-      "wrong": "Crediting profit on reissue to Profit and Loss A/c",
-      "right": "Credit the gain to Capital Reserve A/c."
+      "wrong": "Valuing unsold stock at invoice price and stopping there",
+      "right": "Take loaded invoice value plus expenses, then create Stock Reserve for the loading on unsold goods."
+    },
+    {
+      "wrong": "Showing consignment stock in the consignee's books",
+      "right": "Unsold stock belongs to the consignor and is valued in his books. The consignee only reports it as goods held."
     }
   ],
-  "past_papers": [
-    {
-      "ref": "P10-1-13",
-      "papers": "CMA Inter MQP J26 S2, MQP D25 S1 · MCQ",
-      "point": "Where net profit on forfeiture and reissue of equity shares is transferred",
-      "via": "CMA Inter"
-    },
-    {
-      "ref": "P10-1-19",
-      "papers": "CMA Inter PY J19 · MCQ",
-      "point": "Account credited with profit on forfeiture and reissue of equity shares",
-      "via": "CMA Inter"
-    },
-    {
-      "ref": "P10-1-24",
-      "papers": "CMA Inter PY D22 · MCQ",
-      "point": "Final call unpaid; shares forfeited and reissued; amount moved to Capital Reserve",
-      "via": "CMA Inter"
-    }
-  ],
-  "applicability": "Companies Act, 2013; Articles of Association; Table F",
-  "confidence": "high",
-  "reviewer_note": "Key point 3 corrected: premium received stays in Securities Premium A/c; premium unpaid is debited. Check P10-1-24 wording for the past-paper point.",
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "medium",
+  "reviewer_note": "The requested topic (forfeiture and reissue of shares) is outside this paper's syllabus, since company accounts are excluded. I wrote the consignment closing-stock valuation note instead, with the fixes from the examiners. Abnormal loss is not covered. No past-paper list was given.",
   "law_sensitive": false,
-  "attempts": 2,
+  "attempts": 3,
   "serious": false,
   "needs_check": true,
   "check_notes": [
-    "Writer: Key point 3 corrected: premium received stays in Securities Premium A/c; premium unpaid is debited. Check P10-1-24 wording for the past-paper point.",
-    "Checker 1: Key point 2 and formula 1 legend: 'amount actually received' / '(received amount)' should say 'amount received towards share capital (excluding any securities premium received)'. Premium already received stays in Securities Premium A/c and is not credited to Forfeited Shares A/c. Suggested wording: 'Credit Forfeited Shares A/c with the amount received on share capital (excluding premium).'",
-    "Checker 1: Journal entry 1 / key point 2 (wording only): the unpaid amount can be credited either to Calls in Arrear A/c or directly to the unpaid Allotment/Call A/c. Add 'or respective unpaid call A/c' so both accepted methods are covered.",
-    "Checker 1: Definition 2 (wording only): shares can also be reissued at a premium. Better wording: 'at par, at a premium or at a discount'."
+    "Writer: The requested topic (forfeiture and reissue of shares) is outside this paper's syllabus, since company accounts are excluded. I wrote the consignment closing-stock valuation note instead, with the fixes from the examiners. Abnormal loss is not covered. No past-paper list was given.",
+    "Checker 1: Mistake 1 (wrong): the phrase \"Adding expenses only for the unsold units\" is ambiguous. The correct method itself adds only the unsold units' share of expenses (U/Q), so this part of the 'mistake' reads like the right method. Suggested rewording: \"Adding only the expenses that seem to relate to unsold goods, or leaving out the consignee's unloading and octroi, instead of totalling all non-recurring expenses for the whole consignment and then taking the U/Q share.\""
   ],
   "images": [
     "concept2_1.jpg",
@@ -160,26 +130,26 @@
   "fit": [
     {
       "slide": 1,
-      "zoom": 1,
+      "zoom": 0.98,
       "overflow": false
     },
     {
       "slide": 2,
-      "zoom": 0.92,
+      "zoom": 1.18,
       "overflow": false
     },
     {
       "slide": 3,
-      "zoom": 1.16,
+      "zoom": 1.12,
       "overflow": false
     },
     {
       "slide": 4,
-      "zoom": 1.02,
+      "zoom": 1.08,
       "overflow": false
     }
   ],
-  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 2A: Financial Accounting-2\nForfeiture and Reissue of Shares\n\nIn simple words: Company cancels shares when a call is unpaid, keeps the money received, and later sells the shares again.\n\n📝 Asked in past papers: CMA Inter PY D22, CMA Inter PY J19\n\nSwipe for the formula, a memory trick, the mistakes that cost marks and the past exam radar.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CMA CAT MCQ (9:55 AM) tests this concept.\n\nBased on Companies Act, 2013; Articles of Association; Table F.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept2-261031",
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 2A: Financial Accounting-2\nValuation of Unsold Stock on Consignment\n\nIn simple words: Unsold goods with the consignee are valued at their cost plus their share of the expenses spent to bring them to the godown.\n\nSwipe for the formula, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CMA CAT MCQ (7:30 AM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept2-261031",
   "story": "concept2_story.jpg",
   "hold": false,
   "hold_reason": ""

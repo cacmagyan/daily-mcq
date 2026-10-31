@@ -180,6 +180,39 @@ class Renderer:
         return {"images": names, "fit_notes": notes, "fit": fits}
 
 
+    # ── news of the day ────────────────────────────────────
+    def news_html(self, item: dict, date: dt.date, slide: int) -> str:
+        from .news import TAG_COLORS
+
+        if not hasattr(self, "_news_tpl"):
+            self._news_tpl = self.env.get_template("news.html.j2")
+        stories = item.get("stories") or []
+        n = len(stories)
+        kind = "cover" if slide == 1 else "story" if slide <= n + 1 else "end"
+        s = dict(stories[slide - 2]) if kind == "story" else {}
+        if s.get("published"):
+            try:
+                s["when"] = dt.datetime.fromisoformat(s["published"]).strftime("%d %b %Y")
+            except ValueError:
+                pass
+        return self._news_tpl.render(
+            kind=kind, s=s, stories=stories, index=slide - 1, total=n, colors=TAG_COLORS,
+            tag_color=TAG_COLORS.get(s.get("tag"), "#1F2A44"), brand=self.cfg.brand, logo=self.logo_uri,
+            fonts=self.fonts_uri, date_text=date.strftime("%a, %d %b %Y"),
+            sources=", ".join(sorted({x["source"] for x in stories})))
+
+    def render_news(self, item: dict, date: dt.date, out_dir: Path) -> dict:
+        """Cover, one slide per story, and a closing slide: news_1.jpg ... news_N.jpg."""
+        out_dir.mkdir(parents=True, exist_ok=True)
+        total = len(item.get("stories") or []) + 2
+        names, notes = [f"news_{i}.jpg" for i in range(1, total + 1)], []
+        for slide, name in enumerate(names, 1):
+            fit = self._shoot(self.news_html(item, date, slide), out_dir / name, "fitNews")
+            if fit["overflow"]:
+                notes.append(f"news slide {slide} text is too long and is cut off")
+        return {"images": names, "fit_notes": notes}
+
+
     # ── MCQ reel ───────────────────────────────────────────
     def reel_html(self, item: dict, date: dt.date, why: str, seconds: int, with_presenter: bool | str = True,
                   share: str = "", story: bool = False) -> str:

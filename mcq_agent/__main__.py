@@ -33,7 +33,7 @@ def _courses(value: str | None) -> list[str] | None:
     return [c.strip() for c in value.split(",") if c.strip()] if value else None
 
 
-EXTRA_IDS = ("concept", "concept2", "reel", "explainer", "explainer2")
+EXTRA_IDS = ("concept", "concept2", "reel", "explainer", "explainer2", "news")
 
 
 def parse_regen_comment(text: str, cfg: Config) -> tuple[str, str]:
@@ -90,6 +90,10 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("render", help="redraw images after editing mcqs.json")
     s.add_argument("--date", required=True, help="YYYY-MM-DD, today or tomorrow")
     s.add_argument("--courses")
+    s.add_argument("--github-output", help=argparse.SUPPRESS)
+
+    s = sub.add_parser("news", help="make tonight's news carousel")
+    s.add_argument("--date", default="today")
     s.add_argument("--github-output", help=argparse.SUPPRESS)
 
     s = sub.add_parser("regen", help="rewrite one course's MCQ")
@@ -177,6 +181,21 @@ def main(argv: list[str] | None = None) -> int:
         _write_output(args.github_output, batch_date=date.isoformat())
         return 0
 
+    if args.cmd == "news":
+        from .news import load
+        from .pipeline import make_news
+        date = cfg.resolve_date(args.date)
+        if not cfg.news_due(date):
+            print(f"News is switched off for {date}")
+            return 0
+        old = load(date)
+        if old and not old.get("error"):
+            print(f"News for {date} is already made")
+            return 0
+        item = make_news(cfg, date)
+        _write_output(args.github_output, date=date.isoformat(), news_error=item.get("error", ""))
+        return 0
+
     if args.cmd == "regen":
         from .pipeline import regenerate
         if args.comment:
@@ -251,7 +270,7 @@ def main(argv: list[str] | None = None) -> int:
         date = dt.date.fromisoformat(args.date)
         action, course_id, instruction = parse_command(args.comment, cfg)
         name = {"concept": "concept note", "concept2": "second concept note", "reel": "reel", "explainer": "explainer",
-                "explainer2": "second explainer"}.get(course_id) or cfg.course(course_id)["name"]
+                "explainer2": "second explainer", "news": "news"}.get(course_id) or cfg.course(course_id)["name"]
         if action == "regen":
             item = regenerate(cfg, date, course_id, instruction)
             if course_id in ("concept", "concept2"):
@@ -259,6 +278,9 @@ def main(argv: list[str] | None = None) -> int:
             elif course_id in ("explainer", "explainer2"):
                 summary = (f"Explainer for {date} could not be made: {item.get('error', '')[:200]}" if item.get("error")
                            else f"New explainer for {date}: {item.get('topic', '')} ({item.get('seconds', 0):g} s)")
+            elif course_id == "news":
+                summary = (f"News for {date} could not be made: {item.get('error', '')[:200]}" if item.get("error")
+                           else f"New news for {date}: " + "; ".join(s["headline"] for s in item["stories"]))
             elif course_id == "reel":
                 summary = (f"Reel for {date} could not be made: {item.get('error', '')[:200]}" if item.get("error")
                            else f"New reel for {date}: {cfg.course(item['course_id'])['name']}, {item.get('topic', '')}")

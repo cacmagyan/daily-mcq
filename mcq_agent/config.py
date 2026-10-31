@@ -31,6 +31,7 @@ class Config:
         self.reels = self.raw.get("reels") or {}
         self.stories = self.raw.get("stories") or {}
         self.explainer = self.raw.get("explainer") or {}
+        self.news = self.raw.get("news") or {}
 
     # ── courses ────────────────────────────────────────────
     def course(self, course_id: str) -> dict:
@@ -157,6 +158,14 @@ class Config:
         if slot == "2":
             return str(self._second().get("post_time", "13:40"))
         return str(self.concepts.get("post_time", "19:40"))
+
+    # ── news of the day ────────────────────────────────────
+    def news_due(self, date: dt.date) -> bool:
+        start = self.news.get("start_date")
+        return bool(self.news.get("enabled") and (not start or date >= dt.date.fromisoformat(str(start))))
+
+    def news_time(self) -> str:
+        return str(self.news.get("post_time", "22:00"))
 
     # ── MCQ reel of the day ────────────────────────────────
     def reel_due(self, date: dt.date) -> bool:

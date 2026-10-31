@@ -17,7 +17,8 @@ CONCEPT = "concept"     # id of the concept note in commands, posted.json and th
 REEL = "reel"           # id of the MCQ reel of the day
 EXPLAINER = "explainer" # id of the cartoon explainer reel (takes the reel's slot; the MCQ reel is its backup)
 CONCEPT2, EXPLAINER2 = "concept2", "explainer2"     # the day's second note and its video
-EXTRAS = (CONCEPT, REEL, EXPLAINER, CONCEPT2, EXPLAINER2)
+NEWS = "news"           # the nightly news carousel
+EXTRAS = (CONCEPT, REEL, EXPLAINER, CONCEPT2, EXPLAINER2, NEWS)
 CONCEPTS, EXPLAINERS = (CONCEPT, CONCEPT2), (EXPLAINER, EXPLAINER2)
 
 
@@ -426,7 +427,27 @@ def regenerate_reel(cfg: Config, date: dt.date) -> dict:
     return item or {}
 
 
+def make_news(cfg: Config, date: dt.date, instruction: str = "") -> dict:
+    """Tonight's news carousel (queue/DATE/news.json + news_1.jpg ...). /regen news makes it again."""
+    from . import news as N
+    _not_posted(date, NEWS)
+    item = N.make(cfg, date, instruction)
+    if not item.get("error"):
+        with Renderer(cfg) as r:
+            res = r.render_news(item, date, batch_dir(date))
+        item.update(images=res["images"], fit_notes=res["fit_notes"])
+        if res["fit_notes"] and not item.get("hold"):
+            item.update(hold=True, hold_reason="a slide's text is cut off")
+    N.save(date, item)
+    print(f"  {'✗' if item.get('error') else '✓'} news for {date}: "
+          + (item.get("error") or "; ".join(s["headline"] for s in item["stories"]))
+          + (f" (on hold: {item['hold_reason']})" if item.get("hold") else ""))
+    return item
+
+
 def regenerate(cfg: Config, date: dt.date, course_id: str, instruction: str = "") -> dict:
+    if course_id == NEWS:
+        return make_news(cfg, date, instruction)
     if course_id in CONCEPTS:
         return regenerate_concept(cfg, date, instruction, slot_of(course_id))
     if course_id == REEL:
@@ -474,6 +495,12 @@ def _target(date: dt.date, course_id: str):
         if not item:
             raise SystemExit(f"No {course_id} for {date}")
         return item, lambda: X.save(date, item, slot)
+    if course_id == NEWS:
+        from . import news as N
+        item = N.load(date)
+        if not item:
+            raise SystemExit(f"No news for {date} yet; it is made at about 9 PM (or comment /regen news)")
+        return item, lambda: N.save(date, item)
     batch = B.load_batch(date)
     item = B.find_item(batch or {"items": []}, course_id)
     if not item:
@@ -485,7 +512,7 @@ def release(date: dt.date, course_id: str) -> str:
     """/approve: post a held MCQ (or the concept note) as it is."""
     item, save = _target(date, course_id)
     what = {CONCEPT: "concept note", CONCEPT2: "second concept note", REEL: "reel", EXPLAINER: "explainer",
-            EXPLAINER2: "second explainer"}.get(course_id, "MCQ")
+            EXPLAINER2: "second explainer", NEWS: "news"}.get(course_id, "MCQ")
     if item.get("error"):
         raise SystemExit(f"{course_id} has no {what} to approve (it failed to generate); use /regen {course_id}")
     item["serious"], item["held_by_you"] = False, False
@@ -535,6 +562,8 @@ def _slot(cfg: Config, item: dict) -> dt.time:
         return dt.time.fromisoformat(cfg.reel_time())
     if kind in EXPLAINERS:
         return dt.time.fromisoformat(cfg.explainer_time(slot_of(kind)))
+    if kind == NEWS:
+        return dt.time.fromisoformat(cfg.news_time())
     return dt.time.fromisoformat(cfg.course(item["course_id"])["post_time"])
 
 
@@ -543,6 +572,9 @@ def _post_parts(cfg: Config, item: dict, date: dt.date) -> tuple[list, list, str
     if item.get("kind") in CONCEPTS:
         return ([batch_dir(date) / n for n in item["images"]], concept_alt_texts(item),
                 item.get("caption") or build_concept_caption(cfg, item, date))
+    if item.get("kind") == NEWS:
+        from . import news as N
+        return [batch_dir(date) / n for n in item["images"]], N.alt_texts(item), item.get("caption") or N.caption(cfg, item, date)
     alts = alt_texts(item)
     return ([batch_dir(date) / item["images"]["question"], batch_dir(date) / item["images"]["answer"]],
             [alts["question"], alts["answer"]], item.get("caption") or build_caption(cfg, item, date))
@@ -584,8 +616,10 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
     explainer2 = _explainer_for_slot(cfg, date, concept2, posted, "2") if concept2 else None
     todays = set(cfg.mcq_course_ids(date))          # e.g. only the CA courses today
     mcqs = [it for it in batch["items"] if it["course_id"] in todays or it["course_id"] in posted]
+    from . import news as N
+    news = N.load(date) if cfg.news_due(date) else None
     items = (mcqs + [c for c in (concept, concept2) if c] + ([reel] if reel else [])
-             + [e for e in (explainer, explainer2) if e])
+             + [e for e in (explainer, explainer2) if e] + ([news] if news else []))
     due = [it for it in items
            if _key(it) not in posted and not it.get("error") and not it.get("hold")
            and (it.get("images") or it.get("video")) and _slot(cfg, it) <= at]
@@ -658,6 +692,8 @@ def _story_file(cfg: Config, item: dict) -> tuple[str, bool] | None:
     if not cfg.stories.get("enabled"):
         return None
     kind = item.get("kind")
+    if kind == NEWS:
+        return None                                    # the news has no Story (yet)
     if kind in (REEL, *EXPLAINERS):
         return (item["video"], True) if cfg.stories.get("reel", True) and item.get("video") else None
     want = cfg.stories.get("concept", True) if kind in CONCEPTS else cfg.stories.get("mcqs", True)

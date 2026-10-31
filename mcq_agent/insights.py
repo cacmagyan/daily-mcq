@@ -18,7 +18,8 @@ REEL_METRICS = ["views", "reach", "saved", "shares", "likes", "comments", "total
                 "ig_reels_avg_watch_time"]
 FEED_METRICS = ["views", "reach", "saved", "shares", "likes", "comments", "total_interactions", "follows",
                 "profile_visits"]
-KIND_NAMES = {"explainer": "🎬 Cartoon explainer", "reel": "🎬 MCQ reel", "concept": "📒 Concept note", "mcq": "📝 MCQ post"}
+KIND_NAMES = {"explainer": "🎬 Cartoon explainer", "reel": "🎬 MCQ reel", "concept": "📒 Concept note", "mcq": "📝 MCQ post",
+              "news": "📰 News"}
 
 
 def week_range(today: dt.date) -> tuple[dt.date, dt.date]:
@@ -38,7 +39,11 @@ def posts_between(start: dt.date, end: dt.date) -> list[dict]:
             if ":" in key or not rec.get("media_id"):
                 continue                                     # Stories have no lasting numbers
             concept = B.load_concept(d, "2" if key.endswith("2") else "") or {}
-            if key in ("explainer", "reel", "concept", "explainer2", "concept2"):
+            if key == "news":
+                from .news import load as load_news
+                kind, course = "news", ""
+                topic = " · ".join(s.get("tag", "") for s in (load_news(d) or {}).get("stories") or [])
+            elif key in ("explainer", "reel", "concept", "explainer2", "concept2"):
                 kind = key.rstrip("2")
                 topic = concept.get("topic", "") if kind in ("explainer", "concept") else ""
                 if key == "reel":
@@ -131,7 +136,7 @@ def report(cfg: Config, data: dict, with_summary: bool = True) -> str:
                                   "(README, 'Weekly report')."])
     kinds = ["| Kind | Posts | Avg views | Avg reach | Avg saves | Avg shares | Avg likes | Watch time |",
              "|---|---|---|---|---|---|---|---|"]
-    for kind in ("explainer", "reel", "concept", "mcq"):
+    for kind in ("explainer", "reel", "concept", "mcq", "news"):
         rows = [p for p in measured if p["kind"] == kind]
         if rows:
             kinds.append(f"| {KIND_NAMES[kind]} | {len(rows)} | {_fmt(_avg(rows, 'views'))} | {_fmt(_avg(rows, 'reach'))} | "

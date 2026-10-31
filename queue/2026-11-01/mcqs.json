@@ -72,55 +72,55 @@
       "paper_code": "Paper 2A",
       "paper_name": "Financial Accounting-2",
       "topic": "Consignment - Valuation of Unsold Stock",
-      "question": "Consignor sent 2,000 units at cost ₹150 each. Consignor paid freight ₹20,000 and transit insurance ₹10,000. Consignee paid octroi at godown ₹10,000, godown rent ₹12,000 and selling expenses ₹8,000. 1,600 units were sold. Value of unsold stock?",
+      "question": "Hari sent 1,000 units to Mohan on consignment at cost ₹300 per unit. Hari paid freight ₹30,000 and transit insurance ₹10,000. Mohan paid octroi at arrival ₹20,000 and godown rent ₹15,000. 800 units were sold. Value of unsold stock?",
       "options": [
         "₹60,000",
-        "₹72,000",
-        "₹66,000",
-        "₹68,000"
+        "₹68,000",
+        "₹75,000",
+        "₹72,000"
       ],
       "correct": "D",
-      "explanation": "Add all non-recurring expenses up to the godown, paid by consignor or consignee. Godown rent and selling expenses are recurring and excluded. Cost per unit ₹170; 400 unsold units give ₹68,000.",
+      "explanation": "Non-recurring expenses up to the godown (freight, insurance, octroi) are added for all 1,000 units, whoever paid. Godown rent is recurring and excluded. Cost per unit is ₹360, so 200 units are ₹72,000.",
       "working": [
         {
-          "label": "Cost of 2,000 units",
+          "label": "Cost of 1,000 units",
           "value": "₹3,00,000"
         },
         {
-          "label": "Freight and insurance (consignor)",
-          "value": "₹30,000"
+          "label": "Freight + insurance (consignor)",
+          "value": "₹40,000"
         },
         {
-          "label": "Octroi at godown (consignee)",
-          "value": "₹10,000"
+          "label": "Octroi (consignee)",
+          "value": "₹20,000"
         },
         {
           "label": "Total cost of consignment",
-          "value": "₹3,40,000"
+          "value": "₹3,60,000"
         },
         {
           "label": "Cost per unit",
-          "value": "₹170"
+          "value": "₹360"
         },
         {
-          "label": "Unsold 400 units",
-          "value": "₹68,000"
+          "label": "Stock of 200 units",
+          "value": "₹72,000"
         }
       ],
       "why_not": {
-        "B": "Added godown rent and selling expenses too; these recurring items are never added to stock.",
-        "C": "Ignored the octroi paid by the consignee; all non-recurring expenses up to godown count.",
-        "A": "Took goods cost only (400 × ₹150) and left out non-recurring expenses."
+        "B": "Ignores octroi paid by the consignee; only consignor's expenses were added.",
+        "C": "Adds godown rent, which is a recurring expense and never forms part of stock.",
+        "A": "Takes 200 units at ₹300 cost only, leaving out non-recurring expenses."
       },
-      "exam_tip": "Ask: is the expense non-recurring and incurred up to the godown? If yes, load it into stock, whoever paid.",
-      "calculation": "goods = 2000*150\nnonrec = 20000+10000+10000\nperunit = (goods+nonrec)/2000\nanswer = perunit*400",
+      "exam_tip": "Add non-recurring expenses up to the godown, whoever paid; never add godown rent or selling costs.",
+      "calculation": "cost = 1000 * 300\nnonrec = 30000 + 10000 + 20000\ntotal = cost + nonrec\nanswer = total / 1000 * 200",
       "applicability": "",
       "confidence": "high",
       "reviewer_note": "",
-      "attempts": 1,
+      "attempts": 2,
       "check_notes": [
-        "Checker: Treating godown rent as excluded relies on the standard rule that storage costs are not part of stock value. The question doesn't state this, but it is the usual ICMAI/AS-2 treatment.",
-        "Checker: The wording is slightly ambiguous: 'octroi at godown' could be read as a post-arrival cost. The standard treatment includes it, because it is incurred to bring the goods to their location."
+        "Checker: The question doesn't say that stock is valued under AS 2 (or the usual consignment convention). It also doesn't say whether godown rent is a selling or storage expense. A student who included the rent would get C (₹75,000). The correct treatment is standard, but the wording could state it.",
+        "Checker: The question doesn't say if the stock is valued at cost or at net realisable value. It also doesn't say that the 800 units sold were sold at a price at or above cost."
       ],
       "difficulty": "hard",
       "law_sensitive": false,

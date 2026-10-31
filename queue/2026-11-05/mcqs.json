@@ -78,54 +78,48 @@
       "course_id": "cma_cat",
       "paper_code": "Paper 2A",
       "paper_name": "Financial Accounting-2",
-      "topic": "Insurance Claims - Loss of Stock",
-      "question": "Fire destroyed a godown on 31 Oct 2026. Stock on 1 April 2026 ₹2,00,000; purchases ₹8,00,000; sales ₹11,00,000 up to the fire; gross profit 25% on sales. Salvage ₹25,000. Policy ₹1,40,000 with average clause. Claim?",
+      "topic": "Sale of Goods on Approval Basis",
+      "question": "In March 2026 a firm sent 100 units on approval at ₹500 each (cost ₹400) and booked all as sales. By 31 March: 40 units approved, 20 returned, 40 neither approved nor returned. No other entry made. Net reduction in profit is:",
       "options": [
-        "₹1,05,000",
-        "₹1,20,000",
-        "₹1,40,000",
-        "₹1,50,000"
+        "₹10,000",
+        "₹6,000",
+        "₹4,000",
+        "₹30,000"
       ],
       "correct": "B",
-      "explanation": "Cost of sales = 75% of 11,00,000 = 8,25,000. Stock at fire = 10,00,000 − 8,25,000 = 1,75,000. Loss after salvage = 1,50,000. Average clause: 1,50,000 × 1,40,000 / 1,75,000 = 1,20,000.",
+      "explanation": "Sales for 60 units (20 returned + 40 pending) are reversed: ₹30,000. These units go to closing stock at cost ₹24,000. Profit falls by ₹30,000 - ₹24,000 = ₹6,000.",
       "working": [
         {
-          "label": "Cost of sales (75% of sales)",
-          "value": "₹8,25,000"
+          "label": "Units not yet sold (20 + 40)",
+          "value": "60"
         },
         {
-          "label": "Stock at fire (10,00,000 − 8,25,000)",
-          "value": "₹1,75,000"
+          "label": "Sales reversed (60 × ₹500)",
+          "value": "₹30,000"
         },
         {
-          "label": "Loss after salvage",
-          "value": "₹1,50,000"
+          "label": "Stock added at cost (60 × ₹400)",
+          "value": "₹24,000"
         },
         {
-          "label": "Policy ÷ stock at fire",
-          "value": "1,40,000/1,75,000"
-        },
-        {
-          "label": "Claim",
-          "value": "₹1,20,000"
+          "label": "Reduction in profit",
+          "value": "₹6,000"
         }
       ],
       "why_not": {
-        "C": "Takes the policy amount as the claim; ignores salvage and the average clause.",
-        "D": "Net loss after salvage, but average clause for under-insurance not applied.",
-        "A": "Applies policy to opening stock (1,40,000/2,00,000) instead of stock at fire."
+        "C": "Adjusts only the 40 pending units and ignores the 20 returned units.",
+        "D": "Reverses sales but forgets to bring the goods back into stock at cost.",
+        "A": "Treats all 100 units as unsold, ignoring the 40 approved units."
       },
-      "exam_tip": "Average clause: claim = loss × policy value ÷ stock value at fire. Gross profit on sales means cost = sales × (1 − GP%).",
-      "calculation": "cos = 1100000*0.75\nstock = 200000+800000-cos\nloss = stock-25000\nanswer = loss*140000/stock",
+      "exam_tip": "Goods on approval are sold only on approval or lapse of time; reverse sale at price, restore stock at cost.",
+      "calculation": "units = 20 + 40\nsales = units * 500\nstock = units * 400\nanswer = sales - stock",
       "applicability": "",
       "confidence": "high",
-      "reviewer_note": "Assumes salvage is deducted from stock lost before applying the average clause, as in standard ICMAI treatment.",
+      "reviewer_note": "",
       "attempts": 1,
       "check_notes": [
-        "Writer: Assumes salvage is deducted from stock lost before applying the average clause, as in standard ICMAI treatment.",
-        "Checker: Salvage treatment under the average clause is not stated. The standard method deducts salvage first and then applies the average ratio. Applying the ratio to the gross loss and then deducting salvage gives 1,15,000, which is not an option, so the key is unaffected.",
-        "Checker: The question does not say whether the gross profit rate is on sales (it does, so this is fine). It also does not say whether purchases are net of returns. Minor.",
-        "Checker: The fire date (31 Oct 2026) is after the current date, so the scenario is hypothetical. This is trivial."
+        "Checker: The question does not state the approval period or whether it had expired by 31 March. If it had expired, the 40 units would be deemed accepted and the answer would be ₹2,000, which is not an option. The key relies on the unstated assumption that the period was still running.",
+        "Checker: The question should say that no time limit has expired, or that the units are still within the approval period. It should also say whether the answer is the reduction in profit or in sales."
       ],
       "difficulty": "hard",
       "law_sensitive": false,
@@ -137,7 +131,7 @@
         "answer": "cma_cat_a.jpg"
       },
       "fit_notes": [],
-      "caption": "🟨 CMA CAT · MCQ of the day · Day 15\nPaper 2A: Financial Accounting-2\nTopic: Insurance Claims - Loss of Stock\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261105",
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 15\nPaper 2A: Financial Accounting-2\nTopic: Sale of Goods on Approval Basis\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261105",
       "story": "cma_cat_story.jpg",
       "hold": false,
       "hold_reason": ""

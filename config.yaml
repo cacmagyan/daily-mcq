@@ -44,14 +44,14 @@ authors:
 concepts:
   enabled: true
   start_date: "2026-10-19"      # first concept post (normally written the evening before)
-  post_time: "19:40"            # IST; keep matched to the 19:40 line in publish.yml
+  post_time: "20:30"            # IST; keep matched to the 20:32 line in publish.yml
   courses: ["ca_foundation", "cma_cat", "ca_inter", "cma_inter", "ca_final", "cma_final"]
   # A second note (and its cartoon video) every day, for a course of the other family than the
   # evening note, so CA and CMA students both get a note and a video each day.
   second:
     enabled: true
     start_date: "2026-10-31"
-    post_time: "13:40"          # IST; keep matched to the 13:42 line in publish.yml
+    post_time: "13:00"          # IST, lunch break; keep matched to the 13:02 line in publish.yml
 
 # Which MCQs post: with alternate on, the three CA courses one day and the three CMA courses the next.
 mcqs:
@@ -68,7 +68,7 @@ mcqs:
 reels:
   enabled: false                # off: the classroom explainer is the only reel (true = make the MCQ reel again, as its backup)
   start_date: "2026-10-20"      # first reel (normally made the evening before)
-  post_time: "17:55"            # IST; goes live by about 6:00 PM. Keep matched to the 17:57 line in publish.yml
+  post_time: "19:30"            # IST; the evening video slot. Keep matched to the 19:32 line in publish.yml
   courses: ["ca_final", "cma_final", "ca_foundation", "cma_cat", "ca_inter", "cma_inter"]
   think_seconds: 8              # countdown before the answer shows
   answer_seconds: 7             # how long the answer stays on screen
@@ -99,8 +99,8 @@ reels:
 explainer:
   enabled: true
   start_date: "2026-10-30"      # first explainer reel
-  post_time: "17:55"            # same slot as the reel (keep matched to the 17:57 line in publish.yml)
-  second_post_time: "11:25"     # the second note's video (keep matched to the 11:27 line in publish.yml)
+  post_time: "19:30"            # evening video (keep matched to the 19:32 line in publish.yml)
+  second_post_time: "08:30"     # the second note's video, morning (keep matched to the 08:32 line in publish.yml)
   style: "story"                # "story": classroom scene · "classic": the elephant alone, ~40 s
   voice: "af_heart"             # classic style only (the story's voices are in story_video.py)
   speed: 1.05                   # 1.0 = normal speaking speed
@@ -176,7 +176,7 @@ courses:
     body: "ICAI"
     emoji: "🟩"
     color: { ink: "#0E8A4F", deep: "#0A5C35", wash: "#E4F4EA", on_ink: "#FFFFFF" }
-    post_time: "07:55"
+    post_time: "07:30"
     hashtags: ["#CAFoundation", "#ICAI", "#CAStudents", "#DailyMCQ", "#CAExams"]
     papers:
       - { code: "Paper 1", name: "Accounting" }
@@ -193,7 +193,7 @@ courses:
     body: "ICMAI"
     emoji: "🟨"
     color: { ink: "#E5A800", line: "#A87A00", deep: "#7A5600", wash: "#FDF3D2", on_ink: "#2A2000" }
-    post_time: "09:55"
+    post_time: "07:30"
     hashtags: ["#CMACAT", "#ICMAI", "#CATCourse", "#DailyMCQ", "#AccountingTechnician"]
     papers:   # Part I (the examined part, MCQ on OMR)
       - { code: "Paper 1A", name: "Fundamentals of Financial Accounting" }
@@ -207,7 +207,7 @@ courses:
     body: "ICAI"
     emoji: "🟦"
     color: { ink: "#1F5FD1", deep: "#163F8C", wash: "#E4ECFB", on_ink: "#FFFFFF" }
-    post_time: "12:25"
+    post_time: "18:30"
     hashtags: ["#CAInter", "#CAIntermediate", "#ICAI", "#DailyMCQ", "#CAStudents"]
     papers:
       - { code: "Paper 1", name: "Advanced Accounting" }
@@ -225,7 +225,7 @@ courses:
     body: "ICMAI"
     emoji: "🟧"
     color: { ink: "#E2621B", deep: "#9A3D0B", wash: "#FCE9DD", on_ink: "#FFFFFF" }
-    post_time: "15:25"
+    post_time: "18:30"
     hashtags: ["#CMAInter", "#CMAIntermediate", "#ICMAI", "#DailyMCQ", "#CMAStudents"]
     papers:   # Syllabus 2022
       - { code: "Paper 8", name: "Cost Accounting" }
@@ -245,7 +245,7 @@ courses:
     body: "ICAI"
     emoji: "🟪"
     color: { ink: "#6B35C9", deep: "#4A238D", wash: "#EEE7FA", on_ink: "#FFFFFF" }
-    post_time: "18:25"
+    post_time: "21:30"
     hashtags: ["#CAFinal", "#ICAI", "#CAStudents", "#DailyMCQ", "#IndAS"]
     papers:
       - { code: "Paper 1", name: "Financial Reporting" }
@@ -260,7 +260,7 @@ courses:
     body: "ICMAI"
     emoji: "🟥"
     color: { ink: "#C8233A", deep: "#8C1324", wash: "#FAE4E7", on_ink: "#FFFFFF" }
-    post_time: "20:55"
+    post_time: "21:30"
     hashtags: ["#CMAFinal", "#ICMAI", "#CMAStudents", "#DailyMCQ", "#CostAccountant"]
     papers:   # Syllabus 2022
       - { code: "Paper 14", name: "Strategic Financial Management" }

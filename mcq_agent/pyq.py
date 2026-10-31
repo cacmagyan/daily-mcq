@@ -13,9 +13,8 @@ MAX_LINES = 140          # past-paper lines shown to the writer when it chooses 
 TOPIC_LINES = 40         # lines shown when the concept is already decided
 # Papers that share a syllabus with a paper that has a bank: their notes use that bank, and the
 # radar names the exam it came from ("CMA Inter PY D24").
-SHARED = {
-    ("cma_cat", "Paper 1A"): [("cma_inter", "Paper 6", "")],
-    ("cma_cat", "Paper 2A"): [("cma_inter", "Paper 6", ""), ("cma_inter", "Paper 10", "Corporate Accounting")],
+SHARED: dict = {
+    # Only add a pair when the two syllabuses really match (the CMA CAT papers do not follow CMA Inter).
 }
 EXAM = {"cma_inter": "CMA Inter", "cma_cat": "CMA CAT", "cma_final": "CMA Final",
         "ca_foundation": "CA Foundation", "ca_inter": "CA Inter", "ca_final": "CA Final"}

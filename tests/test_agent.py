@@ -37,6 +37,28 @@ def fake_mcq(**over):
     return m
 
 
+# Most tests were written against the first schedule (one MCQ time per course); they keep it, while
+# config.yaml now uses the same times for both families (only one family posts a day).
+_LEGACY_TIMES = {"ca_foundation": "07:55", "cma_cat": "09:55", "ca_inter": "12:25", "cma_inter": "15:25",
+                 "ca_final": "18:25", "cma_final": "20:55"}
+_real_init = C.Config.__init__
+
+
+def _legacy_init(self, *a, **k):
+    _real_init(self, *a, **k)
+    if getattr(_legacy_init, "off", False):
+        return
+    for c in self.courses:
+        c["post_time"] = _LEGACY_TIMES.get(c["id"], c["post_time"])
+    self.concepts["post_time"] = "19:40"
+    (self.concepts.get("second") or {})["post_time"] = "13:40"
+    self.explainer["post_time"], self.explainer["second_post_time"] = "17:55", "11:25"
+    self.reels["post_time"] = "17:55"
+
+
+C.Config.__init__ = _legacy_init
+
+
 class FakeResponse:
     def __init__(self, payload, status=200):
         self._p, self.status_code = payload, status
@@ -199,9 +221,14 @@ class ConfigTests(unittest.TestCase):
         self.assertIn("2025", cfg.law_text(paper, dt.date(2027, 3, 1)))
 
     def test_every_course_has_distinct_colour_and_time(self):
-        cfg = C.Config()
+        _legacy_init.off = True
+        try:
+            cfg = C.Config()
+        finally:
+            _legacy_init.off = False
         self.assertEqual(len({c["color"]["ink"] for c in cfg.courses}), 6)
-        self.assertEqual(len({c["post_time"] for c in cfg.courses}), 6)
+        for fam in cfg.raw["mcqs"]["families"]:      # one family posts a day: its three times differ
+            self.assertEqual(len({cfg.course(c)["post_time"] for c in fam}), 3)
 
     def test_papers_rotate_daily(self):
         cfg = C.Config()
@@ -474,7 +501,6 @@ class ConceptScheduleTests(unittest.TestCase):
         wf = (ROOT / ".github" / "workflows" / "publish.yml").read_text()
         h, m = map(int, self.cfg.concept_time().split(":"))
         utc = (h * 60 + m - 330) % 1440
-        self.assertIn(f'cron: "{(utc + 2) % 60} {(utc + 2) // 60} * * *"', wf)
 
 
 class ConceptWriterTests(TempQueue):
@@ -1410,9 +1436,21 @@ class ReelTests(TempQueue):
 
     def test_publish_schedule_has_the_reel_run(self):
         wf = (ROOT / ".github" / "workflows" / "publish.yml").read_text()
-        h, m = map(int, self.cfg.reel_time().split(":"))
-        utc = (h * 60 + m - 330) % 1440
-        self.assertIn(f'cron: "{(utc + 2) % 60} {(utc + 2) // 60} * * *"', wf)
+        _legacy_init.off = True
+        try:
+            real = C.Config()
+        finally:
+            _legacy_init.off = False
+        for t in [real.reel_time(), real.explainer_time(), real.explainer_time("2"), real.concept_time(),
+                  real.concept_time("2")] + [c["post_time"] for c in real.courses]:
+            h, m = map(int, t.split(":"))
+            utc = (h * 60 + m - 330) % 1440
+            self.assertIn(f'cron: "{(utc + 2) % 60} {(utc + 2) // 60} * * *"', wf, t)
+        first, last = min(c["post_time"] for c in real.courses), max(c["post_time"] for c in real.courses)
+        for name, t in (("FIRST_SLOT", first), ("LAST_SLOT", last)):
+            h, m = map(int, t.split(":"))
+            utc = (h * 60 + m - 330) % 1440
+            self.assertIn(f"{name}: ${{{{ github.event.schedule == '{(utc + 2) % 60} {(utc + 2) // 60} * * *' }}}}", wf)
 
     def test_instagram_tries_the_next_address_and_drops_rejected_extras(self):
         from mcq_agent.instagram import Instagram, InstagramError

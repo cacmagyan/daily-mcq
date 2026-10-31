@@ -1,0 +1,194 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 2B",
+  "paper_name": "Statutory Compliance",
+  "topic": "Ordinary vs Special Resolution",
+  "concept_topic": "Ordinary vs Special Resolution",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 59.77,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Ordinary vs Special Resolution",
+    "caption_hook": "Resolutions pass on votes cast, not on how many members exist!",
+    "hook_label": "COUNT VOTES, NOT",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Wait, a resolution passes by counting votes, not members?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! Only votes actually cast count. Let's see two types: ordinary and special.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Ordinary vs Special",
+          "sub": "Count votes cast only"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So what's an ordinary resolution?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Ordinary needs more votes for than against. Just one more vote wins.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Ordinary Resolution",
+          "formula": "For > Against",
+          "sub": "Votes cast in person, proxy or online"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Okay, what if many members don't even vote?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "They're ignored. Abstaining members cast no vote, so they're in neither count.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "list",
+          "title": "Who is counted?",
+          "lines": [
+            "For votes: counted",
+            "Against votes: counted",
+            "Abstain or absent: ignored"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And special resolution?",
+        "shot": "close",
+        "pose": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "For-votes must be at least three times the votes against. Think three to one.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Special Resolution",
+          "formula": "For ≥ 3 × Against",
+          "sub": "Notice must say it is special"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Can you give a quick example?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Say 60 votes for, 20 against. Three times twenty is sixty, so it passes.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "3 × 20 against",
+          "big": "60"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "What if it's 50 for and 20 against?",
+        "shot": "close",
+        "pose": "worried"
+      },
+      {
+        "who": "teacher",
+        "say": "Fifty is less than sixty, so it fails as special. But as ordinary, it passes.",
+        "shot": "board",
+        "pose": "think"
+      },
+      {
+        "who": "boy",
+        "say": "Oh! When do we use which one?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Routine matters, like declaring dividend, need ordinary. Altering articles needs special, and the notice must say so.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Ordinary",
+            "lines": [
+              "Declare dividend",
+              "For > Against"
+            ],
+            "icon": "check",
+            "color": "green"
+          },
+          "right": {
+            "title": "Special",
+            "lines": [
+              "Alter articles",
+              "For ≥ 3 × Against"
+            ],
+            "icon": "scale",
+            "color": "navy"
+          },
+          "right_on": "special"
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: ordinary is one more, special is thrice.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Ordinary: One more",
+            "Special: Thrice"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Word count is about 156. The 50 for / 20 against example passes as ordinary (50 > 20) and fails as special (needs 60).",
+    "Checker: Hook stamp: 'COUNT VOTES, NOT' is cut off mid-phrase. Finish it, e.g. 'COUNT VOTES, NOT MEMBERS', to match Line 1.",
+    "Checker: Line 4 / Line 15 ('Just one more vote wins', 'Ordinary: One more'): the rule is wording-only shaky. Section 114(1) only requires votes for to exceed votes against, and the chairman's casting vote (if any) is included. Suggest: 'Votes for must exceed votes against, even by one, including any casting vote of the chairman.'",
+    "Checker: Line 4 board sub: 'Votes cast in person, proxy or online' leaves out some voting modes. Section 114 covers show of hands, electronic voting, poll and postal ballot, in person or by proxy. Suggest: 'Votes cast by show of hands, poll, e-voting or postal ballot, in person or by proxy'.",
+    "Checker: Line 2 / Line 6: say that only votes cast by members entitled to vote are counted. Suggest: 'Only votes actually cast by members entitled to vote count.'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "Word count is about 156. The 50 for / 20 against example passes as ordinary (50 > 20) and fails as special (needs 60).",
+  "caption": "🎬 🟨 CMA CAT · Ordinary vs Special Resolution\n\nResolutions pass on votes cast, not on how many members exist!\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 2B: Statutory Compliance\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref explainer-261101",
+  "hold": false,
+  "hold_reason": ""
+}

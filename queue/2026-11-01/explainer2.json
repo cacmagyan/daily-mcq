@@ -1,0 +1,9 @@
+{
+  "kind": "explainer2",
+  "course_id": "ca_inter",
+  "topic": "Operating Cycle (Gross and Net)",
+  "concept_topic": "Operating Cycle (Gross and Net)",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 6: board sub is 58 characters; at most 44",
+  "hold": false,
+  "hold_reason": ""
+}

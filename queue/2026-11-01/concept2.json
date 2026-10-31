@@ -1,0 +1,148 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 6A",
+  "paper_name": "Financial Management",
+  "author": "Rahul kp",
+  "linked_mcq": "Working Capital: Operating Cycle",
+  "topic": "Operating Cycle (Gross and Net)",
+  "title": "Operating Cycle",
+  "title_highlight": "in Working Capital",
+  "hook": "how long is cash stuck?",
+  "simple_words": "Gross cycle: raw material bought to cash collected. Net cycle: gross cycle less the credit period we get from suppliers.",
+  "definitions": [
+    {
+      "term": "Gross operating cycle",
+      "meaning": "Time from acquiring raw material to realising cash from debtors. Gross cycle = R + W + F + D, with no deduction of creditors period.",
+      "note": ""
+    },
+    {
+      "term": "Net operating cycle",
+      "meaning": "Gross operating cycle less the creditors period (C). It is the time our own funds stay blocked in operations.",
+      "note": "Also called the cash conversion cycle."
+    }
+  ],
+  "key_points": [
+    "Stages: ==raw material== stock, work-in-progress, finished goods, debtors.",
+    "Creditors period is deducted because supplier credit postpones our cash outflow.",
+    "A longer net cycle means more ==working capital== is needed; a shorter one needs less.",
+    "Supplier credit reduces the net cycle and the working capital needed."
+  ],
+  "formula_heading": "The Cycle Formulas",
+  "formula_hook": "add four, subtract one",
+  "formulas": [
+    {
+      "name": "Net operating cycle (days)",
+      "lhs": "O",
+      "rhs": "R + W + F + D − C",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "O = net operating cycle in days; R = raw material holding; W = WIP holding; F = finished goods holding; D = debtors period; C = creditors period."
+    },
+    {
+      "name": "Holding period of each item (days)",
+      "lhs": "Days",
+      "rhs": "",
+      "numerator": "Average stock or balance",
+      "denominator": "Annual consumption, cost or sales",
+      "square_root": false,
+      "suffix": "× 360 (or 365)",
+      "legend": "Use days in year as the question states. R: raw material consumed; W: cost of production; F: cost of goods sold; D: credit sales (cost if told); C: credit purchases. Stock never uses sales."
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Same as balance ÷ daily figure!",
+    "text": "Dividing the average balance by the per-day figure gives days directly; do not multiply by days in year again."
+  },
+  "trick_hook": "four plus, one minus",
+  "memory_trick": {
+    "mnemonic": "RWFD minus C",
+    "explanation": "R, W, F and D are added. C (Creditors) is deducted because supplier credit postpones our cash outflow."
+  },
+  "steps": [
+    "Find each item's average balance",
+    "Pick the correct base for each item",
+    "Compute days: R, W, F, D, C",
+    "Net cycle = R + W + F + D − C",
+    "WC = cost per day × net cycle days"
+  ],
+  "exam_tip": "Debtors are taken at cost by default; use sales value only if the question says so. Check if depreciation is excluded.",
+  "doubt": {
+    "question": "Why is the creditors period deducted?",
+    "answer": "Suppliers finance part of the cycle, so our cash goes out later. This reduces the net cycle and the working capital needed."
+  },
+  "mistakes_hook": "small slips, big marks",
+  "mistakes": [
+    {
+      "wrong": "Multiplying (balance ÷ daily figure) again by 365",
+      "right": "Average balance ÷ daily figure already gives days; use ÷ annual figure × days only when the base is annual."
+    },
+    {
+      "wrong": "Adding creditors period with R, W, F, D",
+      "right": "!!Deduct!! creditors period to get the net operating cycle."
+    },
+    {
+      "wrong": "Using sales as the base for stock days",
+      "right": "Stock days use consumption, cost of production or cost of sales, not sales."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "medium",
+  "reviewer_note": "Check that ICAI's treatment of the working capital step (cash cost, minimum cash balance) matches the current study material. No past-paper list was given.",
+  "law_sensitive": false,
+  "attempts": 3,
+  "needs_check": true,
+  "serious": true,
+  "check_notes": [
+    "Not confirmed after 3 attempts",
+    "Checker 1: The exam tip contradicts the formula 2 legend. The exam tip says \"Debtors are taken at cost by default; use sales value only if the question says so.\" The legend says \"D: credit sales (cost if told).\" Correct version: in the ICAI operating cycle formula, the debtors (receivables) period is average receivables ÷ average credit sales per day. Credit sales is the default base for working out D in days. The cost (cash-cost) basis is a separate choice about how receivables are valued when estimating working capital. Rewrite the exam tip like this: \"For the debtors period (D), use credit sales unless the question says otherwise. When valuing receivables for working capital, check whether the question wants cost or sales value, and whether depreciation is excluded (cash-cost basis).\"",
+    "Checker 1: Step 5 (\"WC = cost per day × net cycle days\") is brief, but its meaning is correct. Minor wording point: ICAI also states it as WC = total operating cost ÷ number of operating cycles in a year, where the number of cycles = 360 (or 365) ÷ operating cycle days. Say that 'cost' means the total operating (cash) cost per day.",
+    "Checker 2: Exam tip: 'Debtors are taken at cost by default; use sales value only if the question says so' is not a safe rule. ICAI practice is that debtors are taken at cost unless the question says otherwise, but many questions say sales value or give a selling price. Rewrite it as 'Debtors are taken at cost of sales unless the question specifies sales value; read the question's instruction.' Without this the tip is misleading.",
+    "Checker 2: Insight punchline and text: 'Same as balance ÷ daily figure! ... do not multiply by days in year again' is confusing and the punchline does not say what it means. Mistake 1 repeats this. State it as: days = average balance ÷ (annual figure ÷ 365), which is the same as (balance ÷ annual figure) × 365. If the per-day figure is already used, do not multiply by 365 again.",
+    "Checker 2: Formula 2 legend: 'W: cost of production' is incomplete. WIP days = average WIP ÷ (cost of production per day), and in ICAI practice only the proportion of materials, labour and overheads actually completed is considered. 'F: cost of goods sold' should read 'cost of goods sold (cost of sales)'. 'D: credit sales (cost if told)' is backwards, because ICAI's default is cost of sales unless the question says otherwise. The legend should say 'D: credit sales at cost, or at sales value if the question says so'.",
+    "Checker 2: Doubt answer and key point 2 say supplier credit 'reduces the net cycle'. The wording is fine. Key point 4 repeats key point 2, so it adds nothing.",
+    "Checker 2: Mistake 3 'wrong': stock days use consumption, cost of production or cost of sales, not sales. This is correct, but the formula 2 denominator 'Annual consumption, cost or sales' lists sales as a possible base. Since the note says sales are never used for stock, change the denominator to 'Annual consumption / cost of production / cost of sales (credit sales for debtors)'."
+  ],
+  "serious_reason": "The checkers found errors that weren't fixed (Checker 1: The exam tip contradicts the formula 2 legend. The exam tip says \"Debtors are taken at cost by default; use sales value only if the question says so.)",
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.02,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 6A: Financial Management\nOperating Cycle (Gross and Net)\n\nIn simple words: Gross cycle: raw material bought to cash collected. Net cycle: gross cycle less the credit period we get from suppliers.\n\nSwipe for the formula, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CA Inter MCQ (6:30 PM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept2-261101",
+  "story": "concept2_story.jpg",
+  "hold": true,
+  "hold_reason": "The checkers found errors that weren't fixed (Checker 1: The exam tip contradicts the formula 2 legend. The exam tip says \"Debtors are taken at cost by default; use sales value only if the question says so.)"
+}

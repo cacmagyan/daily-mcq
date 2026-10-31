@@ -61,6 +61,18 @@ WRITE_TOOL = {
                           "rows": {"type": "array", "maxItems": 5,
                                    "items": {"type": "array", "minItems": 2, "maxItems": 3, "items": _s("At most 44 characters")}}},
                       "required": ["headers", "rows"]},
+            "entries": {"type": "array", "maxItems": 3,
+                        "description": "0-3 journal entries for slide 2, shown in the two-line journal form "
+                                       "('Bank A/c ... Dr' then 'To Share Capital A/c'). Every journal entry of the note goes "
+                                       "here, never in the table. Empty if the concept has no entries.",
+                        "items": {"type": "object", "properties": {
+                            "label": _s("When it is passed, at most 34 characters, e.g. 'On forfeiture'"),
+                            "debit": {"type": "array", "minItems": 1, "maxItems": 3,
+                                      "items": _s("An account debited, at most 34 characters, ending 'A/c', e.g. 'Equity Share Capital A/c'")},
+                            "credit": {"type": "array", "minItems": 1, "maxItems": 3,
+                                       "items": _s("An account credited, at most 34 characters, without 'To', e.g. 'Forfeited Shares A/c'")},
+                            "narration": _s("Short narration without brackets, at most 70 characters, e.g. 'Being shares forfeited for non-payment of call'")},
+                            "required": ["label", "debit", "credit", "narration"]}},
             "insight": {"type": "object", "description": "Key-insight callout at the bottom of slide 2",
                         "properties": {
                             "punchline": _s("Short punchline in red marker, at most 36 characters, e.g. 'Same machine, two treatments!'"),
@@ -84,13 +96,22 @@ WRITE_TOOL = {
                              "wrong": _s("What students wrongly do or write, at most 90 characters"),
                              "right": _s("The correct way, at most 110 characters")},
                              "required": ["wrong", "right"]}},
+            "past_papers": {"type": "array", "maxItems": 3,
+                            "description": "1-3 points from the past-paper list in the request that ask THIS concept "
+                                           "(shown as 'Past exam radar' on slide 4). Empty only if no past-paper list was given "
+                                           "or none of its questions is on this concept.",
+                            "items": {"type": "object", "properties": {
+                                "ref": _s("The question's ref exactly as in the list, e.g. '1-106'"),
+                                "point": _s("What that question tested or the twist in it, in your own words, at most 100 "
+                                            "characters, e.g. 'Allotment and call unpaid; only part of the shares reissued'")},
+                                "required": ["ref", "point"]}},
             "applicability": _s("Law/standard basis for tax or law topics, at most 60 characters; empty otherwise"),
             "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
             "reviewer_note": _s("Anything the human reviewer should double-check; empty if nothing"),
         },
         "required": ["topic", "title", "title_highlight", "hook", "simple_words", "definitions", "key_points",
-                     "formula_heading", "formula_hook", "formulas", "table", "insight", "trick_hook", "memory_trick", "steps",
-                     "exam_tip", "doubt", "mistakes_hook", "mistakes", "applicability", "confidence", "reviewer_note"],
+                     "formula_heading", "formula_hook", "formulas", "table", "entries", "insight", "trick_hook", "memory_trick", "steps",
+                     "exam_tip", "doubt", "mistakes_hook", "mistakes", "past_papers", "applicability", "confidence", "reviewer_note"],
     },
 }
 
@@ -110,9 +131,9 @@ CHECK_TOOL = {
 
 WRITER_SYSTEM = """You write "Concept of the day" notes for an Instagram page for Indian CA and CMA students; the note is signed by {author}, who teaches this paper. Each note is a 4-slide carousel in his handwritten cartoon notebook style:
   Slide 1 Concept: title, "In simple words" line, 1-2 definition cards, 2-4 key points.
-  Slide 2 Formula: 1-3 formulas with symbol legends, or a small table for theory and law topics, then a one-line key insight.
+  Slide 2 Formula: 1-3 formulas with symbol legends, or a small table for theory and law topics, and the journal entries if the concept has any, then a one-line key insight.
   Slide 3 Study trick: a memory trick, the order of working in the exam, an exam tip, a doubt buster.
-  Slide 4 Common mistakes: 2-4 mistakes students make, each with the correct way.
+  Slide 4 Common mistakes: 2-4 mistakes students make, each with the correct way, then a "Past exam radar" of 1-3 past-paper points when a past-paper list is given.
 
 Rules
 1. Choose ONE core concept from the given paper that is examined often and fits on 4 phone slides; never a whole chapter. Tomorrow's MCQ for this course will test it.
@@ -128,12 +149,15 @@ Rules
 11. Original wording. Never copy study material, RTPs, MTPs or past papers.
 12. Length limits in the field descriptions are strict: the text must fit on phone slides.
 13. Every table cell, sign (Add/Deduct, Dr/Cr, +/−), formula and "right" statement must be correct in every case the note covers. If a rule has an exception, say it or leave that case out.
+14. Journal entries always go in `entries` (shown in the two-line journal form: the debit line "… A/c Dr", then "To … A/c"). Never write a journal entry in the table, and never make a table with Debit / Credit columns. With entries on slide 2, use at most 1 formula or a table of at most 3 rows.
+15. If a past-paper list is given, prefer a concept those papers actually ask, and fill `past_papers` only with questions from that list that test this exact concept. Cite each by its ref; the point says what the question tested in your own words (no names or figures from the question). With past papers on slide 4, give at most 3 mistakes.
 {traps}"""
 
 CHECKER_SYSTEM = """You are a strict examiner checking a concept note for {course} ({body}) students, paper: {paper}.
 Method: go through the note line by line. For every table cell, every sign or direction (Add/Deduct, Dr/Cr, +/−, increase/decrease), every formula and symbol legend, and every "correct way", first work out from your own knowledge what the correct entry is, and only then compare it with the note. Then check the definitions, key points, memory trick, steps, exam tip, doubt answer and mistakes against current ICAI/ICMAI study material.
 Severity "major" if anything is wrong or misleading: a wrong table cell or sign, a wrong formula or legend, a wrong definition or rule, a "mistake" that is actually correct, a wrong "correct way", an invented or wrong section number, rate or limit, outdated law, or a memory trick that teaches something false. "minor" for wording polish only. "none" if it is all correct.
 For each problem say where it is and give the correct version.
+Journal entries: check every debit and credit account and its side. Past exam radar: each point must describe its source question correctly and the source question must be on this concept; if not, that is "major".
 {law_line}{traps}"""
 
 _EMOJI = re.compile("[\U0001F300-\U0001FAFF☀-➿️]")
@@ -160,10 +184,15 @@ def texts(c: dict) -> list[tuple[str, str]]:
     trick = c.get("memory_trick") or {}
     out += [("memory trick", trick.get("mnemonic", "")), ("memory trick explanation", trick.get("explanation", ""))]
     out += [(f"step {i}", s) for i, s in enumerate(c.get("steps") or [], 1)]
+    for i, e in enumerate(c.get("entries") or [], 1):
+        out += [(f"journal entry {i}", f"{e.get('label', '')}: " + "; ".join(f"{a} Dr" for a in e.get("debit") or [])
+                 + "; " + "; ".join(f"To {a}" for a in e.get("credit") or []) + f" ({e.get('narration', '')})")]
     doubt = c.get("doubt") or {}
     out += [("doubt question", doubt.get("question", "")), ("doubt answer", doubt.get("answer", ""))]
     for i, m in enumerate(c.get("mistakes") or [], 1):
         out += [(f"mistake {i} wrong", m.get("wrong", "")), (f"mistake {i} right", m.get("right", ""))]
+    for i, p in enumerate(c.get("past_papers") or [], 1):
+        out += [(f"past paper {i}", f"{p.get('papers') or p.get('ref', '')}: {p.get('point', '')}")]
     return out
 
 
@@ -184,12 +213,26 @@ def tidy(c: dict) -> dict:
     headers = [h for h in table.get("headers") or [] if h][:3]
     rows = [r[:len(headers)] for r in table.get("rows") or [] if headers and any(r)][:5]
     c["table"] = {"headers": headers, "rows": [r + [""] * (len(headers) - len(r)) for r in rows]}
+    entries = []
+    for e in c.get("entries") or []:
+        dr = [_acct(a) for a in e.get("debit") or [] if a][:3]
+        cr = [_acct(re.sub(r"^(To|By)\s+", "", a, flags=re.I)) for a in e.get("credit") or [] if a][:3]
+        if dr and cr:
+            entries.append({"label": e.get("label", ""), "debit": dr, "credit": cr,
+                            "narration": (e.get("narration") or "").strip("() ")})
+    c["entries"] = entries[:3]
+    c["past_papers"] = [p for p in c.get("past_papers") or [] if p.get("ref") and p.get("point")][:3]
     c["steps"] = [s for s in c.get("steps") or [] if s][:5]
     c["mistakes"] = [m for m in c.get("mistakes") or [] if m.get("wrong") and m.get("right")][:4]
     c["doubt"] = c.get("doubt") or {"question": "", "answer": ""}
     c["insight"] = c.get("insight") or {"punchline": "", "text": ""}
     c["memory_trick"] = c.get("memory_trick") or {"mnemonic": "", "explanation": ""}
     return c
+
+
+def _acct(a: str) -> str:
+    """'Bank A/c Dr' -> 'Bank A/c' (the template writes Dr and To itself)."""
+    return re.sub(r"\s*(\.{2,}|…)?\s*\bDr\.?$", "", a.strip()).strip()
 
 
 def validate(c: dict) -> list[str]:
@@ -211,8 +254,19 @@ def validate(c: dict) -> list[str]:
     if not (c.get("memory_trick") or {}).get("mnemonic"):
         problems.append("the memory trick is empty")
     table = c.get("table") or {}
-    if not c.get("formulas") and not table.get("rows"):
-        problems.append("slide 2 needs formulas or a table")
+    if not c.get("formulas") and not table.get("rows") and not c.get("entries"):
+        problems.append("slide 2 needs formulas, a table or journal entries")
+    heads = " ".join(table.get("headers") or []).lower()
+    if re.search(r"\b(debit|credit|dr|cr)\b", heads):
+        problems.append("journal entries go in `entries` (two-line form), not in a table with Debit/Credit columns")
+    for i, e in enumerate(c.get("entries") or [], 1):
+        if any(len(a) > 34 * GRACE for a in e["debit"] + e["credit"]) or len(e.get("narration") or "") > 70 * GRACE:
+            problems.append(f"journal entry {i} is too long (accounts 34, narration 70 characters)")
+    if c.get("entries") and (len(c.get("formulas") or []) > 1 or len(table.get("rows") or []) > 3):
+        problems.append("with journal entries use at most 1 formula or a table of at most 3 rows")
+    for i, p in enumerate(c.get("past_papers") or [], 1):
+        if len(p.get("point") or "") > 100 * GRACE:
+            problems.append(f"past paper point {i} is longer than 100 characters")
     insight = c.get("insight") or {}
     if len(insight.get("punchline") or "") > 36 * GRACE or len(insight.get("text") or "") > 120 * GRACE:
         problems.append("the insight is too long (punchline 36, text 120 characters)")
@@ -278,7 +332,7 @@ def write_concept(cfg: Config, course: dict, paper: dict, date: dt.date, recent:
                   fit_check: Callable[[dict], list[str]] | None = None) -> dict:
     """Returns the checked concept note. `fit_check(draft)` returns problems if a slide doesn't fit.
     Raises GenerationError only if no usable note came back."""
-    from . import traps
+    from . import pyq, traps
     from .generator import GenerationError, _call_claude, call_checker
 
     law_text = cfg.law_text(paper, date)
@@ -301,14 +355,34 @@ def write_concept(cfg: Config, course: dict, paper: dict, date: dt.date, recent:
                       f"different one):\n{recent_lines}\n")
     if instruction:
         base_user += f"\nReviewer's instruction for this note: {instruction}\n"
+    bank = pyq.questions(course["id"], paper)
+    shown = (pyq.relevant(bank, topic) if topic else bank) if bank else []
+    if shown:
+        base_user += ("\nPast-paper questions from the question bank for this paper "
+                      "(ref | papers · type | section | question extract):\n" + pyq.index_text(shown) + "\n")
+        if not topic:
+            base_user += "\nSections past papers ask most:\n" + pyq.section_counts(bank) + "\n"
+
+    def past_papers(draft: dict) -> list[str]:
+        if not shown:
+            draft["past_papers"] = []
+            return []
+        draft["past_papers"], problems = pyq.resolve(draft.get("past_papers"), shown)
+        if not draft["past_papers"] and not topic:
+            problems.append("past_papers is empty: cite 1-3 questions from the past-paper list that test this concept, "
+                            "or choose a concept that past papers ask")
+        return problems
+
+    def for_checker(draft: dict) -> str:
+        return "\n".join([plain(draft)] + pyq.source_lines(draft.get("past_papers") or [], shown))
 
     def attempt_round(user_base: str, attempts: int):
         feedback, last, notes, why = "", None, [], ""
         for attempt in range(1, attempts + 1):
             user = user_base + (f"\nYour previous draft was rejected:\n{feedback}\nWrite a corrected note.\n" if feedback else "")
-            draft = tidy(_call_claude(writer_model, system, user, WRITE_TOOL, max_tokens=4000))
+            draft = tidy(_call_claude(writer_model, system, user, WRITE_TOOL, max_tokens=5000))
             last = draft
-            problems = validate(draft)
+            problems = past_papers(draft) + validate(draft)
             if problems:
                 why, feedback, notes = "format", "Format problems: " + "; ".join(problems), [f"Format: {p}" for p in problems]
                 continue
@@ -317,8 +391,8 @@ def write_concept(cfg: Config, course: dict, paper: dict, date: dt.date, recent:
                 why, feedback, notes = "fit", "It doesn't fit the slides: " + "; ".join(problems), [f"Fit: {p}" for p in problems]
                 continue
             # two independent examiners (the checker model and the writer model); both must pass it
-            checks = [call_checker(cfg, check_system, plain(draft), CHECK_TOOL, max_tokens=2500),
-                      call_checker(cfg, check_system, plain(draft), CHECK_TOOL, max_tokens=2500, model=writer_model)]
+            checks = [call_checker(cfg, check_system, for_checker(draft), CHECK_TOOL, max_tokens=2500),
+                      call_checker(cfg, check_system, for_checker(draft), CHECK_TOOL, max_tokens=2500, model=writer_model)]
             notes = [f"Checker {n}: {i}" for n, c in enumerate(checks, 1) for i in c.get("issues", []) if i]
             if not any(c.get("severity") == "major" for c in checks):
                 draft.update(law_sensitive=bool(law_text), attempts=attempt, serious=False,

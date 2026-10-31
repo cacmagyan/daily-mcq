@@ -73,15 +73,20 @@ def build_concept_caption(cfg: Config, item: dict, date: dt.date) -> str:
     handle = cfg.brand.get("handle", "").strip()
     n = int(cfg.instagram.get("max_hashtags", 5))
     tags = ["#ConceptNotes"] + [t for t in course.get("hashtags", []) if t.lower() not in ("#dailymcq", "#conceptnotes")]
-    slide2 = "the formula" if item.get("formulas") else "the summary table"
+    slide2 = ("the formula" if item.get("formulas") else "the journal entries" if item.get("entries")
+              else "the summary table")
+    asked = sorted({t.strip() for p in item.get("past_papers") or [] for t in p.get("papers", "").split("·")[0].split(",")
+                    if t.strip().startswith("PY")})
     lines = [
         f"📒 {course.get('emoji', '')} {course['name']} · Concept of the day".replace("  ", " "),
         f"{item['paper_code']}: {item['paper_name']}",
         f"{item['topic']}",
         "",
         f"In simple words: {_plain(item.get('simple_words'))}",
+        *(["", f"📝 Asked in past papers: {', '.join(asked)}"] if asked else []),
         "",
-        f"Swipe for {slide2}, a memory trick and the mistakes that cost marks.",
+        f"Swipe for {slide2}, a memory trick, the mistakes that cost marks"
+        + (" and the past exam radar." if item.get("past_papers") else "."),
         "Save 🔖 this for revision.",
         *([_cta] if (_cta := _notes_cta(cfg)) else []),
         *([f"Tomorrow's {course['name']} MCQ ({_clock(course['post_time'])}) tests this concept."]
@@ -142,6 +147,9 @@ def concept_alt_texts(item: dict) -> list[str]:
     table = item.get("table") or {}
     for row in table.get("rows") or []:
         parts.append(", ".join(f"{h}: {_plain(c)}" for h, c in zip(table.get("headers") or [], row)))
+    for e in item.get("entries") or []:
+        parts.append(f"Journal entry, {e.get('label', '')}: " + ", ".join(f"{a} debit" for a in e.get("debit") or [])
+                     + ", " + ", ".join(f"to {a}" for a in e.get("credit") or []) + ".")
     insight = item.get("insight") or {}
     two = f"{topic}. " + " ".join(parts) + f" {insight.get('punchline', '')} {_plain(insight.get('text'))}"
     trick = item.get("memory_trick") or {}
@@ -150,5 +158,6 @@ def concept_alt_texts(item: dict) -> list[str]:
              f"Steps: {'; '.join(item.get('steps') or [])}. Exam tip: {_plain(item.get('exam_tip'))} "
              f"Doubt: {doubt.get('question', '')} {_plain(doubt.get('answer'))}")
     four = f"Common mistakes in {topic}: " + " ".join(
-        f"Wrong: {_plain(m.get('wrong'))} Right: {_plain(m.get('right'))}" for m in item.get("mistakes") or [])
+        f"Wrong: {_plain(m.get('wrong'))} Right: {_plain(m.get('right'))}" for m in item.get("mistakes") or []) + "".join(
+        f" Past exam: {p.get('papers', '')}, {_plain(p.get('point'))}." for p in item.get("past_papers") or [])
     return [" ".join(t.split())[:900] for t in (one, two, three, four)]

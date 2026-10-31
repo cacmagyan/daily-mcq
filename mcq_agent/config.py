@@ -86,7 +86,11 @@ class Config:
     def paper_prompt(self, paper: dict) -> str:
         """The paper line for Claude, limited to the half when the paper has a `part`."""
         line = f"{paper['code']}: {paper['name']}"
-        return line + (f" (only the {paper['part']} part of this paper)" if paper.get("part") else "")
+        line += f" (only the {paper['part']} part of this paper)" if paper.get("part") else ""
+        if paper.get("syllabus"):
+            line += (f". Syllabus of this paper: {' '.join(str(paper['syllabus']).split())} "
+                     "Use only topics from this syllabus; anything outside it is wrong for these students")
+        return line
 
     def find_paper(self, course_id: str, code: str, title: str = "") -> dict | None:
         """The paper entry behind an item's paper_code and paper_name (paper_name includes the half, if any)."""

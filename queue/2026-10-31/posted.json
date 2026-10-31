@@ -28,21 +28,5 @@
   "ca_inter:story": {
     "media_id": "18021999080730174",
     "posted_at": "2026-10-31T12:27:12+05:30"
-  },
-  "concept2": {
-    "media_id": "18143764618717110",
-    "permalink": "https://www.instagram.com/p/DfJw1ItHABw/",
-    "image_host": "github_raw",
-    "posted_at": "2026-10-31T14:17:58+05:30"
-  },
-  "concept2:story": {
-    "media_id": "18061769606799188",
-    "posted_at": "2026-10-31T14:18:08+05:30"
-  },
-  "explainer2": {
-    "media_id": "18181132681447022",
-    "permalink": "https://www.instagram.com/reel/DfJ4ugEjX1U/",
-    "video_url": "https://raw.githubusercontent.com/cacmagyan/daily-mcq/de5ea01d369333b35179362f010ff8e8dacda72c/queue/2026-10-31/explainer2.mp4",
-    "posted_at": "2026-10-31T15:27:36+05:30"
   }
 }

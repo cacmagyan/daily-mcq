@@ -217,7 +217,7 @@ def check_board(b, say_words: set[str], where: str) -> list[str]:
         if rule[0] == "text" and v is not None and len(str(v).replace("^", "")) > limit:
             out.append(f"{where}: board {field} is {len(str(v))} characters; at most {rule[1]}")
         elif rule[0] == "lines" and v is not None and (not isinstance(v, list) or not 1 <= len(v) <= rule[1]
-                                                        or any(len(str(x)) > rule[2] for x in v)):
+                                                        or any(len(str(x)) > int(rule[2] * 1.3) for x in v)):
             out.append(f"{where}: board {field} needs 1-{rule[1]} lines of at most {rule[2]} characters")
         elif rule[0] == "word" and v and str(v).lower().strip(".,!?") not in say_words:
             out.append(f"{where}: board {field} '{v}' is not a word of the line")

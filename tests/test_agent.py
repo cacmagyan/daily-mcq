@@ -1601,7 +1601,7 @@ class ExplainerTests(TempQueue):
         buf = io.StringIO()
         with contextlib.redirect_stdout(buf), mock.patch("mcq_agent.__main__.Config", return_value=self.cfg):
             main(["todo", "--date", self.DATE.isoformat()])
-        self.assertEqual(buf.getvalue().strip(), "explainer")
+        self.assertEqual(buf.getvalue().strip(), "concept2,explainer,explainer2")   # 3 Nov: two notes and videos a day
 
     def test_a_failed_drawing_keeps_the_script(self):
         from mcq_agent import explainer as X
@@ -1948,3 +1948,79 @@ class ExplainerMinorFixTests(TempQueue):
         self.assertTrue(out["checked"])
 
     DATE = dt.date(2026, 11, 5)
+
+
+class TwoPerDayTests(TempQueue):
+    """From 1 Nov 2026: three MCQs a day (CA one day, CMA the next), two concept notes and two videos."""
+    CA_DAY, CMA_DAY = dt.date(2026, 11, 1), dt.date(2026, 11, 2)
+
+    def test_mcq_families_alternate(self):
+        self.assertEqual(self.cfg.mcq_course_ids(self.CA_DAY), ["ca_foundation", "ca_inter", "ca_final"])
+        self.assertEqual(self.cfg.mcq_course_ids(self.CMA_DAY), ["cma_cat", "cma_inter", "cma_final"])
+        self.assertEqual(len(self.cfg.mcq_course_ids(dt.date(2026, 10, 31))), 6)     # before the change
+        for k in range(12):                         # both notes every day: one CA course and one CMA course
+            d = self.CA_DAY + dt.timedelta(days=k)
+            a, b = self.cfg.concept_course(d)["id"], self.cfg.concept_course(d, "2")["id"]
+            self.assertNotEqual(a.split("_")[0], b.split("_")[0], d)
+        self.assertEqual(self.cfg.concept_time("2"), "13:40")
+        self.assertEqual(self.cfg.explainer_time("2"), "11:25")
+
+    def _day(self, date):
+        from mcq_agent import explainer as X
+        make_batch(self.tmp, date)                             # an old 6-MCQ batch (prepared ahead)
+        make_concept(self.tmp, date, "cma_cat")
+        c2 = make_concept(self.tmp, date, "ca_foundation", kind="concept2",
+                          images=[f"concept2_{i}.jpg" for i in range(1, 5)])
+        B.save_concept(date, c2, "2")
+        (self.tmp / date.isoformat() / "concept.json").write_text(
+            json.dumps({**B.load_concept(date, "2"), "kind": "concept", "course_id": "cma_cat",
+                        "images": [f"concept_{i}.jpg" for i in range(1, 5)], "topic": "Evening topic"}))
+        for slot, concept in (("", B.load_concept(date)), ("2", B.load_concept(date, "2"))):
+            (self.tmp / date.isoformat() / f"explainer{slot}.mp4").write_bytes(b"0" * 20000)
+            X.save(date, {"kind": "explainer" + slot, "course_id": concept["course_id"], "paper_code": "P",
+                          "paper_name": "N", "topic": concept["topic"], "concept_topic": concept["topic"],
+                          "video": f"explainer{slot}.mp4", "cover": "c.jpg", "seconds": 50, "thumb_ms": 1000,
+                          "caption": f"video {slot or 1}", "hold": False}, slot)
+
+    def _publish(self, date, at):
+        with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "t", "IG_USER_ID": "1"}), \
+             mock.patch("mcq_agent.instagram.Instagram.find_by_ref", return_value=None), \
+             mock.patch("mcq_agent.instagram.Instagram.post_carousel", return_value={"media_id": "m", "permalink": "p"}) as car, \
+             mock.patch("mcq_agent.instagram.Instagram.post_reel", return_value={"media_id": "r", "permalink": "pr"}) as reel, \
+             mock.patch("mcq_agent.instagram.Instagram.post_story", return_value={"media_id": "s"}), \
+             mock.patch("mcq_agent.hosting.urls_for", return_value=(["u1", "u2"], "test")), \
+             mock.patch("mcq_agent.hosting.video_urls", side_effect=lambda p, c: [f"https://v/{p.name}"]):
+            P.publish_due(self.cfg, date, at, limit=20)
+        return car, reel
+
+    def test_a_ca_day_posts_three_ca_mcqs_two_notes_and_two_videos(self):
+        self._day(self.CA_DAY)
+        car, reel = self._publish(self.CA_DAY, dt.time(11, 30))
+        posted = B.load_posted(self.CA_DAY)
+        self.assertIn("ca_foundation", posted)
+        self.assertNotIn("cma_cat", posted)                    # 09:55 is a CMA time: not today
+        self.assertIn("explainer2", posted)                    # 11:25 video
+        self.assertEqual(reel.call_args.args[0], ["https://v/explainer2.mp4"])
+        self._publish(self.CA_DAY, dt.time(23, 0))
+        posted = B.load_posted(self.CA_DAY)
+        self.assertEqual(sorted(k for k in posted if ":" not in k),
+                         sorted(["ca_foundation", "ca_inter", "ca_final", "concept", "concept2", "explainer", "explainer2"]))
+        from mcq_agent.review import report
+        text = report(self.cfg, self.CA_DAY, "me/r")
+        self.assertNotIn("CMA CAT |", text.split("## All MCQs")[0].replace("Concept (CMA CAT)", "").replace("Explainer (CMA CAT)", ""))
+        self.assertIn("13:40", text)
+        self.assertIn("11:25", text)
+
+    def test_second_note_has_its_own_ref_pdf_and_dm(self):
+        from mcq_agent import replies as R
+        from mcq_agent.caption import build_concept_caption
+        self._day(self.CA_DAY)
+        c2 = B.load_concept(self.CA_DAY, "2")
+        self.assertIn("ref concept2-261101", build_concept_caption(self.cfg, c2, self.CA_DAY))
+        self.assertTrue(str(R.concept_pdf(self.CA_DAY, "2")).endswith("concept2.pdf"))
+        self.assertEqual(R._post_date("x\nref explainer2-261101"), ("explainer2", self.CA_DAY))
+
+    def test_todo_and_commands_know_the_second_slot(self):
+        from mcq_agent.__main__ import parse_command
+        self.assertEqual(parse_command("/regen concept2 another topic", self.cfg), ("regen", "concept2", "another topic"))
+        self.assertEqual(parse_command("/hold explainer2", self.cfg)[1], "explainer2")

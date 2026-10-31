@@ -1,0 +1,3356 @@
+{
+ "source": "Triple I Commerce Academy question bank, Edition July 26",
+ "course": "cma_inter",
+ "paper_code": "Paper 11",
+ "paper_name": "Financial Management and Business Data Analytics",
+ "questions": [
+  {
+   "q": 1,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Introduction To Financial Management",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following is the main objective of financial management? (a) Revenue Maximisation (c) Wealth Maximisation (b) Profit Maximisation (d) Cost Minimisation",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 2,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Introduction To Financial Management",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which one of the following activities is outside the purview of financing decision in financial management? (a) Identification of the source of funds (b) Measurement of the cost of funds (c) Deciding on the time of raising the funds (d) Deciding on utilization of the funds",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 12,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Introduction To Financial Management",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "What is Wealth Maximisation as the Objective of Financial Management? Why is profit maximization, not an operationally feasible criterion? State briefly Interrelationship between Investment, Financing and Dividend Decisions. BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 23,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Time Value Of Money",
+   "papers": [
+    "PY D19"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Capital Budgeting techniques which considers the time value of money is based on (a) Cash Flows of the organization (b) Accounting Profit of the organization (c) Interest Rate on Borrowings (d) Last Dividend Paid BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 24,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Time Value Of Money",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "What will be the present value of a perpetuity of 10,000 payable at the beginning of each period and growing @ 5% p.a. and the interest rate is 10% p.a.? (a) 2,00,000 (c) 2,20,000 (b) 2,10,000 (d) 2,30,000",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 25,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Time Value Of Money",
+   "papers": [
+    "PY D23 SY22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "___________is annual growth of Investment over a specific period of time. (a) Perpetuity (b) CAGR (c) Annuity (d) None of the above",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 26,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Time Value Of Money",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "If annual effective rate of interest is 10.25% per annum and nominal rate of return is 10% per annum what is the frequency of compounding? (a) 1 (b) 3 (c) 2 (d) 4",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 61,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Risk And Return",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Efficient portfolios are those portfolios, which offer (for a given level of risk) (a) maximum return (c) average return (b) minimum return (d) positive return",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 63,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Risk And Return",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Compute the beta of Security X from the following information: σ= Standard Deviation of Security X 15% σ = Standard Deviation of Market Portfolio 12% rXM=Regression Coefficient between returns of 0.80 Security X and Market Portfolio (a) 1.00 (c) 0.80 (b) 1.25 (d) 1.50",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 64,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Risk And Return",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "β (Beta) of a security measure its (a) Divisible Risk (c) Market Risk (b) Financial Risk (d) None of the above",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 65,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Risk And Return",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Relationship between annual effective rate of interest and annual nominal rate of interest is, if frequency of compounding is more than 1, (a) Effective Rate < Nominal rate (b) Effective Rate > Nominal rate (c) Effective Rate = Nominal rate (d) none of the above",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 99,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Risk And Return",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "2",
+   "kind": "practical",
+   "text": "Correlation Coefficient of Portfolio with market 0.8, Variance of Market Portfolio is 4/9th of Variance of Security, Cost of Equity 20%, Average Return on Market Portfolio 17.5%. Calculate the Risk- Free Rate of Interest on Govt. Treasury Bonds.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 100,
+   "chapter": 1,
+   "chapter_title": "Fundamentals Of Financial Management",
+   "section": "Risk And Return",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "Prepare a list of different types of systematic risks. BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 3,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Financial Institutions",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "OASIS committee has given recommendations in the area of ___________. (a) Pension Policy (b) Hedge Funds (c) Private Equity Funds (d) Venture Capital",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 4,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Financial Institutions",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following forms of equity financing is especially designed for funding High Risk & High Reward projects? (a) ADR (b) GDR (c) FCCB (d) Venture Capital",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 5,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Financial Institutions",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "“Shareholders’ wealth” in a firm is reflected by (a) the number of people employed in the firm. (b) the book value of the firm’s all assets less the book value of its all liabilities. (c) the amount of salary paid to its employees. (d) the market price per share of the firm",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 34,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Financial Institutions",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "Explain the regulatory role of RBI",
+   "part": "Financial Management"
+  },
+  {
+   "q": 43,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Financial Institutions",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "practical",
+   "text": "i) List any four Alternative Investment Funds (AIF) ii) Four Credit Rating Agencies in India. iii) List any six Money Market Instruments Traded iv) List any four features of Treasury bills v) How is Yield on Treasury Bills calculated? i) Global Depository Receipts (GDRs) ii) Deep Discount Bonds (DDBs)",
+   "part": "Financial Management"
+  },
+  {
+   "q": 58,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Capital Marcket",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "During the Book Building process, if the floor of the Price Band is 150 then the cap of the Price Band can at maximum be (a) 175 (c) 200 (b) 180 (d) 225 BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 91,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Capital Marcket",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "Make differences between Primary and Secondary Market",
+   "part": "Financial Management"
+  },
+  {
+   "q": 111,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Capital Marcket",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "5",
+   "kind": "practical",
+   "text": "How are primary market and secondary market related to each other BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 119,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Money Market",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The RBI offers 91 Days Treasury Bills. X makes a bid at 98.93. Calculate the Yield to Price at the bid made by X. (a) 4.3382% (c) 1.0700% (b) 4.2918% (d) 1.0816%",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 120,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Money Market",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "A process through which loans and other receivables are underwritten and sold in a form of asset is known as: (a) Factoring (c) Securitizations (b) Forfeiting (d) Bill Discounting",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 121,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Money Market",
+   "papers": [
+    "MQP J23 S2",
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Short selling refers to (a) Buying shares and then selling them on the same day (b) Selling shares without owning them (c) Selling some shares out of a large holding (d) Continuously selling shares in lots",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 122,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Money Market",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Secondary Market in India is regulated by: (a) Reserve Bank of India (b) Securities and Exchange Board of India (c) Ministry of Finance (d) Forward Market Commission",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 134,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Money Market",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "What is Certificate of Deposits? State its features",
+   "part": "Financial Management"
+  },
+  {
+   "q": 137,
+   "chapter": 2,
+   "chapter_title": "Institutions And Instruments In Financial Markets",
+   "section": "Money Market",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "Discuss different types of Money Market Instruments?",
+   "part": "Financial Management"
+  },
+  {
+   "q": 15,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Comparative, Common-Size Financial",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Prepare a Common Size Income Statement from the following figures extracted from the Statement of Profit and Loss of XYZ Ltd. and offer your comments on its profitability position. BUSINESS DATA ANALYTICS Particulars 2021-22 2022-23 (₹) (₹) Net Sales 5,25,000 6,75,000 Less: Cost of Goods sold 2,85,000 3,22,500 Gross profit 2,40,000 3,52,500 Less: Operating Expenses 75,000 1,08,000 Operating profit 1,65,000 2,44,500 Less: Interest on debentures 30,000 25,500 Profit before Tax 1,35,000 2,19,000",
+   "part": "Financial Management"
+  },
+  {
+   "q": 16,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Comparative, Common-Size Financial",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Presented below are revenue and expense data for the XYZ Company: 2022 (₹) 2021 (₹) Sales 8,16,000 6,56,500 Sales returns and allowances 16,000 6,500 Cost of goods sold 4,00,000 3,12,000 Selling Expenses 2,00,000 1,30,000 General Expenses 1,20,000 78,000 Miscellaneous Income 6,400 6,500 Income Tax 32,000 67,600 You are required to prepare a comparative statement for the year 2022 and 2021 for the company and also comment on the relationships revealed in the comparative income statement.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 17,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Comparative, Common-Size Financial",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "The following data relate to some important items of a company disclosing its development during the last five years: 2018 (₹) 2022 (₹) Working Capital 2,33,53,010 3,82,50,955 Plant and Equipment 99,78,420 2,41,76,835 Long – Term Debts 72,80,000 1,40,00,000 Net Tangible Assets 2,80,80,230 4,98,76,090 By computing the trend ratios, evaluate the changes in the financial position (soundness / weakness) of the company. BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 23,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "In Net Profit Ratio, the denominator is: (a) Net Purchases (c) Credit Sales (b) Net Sales (d) Cost of goods sold",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 30,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY D17",
+    "PY D18"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following does not help to increase Current Ratio? (a) Issue of Debentures to buy Stock (b) Issue of Debentures to pay Creditors (c) Sale of Investment to pay Creditors (d) Avail Bank Overdraft to buy Machine.",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 35,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J17",
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "A firm has Capital of ₹ 10,00,000; Sales of ₹ 5,00,000; Gross Profit of ₹ 2,00,000 and Expenses of ₹ 1,00,000. What is the Net Profit Ratio? (a) 20% (c) 10% (b) 50% (d) 40%",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 40,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY D17"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following statements is correct? (a) A Higher Receivable Turnover is not desirable (b) Interest Coverage Ratio depends upon Tax Rate (c) Increase in Net Profit Ratio means increase in Sales (d) Lower Debt-Equity Ratio means lower Financial Risk.",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 45,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Ratio Analysis can be used to study liquidity, turnover, profitability, etc. of a firm. What does Debt-Equity Ratio help to study? (a) Solvency (c) Profitability (b) Liquidity (d) Turnover",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 47,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY D17",
+    "MQP J23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The excess of Current Assets over Current Liabilities is called: (a) Net Current Assets (c) Working Capital (b) Net Working Capital (d) All of the above BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 48,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J18"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following is a Profitability Ratio? (a) Proprietary Ratio (b) Debt-Equity Ratio (c) Price-Earnings Ratio (d) Fixed Asset Ratio",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 49,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J18",
+    "MQP J23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The 'Dividend-Payout Ratio' is equal to (a) The Dividend yield plus the capital gains yield (b) Dividends per share divided by Earning per Equity Share (c) Dividends per share divided by par value per share (d) Dividends per share divided by current price per share",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 50,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "From the given information, calculate Altman's Z score. Current Assets ₹10,00,000 Current Liabilities ₹2,00,000 EBIT ₹1,00,000 Sales ₹4,00,000 Retained Earnings ₹2,00,000 Total Assets ₹20,00,000 Total Debts ₹5,00,000 Market Value of Equity ₹25,00,000 (a) 4.125 (b) 3.985 (c) 3.725 (d) 3.125",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 51,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J23 SY22",
+    "PY J23 SY16"
+   ],
+   "marks": "6",
+   "kind": "mcq",
+   "text": "Funds required 10,00,000 to be arranged by the issue of 30% Equity Shares of 10 each to be issued at 20, 60% in 10% Debt and Balance by 15% Preference Shares, Tax Rate: 25%. Return on Investment (ROI) is 30%. Return on Equity Shareholders Funds (ROE) will be (a) 46.875% (b) 47.50% (c) 55% (d) 60%",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 52,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "ROI (Return on Investment) can be decomposed into the following ratios: (a) Overall Turnover Ratio and Current Ratio (b) Net Profit Ratio and Fixed Assets Turnover (c) Working Capital Turnover Ratio and Net Profit Ratio BUSINESS DATA ANALYTICS (d) Net Profit Ratio and Total Assets Turnover Ratio",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 53,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The signs of large inventory build-up in anticipation of price increase in future can be best diagnosed from ___________. (a) Asset turnover ratio (b) Working Capital turnover ratio (c) Inventory turnover ratio (d) Current Ratio",
+   "part": "Financial Management"
+  },
+  {
+   "q": 54,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "If the average receivables are ₹3,25,000, the cash sales are ₹2,50,000 and the average collection period is 2 months, then the amount of sales is: (a) 20,00,000 (b) 22,00,000 (c) 19,50,000 (d) 21,50,000",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 55,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The Piotroski F Score which measures a stock's financial condition is based on: (a) Binary scoring system based on nine parameters. (b) A scaled scoring system based on nine parameters. (c) Binary scoring system based on ten parameters. (d) A scaled scoring system based on ten parameters",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 56,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following does not change Current Ratio? (a) Issue of Debentures to buy machinery (b) Issue of Debentures to pay Creditors (c) Sale of Investment to pay Creditors (d) Avail Bank Overdraft to buy Machine",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 57,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following is a Yield Ratio? (a) Proprietary Ratio (b) Debt-Equity Ratio (c) Price-Earnings Ratio (d) Fixed Asset Ratio BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 58,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "ABC Ltd. has a Current Ratio of 1.5: 1 and Net Current Assets of ₹ 5,00,000. What are the Current Assets? (a) ₹5,00,000 (c) ₹15,00,000 (b) ₹10,00,000 (d) ₹25,00,000",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 59,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "XYZ Ltd. has earned 8% Return on Total Assets of ₹ 50,00,000 and has a Net Profit Ratio of 5%. Find out the Sales of the firm. (a) ₹ 4,00,000 (c) ₹ 80,00,000 (b) ₹ 2,50,000 (d) ₹ 83,33,333.",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 60,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Return on Assets and Return on Investment Ratios belong to: (a) Liquidity Ratios (c) Solvency Ratios (b) Profitability Ratios (d) Turnover",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 61,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Net Profit Ratio signifies: (a) Operational Profitability (c) Big-term Solvency (b) Liquidity Position (d) Profit for Lenders",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 62,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "In Inventory Turnover calculation, what is taken in the numerator? (a) Sales (c) Opening Stock (b) Cost of Goods Sold (d) Closing Stock",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 99,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP D23"
+   ],
+   "marks": "7",
+   "kind": "mcq",
+   "text": "The following are the ratios relating to the activities of X Ltd. Debtors’ velocity (months) 3 Stock velocity (months) 8 Creditors’ velocity (months) 2 Gross profit ratio (%) 25 Gross profit for the current year ended December, 31st, 2021 amounts to ₹4,00,000. Closing stock of the year is ₹ 10,000 above the opening stock. Bills receivables amount to ₹25,000 and bills payable to ₹10,000. Find out (a) Sales, (b) Sundry debtor (C) Closing Stock, and (d) Sundry Creditors.",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 101,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J17"
+   ],
+   "marks": "8",
+   "kind": "mcq",
+   "text": "From the following information, prepare Statement of Assets and Liabilities as on 31st March, 2017: a summarized (a) Working Capital ₹1,20,000 (b) Reserves & Surplus ₹80,000 (c) Bank Overdraft ₹20,000 (d) Proprietary Ratio 0.75 (e) Current Ratio 2.50 (f) Liquid Ratio 1.50 Your workings should form a part of your answer.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 102,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J18"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "The following is the summary of Financial Ratios and form of a TEXTILE COMPANY having a sale of ₹ 32 lakh. Sales to net worth (times) 2.3 Current debt to net worth (%) 42 Total debt to net worth (%) 75 Current ratio (times) 2.9 Net sales to inventory (times) 4.7 Fixed assets to net worth (%) 53.2 Proforma Balance Sheet Net worth --- Fixed assets --- Long-term debt --- Cash --- Current debt --- Stock --- Sundry debtors 568889 --- --- You are required to Complete the Proforma Balance Sheet",
+   "part": "Financial Management"
+  },
+  {
+   "q": 103,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J18"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Write short notes on the following: (a) Debtors Turnover Ratio (b) Advantages of Ratio Analysis",
+   "part": "Financial Management"
+  },
+  {
+   "q": 104,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY D18"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "Complete the Balance Sheet in the table below for TANISH LTD. using the following financial data: BUSINESS DATA ANALYTICS (i) Total Debt to Net Worth = 1:2 (ii) Total Assets Turnover = 2 (iii) Gross Profit on Sales = 30% (iv) Average Collection Period (Assume 360 days in a year) = 40 days (v) Inventory Turnover Ratio on Cost of Goods Sold and year-end inventory = 3 (vi) Acid Test Ratio = 0.75 Balance Sheet as on 31st March 2018 Liabilities Rs. Assets Rs. Equity Share Capital 4,00,000 Planet & Machinery & ----- Other Fixed Assets Reserves and Surplus 6,00,000 Total Debt: Current Assets: Current Liabilities ------- Inventory ---- Debtors ---- Cash ---- Total ------- Total ---- Assume that ther",
+   "part": "Financial Management"
+  },
+  {
+   "q": 105,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "",
+   "kind": "practical",
+   "text": ". [6 Marks] The Balance Sheet of VASUDHA LTD. as on March 31, 2019 is as given below: (Amount in ₹ lakhs) Equity and Liabilities Amount Assets Amount Equity Share Capital 250 Fixed Assets 400 General Reserve 280 Investment 50 Profit & Loss a/c 30 Stock 460 (Current year) Secured Loans—Long 300 Debtors 460 Term Secured Loans—Short 360 Cash and cash Term equivalents 10 Creditors 150 Miscellaneous 20 Expenditure (not Written off) Other Liabilities 30 1,400 1,400 Additional information: (i) From the P&L A/c, ₹ 90 Lakhs was transferred to General Reserve during the year (ii) Interest Cost amounted to ₹ 120 lakhs (iii) Taxation @ 40% You are required to calculate (i) Current Ratio (ii) Debt-Equity",
+   "part": "Financial Management"
+  },
+  {
+   "q": 106,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY D19"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "With the help of the following information, complete the Balance Sheet of MENWOOD LTD. as at 31st March, 2019. Equity share capital ₹1,00,000 The relevant ratios of the company are as follows: Current debt to total debt 0.40 Total debt to owner’s equity (Equity Shares Capital) 0.60 Fixed assets to owner’s equity (Equity Shares Capital) 0.60 Total assets turnover 2 Times Inventory turnover 8 Times",
+   "part": "Financial Management"
+  },
+  {
+   "q": 107,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY D22"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "VRP provides you with the following information: Operating Profit (before tax) Ratio 50% Capital Turnover Ratio 2 times 15% Debt-Shareholders' Funds Ratio 2:1 Capital Gearing Ratio 3:1 18% Preference Share Capital ? Tax Rate 30% Calculate Return on Equity Shareholders' Funds",
+   "part": "Financial Management"
+  },
+  {
+   "q": 108,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "3",
+   "kind": "practical",
+   "text": "Current Ratio 8:5, Quick Ratio 6:5, Inventory Velocity 4 months, Gross Profit @33 1/3 % on Cost was₹ 10,00,000, Inventory at the end was 3 times more than that in the beginning. Calculate Working Capital Turnover Ratio.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 109,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "practical",
+   "text": "10% Debt-Equity Ratio 2:1, Net Profit (after Tax) Ratio 16.8%, Operating Profit Ratio 30%, Operating Expenses Ratio 10%, Inventory Velocity 1 month, Tax Rate 30%, Land & Building ₹ 6,75,000, Plant & Machinery ₹ 6,00,000, Capital Work-in-Progress ₹ 3,00,000. Inventory (including Raw Materials₹ 15,000, Work-in-Progress ₹ 20,000 and Stores and Spares ₹ 5,000) ₹ 1,40,000. Trade Receivables ₹ 2,20,000, Provision for doubtful debts ₹ 20,000. Credit Sales are ₹ 2,00,000 more than Cash Sales. Calculate Interest Coverage Ratio, Trade Receivables Turnover Ratio and Return on Investment.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 110,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "M Ltd. provides you the following information: Current Ratio 2.5 BUSINESS DATA ANALYTICS Liquid Ratio 1.5 Proprietary Ratio (Fixed Assets/Proprietors' Funds) 0.75 Working Capital ₹60,000 Reserves and Surplus ₹40,000 Bank Overdraft ₹10,000 There is no long-term loan or fictitious assets. Similarly, there is no prepaid expenses and bank overdraft. Calculate Current Assets, Current Liabilities and value of Stock.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 111,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "10",
+   "kind": "practical",
+   "text": "Using the following data, find as many items as possible to prepare the Balance Sheet as at the end of the year: Gross profits ₹ 5,40,000 Shareholders’ Funds ₹ 40,00,000 Gross Profit Margin 30% Credit Sales to Total Sales 80% Total Assets Turnover Ratio (based on Sales Value) 0.3 times Inventory Turnover Ratio (Based on cost) 4 times Average collection period (360 days in a year) 20 days Current ratio 1.8 Long-term Debt to Equity 40%",
+   "part": "Financial Management"
+  },
+  {
+   "q": 112,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "From the information given below relating to Distress Ltd., Calculate Altman’s Z- score and comment: (i) Working Capital to Total Assets = 30% (ii) Retained Earnings to Total Assets = 40% (iii) EBIT to Total Assets = 25% (iv) Market Value of Equity Shares to Book Value of Total Debt = 130% (v) Sales to Total Assets = 1.5 times",
+   "part": "Financial Management"
+  },
+  {
+   "q": 113,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Financial Ratio Analysis",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "From the following details, prepare statement of proprietary Funds with as many details as possible: a. Stock velocity 6 b. Capital Turnover ratio (on cost of sales) 2 c. Fixed Assets Turnover ratio (on cost of sales) 4 d. Debtors velocity 2 months e. Gross profit turnover ratio 20% f. Creditors velocity 73days The gross profit was ₹60,000. Reserves and surplus amounts to ₹20,000. Closing stock was ₹5,000 in excess of opening stock. BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 120,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Fund Flow            Statement-Preparation               And",
+   "papers": [
+    "PY J17"
+   ],
+   "marks": "",
+   "kind": "practical",
+   "text": "From the Balance Sheet of X Ltd., prepare: (A) Statement of changes in the Working Capital and (B) Funds Flow Statement. Balance Sheet Liabilities Amount (₹) Assets Amount (₹.) 2023 (₹) 2024 (₹) 2023 (₹) 2024 (₹) Equity Share 3,00,000 4,00,000 Goodwill 1,15,000 90,000 Capital: 8% Preference 1,50,000 1,00,000 Land& 2,00,000 1,70,000 share capital Buildings P & L A/c 30,000 48,000 Plant 80,000 2,00,000 General 40,000 70,000 Debtors 1,60,000 2,00,000 Reserve Proposed 42,000 50,000 Stock 77,000 1,09,000 Dividend Creditors 55,000 83,000 Bills 20,000 30,000 Receivable Bills payable 20,000 16,000 Cash in 15,000 10,000 hand BUSINESS DATA ANALYTICS Provision for 40,000 50,000 Cash at 10,000 8,000 Tax",
+   "part": "Financial Management"
+  },
+  {
+   "q": 122,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Fund Flow            Statement-Preparation               And",
+   "papers": [
+    "PY D17"
+   ],
+   "marks": "4",
+   "kind": "practical",
+   "text": "From the following information prepare a statement of Proprietors’ Funds: (i) Current Ratio = 2. 5:1 (ii) Fixed Assets/Proprietors Funds = 0. 75 (iii) Liquid Ratio = 1.5 : 1 (iv) Bank Overdraft = ₹ 10,000 (v) Reserves and Surplus = ₹ 80,000 (vi) Working Capital = ₹ 1,20,000",
+   "part": "Financial Management"
+  },
+  {
+   "q": 123,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Fund Flow            Statement-Preparation               And",
+   "papers": [
+    "PY D17"
+   ],
+   "marks": "8",
+   "kind": "practical",
+   "text": "Prepare a schedule of Changes in Working Capital and a Fund Flow Statement from the following information relating to XYZ Co. Ltd. (Amount in ₹) Liabilities 31.03.2016 31.03.2017 Assets 31.03.2016 31.03.2017 Equity Share 2,00,000 3,00,000 Land 2,00,000 2,00,000 Capital Share Premium — 10,000 Plant at cost 2,08,000 2,00,000 General Reserve 1,00,000 1,20,000 Furniture at 14,000 18,000 cost Profit and Loss 20,000 34,000 Investments 1,20,000 1,60,000 Account 6% Debentures 1,40,000 1,00,000 Debtors 60,000 1,40,000 Provision for 10,000 12,000 Stock 1,20,000 1,30,000 Depreciation on Furniture Provision for 1,00,000 1,12,000 Cash 60,000 90,000 Depreciation on Plant Provision for 40,000 60,000 Taxati",
+   "part": "Financial Management"
+  },
+  {
+   "q": 124,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Fund Flow            Statement-Preparation               And",
+   "papers": [
+    "PY J18"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "INDOGROWTH LTD provides the following data: Comparative trial balance March 31, 2018 March 31, 2017 Increase (decrease) Debit Balance ₹ ₹ ₹ Working capital 2,00,000 1,00,000 1,00,000 Investments 1,00,000 1,50,000 (50,000) Building & 5,00,000 4,00,000 1,00,000 Equipment Land 40,000 50,000 (10,000) 8,40,000 7,00,000 1,40,000 Credit Balance Accumulated 2,00,000 1,60,000 40,000 depreciation Bonds 1,00,000 50,000 50,000 Reserves 3,40,000 3,40,000 --- Equity shares 2,00,000 1,50,000 50,000 8,40,000 7,00,000 1,40,000 Income statement for the period ending March 31, 2018 Particulars Amount (₹) Amount (₹) Sales 10,00,000 Cost of goods sold 5,00,000 5,00,000 Selling expenses 50,000 Administrative expe",
+   "part": "Financial Management"
+  },
+  {
+   "q": 125,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Fund Flow            Statement-Preparation               And",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "4",
+   "kind": "theory",
+   "text": "Write short notes of the following: Significance of Funds Flow Statement (FFS)",
+   "part": "Financial Management"
+  },
+  {
+   "q": 126,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Fund Flow            Statement-Preparation               And",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "The following information is provided by K Ltd. regarding its Retained earnings: Particulars ₹ ₹ Balance of retained earnings, 1st April 2022 3,25,600 Add: Net Profit after taxes 6,48,480 Tax Refund 25,470 9,99,550 Less: Loss on Sale of Plant and Machinery 14,460 Goodwill written off 95,370 Dividends paid 4,70,350 5,80,180 Balance of retained earnings, 31st March 2023 4,19,370 Additional Information: (i) Plant and machinery having a written down value of ₹54,360 was sold in October, 2022. (ii) Depreciation of ₹68,250 has been deducted while arriving at net profit for the year. (iii) Plant and machinery were purchased during the year at a cost of ₹1,60,000 but the payment was made in the form",
+   "part": "Financial Management"
+  },
+  {
+   "q": 127,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Fund Flow            Statement-Preparation               And",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "The Balance Sheets of A, B, & C Co. Ltd. as at the end of 2021 and 2022 are given below: Liabilities 2021 (₹) 2022 (₹) Assets 2021 (₹) 2022 (₹) Share Capital 1,00,000 1,50,000 Freehold land 1,00,000 1,00,000 Share premium 5,000 Plant at cost 1,04,000 1,00,000 General Reserve 50,000 60,000 Furniture at 7,000 9,000 BUSINESS DATA ANALYTICS cost Profit & Loss 10,000 17,000 Investments 60,000 80,000 Account 6% Debentures 70,000 50,000 Debtors 30,000 70,000 Provision for 50,000 56,000 Stock 60,000 65,000 Depreciation on Plant Provision for 5,000 6,000 Cash 30,000 45,000 Dep. on Furniture Provision for 20,000 30,000 taxation Sundry 86,000 95,000 Creditors 3,91,000 4,69,000 3,91,000 4,69,000 A Plant",
+   "part": "Financial Management"
+  },
+  {
+   "q": 129,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "All listed companies are required to prepare (a) Funds Flow statement (c) Statement of Affairs (b) Cash Flow Statement (d) All of the above",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 130,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "PY D22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "In Cash Budget, Interest on Fixed Deposits made in a Bank with a maturity period of 3 years is (a) Cash Flows from Operating Activity (b) Cash Flows from Financing Activity (c) Cash Flows from Investing Activity (d) None of the above",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 131,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "PJ Ltd. purchased a Machine on 01.10.2021 for 20,80,000 payable as to 25% by a cheque and 50% of the balance by an issue of 14% Preference Shares of 500 each at a premium of 20 per share and the remaining by an issue of 12% Debentures of 500 each at a premium of 4%. Unpaid interest on these debentures and Unpaid Preference Dividend on 31st March 2022 amounted to 5,000 and 2,500 respectively. Calculate Cash flow from Financing Activities for Cash Flow Statement as per AS-3. (a) (1,87,800) (c) (93,900) (b) (1,80,000) (d) (90,000)",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 132,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Interest from Fixed Deposits in Banks is shown as (a) Cash Flows from Operating Activities (b) Cash Flows from Investing Activities (c) Cash Flows from Financing Activities (d) None of the above",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 154,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "Write short notes on funds flow statement and cash flow statement",
+   "part": "Financial Management"
+  },
+  {
+   "q": 161,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "PY D18"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "VEDIKA LTD. gives you the following information for the year ended 31 March, 2018: (i) Sales for the year totaled 96,00,000. The company sells goods for cash only. BUSINESS DATA ANALYTICS (ii) Cost of goods sold was 60% of sales. Closing inventory was higher than opening Inventory by 20,000. (iii) Tax paid amounted to 7,00,000. Other expenses totaled 21,45,000. Outstanding expenses on 31 March, 2017 and 31 March, 2018 totalled 82,000 and ₹ 91,000 respectively. (iv) New machinery and furniture costing 10,50,000 in all were purchased. One equipment was sold for 20,000. (v) A right issue was made of 50,000 shares of ₹ 10 each at a premium of 3 per share. The entire money was received with appli",
+   "part": "Financial Management"
+  },
+  {
+   "q": 162,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "The following are the financial statement of KODIAC LTD. for the year ended March 31. Balance Sheet as on March 31, (Amount in ₹ Thousand) 2019 2018 2019 2018 Equity & Assets Liabilities Share Capital 5,000 5,000 Fixed Assets 10,500 8,500 Profit & Loss A/c 5,000 4,250 Stock 3,000 3,400 Long-term Loan 5,500 5000 Debtors 3,450 3,800 Creditors 1,800 1,750 Cash and cash 350 300 equivalents 17,300 16,000 17,300 16,000 Income Statement for the year ended 31.3.2019 (Amount in ₹ Thousand) Sales 21500 Less: Cost of sales (14,700) Less: Operating Expenses: 6,800 Administrative Expenses (2,400) Depreciation (1,000) 3,400 Add: Dividend Received 250 3,650 Less: Interest Paid (700) 2,950 Less: Income Tax ",
+   "part": "Financial Management"
+  },
+  {
+   "q": 163,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "PY D19"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "SHELLICOLA (IND) LTD. has furnished the following information for the year ended 31st march, 2019 (₹ in Lakhs) Net profit 35,500 Dividend (including interim dividend paid) 10,000 Provision for Income Tax 7,500 Income Tax paid during the year 6,300 Loss on sale of assets (net) 60 Book value of assets sold 250 Depreciation charged to P&L Account 30,000 Profit on Sale of investments 150 Value of investments sold 40,650 Interest expenses (due during the year) 15,000 Interest paid during the year 15,780 Increase in working capital (excluding cash and 84,100 bank balance) Purchase of fixed assets 840 Opening cash and bank balances 1,032.50 Closing cash and bank balances 12,912.50 You are required ",
+   "part": "Financial Management"
+  },
+  {
+   "q": 164,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "9",
+   "kind": "practical",
+   "text": "From the following relevant extracts of the Balance Sheets of Oreo Ltd., calculate Cash Flow from Financing Activities to be disclosed in the Cash Flow Statement as per AS-3 issued by ICAI Particulars 31/03/2023(in ₹) 31/03/2022 (in ₹) Equity Share Capital 10,55,000 6,00,000 (Shares of 10 each) 5% Pref. Share Capital 2,00,000 4,00,000 (Shares of 100 each) General Reserve 1,40,000 4,40,000 Profit and Loss A/c 6,42,000 (13,000) Securities Premium 52,500 20,000 BUSINESS DATA ANALYTICS Capital Redemption Reserve - 1,50,000 Non-Current Liabilities 2,75,000 1,50,000 (12% Debentures) Current Liabilities: Outstanding Interest on 10,000 - Debentures Outstanding Underwriting 5,000 Commission Unclaimed",
+   "part": "Financial Management"
+  },
+  {
+   "q": 165,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "5",
+   "kind": "practical",
+   "text": "Identify whether the following items are inflows or outflows and place them under appropriate categories in the cash flow statement under Ind AS 7 Item Description Inflow Outflow Category Normal income tax refund Proceeds of a share issue Interest received by a financial enterprise Decrease in debtors Dividend received by a manufacturing company BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 166,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "9",
+   "kind": "mcq",
+   "text": "The following information has been provided by XYZ Ltd. Balance Sheet of XYZ Ltd. Particulars Note As on As on No. 31.03.2021 31.03.2020 I Equity and Liabilities 1. Shareholders’ fund (a) Share Capital 18,40,000 18,40,000 (b) Reserves and Surplus 1 6,64,000 6,08,000 2. Share application money Nil Nil pending allotment 3. Non-Current Liability (a) Long Term Borrowings 5,60,000 7,20,000 (10% Debentures) 4. Current Liabilities (a) Trade Payables 7,68,000 8,24,000 (b) Short term Provisions 96,000 1,04,000 (Provision for Tax) Total 39,28,000 40,96,000 II Assets 1. Non-current Assets (a) Fixed Assets (i) Tangible Assets 2 14,08,000 12,96,000 (a) Non-current Investment 5,92,000 8,80,000 2. Current ",
+   "part": "Financial Management"
+  },
+  {
+   "q": 167,
+   "chapter": 3,
+   "chapter_title": "Tools For Financial Analysis",
+   "section": "Cash Flow Statement – Preparation And",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Following information is available from the books of Standard Company Ltd. Particulars 2021 (₹) 2022 (₹) Profit made during the year -- 2,50,000 Income received in advance 500 600 Prepaid expenses 1,600 1,400 Debtors 80,000 95,000 Bills Receivable 25,000 20,000 Creditors 45,000 40,000 Bills Payable Outstanding expenses 13,000 15,000 Accrued Income 2,500 2,000 1,500 1,200 Calculate cash flow from operation BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 3,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Source Of Finance",
+   "papers": [
+    "PY D19"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Debt financing is a cheaper source of finance because of: (a) Time Value of Money (b) Rate of Interest (c) Tax-deductibility of Interest (d) Dividends not Payable to lenders",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 6,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Source Of Finance",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following is not a source of fund? (a) Issue of Capital (b) Issue of Debenture (c) Decrease in Working Capital (d) Increase in Working Capital BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 34,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Source Of Finance",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "4",
+   "kind": "theory",
+   "text": "Write short notes on Lease Financing",
+   "part": "Financial Management"
+  },
+  {
+   "q": 35,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Source Of Finance",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "State only one basic difference between the following: Factoring and Forfaiting BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 36,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Cost of capital refers to: (a) Flotation Cost (c) Required Rate of Return (b) Dividend (d) None of the above",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 57,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "MQP J23 S2",
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Advantage of debt financing is: (a) Interest is tax-deductible (b) It reduces WACC (c) It does not dilute owner’s control (d) All of the above",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 61,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY J17"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which one of the following activities is outside the purview of financing decision in financial management? (a) Identification of the source of funds (b) Measurement of the cost of funds (c) Deciding on the time of raising the funds (d) Deciding on the utilization of the funds BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 62,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY J17",
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following forms of equity financing is especially designed for funding High Risk & High Reward projects? (a) ADR (c) FCCB (b) GDR (d) Venture Capital",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 63,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY J17"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "A process through which loans and other receivables are underwritten and sold in a form of asset is known as: (a) Factoring (c) Securitisation (b) Forfeiting (d) Bill Discounting",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 64,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY D18"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Cost of capital may be defined as: (a) Weighted Average cost of all debts (b) Rate of Return expected by Equity Shareholders (c) Average IRR of the Projects of the firm (d) Minimum Rate of Return that the firm should earn",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 65,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY D22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "If Annual Growth Rate is 50% of the Cost of Equity and the Dividend Yield is 9.9090%, then the Cost of Equity would be (a) 18% (c) 22% (b) 20% (d) 25%",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 66,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY D22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Calculate the Risk-Free rate of return if the value of beta (β) is 1.5, Market return = 13% and Cost of Equity = 16%. (a) 5.5% (c) 6.75% (b) 6.25% (d) 7%",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 67,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "X Ltd and Y Ltd are identical in every respect except that X Ltd does not employ Debt in its capital structure whereas Y Ltd employs 10% Debentures amounting to 4 Lakhs. EBIT is 2,40,000. Equity Capitalization Rate of X Ltd is 20%. Tax Rate 25%. Assuming that all assumptions of M-M model are met. Which of the following is false? (a) Value of X Ltd = 9,00,000 and Value of Y Ltd = 10,00,000 (b) Ke of Y Ltd = 25% (c) ko of Y Ltd =18% and Ko of X Ltd = 20% (d) None of the above BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 68,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The capital structure of X Ltd. consists of 40% Equity Share Capital, 40% Preference Capital and 20% Debt. The after-tax cost of the Preference Capital and Debt are 18% and 9% respectively. The weighted average cost is 19%. X Ltd. paid currently a dividend of ₹13 per share. The current market price of its equity share is ₹112. Find the growth rate. (a) 9% (c) 11% (b) 10% (d) 12%",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 69,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which one of the following statements is correct concerning the weighted average cost of capital (WACC) of any firm? (a) The WACC may decrease as a firm's debt-equity ratio increases. (b) In the computation of WACC, weight assigned to the preferred stock is based on the coupon rate multiplied by the par value of the stock. (c) A firm's WACC will increase as the corporate tax rate increases. (d) The WACC does not consider redeemable preference shares of the firm.",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 70,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "MJ Ltd. has issued 5,000, 10% Debentures of 100 each. The rate of inflation is 6%. Calculate the real cost of debt. (a) 3.77% (b) 3.90% (c) 4.10% (d) 4.57%",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 71,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Minimum rate of return that a firm must earn in order to satisfy its investors, is also known as: (a) Average Return on Investment (b) Weighted Average Cost of Capital (c) Net Profit Ratio (d) Average Cost of borrowing",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 161,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY J17"
+   ],
+   "marks": "6",
+   "kind": "mcq",
+   "text": "A company issued 10,000, 10% Preference Share of 10 each, cost of issue is 2 per share. Calculate cost of capital, assuming that the shares are issued (a) at par, (b) at 10% premium, and (c) at 5% discount. BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 162,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY D17",
+    "MQP J23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Given below is the Statement of Assets and Liabilities of a company as at 31st December, 2016. Liabilities ₹ Assets ₹ Equity share capital 4,00,000 Fixed Assets 6,00,000 40000 shares of ₹ 100 each Reserve and surplus 2,60,000 Investments 1,00,000 8% debentures 1,70,000 Current assets 2,80,000 Current Liabilities: Short term loans 1,00,000 Trade creditors 50,000 9,80,000 9,80,000 Calculate the company’s weighed average cost of capital using balance sheet valuations. The following additional information are also available. (i) 8% Debentures were issued at par. (ii) All interests’ payments are up to date and equity dividend is currently 12%. (iii) Short term loan carries interest at 18% p.a. (i",
+   "part": "Financial Management"
+  },
+  {
+   "q": 163,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY J18"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "The CMD Ltd. has the following specific cost of capital along with the indicated book and market value weights: Type of Capital Cost Book value Market value weights weights Equity 0.18 0.50 0.58 Preference shares 0.15 0.20 0.17 Long-term debt 0.07 0.30 0.25 1.00 1.00 Required: (i) Calculate the weighted cost of capital, using book and market value weights. (ii) Calculate the weighted average cost of capital, using marginal weights, if the company intends to raise the needed funds using 50 per cent long-term debt, 35per cent preference shares and 15 per cent retained earnings. Note: Ignore Taxation BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 164,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "The WONDERLAND LTD. has the following Book Value Capital Structure as on March 31, 2019: (Amount in ₹ Thousand) 600000 Equity Share at ₹ 10 each fully paid 6000 10000, 9% Preference Shares of ₹ 100 each 1000 30000, 12% Debentures of ₹ 100 each 3000 10000 The equity share of the Company sells at ₹ 20 per share. The dividend expected next year is ₹ 2.5 per share, which is expected to grow at 5% per annum. Corporate tax rate is 30%. You are required to determine the Weighted Average Cost of Capital (WACC) of Wonderland Ltd. based on the existing Capital Structure.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 165,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY D19"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "The following is the capital structure of ZENITH LTD. Source of Capital Book Value Market Value (₹) (₹) Equity Shares @₹100 each 80,00,000 1,60,00,000 9% Cumulative preference 20,00,000 24,00,000 shares @ ₹100 each 11 % debentures 60,00,000 66,00,000 Retained earning 40,00,000 – 2,00,00,000 2,50,00,000 The current market price of the company’s equity share is ₹200. For the last year the company had paid equity dividend at 25 per cent and its dividend is likely to grow 5 percent every year. The corporate tax rate is 30 per cent and shareholders personal income tax rate is 20 per cent. You are required to calculate: (i) Cost of capital for each source of capital. (ii) Weighted average cost of ",
+   "part": "Financial Management"
+  },
+  {
+   "q": 166,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY D22"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "HDR Ltd. requires additional finance of 20 lakhs for meeting its investment plans. The following information is given: (i) Company has 4,00,000 in the form of retained earnings available for investment purposes. (ii) Target Debt-Equity Ratio: 25:75. BUSINESS DATA ANALYTICS (iii) Cost of debt is 10% (before tax) for the first 2,00,000 and 13% (before tax) beyond that. (iv) Earnings per share 12. (v) Dividend Payout Ratio 50%. (vi) P/E Ratio 5. (vii) The company wants to offer the issue of Equity Shares at a premium of 20% of the market price. The flotation cost is expected to be 6 per share. (viii) Company's tax rate is 30% and the shareholder's personal tax rate is 20%. Calculate the overall",
+   "part": "Financial Management"
+  },
+  {
+   "q": 167,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "3",
+   "kind": "practical",
+   "text": "Calculate the Marginal Cost of Capital for the company if it requires additional capital of 20 lakhs for a new project. It plans to have a target Debt of 33.3333% of Equity. The debt will carry an interest rate of 10% (before tax) for the first 2,00,000 and 13% (before tax) beyond that. The prevailing default-risk free interest rate on 10-year GOI Treasury Bonds is 5%. The average market risk premium is 12.5%. The beta of the company is 1.2. Company's tax rate is 30%.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 168,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "Kaloo Ltd. requires additional finance of 20 lakhs for meeting its investment plans. The company has 4,00,000 in the form of retained earnings available for investment purposes. Target Debt-Equity Ratio 25:75. Cost of debt is 10% (before tax) for the first 2,00,000 and 13% (before tax) beyond that. Earnings per share 12. Dividend Payout Ratio 50%. P/E Ratio 5. The company wants to offer the issue of Equity Shares at a premium of 20% of the market price. The flotation cost is expected to be 6 per share. Company's tax rate is 30% and the shareholder's personal tax rate is 20%. Calculate the overall weighted average (after tax) cost of additional finance.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 169,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "mcq",
+   "text": "T Ltd, provides you the following information: Particulars No. of Equity Shares (₹10 each) 1,50,000 No. of 17% Preference Shares (₹100 20,000 each) Retained Earnings ₹5,00,000 No. of 7.5% Debentures (₹100 each) 30,000 10% Long-term Loan ₹10,00,000 BUSINESS DATA ANALYTICS Additional Information: (i) The Current market price of the company's equity share is ₹30. Expected Dividend per Equity Share for the year is ₹1.20 which is expected to grow @ 5%. The flotation cost on issue of new equity shares is expected to be ₹5 per share. (ii) The Preference shares of the company which are redeemable at par after 5 years are currently selling at ₹90 per Preference Share. (iii) The Debentures of the comp",
+   "part": "Financial Management"
+  },
+  {
+   "q": 170,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "7",
+   "kind": "mcq",
+   "text": "The following are the extracts from the financial statements of ABC Ltd. (₹In lakhs) Operating profit 105 Less: Interest on debenture 33 72 Less: Income-tax 36 Net Profit 36 Equity share capital (share of ₹ 10 each) 200 Reserves and surplus 100 15% non-convertible debentures 220 520 The market price per equity share is ₹ 12 and per debenture is ₹93.75. You are required to calculate: (a) the earnings per share. (b) the percentage of cost of capital to the company for the debenture fund and the equity.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 171,
+   "chapter": 4,
+   "chapter_title": "Sources Of Finance And Cost Of Capital",
+   "section": "Cost Of Capital",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "7",
+   "kind": "mcq",
+   "text": "Calculate the weighted average cost of capital using (i) book value weights; and (ii) market value weights based on the following information: Book value structure: ₹ Debentures (₹100 per debenture) 8,00,000 Preference share (₹100 per share) 2,00,000 Equity shares (₹10 per share) 10,00,000 20,00,000 BUSINESS DATA ANALYTICS Recent market prices of all these securities are: Debentures: ₹110 per debenture; Preference share: ₹120 per share; and Equity shares: ₹22 per share External financing opportunities are: (a) ₹100 per debenture redeemable at par, 10 year maturity, 13% coupon rate, 4% flotation cost and sale price ₹100; (b) ₹100 per preference share redeemable at par, 10-year maturity, 14% d",
+   "part": "Financial Management"
+  },
+  {
+   "q": 7,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Introduction To Capital Budgeting",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "A sound Capital Budgeting technique is based on: (a) Cash Flows (b) Accounting Profit (c) Interest Rate on Borrowings (d) Last Dividend Paid. BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 12,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Introduction To Capital Budgeting",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following is not true for capital budgeting? (a) Sunk costs are ignored (b) Opportunity costs are excluded (c) Incremental cash flows are considered (d) Relevant cash flows are considered.",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 14,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Introduction To Capital Budgeting",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "A proposal is not a Capital Budgeting proposal if it: (a) is related to Fixed Assets (b) brings long-term benefits (c) brings short-term benefits only (d) has very large investment BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 17,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Introduction To Capital Budgeting",
+   "papers": [
+    "PY D18"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following is not incorporated in Capital Building? (a) Tax-Effect (b) Time Value of Money (c) Required Rate of Return (d) Rate of Cash Discount",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 18,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Introduction To Capital Budgeting",
+   "papers": [
+    "PY D17"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "“Shareholders’ wealth” in a firm is reflected by: (a) the number of people employed in the firm. (b) the book value of the firm’s assets less the book value of its liabilities. (c) the amount of salary paid to its employees. (d) the market price per share of the firm",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 37,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Introduction To Capital Budgeting",
+   "papers": [
+    "PY D19"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "State the need of capital budgeting decision.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 60,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The following information is given for A project: Annual cash inflow ₹8,00,000 Useful life 4 years Payback period 2.855 years The cost of the project would be (a) ₹22,80,000 (c) ₹22,86,000 (b) ₹22,84,000 (d) ₹22,87,800",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 64,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following variables is not known in Internal Rate of Return? (a) Initial Cash Flows (b) Discount Rate (c) Terminal Inflows (d) Life of the Project",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 65,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "X Ltd. is considering an investment proposal involving an initial cash outlay of ₹20,00,000. The proposal has an expected life of 7 years and zero salvage value. At a required rate of return of 12%, the proposal has a profitability index of 1.182. Calculate the present value of cash inflows. The present value of an annuity of ₹1 for 7 years at 12% discount is 4.5638. (a) 22,64,000 (b) 23,70,000 (c) 23,64,000 (d) 22,70,000",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 66,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "If the cost of the project is ₹22,84,000, the useful life is 5 years and the annuity is ₹8,00,000, then the Pay- Back Period is (a) 3 years (b) 2 years 11 months (c) 2 years 9 months (d) 2 years 8 months",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 67,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "PY J18",
+    "MQP J23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The following is not a Discounted Cash Flow Technique: (a) NPV (b) Profitability Index (c) Accounting of Average Rate of Return (d) IRR BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 106,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "practical",
+   "text": "Assume a business that is considering a given project. Below are some selected data from the discounted cash flow model created by the company’s financial analysts: A project requires an initial investment of ₹1,91,315 and is expected to generate the following net cash inflows: Year 1 : ₹ 95,000; Year 2 : ₹ 80,000; Year 3 : ₹ 60,000; Year 4 : ₹ 55,000. Compute discounted payback period of the project if the appropriate discount rate for this project is 12%.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 109,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "PY J17"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "FB Chemical Ltd. has three potential projects, all with an initial cost of ₹20,00,000 and estimated life of five years. The capital budget for the year will only allow the company to accept one of the three projects. Given the discount rates and the future cash flows of each project, which project should the company accept? Project 1 has an annual cash flow of ₹5,00,000 and discount rate of 6% Project 2 has an annual cash flow of ₹6,00,000 and discount rate of 9% Project 3 has the following cash inflow and discount rate of 15% Year 1 2 3 4 5 Cash Inflows ₹ 10,00,000 8,00,000 6,00,000 2,00,000 1,00,000",
+   "part": "Financial Management"
+  },
+  {
+   "q": 110,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "PY D17"
+   ],
+   "marks": "5",
+   "kind": "practical",
+   "text": "ZZZ Co. has four potential projects all with an initial cost of ₹15,00,000. The capital budget for the year will only allow the company to take up only one of the three projects. Given the discount rates and the future cash flows of each project, which project should they accept? PROJECT Annual Net Cash Flows per year Discount Rates for five years (₹) A 3,50,000 4% B 4,00,000 8% C 5,00,000 10%",
+   "part": "Financial Management"
+  },
+  {
+   "q": 111,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "PY D17"
+   ],
+   "marks": "4",
+   "kind": "theory",
+   "text": "Write short note on Internal Rate of Return",
+   "part": "Financial Management"
+  },
+  {
+   "q": 112,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "PY J18"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "ANURAG MILLS LTD. has number of machines that were used to make a product that the firm has phased out of its operations. An existing machine was originally purchased six years ago for ₹5,00,000 and is being depreciated by the straight-line method; its remaining useful life is 4 years. No salvage value is expected at the end of the useful life. It can currently be sold for ₹1,50,000. The BUSINESS DATA ANALYTICS machine can also be modified to produce another product at a cost of ₹2,00,000. The modifications would not affect the useful life, or salvage value, and would be depreciated using the straight-line method. If the firm does not modify the existing machine, it will have to buy a new ma",
+   "part": "Financial Management"
+  },
+  {
+   "q": 113,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "PY D18"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "ZENITH LTD. is faced with the problem of choosing between two mutually exclusive projects A and B. Project A requires a cash outlay of Rs.10,00,000 and cash running expenses of Rs.3,50,00 per year. On the other hand, Project B will cost Rs.15,00,000 and require cash running expenses of Rs.2,00,000 per year. Both the projects have an eight-year life. Project A has a salvage value of Rs.40,000 and Project B has a salvage value of Rs.1,40,000. The company’s tax rate is 50% and it has a 10% required rate of return. Required: Assuming depreciation on straight line basis and that there is no funds constraint for the company, ascertain which project should be accepted. [Given: PVIFA (10%, 8 years) ",
+   "part": "Financial Management"
+  },
+  {
+   "q": 114,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "PY J19",
+    "MQP J23 S1"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "ELROND LTD. (EL) has just installed MACHINE A at a cost of ₹2,00,000. This machine has 5 years life with no residual value. The annual volume of production is estimated at 150000 units, which can be sold at ₹8 per unit. Annual operating costs are estimated at ₹2,00,000 (excluding depreciation) at this output level. Fixed costs are estimated at ₹4,50,000 per annum for the same level of production. The company has just come across another model called MACHINE B capable of giving the same output at an annual operating cost of ₹1,50,000 (excluding depreciation). There will be no change in fixed costs. Capital cost of this machine is ₹2,50,000 and the estimated BUSINESS DATA ANALYTICS life is 5 y",
+   "part": "Financial Management"
+  },
+  {
+   "q": 115,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "State only one basic difference between the following: Internal Rate of Return (IRR) and Modified Internal Rate of Return (MIRR)",
+   "part": "Financial Management"
+  },
+  {
+   "q": 116,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "X Ltd. is considering a project with following Cash Flow pattern. Year 1 2 3 4 5 CIAT (₹) 10,000 15,000 20,000 25,000 20,000 Initial investment of the project is ₹60,000 and Cost of Capital is 10% p.a. Calculate DPBP",
+   "part": "Financial Management"
+  },
+  {
+   "q": 117,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "9",
+   "kind": "practical",
+   "text": "A firm proposes to market a cheaper variety of its existing brand to be sold for ₹20 per unit, estimated product-life being five years. The sales volume for the five years has been estimated to be 30,000 units for the first year, 40,000 units for each of the next two years and 20,000 units for each of the last two years. The variable cost p.u. is ₹10. Production of the cheapest brand will entail an initial expenditure of ₹4,50,000 in purchasing and installing a new plant with estimated economic life of five years and scrap value of ₹50,000. The fixed cost of ₹2,00,000 per annum including depreciation on the plant on straight-line basis will be needed for producing and marketing the cheaper b",
+   "part": "Financial Management"
+  },
+  {
+   "q": 118,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "7",
+   "kind": "mcq",
+   "text": "A project requires an initial investment of ₹2,25,000 and is expected to generate the following net cash inflows: (a) Year 1 (2019): ₹95,000; (c) Year 3 (2021): ₹60,000; (b) Year 2 (2020): ₹80,000; (d) Year 4 (2022): ₹55,000. Assess and compute net present value of the project if the minimum desired rate of return is 12%.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 119,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "United Industries Ltd. has an investment budget of ₹100 lakhs for 2023-24. It has short listed two projects A and B after completing the market and technical appraisals. The management wants to complete the financial appraisal before making the investment. Further particulars regarding the two projects are given below: (₹Lakhs) Particulars A B Investment required 100 90 Average annual cash inflow before depreciation 28 24 and tax (estimate) Salvage value: Nil for both projects. Estimate life – 10 years for both projects. The company follows straight line method of charging depreciation. Its tax rate is 50%. You are required to calculate: i) Payback period and ii) IRR for the 2 projects. Note",
+   "part": "Financial Management"
+  },
+  {
+   "q": 120,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Evaluation Techniques-Non-Discounted And",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Electromatic Excellers Ltd. specialise in the manufacture of novel transistors. They have recently developed technology to design a new radio transistor capable of being used as an emergency lamp also. They are quite confident of selling all the 8,000 units that they would be making in a year. The capital equipment that would be required will cost ₹25 lakhs. It will have an economic life of 4 years and no significant terminal salvage value. During each of the first four years promotional expenses are planned as under: BUSINESS DATA ANALYTICS 1st Year 1 2 3 4 Advertisement 1,00,000 75,000 60,000 30,000 Others 50,000 75,000 90,000 1,20,000 Variable cost of production and selling expenses: ₹250",
+   "part": "Financial Management"
+  },
+  {
+   "q": 121,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Hurdle Rate In A Conglomerate Environment",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Annual Cost Saving 80,000, Applicable Present Value of Annualised Cash flows for 1 is 2.855, Profitability index 1.064, Salvage value 0. NPV will be: (a) 14,617.60 (c) 14,761.60 (b) 14,671.60 (d) None of the above",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 140,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Hurdle Rate In A Conglomerate Environment",
+   "papers": [
+    "PY D17",
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "practical",
+   "text": "P Ltd. has four potential projects all with an initial cost of ₹ 15,00,000. The capital budget for the year will only allow the company to take up only one of the three projects. Given the discount rates and the future cash flows of each project, which project should they accept? Project Annual Net Cash Flows per year for Discount Rates five years (₹ ) A 3,50,000 4% B 4,00,000 8% C 5,00,000 10%",
+   "part": "Financial Management"
+  },
+  {
+   "q": 143,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Hurdle Rate In A Conglomerate Environment",
+   "papers": [
+    "PY D22"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "Given below are the data on a capital project 'M': Annual Cost Saving 60,000 Profitability index 1.064 Useful Life 4 years Salvage value 0 Internal Rate of Return 15% You are required to calculate for this project M: (i) Cost of Project (ii) Payback Period (iii) Cost of Capital (iv) Net Present Value Given the following table of discount factors: DISCOUNT 15% 14% 13% 12% FACTOR 1 YEAR 0.869 0.877 0.885 0.893 2 YEAR 0.756 0.769 0.783 0.797 BUSINESS DATA ANALYTICS 3 YEAR 0.658 0.675 0.693 0.712 4 YEAR 0.572 0.592 0.613 0.636 2.855 2.913 2.974 3.038",
+   "part": "Financial Management"
+  },
+  {
+   "q": 144,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Hurdle Rate In A Conglomerate Environment",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "9",
+   "kind": "practical",
+   "text": "HDR Ltd. provides you with the following information: Particulars Machine X Purchase Price of Machine 6,00,000 Working Capital 3,00,000 Useful Life of the machine 5 YEARS Estimated Salvage Value at the end of useful life 1,00,000 Actual Salvage Value realised at the end of useful 1,20,000 life Method of Depreciation Straight line Tax Rate 30% Annual Earning before tax 2,00,000 Cost of Capital 10% Annuity Factor for 5 @ 10% 3.791 PV Factor for 5th @ 10% 0.621 You are required to calculate: (i) Pay Back Period (ii) Average Rate of Return (ARR) (iii) Net Present Value (iv) Discounted Pay Back Period and (v) Profitability Index",
+   "part": "Financial Management"
+  },
+  {
+   "q": 145,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Hurdle Rate In A Conglomerate Environment",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "10",
+   "kind": "practical",
+   "text": "Nona Ltd. provides you with the following information Particulars Machine X Machine Y Purchase Price of Machine ₹6,00,000 ₹10,00,000 Working Capital ₹3,00,000 ₹5,00,000 Useful Life of the machine 5 years 8 years Estimated Salvage Value at the end ₹1,00,000 ₹2,00,000 of useful life Actual Salvage Value realised at the ₹1,20,000 ₹80,000 end of useful life Method of Depreciation Straight line Straight line Tax Rate 30% 30% Annual Earning before Tax ₹4,00,000 ₹4,00,000 BUSINESS DATA ANALYTICS Annuity Factor for 5/8 years @ 10% 3.791 5.335 PV Factor for 5th/8th year @ 10% 0.621 0.467 Required: Which of the above machines should be purchased?",
+   "part": "Financial Management"
+  },
+  {
+   "q": 146,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Hurdle Rate In A Conglomerate Environment",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "practical",
+   "text": "HONEY Ltd. having limited funds of 10,10,000 and cost of capital 10% is evaluating the desirability of following projects having useful life of 10 years: Project A B C D E F Initial Cash 50,000 1,00,000 1,50,000 2,00,000 2,50,000 6,00,000 Outflows Net Present 4,50,000 8,00,000 10,50,000 12,00,000 13,75,000 32,40,000 Value (₹) Ranking as 6 5 4 3 2 1 per NPV Ranking as 1 2 3 4 5 6 per Profitability Index (i) Which projects should be selected assuming that the projects are divisible and there is no alternative use of money allocated for capital budgeting. (ii) Which projects should be selected assuming that the projects are indivisible and unutilised funds can be invested for a period of 10 yea",
+   "part": "Financial Management"
+  },
+  {
+   "q": 147,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Hurdle Rate In A Conglomerate Environment",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Company A wants to invest in a project, the life of which is expected to be 4 years. The actual net profit is expected to be ₹20,000 after charging yearly depreciation of ₹16,000 in order to write-off the capital cost of ₹64,000. Out of the capital cost, 40,000 is payable immediately (Year 0) and the balance in the next year end. Stock amounting to ₹12,000 (to be invested in year 0) will be required throughout the project and for debtors a further sum of ₹16,000 will have to be invested at the end of year 1. The working capital will be recouped at the end of year 5. It is expected that the machinery will fetch a scrap value of 4,000 at the end of 4th year. Income tax is payable @ 40% and the",
+   "part": "Financial Management"
+  },
+  {
+   "q": 148,
+   "chapter": 5,
+   "chapter_title": "Capital Budgeting",
+   "section": "Hurdle Rate In A Conglomerate Environment",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "A company has to replace one of its machines, which has become unserviceable. Two options are available to the company: (i) A more expensive machine (Premium) with 12 years life. (ii) A less expensive machine (Standard) with 6 years life. If Standard machine is chosen, it will be replaced at the end of 6 years by another Standard machine. The pattern of maintenance, running costs and prices is as under: Premium Standard Particulars (₹) (₹) Purchase price 40,00,000 28,00,000 Scarp value at end of life 6,00,000 6,00,000 Overhauling is due at the end of 8th Year 4th Year Overhauling cost 8,00,000 4,00,000 Annual repairing expenses 4,00,000 5,60,000 Cost of capital is 14%. You are required to re",
+   "part": "Financial Management"
+  },
+  {
+   "q": 17,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Operating cycle is also called as_____________ (a) Business cycle (c) Working cycle (b) Working capital cycle (d) Current asset cycle",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 18,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Working Capital Management involves financing and management of________________ (a) All Assets (c) Cash and Bank Balance (b) All Current Assets (d) Receivables and Payables",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 54,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "PY J17"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "From the following data, compute the duration of the Operating Cycle for each of the two years: BUSINESS DATA ANALYTICS Year 1 (₹) Year 2 (₹) Stock: Raw Materials 20,000 27,000 Work-in-progress 14,000 18,000 Finished goods 21,000 24,000 Purchases 96,000 1,35,000 Cost of goods sold 1,40,000 1,80,000 Sales 1,60,000 2,00,000 Debtors 32,000 50,000 Creditors 16,000 18,000 Assume 360 days per year for computational purposes",
+   "part": "Financial Management"
+  },
+  {
+   "q": 55,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "PY J18",
+    "MQP J23 S2"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "The management of CAMELLIA LTD. has called for a statement showing the working capital needed to finance a level of activity of 3,00,000 units of output for the year ended March 31, 2018. The cost structure for the Company’s product, for the above-mentioned activity level, is detailed below: Cost per unit (₹) Raw materials 20 Direct labour 5 Overheads 15 Total cost 40 Profit 10 Selling price 50 Past trends indicate that the raw materials are held in stock, on an average, for two months. Work-in-process (50 per cent complete) will approximate to ½ month’s production. Finished goods remain in warehouse, on an average, for 1 month. Suppliers of materials extend 1 month’s credit. Two month’s cre",
+   "part": "Financial Management"
+  },
+  {
+   "q": 56,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "PY J18"
+   ],
+   "marks": "4",
+   "kind": "theory",
+   "text": "Write short notes on Determinants of Working Capital",
+   "part": "Financial Management"
+  },
+  {
+   "q": 57,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "PY D18"
+   ],
+   "marks": "4",
+   "kind": "theory",
+   "text": "Write short notes on Danger of inadequate amount of working capital. BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 58,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "PY J19",
+    "MQP J23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "GOLDILOCKS LTD. sells goods to domestic market on a gross profit of 25% on sales without considering depreciation. Its estimates for the year 2019-20 are as follows: (Amount in ₹ Lakh) Sales: Domestic market at 2 month’s Credit 1600 Export (Selling price 10% below home price) (Exports at 540 3 month’s Credit) Cost: Materials used (Suppliers extend 2 months₹ Credit) 600 Wages paid (1/2 month in Arrear) 400 Manufacturing Expenses (Paid 1 month in Arrear) 600 Sales promotion (payable quarterly in advance) 80 Administration expenses (paid 1 month in arrear) 200 The company maintains one month’s stock of each raw material and finished goods. A cash balance of ₹ 20 lakh is also maintained. There i",
+   "part": "Financial Management"
+  },
+  {
+   "q": 59,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "ALC Ltd. provides you with the following information: Estimated Level of Activity: Completed Units of Production 1,04,000 plus units of WIP. Raw-material 19.6% of the selling price Wages 10.6% of the selling price Production Overheads (including 17.6% of the selling price depreciation of 15 per unit at the budgeted level of activity) Selling Price 500 per unit Average raw material in stock 3 weeks Average work-in-progress (% of 2 weeks completion with respect to Material- 75%, Conversion Cost-70%) Finished goods in stock 4 weeks Credit allowed to debtors 2.5 weeks Credit allowed by creditors 3.5 weeks BUSINESS DATA ANALYTICS Time lag in payments of Production 1.5 weeks Overheads Time lag in ",
+   "part": "Financial Management"
+  },
+  {
+   "q": 60,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "10",
+   "kind": "practical",
+   "text": "Oli Ltd. provides you with the following information: Estimated Level of Activity: Completed Units of Production 1,04,000 plus units of WIP. Raw-material 19.6% of the selling price Wages 10.6% of the selling price Production Overheads (including 17.6% of the selling price depreciation of 15 per unit at the budgeted level of activity) Selling Price 500 per unit Average raw material in stock 3 weeks Average work-in-progress (% of 2 weeks completion with respect to Material- 75%, Conversion Cost-70%) Finished goods in stock 4 weeks Credit allowed to debtors 2.5 weeks Credit allowed by creditors 3.5 weeks Time lag in payments of Production 1.5 weeks Overheads Time lag in payments of labour 2 wee",
+   "part": "Financial Management"
+  },
+  {
+   "q": 61,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "From the following information you are required to estimate the net working capital requirement: Particulars Cost per unit (₹) Raw Materials 40 Direct labour 15 Overheads (excluding depreciation) 30 Total Cost 85 Additional Information: Selling-Price ₹100 per unit Output 52,000 units per annum Raw Material in stock average 4 weeks Work-in-process: (Assume 50% average 2 weeks completion stage with full material consumption) Finished goods in stock average 4 weeks Credit allowed by suppliers average 4 weeks Credit allowed to debtors average 8 weeks Cash at bank is expected to be ₹50,000 Assume that production is sustained at an even pace during the 52 weeks of the year. All sales are on credit",
+   "part": "Financial Management"
+  },
+  {
+   "q": 62,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "The board of Directors of Nanak Engineering Company Private Ltd. request you to prepare a statement showing the Working Capital requirements forecast for a level of activity of 1,56,000 units of production. The following information is available for your calculation: A. Per unit (₹) Raw materials 90 Direct labour 40 Overheads 75 205 Profits 60 Selling price per unit 265 (i) Raw materials are in stock on average one month. (ii) Materials are in process, on average 2 weeks. (iii) Finished goods are in stock, on average 1 month. (iv) Credit allowed by supplier one month. (v) Time lag in payment from debtors two months. (vi) Lag in payment of wages 1½ week. BUSINESS DATA ANALYTICS (vii) Lag in p",
+   "part": "Financial Management"
+  },
+  {
+   "q": 63,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Introduction To Working Capital Management",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Q Ltd sells goods at a uniform rate of gross profit of 20% on sales including depreciation as part of cost of production. Its annual figures are as under: ₹ Sales (at 2 months credit) 24,00,000 Materials consumed (suppliers’ credit 2 months) 6,00,000 Wages paid (Monthly at the beginning of the 4,80,000 subsequent month) Manufacturing expenses (cash expenses are paid – one 6,00,000 month in arrear) Administration expenses (cash expenses are paid – 1,50,000 one month in arrear) Sales promotion expenses (paid quarterly in advance) 75,000 The company keeps one month stock each of raw materials and finished goods. A minimum cash balance of ₹80,000 is always kept. The company wants to adopt a 10% ",
+   "part": "Financial Management"
+  },
+  {
+   "q": 68,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Receivable Management",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Total Sales 125 lakhs, Credit Sales being four times the cash sales, Variable Cost 85% of Sales, Bad Debt 5%, Selling Price per unit 500, Average Cost per unit 450, Credit Terms are 3/24, Net 40, 25% of the credit customers avail Cash Discount facility, Required Rate of Return (pre-tax) 16%, Tax Rate 25%. Calculate the Opportunity Cost of Investment in Receivable (assume 360 days in a year). (a) 1,08,000 (c) 1,40,000 (b) 1,20,000 (d) None of the above",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 69,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Receivable Management",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Average collection period is 2 months, cash sales and average receivables are ₹ 5,00,000 and ₹6,50,000 respectively. The sales amount would be – (a) ₹ 40,00,000 (c) ₹ 44,00,000 (b) ₹ 42,00,000. (d) ₹ 48,50,000",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 70,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Receivable Management",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "X Ltd. distributes its products to more than 500 retailers. The Company’s collection period is 30 days and keeps its inventory for 20 days. The operating cycle would be_______________________. (a) 40 Days (b) 43 Days (c) 45 Days (d) 50 Days",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 77,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Receivable Management",
+   "papers": [
+    "PY D17"
+   ],
+   "marks": "8",
+   "kind": "practical",
+   "text": "Jai & Karti are regular customers of MJK Ltd. Kolkata and have approached the sellers for extension of credit facility for enabling them to purchase goods from MJK Ltd. On the analysis of past performance and on the basis of information supplied, the following pattern of payment schedule emerges in regard to Jai & Karti: Schedule Pattern At the end of 30 days 15% of the bill 60 days 34% of the bill 90 days 30% of the bill 100 days 20% of the bill Non-recovery 1% of the bill Jai & Karti wants to enter into a firm commitment for purchase of goods of ₹ 15,00,000 in 2016, deliveries to be made in equal quantities on the first day of each quarter in the calendar year. The price p er unit of the c",
+   "part": "Financial Management"
+  },
+  {
+   "q": 78,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Receivable Management",
+   "papers": [
+    "PY D18",
+    "MQP J23 S2"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "GOLDEN GARMENT LTD. manufactures readymade garments and sells them on credit basis through a network of dealers. Its present sale is Rs.60 lakh per annum with 20 days credit period. The company is contemplating an increase in the credit period with a view to increasing sales. Present variable costs are 70 per cent of sales and the total fixed costs Rs.8 lakh per annum. The company expects pre-tax return on investment @25per cent. Some other details are given as under: Proposed credit policy Average collection Expected annual sales period (days) (Amount in Rs. Lakh) I 30 65 II 40 70 III 50 74 Required: Which credit policy should the company adopt? Present your answer in a tabular form. Assume",
+   "part": "Financial Management"
+  },
+  {
+   "q": 79,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Receivable Management",
+   "papers": [
+    "PY D19"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "BENTECH (I) LTD. is presently having credit sales of ₹12 lakh. The existing credit terms are 1/10, net 45 days and average collection period is 30 days. The current bad debts loss is 1.5%. In order to accelerate the collection process further as also to increase sales, the company is contemplating liberalization of its existing credit terms to 2/10, net 45-day s. It is expected that sales are likely to increase by 1/3 of existing sales, bad debts increase to 2% of sales and average collection period to decline to 20 days. The contribution to sales ratio of the company is 22% and opportunity cost of investment in receivables is 15 per cent (pre- tax). 50 per cent and 80 per cent of customers ",
+   "part": "Financial Management"
+  },
+  {
+   "q": 80,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Receivable Management",
+   "papers": [
+    "PY D22"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "Tulsian Ltd., is considering changing its credit terms from 1/35, net 60 to 2/10, net 60. As a result, the credit sales will increase from 150 crores to 105%, the Average collection period will decline by 25 days and the Default Percentage will increase from 0.5% to 1%. Collection Expenses will increase from 35,000 to 40,500. At present, Selling Price is 300 per unit, Contribution to Sales Ratio 20%, Average Cost is 270 per unit and 60% of the credit customers avail cash discount. Should the credit terms be changed if the required rate of return is 24% (pre-tax) and the Tax rate is 25%? (Take 360 days in a year.)",
+   "part": "Financial Management"
+  },
+  {
+   "q": 81,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Receivable Management",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "8",
+   "kind": "practical",
+   "text": "A firm is considering pushing up its sales by extending credit facilities to any one of the following categories of customers: (i) Customers with a 10% risk of non- payment, and (ii) Customers with a 25% risk of non-payment. The incremental sales expected in category (i) is ₹ 2,40,000 and in category (ii) is ₹ 6,50,000. The cost of production and selling costs are 60% of sales while the collection costs amount to 5% of sales in case of category (i) and 10% of sales in case of category (ii). You are required to analyse the profitability of the proposals of extending credit facilities to the two categories of customers. (Use sale value for bad debts) BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 82,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Receivable Management",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Surya Industries Ltd. is marketing all its products through a network of dealers. All sales are on credit and the dealers are given one-month time to settle bills. The company is thinking of changing the credit period with a view to increase its overall profits. The marketing department has prepared the following estimates for different periods of credit: Particulars Present Plan Plan Plan Policy I II III Credit period (in months) 1 1.5 2 3 Sales (₹ Lakhs) 120 130 150 180 Fixed costs (₹ Lakhs) 30 30 35 40 Bad debts (% of sales) 0.5 0.8 1 2 The company has a contribution/sales ratio of 40% further it requires a pre-tax return on investment at 20%. Examine each of the above proposals and recom",
+   "part": "Financial Management"
+  },
+  {
+   "q": 86,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Inventory Management",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Quarterly demand of Product ZED-16250 units, 2.5 units of Product ZED are obtained from one unit of raw material. Opening Stock of material is 14,000 units and Closing Stock will be 20% more than opening stock. The company incurs a handling cost of 10 plus freight of 65 per order. Storage Cost 0.50 per unit per month, Interest Cost 10% p.a., Obsolescence Cost 2% р.а., Purchase Price of Input Unit 50 per unit. How frequently should orders be placed assuming 360 days in a year? (a) 3 days (b) 6 days (c) 7.5 days (d) 15 days",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 87,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Inventory Management",
+   "papers": [
+    "PY D18"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "ABC Analysis is used in (a) Inventory Management (b) Receivables Management (c) Accounting Policies (d) Corporate Governance",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 88,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Inventory Management",
+   "papers": [
+    "PY D22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "If A = Annual Consumption of Input (in Units), O = Ordering Cost per order and C = Carrying Cost per unit per annum, calculate the 𝟐𝑨𝑶 Ordering Cost per Annum at the Order Size of√ 𝑪 (a) √2𝐴0 2𝐴𝑂𝐶 (c) √ 2 (b) 2√AOC (d) √2AOC",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 89,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Inventory Management",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "If the Annual demand of raw materials is 20,000 units, the price per unit is 2, the ordering cost per order is ₹2,000 and the carrying cost percentage of average inventory is 10%, then the number of orders based on EOQ will be: (a) 3 orders (b) 2 orders (c) 1 order (d) 4 orders BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 97,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Inventory Management",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "practical",
+   "text": "X Ltd. buys its annual requirement of 36,000 units in six installments. Each unit costs ₹1 and the ordering cost is ₹25. The inventory carrying cost is estimated at 20% of unit value. Find the total annual cost of the existing inventory policy. How much money can be saved by using E.O.Q?",
+   "part": "Financial Management"
+  },
+  {
+   "q": 100,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Inventory Management",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "P Ltd. has received an offer of quantity discounts on its order of materials as under: Ordering quantities (Kgs) Price per kg. (₹) Less than 500 12.00 500 but less than 1600 11.80 1,600 but less than 4000 11.60 4,000 but less than 8,000 11.40 8,000 and above 11.20 BUSINESS DATA ANALYTICS The annual requirement for the material is 8,000 kgs. The ordering cost per order is ₹12.00 and the stock holding cost is estimated at 20% of material cost per annum. As a Cost and Management Accountant you have to compute the most economical ordering quantity. BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 103,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Management Of Cash And Cash Equivalents",
+   "papers": [
+    "PY D18"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following is not considered while preparing cash budget? (a) Accrual Principal (b) Difference in Capital and Revenue items (c) Conservation Principle (d) All of the above",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 127,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Management Of Cash And Cash Equivalents",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "practical",
+   "text": "TULSI Ltd. provides the following information: The company maintains a minimum cash balance of ₹ 10,00,000. The standard deviation of the Company’s daily cash flow is ₹3,60,000. The annual interest rate is 12%. The transaction cost of buying & selling securities is ₹180 per transaction. (Assume 360 days in a year). Required: Calculate the upper limit, return point, and Average Cash Balance as per the Miller-Orr model. BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 128,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Financial Working Capital",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "A commercial paper of the face value of ₹10,00,000 is issued at ₹9,60,000 for a maturity period of 120 days. The annual financing cost of the commercial paper is ___________. (a) 25% (b) 14.5% (c) 12.7% (d) 4%",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 148,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Financial Working Capital",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "5",
+   "kind": "practical",
+   "text": "A garment trader is preparing a cash forecast for the first three months of the calendar year 2023. His estimated sales for the forecasted periods are as below: Particulars January (in 000) February (in 000) March (in 000) Total Sales 600 600 800 (i) The trader sells directly to the public against cash payments and to other entities on credit. Credit sales are expected to be four times the value of direct sales to the public. He expects 15% of customers to pay in the month in which credit sales are made, 25% to pay in the next month and 58% to pay in the next-to-next month. The outstanding balance is expected to be written off. (ii) Purchases of goods are made in the month prior to sales and",
+   "part": "Financial Management"
+  },
+  {
+   "q": 149,
+   "chapter": 6,
+   "chapter_title": "Working Capital Management",
+   "section": "Financial Working Capital",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "State only one basic difference between the Baumol’s Model and Miller-Orr’s Model Cash Management Model BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 2,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Capital Structure And Capital Stacking",
+   "papers": [
+    "PY D22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which among the following is not an assumption of the Net Operating Income Approach? (a) Value of the Firm remains the same. (b) Cost of Debt remains the same. (c) Cost of Capital remains the same. (d) Cost of Equity remains the same.",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 15,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Capital Structure And Capital Stacking",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "practical",
+   "text": "Assuming no taxes and given the Earnings Before Interest and Taxes (EBIT), interest (I) at 10% and equity capitalisation rate (ke) below, calculate the total market value of each firm under Net Income approach: Firms EBIT I ke (₹) (₹) X 2,00,000 20,000 12.0% Y 3,00,000 60,000 16.0% Z 5,00,000 2,00,000 15.0% W 6,00,000 2,40,000 18.0% Also determine the Weight Average Cost of Capital (WACC) for each firm.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 23,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Capital Structure And Capital Stacking",
+   "papers": [
+    "PY J17"
+   ],
+   "marks": "3",
+   "kind": "theory",
+   "text": "Write a short note on Net Income Approach of Capital Structure.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 24,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Capital Structure And Capital Stacking",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "State only one basic difference between Capital Structure and Financial Structure.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 25,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Capital Structure And Capital Stacking",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Company L and company U are in the same risk class and identical in all respects except that L uses debt while U does not. Levered company has ₹18,00,000 debentures, carrying 10% rate of interest. Both the companies earn 20% before interest and taxes on their total assets of ₹30,00,000. Assume perfect capital market, tax rate of 50% and capitalization rate of 15% for an all-equity company. Compute the value of both the companies using NI approach and NOI approach and overall Cost of Capital of Company L using NI approach. BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 48,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Higher FL is related the use of: (a) Higher Equity (c) Lower Debt (b) Higher Debt (d) Lower Equity",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 52,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "At Indifference level of EBIT, different capital have- (a) Same EBIT (c) Same PAT (b) Same EPS (d) Same PBT",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 57,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The degree of operating leverage and degree of financial leverage of VINTEX LTD. are 2.00 and 1.5 respectively. What will be the percentage change in EPS, if the sale increases by 10%? (a) 10% increase (c) 30% increase (b) 15% increase (d) 35% increase",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 60,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY J18"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "If EBIT = ₹ 1,00,000, Fixed Assets = ₹ 2,00,000, Sales = ₹ 10,00,000 and Variable Cost = ₹ 7,00,000. Then, the Operating Leverage will be (a) 2 (b) 3 (c) 6 (d) 4",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 61,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY D22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "If the Fixed Cost is 50% of EBIT, then Operating Leverage would be (a) 2 (c) 3 (b) 2.5 (d) 1.5",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 105,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY J17"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "The following information are available in respect of ABC company: Liabilities Amount (₹) Assets Amount (₹) Equity share capital 1,20,000 Fixed Assets 3,00,000 Retained Earnings 40,000 Current Assets 1,00,000 10% Long Term Debt 1,60,000 Current Liabilities 80,000 4,00,000 4,00,000 The company's total assets turnover ratio is 3, its fixed operating costs are ₹ 2,00,000 and its variable operating cost ratio is 40%. The income tax rate is 50%. Calculate the different types of leverages, given that the face value of share is ₹ 10.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 106,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY J17"
+   ],
+   "marks": "4",
+   "kind": "theory",
+   "text": "Write short note on Financial Leverage.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 107,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY D17"
+   ],
+   "marks": "4",
+   "kind": "mcq",
+   "text": "Company A reports the following information from its financial statements. (₹) Sales 8,00,000 Less: Variable cost 2,40,000 Contribution 5,60,000 Fixed Cost 4,00,000 EBIT 1,60,000 Less: Interest 20,000 BUSINESS DATA ANALYTICS Profit before Tax 1,40,000 Find out: (a) Using concept of financial leverage, by what percentage will the taxable income increase, if EBIT increases by 10%? Verify the results in terms of Rupees. (b) Using the concept of operating leverage, by what percentage will EBIT increase if there is 10% increase in sales? Verify the results in terms of Rupees.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 108,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY D17"
+   ],
+   "marks": "4",
+   "kind": "theory",
+   "text": "Write short note on Combined Leverage",
+   "part": "Financial Management"
+  },
+  {
+   "q": 109,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY D18"
+   ],
+   "marks": "5",
+   "kind": "practical",
+   "text": "Jai & Karti Ltd. sells 1000,000 bottles of Soda in a year. Each bottle produced has a variable cost of Rs.5 and sells for Rs.10. Fixed operating costs are Rs.10,00,000. The company has debt of Rs.12,00,000 at 10% rate of interest. As a Cost and Management Accountant you are required to calculate: a. The Degree of Operating Leverage, b. The Degree of Financial Leverage, and c. The Degree of Total Leverage",
+   "part": "Financial Management"
+  },
+  {
+   "q": 110,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY D19"
+   ],
+   "marks": "6",
+   "kind": "mcq",
+   "text": "NESTINO LTD. had the following Balance Sheet as on March 31, 2019. Liabilities and Equity ₹ (in crores) Assets ₹ (in crores) Equity Share Capital Fixed Assets 25 (one crore shares of ₹10 10 (Net) each) Reserves & Surplus 2 Current Assets 15 15% Debentures 20 Current Liabilities 8 40 40 The additional information given is as under: Fixed Costs per annum (exclusive interest) ₹8 crores Variable operating cost ratio 65% Total Assets turnover ratio 2.5 Income tax rate 40% Required: Calculate the following: (a) Earnings per share (c) Financial Leverage (b) Operating Leverage (d) Combined Leverage BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 111,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY D19"
+   ],
+   "marks": "4",
+   "kind": "practical",
+   "text": "Significance of Degree of Financial Leverage",
+   "part": "Financial Management"
+  },
+  {
+   "q": 112,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY D22",
+    "PY J23 SY22"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "TCP Ltd. needs to raise ₹10,00,000 for the construction of a new plant and provides you with the following information: a. Financing Plan: A-40% Equity and Balance through 10% Debt Financing Plan: B-30% Equity, 60% through 10% Debt and Balance through 15% Preference Shares. b. Equity Shares of the face value of ₹ 10 each will be issued at a premium of 110%. Flotation cost ₹1 per share. 15% Preference Shares of the face value of ₹100 each will be issued at a premium of 110%. Flotation costs ₹10 per share. c. Expected Capital Turnover Ratio, 1, Expected Sales to Variable Cost Ratio 156.25%, Fixed Costs ₹ 60,000. Tax Rate: 25%. Required: Calculate the Indifference Point between A and B plans an",
+   "part": "Financial Management"
+  },
+  {
+   "q": 113,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "Funds required ₹10,00,000, Financial Plan I: 40% Equity Shares of 10 each to be issued at Rs. 20, Balance 10% Debt, Financial Plan II: 40% Equity Shares of ₹10 each to be issued at Rs. 20, 50% in 10% Debt and Balance in 15% Preference Shares, Tax Rate: 25%. Calculate the Indifference Point and Financial Break Even Point.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 114,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "The balance sheet of a company for the year 2022-23 is given below (in Crore): Liabilities Amount Assets Amount (₹) (₹) Equity 1,20,000 Fixed 3,00,000 share Assets capital (10) Retained 40,000 Current 1,00,000 Earnings Assets 10% Long 1,60,000 term debt Current 80,000 Liabilities 4,00,000 4,00,000 BUSINESS DATA ANALYTICS The company's total assets turnover ratio is 3, its fixed operating costs are ₹2,00,000 and its variable operating cost ratio is 40%. The income tax rate is 30%. Calculate Degree of Operating leverage, Degree of Financial leverage and Degree of Combined leverage of the company",
+   "part": "Financial Management"
+  },
+  {
+   "q": 115,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Leverage Analyses And Ebit Eps Analysis",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Calculate the degree of operating leverage (DOL), degree of financial leverage (DFL) and the degree of combined leverage (DCL) for the following firms and interpret the results. Firm K Firm L Firm M a. Output (Units) 60,000 15,000 1,00,000 b. Fixed costs (₹) 7,000 14,000 1,500 c. Variable cost per unit (₹) 0.20 1.50 0.02 d. Interest on borrowed funds (₹) 4,000 8,000 — e. Selling price per unit (₹) 0.60 5.00 0.10",
+   "part": "Financial Management"
+  },
+  {
+   "q": 121,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY D17"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which one of the following activities is outside the purview of dividend decision in financial management? (a) Identification of the profit after taxes (b) Measurement of the cost of funds (c) Deciding on the pay -out ratio (d) Considering issue of bonus shares to equity shareholders",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 122,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY D19"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "What should be the optimum Dividend payout ratio, when r=12% and Ke=10%? (a) Zero (c) 12% (b) 50% (d) 100% BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(a)"
+  },
+  {
+   "q": 123,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The capital structure of X Ltd. consists of 40% Equity Share Capital, 40% Preference Capital and 20% Debt. The after-tax cost of the Preference Capital and Debt are 15% and 7.20% respectively. The weighted average cost is 15.44%. X Ltd. paid currently a dividend of 4 per share. The current market price of its equity share is ₹44. Find the growth rate. (a) 8% (c) 10% (b) 9% (d) 11%",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 124,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The company maintains a minimum cash balance of ₹10,00,000. The standard deviation of the company's daily cash flow is ₹3,60,000. The annual interest rate is 12%. The transaction cost of buying & selling securities is ₹180 per transaction. (Assume 360 days in a year). Which of the following is false as per the Miller-Orr model? (a) Upper limit = 21,23,245 (b) Return Point = 13,74,415 (c) Average Cash Balance 14,99,220 (d) None of the above",
+   "part": "Financial Management",
+   "answer": "(d)"
+  },
+  {
+   "q": 125,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which among the following is not an assumption of the Net Income Approach? (a) No Corporate Taxes (b) No Change in Risk Perception (c) Debt Capitalisation Rate is equal to Equity Capitalisation Rate (d) Value of the firm does not remain the same",
+   "part": "Financial Management",
+   "answer": "(c)"
+  },
+  {
+   "q": 126,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The constant dividend growth model is useful for ___________. (a) Seasonal Industry (b) Mature Industry (c) Capital Oriented Industry (d) Growth Oriented Industry BUSINESS DATA ANALYTICS",
+   "part": "Financial Management",
+   "answer": "(b)"
+  },
+  {
+   "q": 149,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY J18"
+   ],
+   "marks": "5",
+   "kind": "practical",
+   "text": "The following information is available for AVANTI CORPORATION: Earning per share ₹6 Rate of Return on Investment 20% Rate of return required by shareholders 16% Required: What should be the approximate dividend pay-out ratio so as to keep the share price at ₹ 44 by using Walter Model?",
+   "part": "Financial Management"
+  },
+  {
+   "q": 150,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY D18"
+   ],
+   "marks": "5",
+   "kind": "practical",
+   "text": "You have been provided the following particulars pertaining to the three companies A LTD., B LTD., and D LTD., operating identical business: Company A Ltd B Ltd D Ltd EBIT (Rs.) 15,00,000 15,00,000 15,00,000 No. of Shares 3,00,000 2,50,000 2,00,000 12%debentures (Rs.) 9,00,000 10,00,000 Every company expects 12% Return on investment (ROI) Required: Find out the value of the Companies A LTD., B LTD., and D LTD., and value of their equity shares as per the Modigliani-Miller (MM) approach BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 151,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY J19"
+   ],
+   "marks": "5",
+   "kind": "practical",
+   "text": "HILSON LTD. was started a year back with equity capital of ₹ 40 lakhs. The other details are as under: Earnings of the company ₹ 4,00,000 Price Earnings ratio 12.5 Dividend paid ₹ 3,20,000 Number of Shares 40,000 Required: (i) Find the Current Market price of the share, and (ii) Find whether the Company’s D/P ratio is optimal — using Walter’s model.",
+   "part": "Financial Management"
+  },
+  {
+   "q": 152,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY D22"
+   ],
+   "marks": "5",
+   "kind": "practical",
+   "text": "BHT provides you with the following information: Equity Share Capital (50 each) 100 lakhs 12% Preference Share Capital 50 lakhs 10% Debentures 50 lakhs Return on Capital Employed 18.75% Dividend paid 12 lakhs Theoretical Market Price of an equity share under 300 Gordon's Model Tax Rate 20% Required: Determine the theoretical market price of an equity share under Walter's Model. Are you satisfied with the current dividend policy of the company? If not, what should be the optimum payout ratio?",
+   "part": "Financial Management"
+  },
+  {
+   "q": 153,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "4",
+   "kind": "practical",
+   "text": "Assumptions and Criticisms of M-M Approach as to Capital Structure",
+   "part": "Financial Management"
+  },
+  {
+   "q": 154,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "4",
+   "kind": "practical",
+   "text": "SL Ltd. provides you with the following information: Equity Share Capital (₹ 50 each) ₹100 lakhs 12% Preference Share Capital ₹50 lakhs 10% Debentures: ₹50 lakhs Return on Capital Employed 18.75% Total Dividend (including dividend on Preference 18 lakhs Shares) paid Theoretical Market Price of an equity share under ₹300 Gordon's Model BUSINESS DATA ANALYTICS Tax Rate 20%, Market Price of an equity share in the beginning of the year was ₹ 100 Required: Determine the theoretical market price of an equity share under Walter's Model and M. M. Model. Are you satisfied with the current dividend policy of the company? If not, what should be the optimum payout ratio?",
+   "part": "Financial Management"
+  },
+  {
+   "q": 155,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "7",
+   "kind": "mcq",
+   "text": "Suppose, PQR Ltd. which is expecting the EBIT of ₹1,50,000 per annum on an investment of ₹5,00,000, is considering the finalisation of the Capital Structure or the financial plan. The company has access to raise funds of varying amounts by issuing equity share capital, 12% preference share and 10% debenture or any combination thereof. Suppose, it analyses the following four options to raise the required funds of ₹5,00,000: (a) By issuing equity share capital at par. (b) A total of 50% funds by equity share capital and 50% funds by preference shares. (c) A total of 50% funds by equity share capital, 25% by preference shares and 25% by issue of 10% debentures. (d) A total of 25% funds by equit",
+   "part": "Financial Management"
+  },
+  {
+   "q": 156,
+   "chapter": 7,
+   "chapter_title": "Financing Decisions Of A Firm",
+   "section": "Dividend Decisions And Dividend Theories",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "A firm’s sales, variable costs and fixed cost amount to ₹75 lakh, ₹42 lakh and ₹6 lakh respectively. It has borrowed ₹45 lakh at 9% and its equity capital totals ₹55 lakh. (i) Calculate the firm’s ROI. (ii) Does it have favorable financial leverage? (iii) If the firm belongs to an industry whose asset turnover is 3, does it have high or low asset leverage? (iv) Compute the operating, financial and combined leverages of the firm. (v) If the sales drop to ₹50 lakh what will the new EBIT be? (vi) At what level will the EBT of the firm equal to zero? BUSINESS DATA ANALYTICS",
+   "part": "Financial Management"
+  },
+  {
+   "q": 1,
+   "chapter": 8,
+   "chapter_title": "Introduction To Data Science For Business Decision Making",
+   "section": "Meaning, Nature, Properties, Scope Of Data",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Numerical data may be expressed as (a) In the form of text (c) In the form of images (b) In the form of numbers (d) All of the above",
+   "part": "Business Data Analytics",
+   "answer": "(b)"
+  },
+  {
+   "q": 11,
+   "chapter": 8,
+   "chapter_title": "Introduction To Data Science For Business Decision Making",
+   "section": "Types Of Data In Finance And Costing",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Interpret the various types of data used in Finance and Costing. BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 18,
+   "chapter": 8,
+   "chapter_title": "Introduction To Data Science For Business Decision Making",
+   "section": "Transformation Of Data To Decision Relevant",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "To make the data turn into user friendly information, it should go one/more of following core steps (a) Collection of data (c) Data processing (b) Organising the data (d) All of the above",
+   "part": "Business Data Analytics",
+   "answer": "(d)"
+  },
+  {
+   "q": 21,
+   "chapter": 8,
+   "chapter_title": "Introduction To Data Science For Business Decision Making",
+   "section": "Transformation Of Data To Decision Relevant",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "6",
+   "kind": "theory",
+   "text": "“To make the data turn into user friendly information, it should go through six core steps” Refer text discuss",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 22,
+   "chapter": 8,
+   "chapter_title": "Introduction To Data Science For Business Decision Making",
+   "section": "Transformation Of Data To Decision Relevant",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "Transformation of Data to Decision Relevant Information requires to go through certain core steps.' In the light of the given statement, explain the steps to transform data into information.",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 23,
+   "chapter": 8,
+   "chapter_title": "Introduction To Data Science For Business Decision Making",
+   "section": "Transformation Of Data To Decision Relevant",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "“Biggest challenges lie in creating the efficiencies needed to gather and process basic financial data and continue to deliver traditional finance outputs while at the same time redeploying their limited resources to enable higher-value business decision support activities.” List of the steps to be followed to transform raw data into user friendly information BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 25,
+   "chapter": 8,
+   "chapter_title": "Introduction To Data Science For Business Decision Making",
+   "section": "Professional Skepticism Regarding Data",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "While data analytics is an important tool for decision making, managers should never take an important analysis at face value.’ Refer text Analyse the underlying essence of the statement",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 26,
+   "chapter": 8,
+   "chapter_title": "Introduction To Data Science For Business Decision Making",
+   "section": "Ethical Use Of Data And Decision",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "Discuss the five basic principles of data ethics that a business organization should follow",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 1,
+   "chapter": 9,
+   "chapter_title": "Data Processing Organisation Cleaning And Validation",
+   "section": "Development Of Data Processing",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Data science plays an important role in: (a) Risk analytics (b) Customer data management (c) Consumer analytics (d) All of the above",
+   "part": "Business Data Analytics",
+   "answer": "(d)"
+  },
+  {
+   "q": 5,
+   "chapter": 9,
+   "chapter_title": "Data Processing Organisation Cleaning And Validation",
+   "section": "Development Of Data Processing",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "8",
+   "kind": "theory",
+   "text": "How are data processing and data science related to finance? Mention the relevance in the areas of risk analytics, real time analytics and customer data management. BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 8,
+   "chapter": 9,
+   "chapter_title": "Data Processing Organisation Cleaning And Validation",
+   "section": "Functions Of Data Processing",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "7",
+   "kind": "theory",
+   "text": "Discuss the data classification process and steps involved in it BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 9,
+   "chapter": 9,
+   "chapter_title": "Data Processing Organisation Cleaning And Validation",
+   "section": "Data Organization And Distribution",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The primary benefit of data distribution is (a) the estimation of the probability of any certain observation within a sample space (b) the estimation of the probability of any certain observation within a non-sample space (c) the estimation of the probability of any certain observation within a population (d) the estimation of the probability of any certain observation without a non-sample space",
+   "part": "Business Data Analytics",
+   "answer": "(a)"
+  },
+  {
+   "q": 12,
+   "chapter": 9,
+   "chapter_title": "Data Processing Organisation Cleaning And Validation",
+   "section": "Data Organization And Distribution",
+   "papers": [
+    "PY J23 SY16"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "The probability density function describes (a) the characteristics of a random variable (b) the characteristics of a non-random variable (c) the characteristics of a random constant (d) the characteristics of a non-random constant",
+   "part": "Business Data Analytics",
+   "answer": "(a)"
+  },
+  {
+   "q": 13,
+   "chapter": 9,
+   "chapter_title": "Data Processing Organisation Cleaning And Validation",
+   "section": "Data Organization And Distribution",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Binomial distribution applies to attributes that are categorised into (a) Two mutually exclusive classes (b) Three mutually exclusive classes (c) Four mutually exclusive classes (d) Five mutually exclusive classes BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics",
+   "answer": "(a)"
+  },
+  {
+   "q": 21,
+   "chapter": 9,
+   "chapter_title": "Data Processing Organisation Cleaning And Validation",
+   "section": "Data Cleaning And Validation",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Which of the following is not a data validation technique (a) Code check (c) Length check (b) Range check (d) Consistency check",
+   "part": "Business Data Analytics",
+   "answer": "(c)"
+  },
+  {
+   "q": 27,
+   "chapter": 9,
+   "chapter_title": "Data Processing Organisation Cleaning And Validation",
+   "section": "Data Cleaning And Validation",
+   "papers": [
+    "PY J23 SY22",
+    "MQP J23 S2"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "What is Data Cleaning? What are the Steps for data cleaning? What are the benefit of data cleaning? BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 3,
+   "chapter": 10,
+   "chapter_title": "Data Presentation: Visualisation And Graphical Presentation",
+   "section": "Data Visualisation Of Financial And Non-",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "‘Data visualization is indispensable for managers who wish to comprehend and communicate the significance of the data flood we are all experiencing.’ Do you agree with this statement? Critically explain with appropriate examples.?",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 4,
+   "chapter": 10,
+   "chapter_title": "Data Presentation: Visualisation And Graphical Presentation",
+   "section": "Data Visualisation Of Financial And Non-",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "6",
+   "kind": "practical",
+   "text": "Prepare a list of the key factors that an analyst should keep in mind during data visualization to avoid common errors BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 9,
+   "chapter": 10,
+   "chapter_title": "Data Presentation: Visualisation And Graphical Presentation",
+   "section": "Objective And Function Of Data Presentation",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "Discuss the objectives of data Visualisation. BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 12,
+   "chapter": 10,
+   "chapter_title": "Data Presentation: Visualisation And Graphical Presentation",
+   "section": "Data Presentation Architecture",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "State the meaning, objectives and scope of Data Presentation Architecture (DPA). BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 13,
+   "chapter": 10,
+   "chapter_title": "Data Presentation: Visualisation And Graphical Presentation",
+   "section": "Dashboard Graphs Diagrams Tables Report",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Following is a widely used graph for data Visualisation (a) Bar chart (c) Histogram (b) Pie chart (d) All of the above",
+   "part": "Business Data Analytics",
+   "answer": "(d)"
+  },
+  {
+   "q": 14,
+   "chapter": 10,
+   "chapter_title": "Data Presentation: Visualisation And Graphical Presentation",
+   "section": "Dashboard Graphs Diagrams Tables Report",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Maps may be used for displaying (a) Pin code (c) State abbreviation (b) Country name (d) All of the above",
+   "part": "Business Data Analytics",
+   "answer": "(d)"
+  },
+  {
+   "q": 15,
+   "chapter": 10,
+   "chapter_title": "Data Presentation: Visualisation And Graphical Presentation",
+   "section": "Dashboard Graphs Diagrams Tables Report",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "A scatter plot displays several unique data points: (a) on a single graph. (c) On four different graphs (b) On two different graphs (d) None of the above",
+   "part": "Business Data Analytics",
+   "answer": "(a)"
+  },
+  {
+   "q": 16,
+   "chapter": 10,
+   "chapter_title": "Data Presentation: Visualisation And Graphical Presentation",
+   "section": "Dashboard Graphs Diagrams Tables Report",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "___________ represents a project timeline or activity changes across time. (a) Bubble Chart (b) Gantt Chart (c) Density Map (d) Scatter Plots",
+   "part": "Business Data Analytics",
+   "answer": "(b)"
+  },
+  {
+   "q": 25,
+   "chapter": 10,
+   "chapter_title": "Data Presentation: Visualisation And Graphical Presentation",
+   "section": "Dashboard Graphs Diagrams Tables Report",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "List the following Steps involved in using Data Visualisation in report design BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 28,
+   "chapter": 10,
+   "chapter_title": "Data Presentation: Visualisation And Graphical Presentation",
+   "section": "Tools And Techniques Of Visualisation                          And",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "2",
+   "kind": "practical",
+   "text": "Important four issues which the presenter should keep in mind for effective Data Visualisation",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 29,
+   "chapter": 10,
+   "chapter_title": "Data Presentation: Visualisation And Graphical Presentation",
+   "section": "Tools And Techniques Of Visualisation                          And",
+   "papers": [
+    "PY J23 SY22"
+   ],
+   "marks": "2",
+   "kind": "theory",
+   "text": "List any four Tools for visualising and presenting the data BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 3,
+   "chapter": 11,
+   "chapter_title": "Data Analysis And Modelling",
+   "section": "Process, Benefits And Types Of Data Analysis",
+   "papers": [
+    "MQP D23 S2"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "Discuss the benefits of data analytics",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 4,
+   "chapter": 11,
+   "chapter_title": "Data Analysis And Modelling",
+   "section": "Process, Benefits And Types Of Data Analysis",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "7",
+   "kind": "theory",
+   "text": "Describe Data Analytics and the steps involved in Data Analytics",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 5,
+   "chapter": 11,
+   "chapter_title": "Data Analysis And Modelling",
+   "section": "Process, Benefits And Types Of Data Analysis",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "'Data Analytics is the science of evaluating unprocessed data sets to get some conclusions.' In the context of the given statement, briefly explain the steps of Data Analytics. BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 15,
+   "chapter": 11,
+   "chapter_title": "Data Analysis And Modelling",
+   "section": "Data Mining And Implementation Of Data",
+   "papers": [
+    "MQP D23 S1"
+   ],
+   "marks": "",
+   "kind": "theory",
+   "text": "Discuss various applications of data mining techniques in finance and accounting BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 23,
+   "chapter": 11,
+   "chapter_title": "Data Analysis And Modelling",
+   "section": "Analytics And Model Building (Descriptive,",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "7",
+   "kind": "theory",
+   "text": "Define Prescriptive Analytics and explain how it works. BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 25,
+   "chapter": 11,
+   "chapter_title": "Data Analysis And Modelling",
+   "section": "Standards For Data Tagging And Reporting",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "XBRL is the abbreviated form of (a) extensible Business Reporting Language (b) extensive Business Reporting Language (c) extended Business Reporting Language (d) extensive Business Reporting Language BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics",
+   "answer": "(a)"
+  },
+  {
+   "q": 26,
+   "chapter": 11,
+   "chapter_title": "Data Analysis And Modelling",
+   "section": "Cloud Computing, Business Intelligence,",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "Following are the types of cloud computing (a) Private cloud (b) Public cloud (c) Hybrid cloud (d) All of the above",
+   "part": "Business Data Analytics",
+   "answer": "(d)"
+  },
+  {
+   "q": 27,
+   "chapter": 11,
+   "chapter_title": "Data Analysis And Modelling",
+   "section": "Cloud Computing, Business Intelligence,",
+   "papers": [
+    "PY D23"
+   ],
+   "marks": "",
+   "kind": "mcq",
+   "text": "___________ architecture enables business to store sensitive data on premises and access it though app hosted in the public cloud. (a) Private Cloud (b) Public Cloud (c) Hybrid Cloud (d) All of the above",
+   "part": "Business Data Analytics",
+   "answer": "(c)"
+  },
+  {
+   "q": 29,
+   "chapter": 11,
+   "chapter_title": "Data Analysis And Modelling",
+   "section": "Cloud Computing, Business Intelligence,",
+   "papers": [
+    "MQP J23 S2"
+   ],
+   "marks": "9",
+   "kind": "theory",
+   "text": "Distinguish between the following: (i) Weak AI vs. Strong AI (ii) Deep learning vs. machine learning BUSINESS DATA ANALYTICS",
+   "part": "Business Data Analytics"
+  },
+  {
+   "q": 30,
+   "chapter": 11,
+   "chapter_title": "Data Analysis And Modelling",
+   "section": "Model Vs Data Driven Decision Making",
+   "papers": [
+    "MQP J23 S1"
+   ],
+   "marks": "7",
+   "kind": "practical",
+   "text": "‘In artificial intelligence, there are two schools of thought: data- driven and model- driven’ Refer text Critically explain this statement. Mention of real-life examples will carry weight.",
+   "part": "Business Data Analytics"
+  }
+ ]
+}

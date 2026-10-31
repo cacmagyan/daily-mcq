@@ -3,7 +3,7 @@
   "course_id": "cma_cat",
   "topic": "Forfeiture and Reissue of Shares",
   "concept_topic": "Forfeiture and Reissue of Shares",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 8: board to_note is 13 characters; at most 12; hook_label is required, at most 22 characters",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 2: board title is 20 characters; at most 18; line 12: board sub is 45 characters; at most 44; hook_label is required, at most 22 characters",
   "hold": false,
   "hold_reason": ""
 }

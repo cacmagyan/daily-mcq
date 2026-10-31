@@ -138,6 +138,22 @@ svg { display: block; overflow: visible; }
   border-radius: 12px 18px 10px 16px; padding: 12px 20px; transform: rotate(-0.8deg); font-size: 27px; line-height: 1.25; }
 .link b { font-family: 'Permanent Marker', cursive; font-weight: 400; color: var(--red); }
 
+.je { background: #FFFFFF; border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); padding: 12px 22px 14px;
+  display: flex; flex-direction: column; gap: 4px; }
+.je.r0 { border-radius: 16px 24px 18px 26px / 24px 16px 26px 18px; }
+.je.r1 { border-radius: 24px 16px 26px 18px / 16px 24px 18px 26px; }
+.je.r2 { border-radius: 20px 14px 22px 16px / 14px 22px 16px 20px; }
+.je .jl { font-family: 'Caveat', cursive; font-weight: 700; font-size: 29px; line-height: 1.05; color: var(--teal); }
+.je .dr { display: flex; align-items: baseline; gap: 10px; font-size: 28px; line-height: 1.32; }
+.je .dots { flex: 1 1 0; min-width: 16px; border-bottom: 3px dotted #9AA5BD; }
+.je .drk { font-family: 'Permanent Marker', cursive; font-size: 21px; }
+.je .cr { padding-left: 48px; font-size: 28px; line-height: 1.32; }
+.je .nar { font-size: 22px; line-height: 1.25; color: var(--soft); }
+.radar { background: #E1EEFF; border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); border-radius: 20px 13px 18px 12px;
+  padding: 12px 20px 14px; display: flex; flex-direction: column; gap: 8px; }
+.radar .lab { font-family: 'Permanent Marker', cursive; font-size: 26px; line-height: 1.1; }
+.radar .pp { display: flex; flex-direction: column; gap: 1px; font-size: 26px; line-height: 1.28; }
+.radar .tag { font-family: 'Caveat', cursive; font-weight: 700; font-size: 29px; line-height: 1.05; color: var(--red); }
 .foot { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .swipe { display: flex; align-items: center; gap: 10px; font-family: 'Caveat', cursive; font-weight: 700; font-size: 34px; line-height: 1; color: var(--red); }
 .brand { display: flex; align-items: center; gap: 18px; }
@@ -249,6 +265,14 @@ svg { display: block; overflow: visible; }
     </div>
   </div>
   {% endif %}
+  {% for e in c.entries or [] %}
+  <div class="je r{{ loop.index0 % 3 }}">
+    {% if e.label %}<div class="jl">{{ e.label }}</div>{% endif %}
+    {% for a in e.debit %}<div class="dr"><span>{{ a }}</span><span class="dots"></span><span class="drk">Dr</span></div>{% endfor %}
+    {% for a in e.credit %}<div class="cr">To {{ a }}</div>{% endfor %}
+    {% if e.narration %}<div class="nar">({{ e.narration }})</div>{% endif %}
+  </div>
+  {% endfor %}
   {% if c.insight and c.insight.punchline %}
   <div class="link">{{ bulb(30) }}<div><b>{{ c.insight.punchline }}</b> {{ c.insight.text|mark }}</div></div>
   {% endif %}
@@ -287,6 +311,12 @@ svg { display: block; overflow: visible; }
     <div class="mrow"><div class="ico yes"><svg width="22" height="20" viewBox="0 0 22 20"><path class="ink" d="M3 11 L9 17 L19 3"></path></svg></div><div>{{ m.right|mark }}</div></div>
   </div>
   {% endfor %}
+  {% if c.past_papers %}
+  <div class="radar">
+    <div class="lab">Past exam radar</div>
+    {% for p in c.past_papers %}<div class="pp"><span class="tag">{{ p.papers }}</span><span>{{ p.point|mark }}</span></div>{% endfor %}
+  </div>
+  {% endif %}
   <div class="link">{{ bulb(30) }}<div><b>Tomorrow's {{ course.name }} MCQ tests this!</b> Revise it tonight, then try the MCQ.</div></div>
 {% endif %}
 </div></div>

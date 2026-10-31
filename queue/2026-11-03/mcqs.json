@@ -80,60 +80,67 @@
       "course_id": "cma_cat",
       "paper_code": "Paper 1A",
       "paper_name": "Fundamentals of Financial Accounting",
-      "topic": "Bills of Exchange - Discounting",
-      "question": "Ravi draws a 3-month bill for ₹1,20,000 on Sunil, who accepts it. On the same day Ravi discounts it with his bank at 12% per annum. What amount does the bank credit to Ravi's account?",
+      "topic": "Cash Flow Statement - Operating Activities",
+      "question": "FY 2025-26 data of a firm: profit before tax ₹5,00,000 (after charging depreciation ₹80,000, loss on sale of machine ₹20,000, and crediting interest income ₹15,000). Debtors up ₹40,000; inventory down ₹30,000; creditors up ₹25,000. Cash generated from operations (before tax) is:",
       "options": [
-        "₹1,05,600",
-        "₹1,16,400",
-        "₹1,20,000",
-        "₹1,23,600"
+        "₹6,15,000",
+        "₹6,00,000",
+        "₹5,85,000",
+        "₹5,70,000"
       ],
       "correct": "B",
-      "explanation": "Discount is charged on the bill value for the unexpired period only: 1,20,000 × 12% × 3/12 = ₹3,600. Net proceeds = 1,20,000 − 3,600 = ₹1,16,400.",
+      "explanation": "Indirect method: add back non-cash and non-operating charges (depreciation, loss on sale), deduct interest income (investing item), then adjust working capital changes.",
       "working": [
         {
-          "label": "Bill amount",
-          "value": "₹1,20,000"
+          "label": "Profit before tax",
+          "value": "₹5,00,000"
         },
         {
-          "label": "Annual discount at 12%",
-          "value": "₹14,400"
+          "label": "Add: depreciation",
+          "value": "₹80,000"
         },
         {
-          "label": "Discount for 3 months",
-          "value": "₹3,600"
+          "label": "Add: loss on sale of machine",
+          "value": "₹20,000"
         },
         {
-          "label": "Net proceeds (1,20,000 − 3,600)",
-          "value": "₹1,16,400"
+          "label": "Less: interest income",
+          "value": "₹15,000"
+        },
+        {
+          "label": "Net working capital effect",
+          "value": "₹15,000"
+        },
+        {
+          "label": "Cash generated from operations",
+          "value": "₹6,00,000"
         }
       ],
       "why_not": {
-        "A": "Charged discount for a full year (₹14,400) instead of 3 months.",
-        "D": "Added the discount to the bill amount instead of deducting it.",
-        "C": "Ignored the discount; the bank pays less than face value."
+        "A": "Did not deduct interest income, which is an investing inflow, not operating.",
+        "D": "Took working capital change as negative instead of a net inflow of ₹15,000.",
+        "C": "Ignored working capital changes completely."
       },
-      "exam_tip": "Discounting: bank pays face value minus discount for the unexpired period; the drawer's liability continues till maturity.",
-      "calculation": "bill = 120000\ndiscount = bill * 12 / 100 * 3 / 12\nanswer = bill - discount",
+      "exam_tip": "Indirect method: add back non-cash and financing/investing losses; deduct their gains and income. Debtors up = cash down.",
+      "calculation": "pbt = 500000\nadj = 80000 + 20000 - 15000\nwc = -40000 + 30000 + 25000\nanswer = pbt + adj + wc",
       "applicability": "",
       "confidence": "high",
       "reviewer_note": "",
       "attempts": 1,
-      "check_notes": [
-        "Checker: The question doesn't mention days of grace. Under the Negotiable Instruments Act a 3-month bill would normally carry 3 days of grace, so the discount period could be read as slightly longer. Most textbooks ignore this.",
-        "Checker: The question doesn't say that the discount is charged on the face value, though this is standard."
-      ],
+      "check_notes": [],
       "difficulty": "medium",
       "law_sensitive": false,
       "serious": false,
-      "needs_check": true,
+      "needs_check": false,
       "author": "Rahul kp",
       "images": {
         "question": "cma_cat_q.jpg",
         "answer": "cma_cat_a.jpg"
       },
-      "fit_notes": [],
-      "caption": "🟨 CMA CAT · MCQ of the day · Day 13\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Bills of Exchange - Discounting\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261103",
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 13\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Cash Flow Statement - Operating Activities\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261103",
       "story": "cma_cat_story.jpg",
       "hold": false,
       "hold_reason": ""

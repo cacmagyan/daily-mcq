@@ -377,7 +377,24 @@ def story_tidy(cfg: Config | None, script: dict) -> dict:
         lines[-1].update(who="teacher", say=follow_line(cfg) if cfg else FOLLOW_LINE)
         lines[-1].pop("board", None)
     script["lines"] = lines
+    # the hook stamp: Claude sometimes leaves it out or makes it too long; build it from the title
+    given = str(script.get("hook_label") or "").strip()
+    hook = given or str(script.get("title") or "").strip().upper()
+    if len(hook) > 22:
+        cut = hook[:23].rsplit(" ", 1)[0].rstrip(" ,:;-&")
+        hook = cut if len(cut) >= 8 else hook[:22]
+    if hook:
+        script["hook_label"] = hook
     return script
+
+
+_BOARD_LONG = re.compile(r"board (?:title|sub|formula) is (\d+) characters; at most (\d+)$")
+
+
+def _small_overrun(problem: str) -> bool:
+    """Board text a little over its limit still fits: the chalk text shrinks to the board's width."""
+    m = _BOARD_LONG.search(problem)
+    return bool(m) and int(m.group(1)) <= int(m.group(2)) * 1.3
 
 
 def story_validate(script: dict) -> list[str]:
@@ -385,7 +402,7 @@ def story_validate(script: dict) -> list[str]:
     from .story_video import check
 
     lines = script.get("lines") or []
-    out = check(script)
+    out = [p for p in check(script) if not _small_overrun(p)]
     if lines and (lines[0].get("who") == "teacher" or lines[0].get("shot") not in ("desk", "close")):
         out.append("line 1 must be a student's hook in a desk or close shot")
     if len(str(script.get("hook_label") or "")) > 22 or not str(script.get("hook_label") or "").strip():

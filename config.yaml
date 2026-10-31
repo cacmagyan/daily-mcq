@@ -53,6 +53,28 @@ concepts:
     start_date: "2026-10-31"
     post_time: "13:00"          # IST, lunch break; keep matched to the 13:02 line in publish.yml
 
+# News of the day: a carousel of the top stories for CA / CMA students (ICAI / ICMAI, tax, GST, audit,
+# frauds, SEBI, RBI ...). Made at about 9 PM by "News" (news.yml) from the feeds below, fact-checked against
+# each article, and posted at post_time. If fewer than `stories` pass the check, or the writer is unsure,
+# it is held: comment /approve news (or /regen news) on the day's issue.
+news:
+  enabled: true
+  start_date: "2026-10-31"
+  post_time: "22:00"            # IST; keep matched to the 22:02 line in publish.yml
+  stories: 3
+  hours: 30                     # only stories published in the last 30 hours
+  hashtags: ["#CANews", "#CMANews", "#ICAI", "#ICMAI", "#TaxNews"]
+  feeds:                        # RSS feeds; a feed that fails is skipped
+    - { name: "Economic Times", url: "https://economictimes.indiatimes.com/wealth/tax/rssfeeds/47119912.cms" }
+    - { name: "Economic Times", url: "https://economictimes.indiatimes.com/small-biz/gst/rssfeeds/58475404.cms" }
+    - { name: "Economic Times", url: "https://economictimes.indiatimes.com/news/economy/rssfeeds/1373380680.cms" }
+    - { name: "Economic Times", url: "https://economictimes.indiatimes.com/rssfeeds/13358259.cms" }
+    - { name: "Economic Times", url: "https://economictimes.indiatimes.com/jobs/exams-results/rssfeeds/97860466.cms" }
+    - { name: "Mint", url: "https://www.livemint.com/rss/money" }
+    - { name: "Mint", url: "https://www.livemint.com/rss/companies" }
+    - { name: "Mint", url: "https://www.livemint.com/rss/education" }
+    - { name: "TaxGuru", url: "https://taxguru.in/feed/" }
+
 # Which MCQs post: with alternate on, the three CA courses one day and the three CMA courses the next.
 mcqs:
   alternate: true

@@ -1,9 +1,197 @@
 {
   "kind": "explainer2",
   "course_id": "cma_cat",
+  "paper_code": "Paper 2A",
+  "paper_name": "Financial Accounting-2",
   "topic": "Valuation of Unsold Stock on Consignment",
   "concept_topic": "Valuation of Unsold Stock on Consignment",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 6: board left needs at most 2 lines of at most 14 characters; line 6: board right needs at most 2 lines of at most 14 characters",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 70.06,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Valuing unsold stock on consignment",
+    "caption_hook": "Why does unsold consignment stock carry expenses too?",
+    "hook_label": "STOCK CARRIES COST?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Ma'am, why does unsold stock carry some expenses too?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Unsold goods still belong to the consignor, so he values them in his books.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Consignment Stock",
+          "sub": "Unsold goods, consignor's books"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So is the value just the cost?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Cost plus one-time expenses up to the godown: freight, insurance in transit, loading, unloading, octroi or entry tax.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Added to stock",
+          "lines": [
+            "Freight",
+            "Insurance in transit",
+            "Loading and unloading",
+            "Octroi or entry tax"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "What about godown rent and selling expenses?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Those come after the door. Till the door, not the floor! They go to Consignment account.",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "In stock",
+            "lines": [
+              "Freight",
+              "Unloading"
+            ],
+            "icon": "check",
+            "color": "green"
+          },
+          "right": {
+            "title": "Expense",
+            "lines": [
+              "Godown rent",
+              "Selling cost"
+            ],
+            "icon": "cross",
+            "color": "red"
+          },
+          "right_on": "floor"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Consignee paid the unloading. Does that count?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! Whoever paid, add them for the whole consignment. Then take only the unsold share.",
+        "shot": "board",
+        "pose": "explain"
+      },
+      {
+        "who": "boy",
+        "say": "How do we take that share?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Closing stock equals unsold units times cost plus expenses, divided by units sent.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "formula",
+          "title": "Value of unsold stock",
+          "formula": "U × (C + E) / Q",
+          "sub": "U unsold, Q sent, C cost, E expenses to godown"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Can we try numbers?",
+        "shot": "close",
+        "pose": "excited"
+      },
+      {
+        "who": "teacher",
+        "say": "Sent 100 units costing ₹20,000. Expenses ₹3,000. Unsold 20 units. Stock is 20 by 100 of ₹23,000.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "calc",
+          "top": "20/100 × ₹23,000",
+          "big": "₹4,600"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "What if goods were sent at invoice price?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Take loaded invoice value plus expenses, then create Stock Reserve for the loading on unsold goods.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Sent at invoice price",
+          "lines": [
+            "Stock at invoice + exp.",
+            "Stock Reserve on loading"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: till the door, not the floor.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Till the Door,",
+            "Not the Floor"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Worked example: expenses ₹3,000 assumed to be non-recurring costs up to the godown (freight, insurance in transit, unloading); stock = 20/100 × 23,000 = ₹4,600. Octroi/entry tax mentioned as 'where levied' (legacy item after GST). Word count is near the upper limit.",
+    "Checker: Line 4 and its board ('Octroi or entry tax'): both taxes were folded into GST in 2017, so as current examples they are out of date. They still appear in older textbook problems. Correct version: say 'octroi or entry tax (older problems), or any other non-recurring charge up to the consignee's godown, such as carriage or cartage'.",
+    "Checker: Line 8 ('Whoever paid, add them for the whole consignment'): 'them' could be heard as all of the consignee's expenses. Correct version: 'Whoever paid, add the non-recurring expenses up to the godown, whether the consignor or the consignee paid them, for the whole consignment. Then take only the unsold share.' This makes clear that recurring expenses paid by the consignee, such as godown rent, are not added.",
+    "Checker: Line 10 voice ('unsold units times cost plus expenses, divided by units sent'): spoken aloud, the order of operations is unclear, and 'cost' could be taken as cost per unit. Correct version: 'unsold units divided by units sent, times total cost plus total expenses to the godown'. The board's 'C cost, E expenses' should also say 'total cost of goods sent' and 'total non-recurring expenses'."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Worked example: expenses ₹3,000 assumed to be non-recurring costs up to the godown (freight, insurance in transit, unloading); stock = 20/100 × 23,000 = ₹4,600. Octroi/entry tax mentioned as 'where levied' (legacy item after GST). Word count is near the upper limit.",
+  "caption": "🎬 🟨 CMA CAT · Valuing unsold stock on consignment\n\nWhy does unsold consignment stock carry expenses too?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 2A: Financial Accounting-2\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref explainer2-261031",
   "hold": false,
   "hold_reason": ""
 }

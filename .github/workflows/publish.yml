@@ -13,9 +13,10 @@ on:
     - cron: "2 14 * * *"           # 19:32 IST  Evening video  (explainer post_time 19:30)
     - cron: "2 15 * * *"           # 20:32 IST  Concept of the day (concepts post_time 20:30)
     - cron: "2 16 * * *"           # 21:32 IST  CA Final / CMA Final MCQ     (21:30)
-    # Back-up runs every 30 minutes, 07:37 to 22:07 IST. GitHub sometimes starts a timed run late or
+    - cron: "32 16 * * *"           # 22:02 IST  News of the day (news post_time 22:00)
+    # Back-up runs every 30 minutes, 07:37 to 23:07 IST. GitHub sometimes starts a timed run late or
     # skips it; the next back-up run then posts whatever is due. Nothing is ever posted twice.
-    - cron: "7,37 2-16 * * *"
+    - cron: "7,37 2-17 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -92,7 +93,7 @@ jobs:
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
-          LAST_SLOT: ${{ github.event.schedule == '2 16 * * *' }}
+          LAST_SLOT: ${{ github.event.schedule == '32 16 * * *' }}
         run: |
           DATE=$(TZ=Asia/Kolkata date +%F)
           [ -f "queue/$DATE/mcqs.json" ] || exit 0

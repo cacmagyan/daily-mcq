@@ -1,9 +1,181 @@
 {
   "kind": "explainer2",
   "course_id": "cma_cat",
+  "paper_code": "Paper 2A",
+  "paper_name": "Financial Accounting-2",
   "topic": "Forfeiture and Reissue of Shares",
   "concept_topic": "Forfeiture and Reissue of Shares",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 6: board lines needs 1-4 lines of at most 24 characters; line 8: board lines needs 1-4 lines of at most 24 characters",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 79.17,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Forfeiture and Reissue of Shares",
+    "caption_hook": "They cancel your shares but keep your money? Here's how forfeiture works.",
+    "hook_label": "KEEPS YOUR MONEY?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Ma'am, company cancels my shares but keeps my money? How's that fair?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "If a member doesn't pay a call, the company cancels the shares. Money already received stays.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "title",
+          "title": "Forfeiture & Reissue",
+          "sub": "Paid stays, unpaid goes"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "What about the unpaid part?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Say 100 shares of ₹10. Called up ₹8, paid ₹6. Unpaid ₹2 each is ₹200, calls in arrear.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "Arrear 100×(₹8−₹6)",
+          "big": "₹200"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Okay, and how do we record that?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Debit share capital ₹800, the called-up amount. Credit forfeited shares ₹600 and calls in arrear ₹200.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "On forfeiture",
+          "lines": [
+            "Share Capital A/c Dr 800",
+            "To Forfeited Shares A/c 600",
+            "To Calls in Arrear A/c 200"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Can they sell those shares again?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! Reissue them as fully paid ₹10 shares at ₹7. Bank gets ₹700; ₹300 discount comes from forfeited shares.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "list",
+          "title": "On reissue",
+          "lines": [
+            "Bank A/c Dr 700",
+            "Forfeited Shares A/c Dr 300",
+            "To Share Capital A/c 1,000"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Can they give any discount they want?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Only up to the amount forfeited on those shares. Here ₹600, so ₹300 is fine.",
+        "shot": "board",
+        "pose": "think"
+      },
+      {
+        "who": "girl",
+        "say": "Where does the leftover forfeited money go?",
+        "shot": "close",
+        "pose": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Capital reserve equals forfeited amount minus discount. ₹600 minus ₹300 is ₹300.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "formula",
+          "title": "Capital Reserve",
+          "formula": "F − D",
+          "sub": "F = amount forfeited, D = discount on reissue"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Oh! So it goes to Capital Reserve, not profit?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes. Debit forfeited shares, credit capital reserve ₹300.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "list",
+          "title": "Gain transferred",
+          "lines": [
+            "Forfeited Shares A/c Dr 300",
+            "To Capital Reserve A/c 300"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: paid stays, unpaid goes. Forfeit first, then reissue!",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Paid stays,",
+            "unpaid goes"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Example: 100 shares of ₹10, called up ₹8, paid ₹6. Forfeiture: Share Capital Dr 800, Forfeited Shares 600, Calls in Arrear 200. Reissue at ₹7 as fully paid: Bank 700, Forfeited Shares Dr 300, Share Capital 1,000. Capital Reserve 600 − 300 = 300. Calc board label now reads \"Arrear 100×(₹8−₹6)\" (18-character limit), and the voice line says ₹200 is calls in arrear.",
+    "Checker: Line 2 (voice): 'If a member doesn't pay a call, the company cancels the shares' makes forfeiture sound automatic. Forfeiture is optional. It needs authority in the Articles (Table F), a notice of at least 14 days to the defaulting member, and a board resolution. Suggested wording: 'If a member doesn't pay a call even after notice, the company may forfeit the shares as its Articles allow. Money already received stays with the company.'",
+    "Checker: Line 12 (board formula F − D): the sub-text should make clear that this applies only to shares that have been reissued. Suggested wording: 'F = amount forfeited on the shares reissued, D = discount on reissue.' The ₹300 result is correct here because all 100 shares were reissued, but with a partial reissue the formula as written would give the wrong figure."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Example: 100 shares of ₹10, called up ₹8, paid ₹6. Forfeiture: Share Capital Dr 800, Forfeited Shares 600, Calls in Arrear 200. Reissue at ₹7 as fully paid: Bank 700, Forfeited Shares Dr 300, Share Capital 1,000. Capital Reserve 600 − 300 = 300. Calc board label now reads \"Arrear 100×(₹8−₹6)\" (18-character limit), and the voice line says ₹200 is calls in arrear.",
+  "caption": "🎬 🟨 CMA CAT · Forfeiture and Reissue of Shares\n\nThey cancel your shares but keep your money? Here's how forfeiture works.\n\n📒 Full concept note today at 1:40 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 2A: Financial Accounting-2\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref explainer2-261031",
   "hold": false,
   "hold_reason": ""
 }

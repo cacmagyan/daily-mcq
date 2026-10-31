@@ -46,6 +46,20 @@ concepts:
   start_date: "2026-10-19"      # first concept post (normally written the evening before)
   post_time: "19:40"            # IST; keep matched to the 19:40 line in publish.yml
   courses: ["ca_foundation", "cma_cat", "ca_inter", "cma_inter", "ca_final", "cma_final"]
+  # A second note (and its cartoon video) every day, for a course of the other family than the
+  # evening note, so CA and CMA students both get a note and a video each day.
+  second:
+    enabled: true
+    start_date: "2026-11-01"
+    post_time: "13:40"          # IST; keep matched to the 13:42 line in publish.yml
+
+# Which MCQs post: with alternate on, the three CA courses one day and the three CMA courses the next.
+mcqs:
+  alternate: true
+  start_date: "2026-11-01"      # the first family below posts on this date, the second the next day, ...
+  families:
+    - ["ca_foundation", "ca_inter", "ca_final"]
+    - ["cma_cat", "cma_inter", "cma_final"]
 
 # MCQ reel of the day: one of the day's MCQs as a 15-second vertical video (question with a
 # countdown and ticking, then the answer filled in like an OMR bubble, with the reason).
@@ -86,6 +100,7 @@ explainer:
   enabled: true
   start_date: "2026-10-30"      # first explainer reel
   post_time: "17:55"            # same slot as the reel (keep matched to the 17:57 line in publish.yml)
+  second_post_time: "11:25"     # the second note's video (keep matched to the 11:27 line in publish.yml)
   style: "story"                # "story": classroom scene · "classic": the elephant alone, ~40 s
   voice: "af_heart"             # classic style only (the story's voices are in story_video.py)
   speed: 1.05                   # 1.0 = normal speaking speed
@@ -98,7 +113,7 @@ explainer:
 comment_dm:
   enabled: true
   keywords: ["notes", "note", "pdf"]   # a comment with any of these words gets the PDF (the first is shown in the call to action)
-  posts: ["explainer", "concept"]      # which posts it answers on
+  posts: ["explainer", "concept", "explainer2", "concept2"]      # which posts it answers on
   days: 7                              # Instagram allows the DM up to 7 days after the comment
   public_reply: "Sent! Check your DMs 📩"
 

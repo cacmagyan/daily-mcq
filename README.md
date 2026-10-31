@@ -1,17 +1,25 @@
 # Daily CA & CMA MCQ agent
 
-Every day this agent writes one MCQ for each of six courses, draws a **question image** and an **answer image** for each, and posts each pair to Instagram as a two-slide carousel (swipe for the answer). It also posts one **Concept of the day**: a 4-slide handwritten-notebook note, and one **cartoon explainer reel**: the elephant explains the concept in about 40 seconds with a voice (the **MCQ reel** is its backup). All below.
+From 1 Nov 2026, each day the page posts:
 
-Each course has its own colour, so students can spot their MCQ in the feed and on your profile grid:
+- **3 MCQs**: the three CA courses one day, the three CMA courses the next (`mcqs: alternate` in `config.yaml`). Each is a two-slide carousel: a **question image** and an **answer image** (swipe for the answer).
+- **2 concept notes**: 4-slide handwritten-notebook notes, one for a CA course and one for a CMA course.
+- **2 cartoon explainer reels**: one classroom video for each note.
 
-| Course | Colour | Posts at (IST) |
+| Time (IST) | CA day | CMA day |
 |---|---|---|
-| CA Foundation | 🟩 green | 07:55 |
-| CMA CAT | 🟨 yellow | 09:55 |
-| CA Inter | 🟦 blue | 12:25 |
-| CMA Inter | 🟧 orange | 15:25 |
-| CA Final | 🟪 purple | 18:25 |
-| CMA Final | 🟥 red | 20:55 |
+| 07:55 | 🟩 CA Foundation MCQ | |
+| 09:55 | | 🟨 CMA CAT MCQ |
+| 11:25 | 🎬 video 2 | 🎬 video 2 |
+| 12:25 | 🟦 CA Inter MCQ | |
+| 13:40 | 📒 note 2 (same course as video 2) | 📒 note 2 |
+| 15:25 | | 🟧 CMA Inter MCQ |
+| 17:55 | 🎬 6 PM video | 🎬 6 PM video |
+| 18:25 | 🟪 CA Final MCQ | |
+| 19:40 | 📒 evening note (same course as the 6 PM video) | 📒 evening note |
+| 20:55 | | 🟥 CMA Final MCQ |
+
+The evening note takes the courses in turn. The second note is always a course of the other family, so CA and CMA students each get a note and a video every day. Each course has its own colour, so students can spot their posts in the feed and on your profile grid. In commands, the second note and video are `concept2` and `explainer2`, for example `/regen concept2` or `/hold explainer2`.
 
 The images are designed as an OMR answer sheet printed in the course colour. On the answer slide the correct bubble is filled in with pencil, followed by the explanation, the rough work, why the other options are wrong, and an exam tip.
 

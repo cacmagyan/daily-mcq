@@ -1951,13 +1951,13 @@ class ExplainerMinorFixTests(TempQueue):
 
 
 class TwoPerDayTests(TempQueue):
-    """From 1 Nov 2026: three MCQs a day (CA one day, CMA the next), two concept notes and two videos."""
-    CA_DAY, CMA_DAY = dt.date(2026, 11, 1), dt.date(2026, 11, 2)
+    """From 31 Oct 2026: three MCQs a day (CA one day, CMA the next), two concept notes and two videos."""
+    CA_DAY, CMA_DAY = dt.date(2026, 11, 2), dt.date(2026, 11, 3)
 
     def test_mcq_families_alternate(self):
         self.assertEqual(self.cfg.mcq_course_ids(self.CA_DAY), ["ca_foundation", "ca_inter", "ca_final"])
         self.assertEqual(self.cfg.mcq_course_ids(self.CMA_DAY), ["cma_cat", "cma_inter", "cma_final"])
-        self.assertEqual(len(self.cfg.mcq_course_ids(dt.date(2026, 10, 31))), 6)     # before the change
+        self.assertEqual(len(self.cfg.mcq_course_ids(dt.date(2026, 10, 30))), 6)     # before the change
         for k in range(12):                         # both notes every day: one CA course and one CMA course
             d = self.CA_DAY + dt.timedelta(days=k)
             a, b = self.cfg.concept_course(d)["id"], self.cfg.concept_course(d, "2")["id"]
@@ -2016,11 +2016,68 @@ class TwoPerDayTests(TempQueue):
         from mcq_agent.caption import build_concept_caption
         self._day(self.CA_DAY)
         c2 = B.load_concept(self.CA_DAY, "2")
-        self.assertIn("ref concept2-261101", build_concept_caption(self.cfg, c2, self.CA_DAY))
+        self.assertIn("ref concept2-261102", build_concept_caption(self.cfg, c2, self.CA_DAY))
         self.assertTrue(str(R.concept_pdf(self.CA_DAY, "2")).endswith("concept2.pdf"))
-        self.assertEqual(R._post_date("x\nref explainer2-261101"), ("explainer2", self.CA_DAY))
+        self.assertEqual(R._post_date("x\nref explainer2-261102"), ("explainer2", self.CA_DAY))
 
     def test_todo_and_commands_know_the_second_slot(self):
         from mcq_agent.__main__ import parse_command
         self.assertEqual(parse_command("/regen concept2 another topic", self.cfg), ("regen", "concept2", "another topic"))
         self.assertEqual(parse_command("/hold explainer2", self.cfg)[1], "explainer2")
+
+
+class PastPaperTests(TempQueue):
+    """Question banks (pyq/*.json) feed a 'Past exam radar'; journal entries are two-line, never a table."""
+
+    PAPER = {"code": "Paper 10", "name": "Corporate Accounting and Auditing", "part": "Corporate Accounting"}
+
+    def test_banks_load_and_find_the_concept(self):
+        from mcq_agent import pyq
+        qs = pyq.questions("cma_inter", self.PAPER)
+        self.assertTrue(qs)
+        self.assertFalse(any(q.get("part") == "Auditing" for q in qs))
+        self.assertEqual(pyq.questions("cma_cat", self.PAPER), [])          # a CMA Inter bank never feeds CAT
+        top = pyq.relevant(qs, "Forfeiture and Reissue of Shares")[:5]
+        self.assertTrue(all("forfeit" in q["text"].lower() for q in top))
+        got, problems = pyq.resolve([{"ref": "1-106", "point": "part reissue"}, {"ref": "9-999", "point": "x"}], qs)
+        self.assertEqual(got[0]["papers"], "PY D24 · 7 marks")
+        self.assertEqual(len(problems), 1)
+
+    def test_entries_are_cleaned_and_debit_credit_tables_refused(self):
+        from mcq_agent import concept as K
+        note = {k: v for k, v in CONCEPTS[0].items()}
+        note["entries"] = [{"label": "On forfeiture", "debit": ["Equity Share Capital A/c ... Dr"],
+                            "credit": ["To Forfeited Shares A/c"], "narration": "(Being shares forfeited)"}]
+        c = K.tidy(note)
+        self.assertEqual(c["entries"][0]["debit"], ["Equity Share Capital A/c"])
+        self.assertEqual(c["entries"][0]["credit"], ["Forfeited Shares A/c"])
+        self.assertEqual(c["entries"][0]["narration"], "Being shares forfeited")
+        self.assertIn("journal entry 1", K.plain(c))
+        bad = K.tidy(dict(note, table={"headers": ["Transaction", "Debit", "Credit"], "rows": [["a", "b", "c"]]}))
+        self.assertTrue(any("two-line" in p for p in K.validate(bad)))
+
+    def test_writer_gets_the_list_and_must_cite_it(self):
+        from mcq_agent import concept as K
+        note = {k: v for k, v in CONCEPTS[0].items() if k not in ("course_id", "paper_code", "paper_name")}
+        drafts = [dict(note, past_papers=[]), dict(note, past_papers=[{"ref": "1-106", "point": "Part reissue"}])]
+        calls = []
+
+        def fake_post(url, headers=None, json=None, timeout=None):
+            tool = json["tools"][0]["name"]
+            calls.append((tool, json["messages"][0]["content"]))
+            if tool == "submit_concept":
+                d = drafts[min(sum(1 for t, _ in calls if t == tool) - 1, 1)]
+                return FakeResponse({"content": [{"type": "tool_use", "name": tool, "input": d}]})
+            return FakeResponse({"content": [{"type": "tool_use", "name": tool, "input": {"issues": [], "severity": "none"}}]})
+
+        course = self.cfg.course("cma_inter")
+        with mock.patch.dict("os.environ", {"ANTHROPIC_API_KEY": "test", "CLAUDE_CODE_OAUTH_TOKEN": ""}), \
+             mock.patch.object(G.requests, "post", side_effect=fake_post):
+            out = K.write_concept(self.cfg, course, self.PAPER, dt.date(2026, 11, 3), [])
+        self.assertIn("1-106 | PY D24 · 7 marks", calls[0][1])
+        self.assertIn("past_papers is empty", calls[1][1])                  # first draft sent back
+        self.assertEqual(out["past_papers"][0]["papers"], "PY D24 · 7 marks")
+        self.assertIn("past paper 1 source (PY D24 · 7 marks): P Ltd.", [c for t, c in calls if t == "submit_check"][0])
+        from mcq_agent.caption import build_concept_caption
+        item = dict(out, course_id="cma_inter", paper_code="Paper 10", paper_name="Corporate Accounting", kind="concept")
+        self.assertIn("Asked in past papers: PY D24", build_concept_caption(self.cfg, item, dt.date(2026, 11, 3)))

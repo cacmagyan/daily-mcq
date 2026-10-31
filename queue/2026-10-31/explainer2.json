@@ -1,0 +1,9 @@
+{
+  "kind": "explainer2",
+  "course_id": "cma_cat",
+  "topic": "Forfeiture and Reissue of Shares",
+  "concept_topic": "Forfeiture and Reissue of Shares",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 2: board title is 20 characters; at most 18; hook_label is required, at most 22 characters",
+  "hold": false,
+  "hold_reason": ""
+}

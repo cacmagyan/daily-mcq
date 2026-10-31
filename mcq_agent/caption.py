@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import re
 
 from .config import LETTERS, Config
 
@@ -75,8 +76,8 @@ def build_concept_caption(cfg: Config, item: dict, date: dt.date) -> str:
     tags = ["#ConceptNotes"] + [t for t in course.get("hashtags", []) if t.lower() not in ("#dailymcq", "#conceptnotes")]
     slide2 = ("the formula" if item.get("formulas") else "the journal entries" if item.get("entries")
               else "the summary table")
-    asked = sorted({t.strip() for p in item.get("past_papers") or [] for t in p.get("papers", "").split("·")[0].split(",")
-                    if t.strip().startswith("PY")})
+    asked = sorted({(f"{p['via']} " if p.get("via") else "") + t for p in item.get("past_papers") or []
+                    for t in re.findall(r"\bPY [JD]\d\d\b", p.get("papers", "").split("·")[0])})
     lines = [
         f"📒 {course.get('emoji', '')} {course['name']} · Concept of the day".replace("  ", " "),
         f"{item['paper_code']}: {item['paper_name']}",

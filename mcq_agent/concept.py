@@ -357,9 +357,10 @@ def write_concept(cfg: Config, course: dict, paper: dict, date: dt.date, recent:
         base_user += f"\nReviewer's instruction for this note: {instruction}\n"
     bank = pyq.questions(course["id"], paper)
     shown = (pyq.relevant(bank, topic) if topic else bank) if bank else []
+    near = pyq.relevant(bank, instruction, 30) if bank and instruction and not topic else []
     if shown:
         base_user += ("\nPast-paper questions from the question bank for this paper "
-                      "(ref | papers · type | section | question extract):\n" + pyq.index_text(shown) + "\n")
+                      "(ref | papers · type | section | question extract):\n" + pyq.index_text(shown, keep=near) + "\n")
         if not topic:
             base_user += "\nSections past papers ask most:\n" + pyq.section_counts(bank) + "\n"
 

@@ -11,6 +11,14 @@ from pathlib import Path
 DIR = Path(__file__).resolve().parent.parent
 MAX_LINES = 140          # past-paper lines shown to the writer when it chooses its own concept
 TOPIC_LINES = 40         # lines shown when the concept is already decided
+# Papers that share a syllabus with a paper that has a bank: their notes use that bank, and the
+# radar names the exam it came from ("CMA Inter PY D24").
+SHARED = {
+    ("cma_cat", "Paper 1A"): [("cma_inter", "Paper 6", "")],
+    ("cma_cat", "Paper 2A"): [("cma_inter", "Paper 6", ""), ("cma_inter", "Paper 10", "Corporate Accounting")],
+}
+EXAM = {"cma_inter": "CMA Inter", "cma_cat": "CMA CAT", "cma_final": "CMA Final",
+        "ca_foundation": "CA Foundation", "ca_inter": "CA Inter", "ca_final": "CA Final"}
 _STOP = set("a an and the of to in on for by with from as at or is are its into vs v under per its".split())
 
 
@@ -27,20 +35,23 @@ def _banks() -> tuple[dict, ...]:
 
 
 def _ref(q: dict) -> str:
-    return f"{q['chapter']}-{q['q']}"
+    return (f"{q['rp']}-" if q.get("rp") else "") + f"{q['chapter']}-{q['q']}"
 
 
 def questions(course_id: str, paper: dict) -> list[dict]:
     """The bank's past-paper questions for this course and paper (and half of a paper, if it has `part`)."""
-    part = (paper.get("part") or "").lower()
+    wanted = [(course_id, paper.get("code"), paper.get("part") or "")]
+    wanted += SHARED.get((course_id, paper.get("code")), [])
     out = []
-    for b in _banks():
-        if b.get("course") != course_id or b.get("paper_code") != paper.get("code"):
-            continue
-        for q in b.get("questions", []):
-            if part and q.get("part") and q["part"].lower() != part:
+    for cid, code, part in wanted:
+        for b in _banks():
+            if not isinstance(b, dict) or b.get("course") != cid or b.get("paper_code") != code:
                 continue
-            out.append(q)
+            for q in b.get("questions", []):
+                if part and q.get("part") and q["part"].lower() != part.lower():
+                    continue
+                out.append(q if cid == course_id else
+                           dict(q, via=EXAM.get(cid, cid), rp="P" + re.sub(r"\D", "", code)))
     return out
 
 
@@ -61,7 +72,8 @@ def label(q: dict) -> str:
     tags = sorted(q["papers"], key=_when, reverse=True)
     what = "MCQ" if q["kind"] in ("mcq", "tf") else (f"{q['marks']} marks" if q.get("marks") else
                                                     "theory" if q["kind"] == "theory" else "practical")
-    return f"{', '.join(tags[:3])} · {what}"
+    via = f"{q['via']} " if q.get("via") else ""
+    return f"{via}{', '.join(tags[:3])} · {what}"
 
 
 def _words(s: str) -> set[str]:
@@ -85,9 +97,12 @@ def relevant(qs: list[dict], topic: str, n: int = TOPIC_LINES) -> list[dict]:
     return [q for _, _, q in scored[:n]]
 
 
-def index_text(qs: list[dict], limit: int = MAX_LINES) -> str:
-    """One line per question for the writer: ref, paper tags, section, a short extract."""
-    best = sorted(qs, key=_rank, reverse=True)[:limit]
+def index_text(qs: list[dict], limit: int = MAX_LINES, keep: list[dict] | None = None) -> str:
+    """One line per question for the writer: ref, paper tags, section, a short extract.
+    `keep` (e.g. the questions on a concept the reviewer asked for) are always listed."""
+    keep = keep or []
+    seen = {_ref(q) for q in keep}
+    best = keep + [q for q in sorted(qs, key=_rank, reverse=True) if _ref(q) not in seen][:max(limit - len(keep), 0)]
     best.sort(key=lambda q: (q["chapter"], q["q"]))
     lines = []
     for q in best:
@@ -126,7 +141,7 @@ def resolve(items: list[dict], qs: list[dict]) -> tuple[list[dict], list[str]]:
         if not q:
             problems.append(f"past paper ref '{ref}' is not in the past-paper list")
             continue
-        out.append({"ref": ref, "papers": label(q), "point": point})
+        out.append({"ref": ref, "papers": label(q), "point": point, **({"via": q["via"]} if q.get("via") else {})})
     return out[:3], problems
 
 

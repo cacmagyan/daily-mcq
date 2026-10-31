@@ -8,38 +8,38 @@
   "topic": "Forfeiture and Reissue of Shares",
   "title": "Forfeiture &",
   "title_highlight": "Reissue of Shares",
-  "hook": "unpaid call, shares gone!",
-  "simple_words": "If a member does not pay a call, the company cancels his shares and keeps what he already paid.",
+  "hook": "paid stays, unpaid goes!",
+  "simple_words": "Company cancels shares when a call is unpaid, keeps the money received, and later sells the shares again.",
   "definitions": [
     {
-      "term": "Forfeiture",
-      "meaning": "Cancelling shares of a defaulting member for non-payment of calls, as per Articles. Amount already paid is not refunded.",
-      "note": "Share Capital is debited with the amount CALLED up"
+      "term": "Forfeiture of shares",
+      "meaning": "Cancelling a defaulting member's shares for non-payment of a call, as per Articles. The amount already received is not refunded.",
+      "note": "Share capital is debited at called-up amount"
     },
     {
-      "term": "Reissue",
-      "meaning": "Company sells the forfeited shares again, at par, at a discount or at a premium. Discount cannot exceed the forfeited amount of those shares.",
+      "term": "Reissue of shares",
+      "meaning": "Selling the forfeited shares again, often as fully paid, at par or at a discount. Discount cannot exceed the forfeited amount on those shares.",
       "note": "Gain goes to Capital Reserve"
     }
   ],
   "key_points": [
-    "On forfeiture, debit Share Capital with ==called-up amount==, credit Forfeited Shares A/c with amount received.",
-    "Unpaid calls (Calls-in-Arrears) are credited; premium not yet received is debited to Securities Premium.",
-    "!!Premium already received is NOT refunded!!, so debit Securities Premium only if premium was not received.",
-    "Reissue loss (discount) is debited to Forfeited Shares A/c; balance left there is the ==capital reserve== gain."
+    "On forfeiture, debit ==Share Capital== at the !!called-up amount!!, not the face value.",
+    "Credit ==Forfeited Shares A/c== with the amount actually received; credit Calls in Arrear for the unpaid part.",
+    "Premium already received stays in Securities Premium A/c. If premium was !!not received!!, debit Securities Premium too.",
+    "After reissue, the gain on those shares is transferred to ==Capital Reserve==."
   ],
-  "formula_heading": "Forfeiture Entries",
-  "formula_hook": "three entries, learn them!",
+  "formula_heading": "Entries and Capital Reserve",
+  "formula_hook": "three entries, every time",
   "formulas": [
     {
       "name": "Capital Reserve on reissue",
       "lhs": "Capital Reserve",
-      "rhs": "Forfeited A/c credit on these shares − discount allowed on reissue",
+      "rhs": "F − D",
       "numerator": "",
       "denominator": "",
       "square_root": false,
       "suffix": "",
-      "legend": "Forfeited A/c credit = amount received on those shares. Transfer only the gain on shares actually reissued."
+      "legend": "F = amount forfeited on the shares reissued (received amount); D = discount allowed on reissue of those shares."
     }
   ],
   "table": {
@@ -48,15 +48,16 @@
   },
   "entries": [
     {
-      "label": "On forfeiture (premium received)",
+      "label": "On forfeiture",
       "debit": [
-        "Equity Share Capital A/c"
+        "Equity Share Capital A/c",
+        "Securities Premium A/c"
       ],
       "credit": [
         "Forfeited Shares A/c",
-        "Calls-in-Arrears A/c"
+        "Calls in Arrear A/c"
       ],
-      "narration": "Being shares forfeited for non-payment of call"
+      "narration": "Being shares forfeited; premium debited only if unpaid"
     },
     {
       "label": "On reissue at a discount",
@@ -67,53 +68,53 @@
       "credit": [
         "Equity Share Capital A/c"
       ],
-      "narration": "Being forfeited shares reissued at a discount"
+      "narration": "Being forfeited shares reissued as fully paid at a discount"
     },
     {
-      "label": "Transfer of gain",
+      "label": "Gain on reissued shares",
       "debit": [
         "Forfeited Shares A/c"
       ],
       "credit": [
         "Capital Reserve A/c"
       ],
-      "narration": "Being gain on reissued shares transferred to reserve"
+      "narration": "Being gain on reissued shares transferred to Capital Reserve"
     }
   ],
   "insight": {
-    "text": "Forfeiture keeps the defaulter's money; the final gain after reissue is a capital profit, never a revenue profit.",
-    "punchline": "Profit here is capital, not revenue!"
+    "punchline": "Forfeit first, then reissue!",
+    "text": "Only the Forfeited Shares balance of the reissued shares, after discount, becomes Capital Reserve."
   },
-  "trick_hook": "F-R-C: remember the flow",
+  "trick_hook": "remember with a small story",
   "memory_trick": {
-    "mnemonic": "Forfeit, Reissue, Reserve",
-    "explanation": "Money received stays in Forfeited A/c, reissue discount eats into it, and what is left moves to Capital Reserve."
+    "mnemonic": "Paid stays, unpaid goes",
+    "explanation": "Money received stays in Forfeited Shares A/c; unpaid amount goes out through Calls in Arrear. Reissue surplus then moves to Capital Reserve."
   },
   "steps": [
-    "Find amount called and received",
-    "Debit Share Capital (called up)",
-    "Credit Forfeited A/c (received)",
-    "Reissue: debit discount to Forfeited",
-    "Leftover to Capital Reserve"
+    "Find called-up amount per share",
+    "Find amount received per share",
+    "Debit Capital; credit Forfeited, Arrear",
+    "Reissue: Bank + discount = Capital",
+    "Move surplus to Capital Reserve"
   ],
-  "exam_tip": "MCQs ask where the net profit on forfeiture and reissue goes: Capital Reserve. Check the reissued share count first.",
+  "exam_tip": "In MCQs, profit on forfeiture and reissue goes to Capital Reserve, never to the Profit and Loss account.",
   "doubt": {
-    "question": "If only some forfeited shares are reissued, transfer all balance?",
-    "answer": "No. Transfer only the gain relating to the reissued shares. Balance for unissued shares stays in Forfeited Shares A/c."
+    "question": "Is the whole Forfeited Shares balance Capital Reserve?",
+    "answer": "No. Only the part for the shares reissued, after discount, is transferred. Balance for unissued shares stays in Forfeited Shares A/c."
   },
-  "mistakes_hook": "avoid these slips",
+  "mistakes_hook": "avoid these lost marks",
   "mistakes": [
     {
-      "wrong": "Debiting Share Capital with only the amount paid",
-      "right": "Debit Share Capital with the full amount called up on forfeited shares."
+      "wrong": "Debiting Share Capital at face value on forfeiture",
+      "right": "Debit Share Capital at the amount actually called up on the forfeited shares."
+    },
+    {
+      "wrong": "Transferring the full Forfeited Shares balance to Capital Reserve after a part reissue",
+      "right": "Transfer only the amount relating to the shares reissued, less discount allowed."
     },
     {
       "wrong": "Crediting profit on reissue to Profit and Loss A/c",
-      "right": "Transfer the net gain to Capital Reserve."
-    },
-    {
-      "wrong": "Transferring entire Forfeited balance when part is reissued",
-      "right": "Transfer only the gain on the shares reissued; keep the rest."
+      "right": "Credit the gain to Capital Reserve A/c."
     }
   ],
   "past_papers": [
@@ -132,20 +133,22 @@
     {
       "ref": "P10-1-24",
       "papers": "CMA Inter PY D22 · MCQ",
-      "point": "Final call unpaid; amount moved to Capital Reserve after reissue",
+      "point": "Final call unpaid; shares forfeited and reissued; amount moved to Capital Reserve",
       "via": "CMA Inter"
     }
   ],
-  "applicability": "Companies Act, 2013; Articles of Association",
+  "applicability": "Companies Act, 2013; Articles of Association; Table F",
   "confidence": "high",
-  "reviewer_note": "Entry 1 assumes premium was received and calls-in-arrears exist; reissue entry shows discount case. Check the Calls-in-Arrears credit presentation.",
+  "reviewer_note": "Key point 3 corrected: premium received stays in Securities Premium A/c; premium unpaid is debited. Check P10-1-24 wording for the past-paper point.",
   "law_sensitive": false,
-  "attempts": 1,
+  "attempts": 2,
   "serious": false,
   "needs_check": true,
   "check_notes": [
-    "Writer: Entry 1 assumes premium was received and calls-in-arrears exist; reissue entry shows discount case. Check the Calls-in-Arrears credit presentation.",
-    "Checker 1: trick_hook vs memory trick: the hook says 'F-R-C' but the trick is 'Forfeit, Reissue, Reserve', which spells F-R-R. Make them match, for example 'Forfeit, Reissue, Capital Reserve' (F-R-C) or change the hook to F-R-R. This is a wording fix only; the accounting is right."
+    "Writer: Key point 3 corrected: premium received stays in Securities Premium A/c; premium unpaid is debited. Check P10-1-24 wording for the past-paper point.",
+    "Checker 1: Key point 2 and formula 1 legend: 'amount actually received' / '(received amount)' should say 'amount received towards share capital (excluding any securities premium received)'. Premium already received stays in Securities Premium A/c and is not credited to Forfeited Shares A/c. Suggested wording: 'Credit Forfeited Shares A/c with the amount received on share capital (excluding premium).'",
+    "Checker 1: Journal entry 1 / key point 2 (wording only): the unpaid amount can be credited either to Calls in Arrear A/c or directly to the unpaid Allotment/Call A/c. Add 'or respective unpaid call A/c' so both accepted methods are covered.",
+    "Checker 1: Definition 2 (wording only): shares can also be reissued at a premium. Better wording: 'at par, at a premium or at a discount'."
   ],
   "images": [
     "concept2_1.jpg",
@@ -167,16 +170,16 @@
     },
     {
       "slide": 3,
-      "zoom": 1.2,
+      "zoom": 1.16,
       "overflow": false
     },
     {
       "slide": 4,
-      "zoom": 1.08,
+      "zoom": 1.02,
       "overflow": false
     }
   ],
-  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 2A: Financial Accounting-2\nForfeiture and Reissue of Shares\n\nIn simple words: If a member does not pay a call, the company cancels his shares and keeps what he already paid.\n\n📝 Asked in past papers: CMA Inter PY D22, CMA Inter PY J19\n\nSwipe for the formula, a memory trick, the mistakes that cost marks and the past exam radar.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CMA CAT MCQ (9:55 AM) tests this concept.\n\nBased on Companies Act, 2013; Articles of Association.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept2-261031",
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 2A: Financial Accounting-2\nForfeiture and Reissue of Shares\n\nIn simple words: Company cancels shares when a call is unpaid, keeps the money received, and later sells the shares again.\n\n📝 Asked in past papers: CMA Inter PY D22, CMA Inter PY J19\n\nSwipe for the formula, a memory trick, the mistakes that cost marks and the past exam radar.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CMA CAT MCQ (9:55 AM) tests this concept.\n\nBased on Companies Act, 2013; Articles of Association; Table F.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept2-261031",
   "story": "concept2_story.jpg",
   "hold": false,
   "hold_reason": ""

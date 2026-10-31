@@ -70,5 +70,11 @@
   "ca_final:story": {
     "media_id": "18095060207195932",
     "posted_at": "2026-10-31T22:06:46+05:30"
+  },
+  "news": {
+    "media_id": "18053290505813991",
+    "permalink": "https://www.instagram.com/p/DfKm8fVIPBj/",
+    "image_host": "github_raw",
+    "posted_at": "2026-10-31T22:10:49+05:30"
   }
 }

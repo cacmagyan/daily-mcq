@@ -1,6 +1,7 @@
 """Offline tests: no API keys, no network. Run with:  python -m unittest discover tests"""
 
 import datetime as dt
+import email.utils
 import json
 import random
 import shutil
@@ -1442,11 +1443,12 @@ class ReelTests(TempQueue):
         finally:
             _legacy_init.off = False
         for t in [real.reel_time(), real.explainer_time(), real.explainer_time("2"), real.concept_time(),
-                  real.concept_time("2")] + [c["post_time"] for c in real.courses]:
+                  real.concept_time("2"), real.news_time()] + [c["post_time"] for c in real.courses]:
             h, m = map(int, t.split(":"))
             utc = (h * 60 + m - 330) % 1440
             self.assertIn(f'cron: "{(utc + 2) % 60} {(utc + 2) // 60} * * *"', wf, t)
-        first, last = min(c["post_time"] for c in real.courses), max(c["post_time"] for c in real.courses)
+        first = min(c["post_time"] for c in real.courses)
+        last = max([c["post_time"] for c in real.courses] + [real.news_time()])     # the news closes the day
         for name, t in (("FIRST_SLOT", first), ("LAST_SLOT", last)):
             h, m = map(int, t.split(":"))
             utc = (h * 60 + m - 330) % 1440
@@ -2119,3 +2121,99 @@ class PastPaperTests(TempQueue):
         from mcq_agent.caption import build_concept_caption
         item = dict(out, course_id="cma_inter", paper_code="Paper 10", paper_name="Corporate Accounting", kind="concept")
         self.assertIn("Asked in past papers: PY D24", build_concept_caption(self.cfg, item, dt.date(2026, 11, 3)))
+
+
+
+RSS = """<?xml version="1.0"?><rss><channel>
+<item><title>ICAI announces new dates for CA Inter exams</title><link>https://ex.com/a</link>
+<pubDate>{now}</pubDate><description>&lt;p&gt;The Institute of Chartered Accountants of India said exams move.&lt;/p&gt;</description></item>
+<item><title>CBDT extends ITR due date for audit cases</title><link>https://ex.com/b</link><pubDate>{now}</pubDate>
+<description>The CBDT has extended the due date.</description></item>
+<item><title>SEBI fines firm over alleged accounting fraud, auditor under probe</title><link>https://ex.com/c</link><pubDate>{now}</pubDate>
+<description>SEBI said it fined the company.</description></item>
+<item><title>GST council meets on rate changes</title><link>https://ex.com/d</link><pubDate>{now}</pubDate><description>GST.</description></item>
+<item><title>Sensex rallies 500 points</title><link>https://ex.com/e</link><pubDate>{now}</pubDate><description>Markets.</description></item>
+<item><title>Old ICAI news</title><link>https://ex.com/f</link><pubDate>Mon, 01 Jan 2024 10:00:00 +0000</pubDate></item>
+</channel></rss>"""
+ARTICLE = "<html><body><p>" + "This is a long paragraph of the article that states the facts clearly for the test. " * 6 + "</p></body></html>"
+
+
+class NewsTests(TempQueue):
+    DAY = dt.date(2026, 11, 2)
+
+    def _get(self, url):
+        now = email.utils.format_datetime(dt.datetime(2026, 11, 2, 15, 0, tzinfo=dt.timezone.utc))
+        text = RSS.replace("{now}", now) if "rss" in url or "feed" in url else ARTICLE
+        return mock.Mock(status_code=200, text=text)
+
+    def test_feeds_are_parsed_filtered_and_ranked(self):
+        from mcq_agent import news as N
+        now = dt.datetime(2026, 11, 2, 21, 0, tzinfo=dt.timezone.utc)
+        self.cfg.news["feeds"] = [{"name": "Test", "url": "https://ex.com/rss"}]
+        got = N.gather(self.cfg, now, ["CBDT extends ITR due date for audit cases"], get=self._get)
+        titles = [g["title"] for g in got]
+        self.assertIn("ICAI announces new dates for CA Inter exams", titles[:2])        # ICAI and fraud rank first
+        self.assertNotIn("Old ICAI news", titles)                                      # too old
+        self.assertNotIn("CBDT extends ITR due date for audit cases", titles)          # used this week
+        self.assertNotIn("Sensex rallies 500 points", titles)                          # not relevant
+        self.assertEqual(N.parse_feed("not xml", "x"), [])
+
+    def _make(self, severities, conf="high"):
+        from mcq_agent import news as N
+        self.cfg.news.update(feeds=[{"name": "Test", "url": "https://ex.com/rss"}], enabled=True)
+        checks = iter(severities)
+
+        def fake_call(model, system, user, tool, max_tokens=2000):
+            if tool["name"] == "pick_news":
+                return {"picks": ["n1", "n2", "n3", "n4"]}
+            return {"tag": "ICAI", "headline": "A headline", "points": ["One fact.", "Two fact."],
+                    "why_it_matters": "Exams.", "usable": True, "confidence": conf}
+
+        with mock.patch.object(G, "_call_claude", side_effect=fake_call), \
+             mock.patch.object(G, "call_checker", side_effect=lambda *a, **k: {"severity": next(checks), "issues": []}), \
+             mock.patch.object(self.cfg, "now", return_value=dt.datetime(2026, 11, 2, 21, 0, tzinfo=dt.timezone.utc)):
+            return N.make(self.cfg, self.DAY, get=self._get)
+
+    def test_three_checked_stories_post_without_hold(self):
+        item = self._make(["none", "minor", "none"])
+        self.assertEqual(len(item["stories"]), 3)
+        self.assertFalse(item["hold"])
+        self.assertIn("CA · CMA Daily News", item["caption"])
+        self.assertIn("ref news-261102", item["caption"])
+
+    def test_a_failed_story_is_replaced_then_held_if_too_few(self):
+        item = self._make(["major", "none", "none", "none"])
+        self.assertEqual(len(item["stories"]), 3)                  # n4 replaced the dropped story
+        self.assertTrue(any("dropped" in n for n in item["notes"]))
+        item = self._make(["major", "major", "none", "none"])
+        self.assertEqual(len(item["stories"]), 2)
+        self.assertTrue(item["hold"])
+        item = self._make(["none", "none", "none"], conf="low")
+        self.assertTrue(item["hold"])
+
+    def test_news_posts_at_its_time_and_commands_work(self):
+        from mcq_agent import news as N
+        make_batch(self.tmp, self.DAY)
+        item = self._make(["none", "none", "none"])
+        item["images"] = [f"news_{i}.jpg" for i in range(1, 6)]
+        N.save(self.DAY, item)
+        for n in item["images"]:
+            (self.tmp / self.DAY.isoformat() / n).write_bytes(b"x")
+        self.assertEqual(P.hold(self.DAY, "news").split()[0], "news")
+        self.assertTrue(N.load(self.DAY)["hold"])
+        P.release(self.DAY, "news")
+        self.assertFalse(N.load(self.DAY)["hold"])
+        with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "t", "IG_USER_ID": "1"}), \
+             mock.patch("mcq_agent.instagram.Instagram.find_by_ref", return_value=None), \
+             mock.patch("mcq_agent.instagram.Instagram.post_carousel", return_value={"media_id": "m", "permalink": "p"}) as car, \
+             mock.patch("mcq_agent.instagram.Instagram.post_story", return_value={"media_id": "s"}), \
+             mock.patch("mcq_agent.hosting.urls_for", return_value=(["u"] * 5, "test")):
+            P.publish_due(self.cfg, self.DAY, dt.time(21, 50), limit=20)
+            self.assertNotIn("news", B.load_posted(self.DAY))       # not before 22:00
+            P.publish_due(self.cfg, self.DAY, dt.time(22, 5), limit=20)
+        self.assertIn("news", B.load_posted(self.DAY))
+        self.assertIn("CA · CMA Daily News", car.call_args.args[1])
+        from mcq_agent.review import report
+        self.assertIn("📰 News", report(self.cfg, self.DAY, "me/r"))
+        from mcq_agent.__main__ import parse_command
+        self.assertEqual(parse_command("/regen news only ICAI news", self.cfg), ("regen", "news", "only ICAI news"))

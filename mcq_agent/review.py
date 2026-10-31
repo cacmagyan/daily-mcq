@@ -200,13 +200,17 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
     ex = _explainer(cfg, date)
     ex_ok = bool(ex and REEL not in posted and (EXPLAINER in posted or (not ex.get("error") and not ex.get("hold"))))
     reel_held = bool(reel and not ex_ok and (reel.get("hold") or reel.get("error")) and REEL not in posted)
-    n_held = len(held) + len(concepts_held) + reel_held
-    n_posts = len(items) + len(concepts) + bool(reel or ex) + len([e for e in exs if e.get("kind") != EXPLAINER])
+    from . import news as N
+    news = N.load(date) if cfg.news_due(date) else None
+    news_held = bool(news and (news.get("hold") or news.get("error")) and "news" not in posted)
+    n_held = len(held) + len(concepts_held) + reel_held + news_held
+    n_posts = (len(items) + len(concepts) + bool(reel or ex) + len([e for e in exs if e.get("kind") != EXPLAINER])
+               + bool(news))
     mention = f"@{owner} " if owner else ""
 
     lines = [f"## MCQs for {date.strftime('%A %d %B %Y')} · Day {cfg.day_number(date)}", ""]
     if n_held:
-        what = "post" if (concept_held or reel_held) and not held else "MCQ"
+        what = "post" if (concept_held or reel_held or news_held) and not held else "MCQ"
         lines += [f"{mention}**⛔ {n_held} {what}{'s' if n_held > 1 else ''} on hold.** "
                   "They won't post until you act (see below). The others post automatically.", ""]
     else:
@@ -223,16 +227,19 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
             return cfg.explainer_time(slot)
         if kind == REEL:
             return cfg.reel_time()
+        if kind == "news":
+            return cfg.news_time()
         return cfg.course(it["course_id"])["post_time"]
 
-    rows = [(when_of(it), it) for it in items + concepts + exs + ([reel] if reel else [])]
+    rows = [(when_of(it), it) for it in items + concepts + exs + ([reel] if reel else []) + ([news] if news else [])]
     for when, it in sorted(rows, key=lambda r: r[0]):
         kind = it.get("kind") or ""
         is_concept = kind.startswith(CONCEPT)
         is_ex = kind.startswith(EXPLAINER)
         is_reel = kind == REEL or is_ex
+        is_news = kind == "news"
         c = cfg.course(it["course_id"]) if it.get("course_id") else {"name": "", "emoji": "", "post_time": ""}
-        cid = kind if (is_concept or is_reel) else it["course_id"]
+        cid = kind if (is_concept or is_reel or is_news) else it["course_id"]
         if cid in posted:
             link = posted[cid].get("permalink") or ""
             status = f"✅ [posted]({link})" if link else "✅ posted"
@@ -256,7 +263,9 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
                 notes.append("⚖️ law")
             status = "🕒 will post" + (f" ({', '.join(notes)})" if notes else "")
         key = it.get("correct", "–")
-        label = (f"📒 Concept ({c['name']})" if is_concept else f"🎬 Explainer ({c['name']})"
+        if is_news:
+            it = dict(it, topic=" · ".join(x["tag"] for x in it.get("stories") or []) or "–")
+        label = ("📰 News" if is_news else f"📒 Concept ({c['name']})" if is_concept else f"🎬 Explainer ({c['name']})"
                  if is_ex else f"🎬 MCQ reel ({c['name']})" if is_reel
                  else f"{c.get('emoji', '')} {c['name']}")
         lines.append(f"| {when} | {label} | {it.get('topic', '–')} | {key} | {status} |")
@@ -310,6 +319,19 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
             lines += [f"**To post it anyway:** comment `/approve {k}`. `/regen {k}` writes a new one.", ""]
     if reel and not reel_held:
         lines += ["", "## MCQ reel" + (" (backup)" if ex_ok else ""), ""] + _reel_block(cfg, reel, repo, branch, date)
+    if news:
+        lines += ["", f"## 📰 News ({cfg.news_time()})", ""]
+        if news.get("error"):
+            lines += [f"❌ Not made: {news['error']}. Comment `/regen news` to try again.", ""]
+        else:
+            lines += [" ".join(f'<img src="{_img(repo, branch, date, n)}" width="160">' for n in news.get("images") or []), ""]
+            for x in news.get("stories") or []:
+                lines.append(f"- **{x['tag']}**: {x['headline']} ([{x['source']}]({x.get('link', '')}))"
+                             + (" · ⚠️ editor notes: " + "; ".join(x.get("check_notes") or [])[:200] if x.get("check_notes") else ""))
+            if news.get("hold") and "news" not in posted:
+                lines += ["", f"**⛔ On hold: {news.get('hold_reason', '')}.** Comment `/approve news` to post it as it is, "
+                          "or `/regen news` to make it again (add an instruction if you like)."]
+            lines.append("")
     lines += ["---", "### Commands (comment on this issue)",
               "- `/hold <course>`: stop an MCQ from posting, e.g. you spotted a mistake",
               "- `/approve <course>`: post a held MCQ as it is",
@@ -318,8 +340,9 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
               f"- Course ids: {', '.join(cfg.course_ids())}" + (", `concept` for the evening concept note" if concept else "")
               + (", `concept2` for the second note" if len(concepts) > 1 else "")
               + (", `reel` for the reel (`/regen reel` remakes it)" if reel else "")
-              + (", `explainer` for the 6 PM video" if ex else "")
-              + (", `explainer2` for the second video" if any(e.get("kind") == "explainer2" for e in exs) else ""),
+              + (", `explainer` for the evening video" if ex else "")
+              + (", `explainer2` for the second video" if any(e.get("kind") == "explainer2" for e in exs) else "")
+              + (", `news` for the news carousel" if cfg.news_due(date) else ""),
               "", "_Posted MCQs can't be changed from here; edit or delete them in the Instagram app._"]
     return "\n".join(lines)
 
@@ -342,5 +365,9 @@ def report_title(cfg: Config, date: dt.date) -> str:
     ex_ok = bool(ex and (EXPLAINER in posted or (not ex.get("error") and not ex.get("hold"))))
     if reel and not ex_ok and (reel.get("hold") or reel.get("error")) and REEL not in posted:
         held.append(reel)
+    from . import news as N
+    news = N.load(date) if cfg.news_due(date) else None
+    if news and (news.get("hold") or news.get("error")) and "news" not in posted:
+        held.append(news)
     base = f"MCQs for {date.isoformat()} (Day {cfg.day_number(date)})"
     return f"⛔ Action needed: {base}" if held else base

@@ -5,16 +5,14 @@ name: 4. Publish due MCQs
 # GitHub cron is UTC: IST = UTC + 5:30. Runs start a couple of minutes after each post_time.
 on:
   schedule:
-    - cron: "27 2 * * *"           # 07:57 IST  CA Foundation  (post_time 07:55)
-    - cron: "27 4 * * *"           # 09:57 IST  CMA CAT        (09:55)
-    - cron: "57 5 * * *"           # 11:27 IST  Second video   (explainer second_post_time 11:25)
-    - cron: "57 6 * * *"           # 12:27 IST  CA Inter       (12:25)
-    - cron: "12 8 * * *"           # 13:42 IST  Second concept note (concepts second post_time 13:40)
-    - cron: "57 9 * * *"           # 15:27 IST  CMA Inter      (15:25)
-    - cron: "27 12 * * *"          # 17:57 IST  6 PM video     (explainer post_time 17:55)
-    - cron: "57 12 * * *"          # 18:27 IST  CA Final       (18:25)
-    - cron: "12 14 * * *"          # 19:42 IST  Concept of the day (concepts post_time 19:40)
-    - cron: "27 15 * * *"          # 20:57 IST  CMA Final      (20:55)
+    # Same times every day; only one family's MCQs (CA or CMA) are due on a given day.
+    - cron: "2 2 * * *"            # 07:32 IST  CA Foundation / CMA CAT MCQ  (post_time 07:30)
+    - cron: "2 3 * * *"            # 08:32 IST  Second video   (explainer second_post_time 08:30)
+    - cron: "32 7 * * *"           # 13:02 IST  Second concept note (concepts second post_time 13:00)
+    - cron: "2 13 * * *"           # 18:32 IST  CA Inter / CMA Inter MCQ     (18:30)
+    - cron: "2 14 * * *"           # 19:32 IST  Evening video  (explainer post_time 19:30)
+    - cron: "2 15 * * *"           # 20:32 IST  Concept of the day (concepts post_time 20:30)
+    - cron: "2 16 * * *"           # 21:32 IST  CA Final / CMA Final MCQ     (21:30)
     # Back-up runs every 30 minutes, 07:37 to 22:07 IST. GitHub sometimes starts a timed run late or
     # skips it; the next back-up run then posts whatever is due. Nothing is ever posted twice.
     - cron: "7,37 2-16 * * *"
@@ -58,7 +56,7 @@ jobs:
           CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
           DRY_RUN: ${{ inputs.dry_run }}
           # The morning run fails loudly (GitHub emails you) if today's batch was never approved.
-          FIRST_SLOT: ${{ github.event.schedule == '27 2 * * *' }}
+          FIRST_SLOT: ${{ github.event.schedule == '2 2 * * *' }}
         run: |
           ARGS=()
           if [ "$DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
@@ -94,7 +92,7 @@ jobs:
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
-          LAST_SLOT: ${{ github.event.schedule == '27 15 * * *' }}
+          LAST_SLOT: ${{ github.event.schedule == '2 16 * * *' }}
         run: |
           DATE=$(TZ=Asia/Kolkata date +%F)
           [ -f "queue/$DATE/mcqs.json" ] || exit 0

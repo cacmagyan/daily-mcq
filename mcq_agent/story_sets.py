@@ -212,8 +212,9 @@ def check_board(b, say_words: set[str], where: str) -> list[str]:
     out = []
     for field, rule in BOARD_KINDS[b["kind"]].items():
         v = b.get(field)
-        # title, sub and formula chalk shrinks to the board's width, so a small overrun still fits
-        limit = (int(rule[1] * 1.3) if field in ("title", "sub", "formula") else rule[1]) if rule[0] == "text" else 0
+        # title, sub, formula, the flow notes and label, and the price bubble shrink or have room, so a small overrun still fits
+        roomy = ("title", "sub", "formula", "from_note", "to_note", "label", "says", "top", "big")
+        limit = (int(rule[1] * 1.3) if field in roomy else rule[1]) if rule[0] == "text" else 0
         if rule[0] == "text" and v is not None and len(str(v).replace("^", "")) > limit:
             out.append(f"{where}: board {field} is {len(str(v))} characters; at most {rule[1]}")
         elif rule[0] == "lines" and v is not None and (not isinstance(v, list) or not 1 <= len(v) <= rule[1]
@@ -227,10 +228,10 @@ def check_board(b, say_words: set[str], where: str) -> list[str]:
             if not isinstance(v, dict) or not str(v.get("title") or "").strip():
                 out.append(f"{where}: board {field} needs a title")
                 continue
-            if len(str(v["title"])) > 10:
+            if len(str(v["title"])) > 13:                 # the card shrinks its text to fit
                 out.append(f"{where}: board {field} title is {len(str(v['title']))} characters; at most 10")
             lines = v.get("lines") or []
-            if not isinstance(lines, list) or len(lines) > 2 or any(len(str(x)) > 14 for x in lines):
+            if not isinstance(lines, list) or len(lines) > 2 or any(len(str(x)) > 19 for x in lines):
                 out.append(f"{where}: board {field} needs at most 2 lines of at most 14 characters")
             if v.get("icon") and v["icon"] not in P.ICONS:
                 out.append(f"{where}: board {field} icon must be one of {', '.join(P.ICONS)}")

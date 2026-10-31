@@ -198,10 +198,10 @@ def card(title, sub, ikon, color, w=380, h=470) -> str:
     s.append(f'<rect x="{-w/2}" y="{-h/2}" width="{w}" height="{h}" rx="34" fill="#fff" stroke="{INK}" stroke-width="{OL}"/>')
     s.append(f'<path d="M {-w/2} {-h/2+34} A 34 34 0 0 1 {-w/2+34} {-h/2} L {w/2-34} {-h/2} A 34 34 0 0 1 {w/2} {-h/2+34} '
              f'L {w/2} {-h/2+100} L {-w/2} {-h/2+100} Z" fill="{color}" stroke="{INK}" stroke-width="{OL}" stroke-linejoin="round"/>')
-    s.append(text(0, -h / 2 + 52, title, 54, color="#fff", weight=800))
+    s.append(text(0, -h / 2 + 52, title, int(min(54, (w - 60) / max(1, len(title) * 0.66))), color="#fff", weight=800))
     s.append(f'<g transform="translate(0 {-h/2+215})">{icon(ikon)}</g>')
     for i, line in enumerate(sub):
-        s.append(text(0, h / 2 - 108 + i * 52, line, 40, weight=700))
+        s.append(text(0, h / 2 - 108 + i * 52, line, int(min(40, (w - 60) / max(1, len(line) * 0.62))), weight=700))
     s.append("</g>")
     return "".join(s)
 
@@ -724,7 +724,7 @@ def tile(big: str, note: str = "", color=NAVY, w=330, h=230) -> str:
          f'<rect x="{-w/2}" y="{-h/2}" width="{w}" height="26" rx="13" fill="{color}"/>',
          text(0, -6 if note else 8, big, size, color=color, weight=800)]
     if note:
-        s.append(text(0, h / 2 - 46, note, 34, weight=600, color="#4A4F63"))
+        s.append(text(0, h / 2 - 46, note, int(min(34, (w - 30) / max(1, len(note) * 0.55))), weight=600, color="#4A4F63"))
     s.append("</g>")
     return "".join(s)
 

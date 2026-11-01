@@ -1443,7 +1443,8 @@ class ReelTests(TempQueue):
         finally:
             _legacy_init.off = False
         for t in [real.reel_time(), real.explainer_time(), real.explainer_time("2"), real.concept_time(),
-                  real.concept_time("2"), real.news_time()] + [c["post_time"] for c in real.courses]:
+                  real.concept_time("2"), real.news_time(), real.pyq_time(),
+                  real.countdown_time()] + [c["post_time"] for c in real.courses]:
             h, m = map(int, t.split(":"))
             utc = (h * 60 + m - 330) % 1440
             self.assertIn(f'cron: "{(utc + 2) % 60} {(utc + 2) // 60} * * *"', wf, t)
@@ -2217,3 +2218,91 @@ class NewsTests(TempQueue):
         self.assertIn("📰 News", report(self.cfg, self.DAY, "me/r"))
         from mcq_agent.__main__ import parse_command
         self.assertEqual(parse_command("/regen news only ICAI news", self.cfg), ("regen", "news", "only ICAI news"))
+
+
+
+class PyqCountdownTests(TempQueue):
+    DAY = dt.date(2026, 11, 2)          # a CA day
+    CMA_DAY = dt.date(2026, 11, 3)
+
+    def setUp(self):
+        super().setUp()
+        self.cfg.pyq.update(enabled=True, start_date="2026-11-01", course="cma_inter")
+        self.cfg.countdown.update(enabled=True, start_date="2026-11-01", exams=[
+            {"name": "CMA Inter Dec 2026", "course": "cma_inter", "date": "2026-12-10"},
+            {"name": "CMA Final Dec 2026", "course": "cma_final", "date": "2026-12-10"},
+            {"name": "CA Inter Jan 2027", "course": "ca_inter", "date": "2027-01-02"},
+            {"name": "CA Foundation Jan 2027", "course": "ca_foundation", "date": "2027-01-03"}])
+
+    def test_mcq_text_is_split_and_tagged(self):
+        from mcq_agent import pyqday as Q
+        stem, opts = Q.split_mcq("Which is right? (a) One (c) Three (b) Two (d) Four")
+        self.assertEqual((stem, opts), ("Which is right?", ["One", "Two", "Three", "Four"]))
+        self.assertIsNone(Q.split_mcq("No options here"))
+        self.assertEqual(Q.asked_in(["PY D24", "MQP J26 S2"]), "CMA Inter December 2024 exam")
+        self.assertEqual(Q.asked_in(["MQP J26 S2"]), "ICMAI model paper, June 2026")
+        course, paper, cands = Q.candidates(self.cfg, self.DAY)
+        self.assertTrue(cands and all(c["key"] in "ABCD" for c in cands))
+
+    def _solve(self, answers, severity="none"):
+        from mcq_agent import pyqday as Q
+        _, _, cands = Q.candidates(self.cfg, self.DAY)
+        keys = iter(answers(cands))
+
+        def fake_call(model, system, user, tool, max_tokens=2000):
+            return {"your_answer": next(keys), "topic": "Topic", "question": "Q?", "options": ["a", "b", "c", "d"],
+                    "explanation": "Because.", "working": [], "why_not": {}, "exam_tip": "Tip", "confidence": "high"}
+
+        with mock.patch.object(G, "_call_claude", side_effect=fake_call), \
+             mock.patch.object(G, "call_checker", return_value={"severity": severity, "issues": []}):
+            return Q.make(self.cfg, self.DAY), cands
+
+    def test_pyq_uses_the_key_and_skips_disagreements(self):
+        item, cands = self._solve(lambda c: ["A" if c[0]["key"] != "A" else "B", c[1]["key"]])
+        self.assertEqual(item["ref"], cands[1]["ref"])                 # the first was skipped
+        self.assertEqual(item["correct"], cands[1]["key"])
+        self.assertEqual(len(item["tried"]), 2)
+        item, _ = self._solve(lambda c: [q["key"] for q in c], severity="major")
+        self.assertIn("error", item)
+
+    def test_countdown_follows_the_day_family(self):
+        from mcq_agent import countdown as CD
+        self.assertTrue(CD.exam_for(self.cfg, self.DAY)["course"].startswith("ca_"))
+        self.assertTrue(CD.exam_for(self.cfg, self.CMA_DAY)["course"].startswith("cma_"))
+        with mock.patch.object(G, "_call_claude", return_value={"topic": "Leases", "tip": "Revise.", "confidence": "high"}), \
+             mock.patch.object(G, "call_checker", return_value={"severity": "major", "issues": ["wrong"]}):
+            item = CD.make(self.cfg, self.CMA_DAY)
+        self.assertEqual(item["days"], 37)
+        self.assertEqual(item["topic"], "")                            # a doubtful topic is left out
+
+    def test_both_post_at_their_times(self):
+        from mcq_agent import countdown as CD
+        from mcq_agent import pyqday as Q
+        make_batch(self.tmp, self.DAY)
+        d = self.tmp / self.DAY.isoformat()
+        for n in ("pyq_q.jpg", "pyq_a.jpg", "countdown.jpg"):
+            (d / n).write_bytes(b"x")
+        Q.save(self.DAY, {"kind": "pyq", "course_id": "cma_inter", "paper_code": "Paper 6", "paper_name": "FA",
+                          "topic": "T", "question": "Q?", "options": ["a", "b", "c", "d"], "correct": "B",
+                          "explanation": "E", "asked_in": "CMA Inter December 2024 exam",
+                          "images": {"question": "pyq_q.jpg", "answer": "pyq_a.jpg"}, "hold": False})
+        CD.save(self.DAY, {"kind": "countdown", "course_id": "ca_inter", "exam": "CA Inter Jan 2027", "days": 61,
+                           "exam_date": "2027-01-02", "images": ["countdown.jpg"], "hold": False})
+        with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "t", "IG_USER_ID": "1"}), \
+             mock.patch("mcq_agent.instagram.Instagram.find_by_ref", return_value=None), \
+             mock.patch("mcq_agent.instagram.Instagram.post_carousel", return_value={"media_id": "m", "permalink": "p"}) as car, \
+             mock.patch("mcq_agent.instagram.Instagram.post_story", return_value={"media_id": "s"}) as story, \
+             mock.patch("mcq_agent.hosting.urls_for", return_value=(["u1", "u2"], "test")):
+            P.publish_due(self.cfg, self.DAY, dt.time(7, 5), limit=20)
+            self.assertIn("countdown", B.load_posted(self.DAY))
+            self.assertEqual(story.call_args.args[0], "u1")
+            self.assertNotIn("pyq", B.load_posted(self.DAY))
+            P.publish_due(self.cfg, self.DAY, dt.time(17, 5), limit=20)
+        self.assertIn("pyq", B.load_posted(self.DAY))
+        self.assertTrue(any("PYQ of the day" in c.args[1] for c in car.call_args_list))
+        from mcq_agent.review import report
+        text = report(self.cfg, self.DAY, "me/r")
+        self.assertIn("📜 PYQ of the day", text)
+        self.assertIn("⏳ Countdown", text)
+        from mcq_agent.__main__ import parse_command
+        self.assertEqual(parse_command("/regen pyq", self.cfg)[1], "pyq")

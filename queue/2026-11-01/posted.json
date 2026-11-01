@@ -24,5 +24,15 @@
   "cma_inter:story": {
     "media_id": "17943029919362205",
     "posted_at": "2026-11-01T18:42:10+05:30"
+  },
+  "explainer": {
+    "media_id": "17941963101383214",
+    "permalink": "https://www.instagram.com/reel/DfM6tqKIAwQ/",
+    "video_url": "https://raw.githubusercontent.com/cacmagyan/daily-mcq/741f9f825fa4e10326a6847d70491f6bf43a6fc1/queue/2026-11-01/explainer.mp4",
+    "posted_at": "2026-11-01T19:42:45+05:30"
+  },
+  "explainer:story": {
+    "media_id": "18271682983307369",
+    "posted_at": "2026-11-01T19:43:44+05:30"
   }
 }

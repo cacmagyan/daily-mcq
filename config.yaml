@@ -53,6 +53,28 @@ concepts:
     start_date: "2026-10-31"
     post_time: "13:00"          # IST, lunch break; keep matched to the 13:02 line in publish.yml
 
+# PYQ of the day: a real past-paper MCQ (with its official answer key) from the question banks in the
+# main folder, solved and checked, posted as two slides with an "Asked in" tag. The course's papers that
+# have a bank take turns. Made the evening before by "8. PYQ and countdown" (extras.yml).
+pyq:
+  enabled: true
+  start_date: "2026-11-01"
+  post_time: "17:00"            # IST; keep matched to the 17:02 line in publish.yml
+  course: cma_inter
+  hashtags: ["#PYQ", "#CMAInter", "#ICMAI", "#CMAExam", "#PastPapers"]
+
+# Exam countdown: a daily Story "N days to <exam>" with one must-revise topic. It follows the day's MCQ
+# family (CMA one day, CA the next); that family's exams take turns. Update the dates each term.
+countdown:
+  enabled: true
+  start_date: "2026-11-01"
+  post_time: "07:00"            # IST; keep matched to the 07:02 line in publish.yml
+  exams:
+    - { name: "CMA Inter Dec 2026", course: cma_inter, date: "2026-12-10" }
+    - { name: "CMA Final Dec 2026", course: cma_final, date: "2026-12-10" }
+    - { name: "CA Inter Jan 2027", course: ca_inter, date: "2027-01-02" }
+    - { name: "CA Foundation Jan 2027", course: ca_foundation, date: "2027-01-03" }
+
 # News of the day: a carousel of the top stories for CA / CMA students (ICAI / ICMAI, tax, GST, audit,
 # frauds, SEBI, RBI ...). Made at about 9 PM by "News" (news.yml) from the feeds below, fact-checked against
 # each article, and posted at post_time. If fewer than `stories` pass the check, or the writer is unsure,

@@ -1,9 +1,184 @@
 {
   "kind": "explainer2",
   "course_id": "cma_final",
+  "paper_code": "Paper 15",
+  "paper_name": "Direct Tax Laws and International Taxation",
   "topic": "Set-off and Carry Forward of Losses",
   "concept_topic": "Set-off and Carry Forward of Losses",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 202 words; write 120-175",
-  "hold": false,
-  "hold_reason": ""
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 58.65,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Set-off and Carry Forward of Losses",
+    "caption_hook": "Made a loss this year? Don't waste it, use it before you lose it!",
+    "hook_label": "LOSS = WASTED?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Ma'am, I made a loss this year. Is it just wasted?",
+        "shot": "close",
+        "pose": "worried"
+      },
+      {
+        "who": "teacher",
+        "say": "Not at all. First set it off, then carry it forward.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Loss: Use It!",
+          "sub": "Set-off, then carry forward"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Set off first? Against what?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "First the same head. Then other heads. Whatever is left goes to future years.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Order of Use",
+          "lines": [
+            "1. Same head (intra-head)",
+            "2. Other heads (inter-head)",
+            "3. Carry forward the balance"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So a business loss can cut my salary income too?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "No. Business loss can't be set off against Salaries. Other heads are fine.",
+        "shot": "board",
+        "pose": "shrug"
+      },
+      {
+        "who": "girl",
+        "say": "And if it stays unused, how long can I carry it?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Think of bets. Speculation and race horse losses get four years. House property, business and capital losses get eight.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Bets",
+            "lines": [
+              "Speculation",
+              "Race horse"
+            ],
+            "icon": "clock",
+            "color": "red"
+          },
+          "right": {
+            "title": "The rest",
+            "lines": [
+              "HP, business",
+              "Capital loss"
+            ],
+            "icon": "calendar",
+            "color": "green"
+          },
+          "right_on": "eight"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Any loss with no time limit?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, unabsorbed depreciation. It carries forward without limit, but it can't touch Salaries either.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "list",
+          "title": "Unabsorbed Deprn",
+          "lines": [
+            "No time limit",
+            "Any head except Salaries"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Does late filing matter for carry forward?",
+        "shot": "close",
+        "pose": "nervous"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes. For business and capital losses, file the return by the due date. House property loss and unabsorbed depreciation are exceptions.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Carry Forward Needs",
+          "lines": [
+            "Return by due date",
+            "Not for HP, deprn"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: same loss, different homes. Bets get four years, the rest get eight.",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Bets get 4,",
+            "the rest 8"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": false,
+  "serious": true,
+  "serious_reason": "The checker found errors that weren't fixed (Checker: Lines 8 and 13 (voice and boards 'Bets' / 'Bets get 4'): calling speculation and race-horse losses 'bets' is misleading. The race-horse loss under s.74)",
+  "check_notes": [
+    "Not confirmed after 3 attempts",
+    "Checker: Lines 8 and 13 (voice and boards 'Bets' / 'Bets get 4'): calling speculation and race-horse losses 'bets' is misleading. The race-horse loss under s.74A is the loss from owning and maintaining race horses, not from betting. Speculation loss is the loss from a speculative business transaction (s.43(5)). Losses from lotteries, betting, gambling and card games can't be set off or carried forward at all (s.58(4) and s.74A(1)). Correct version: 'Speculation loss (s.73(4)) and loss from owning and maintaining race horses (s.74A) are carried forward for 4 AYs. Betting or gambling losses get no set-off or carry forward at all.' Drop the 'bets' mnemonic.",
+    "Checker: Line 13 ('the rest get eight'): this is too broad. Loss of a specified business under s.35AD (s.73A) and unabsorbed depreciation have no time limit. Correct version: 'Speculation and race-horse losses get 4 years. HP, normal business and capital losses get 8. Specified-business (35AD) loss and unabsorbed depreciation have no limit.'",
+    "Checker: Line 4 and the 'Order of Use' board ('2. Other heads (inter-head)'): this suggests every loss can be set off against other heads. Capital losses (s.71(3)), speculation loss, specified-business loss under s.35AD and race-horse loss can only be set off within their own source or head. Under the default s.115BAC regime, an HP loss can't be set off against other heads, and under the old regime that set-off is capped at ₹2 lakh (s.71(3A)). Add the qualifier 'if the law allows' or name these exceptions.",
+    "Checker: Line 6 ('Business loss … Other heads are fine'): this holds only for a non-speculative business loss other than a s.35AD business. Speculation and specified-business losses can't be set off against other heads. Say 'a normal (non-speculative) business loss'.",
+    "Checker: Line 12 (voice 'For business and capital losses'): s.80 also covers speculation loss (s.73), specified-business loss (s.73A) and race-horse loss (s.74A(3)). The return must be filed by the due date under s.139(1). Late filing doesn't affect set-off in the same year. Better: 'All losses except HP loss and unabsorbed depreciation need a return filed by the s.139(1) due date to be carried forward.'",
+    "Checker: Line 10: unabsorbed depreciation is technically an allowance carried forward under s.32(2), not a 'loss'. The wording should say so (minor)."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Word count is about 160 including the follow line. The unabsorbed depreciation line says it can't be set off against Salaries, matching the note. The note says the return-filing rule applies to business and capital losses, with HP loss and unabsorbed depreciation as exceptions.",
+  "caption": "🎬 🟥 CMA Final · Set-off and Carry Forward of Losses\n\nMade a loss this year? Don't waste it, use it before you lose it!\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 15: Direct Tax Laws and International Taxation\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref explainer2-261102",
+  "hold": true,
+  "hold_reason": "The checker found errors that weren't fixed (Checker: Lines 8 and 13 (voice and boards 'Bets' / 'Bets get 4'): calling speculation and race-horse losses 'bets' is misleading. The race-horse loss under s.74)"
 }

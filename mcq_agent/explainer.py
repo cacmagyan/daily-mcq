@@ -381,12 +381,22 @@ def story_tidy(cfg: Config | None, script: dict) -> dict:
     given = str(script.get("hook_label") or "").strip()
     hook = given or str(script.get("title") or "").strip().upper()
     if len(hook) > 22:
-        cut = hook[:23].rsplit(" ", 1)[0].rstrip(" ,:;-&")
+        # cut at a word break, never leaving a dangling "NOT", "OF", "THE" ... at the end
+        words = hook[:23].rsplit(" ", 1)[0].rstrip(" ,:;-&").split()
+        while words and words[-1].strip(",.:;").lower() in _DANGLING:
+            words.pop()
+        cut = " ".join(words).rstrip(" ,:;-&")
+        title = str(script.get("title") or "").strip().upper()
+        if len(cut) < 12 and title and len(title) <= 22:
+            cut = title
         hook = cut if len(cut) >= 8 else hook[:22]
     if hook:
         script["hook_label"] = hook
     return script
 
+
+_DANGLING = {"not", "no", "the", "a", "an", "of", "to", "and", "or", "but", "for", "in", "on", "by", "is", "are",
+             "vs", "with", "at", "from", "your", "you", "we", "it", "its", "than", "that", "this"}
 
 _BOARD_LONG = re.compile(r"board (?:title|sub|formula) is (\d+) characters; at most (\d+)$")
 

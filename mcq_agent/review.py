@@ -203,9 +203,16 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
     from . import news as N
     news = N.load(date) if cfg.news_due(date) else None
     news_held = bool(news and (news.get("hold") or news.get("error")) and "news" not in posted)
-    n_held = len(held) + len(concepts_held) + reel_held + news_held
+    from . import countdown as CD
+    from . import pyqday as Q
+    pyq_item = Q.load(date) if cfg.pyq_due(date) else None
+    cd_item = CD.load(date) if cfg.countdown_due(date) else None
+    extras_held = [x for x in (pyq_item, cd_item) if x and (x.get("hold") or x.get("error")) and x["kind"] not in posted]
+    news_held = news_held or bool(extras_held)
+    n_held = len(held) + len(concepts_held) + reel_held + bool(news and (news.get("hold") or news.get("error"))
+                                                               and "news" not in posted) + len(extras_held)
     n_posts = (len(items) + len(concepts) + bool(reel or ex) + len([e for e in exs if e.get("kind") != EXPLAINER])
-               + bool(news))
+               + bool(news) + bool(pyq_item) + bool(cd_item))
     mention = f"@{owner} " if owner else ""
 
     lines = [f"## MCQs for {date.strftime('%A %d %B %Y')} · Day {cfg.day_number(date)}", ""]
@@ -229,15 +236,19 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
             return cfg.reel_time()
         if kind == "news":
             return cfg.news_time()
+        if kind == "pyq":
+            return cfg.pyq_time()
+        if kind == "countdown":
+            return cfg.countdown_time()
         return cfg.course(it["course_id"])["post_time"]
 
-    rows = [(when_of(it), it) for it in items + concepts + exs + ([reel] if reel else []) + ([news] if news else [])]
+    rows = [(when_of(it), it) for it in items + concepts + exs + ([reel] if reel else []) + [x for x in (news, pyq_item, cd_item) if x]]
     for when, it in sorted(rows, key=lambda r: r[0]):
         kind = it.get("kind") or ""
         is_concept = kind.startswith(CONCEPT)
         is_ex = kind.startswith(EXPLAINER)
         is_reel = kind == REEL or is_ex
-        is_news = kind == "news"
+        is_news = kind in ("news", "pyq", "countdown")
         c = cfg.course(it["course_id"]) if it.get("course_id") else {"name": "", "emoji": "", "post_time": ""}
         cid = kind if (is_concept or is_reel or is_news) else it["course_id"]
         if cid in posted:
@@ -263,9 +274,12 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
                 notes.append("⚖️ law")
             status = "🕒 will post" + (f" ({', '.join(notes)})" if notes else "")
         key = it.get("correct", "–")
-        if is_news:
+        if kind == "news":
             it = dict(it, topic=" · ".join(x["tag"] for x in it.get("stories") or []) or "–")
-        label = ("📰 News" if is_news else f"📒 Concept ({c['name']})" if is_concept else f"🎬 Explainer ({c['name']})"
+        elif kind == "countdown":
+            it = dict(it, topic=f"{it.get('days', '?')} days to {it.get('exam', '')}" + (f": {it['topic']}" if it.get("topic") else ""))
+        label = ("📰 News" if kind == "news" else "📜 PYQ of the day" if kind == "pyq" else "⏳ Countdown (Story)" if kind == "countdown"
+                 else "📰 News" if is_news else f"📒 Concept ({c['name']})" if is_concept else f"🎬 Explainer ({c['name']})"
                  if is_ex else f"🎬 MCQ reel ({c['name']})" if is_reel
                  else f"{c.get('emoji', '')} {c['name']}")
         lines.append(f"| {when} | {label} | {it.get('topic', '–')} | {key} | {status} |")
@@ -319,6 +333,17 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
             lines += [f"**To post it anyway:** comment `/approve {k}`. `/regen {k}` writes a new one.", ""]
     if reel and not reel_held:
         lines += ["", "## MCQ reel" + (" (backup)" if ex_ok else ""), ""] + _reel_block(cfg, reel, repo, branch, date)
+    if pyq_item:
+        lines += ["", f"## 📜 PYQ of the day ({cfg.pyq_time()})", ""]
+        if pyq_item.get("error"):
+            lines += [f"❌ Not made: {pyq_item['error']}. Comment `/regen pyq` to try again.", ""]
+        else:
+            imgs = pyq_item.get("images") or {}
+            lines += [" ".join(f'<img src="{_img(repo, branch, date, imgs[k])}" width="240">' for k in ("question", "answer") if k in imgs),
+                      "", f"{pyq_item.get('asked_in', '')} · key {pyq_item.get('correct', '')} · `/regen pyq` picks another question", ""]
+    if cd_item and not cd_item.get("error"):
+        lines += ["", f"## ⏳ Countdown Story ({cfg.countdown_time()})", "",
+                  f'<img src="{_img(repo, branch, date, (cd_item.get("images") or ["countdown.jpg"])[0])}" width="160">', ""]
     if news:
         lines += ["", f"## 📰 News ({cfg.news_time()})", ""]
         if news.get("error"):
@@ -342,7 +367,9 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
               + (", `reel` for the reel (`/regen reel` remakes it)" if reel else "")
               + (", `explainer` for the evening video" if ex else "")
               + (", `explainer2` for the second video" if any(e.get("kind") == "explainer2" for e in exs) else "")
-              + (", `news` for the news carousel" if cfg.news_due(date) else ""),
+              + (", `news` for the news carousel" if cfg.news_due(date) else "")
+              + (", `pyq` for the PYQ of the day" if cfg.pyq_due(date) else "")
+              + (", `countdown` for the countdown Story" if cfg.countdown_due(date) else ""),
               "", "_Posted MCQs can't be changed from here; edit or delete them in the Instagram app._"]
     return "\n".join(lines)
 
@@ -369,5 +396,10 @@ def report_title(cfg: Config, date: dt.date) -> str:
     news = N.load(date) if cfg.news_due(date) else None
     if news and (news.get("hold") or news.get("error")) and "news" not in posted:
         held.append(news)
+    from . import countdown as CD
+    from . import pyqday as Q
+    for x, due in ((Q.load(date), cfg.pyq_due(date)), (CD.load(date), cfg.countdown_due(date))):
+        if due and x and (x.get("hold") or x.get("error")) and x.get("kind") not in posted:
+            held.append(x)
     base = f"MCQs for {date.isoformat()} (Day {cfg.day_number(date)})"
     return f"⛔ Action needed: {base}" if held else base

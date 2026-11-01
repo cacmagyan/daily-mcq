@@ -108,7 +108,7 @@ class Renderer:
     def render_item(self, item: dict, date: dt.date, out_dir: Path) -> dict:
         """Writes both images; returns file names plus how much the text had to shrink."""
         out_dir.mkdir(parents=True, exist_ok=True)
-        names = image_names(item["course_id"])
+        names = image_names(item.get("image_prefix") or item["course_id"])
         fits = {}
         for slide, name in names.items():
             fits[slide] = self._shoot(self.html(item, date, slide), out_dir / name)
@@ -179,6 +179,28 @@ class Renderer:
                 notes.append(f"slide {slide} ({SLIDE_NAMES[slide]}) text shrunk to {int(fit['zoom'] * 100)}%")
         return {"images": names, "fit_notes": notes, "fit": fits}
 
+
+    # ── exam countdown Story ───────────────────────────────
+    def render_countdown(self, item: dict, out: Path) -> None:
+        tpl = self.env.get_template("countdown.html.j2")
+        html = tpl.render(item=item, days=item["days"], course=self.cfg.course(item["course_id"]), brand=self.cfg.brand,
+                          fonts=self.fonts_uri,
+                          exam_date=dt.date.fromisoformat(item["exam_date"]).strftime("%d %B %Y").lstrip("0"))
+        page = self._browser.new_page(viewport={"width": REEL_W, "height": REEL_H}, device_scale_factor=1)
+        with tempfile.NamedTemporaryFile("w", suffix=".html", dir=ROOT / "templates", delete=False, encoding="utf-8") as fh:
+            fh.write(html)
+            tmp = Path(fh.name)
+        try:
+            page.goto(tmp.as_uri(), wait_until="load")
+            page.evaluate("window.fitStory()")
+            png = out.with_suffix(".png")
+            page.screenshot(path=str(png), clip={"x": 0, "y": 0, "width": REEL_W, "height": REEL_H})
+        finally:
+            page.close()
+            tmp.unlink(missing_ok=True)
+        with Image.open(png) as im:
+            im.convert("RGB").save(out, "JPEG", quality=90, optimize=True)
+        png.unlink(missing_ok=True)
 
     # ── news of the day ────────────────────────────────────
     def news_html(self, item: dict, date: dt.date, slide: int) -> str:

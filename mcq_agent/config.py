@@ -32,6 +32,8 @@ class Config:
         self.stories = self.raw.get("stories") or {}
         self.explainer = self.raw.get("explainer") or {}
         self.news = self.raw.get("news") or {}
+        self.pyq = self.raw.get("pyq") or {}
+        self.countdown = self.raw.get("countdown") or {}
 
     # ── courses ────────────────────────────────────────────
     def course(self, course_id: str) -> dict:
@@ -166,6 +168,21 @@ class Config:
 
     def news_time(self) -> str:
         return str(self.news.get("post_time", "22:00"))
+
+    # ── PYQ of the day and the exam countdown ──────────────
+    def pyq_due(self, date: dt.date) -> bool:
+        start = self.pyq.get("start_date")
+        return bool(self.pyq.get("enabled") and (not start or date >= dt.date.fromisoformat(str(start))))
+
+    def pyq_time(self) -> str:
+        return str(self.pyq.get("post_time", "17:00"))
+
+    def countdown_due(self, date: dt.date) -> bool:
+        start = self.countdown.get("start_date")
+        return bool(self.countdown.get("enabled") and (not start or date >= dt.date.fromisoformat(str(start))))
+
+    def countdown_time(self) -> str:
+        return str(self.countdown.get("post_time", "07:00"))
 
     # ── MCQ reel of the day ────────────────────────────────
     def reel_due(self, date: dt.date) -> bool:

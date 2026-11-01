@@ -33,7 +33,7 @@ def _courses(value: str | None) -> list[str] | None:
     return [c.strip() for c in value.split(",") if c.strip()] if value else None
 
 
-EXTRA_IDS = ("concept", "concept2", "reel", "explainer", "explainer2", "news")
+EXTRA_IDS = ("concept", "concept2", "reel", "explainer", "explainer2", "news", "pyq", "countdown")
 
 
 def parse_regen_comment(text: str, cfg: Config) -> tuple[str, str]:
@@ -91,6 +91,9 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--date", required=True, help="YYYY-MM-DD, today or tomorrow")
     s.add_argument("--courses")
     s.add_argument("--github-output", help=argparse.SUPPRESS)
+
+    s = sub.add_parser("extras", help="make the PYQ of the day and the countdown Story for a date")
+    s.add_argument("--date", default="tomorrow")
 
     s = sub.add_parser("news", help="make tonight's news carousel")
     s.add_argument("--date", default="today")
@@ -179,6 +182,25 @@ def main(argv: list[str] | None = None) -> int:
         date = cfg.resolve_date(args.date)
         rerender(cfg, date, _courses(args.courses))
         _write_output(args.github_output, batch_date=date.isoformat())
+        return 0
+
+    if args.cmd == "extras":
+        from . import countdown as CD
+        from . import pyqday as Q
+        from .pipeline import make_countdown, make_pyq
+        date = cfg.resolve_date(args.date)
+        for due, mod, fn, name in ((cfg.pyq_due(date), Q, make_pyq, "PYQ"),
+                                   (cfg.countdown_due(date), CD, make_countdown, "countdown")):
+            old = mod.load(date)
+            if not due:
+                print(f"{name}: switched off for {date}")
+            elif old and not old.get("error"):
+                print(f"{name}: already made for {date}")
+            else:
+                try:
+                    fn(cfg, date)
+                except Exception as exc:          # one failing never stops the other
+                    print(f"  ✗ {name}: {exc}")
         return 0
 
     if args.cmd == "news":
@@ -270,7 +292,8 @@ def main(argv: list[str] | None = None) -> int:
         date = dt.date.fromisoformat(args.date)
         action, course_id, instruction = parse_command(args.comment, cfg)
         name = {"concept": "concept note", "concept2": "second concept note", "reel": "reel", "explainer": "explainer",
-                "explainer2": "second explainer", "news": "news"}.get(course_id) or cfg.course(course_id)["name"]
+                "explainer2": "second explainer", "news": "news", "pyq": "PYQ of the day",
+                "countdown": "exam countdown"}.get(course_id) or cfg.course(course_id)["name"]
         if action == "regen":
             item = regenerate(cfg, date, course_id, instruction)
             if course_id in ("concept", "concept2"):
@@ -278,6 +301,12 @@ def main(argv: list[str] | None = None) -> int:
             elif course_id in ("explainer", "explainer2"):
                 summary = (f"Explainer for {date} could not be made: {item.get('error', '')[:200]}" if item.get("error")
                            else f"New explainer for {date}: {item.get('topic', '')} ({item.get('seconds', 0):g} s)")
+            elif course_id == "pyq":
+                summary = (f"PYQ for {date} could not be made: {item.get('error', '')[:200]}" if item.get("error")
+                           else f"New PYQ for {date}: {item.get('asked_in', '')}, {item.get('topic', '')} (answer {item.get('correct')})")
+            elif course_id == "countdown":
+                summary = (f"Countdown for {date} could not be made: {item.get('error', '')[:200]}" if item.get("error")
+                           else f"New countdown for {date}: {item['days']} days to {item['exam']}; {item.get('topic') or 'no topic'}")
             elif course_id == "news":
                 summary = (f"News for {date} could not be made: {item.get('error', '')[:200]}" if item.get("error")
                            else f"New news for {date}: " + "; ".join(s["headline"] for s in item["stories"]))

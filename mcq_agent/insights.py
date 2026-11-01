@@ -19,7 +19,7 @@ REEL_METRICS = ["views", "reach", "saved", "shares", "likes", "comments", "total
 FEED_METRICS = ["views", "reach", "saved", "shares", "likes", "comments", "total_interactions", "follows",
                 "profile_visits"]
 KIND_NAMES = {"explainer": "🎬 Cartoon explainer", "reel": "🎬 MCQ reel", "concept": "📒 Concept note", "mcq": "📝 MCQ post",
-              "news": "📰 News"}
+              "news": "📰 News", "pyq": "📜 PYQ of the day"}
 
 
 def week_range(today: dt.date) -> tuple[dt.date, dt.date]:
@@ -36,10 +36,14 @@ def posts_between(start: dt.date, end: dt.date) -> list[dict]:
         posted = B.load_posted(d)
         batch = B.load_batch(d) or {"items": []}
         for key, rec in posted.items():
-            if ":" in key or not rec.get("media_id"):
-                continue                                     # Stories have no lasting numbers
+            if ":" in key or key == "countdown" or not rec.get("media_id"):
+                continue                                     # Stories (incl. the countdown) have no lasting numbers                                     # Stories have no lasting numbers
             concept = B.load_concept(d, "2" if key.endswith("2") else "") or {}
-            if key == "news":
+            if key == "pyq":
+                from .pyqday import load as load_pyq
+                p = load_pyq(d) or {}
+                kind, course, topic = "pyq", p.get("course_id", ""), p.get("topic", "")
+            elif key == "news":
                 from .news import load as load_news
                 kind, course = "news", ""
                 topic = " · ".join(s.get("tag", "") for s in (load_news(d) or {}).get("stories") or [])
@@ -136,7 +140,7 @@ def report(cfg: Config, data: dict, with_summary: bool = True) -> str:
                                   "(README, 'Weekly report')."])
     kinds = ["| Kind | Posts | Avg views | Avg reach | Avg saves | Avg shares | Avg likes | Watch time |",
              "|---|---|---|---|---|---|---|---|"]
-    for kind in ("explainer", "reel", "concept", "mcq", "news"):
+    for kind in ("explainer", "reel", "concept", "mcq", "pyq", "news"):
         rows = [p for p in measured if p["kind"] == kind]
         if rows:
             kinds.append(f"| {KIND_NAMES[kind]} | {len(rows)} | {_fmt(_avg(rows, 'views'))} | {_fmt(_avg(rows, 'reach'))} | "

@@ -18,7 +18,8 @@ REEL = "reel"           # id of the MCQ reel of the day
 EXPLAINER = "explainer" # id of the cartoon explainer reel (takes the reel's slot; the MCQ reel is its backup)
 CONCEPT2, EXPLAINER2 = "concept2", "explainer2"     # the day's second note and its video
 NEWS = "news"           # the nightly news carousel
-EXTRAS = (CONCEPT, REEL, EXPLAINER, CONCEPT2, EXPLAINER2, NEWS)
+PYQ, COUNTDOWN = "pyq", "countdown"     # PYQ of the day (2 slides) and the exam countdown Story
+EXTRAS = (CONCEPT, REEL, EXPLAINER, CONCEPT2, EXPLAINER2, NEWS, PYQ, COUNTDOWN)
 CONCEPTS, EXPLAINERS = (CONCEPT, CONCEPT2), (EXPLAINER, EXPLAINER2)
 
 
@@ -445,9 +446,48 @@ def make_news(cfg: Config, date: dt.date, instruction: str = "") -> dict:
     return item
 
 
+def make_pyq(cfg: Config, date: dt.date, instruction: str = "") -> dict:
+    """PYQ of the day (queue/DATE/pyq.json + pyq_q.jpg, pyq_a.jpg). /regen pyq picks another question."""
+    from . import pyqday as Q
+    _not_posted(date, PYQ)
+    old = Q.load(date) or {}
+    item = Q.make(cfg, date, instruction)
+    item["tried"] = sorted(set(item.get("tried") or []) | set(old.get("tried") or []))
+    if not item.get("error"):
+        item["image_prefix"] = PYQ
+        _sign(cfg, item)
+        with Renderer(cfg) as r:
+            res = r.render_item(item, date, batch_dir(date))
+        item.update(images=res["images"], fit_notes=res["fit_notes"])
+        item["caption"] = Q.caption(cfg, item, date)
+        set_hold(item)
+    Q.save(date, item)
+    print(f"  {'✗' if item.get('error') else '✓'} PYQ for {date}: " + (item.get("error") or f"{item['asked_in']}, {item['topic']}"))
+    return item
+
+
+def make_countdown(cfg: Config, date: dt.date, instruction: str = "") -> dict:
+    """The exam countdown Story (queue/DATE/countdown.json + countdown.jpg)."""
+    from . import countdown as CD
+    _not_posted(date, COUNTDOWN)
+    item = CD.make(cfg, date, instruction)
+    if not item.get("error"):
+        with Renderer(cfg) as r:
+            r.render_countdown(item, batch_dir(date) / "countdown.jpg")
+        item["images"] = ["countdown.jpg"]
+    CD.save(date, item)
+    print(f"  {'✗' if item.get('error') else '✓'} countdown for {date}: "
+          + (item.get("error") or f"{item['days']} days to {item['exam']}; {item['topic'] or 'no topic'}"))
+    return item
+
+
 def regenerate(cfg: Config, date: dt.date, course_id: str, instruction: str = "") -> dict:
     if course_id == NEWS:
         return make_news(cfg, date, instruction)
+    if course_id == PYQ:
+        return make_pyq(cfg, date, instruction)
+    if course_id == COUNTDOWN:
+        return make_countdown(cfg, date, instruction)
     if course_id in CONCEPTS:
         return regenerate_concept(cfg, date, instruction, slot_of(course_id))
     if course_id == REEL:
@@ -495,6 +535,14 @@ def _target(date: dt.date, course_id: str):
         if not item:
             raise SystemExit(f"No {course_id} for {date}")
         return item, lambda: X.save(date, item, slot)
+    if course_id in (PYQ, COUNTDOWN):
+        from . import countdown as CD
+        from . import pyqday as Q
+        mod = Q if course_id == PYQ else CD
+        item = mod.load(date)
+        if not item:
+            raise SystemExit(f"No {course_id} for {date}; comment /regen {course_id} to make it")
+        return item, lambda: mod.save(date, item)
     if course_id == NEWS:
         from . import news as N
         item = N.load(date)
@@ -512,7 +560,7 @@ def release(date: dt.date, course_id: str) -> str:
     """/approve: post a held MCQ (or the concept note) as it is."""
     item, save = _target(date, course_id)
     what = {CONCEPT: "concept note", CONCEPT2: "second concept note", REEL: "reel", EXPLAINER: "explainer",
-            EXPLAINER2: "second explainer", NEWS: "news"}.get(course_id, "MCQ")
+            EXPLAINER2: "second explainer", NEWS: "news", PYQ: "PYQ", COUNTDOWN: "countdown"}.get(course_id, "MCQ")
     if item.get("error"):
         raise SystemExit(f"{course_id} has no {what} to approve (it failed to generate); use /regen {course_id}")
     item["serious"], item["held_by_you"] = False, False
@@ -564,6 +612,10 @@ def _slot(cfg: Config, item: dict) -> dt.time:
         return dt.time.fromisoformat(cfg.explainer_time(slot_of(kind)))
     if kind == NEWS:
         return dt.time.fromisoformat(cfg.news_time())
+    if kind == PYQ:
+        return dt.time.fromisoformat(cfg.pyq_time())
+    if kind == COUNTDOWN:
+        return dt.time.fromisoformat(cfg.countdown_time())
     return dt.time.fromisoformat(cfg.course(item["course_id"])["post_time"])
 
 
@@ -572,6 +624,13 @@ def _post_parts(cfg: Config, item: dict, date: dt.date) -> tuple[list, list, str
     if item.get("kind") in CONCEPTS:
         return ([batch_dir(date) / n for n in item["images"]], concept_alt_texts(item),
                 item.get("caption") or build_concept_caption(cfg, item, date))
+    if item.get("kind") == PYQ:
+        from . import pyqday as Q
+        alts = alt_texts(item)
+        return ([batch_dir(date) / item["images"]["question"], batch_dir(date) / item["images"]["answer"]],
+                [alts["question"], alts["answer"]], item.get("caption") or Q.caption(cfg, item, date))
+    if item.get("kind") == COUNTDOWN:
+        return [batch_dir(date) / item["images"][0]], [], ""
     if item.get("kind") == NEWS:
         from . import news as N
         return [batch_dir(date) / n for n in item["images"]], N.alt_texts(item), item.get("caption") or N.caption(cfg, item, date)
@@ -618,8 +677,12 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
     mcqs = [it for it in batch["items"] if it["course_id"] in todays or it["course_id"] in posted]
     from . import news as N
     news = N.load(date) if cfg.news_due(date) else None
+    from . import countdown as CD
+    from . import pyqday as Q
+    pyq = Q.load(date) if cfg.pyq_due(date) else None
+    countdown = CD.load(date) if cfg.countdown_due(date) else None
     items = (mcqs + [c for c in (concept, concept2) if c] + ([reel] if reel else [])
-             + [e for e in (explainer, explainer2) if e] + ([news] if news else []))
+             + [e for e in (explainer, explainer2) if e] + [x for x in (news, pyq, countdown) if x])
     due = [it for it in items
            if _key(it) not in posted and not it.get("error") and not it.get("hold")
            and (it.get("images") or it.get("video")) and _slot(cfg, it) <= at]
@@ -667,6 +730,10 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
                 result = {"media_id": already["id"], "permalink": already.get("permalink", ""), "note": "found existing post"}
             elif is_reel:
                 result = ig.post_reel(video_urls(video, cfg.instagram), caption, **reel_options(cfg, item))
+            elif item.get("kind") == COUNTDOWN:                  # a Story on its own, not a feed post
+                urls, host = urls_for(paths, cfg.instagram)
+                result = ig.post_story(urls[0])
+                result["image_host"] = host
             else:
                 urls, host = urls_for(paths, cfg.instagram)
                 result = ig.post_carousel(urls, caption, alts)
@@ -692,8 +759,8 @@ def _story_file(cfg: Config, item: dict) -> tuple[str, bool] | None:
     if not cfg.stories.get("enabled"):
         return None
     kind = item.get("kind")
-    if kind == NEWS:
-        return None                                    # the news has no Story (yet)
+    if kind in (NEWS, PYQ, COUNTDOWN):
+        return None                                    # no extra Story for these
     if kind in (REEL, *EXPLAINERS):
         return (item["video"], True) if cfg.stories.get("reel", True) and item.get("video") else None
     want = cfg.stories.get("concept", True) if kind in CONCEPTS else cfg.stories.get("mcqs", True)

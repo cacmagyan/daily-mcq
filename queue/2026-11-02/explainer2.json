@@ -8,132 +8,166 @@
   "video": "explainer2.mp4",
   "cover": "explainer2_cover.jpg",
   "style": "story",
-  "seconds": 73.7,
+  "seconds": 79.94,
   "thumb_ms": 1300,
   "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
   "script": {
-    "title": "Methods of Arm's Length Price",
-    "caption_hook": "Related companies deal with each other. So who decides the fair price?",
+    "title": "Methods of Arm's Length Price (ALP)",
+    "caption_hook": "How does the taxman check prices between related companies?",
     "hook_label": "PRICE LIKE STRANGERS?",
     "lines": [
       {
         "who": "boy",
-        "say": "Ma'am, how do we price a deal between two related companies?",
+        "say": "Ma'am, how are prices between related companies checked?",
         "shot": "close",
         "pose": "ask"
       },
       {
         "who": "teacher",
-        "say": "Price it like strangers would. Arm's length price is what two unrelated parties would agree on.",
+        "say": "Related companies are called associated enterprises. Their deals must be priced like strangers would, in uncontrolled conditions. That's arm's length price.",
         "shot": "board",
         "pose": "present",
         "board": {
           "kind": "title",
           "title": "Arm's Length Price",
-          "sub": "Price as strangers would"
+          "sub": "Price like strangers would"
         }
       },
       {
         "who": "girl",
-        "say": "But when does it apply? Any two companies?",
+        "say": "Example, please?",
         "shot": "desk",
         "pose": "ask",
         "react": "listen"
       },
       {
         "who": "teacher",
-        "say": "Only between associated enterprises. That means international transactions, and certain specified domestic transactions.",
+        "say": "An Indian company sells to its foreign parent at ₹8,000 per unit. Strangers pay ₹10,000 for the same goods.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "Indian Co",
+          "from_note": "subsidiary",
+          "to": "Parent",
+          "to_note": "foreign AE",
+          "label": "₹8,000/unit",
+          "to_on": "parent"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So the fair price is ₹10,000 per unit?",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, for same goods, quantity and terms. Income is computed on ₹10,000, not ₹8,000, so ₹2,000 more.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "calc",
+          "top": "₹10,000 - ₹8,000",
+          "big": "₹2,000"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Is there one method for finding it?",
+        "shot": "close",
+        "pose": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Five named methods, plus a prescribed one. CUP compares prices, RPM starts from resale price, CPM from cost.",
         "shot": "board",
         "pose": "explain",
         "board": {
           "kind": "list",
-          "title": "ALP applies to",
+          "title": "What They Compare",
           "lines": [
-            "Associated enterprises",
-            "International deals",
-            "Specified domestic deals"
+            "CUP: comparable price",
+            "RPM: resale less margin",
+            "CPM: cost + gross markup"
           ]
         }
       },
       {
         "who": "boy",
-        "say": "And how do we find that price?",
+        "say": "And the rest?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "PSM splits combined profit. TNMM compares net profit margin. Then there's a prescribed other method.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "list",
+          "title": "The Other Methods",
+          "lines": [
+            "PSM: split of profit",
+            "TNMM: net profit margin",
+            "Other prescribed method"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Must we try CUP first, always?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "No. The law gives no order. Choose the most appropriate method on facts and data.",
+        "shot": "board",
+        "pose": "shrug"
+      },
+      {
+        "who": "boy",
+        "say": "So how do I match the method?",
         "shot": "desk",
         "pose": "think",
         "react": "listen"
       },
       {
         "who": "teacher",
-        "say": "The Act gives six methods. Five are named, plus any other method prescribed by the CBDT.",
-        "shot": "board",
-        "pose": "explain",
-        "board": {
-          "kind": "list",
-          "title": "6 methods in the Act",
-          "lines": [
-            "CUP, RPM, CPM",
-            "PSM, TNMM",
-            "Other method (Rule 10AB)"
-          ]
-        }
-      },
-      {
-        "who": "girl",
-        "say": "Do we try CUP first, always?",
-        "shot": "close",
-        "pose": "doubt"
-      },
-      {
-        "who": "teacher",
-        "say": "No. There's no order. Choose the most appropriate method on facts, comparability and data available.",
-        "shot": "board",
-        "pose": "thumbs"
-      },
-      {
-        "who": "boy",
-        "say": "Okay, so what does RPM do? Give an example.",
-        "shot": "desk",
-        "pose": "ask",
-        "react": "think"
-      },
-      {
-        "who": "teacher",
-        "say": "Distributor resells for ₹10,000. Normal gross margin is 20% of resale price, ₹2,000. No customs duty assumed. ALP is ₹8,000.",
-        "shot": "board",
-        "pose": "present",
-        "board": {
-          "kind": "calc",
-          "top": "₹10,000 − ₹2,000",
-          "big": "₹8,000"
-        }
-      },
-      {
-        "who": "girl",
-        "say": "Oh! So RPM uses gross margin. What about the others?",
-        "shot": "close",
-        "pose": "aha"
-      },
-      {
-        "who": "teacher",
-        "say": "TNMM compares net profit margin against a base. CPM uses cost plus gross mark-up. PSM splits combined profit by contribution.",
-        "shot": "board",
-        "pose": "explain",
-        "board": {
-          "kind": "list",
-          "title": "What each compares",
-          "lines": [
-            "CUP: comparable price",
-            "RPM: resale less margin",
-            "CPM: cost plus mark-up",
-            "PSM: split; TNMM: net"
-          ]
-        }
-      },
-      {
-        "who": "teacher",
-        "say": "Remember: pick the method by facts, not by habit.",
+        "say": "Distributors resell goods, so RPM. Manufacturers add a mark-up to cost, so CPM.",
         "shot": "board",
         "pose": "happy",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Reseller",
+            "lines": [
+              "Resale price",
+              "RPM"
+            ],
+            "icon": "people",
+            "color": "blue"
+          },
+          "right": {
+            "title": "Maker",
+            "lines": [
+              "Cost plus",
+              "CPM"
+            ],
+            "icon": "factory",
+            "color": "green"
+          },
+          "right_on": "Manufacturers"
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: no ranking of methods. Pick by facts, not by habit!",
+        "shot": "board",
+        "pose": "wink",
         "board": {
           "kind": "words",
           "lines": [
@@ -146,21 +180,21 @@
         "who": "teacher",
         "say": "Comment NOTES for the full note, and follow for one concept every day!",
         "shot": "follow",
-        "pose": "wink"
+        "pose": "happy"
       }
     ]
   },
-  "checked": false,
-  "serious": true,
-  "serious_reason": "The checker found errors that weren't fixed (Checker: Line 4 (voice) and its board: \"Only between associated enterprises\" is wrong as a rule. Under section 92B(1), an international transaction is one betwe)",
+  "checked": true,
+  "serious": false,
   "check_notes": [
-    "Not confirmed after 3 attempts",
-    "Checker: Line 4 (voice) and its board: \"Only between associated enterprises\" is wrong as a rule. Under section 92B(1), an international transaction is one between two or more associated enterprises where at least one is a non-resident. However, section 92B(2) treats a transaction with an unrelated person as a deemed international transaction when a prior agreement or arrangement with an associated enterprise sets its terms. Specified domestic transactions under section 92BA are defined by the transactions listed there (for example, those under sections 80A and 80-IA(8)/(10)), not by associated-enterprise status. Correct version: \"ALP applies to international transactions between associated enterprises (including deemed international transactions under section 92B(2)) and to specified domestic transactions under section 92BA.\" The board should not show 'Associated enterprises' as a separate third item next to the two kinds of transaction. Use 'International transactions (AEs, at least one non-resident)' and 'Specified domestic transactions (s. 92BA)'.",
-    "Checker: Line 10 (RPM example), minor: the example doesn't say the goods were bought from an associated enterprise and resold to an unrelated party. Add this, for example: \"Goods bought from an AE are resold to an unrelated buyer for ₹10,000\". The arithmetic is correct: ₹10,000 − 20% gross margin of ₹2,000 = ₹8,000, with no customs duty or other purchase costs."
+    "Writer: Applied examiner fixes: 'Indian company' with foreign parent, 'per unit' for like-for-like comparison, PSM added across the two method boards (six methods = five named plus prescribed other), and 'associated enterprises' and 'uncontrolled conditions' used once. Statutory section numbers are intentionally not spoken. Please check the word count is within 120-175 including the follow line.",
+    "Checker: Line 6 (voice and calc board): '₹2,000 more' never says per unit, and the board shows a bare '₹2,000'. Correct version: 'Income is computed at ₹10,000 per unit, so it rises by ₹2,000 per unit (total = ₹2,000 × units sold).' Label the board '₹2,000/unit'.",
+    "Checker: Line 14 (voice and versus board): 'Distributors resell goods, so RPM. Manufacturers add a mark-up to cost, so CPM' sounds like a fixed rule. That clashes with Lines 12 and 15 (no order, pick by facts). In practice RPM usually suits resellers that add little value, CPM usually suits contract or semi-finished manufacturing and services, and TNMM is often chosen for both. Suggested wording: 'A distributor that resells without adding value often suits RPM. A contract manufacturer often suits CPM. Still, the facts decide.'",
+    "Checker: Line 2: 'Related companies are called associated enterprises' is a simplification. Under section 92A an associated enterprise is any enterprise (not only a company) linked by participation in management, control or capital, including the deemed cases. Suggested wording: 'Enterprises linked by management, control or capital are called associated enterprises.'"
   ],
   "attempts": 3,
-  "reviewer_note": "Corrected: six methods (five named plus prescribed other method, Rule 10AB); scope includes specified domestic transactions; RPM margin stated as 20% of resale price with no purchase expenses assumed (₹10,000 − ₹2,000 = ₹8,000). Please verify word count is within 120-175.",
-  "caption": "🎬 🟥 CMA Final · Methods of Arm's Length Price\n\nRelated companies deal with each other. So who decides the fair price?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 15: Direct Tax Laws and International Taxation\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref explainer2-261102",
-  "hold": true,
-  "hold_reason": "The checker found errors that weren't fixed (Checker: Line 4 (voice) and its board: \"Only between associated enterprises\" is wrong as a rule. Under section 92B(1), an international transaction is one betwe)"
+  "reviewer_note": "Applied examiner fixes: 'Indian company' with foreign parent, 'per unit' for like-for-like comparison, PSM added across the two method boards (six methods = five named plus prescribed other), and 'associated enterprises' and 'uncontrolled conditions' used once. Statutory section numbers are intentionally not spoken. Please check the word count is within 120-175 including the follow line.",
+  "caption": "🎬 🟥 CMA Final · Methods of Arm's Length Price (ALP)\n\nHow does the taxman check prices between related companies?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 15: Direct Tax Laws and International Taxation\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref explainer2-261102",
+  "hold": false,
+  "hold_reason": ""
 }

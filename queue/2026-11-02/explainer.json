@@ -1,9 +1,187 @@
 {
   "kind": "explainer",
   "course_id": "ca_inter",
+  "paper_code": "Paper 3A",
+  "paper_name": "Income-tax Law",
   "topic": "Agricultural Income: What Qualifies",
   "concept_topic": "Agricultural Income: What Qualifies",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 219 words; write 120-175",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 65.21,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Agricultural Income: What Qualifies",
+    "caption_hook": "Poultry farm income is not agricultural income. Here's what is.",
+    "hook_label": "POULTRY FARM = AGRI?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "My uncle's poultry farm earns well. That's agricultural income, right?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "No! Under Section 2(1A), poultry or dairy alone isn't agricultural income. It needs Indian land and basic operations on it.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Poultry",
+            "lines": [
+              "No land work",
+              "Not agri"
+            ],
+            "icon": "cross",
+            "color": "red"
+          },
+          "right": {
+            "title": "Farm land",
+            "lines": [
+              "In India",
+              "Basic work"
+            ],
+            "icon": "check",
+            "color": "green"
+          },
+          "right_on": "Indian"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So what actually counts as agricultural income?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Three sources: rent from Indian farm land, income from basic operations on it, and income from a farm building.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "list",
+          "title": "Rent, Raise, Roof",
+          "lines": [
+            "Rent from Indian land",
+            "Raise produce on land",
+            "Roof: farm building"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Even if the owner doesn't farm it himself?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes. Rent from Indian farm land counts even if the owner never tills it.",
+        "shot": "board",
+        "pose": "happy"
+      },
+      {
+        "who": "girl",
+        "say": "And making sugar from his own cane?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Making produce marketable is agricultural. Sugar goes further, so that part is business income.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "Cane",
+          "from_note": "Agricultural",
+          "to": "Sugar",
+          "to_note": "Business",
+          "label": "Goes further",
+          "to_on": "business"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And the farm building?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "The cultivator or rent-in-kind receiver uses it near the land as home or store. Land: revenue-assessed, or in a rural area.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "list",
+          "title": "Farm building",
+          "lines": [
+            "Cultivator or receiver",
+            "Near land: home, store",
+            "Land assessed or rural"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So agricultural income is totally ignored?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Exempt, yes. But for individuals and HUFs, under conditions, it can raise tax on other income.",
+        "shot": "board",
+        "pose": "think",
+        "board": {
+          "kind": "list",
+          "title": "Partial integration",
+          "lines": [
+            "Net agri over ₹5,000",
+            "Other income over limit",
+            "Not for companies"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Land test first, label last!",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "LAND TEST FIRST,",
+            "LABEL LAST"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Total about 155 words. Check farm-building wording against Section 2(1A) Explanation 2 and the partial integration conditions (individual, HUF, AOP, BOI, AJP; net agri income over ₹5,000 and other income over basic exemption limit). The board list says \"Not for companies\" as in the note; the spoken line says individuals and HUFs for brevity.",
+    "Checker: Line 12 (voice): 'for individuals and HUFs' is incomplete. Partial integration applies to individuals, HUFs, AOPs/BOIs and artificial juridical persons. It applies only when net agricultural income exceeds ₹5,000 and non-agricultural income exceeds the basic exemption limit. It does not apply to firms, LLPs and companies. Suggested wording: 'for individuals, HUFs, AOPs/BOIs and artificial juridical persons'. The board line 'Not for companies' would read better as 'Not for firms/companies'.",
+    "Checker: Line 4 (voice/board): 'income from basic operations on it' leaves out part of Section 2(1A)(b). It also covers income from a process the cultivator or rent-in-kind receiver uses to make the produce fit for market, and from the sale of that produce. Suggested wording: 'income from agriculture on it, including making the produce marketable and selling it'.",
+    "Checker: Line 10 (voice/board): the farm building must be owned and occupied by the receiver of rent or revenue, the cultivator, or the receiver of rent-in-kind. The current line names only the cultivator and the rent-in-kind receiver, so it leaves out the person receiving cash rent or revenue. Suggested wording: 'Owned and occupied by the rent receiver or the cultivator'.",
+    "Checker: Line 8 (voice): make clear that the income is split. Under Rule 7, the market value of the cane counts as agricultural income, and only the rest of the sugar profit is business income. Without this, a viewer could read the whole sugar income as business income."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Total about 155 words. Check farm-building wording against Section 2(1A) Explanation 2 and the partial integration conditions (individual, HUF, AOP, BOI, AJP; net agri income over ₹5,000 and other income over basic exemption limit). The board list says \"Not for companies\" as in the note; the spoken line says individuals and HUFs for brevity.",
+  "caption": "🎬 🟦 CA Inter · Agricultural Income: What Qualifies\n\nPoultry farm income is not agricultural income. Here's what is.\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 3A: Income-tax Law\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAInter #CAIntermediate #ICAI #CAStudents\n\nref explainer-261102",
   "hold": false,
   "hold_reason": ""
 }

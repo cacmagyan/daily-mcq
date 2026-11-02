@@ -3,160 +3,178 @@
   "course_id": "ca_inter",
   "paper_code": "Paper 3A",
   "paper_name": "Income-tax Law",
-  "topic": "Previous Year and Assessment Year",
-  "concept_topic": "Previous Year and Assessment Year",
+  "topic": "Agricultural Income: What Qualifies",
+  "concept_topic": "Agricultural Income: What Qualifies",
   "video": "explainer.mp4",
   "cover": "explainer_cover.jpg",
   "style": "story",
-  "seconds": 77.0,
+  "seconds": 66.35,
   "thumb_ms": 1300,
   "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
   "script": {
-    "title": "Previous Year vs Assessment Year",
-    "caption_hook": "Earned in 2025-26 but the Assessment Year says 2026-27? Here's why.",
-    "hook_label": "EARN 2025, TAX 2026?",
+    "title": "Agricultural Income: What Qualifies",
+    "caption_hook": "Poultry farm, dairy farm... is it really agricultural income?",
+    "hook_label": "POULTRY FARM = AGRI?",
     "lines": [
       {
-        "who": "girl",
-        "say": "Earned in 2025-26, but Assessment Year says 2026-27? Why?",
+        "who": "boy",
+        "say": "Ma'am, poultry farm has 'farm' in its name. So it's agricultural income, right?",
         "shot": "close",
         "pose": "doubt"
       },
       {
         "who": "teacher",
-        "say": "Good question! You earn first, and tax comes later. The year you earn in is the Previous Year.",
-        "shot": "board",
-        "pose": "present",
-        "board": {
-          "kind": "title",
-          "title": "Previous Year (PY)",
-          "sub": "The year income is earned"
-        }
-      },
-      {
-        "who": "boy",
-        "say": "So what's the Assessment Year then?",
-        "shot": "desk",
-        "pose": "ask",
-        "react": "think"
-      },
-      {
-        "who": "teacher",
-        "say": "The next year. Income of the Previous Year is taxed in the Assessment Year that follows.",
+        "say": "Not always! You need land in India. Let's see the three sources.",
         "shot": "board",
         "pose": "explain",
         "board": {
-          "kind": "flow",
-          "from": "PY 25-26",
-          "from_note": "you earn",
-          "to": "AY 26-27",
-          "to_note": "you're taxed",
-          "label": "next year",
-          "to_on": "Assessment"
+          "kind": "title",
+          "title": "Agricultural Income",
+          "sub": "What qualifies?"
         }
       },
       {
         "who": "girl",
-        "say": "Oh! So Previous Year first, Assessment Year after?",
-        "shot": "close",
-        "pose": "aha"
-      },
-      {
-        "who": "teacher",
-        "say": "Yes! Priya earns salary from 1 April 2025 to 31 March 2026. That year is her Previous Year.",
-        "shot": "board",
-        "pose": "happy",
-        "board": {
-          "kind": "calc",
-          "top": "1 Apr 25-31 Mar 26",
-          "big": "PY"
-        }
-      },
-      {
-        "who": "boy",
-        "say": "And when is she taxed on it?",
+        "say": "So what exactly counts?",
         "shot": "desk",
         "pose": "ask",
         "react": "listen"
       },
       {
         "who": "teacher",
-        "say": "In 2026-27, the Assessment Year, from 1 April 2026 to 31 March 2027.",
+        "say": "Three R's: Rent from Indian farm land, Raise produce on the land, Roof of a farm building.",
         "shot": "board",
-        "pose": "explain",
+        "pose": "present",
         "board": {
-          "kind": "versus",
-          "left": {
-            "title": "PY",
-            "lines": [
-              "2025-26",
-              "Income earned"
-            ],
-            "icon": "calendar",
-            "color": "green"
-          },
-          "right": {
-            "title": "AY",
-            "lines": [
-              "2026-27",
-              "Income taxed"
-            ],
-            "icon": "doc",
-            "color": "blue"
-          },
-          "right_on": "Assessment"
-        }
-      },
-      {
-        "who": "girl",
-        "say": "Question says AY 2026-27. Which year's income do I take?",
-        "shot": "desk",
-        "pose": "think",
-        "react": "think"
-      },
-      {
-        "who": "teacher",
-        "say": "Go one year back. AY 2026-27 means PY 2025-26. Write both together.",
-        "shot": "board",
-        "pose": "thumbs",
-        "board": {
-          "kind": "formula",
-          "title": "Find the PY",
-          "formula": "PY = AY - 1 year",
-          "sub": "AY 2026-27 gives PY 2025-26"
+          "kind": "list",
+          "title": "Rent, Raise, Roof",
+          "lines": [
+            "Rent: Indian farm land",
+            "Raise: produce on land",
+            "Roof: farm building"
+          ]
         }
       },
       {
         "who": "boy",
-        "say": "Is the Previous Year always 1 April to 31 March?",
+        "say": "Rent too? Even if the owner doesn't farm?",
         "shot": "close",
-        "pose": "doubt"
+        "pose": "shocked"
       },
       {
         "who": "teacher",
-        "say": "Normally yes. For a new business, it starts on the setting-up date and ends on 31 March.",
+        "say": "Yes. Rent from Indian agricultural land counts, even if the owner never tills it.",
+        "shot": "board",
+        "pose": "happy"
+      },
+      {
+        "who": "girl",
+        "say": "And the crops grown on the land?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Basic operations on land, like sowing and harvesting, and making produce marketable, count.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "Crop",
+          "from_note": "grown on land",
+          "to": "Market",
+          "to_note": "ready to sell",
+          "label": "Agricultural",
+          "to_on": "marketable"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Then poultry and dairy?",
+        "shot": "desk",
+        "pose": "worried",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Pure poultry or dairy has no basic land operations, so it's not agricultural. Fodder grown on land is.",
+        "shot": "board",
+        "pose": "shrug",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Counts",
+            "lines": [
+              "Crops, fodder"
+            ],
+            "icon": "check",
+            "color": "green"
+          },
+          "right": {
+            "title": "Not alone",
+            "lines": [
+              "Pure poultry",
+              "Pure dairy"
+            ],
+            "icon": "cross",
+            "color": "red"
+          },
+          "right_on": "poultry"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Okay, and a farmhouse?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "It counts if the cultivator or rent-receiver lives in it or uses it as store or outhouse.",
         "shot": "board",
         "pose": "explain",
         "board": {
           "kind": "list",
-          "title": "New business PY",
+          "title": "Farm building test",
           "lines": [
-            "Starts: date it is set up",
-            "Ends: 31 March",
-            "So PY can be shorter"
+            "Cultivator/rent-receiver",
+            "Home, store or outhouse",
+            "Assessed land or rural"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "If it's exempt, why does it matter?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "For individuals, net agricultural income above ₹5,000 plus other income above basic exemption raises the tax rate on other income.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "list",
+          "title": "Partial integration",
+          "lines": [
+            "Net agri income > ₹5,000",
+            "Other income > exemption"
           ]
         }
       },
       {
         "who": "teacher",
-        "say": "Remember, Previous means Pehle. Earn in the Previous Year, pay in the Assessment Year.",
+        "say": "Remember: land test first, label last!",
         "shot": "board",
-        "pose": "wink",
+        "pose": "thumbs",
         "board": {
           "kind": "words",
           "lines": [
-            "Earn in PY,",
-            "pay in AY!"
+            "Land test first,",
+            "label last!"
           ]
         }
       },
@@ -164,21 +182,23 @@
         "who": "teacher",
         "say": "Comment NOTES for the full note, and follow for one concept every day!",
         "shot": "follow",
-        "pose": "happy"
+        "pose": "wink"
       }
     ]
   },
-  "checked": true,
-  "serious": false,
+  "checked": false,
+  "serious": true,
+  "serious_reason": "The checker found errors that weren't fixed (Checker: Line 2 (teacher): 'Not always! You need land in India.' is misleading. Income from a poultry farm is never agricultural income, wherever it is. It fail)",
   "check_notes": [
-    "Writer: Removed the advance-tax/self-assessment board and the 'tax year' wording. Hook now says 'Assessment Year'. Word count about 165.",
-    "Checker: Line 13 voice and board ('Earn in PY, pay in AY!') and Line 2 ('tax comes later'): this is misleading. Much of the tax is actually paid during the Previous Year itself, through TDS on salary (Priya's case) and advance tax. The income is assessed and charged to tax in the AY. Suggested wording: 'Earn in the PY, get assessed in the AY.' If you keep 'pay', say 'the final tax is settled in the AY'.",
-    "Checker: Line 4 ('Income of the Previous Year is taxed in the Assessment Year that follows'): this is fine as the general rule, but add 'as a general rule'. There are exceptions where income is taxed in the same year it is earned: shipping business of non-residents, persons leaving India, AOP/BOI formed for a particular event, persons likely to transfer property to avoid tax, and discontinued business.",
-    "Checker: Line 12: the new-PY rule applies to a newly set-up business or profession and to a new source of income. Suggested wording: 'For a newly set-up business or profession, or a new source of income, the PY starts on the date of setting up, or the date the new source comes into existence, and ends on 31 March.'"
+    "Not confirmed after 3 attempts",
+    "Checker: Line 2 (teacher): 'Not always! You need land in India.' is misleading. Income from a poultry farm is never agricultural income, wherever it is. It fails because it involves no basic operations on land, not because the land is outside India. Correct version: 'No! Poultry isn't agricultural income, because there's no basic operation on land. Agricultural income needs land in India used for agriculture. Let's see the three sources.'",
+    "Checker: Line 12 (teacher) and board 'Cultivator/rent-receiver': under s. 2(1A)(c), the farm building must be occupied by the cultivator or by the receiver of rent-in-kind, and it must be on or near the land. Correct version: 'cultivator or receiver of rent-in-kind'.",
+    "Checker: Line 14 (teacher): 'For individuals' is incomplete. Partial integration applies to individuals, HUFs, AOPs, BOIs and artificial juridical persons. Correct version: 'For individuals, HUFs, AOPs/BOIs and artificial juridical persons...'",
+    "Checker: Line 4 / board 'Raise: produce on land': this leaves out the rest of s. 2(1A)(b). It also covers processing done by the cultivator or receiver of rent-in-kind to make the produce marketable, and the sale of that produce. Suggested wording: 'Raise: grow, process for market and sell produce'."
   ],
   "attempts": 3,
-  "reviewer_note": "Removed the advance-tax/self-assessment board and the 'tax year' wording. Hook now says 'Assessment Year'. Word count about 165.",
-  "caption": "🎬 🟦 CA Inter · Previous Year vs Assessment Year\n\nEarned in 2025-26 but the Assessment Year says 2026-27? Here's why.\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 3A: Income-tax Law\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAInter #CAIntermediate #ICAI #CAStudents\n\nref explainer-261102",
-  "hold": false,
-  "hold_reason": ""
+  "reviewer_note": "Sugar/cane line removed entirely to avoid Rule 7 ambiguity. Farm-building conditions now named briefly (revenue-assessed land or outside urban limits; home, store or outhouse). Partial integration shown for individuals; full rule also covers HUFs, AOPs, BOIs, AJPs, not companies. Word count about 170.",
+  "caption": "🎬 🟦 CA Inter · Agricultural Income: What Qualifies\n\nPoultry farm, dairy farm... is it really agricultural income?\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 3A: Income-tax Law\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAInter #CAIntermediate #ICAI #CAStudents\n\nref explainer-261102",
+  "hold": true,
+  "hold_reason": "The checker found errors that weren't fixed (Checker: Line 2 (teacher): 'Not always! You need land in India.' is misleading. Income from a poultry farm is never agricultural income, wherever it is. It fail)"
 }

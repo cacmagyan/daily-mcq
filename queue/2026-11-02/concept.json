@@ -4,113 +4,122 @@
   "paper_code": "Paper 3A",
   "paper_name": "Income-tax Law",
   "author": "Rahul kp",
-  "topic": "Previous Year and Assessment Year",
-  "title": "Previous Year",
-  "title_highlight": "vs Assessment Year",
-  "hook": "earn first, tax next!",
-  "simple_words": "You earn in the Previous Year. You are taxed on it in the Assessment Year that follows.",
+  "linked_mcq": "Previous Year and Assessment Year",
+  "topic": "Agricultural Income: What Qualifies",
+  "title": "Agricultural Income",
+  "title_highlight": "What Qualifies?",
+  "hook": "not every farm is a farm!",
+  "simple_words": "Income from Indian land and basic work on it is agricultural and exempt; poultry or dairy alone is not.",
   "definitions": [
     {
-      "term": "Previous Year (PY)",
-      "meaning": "The financial year in which income is earned. Its income is generally taxed in the next Assessment Year (s.3).",
-      "note": "PY for AY 2026-27 = 2025-26"
+      "term": "Agricultural income",
+      "meaning": "Rent or revenue from agricultural land in India; income from agricultural operations on it, including making produce marketable; income from a farm building.",
+      "note": "Land must be in India"
     },
     {
-      "term": "Assessment Year (AY)",
-      "meaning": "The 12-month period from 1 April to 31 March that follows the PY. Income of the PY is assessed in it.",
-      "note": "AY 2026-27 = 1 Apr 2026 to 31 Mar 2027"
+      "term": "Farm building",
+      "meaning": "Building on or near the land, occupied by cultivator or rent-receiver as home, store or outhouse. Land is revenue-assessed, or else outside specified urban limits.",
+      "note": "Letting it out for other use: not agricultural"
     }
   ],
   "key_points": [
-    "Income is ==earned in the PY== and ==assessed in the AY==.",
-    "The PY always comes first; the AY follows it.",
-    "The PY is the year just before the AY, so AY 2026-27 means PY 2025-26.",
-    "!!Do not treat FY 2026-27 income as income of AY 2026-27!!."
+    "==Agricultural income== is exempt, but it can raise the tax rate on other income (partial integration).",
+    "Three sources: rent from land, income from operations (including making produce marketable), farm building.",
+    "!!Land outside India!!: not agricultural income; taxable only where Indian taxability rules reach it.",
+    "Processing beyond making produce marketable (e.g. sugar from cane) is business income."
   ],
-  "formula_heading": "PY vs AY Table",
-  "formula_hook": "same income, two years",
+  "formula_heading": "Qualifies or Not?",
+  "formula_hook": "tick the test, then decide",
   "formulas": [],
   "table": {
     "headers": [
-      "Point",
-      "Previous Year",
-      "Assessment Year"
+      "Item",
+      "Treatment",
+      "Reason"
     ],
     "rows": [
       [
-        "Meaning",
-        "Year income is earned",
-        "Year income is taxed"
+        "Rent from farm land in India",
+        "Agricultural",
+        "Owner need not till it"
       ],
       [
-        "Dates",
-        "1 Apr–31 Mar; new source: from its start",
-        "1 Apr–31 Mar after the PY"
+        "Sale of produce by grower",
+        "Agricultural",
+        "Includes making it marketable"
       ],
       [
-        "Order",
-        "Comes first",
-        "Follows the PY"
+        "Pure poultry / dairy farming",
+        "Not agricultural",
+        "No basic operations on land"
       ],
       [
-        "Length",
-        "Up to 12 months",
-        "Always 12 months"
+        "Tea grown and made by grower",
+        "Agri 60 : Business 40",
+        "Fixed by rules"
+      ],
+      [
+        "Rubber / coffee (grown, cured)",
+        "Rubber 65:35; coffee 75:25",
+        "Agri:Business. Roasted, ground: 60:40"
       ]
     ]
   },
+  "entries": [],
   "insight": {
-    "punchline": "Earn in PY, pay in AY!",
-    "text": "A new business or source of income can have a PY shorter than 12 months, but the AY is always a full 12 months."
+    "text": "Land in India plus basic operations (or rent from such land) decides it; the word 'farm' alone does not.",
+    "punchline": "Land test first, label last!"
   },
-  "trick_hook": "Pehle earn, phir tax",
+  "trick_hook": "three R-words do it",
   "memory_trick": {
-    "mnemonic": "Previous = Pehle",
-    "explanation": "Previous means Pehle: you earn first. Assessment means Aakhir or Agla: you are taxed afterwards, in the next year. The PY always comes first."
+    "mnemonic": "Rent, Raise, Roof",
+    "explanation": "Rent from Indian farm land, Raise produce by operations on the land, Roof of a farm building. Anything outside these three is not agricultural income."
   },
   "steps": [
-    "Read the AY given in the question",
-    "Go one year back to find the PY",
-    "Check if the source started mid-year",
-    "Start the PY from that date to 31 Mar",
-    "Tax the PY income in the AY"
+    "Is the land in India?",
+    "Rent or revenue from land? Agri",
+    "Basic operations on land done?",
+    "Tea/rubber/coffee? Apply split",
+    "Beyond marketable? Business"
   ],
-  "exam_tip": "Always write both years together, such as PY 2025-26 and AY 2026-27. It avoids the common mix-up.",
+  "exam_tip": "Partial integration: net agricultural income above ₹5,000 AND other income above basic exemption limit. Not for companies.",
   "doubt": {
-    "question": "Is the PY always 1 April to 31 March?",
-    "answer": "No. For a new business, profession or source of income, the PY starts on the date of setting up or when the source comes into existence, and ends on 31 March."
+    "question": "If agricultural income is exempt, why does it matter?",
+    "answer": "For individuals, HUFs, AOPs, BOIs and artificial juridical persons, it is added for rate purposes if net agricultural income exceeds ₹5,000 and other income exceeds the basic exemption limit."
   },
-  "mistakes_hook": "PY and AY are not twins!",
+  "mistakes_hook": "farm word, wrong answer",
   "mistakes": [
     {
-      "wrong": "Income earned in 2026-27 is taxed in AY 2026-27",
-      "right": "Income earned in PY 2025-26 is generally taxed in AY 2026-27."
+      "wrong": "Poultry or dairy farming is agricultural income",
+      "right": "Pure poultry/dairy has no basic land operations: not agricultural. Fodder grown on land is."
     },
     {
-      "wrong": "PY is always 1 April to 31 March",
-      "right": "Normally yes; for a new business or source it runs from the date it starts to 31 March."
+      "wrong": "Sugar made from own cane is wholly agricultural income",
+      "right": "Making sugar goes beyond making cane marketable, so that part is business income."
     },
     {
-      "wrong": "AY comes before the PY",
-      "right": "The PY comes first and the AY follows it."
+      "wrong": "Rent from agricultural land counts only if the owner cultivates",
+      "right": "Rent from agricultural land in India is agricultural income even if the owner does not till it."
     },
     {
-      "wrong": "AY can be shorter than 12 months",
-      "right": "The AY is always 1 April to 31 March, a full 12 months."
+      "wrong": "Any farm house let out gives farm-building income",
+      "right": "The building must be occupied by the cultivator or rent-receiver; letting it for other use is not agricultural."
     }
   ],
-  "applicability": "Income-tax Act, 1961 – s.3 (PY), s.2(9) (AY); A.Y. 2026-27",
-  "confidence": "high",
-  "reviewer_note": "General rule only: exceptions where income is taxed in the PY itself (e.g. shipping non-residents, persons leaving India, AOPs formed for a short time, discontinued business) are deliberately left out. Please confirm the wording \"generally\" is acceptable.",
+  "past_papers": [],
+  "applicability": "Income-tax Act, 1961; A.Y. 2026-27 basis (tax year wording)",
+  "confidence": "medium",
+  "reviewer_note": "Verify the 60:40, 65:35, 75:25 and 60:40 splits (tea, rubber, coffee cured, coffee roasted/ground) and the ₹5,000 partial integration limit against the rules for the stated basis. Section numbers deliberately omitted.",
   "law_sensitive": true,
   "attempts": 2,
   "serious": false,
   "needs_check": true,
   "check_notes": [
-    "Writer: General rule only: exceptions where income is taxed in the PY itself (e.g. shipping non-residents, persons leaving India, AOPs formed for a short time, discontinued business) are deliberately left out. Please confirm the wording \"generally\" is acceptable.",
-    "Checker 1: Key point 1 / table row 1 ('Meaning'): the rule is stated without any qualifier. Suggested wording: 'Income of the PY is generally assessed in the next AY. In exceptional cases, such as non-resident shipping business, persons leaving India, AOP/BOI formed for a particular event, persons likely to transfer assets to avoid tax, and discontinued business, the income may be taxed in the PY itself.' Definition 1 and mistake 1 already say 'generally'; this would make the note consistent.",
-    "Checker 1: Key point 4: 'Do not treat FY 2026-27 income as income of AY 2026-27' is right as the normal rule, but it would read better as 'Normally, income of FY 2026-27 is assessed in AY 2027-28, not AY 2026-27 (except in the special cases where income is assessed in the PY itself).'",
-    "Checker 1: Definition 2: you could add the section reference for consistency with definition 1: 'Assessment Year [s.2(9)]'. Optional polish only."
+    "Writer: Verify the 60:40, 65:35, 75:25 and 60:40 splits (tea, rubber, coffee cured, coffee roasted/ground) and the ₹5,000 partial integration limit against the rules for the stated basis. Section numbers deliberately omitted.",
+    "Checker 1: Definition 2 (Farm building): the wording leaves out the ownership condition. Correct version: 'Building on or in the immediate vicinity of the agricultural land, owned and occupied by the receiver of rent/revenue, or occupied by the cultivator, and used as a dwelling house, store-house or other out-building. The land must be assessed to land revenue or subject to a local rate; if not, it must be outside the specified urban limits.'",
+    "Checker 1: Memory trick explanation ('Anything outside these three is not agricultural income') and Key point 2 / Step 3 (basic operations required): these leave out the deemed case in Explanation 3 to s.2(1A). Income from saplings or seedlings grown in a nursery is agricultural income even when no basic operations are done on the land. Add: 'Exception: nursery saplings/seedlings are deemed agricultural income.'",
+    "Checker 1: Mistake 1 right ('Fodder grown on land is'): this is vague. Better: 'Income from selling fodder grown on agricultural land is agricultural income, but the dairy/poultry income itself is not.'",
+    "Checker 1: Table row 2 / Step 2: for clarity, say the rent must be from land in India that is used for agricultural purposes. Also say the sale is by the cultivator or receiver of rent-in-kind; a buyer who resells produce earns business income."
   ],
   "images": [
     "concept_1.jpg",
@@ -122,26 +131,26 @@
   "fit": [
     {
       "slide": 1,
-      "zoom": 1.08,
+      "zoom": 1,
       "overflow": false
     },
     {
       "slide": 2,
-      "zoom": 1.3,
-      "overflow": false
-    },
-    {
-      "slide": 3,
       "zoom": 1.18,
       "overflow": false
     },
     {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
       "slide": 4,
-      "zoom": 1.24,
+      "zoom": 1.12,
       "overflow": false
     }
   ],
-  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 3A: Income-tax Law\nPrevious Year and Assessment Year\n\nIn simple words: You earn in the Previous Year. You are taxed on it in the Assessment Year that follows.\n\nSwipe for the summary table, a memory trick and the mistakes that cost marks.\nSave 🔖 this for revision.\nTomorrow's CA Inter MCQ (12:25 PM) tests this concept.\n\nBased on Income-tax Act, 1961 – s.3 (PY), s.2(9) (AY); A.Y. 2026-27.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept-261102",
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 3A: Income-tax Law\nAgricultural Income: What Qualifies\n\nIn simple words: Income from Indian land and basic work on it is agricultural and exempt; poultry or dairy alone is not.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Income-tax Act, 1961; A.Y. 2026-27 basis (tax year wording).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept-261102",
   "story": "concept_story.jpg",
   "hold": false,
   "hold_reason": ""

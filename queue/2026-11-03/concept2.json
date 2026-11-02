@@ -1,0 +1,151 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Logical Reasoning",
+  "author": "Rahul kp",
+  "linked_mcq": "Logical Reasoning: Blood Relations",
+  "topic": "Blood Relations: Decoding Relation Phrases",
+  "title": "Blood Relations",
+  "title_highlight": "Decode the phrase",
+  "hook": "break it one link at a time!",
+  "simple_words": "Read the statement step by step, one relation at a time, and draw a small family tree.",
+  "definitions": [
+    {
+      "term": "Blood relation",
+      "meaning": "A relation by birth within a family, such as parent, child, brother, sister, grandparent, uncle, aunt, cousin.",
+      "note": "in-laws are by marriage"
+    },
+    {
+      "term": "Family tree",
+      "meaning": "A diagram that uses symbols for male and female, horizontal lines for marriage and siblings, and vertical lines for generations, used to solve relation puzzles.",
+      "note": "always draw it!"
+    }
+  ],
+  "key_points": [
+    "Father's or mother's father = ==grandfather==; their mother = grandmother.",
+    "Father's or mother's brother = ==uncle==; their sister = aunt (blood relations).",
+    "Children of uncles and aunts are ==cousins==; gender is not fixed by the word.",
+    "!!Gender of a person is often not given!! – never assume it."
+  ],
+  "formula_heading": "Relation Quick Table",
+  "formula_hook": "learn these 5 by heart",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Phrase",
+      "Relation",
+      "Generation"
+    ],
+    "rows": [
+      [
+        "Father's father",
+        "Paternal grandfather",
+        "+2"
+      ],
+      [
+        "Mother's brother",
+        "Maternal uncle (mama)",
+        "+1"
+      ],
+      [
+        "Father's sister",
+        "Paternal aunt (bua)",
+        "+1"
+      ],
+      [
+        "Mother's brother's son",
+        "Cousin",
+        "0"
+      ],
+      [
+        "Brother's daughter",
+        "Niece",
+        "−1"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Same phrase, different gender!",
+    "text": "Always settle the speaker's gender and each link's gender before drawing the next link."
+  },
+  "trick_hook": "draw, don't guess",
+  "memory_trick": {
+    "mnemonic": "Level, Link, Look",
+    "explanation": "Mark each person's generation relative to the base (…+2, +1, 0, −1, −2…). Take one link at a time. Look back at what is asked."
+  },
+  "steps": [
+    "Start from the speaker",
+    "Take one phrase at a time",
+    "Mark gender and generation",
+    "Draw the tree",
+    "Answer what is asked"
+  ],
+  "exam_tip": "If the question's answer depends on an unknown gender, check for a 'cannot be determined' or 'data inadequate' option.",
+  "doubt": {
+    "question": "What if the gender of the person asked about is not given?",
+    "answer": "Use a gender-neutral word (sibling, cousin) if an option has it. If no option holds for both genders, choose 'cannot be determined' or 'data inadequate'."
+  },
+  "mistakes_hook": "small slips, lost marks",
+  "mistakes": [
+    {
+      "wrong": "Calling mother's brother's son a brother",
+      "right": "He is a cousin. A brother is a son of the same parents."
+    },
+    {
+      "wrong": "Treating 'my father's only son' as my brother when a male is speaking",
+      "right": "If a male is speaking, it is himself (no brother). If a female, it is her only brother. Fix the speaker's gender first."
+    },
+    {
+      "wrong": "Calling mother's sister's husband a blood relation",
+      "right": "He is an uncle by marriage (mother's sister's husband / mausa), not a blood relation, though he is called uncle."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "No past-paper list was given, so past_papers is empty. Check that the table matches ICAI terms.",
+  "law_sensitive": false,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No past-paper list was given, so past_papers is empty. Check that the table matches ICAI terms.",
+    "Checker 1: Definition 2 (Family tree): saying 'horizontal lines for marriage and siblings' blurs two different links. The usual convention is a double horizontal line (or '=' / '↔') for husband and wife, a single horizontal line for siblings and a vertical line for parent to child. Suggested wording: 'symbols for male (+ or □) and female (− or ○), a double line for marriage, a single horizontal line for siblings and vertical lines for generations'.",
+    "Checker 1: Insight punchline: 'Same phrase, different gender!' is unclear. Suggested wording: 'Same phrase, different answer when gender changes!' (for example, 'my father's only son' is the speaker himself if the speaker is male, but her brother if the speaker is female)."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.16,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟩 CA Foundation · Concept of the day\nPaper 3: Quantitative Aptitude: Logical Reasoning\nBlood Relations: Decoding Relation Phrases\n\nIn simple words: Read the statement step by step, one relation at a time, and draw a small family tree.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CA Foundation MCQ (7:30 AM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFoundation #ICAI #CAStudents #CAExams\n\nref concept2-261103",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

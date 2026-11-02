@@ -1,0 +1,196 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 5",
+  "paper_name": "Business Laws and Ethics",
+  "topic": "Offer vs Invitation to Offer",
+  "concept_topic": "Offer vs Invitation to Offer",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 60.55,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Offer vs Invitation to Offer",
+    "caption_hook": "Price tag on a shirt: is the shop making an offer?",
+    "hook_label": "WHO MAKES THE OFFER?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Price tag on a shirt: who is making the offer?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Let's see. An offer shows willingness to be bound, if the other person agrees.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Offer vs Invite",
+          "sub": "Who is making the offer?"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And once they agree?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Once accepted, it becomes an agreement, which can become a binding contract.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "Offer",
+          "from_note": "shows intent",
+          "to": "Agreement",
+          "to_note": "+ Section 10",
+          "label": "Accepted",
+          "to_on": "agreement"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So is the price tag an offer?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "No. A price tag only invites offers. It does not bind the shopkeeper.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Offer",
+            "lines": [
+              "Ready to bind"
+            ],
+            "icon": "check",
+            "color": "green"
+          },
+          "right": {
+            "title": "Invitation",
+            "lines": [
+              "Invites offers"
+            ],
+            "icon": "door",
+            "color": "blue"
+          },
+          "right_on": "invites"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Then who makes the offer?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "The customer, at the counter. The shopkeeper may accept or refuse.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "price",
+          "who": "people",
+          "says": "I'll buy it!"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Same for catalogues and tenders?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes. Price lists, catalogues and tender notices are invitations. The bidder's tender is the offer.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Invitations",
+          "lines": [
+            "Price list",
+            "Catalogue",
+            "Tender notice",
+            "Auction announcement"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And at an auction?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "The announcement invites offers. Your bid is the offer, accepted by fall of hammer.",
+        "shot": "board",
+        "pose": "happy"
+      },
+      {
+        "who": "boy",
+        "say": "But aren't all advertisements invitations?",
+        "shot": "close",
+        "pose": "worried"
+      },
+      {
+        "who": "teacher",
+        "say": "No. An ad promising a reward to anyone who performs a condition is a general offer. That's the Carlill case.",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "list",
+          "title": "General offer",
+          "lines": [
+            "Reward advertisement",
+            "Carlill case"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: Display equals Door. Offer, or bid, equals Bell. The customer's offer rings the bell.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Display = Door",
+            "Offer = Bell"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Fixed: accepted offer now becomes an agreement that can become a contract (Section 2(b)/Section 10); memory trick now says Offer (bid) = Bell, with the customer's offer ringing the bell. Board shows 'Offer = Bell' because of the 14-character limit; the spoken line says 'bid'.",
+    "Checker: Line 4 board (flow): the note '+ Section 10' is placed under 'Agreement', which suggests Section 10 is what makes an accepted offer into an agreement. Section 10 actually sets out when an agreement becomes a contract (free consent, competent parties, lawful consideration and object, not expressly declared void). Correct version: Offer → (Accepted) → Agreement → (+ Section 10 essentials) → Contract. Or relabel the note 'Contract if Section 10 is met'. Under s.2(b) and 2(e), strictly, an accepted proposal is a promise, and a promise backed by consideration is an agreement."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Fixed: accepted offer now becomes an agreement that can become a contract (Section 2(b)/Section 10); memory trick now says Offer (bid) = Bell, with the customer's offer ringing the bell. Board shows 'Offer = Bell' because of the 14-character limit; the spoken line says 'bid'.",
+  "caption": "🎬 🟧 CMA Inter · Offer vs Invitation to Offer\n\nPrice tag on a shirt: is the shop making an offer?\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 5: Business Laws and Ethics\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref explainer-261103",
+  "hold": false,
+  "hold_reason": ""
+}

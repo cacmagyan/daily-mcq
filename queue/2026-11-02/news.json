@@ -1,0 +1,76 @@
+{
+  "kind": "news",
+  "date": "2026-11-02",
+  "stories": [
+    {
+      "tag": "Income Tax",
+      "headline": "CBDT extends ITR deadline to November 21 for audit cases",
+      "points": [
+        "CBDT moved the AY 2026-27 ITR due date from October 31 to November 21, 2026, giving 21 more days.",
+        "It covers companies and taxpayers whose accounts need audit, plus partners of audited firms, under conditions.",
+        "Self-assessment tax should be paid before filing to avoid interest under Sections 234A and 234B."
+      ],
+      "why_it_matters": "Tax audit work, reconciling books with returns and interest under Sections 234A and 234B are core CA/CMA compliance topics.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "ITR deadline pushed to November 21 for audit cases: What it means for businesses and taxpayers",
+      "link": "https://www.livemint.com/money/personal-finance/itr-deadline-pushed-to-november-21-for-audit-cases-what-it-means-for-businesses-and-taxpayers-11793619092158.html",
+      "published": "2026-11-02T19:23:59+05:30",
+      "check": "minor",
+      "check_notes": [
+        "The 'Why it matters' line calls tax audits, reconciliation and Section 234A/234B interest 'core CA/CMA compliance topics'. That's the story's own framing; the source never mentions CA/CMA. It's commentary, not a factual error."
+      ]
+    },
+    {
+      "tag": "GST",
+      "headline": "GST reverse charge extended to four waste and scrap categories",
+      "points": [
+        "Notification 04/2026-Central Tax (Rate), dated 27 Oct 2026, adds four goods to RCM from 1 November 2026.",
+        "Covered: used cooking oil (1518), plastic scrap (3915), tyre scrap (4004), e-waste scrap (8549).",
+        "Applies when an unregistered person supplies to a registered person; the recipient pays the GST."
+      ],
+      "why_it_matters": "RCM is a core GST topic; it affects liability, compliance checks, input tax credit and purchase accounting in practice.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | Reverse Charge Mechanism on Waste and Scrap: A Detailed Analysis of Notification No. 04/2026-Central Tax (Rate)",
+      "link": "https://taxguru.in/goods-and-service-tax/reverse-charge-mechanism-waste-scrap-detailed-analysis-notification-no-04-2026-central-tax-rate.html",
+      "published": "2026-11-02T09:41:26+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "SEBI",
+      "headline": "SEBI suggests ending LTCG tax for foreign investors ahead of Budget",
+      "points": [
+        "According to Reuters, SEBI asked the government to scrap the 12.5% LTCG tax on foreign investors' equity holdings.",
+        "It also proposed no LTCG tax when mutual fund investors switch schemes after holding the investment for over a year.",
+        "The suggestions are non-binding; the Finance Ministry decides, and current tax rules apply until then."
+      ],
+      "why_it_matters": "Capital gains rules and Budget changes are core to taxation papers and to advising investors on tax liability at work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "Ahead of Budget 2027, Sebi recommends removal of 12.5% LTCG tax imposed on foreign investors | Latest update",
+      "link": "https://www.livemint.com/money/personal-finance/ahead-of-budget-2027-sebi-recommends-removal-of-12-5-ltcg-tax-imposed-on-foreign-investors-latest-update-11793625599745.html",
+      "published": "2026-11-02T19:01:11+05:30",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'Goods and Services Tax | CBIC Instruction 02/2026 GST: Inter': a point is longer than 110 characters; why_it_matters is longer than 120 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 02 Nov 2026\n\n1️⃣ CBDT extends ITR deadline to November 21 for audit cases (Mint)\n2️⃣ GST reverse charge extended to four waste and scrap categories (TaxGuru)\n3️⃣ SEBI suggests ending LTCG tax for foreign investors ahead of Budget (Mint)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Mint, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261102",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

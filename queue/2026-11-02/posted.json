@@ -50,5 +50,17 @@
   "concept:story": {
     "media_id": "18076964102740698",
     "posted_at": "2026-11-02T20:56:45+05:30"
+  },
+  "ca_final": {
+    "media_id": "18126842731911533",
+    "permalink": "https://www.instagram.com/p/DfPweM8GrOK/",
+    "image_host": "github_raw",
+    "posted_at": "2026-11-02T22:10:17+05:30"
+  },
+  "news": {
+    "media_id": "18082992548375148",
+    "permalink": "https://www.instagram.com/p/DfPwh_AmuOj/",
+    "image_host": "github_raw",
+    "posted_at": "2026-11-02T22:10:43+05:30"
   }
 }

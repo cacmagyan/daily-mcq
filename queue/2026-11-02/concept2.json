@@ -5,121 +5,109 @@
   "paper_name": "Direct Tax Laws and International Taxation",
   "author": "Rahul kp",
   "linked_mcq": "Set-off and Carry Forward of Losses",
-  "topic": "Set-off and Carry Forward of Losses",
-  "title": "Set-off & Carry",
-  "title_highlight": "Forward of Losses",
-  "hook": "use the loss before you lose it!",
-  "simple_words": "First adjust a loss against income of the same year; the balance goes to future years, within limits.",
+  "topic": "Methods of Arm's Length Price (ALP)",
+  "title": "Arm's Length Price",
+  "title_highlight": "Which Method?",
+  "hook": "price it like strangers would!",
+  "simple_words": "ALP is the price two unrelated parties would agree on; related parties must price their deals the same way.",
   "definitions": [
     {
-      "term": "Intra-head and inter-head set-off",
-      "meaning": "Intra-head (s.70): loss from one source against income from another source of the same head. Inter-head (s.71): loss under one head against income of another head.",
-      "note": "Order: same head, other heads, then carry forward"
+      "term": "Arm's Length Price",
+      "meaning": "Price charged in a transaction between non-associated persons, in uncontrolled conditions.",
+      "note": "Tested between associated enterprises"
     },
     {
-      "term": "Same-kind-only losses",
-      "meaning": "These losses are set off only against specified income: speculative (s.73), s.35AD (s.73A), LTCL (s.70(3)), race horse (s.74A).",
-      "note": "No set-off vs s.58(4) winnings, s.115BBE income; VDA loss (s.115BBH) none"
+      "term": "Most Appropriate Method",
+      "meaning": "The method giving the most reliable ALP for that transaction, judged on facts, comparability and data available.",
+      "note": "No fixed order of preference"
     }
   ],
   "key_points": [
-    "Order: ==intra-head== set-off first, then inter-head, then carry forward of the balance",
-    "Unabsorbed depreciation: no time limit; set off against any head except !!Salaries!! (s.32(2))",
-    "Carry forward needs return filed by due date u/s 139(1) (s.80); !!not for HP loss and unabsorbed depreciation!!",
-    "==Speculative==, s.35AD, LTCL and race horse losses: set off only against the same kind of income"
+    "Applies to an ==international transaction== between associated enterprises",
+    "Five named methods: CUP, RPM, CPM, PSM, TNMM, plus a prescribed other method",
+    "!!No ranking!! of methods: choose the most appropriate one",
+    "Income is computed on the ALP of the method chosen"
   ],
-  "formula_heading": "Loss Rules at a Glance",
-  "formula_hook": "learn the table, win the MCQ",
+  "formula_heading": "The 5 Methods at a Glance",
+  "formula_hook": "know what each one compares",
   "formulas": [],
   "table": {
     "headers": [
-      "Loss",
-      "Set-off against",
-      "Carry forward"
+      "Method",
+      "What it compares"
     ],
     "rows": [
       [
-        "House property",
-        "Other heads, capped (s.71(3A))",
-        "8 yrs, HP income only (s.71B)"
+        "CUP",
+        "Price in a comparable uncontrolled deal"
       ],
       [
-        "Non-spec. business",
-        "Any head except Salaries",
-        "8 yrs, business income (s.72)"
+        "RPM",
+        "Resale price less normal gross margin"
       ],
       [
-        "Speculative business",
-        "Speculative profit only",
-        "4 yrs, speculative profit (s.73)"
+        "CPM",
+        "Cost of production plus gross mark-up"
       ],
       [
-        "Capital loss",
-        "STCL: any CG; LTCL: LTCG only",
-        "8 yrs, same rule (s.74)"
+        "PSM",
+        "Combined profit split by contribution"
       ],
       [
-        "Race horse",
-        "Race horse income only",
-        "4 yrs, same income (s.74A)"
+        "TNMM",
+        "Net profit margin against a base"
       ]
     ]
   },
   "entries": [],
   "insight": {
-    "punchline": "Same loss, different homes!",
-    "text": "Each loss has its own set-off field and time limit; under s.115BAC, HP loss gets no inter-head set-off or carry forward."
+    "punchline": "Pick by facts, not by habit!",
+    "text": "CUP suits identical goods, RPM distributors, CPM manufacturers, PSM integrated deals, TNMM many other cases."
   },
-  "trick_hook": "bets are short-lived",
+  "trick_hook": "name them in Act order",
   "memory_trick": {
-    "mnemonic": "Bets get 4, the rest get 8",
-    "explanation": "Speculation and race horses are bets: 4 years. HP, business and capital losses: 8 years. Unabsorbed depreciation and s.35AD loss: no limit."
+    "mnemonic": "Cup, Resale, Cost, Split, Net",
+    "explanation": "Cup = CUP (price), Resale = RPM, Cost = CPM (cost plus), Split = PSM (profit split), Net = TNMM (net margin)."
   },
   "steps": [
-    "Set off within the same head",
-    "Then set off against other heads",
-    "Check Salaries and same-kind bars",
-    "Carry forward balance by its limit",
-    "Check return filed by due date"
+    "Spot the associated enterprises",
+    "Identify the international transaction",
+    "Study functions, assets, risks",
+    "Choose the most appropriate method",
+    "Compute ALP, compare with price"
   ],
-  "exam_tip": "In any loss question, check the regime, the head and whether the return was filed on time before you set off or carry forward.",
+  "exam_tip": "In MCQs, match the fact pattern to the method: resale by distributor means RPM; profit-based on net margin means TNMM.",
   "doubt": {
-    "question": "Can unabsorbed depreciation be set off against salary?",
-    "answer": "No. Under s.32(2) it is added to next year's depreciation and acts like business loss, so s.71(2A) bars Salaries. It carries forward without time limit."
+    "question": "Must we try CUP first, always?",
+    "answer": "No. The law gives no order. Choose the method that is most appropriate on the facts and data, and CUP is preferred only when it fits."
   },
-  "mistakes_hook": "small slips, big marks lost",
+  "mistakes_hook": "don't mix up the margins",
   "mistakes": [
     {
-      "wrong": "Business loss can be set off against salary income",
-      "right": "Non-speculative business loss can be set off against other heads except Salaries (s.71(2A))."
+      "wrong": "CUP must be applied first, then RPM, and so on",
+      "right": "No hierarchy exists; the most appropriate method is used."
     },
     {
-      "wrong": "HP loss under s.115BAC is carried forward for 8 years",
-      "right": "Under s.115BAC, HP loss gets no inter-head set-off and no carry forward."
+      "wrong": "TNMM compares gross profit margins",
+      "right": "TNMM compares net profit margin; RPM and CPM use gross margin or gross mark-up."
     },
     {
-      "wrong": "Business or capital loss carries forward even if the return is late",
-      "right": "Return by due date u/s 139(1) is needed (s.80); HP loss and unabsorbed depreciation are exceptions."
-    },
-    {
-      "wrong": "LTCL can be set off against short-term capital gain",
-      "right": "LTCL is set off only against LTCG (s.70(3)); STCL can be set off against STCG or LTCG."
+      "wrong": "ALP applies to any payment between two Indian residents",
+      "right": "It applies to international transactions between associated enterprises, and to specified domestic transactions only as the law provides."
     }
   ],
   "past_papers": [],
-  "applicability": "Income-tax Act as per Finance Act, 2025 (June 2026 term)",
+  "applicability": "Income-tax Act, as amended by Finance Act, 2025",
   "confidence": "medium",
-  "reviewer_note": "Verify: s.71(3A) HP loss inter-head cap (₹2 lakh) in the old regime; s.115BAC bar on HP loss set-off and carry forward; s.80 exceptions; s.35AD loss and s.73A treatment. No past-paper list was given.",
+  "reviewer_note": "Confirm method names and the specified domestic transaction wording against the applicable law for the June 2026 term, including any renumbering. No section numbers or thresholds used.",
   "law_sensitive": true,
-  "attempts": 3,
+  "attempts": 2,
+  "serious": false,
   "needs_check": true,
-  "serious": true,
   "check_notes": [
-    "Not confirmed after 3 attempts",
-    "Checker 1: Insight text: it says that under s.115BAC, HP loss gets no inter-head set-off and no carry forward. The carry-forward part is wrong. s.115BAC(2) only blocks setting off HP loss against other heads. It also blocks carrying forward any loss that comes from deductions the regime disallows, such as s.24(b) interest on a self-occupied property. HP loss from a let-out property that cannot be set off can still be carried forward for 8 years under s.71B, against HP income only. Correct version: 'Under s.115BAC, HP loss cannot be set off against other heads, but the unabsorbed HP loss (e.g., from a let-out property) can be carried forward for 8 years against HP income under s.71B.'",
-    "Checker 1: Mistake 2: the 'wrong' statement ('HP loss under s.115BAC is carried forward for 8 years') is actually correct for let-out property, and the 'right' version ('no inter-head set-off and no carry forward') teaches a false rule. Correct version: wrong = 'Under s.115BAC, HP loss can be set off against salary up to ₹2 lakh'; right = 'Under s.115BAC, HP loss cannot be set off against any other head, but it can be carried forward for 8 years against HP income only (s.71B).'"
+    "Writer: Confirm method names and the specified domestic transaction wording against the applicable law for the June 2026 term, including any renumbering. No section numbers or thresholds used.",
+    "Checker 1: Doubt answer: 'and CUP is preferred only when it fits' suggests the law gives CUP a preference of its own, which clashes with 'The law gives no order'. Section 92C(1) and Rule 10C give no method any priority, CUP included. Suggested wording: 'No. Section 92C/Rule 10C give no hierarchy. Choose the most appropriate method on the facts, comparability and available data. CUP is used only where it gives the most reliable result.'"
   ],
-  "serious_reason": "The checkers found errors that weren't fixed (Checker 1: Insight text: it says that under s.115BAC, HP loss gets no inter-head set-off and no carry forward. The carry-forward part is wrong. s.115BAC(2) only)",
   "images": [
     "concept2_1.jpg",
     "concept2_2.jpg",
@@ -130,7 +118,7 @@
   "fit": [
     {
       "slide": 1,
-      "zoom": 0.98,
+      "zoom": 1.08,
       "overflow": false
     },
     {
@@ -140,17 +128,17 @@
     },
     {
       "slide": 3,
-      "zoom": 1.12,
+      "zoom": 1.14,
       "overflow": false
     },
     {
       "slide": 4,
-      "zoom": 1.12,
+      "zoom": 1.3,
       "overflow": false
     }
   ],
-  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 15: Direct Tax Laws and International Taxation\nSet-off and Carry Forward of Losses\n\nIn simple words: First adjust a loss against income of the same year; the balance goes to future years, within limits.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CMA Final MCQ (9:30 PM) tests this concept.\n\nBased on Income-tax Act as per Finance Act, 2025 (June 2026 term).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept2-261102",
+  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 15: Direct Tax Laws and International Taxation\nMethods of Arm's Length Price (ALP)\n\nIn simple words: ALP is the price two unrelated parties would agree on; related parties must price their deals the same way.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CMA Final MCQ (9:30 PM) tests this concept.\n\nBased on Income-tax Act, as amended by Finance Act, 2025.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept2-261102",
   "story": "concept2_story.jpg",
-  "hold": true,
-  "hold_reason": "The checkers found errors that weren't fixed (Checker 1: Insight text: it says that under s.115BAC, HP loss gets no inter-head set-off and no carry forward. The carry-forward part is wrong. s.115BAC(2) only)"
+  "hold": false,
+  "hold_reason": ""
 }

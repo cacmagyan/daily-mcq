@@ -3,156 +3,142 @@
   "course_id": "cma_final",
   "paper_code": "Paper 15",
   "paper_name": "Direct Tax Laws and International Taxation",
-  "topic": "Set-off and Carry Forward of Losses",
-  "concept_topic": "Set-off and Carry Forward of Losses",
+  "topic": "Methods of Arm's Length Price (ALP)",
+  "concept_topic": "Methods of Arm's Length Price (ALP)",
   "video": "explainer2.mp4",
   "cover": "explainer2_cover.jpg",
   "style": "story",
-  "seconds": 58.65,
+  "seconds": 73.7,
   "thumb_ms": 1300,
   "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
   "script": {
-    "title": "Set-off and Carry Forward of Losses",
-    "caption_hook": "Made a loss this year? Don't waste it, use it before you lose it!",
-    "hook_label": "LOSS = WASTED?",
+    "title": "Methods of Arm's Length Price",
+    "caption_hook": "Related companies deal with each other. So who decides the fair price?",
+    "hook_label": "PRICE LIKE STRANGERS?",
     "lines": [
       {
         "who": "boy",
-        "say": "Ma'am, I made a loss this year. Is it just wasted?",
-        "shot": "close",
-        "pose": "worried"
-      },
-      {
-        "who": "teacher",
-        "say": "Not at all. First set it off, then carry it forward.",
-        "shot": "board",
-        "pose": "present",
-        "board": {
-          "kind": "title",
-          "title": "Loss: Use It!",
-          "sub": "Set-off, then carry forward"
-        }
-      },
-      {
-        "who": "girl",
-        "say": "Set off first? Against what?",
-        "shot": "desk",
-        "pose": "ask",
-        "react": "listen"
-      },
-      {
-        "who": "teacher",
-        "say": "First the same head. Then other heads. Whatever is left goes to future years.",
-        "shot": "board",
-        "pose": "explain",
-        "board": {
-          "kind": "list",
-          "title": "Order of Use",
-          "lines": [
-            "1. Same head (intra-head)",
-            "2. Other heads (inter-head)",
-            "3. Carry forward the balance"
-          ]
-        }
-      },
-      {
-        "who": "boy",
-        "say": "So a business loss can cut my salary income too?",
-        "shot": "desk",
-        "pose": "think",
-        "react": "think"
-      },
-      {
-        "who": "teacher",
-        "say": "No. Business loss can't be set off against Salaries. Other heads are fine.",
-        "shot": "board",
-        "pose": "shrug"
-      },
-      {
-        "who": "girl",
-        "say": "And if it stays unused, how long can I carry it?",
+        "say": "Ma'am, how do we price a deal between two related companies?",
         "shot": "close",
         "pose": "ask"
       },
       {
         "who": "teacher",
-        "say": "Think of bets. Speculation and race horse losses get four years. House property, business and capital losses get eight.",
+        "say": "Price it like strangers would. Arm's length price is what two unrelated parties would agree on.",
         "shot": "board",
-        "pose": "happy",
+        "pose": "present",
         "board": {
-          "kind": "versus",
-          "left": {
-            "title": "Bets",
-            "lines": [
-              "Speculation",
-              "Race horse"
-            ],
-            "icon": "clock",
-            "color": "red"
-          },
-          "right": {
-            "title": "The rest",
-            "lines": [
-              "HP, business",
-              "Capital loss"
-            ],
-            "icon": "calendar",
-            "color": "green"
-          },
-          "right_on": "eight"
+          "kind": "title",
+          "title": "Arm's Length Price",
+          "sub": "Price as strangers would"
         }
       },
       {
-        "who": "boy",
-        "say": "Any loss with no time limit?",
+        "who": "girl",
+        "say": "But when does it apply? Any two companies?",
         "shot": "desk",
         "pose": "ask",
         "react": "listen"
       },
       {
         "who": "teacher",
-        "say": "Yes, unabsorbed depreciation. It carries forward without limit, but it can't touch Salaries either.",
+        "say": "Only between associated enterprises. That means international transactions, and certain specified domestic transactions.",
         "shot": "board",
-        "pose": "thumbs",
+        "pose": "explain",
         "board": {
           "kind": "list",
-          "title": "Unabsorbed Deprn",
+          "title": "ALP applies to",
           "lines": [
-            "No time limit",
-            "Any head except Salaries"
+            "Associated enterprises",
+            "International deals",
+            "Specified domestic deals"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And how do we find that price?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "The Act gives six methods. Five are named, plus any other method prescribed by the CBDT.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "6 methods in the Act",
+          "lines": [
+            "CUP, RPM, CPM",
+            "PSM, TNMM",
+            "Other method (Rule 10AB)"
           ]
         }
       },
       {
         "who": "girl",
-        "say": "Does late filing matter for carry forward?",
+        "say": "Do we try CUP first, always?",
         "shot": "close",
-        "pose": "nervous"
+        "pose": "doubt"
       },
       {
         "who": "teacher",
-        "say": "Yes. For business and capital losses, file the return by the due date. House property loss and unabsorbed depreciation are exceptions.",
+        "say": "No. There's no order. Choose the most appropriate method on facts, comparability and data available.",
+        "shot": "board",
+        "pose": "thumbs"
+      },
+      {
+        "who": "boy",
+        "say": "Okay, so what does RPM do? Give an example.",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Distributor resells for ₹10,000. Normal gross margin is 20% of resale price, ₹2,000. No customs duty assumed. ALP is ₹8,000.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "₹10,000 − ₹2,000",
+          "big": "₹8,000"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Oh! So RPM uses gross margin. What about the others?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "TNMM compares net profit margin against a base. CPM uses cost plus gross mark-up. PSM splits combined profit by contribution.",
         "shot": "board",
         "pose": "explain",
         "board": {
           "kind": "list",
-          "title": "Carry Forward Needs",
+          "title": "What each compares",
           "lines": [
-            "Return by due date",
-            "Not for HP, deprn"
+            "CUP: comparable price",
+            "RPM: resale less margin",
+            "CPM: cost plus mark-up",
+            "PSM: split; TNMM: net"
           ]
         }
       },
       {
         "who": "teacher",
-        "say": "Remember: same loss, different homes. Bets get four years, the rest get eight.",
+        "say": "Remember: pick the method by facts, not by habit.",
         "shot": "board",
-        "pose": "wink",
+        "pose": "happy",
         "board": {
           "kind": "words",
           "lines": [
-            "Bets get 4,",
-            "the rest 8"
+            "Pick by facts,",
+            "not by habit!"
           ]
         }
       },
@@ -160,25 +146,21 @@
         "who": "teacher",
         "say": "Comment NOTES for the full note, and follow for one concept every day!",
         "shot": "follow",
-        "pose": "happy"
+        "pose": "wink"
       }
     ]
   },
   "checked": false,
   "serious": true,
-  "serious_reason": "The checker found errors that weren't fixed (Checker: Lines 8 and 13 (voice and boards 'Bets' / 'Bets get 4'): calling speculation and race-horse losses 'bets' is misleading. The race-horse loss under s.74)",
+  "serious_reason": "The checker found errors that weren't fixed (Checker: Line 4 (voice) and its board: \"Only between associated enterprises\" is wrong as a rule. Under section 92B(1), an international transaction is one betwe)",
   "check_notes": [
     "Not confirmed after 3 attempts",
-    "Checker: Lines 8 and 13 (voice and boards 'Bets' / 'Bets get 4'): calling speculation and race-horse losses 'bets' is misleading. The race-horse loss under s.74A is the loss from owning and maintaining race horses, not from betting. Speculation loss is the loss from a speculative business transaction (s.43(5)). Losses from lotteries, betting, gambling and card games can't be set off or carried forward at all (s.58(4) and s.74A(1)). Correct version: 'Speculation loss (s.73(4)) and loss from owning and maintaining race horses (s.74A) are carried forward for 4 AYs. Betting or gambling losses get no set-off or carry forward at all.' Drop the 'bets' mnemonic.",
-    "Checker: Line 13 ('the rest get eight'): this is too broad. Loss of a specified business under s.35AD (s.73A) and unabsorbed depreciation have no time limit. Correct version: 'Speculation and race-horse losses get 4 years. HP, normal business and capital losses get 8. Specified-business (35AD) loss and unabsorbed depreciation have no limit.'",
-    "Checker: Line 4 and the 'Order of Use' board ('2. Other heads (inter-head)'): this suggests every loss can be set off against other heads. Capital losses (s.71(3)), speculation loss, specified-business loss under s.35AD and race-horse loss can only be set off within their own source or head. Under the default s.115BAC regime, an HP loss can't be set off against other heads, and under the old regime that set-off is capped at ₹2 lakh (s.71(3A)). Add the qualifier 'if the law allows' or name these exceptions.",
-    "Checker: Line 6 ('Business loss … Other heads are fine'): this holds only for a non-speculative business loss other than a s.35AD business. Speculation and specified-business losses can't be set off against other heads. Say 'a normal (non-speculative) business loss'.",
-    "Checker: Line 12 (voice 'For business and capital losses'): s.80 also covers speculation loss (s.73), specified-business loss (s.73A) and race-horse loss (s.74A(3)). The return must be filed by the due date under s.139(1). Late filing doesn't affect set-off in the same year. Better: 'All losses except HP loss and unabsorbed depreciation need a return filed by the s.139(1) due date to be carried forward.'",
-    "Checker: Line 10: unabsorbed depreciation is technically an allowance carried forward under s.32(2), not a 'loss'. The wording should say so (minor)."
+    "Checker: Line 4 (voice) and its board: \"Only between associated enterprises\" is wrong as a rule. Under section 92B(1), an international transaction is one between two or more associated enterprises where at least one is a non-resident. However, section 92B(2) treats a transaction with an unrelated person as a deemed international transaction when a prior agreement or arrangement with an associated enterprise sets its terms. Specified domestic transactions under section 92BA are defined by the transactions listed there (for example, those under sections 80A and 80-IA(8)/(10)), not by associated-enterprise status. Correct version: \"ALP applies to international transactions between associated enterprises (including deemed international transactions under section 92B(2)) and to specified domestic transactions under section 92BA.\" The board should not show 'Associated enterprises' as a separate third item next to the two kinds of transaction. Use 'International transactions (AEs, at least one non-resident)' and 'Specified domestic transactions (s. 92BA)'.",
+    "Checker: Line 10 (RPM example), minor: the example doesn't say the goods were bought from an associated enterprise and resold to an unrelated party. Add this, for example: \"Goods bought from an AE are resold to an unrelated buyer for ₹10,000\". The arithmetic is correct: ₹10,000 − 20% gross margin of ₹2,000 = ₹8,000, with no customs duty or other purchase costs."
   ],
   "attempts": 3,
-  "reviewer_note": "Word count is about 160 including the follow line. The unabsorbed depreciation line says it can't be set off against Salaries, matching the note. The note says the return-filing rule applies to business and capital losses, with HP loss and unabsorbed depreciation as exceptions.",
-  "caption": "🎬 🟥 CMA Final · Set-off and Carry Forward of Losses\n\nMade a loss this year? Don't waste it, use it before you lose it!\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 15: Direct Tax Laws and International Taxation\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref explainer2-261102",
+  "reviewer_note": "Corrected: six methods (five named plus prescribed other method, Rule 10AB); scope includes specified domestic transactions; RPM margin stated as 20% of resale price with no purchase expenses assumed (₹10,000 − ₹2,000 = ₹8,000). Please verify word count is within 120-175.",
+  "caption": "🎬 🟥 CMA Final · Methods of Arm's Length Price\n\nRelated companies deal with each other. So who decides the fair price?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 15: Direct Tax Laws and International Taxation\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref explainer2-261102",
   "hold": true,
-  "hold_reason": "The checker found errors that weren't fixed (Checker: Lines 8 and 13 (voice and boards 'Bets' / 'Bets get 4'): calling speculation and race-horse losses 'bets' is misleading. The race-horse loss under s.74)"
+  "hold_reason": "The checker found errors that weren't fixed (Checker: Line 4 (voice) and its board: \"Only between associated enterprises\" is wrong as a rule. Under section 92B(1), an international transaction is one betwe)"
 }

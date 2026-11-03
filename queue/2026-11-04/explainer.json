@@ -1,0 +1,9 @@
+{
+  "kind": "explainer",
+  "course_id": "ca_final",
+  "topic": "Composite vs Mixed Supply (CGST)",
+  "concept_topic": "Composite vs Mixed Supply (CGST)",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 197 words; write 120-175",
+  "hold": false,
+  "hold_reason": ""
+}

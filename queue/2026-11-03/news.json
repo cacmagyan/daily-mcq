@@ -1,0 +1,87 @@
+{
+  "kind": "news",
+  "date": "2026-11-03",
+  "stories": [
+    {
+      "tag": "GST",
+      "headline": "GST rate and procedure changes take effect from 1 November 2026",
+      "points": [
+        "Retreaded tractor tyres move from 18% to 5% GST; psyllium seeds are exempt, per CBIC notifications.",
+        "Reverse charge and 2% GST TDS on contracts above ₹2.5 lakh now cover four more scrap-type goods, not just metal scrap.",
+        "Hotel, catering and EV transport credit is limited to same-line services, capped at 2.5% central tax where applicable."
+      ],
+      "why_it_matters": "Rate changes, reverse charge, TDS and Section 14 timing rules are core GST topics that CA and CMA students apply in compliance work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | GST changes from 1st November 2026: An item-wise guide with Notifications",
+      "link": "https://taxguru.in/goods-and-service-tax/gst-1-november-2026-item-wise-guide-notifications.html",
+      "published": "2026-11-03T07:39:00+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 3 says 'catering' credit is capped at 2.5% central tax; the source applies the cap to hotels, outdoor catering and EV transport only, with restaurants and railway catering uncapped. 'Catering' should read 'outdoor catering'.",
+        "Point 2 calls the four goods 'scrap-type'; the source lists used cooking oil, plastic waste, tyre scrap and e-waste. Used cooking oil is not really scrap.",
+        "Point 2 runs reverse charge and TDS together; the source says reverse charge applies to purchases from unregistered suppliers and the 2% TDS to purchases from registered suppliers on contracts above ₹2.5 lakh."
+      ]
+    },
+    {
+      "tag": "GST",
+      "headline": "GST: 2% TDS on scrap goods and e-invoicing for RCM self-invoices",
+      "points": [
+        "Buyers of five scrap-type goods from registered suppliers must deduct 2% TDS if a contract's value exceeds Rs 2.5 lakh.",
+        "Suppliers of those five goods can no longer skip registration just because the recipient pays tax under reverse charge.",
+        "Firms with turnover above Rs 5 crore must generate an IRN for self-invoices on unregistered RCM supplies and service imports."
+      ],
+      "why_it_matters": "TDS, registration and e-invoicing rules under GST are core compliance topics that CA and CMA students handle in practice and exams.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "CA, CS, CMA | Analysis of Notifications and Circulars for Week Ending 1st November 2026",
+      "link": "https://taxguru.in/chartered-accountant/analysis-notifications-circulars-week-1st-november-2026.html",
+      "published": "2026-11-03T06:52:59+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 1 says 'buyers' of the goods must deduct TDS, but the source applies the duty only to registered persons buying from other registered persons. The buyer must also be registered.",
+        "Point 3 says 'turnover above Rs 5 crore', but the source specifies aggregate turnover above Rs 5 crore in any preceding financial year from 2017-18 onwards.",
+        "Calling used cooking oil one of 'five scrap-type goods' is loose wording, and the headline's 'scrap goods' has the same problem."
+      ]
+    },
+    {
+      "tag": "GST",
+      "headline": "Maharashtra sets new GST audit selection rules for FY 2023-24",
+      "points": [
+        "Instructions dated 30 Oct 2026 move audit selection to a risk-assessment basis, after flaws seen in FY 2022-23 audits.",
+        "Proposals need non-routine revenue risk above Rs. 2 crore in MMR/PMR or Rs. 1 crore elsewhere in the state.",
+        "Proposals must carry a draft FORM GST ADT-01; visits up to 30% of selected cases need only zonal approval."
+      ],
+      "why_it_matters": "Shows how State GST audits are chosen and run, which is useful for students heading into GST audit and compliance work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | Maharashtra GST Audit Selection Guidelines for FY 2023-24 Prescribe Revenue-Risk Thresholds",
+      "link": "https://taxguru.in/goods-and-service-tax/maharashtra-gst-audit-selection-guidelines-fy-2023-24-prescribe-revenue-risk-thresholds.html",
+      "published": "2026-11-03T13:55:02+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'Goods and Services Tax | CBIC Unblocks ITC on Demo Vehicles ': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Notification 06/2026: EV Tax Ra': a point is longer than 110 characters",
+    "skipped 'Mutual fund switching may become tax-free: Experts explain S': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | No Indefinite GST Bank Freeze Under': a point is longer than 110 characters",
+    "skipped 'CA, CS, CMA | 171 Legal Compliances and Legal Updates for No': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Arrest Without Commissioner’s R': a point is longer than 110 characters; why_it_matters is longer than 120 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 03 Nov 2026\n\n1️⃣ GST rate and procedure changes take effect from 1 November 2026 (TaxGuru)\n2️⃣ GST: 2% TDS on scrap goods and e-invoicing for RCM self-invoices (TaxGuru)\n3️⃣ Maharashtra sets new GST audit selection rules for FY 2023-24 (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261103",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

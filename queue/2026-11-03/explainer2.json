@@ -8,165 +8,140 @@
   "video": "explainer2.mp4",
   "cover": "explainer2_cover.jpg",
   "style": "story",
-  "seconds": 62.09,
+  "seconds": 54.4,
   "thumb_ms": 1300,
   "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
   "script": {
-    "title": "Blood Relations: decoding relation phrases",
-    "caption_hook": "Mother's brother's son: is he your brother? Decode it one link at a time.",
-    "hook_label": "WHO IS HE TO ME?",
+    "title": "Blood Relations: decode relation phrases",
+    "caption_hook": "Mother's brother's son: is he your brother? Not quite!",
+    "hook_label": "BROTHER OR COUSIN?",
     "lines": [
       {
         "who": "boy",
-        "say": "Mother's brother's son... is he my brother or what?",
+        "say": "Mother's brother's son... is he my brother? I'm so confused!",
         "shot": "close",
-        "pose": "doubt"
+        "pose": "worried"
       },
       {
         "who": "teacher",
-        "say": "Break the phrase into links and decode one link at a time.",
+        "say": "Not a brother! Start from yourself and break it one link at a time.",
         "shot": "board",
-        "pose": "present",
+        "pose": "explain",
         "board": {
           "kind": "title",
           "title": "Blood Relations",
-          "sub": "Decode one link at a time"
+          "sub": "Decode the phrase"
         }
       },
       {
         "who": "girl",
-        "say": "But what exactly is a blood relation?",
+        "say": "One link at a time? How?",
         "shot": "desk",
         "pose": "ask",
         "react": "listen"
       },
       {
         "who": "teacher",
-        "say": "It's by birth: parent, child, sibling, grandparent, uncle, aunt, cousin. In-laws come by marriage.",
+        "say": "Learn these: father's father is grandfather, mother's brother is mama, father's sister is bua, brother's daughter is niece.",
         "shot": "board",
-        "pose": "explain",
+        "pose": "present",
         "board": {
           "kind": "list",
-          "title": "Blood relation",
+          "title": "Quick table",
           "lines": [
-            "Relation by birth",
-            "Parent, child, sibling",
-            "Uncle, aunt, cousin",
-            "In-laws: by marriage"
+            "Dad's dad: grandfather",
+            "Mom's brother: mama",
+            "Dad's sister: bua",
+            "Bro's daughter: niece"
           ]
         }
       },
       {
         "who": "boy",
-        "say": "Okay, so how do I read a long phrase?",
+        "say": "So mother's brother is mama. And his son?",
         "shot": "desk",
         "pose": "think",
         "react": "think"
       },
       {
         "who": "teacher",
-        "say": "Learn five. Father's father is grandfather, plus two. Mother's brother is mama, plus one. Father's sister is bua, plus one.",
+        "say": "His son is your cousin. Uncles' and aunts' children are cousins. A brother shares your parents.",
         "shot": "board",
         "pose": "explain",
         "board": {
-          "kind": "list",
-          "title": "Relation Quick Table",
-          "lines": [
-            "Father's father: +2",
-            "Mother's brother: +1",
-            "Father's sister: +1",
-            "Brother's daughter: -1"
-          ]
+          "kind": "flow",
+          "from": "Mama",
+          "from_note": "mom's brother",
+          "to": "His son",
+          "to_note": "Cousin",
+          "label": "his child",
+          "to_on": "cousin"
         }
       },
       {
         "who": "girl",
-        "say": "So mama's son is my brother, right?",
+        "say": "What about 'my father's only son'? Is that my brother?",
         "shot": "close",
-        "pose": "ask"
+        "pose": "doubt"
       },
       {
         "who": "teacher",
-        "say": "No, he's a cousin. A brother is a son of the same parents. Children of any uncle or aunt are cousins.",
+        "say": "Fix the speaker first. A boy saying it means himself. A girl means her brother.",
         "shot": "board",
-        "pose": "thumbs",
+        "pose": "think",
         "board": {
           "kind": "versus",
           "left": {
-            "title": "Brother",
+            "title": "Boy says",
             "lines": [
-              "Son of same",
-              "parents"
+              "It is himself"
             ],
             "icon": "people",
             "color": "blue"
           },
           "right": {
-            "title": "Cousin",
+            "title": "Girl says",
             "lines": [
-              "Child of uncle",
-              "or aunt"
+              "Her brother"
             ],
             "icon": "people",
             "color": "green"
           },
-          "right_on": "cousin"
+          "right_on": "girl"
         }
       },
       {
         "who": "boy",
-        "say": "Oh! And what if the gender isn't given?",
-        "shot": "close",
-        "pose": "shocked"
-      },
-      {
-        "who": "teacher",
-        "say": "Never assume it. Fix the speaker's gender first, then each link's gender.",
-        "shot": "board",
-        "pose": "think",
-        "board": {
-          "kind": "list",
-          "title": "Draw, don't guess",
-          "lines": [
-            "Speaker's gender first",
-            "Then each link's gender",
-            "Then draw the next link"
-          ]
-        }
-      },
-      {
-        "who": "girl",
-        "say": "Can you show the mama's son example once?",
-        "shot": "desk",
-        "pose": "ask",
-        "react": "listen"
-      },
-      {
-        "who": "teacher",
-        "say": "Start with me. Mother is plus one. Her brother, my mama, is plus one. His son is level zero: cousin.",
-        "shot": "board",
-        "pose": "excited",
-        "board": {
-          "kind": "flow",
-          "from": "Me",
-          "from_note": "start here",
-          "to": "Cousin",
-          "to_note": "mama's son",
-          "label": "Level 0",
-          "to_on": "cousin"
-        }
-      },
-      {
-        "who": "boy",
-        "say": "Got it! Mark the level, take one link.",
+        "say": "Oh! And if the gender isn't given?",
         "shot": "close",
         "pose": "aha"
       },
       {
         "who": "teacher",
-        "say": "Remember Level, Link, Look. Mark generation, take one link, then look back at the question.",
+        "say": "Never assume. Use a gender-neutral word like sibling. Otherwise choose cannot be determined.",
         "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Gender not given?",
+          "lines": [
+            "Use: sibling, cousin",
+            "Else: cannot be determined"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Any trick to remember all this?",
+        "shot": "desk",
         "pose": "happy",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Level, Link, Look. Start from yourself, mark each generation, decode one link at a time, then re-read the question.",
+        "shot": "board",
+        "pose": "thumbs",
         "board": {
           "kind": "words",
           "lines": [
@@ -183,19 +158,16 @@
       }
     ]
   },
-  "checked": false,
-  "serious": true,
-  "serious_reason": "The checker found errors that weren't fixed (Checker: Line 6 (voice + board): Voice says 'Learn five' but names only three relations and the board shows four; 'Brother's daughter: -1' is on the board but n)",
+  "checked": true,
+  "serious": false,
   "check_notes": [
-    "Not confirmed after 3 attempts",
-    "Checker: Line 6 (voice + board): Voice says 'Learn five' but names only three relations and the board shows four; 'Brother's daughter: -1' is on the board but never spoken. Fix: list all five in both voice and board (e.g. add 'Father's brother's son: 0'), or say the actual count and make the voice and board lists match.",
-    "Checker: Line 10 (voice): 'Never assume it. Fix the speaker's gender first' contradicts itself, because you can't fix a gender the question doesn't give. Correct: 'Never assume it. Note the speaker's and each link's gender only if the question states or implies it. If the answer depends on an unknown gender, it can't be determined.'",
-    "Checker: Line 12 (voice): 'Mother is plus one. Her brother, my mama, is plus one' can be heard as the levels adding up to +2. Clearer: 'Mother is plus one; her brother, my mama, is on the same level, plus one; his son is one level down, level zero: my cousin.'",
-    "Checker: Line 4 (voice + board): Listing 'uncle, aunt' as relations by birth is too broad, because an uncle's wife or an aunt's husband is related by marriage. Correct: 'Blood relation means related by birth: parent, child, sibling, grandparent, a parent's sibling and their children; spouses and in-laws come by marriage.'"
+    "Writer: Board list shows 4 quick-table items matching the 4 spoken (no count stated). Board says 'Else: cannot be determined' matching voice. Mnemonic line now explains Level, Link, Look. Total about 146 words.",
+    "Checker: Line 10 (voice + board 'Use: sibling, cousin'): In an MCQ you can't write your own word. You can only pick from the options given. Suggested wording: 'Never assume gender. If an option uses a gender-neutral word like sibling or cousin, pick it. Otherwise choose cannot be determined.'",
+    "Checker: Line 12: The mnemonic has three words (Level, Link, Look), but the voice line lists four steps ('start from yourself' has no matching word). Suggested wording: 'Level, Link, Look: start from yourself and mark each generation, decode one link at a time, then re-read the question.'"
   ],
   "attempts": 3,
-  "reviewer_note": "Applied the three examiner fixes: versus cards now read \"Son of same parents\" and \"Child of uncle or aunt\" (split across two lines because of the 14-character limit; the mama's son example is covered in the flow board and voice). Line 2 voice reworded. The 120-175 word total is an estimate, so please confirm the count.",
-  "caption": "🎬 🟩 CA Foundation · Blood Relations: decoding relation phrases\n\nMother's brother's son: is he your brother? Decode it one link at a time.\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 3: Quantitative Aptitude: Logical Reasoning\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFoundation #ICAI #CAStudents #CAExams\n\nref explainer2-261103",
-  "hold": true,
-  "hold_reason": "The checker found errors that weren't fixed (Checker: Line 6 (voice + board): Voice says 'Learn five' but names only three relations and the board shows four; 'Brother's daughter: -1' is on the board but n)"
+  "reviewer_note": "Board list shows 4 quick-table items matching the 4 spoken (no count stated). Board says 'Else: cannot be determined' matching voice. Mnemonic line now explains Level, Link, Look. Total about 146 words.",
+  "caption": "🎬 🟩 CA Foundation · Blood Relations: decode relation phrases\n\nMother's brother's son: is he your brother? Not quite!\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 3: Quantitative Aptitude: Logical Reasoning\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFoundation #ICAI #CAStudents #CAExams\n\nref explainer2-261103",
+  "hold": false,
+  "hold_reason": ""
 }

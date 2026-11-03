@@ -8,5 +8,15 @@
   "cma_cat:story": {
     "media_id": "18499038733102994",
     "posted_at": "2026-11-03T07:42:08+05:30"
+  },
+  "explainer2": {
+    "media_id": "18159116590514522",
+    "permalink": "https://www.instagram.com/reel/DfRBWzQCBF0/",
+    "video_url": "https://raw.githubusercontent.com/cacmagyan/daily-mcq/c52098cae84dd338402865f48635e904afa33894/queue/2026-11-03/explainer2.mp4",
+    "posted_at": "2026-11-03T09:57:35+05:30"
+  },
+  "explainer2:story": {
+    "media_id": "18170500531475071",
+    "posted_at": "2026-11-03T09:58:55+05:30"
   }
 }

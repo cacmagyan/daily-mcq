@@ -1,9 +1,158 @@
 {
   "kind": "explainer2",
   "course_id": "cma_inter",
+  "paper_code": "Paper 12",
+  "paper_name": "Management Accounting",
   "topic": "Labour Variances (Standard Costing)",
   "concept_topic": "Labour Variances (Standard Costing)",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 200 words; write 120-175",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 89.3,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Labour Variances: rate, efficiency, idle time",
+    "caption_hook": "Labour cost went up. Who paid more, who took longer?",
+    "hook_label": "WHO PAID MORE?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Labour cost went up this month. Who paid more, who took longer?",
+        "shot": "close",
+        "pose": "worried"
+      },
+      {
+        "who": "teacher",
+        "say": "A labour variance compares what labour should have cost with what it cost, then finds why.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Labour Variances",
+          "sub": "Rate, Efficiency, Idle Time"
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Standard hours for actual output: 200 hours at ₹50 per hour. Paid: 220 hours at ₹52 per hour, ten idle.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Standard vs Actual",
+          "lines": [
+            "Std hrs for output: 200",
+            "Std rate: ₹50 per hour",
+            "Paid: 220 hrs at ₹52/hr",
+            "Idle: 10 hrs of 220 paid"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Standard cost is ₹10,000. Actual is 220 times ₹52, ₹11,440. Standard minus actual: minus ₹1,440, adverse.",
+        "shot": "board",
+        "pose": "think",
+        "board": {
+          "kind": "calc",
+          "top": "10,000 − 11,440",
+          "big": "−₹1,440"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Adverse. But is it the rate or the hours?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Rate: standard rate minus actual rate, times hours paid. Minus ₹2 times 220 is minus ₹440.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Rate Variance",
+          "formula": "(SR − AR) × AH paid",
+          "sub": "AH paid = hours paid, including idle hours"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Wait, why hours paid? Ten hours were idle, no?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Idle hours are paid too, so rate uses them. Idle time variance: ten hours times ₹50, ₹500 adverse.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Idle Time Variance",
+          "lines": [
+            "Idle hrs × SR",
+            "10 × ₹50 = ₹500 Adverse"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Hmm, so efficiency must use hours actually worked?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! Worked hours: 220 minus 10, so 210. Standard 200 minus 210, times ₹50, is minus ₹500.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "formula",
+          "title": "Labour Efficiency",
+          "formula": "(SH − AH worked) × SR",
+          "sub": "SH std hours; AH worked = paid − idle hours"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Oh! Minus 440, minus 500, minus 500. That's minus 1,440!",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Perfect. Rate uses hours paid. Efficiency uses hours worked. Standard minus actual, always.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Std − Actual",
+            "Positive = F"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Numbers: SH 200, SR ₹50, standard cost ₹10,000; paid 220 hrs at ₹52 = ₹11,440; LCV −1,440 A. LRV (50−52)×220 = −440; idle 10×50 = −500; LEV (200−210)×50 = −500; sum −1,440. Word count about 170. Line 3 (board list) and line 2 subtitle now match the examiner's fixes. The efficiency formula is shown in full on the line 10 board; the recap board is short because of the 14-character limit."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Numbers: SH 200, SR ₹50, standard cost ₹10,000; paid 220 hrs at ₹52 = ₹11,440; LCV −1,440 A. LRV (50−52)×220 = −440; idle 10×50 = −500; LEV (200−210)×50 = −500; sum −1,440. Word count about 170. Line 3 (board list) and line 2 subtitle now match the examiner's fixes. The efficiency formula is shown in full on the line 10 board; the recap board is short because of the 14-character limit.",
+  "caption": "🎬 🟧 CMA Inter · Labour Variances: rate, efficiency, idle time\n\nLabour cost went up. Who paid more, who took longer?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 12: Management Accounting\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref explainer2-261104",
   "hold": false,
   "hold_reason": ""
 }

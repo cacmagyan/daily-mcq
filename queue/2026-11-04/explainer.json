@@ -8,23 +8,23 @@
   "video": "explainer.mp4",
   "cover": "explainer_cover.jpg",
   "style": "story",
-  "seconds": 62.46,
+  "seconds": 60.35,
   "thumb_ms": 1300,
   "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
   "script": {
-    "title": "Composite vs Mixed Supply (CGST)",
-    "caption_hook": "One box, one price. Is the GST rate also one?",
-    "hook_label": "ONE BOX, ONE TAX?",
+    "title": "Composite vs Mixed Supply under CGST",
+    "caption_hook": "One price for everything: is it always a mixed supply?",
+    "hook_label": "ONE PRICE = MIXED?",
     "lines": [
       {
         "who": "boy",
-        "say": "One box, one price. Is the GST rate also one?",
+        "say": "Ma'am, everything's sold for one price. Is that always a mixed supply?",
         "shot": "close",
         "pose": "doubt"
       },
       {
         "who": "teacher",
-        "say": "Good question! Bundles are of two types: composite or mixed. Tax differs.",
+        "say": "Not always. First ask: are the items naturally bundled?",
         "shot": "board",
         "pose": "present",
         "board": {
@@ -35,54 +35,64 @@
       },
       {
         "who": "girl",
-        "say": "What's a composite supply, Ma'am?",
+        "say": "Naturally bundled? Like what?",
         "shot": "desk",
         "pose": "ask",
         "react": "listen"
       },
       {
         "who": "teacher",
-        "say": "Naturally bundled in the ordinary course of business, like packing and transport. Transport is the principal supply.",
+        "say": "Goods packed, transported and insured together, in the ordinary course of business. That's a composite supply.",
         "shot": "board",
         "pose": "explain",
         "board": {
-          "kind": "formula",
+          "kind": "list",
           "title": "Composite supply",
-          "formula": "Tax = principal supply",
-          "sub": "Section 8(a) CGST"
+          "lines": [
+            "Goods (principal supply)",
+            "Packing",
+            "Transport",
+            "Insurance"
+          ]
         }
       },
       {
-        "who": "girl",
-        "say": "Oh! So which rate applies?",
-        "shot": "close",
-        "pose": "aha"
-      },
-      {
-        "who": "teacher",
-        "say": "Tax follows the principal supply. That's Section 8(a).",
-        "shot": "board",
-        "pose": "thumbs"
-      },
-      {
         "who": "boy",
-        "say": "Okay. And mixed supply?",
+        "say": "So which one decides the tax?",
         "shot": "desk",
         "pose": "think",
         "react": "listen"
       },
       {
         "who": "teacher",
-        "say": "Each item can be sold alone, but they're sold together at one price, not naturally bundled. That's mixed.",
+        "say": "The goods are the principal supply. Section 8(a): tax the whole supply as the principal supply.",
         "shot": "board",
         "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Section 8(a)",
+          "formula": "Composite = Principal supply",
+          "sub": "Taxed at the rate of the principal supply"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And mixed supply?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "A gift box: chocolates, dry fruits, a soft toy, one price. Not natural, single price: mixed.",
+        "shot": "board",
+        "pose": "happy",
         "board": {
           "kind": "versus",
           "left": {
             "title": "Composite",
             "lines": [
               "Natural bundle",
-              "Principal supply"
+              "Has principal"
             ],
             "icon": "check",
             "color": "green"
@@ -91,72 +101,55 @@
             "title": "Mixed",
             "lines": [
               "Not natural",
-              "One price"
+              "Single price"
             ],
-            "icon": "cross",
+            "icon": "doc",
             "color": "red"
           },
           "right_on": "mixed"
         }
       },
       {
-        "who": "girl",
-        "say": "Like a hamper of chocolates, a candle and a mug?",
+        "who": "boy",
+        "say": "Then which rate applies to the gift box?",
         "shot": "desk",
-        "pose": "excited",
+        "pose": "ask",
         "react": "think"
       },
       {
         "who": "teacher",
-        "say": "Exactly! Tax follows the supply with the highest rate. That's Section 8(b). Packed means peak.",
-        "shot": "board",
-        "pose": "happy",
-        "board": {
-          "kind": "formula",
-          "title": "Mixed supply",
-          "formula": "Tax = highest-rate supply",
-          "sub": "Section 8(b) CGST"
-        }
-      },
-      {
-        "who": "boy",
-        "say": "Wait... one price always means mixed, right?",
-        "shot": "close",
-        "pose": "doubt"
-      },
-      {
-        "who": "teacher",
-        "say": "Not always. First check natural bundling. Then, if not bundled and one price, take the highest rate. Separate prices? Each taxed separately.",
+        "say": "Section 8(b): tax it as the supply with the highest rate of tax.",
         "shot": "board",
         "pose": "explain",
         "board": {
-          "kind": "list",
-          "title": "Steps",
-          "lines": [
-            "Naturally bundled?",
-            "Yes: principal supply",
-            "No+one price: highest",
-            "Separate: each own rate"
-          ]
+          "kind": "formula",
+          "title": "Section 8(b)",
+          "formula": "Mixed = Highest-rate supply",
+          "sub": "Whole box taxed at the highest rate"
         }
       },
       {
         "who": "girl",
-        "say": "Got it! Natural is principal, packed is peak.",
-        "shot": "desk",
-        "pose": "aha",
-        "react": "happy"
+        "say": "So a single price alone doesn't decide it!",
+        "shot": "close",
+        "pose": "aha"
       },
       {
         "who": "teacher",
-        "say": "Remember: natural means main, packed means peak.",
+        "say": "Right. A single price alone doesn't make it mixed. Check for a natural bundle first; if not, and one price, it's mixed.",
+        "shot": "board",
+        "pose": "thumbs"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: natural bundle, taxed as the principal supply. Otherwise, single price, taxed at the highest rate.",
         "shot": "board",
         "pose": "wink",
         "board": {
           "kind": "words",
           "lines": [
-            "Natural = Main",
-            "Packed = Peak"
+            "Natural: main",
+            "Else: highest"
           ]
         }
       },
@@ -168,19 +161,14 @@
       }
     ]
   },
-  "checked": false,
-  "serious": true,
-  "serious_reason": "The checker found errors that weren't fixed (Checker: Line 4 (voice): 'Transport is the principal supply' is wrong. The textbook illustration in Section 2(30) is goods packed, transported and insured, and )",
+  "checked": true,
+  "serious": false,
   "check_notes": [
-    "Not confirmed after 3 attempts",
-    "Checker: Line 4 (voice): 'Transport is the principal supply' is wrong. The textbook illustration in Section 2(30) is goods packed, transported and insured, and there the goods are the principal supply. Packing, transport and insurance are only ancillary. Correct: 'Naturally bundled in the ordinary course of business, like goods sent with packing, transport and insurance. The goods are the principal supply, so the whole bundle is taxed at the rate for the goods.'",
-    "Checker: Lines 4 and 8 (definitions): composite and mixed supply are defined in Section 2(30) and Section 2(74). Section 8 only sets out how they are taxed. Better: 'Defined in Section 2(30) / 2(74); taxed under Section 8(a) / 8(b).'",
-    "Checker: Lines 10, 13 and 14 (mnemonic): 'Packed means peak' is confusing because the composite example in Line 4 is also packed goods. Also, Line 13 says 'Natural is principal' while Line 14 says 'natural means main', so the wording doesn't match. Use one clear version in both places, e.g. 'Natural = Principal, Not natural + single price = Peak (highest rate)'.",
-    "Checker: Line 4 (voice): the definition leaves out that a composite supply is two or more taxable supplies, one of which is the principal supply. Add: 'two or more taxable supplies, naturally bundled, one of which is the principal supply'."
+    "Writer: Wording fixed per Section 2(74): mixed = not composite, single price. Line 12 and recap no longer say price doesn't matter. No tax rates stated. Total about 150 words."
   ],
   "attempts": 3,
-  "reviewer_note": "Steps board and the mixed-supply line now reflect Section 2(74): mixed needs single price, items suppliable separately and not naturally bundled. Separately priced non-bundled items are taxed each at its own rate. Please confirm word count (about 160) and the packing-and-transport example.",
-  "caption": "🎬 🟪 CA Final · Composite vs Mixed Supply (CGST)\n\nOne box, one price. Is the GST rate also one?\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 5: Indirect Tax Laws\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFinal #ICAI #CAStudents #IndAS\n\nref explainer-261104",
-  "hold": true,
-  "hold_reason": "The checker found errors that weren't fixed (Checker: Line 4 (voice): 'Transport is the principal supply' is wrong. The textbook illustration in Section 2(30) is goods packed, transported and insured, and )"
+  "reviewer_note": "Wording fixed per Section 2(74): mixed = not composite, single price. Line 12 and recap no longer say price doesn't matter. No tax rates stated. Total about 150 words.",
+  "caption": "🎬 🟪 CA Final · Composite vs Mixed Supply under CGST\n\nOne price for everything: is it always a mixed supply?\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 5: Indirect Tax Laws\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFinal #ICAI #CAStudents #IndAS\n\nref explainer-261104",
+  "hold": false,
+  "hold_reason": ""
 }

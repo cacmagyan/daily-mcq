@@ -1,0 +1,94 @@
+{
+  "kind": "news",
+  "date": "2026-11-04",
+  "stories": [
+    {
+      "tag": "GST",
+      "headline": "GSTAT allows transitional ITC on truck chassis bought before GST",
+      "points": [
+        "GSTAT Thiruvananthapuram allowed Rs. 1,75,916.79 transitional ITC on a truck chassis bought under Kerala VAT in June 2017.",
+        "It held that missing Form 25B before GST did not defeat the claim, as the truck was put to use only after GST began.",
+        "A separate Rs. 84,500 claim was rejected because the final VAT return showed a NIL credit balance."
+      ],
+      "why_it_matters": "It shows how transitional credit under Section 140 is judged, and why claims must match the credit balance in earlier returns.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | Capital Goods ITC Cannot Be Denied for Pre-GST Form 25B Non-Compliance: GSTAT Thiruvananthapuram",
+      "link": "https://taxguru.in/goods-and-service-tax/capital-goods-itc-cannot-denied-pre-gst-form-25b-non-compliance-gstat-thiruvananthapuram.html",
+      "published": "2026-11-04T10:16:13+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "Corporate Law",
+      "headline": "Calcutta HC: FERA penalty appeals can go as criminal appeals",
+      "points": [
+        "Calcutta HC rejected the ED's objection that such appeals must be filed on the Original Side as civil revenue matters.",
+        "Court held that repeal of FERA did not end accrued penal liabilities or the related procedural remedies.",
+        "Four appeals against a ₹2 lakh penalty will be heard on merits on 11 December 2026; merits not decided yet."
+      ],
+      "why_it_matters": "Shows how repealed laws, saving clauses and the General Clauses Act affect pending cases, a point relevant to FEMA and law studies.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Fema / RBI | FERA Penalty Appeals Maintainable as Criminal Appeals Despite FEMA: Calcutta HC",
+      "link": "https://taxguru.in/rbi/fera-penalty-appeals-maintainable-criminal-appeals-fema-calcutta-hc.html",
+      "published": "2026-11-04T10:14:11+00:00",
+      "check": "minor",
+      "check_notes": [
+        "The tag 'Corporate Law' doesn't match the source's category (FEMA / RBI). This is a labelling mismatch, not a factual error.",
+        "Point 2 stays very close to the source's wording ('repeal did not extinguish accrued penal liabilities or the associated procedural remedies'). It changes enough words that it isn't a copied sentence, but it could be rephrased more."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "Gujarat HC quashes reopening order that went beyond show-cause notice",
+      "points": [
+        "Gujarat HC quashed a Section 148A(3) order and the Section 148 notice for AY 2020-21, both dated 30 June 2026.",
+        "The notice had questioned transactions of Rs.3,87,87,00,000; the order raised new issues on a loan and Section 40(a)(ia).",
+        "The Court found no chance was given to answer the new issues, but allowed a fresh show-cause notice if legally permissible."
+      ],
+      "why_it_matters": "Shows that reopening under Section 148A must stick to the grounds in the show-cause notice and give the assessee a fair hearing.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Reopening Order Beyond Show-Cause Grounds Quashed for Denial of Opportunity: Gujarat HC",
+      "link": "https://taxguru.in/income-tax/reopening-order-show-grounds-quashed-denial-opportunity-gujarat-hc.html",
+      "published": "2026-11-04T11:31:13+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'Goods and Services Tax | 57th GST Council Meeting 2026: No A': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | Retrospective Cancellation Does Not': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Arrest: Commissioner’s Reasons ': headline is longer than 70 characters; a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Cancelled flight ticket? GSTAT says airlines can refund GST ': not usable",
+    "skipped 'Income Tax | CBDT Corrects APERC Exemption Period to AYs 202': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Insurance agent deposits Rs 35 lakh cash collected from poli': too little text to check",
+    "skipped 'Income Tax | Franchise Profit Transfers Not Liable to TDS Un': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Audit Can Continue After Cancel': why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Auditor Engagement Confusion and Administrative': a point is longer than 110 characters",
+    "skipped 'Income Tax | ₹25 Lakh Leave Encashment Exemption: Telangana ': a point is longer than 110 characters",
+    "skipped 'Income Tax | ITAT Lucknow Quashed Section 271(1)(c) Penalty ': why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | CBDT Instruction 1916 Does Not Conclude Excess ': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Sugar Factory Not Liable to Deduct TDS on Harve': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Fema / RBI | Enforcement Directorate Cannot Initiate Proceed': why_it_matters is longer than 120 characters",
+    "skipped 'Gold jewellery at home: How much can you keep without fear o': not usable",
+    "skipped 'Corporate Law | Bank Guarantee Release Cannot Substitute Sep': a point is longer than 110 characters",
+    "skipped 'Income Tax | Taxpayer Must Cooperate With Income Tax Recover': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Unrelated Hundi Enquiry Cannot Justify Section ': a point is longer than 110 characters; why_it_matters is longer than 120 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 04 Nov 2026\n\n1️⃣ GSTAT allows transitional ITC on truck chassis bought before GST (TaxGuru)\n2️⃣ Calcutta HC: FERA penalty appeals can go as criminal appeals (TaxGuru)\n3️⃣ Gujarat HC quashes reopening order that went beyond show-cause notice (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261104",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

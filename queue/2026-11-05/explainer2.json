@@ -1,0 +1,171 @@
+{
+  "kind": "explainer2",
+  "course_id": "ca_final",
+  "paper_code": "Paper 1",
+  "paper_name": "Financial Reporting",
+  "topic": "Ind AS 33: Basic EPS with bonus issue",
+  "concept_topic": "Ind AS 33: Basic EPS with bonus issue",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 69.6,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Basic EPS with a bonus issue (Ind AS 33)",
+    "caption_hook": "Same profit, but EPS fell after bonus shares? Here's why.",
+    "hook_label": "SAME PROFIT, LOWER EPS",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Ma'am, company's profit is same, but EPS halved after bonus shares?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Good question! A bonus issue gives free shares from reserves. No cash comes in.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "EPS with Bonus Issue",
+          "sub": "Ind AS 33, basic EPS"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So how do we count the old shares then?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Restate old shares as if the bonus happened at the start of the earliest period shown. Multiply them by the bonus factor.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "The Bonus Factor",
+          "formula": "(O + B) / O",
+          "sub": "O = old shares, B = bonus shares"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Factor? What's that for a one-for-one bonus?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "One old plus one bonus, over one old. So the factor is two.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "calc",
+          "top": "(1 + 1) / 1",
+          "big": "2"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Do we time-weight bonus shares from the bonus date?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "No. No money comes in, so no extra earning power. Count them from the start.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Bonus shares",
+          "lines": [
+            "No cash comes in",
+            "Not time-weighted",
+            "Counted from the start"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Let's try numbers. A company has 1,00,000 shares and earns ₹6,00,000. EPS is ₹6.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "6,00,000 / 1,00,000",
+          "big": "₹6"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Now a one-for-one bonus comes. Profit stays same.",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Shares become 2,00,000. EPS falls to ₹3. Same profit, lower EPS!",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "calc",
+          "top": "6,00,000 / 2,00,000",
+          "big": "₹3"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Oh! And last year's EPS was ₹5, from ₹5,00,000 profit?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Restate it too: ₹5,00,000 over 2,00,000 shares is ₹2.50.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "calc",
+          "top": "5,00,000 / 2,00,000",
+          "big": "₹2.50"
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Bonus cuts the same cake into more slices. Restate old shares; don't time-weight bonus.",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Bonus: restate",
+            "no time weight"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Example assumes no cash issues, 1,00,000 shares outstanding all year, one-for-one bonus, profits already net of any preference dividend. Check word total (about 175) against the limit once the follow line is added."
+  ],
+  "attempts": 2,
+  "reviewer_note": "Example assumes no cash issues, 1,00,000 shares outstanding all year, one-for-one bonus, profits already net of any preference dividend. Check word total (about 175) against the limit once the follow line is added.",
+  "caption": "🎬 🟪 CA Final · Basic EPS with a bonus issue (Ind AS 33)\n\nSame profit, but EPS fell after bonus shares? Here's why.\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 1: Financial Reporting\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFinal #ICAI #CAStudents #IndAS\n\nref explainer2-261105",
+  "hold": false,
+  "hold_reason": ""
+}

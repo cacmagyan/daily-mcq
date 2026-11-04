@@ -1,0 +1,144 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_final",
+  "paper_code": "Paper 1",
+  "paper_name": "Financial Reporting",
+  "author": "Rahul kp",
+  "linked_mcq": "Ind AS 33 - EPS with bonus issue",
+  "topic": "Ind AS 33: Basic EPS with bonus issue",
+  "title": "EPS with",
+  "title_highlight": "Bonus Issue",
+  "hook": "same profit, more shares!",
+  "simple_words": "Bonus shares bring no new money, so restate old share counts as if the bonus came at the start.",
+  "definitions": [
+    {
+      "term": "Bonus issue",
+      "meaning": "Free issue of shares to existing holders, usually from reserves. Total resources do not change, only the share count.",
+      "note": "no cash comes in"
+    },
+    {
+      "term": "Ind AS 33 adjustment",
+      "meaning": "Shares outstanding before the event are adjusted for the proportionate change, as if it occurred at the beginning of the earliest period presented.",
+      "note": "restate all periods shown"
+    }
+  ],
+  "key_points": [
+    "Bonus shares are issued without consideration, so there is ==no time-weighting== of the bonus shares.",
+    "Basic EPS of current and !!all comparative periods is restated!! for the bonus.",
+    "Bonus after the reporting date but before approval of the financial statements: per-share figures use the new share count.",
+    "In that case, !!disclose that fact!! (Ind AS 33 and Ind AS 10)."
+  ],
+  "formula_heading": "The Bonus Factor",
+  "formula_hook": "multiply only the old shares",
+  "formulas": [
+    {
+      "name": "Adjusted shares for pre-bonus shares",
+      "lhs": "Adjusted shares",
+      "rhs": "Pre-bonus shares × (O + B) / O",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "O = old shares held before bonus; B = bonus shares. 1:1 bonus gives factor 2. Time-weight the pre-bonus shares as usual; do not weight B."
+    },
+    {
+      "name": "Basic EPS",
+      "lhs": "Basic EPS",
+      "rhs": "",
+      "numerator": "Profit for equity holders (P)",
+      "denominator": "Weighted avg. equity shares (W)",
+      "square_root": false,
+      "suffix": "",
+      "legend": "P = profit after tax less preference dividend (and tax on it): non-cumulative if declared, cumulative whether declared or not. W uses adjusted shares."
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Bonus reduces EPS per share, not value!",
+    "text": "Shares issued for cash after the bonus date are weighted normally and are not multiplied by the factor."
+  },
+  "trick_hook": "free shares, free of time",
+  "memory_trick": {
+    "mnemonic": "Cut the cake into more slices",
+    "explanation": "A bonus cuts the same cake into more slices: more shares, same total. So restate every earlier period with the same number of slices."
+  },
+  "steps": [
+    "Find the bonus ratio and factor",
+    "Pre-bonus shares × factor",
+    "Time-weight cash issues normally",
+    "Bonus shares: outstanding from start",
+    "Restate comparative EPS; divide"
+  ],
+  "exam_tip": "Apply the factor only to shares outstanding before the bonus. Shares issued for cash after it are not multiplied.",
+  "doubt": {
+    "question": "Why not time-weight the bonus shares from the bonus date?",
+    "answer": "No resources come in, so there is no extra earning capacity. Ind AS 33 treats the bonus as if it happened at the start of the earliest period."
+  },
+  "mistakes_hook": "don't let the factor run wild",
+  "mistakes": [
+    {
+      "wrong": "Time-weighting the bonus shares from the bonus date",
+      "right": "Bonus shares are not time-weighted; restate pre-bonus shares as if the bonus was at the start of the earliest period."
+    },
+    {
+      "wrong": "Leaving the previous year's EPS unchanged",
+      "right": "Restate comparative EPS for the bonus, so that periods are comparable."
+    },
+    {
+      "wrong": "Using profit before preference dividend as the numerator",
+      "right": "Deduct preference dividend (and tax on it): non-cumulative if declared, cumulative whether or not declared."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Ind AS 33 (basic EPS, para 64) and Ind AS 10",
+  "confidence": "high",
+  "reviewer_note": "No past-paper list was given, so past_papers is empty. Check that the para 64 reference matches the current Ind AS 33.",
+  "law_sensitive": false,
+  "attempts": 3,
+  "needs_check": true,
+  "serious": true,
+  "check_notes": [
+    "Not confirmed after 3 attempts",
+    "Checker 1: Step 4 ('Bonus shares: outstanding from start') is wrong when shares were issued for cash during the year before the bonus. Under Ind AS 33 para 28, bonus shares on those cash shares count from the date the cash shares were issued, not from the start of the period. Correct version: 'Bonus shares rank from the same date as the shares they are issued on. For opening shares that is the start of the earliest period; for shares issued for cash before the bonus it is their issue date (the factor still applies).'",
+    "Checker 1: Key point 1 ('there is no time-weighting of the bonus shares') overstates the rule in the same way. Bonus shares have no time-weighting of their own from the bonus date, but they carry the time-weighting of the shares they were issued on. Correct version: 'Bonus shares are not weighted from the bonus date. Multiply the time-weighted pre-bonus shares by the bonus factor, so the bonus shares share the weighting of their parent shares.'",
+    "Checker 1: Insight punchline ('Bonus reduces EPS per share, not value!') is redundant wording, since EPS already means earnings per share. Better: 'A bonus reduces EPS, not value!' (wording only)."
+  ],
+  "serious_reason": "The checkers found errors that weren't fixed (Checker 1: Step 4 ('Bonus shares: outstanding from start') is wrong when shares were issued for cash during the year before the bonus. Under Ind AS 33 para 28, )",
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.02,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟪 CA Final · Concept of the day\nPaper 1: Financial Reporting\nInd AS 33: Basic EPS with bonus issue\n\nIn simple words: Bonus shares bring no new money, so restate old share counts as if the bonus came at the start.\n\nSwipe for the formula, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CA Final MCQ (9:30 PM) tests this concept.\n\nBased on Ind AS 33 (basic EPS, para 64) and Ind AS 10.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFinal #ICAI #CAStudents #IndAS\n\nref concept2-261105",
+  "story": "concept2_story.jpg",
+  "hold": true,
+  "hold_reason": "The checkers found errors that weren't fixed (Checker 1: Step 4 ('Bonus shares: outstanding from start') is wrong when shares were issued for cash during the year before the bonus. Under Ind AS 33 para 28, )"
+}

@@ -1,0 +1,9 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_final",
+  "topic": "Economic Value Added (EVA)",
+  "concept_topic": "Economic Value Added (EVA)",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 4: board right_on 'all' is not a word of the line; line 6: board sub is 71 characters; at most 44",
+  "hold": false,
+  "hold_reason": ""
+}

@@ -1,9 +1,174 @@
 {
   "kind": "explainer",
   "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Business Mathematics",
   "topic": "Compound Interest and Effective Rate",
   "concept_topic": "Compound Interest and Effective Rate",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 194 words; write 120-175",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 85.5,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Compound Interest and Effective Rate",
+    "caption_hook": "Interest on interest? Here's how compound interest really grows your money.",
+    "hook_label": "INTEREST ON INTEREST?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Interest on interest? How is that even a thing?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Each period, interest joins the principal. Next time, you earn interest on a bigger amount.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "title",
+          "title": "Interest on interest",
+          "sub": "Principal grows each period"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So money grows faster every period?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Take ₹10,000 at 10% per annum. Year one interest: ₹1,000. Year two: ten percent of ₹11,000.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "₹11,000 × 10%",
+          "big": "₹1,100"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Simple interest would give ₹1,000 again, right?",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Right. So two-year compound interest is ₹2,100, simple is ₹2,000. Now the formula.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Amount formula",
+          "formula": "A = P(1 + r/(100m))^(mn)",
+          "sub": "r = % per year, n = years, m = times a year"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "What's m?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Compounding times per year. Same ₹10,000, 10% per annum, half-yearly, two years: m is 2.",
+        "shot": "board",
+        "pose": "present"
+      },
+      {
+        "who": "girl",
+        "say": "Rate 5% per half-year, four half-yearly periods?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! Rate divided by m, periods times m. A is ₹10,000 times 1.05 to the power 4.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "calc",
+          "top": "10,000 × 1.05^4",
+          "big": "₹12,155"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And compound interest is amount minus principal?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes. Amount about ₹12,155.06 minus ₹10,000 gives CI of ₹2,155.06.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "formula",
+          "title": "Compound interest",
+          "formula": "CI = A − P",
+          "sub": "A = final amount, P = principal"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Then what's the effective rate?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "The yearly rate with the same growth: 1.05 squared minus 1, which is 10.25%.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "formula",
+          "title": "Effective rate",
+          "formula": "E = (1 + i/m)^m − 1",
+          "sub": "i = nominal rate (0.10), m = times a year"
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: rate divided by m, periods times m. More compounding means higher effective rate.",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Rate ÷ m",
+            "Periods × m"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Example: ₹10,000 at 10% p.a. compounded half-yearly for 2 years: 1.05^4 = 1.21550625, A = ₹12,155.06, CI = ₹2,155.06; effective rate 1.05^2 − 1 = 10.25%. Both examiner fixes applied (girl line and the recap board).",
+    "Checker: Line 3 (girl): 'So money grows faster every period?' is never answered, so it may suggest the rate itself rises. Correct version, e.g. teacher: 'The rate stays 10%, but the interest in rupees grows each period because the base is bigger.'",
+    "Checker: Line 10 board shows ₹12,155 but Line 12 says ₹12,155.06 (exact value 10,000 × 1.21550625 = ₹12,155.0625). Correct version: show ≈ ₹12,155.06 on the board so the two figures match.",
+    "Checker: Line 14: the effective rate doesn't say which case it uses. Correct version: 'For 10% p.a. compounded half-yearly: E = (1.05)² − 1 = 10.25% per annum.'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "Example: ₹10,000 at 10% p.a. compounded half-yearly for 2 years: 1.05^4 = 1.21550625, A = ₹12,155.06, CI = ₹2,155.06; effective rate 1.05^2 − 1 = 10.25%. Both examiner fixes applied (girl line and the recap board).",
+  "caption": "🎬 🟩 CA Foundation · Compound Interest and Effective Rate\n\nInterest on interest? Here's how compound interest really grows your money.\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 3: Quantitative Aptitude: Business Mathematics\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFoundation #ICAI #CAStudents #CAExams\n\nref explainer-261106",
   "hold": false,
   "hold_reason": ""
 }

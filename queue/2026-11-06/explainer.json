@@ -1,0 +1,9 @@
+{
+  "kind": "explainer",
+  "course_id": "ca_foundation",
+  "topic": "Compound Interest and Effective Rate",
+  "concept_topic": "Compound Interest and Effective Rate",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 193 words; write 120-175",
+  "hold": false,
+  "hold_reason": ""
+}

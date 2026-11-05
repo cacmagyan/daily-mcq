@@ -1,0 +1,155 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 1A",
+  "paper_name": "Fundamentals of Financial Accounting",
+  "author": "Rahul kp",
+  "linked_mcq": "Capital and Revenue Expenditure",
+  "topic": "Capital vs Revenue Expenditure",
+  "title": "Capital vs Revenue",
+  "title_highlight": "Expenditure",
+  "hook": "benefit for years, or just this year?",
+  "simple_words": "Spending that gives benefit for many years is capital; spending that is used up this year is revenue.",
+  "definitions": [
+    {
+      "term": "Capital expenditure",
+      "meaning": "Spending that acquires or improves a fixed asset or increases earning capacity, with benefit beyond one year. Shown in the Balance Sheet.",
+      "note": "Asset side, not P&L"
+    },
+    {
+      "term": "Revenue expenditure",
+      "meaning": "Spending to run the business and maintain earning capacity, with benefit used up in the current year. Charged to Trading or P&L Account.",
+      "note": "Matches current year's income"
+    }
+  ],
+  "key_points": [
+    "Capital expenditure adds to the ==cost of an asset==, including freight, installation and erection charges.",
+    "Revenue expenditure covers repairs, wages, rent, salaries and depreciation.",
+    "!!Wrongly treating capital as revenue understates profit and assets!!; the reverse overstates profit.",
+    "Test: does it create or improve an asset's life or capacity, or only maintain it?"
+  ],
+  "formula_heading": "The Quick Comparison",
+  "formula_hook": "same payment, different test",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Basis",
+      "Capital",
+      "Revenue"
+    ],
+    "rows": [
+      [
+        "Benefit",
+        "More than one year",
+        "Current year"
+      ],
+      [
+        "Shown in",
+        "Balance Sheet",
+        "Trading / P&L A/c"
+      ],
+      [
+        "Example",
+        "Machine purchase, installation",
+        "Repairs, wages, rent"
+      ],
+      [
+        "Effect on profit",
+        "Not charged at once",
+        "Reduces profit of the year"
+      ],
+      [
+        "Purpose",
+        "Acquire or improve asset",
+        "Maintain business or asset"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Same machine, two treatments!",
+    "text": "Buying a machine is capital, but ordinary repairs on it are revenue; the purpose of spending decides the class."
+  },
+  "trick_hook": "ask one question first",
+  "memory_trick": {
+    "mnemonic": "Capital = Cement the asset",
+    "explanation": "If the spending is cemented into the asset (buy, install, extend, improve), it is capital. If it only keeps the asset running (repair, paint, oil), it is revenue."
+  },
+  "steps": [
+    "Read what the payment was for",
+    "Does it add or improve the asset?",
+    "Yes: capitalise, add to asset cost",
+    "No: charge to P&L or Trading A/c",
+    "Check for related items (freight, fees)"
+  ],
+  "exam_tip": "!!Freight, installation and legal fees on buying an asset are capital!!; ordinary repairs and renewals to maintain it are revenue.",
+  "doubt": {
+    "question": "Is a repair always revenue?",
+    "answer": "No. Repairs at purchase to make a second-hand asset usable are capital. Ordinary repairs that only maintain the asset are revenue."
+  },
+  "mistakes_hook": "small slip, wrong profit",
+  "mistakes": [
+    {
+      "wrong": "Treating wages paid for installing a new machine as revenue",
+      "right": "Wages for installing a new machine are capital and added to the machine's cost."
+    },
+    {
+      "wrong": "Treating all repairs as revenue",
+      "right": "Repairs to make a newly bought second-hand asset fit for use are capital."
+    },
+    {
+      "wrong": "Charging the purchase of furniture to Purchases A/c",
+      "right": "Furniture is a fixed asset, so it is capital and goes to Furniture A/c."
+    },
+    {
+      "wrong": "Thinking big amount means capital",
+      "right": "Nature and purpose decide, not size; a large repair bill to maintain an asset is still revenue."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Checker 1: Key point 4 (wording only): 'does it create or improve an asset's life or capacity' is awkward. Better: 'Test: does it acquire an asset or increase its life or earning capacity (capital), or only maintain it (revenue)?'",
+    "Checker 2: Key point 2: depreciation is a non-cash charge, not an outlay of money. It is better to say 'revenue expenses such as repairs, wages, rent and salaries, and depreciation is charged to P&L'. This is wording only.",
+    "Checker 2: Exam tip: 'renewals' could mislead. Only minor or ordinary replacements are revenue. Replacing a major part that extends the asset's life or capacity is capital. Say 'ordinary repairs and minor replacements'. This is wording only."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 0.98,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.16,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 1A: Fundamentals of Financial Accounting\nCapital vs Revenue Expenditure\n\nIn simple words: Spending that gives benefit for many years is capital; spending that is used up this year is revenue.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CMA CAT MCQ (7:30 AM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept2-261106",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

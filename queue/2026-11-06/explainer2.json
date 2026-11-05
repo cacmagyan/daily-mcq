@@ -1,0 +1,9 @@
+{
+  "kind": "explainer2",
+  "course_id": "cma_cat",
+  "topic": "Capital vs Revenue Expenditure",
+  "concept_topic": "Capital vs Revenue Expenditure",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 204 words; write 120-175",
+  "hold": false,
+  "hold_reason": ""
+}

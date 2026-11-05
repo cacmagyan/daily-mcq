@@ -1,0 +1,84 @@
+{
+  "kind": "news",
+  "date": "2026-11-05",
+  "stories": [
+    {
+      "tag": "GST",
+      "headline": "GSTN issues advisories on registration amendment and e-invoice downtime",
+      "points": [
+        "Per a 1 Nov 2026 advisory, only Principal Place of Business amendments still need the Proper Officer's approval.",
+        "Other registration changes are auto-amended after online validation, with OTP verification needed within 3 days or no ARN.",
+        "A scheduled upgrade pauses e-Invoice retrieval, GSTR-1 auto-population and e-Invoice JSON downloads on the portal."
+      ],
+      "why_it_matters": "Registration changes, portal timelines and GSTR-1 data flows are routine compliance work for CA and CMA professionals handling GST.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | GSTN Advisories on Registration, Cancellation and Composition Compliance Procedures",
+      "link": "https://taxguru.in/goods-and-service-tax/gstn-advisories-registration-cancellation-composition-compliance-procedures.html",
+      "published": "2026-11-05T15:11:46+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "SEBI",
+      "headline": "SEBI updates Master Circular for Alternative Investment Funds",
+      "points": [
+        "SEBI revised its AIF Master Circular on Nov 5, 2026; the original version was dated June 3, 2026.",
+        "It adds recent circulars on AIF winding up, Inoperative Fund status, GARUDA and the Accredited Investor framework.",
+        "Trustee, sponsor or manager must ensure the Compliance Test Report covers all chapters of the Master Circular."
+      ],
+      "why_it_matters": "AIF compliance reports and regulatory reporting are areas where CAs and CMAs handle audit, certification and compliance work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "SEBI | SEBI AIF Master Circular Updated November 5, 2026: New Accredited Investor Framework and Compliance Rules",
+      "link": "https://taxguru.in/sebi/sebi-aif-master-circular-updated-november-5-2026-accredited-investor-framework-compliance-rules.html",
+      "published": "2026-11-05T15:36:39+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "Tribunal backs ₹54 lakh property attachment in Chhattisgarh liquor case",
+      "points": [
+        "The SAFEMA Appellate Tribunal upheld attachment of a ₹54 lakh property interest of an excise officer under PMLA.",
+        "The property was bought in 2015, but the ED alleges the crime period was 2019 to 2022; the officer argued this protected it.",
+        "Tribunal held other property can be attached for equivalent value when the actual proceeds are not available."
+      ],
+      "why_it_matters": "Shows how 'proceeds of crime' under PMLA includes value, a point relevant to law, compliance and forensic audit studies.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Fema / RBI | PMLA: Tribunal Upholds ₹54 Lakh Attachment of Property Bought Before Alleged Liquor Scam",
+      "link": "https://taxguru.in/rbi/pmla-rs-54-lakh-attachment-2015-property-upheld-liquor-scam.html",
+      "published": "2026-11-05T12:22:04+00:00",
+      "check": "minor",
+      "check_notes": [
+        "The story is tagged 'Income Tax', but the source files it under 'Fema / RBI' and the case is a PMLA matter. The tag is a mislabel, but no fact in the story is wrong."
+      ]
+    }
+  ],
+  "notes": [
+    "skipped 'Fema / RBI | RBI Issues 2026 Cyber Resilience and Digital Pa': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Tax reporting lapses could risk India's sovereign rating, tr': not usable",
+    "skipped 'Goods and Services Tax | Supplier’s Retrospective GST Cancel': a point is longer than 110 characters",
+    "skipped 'Rs 21.6 lakh speculative trading loss in stock market trigge': not usable",
+    "skipped 'CBDT issues new clarification on BSNL-MTNL VRS-2019 compensa': not usable",
+    "skipped 'Income Tax | Delayed Form 67 Filing Alone Cannot Deny Foreig': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | Bombay HC Declares GST Officer’s Ar': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | Section 76 Penalty Applies to Regis': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | ITAT Nagpur Remands Regional Rural Bank Section': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 05 Nov 2026\n\n1️⃣ GSTN issues advisories on registration amendment and e-invoice downtime (TaxGuru)\n2️⃣ SEBI updates Master Circular for Alternative Investment Funds (TaxGuru)\n3️⃣ Tribunal backs ₹54 lakh property attachment in Chhattisgarh liquor case (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261105",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

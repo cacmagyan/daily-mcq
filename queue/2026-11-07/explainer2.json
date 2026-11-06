@@ -3,7 +3,7 @@
   "course_id": "ca_inter",
   "topic": "Labour Variances (Standard Costing)",
   "concept_topic": "Labour Variances (Standard Costing)",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 6: board sub is 58 characters; at most 44; the lines have 201 words; write 120-175",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 8: board sub is 58 characters; at most 44; the lines have 191 words; write 120-175",
   "hold": false,
   "hold_reason": ""
 }

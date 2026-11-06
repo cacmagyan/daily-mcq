@@ -1,0 +1,84 @@
+{
+  "kind": "news",
+  "date": "2026-11-06",
+  "stories": [
+    {
+      "tag": "ICAI",
+      "headline": "ICAI declares CA Foundation September 2026 results; pass rate 18.93%",
+      "points": [
+        "ICAI's result analysis says 1,04,240 candidates appeared and 19,736 passed, an overall pass rate of 18.93%.",
+        "Males passed at 20.47% (10,931 of 53,398); females at 17.32% (8,805 of 50,842).",
+        "Kansika (Hisar) and Mahek Gupta (Hyderabad) jointly took rank one with 361 marks, or 90.25%."
+      ],
+      "why_it_matters": "Foundation is the first step in the CA route, so pass rates and topper scores show students how competitive the entry level is.",
+      "usable": true,
+      "confidence": "medium",
+      "source": "TaxGuru",
+      "source_title": "CA, CS, CMA | CA Foundation September 2026 Results: 18.93% Pass Rate, Toppers and Gender-Wise Analysis",
+      "link": "https://taxguru.in/chartered-accountant/ca-foundation-september-2026-results-18-93-percent-pass-rate-toppers-gender-wise-analysis.html",
+      "published": "2026-11-06T15:04:59+00:00",
+      "check": "minor",
+      "check_notes": [
+        "The 'Why it matters' line says Foundation is the first step in the CA route. That is reasonable background, but the source doesn't say it.",
+        "The story uses 1,04,240 candidates from the result analysis without noting that the same release also says 1,17,458 candidates appeared, across 580 centres. A note on this mismatch would help readers."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "Income Tax official flags risks of lapses in cross-border reporting",
+      "points": [
+        "Debjyoti Das, Principal DG of Income Tax (Intelligence & Criminal Investigation), spoke at a FATCA and CRS summit in Mumbai.",
+        "He pointed to growing risks from non-compliance in cross-border financial reporting.",
+        "The headline says such lapses could risk India's sovereign rating and bring withholding tax penalties."
+      ],
+      "why_it_matters": "FATCA and CRS reporting is part of tax compliance work, so CA and CMA students may handle such filings in practice.",
+      "usable": true,
+      "confidence": "medium",
+      "source": "Economic Times",
+      "source_title": "Tax reporting lapses could risk India's sovereign rating, trigger withholding tax penalties: Income Tax Principal DG Debjyoti Das",
+      "link": "https://economictimes.indiatimes.com/news/economy/indicators/tax-reporting-lapses-could-risk-indias-sovereign-rating-trigger-withholding-tax-penalties-income-tax-principal-dg-debjyoti-das/articleshow/135578399.cms",
+      "published": "2026-11-05T20:44:08+05:30",
+      "check": "minor",
+      "check_notes": [
+        "Point 1 says Das 'spoke at' the summit; the source says he spoke to the media on the sidelines of the summit. It should say that.",
+        "Point 2 is very close to the source sentence ('highlighted the growing risks associated with non-compliance in cross-border financial reporting'). It isn't copied, but rewording it more would be safer.",
+        "The 'Why it matters' line about CA and CMA students is editorial comment the source doesn't cover. It doesn't misstate any fact."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "Bombay HC rejects transfer pricing benchmark based on controlled deals",
+      "points": [
+        "Bombay HC dismissed the Revenue's appeal against the Tribunal order in PCIT vs Audco India Ltd. for AY 2004-05.",
+        "The TPO had picked only transactions that favoured the Revenue; the aggregated comparison fell within the 5% tolerance.",
+        "Prices charged to other associated enterprises in different countries were held unfit as uncontrolled comparables."
+      ],
+      "why_it_matters": "Shows how arm's length price must rest on uncontrolled comparables and consistent, market-specific analysis in transfer pricing work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Transfer Pricing ALP Cannot Be Benchmarked Using Controlled AE Transactions: Bombay HC",
+      "link": "https://taxguru.in/income-tax/transfer-pricing-alp-cannot-benchmarked-controlled-ae-transactions-bombay-hc.html",
+      "published": "2026-11-06T13:11:46+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'Corporate Law | Wilful Defaulter Declaration Upheld Despite ': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST on Corporate Guarantees Between': a point is longer than 110 characters",
+    "skipped 'Rs 21.6 lakh speculative trading loss in stock market trigge': not usable",
+    "skipped 'Goods and Services Tax | GST Assessment Order Without DIN Se': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 06 Nov 2026\n\n1️⃣ ICAI declares CA Foundation September 2026 results; pass rate 18.93% (TaxGuru)\n2️⃣ Income Tax official flags risks of lapses in cross-border reporting (Economic Times)\n3️⃣ Bombay HC rejects transfer pricing benchmark based on controlled deals (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Economic Times, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261106",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

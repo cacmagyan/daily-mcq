@@ -1,9 +1,171 @@
 {
   "kind": "explainer2",
   "course_id": "ca_inter",
+  "paper_code": "Paper 4",
+  "paper_name": "Cost and Management Accounting",
   "topic": "Labour Variances (Standard Costing)",
   "concept_topic": "Labour Variances (Standard Costing)",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 8: board sub is 58 characters; at most 44; the lines have 191 words; write 120-175",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 80.71,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Labour Variances: rate, efficiency, idle time",
+    "caption_hook": "Labour cost went up: did you pay more, or work slow?",
+    "hook_label": "PAY MORE OR WORK SLOW?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Ma'am, labour cost went up. Was it the pay or slow work?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Labour variance is the cost gap, split into rate, efficiency and idle time. Say 100 units, four hours each, ₹50 per hour.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Labour Variances",
+          "sub": "Rate, efficiency, idle"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Okay, but how big is the total gap?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Standard is 400 hours at ₹50, so ₹20,000. Actual is 450 hours at ₹52, so ₹23,400.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "calc",
+          "top": "₹20,000 − ₹23,400",
+          "big": "−₹3,400"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So it's ₹3,400 adverse. But why?",
+        "shot": "close",
+        "pose": "worried"
+      },
+      {
+        "who": "teacher",
+        "say": "Rate first, on hours paid. 450 hours times fifty minus fifty-two gives ₹900 adverse.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Rate Variance",
+          "formula": "LRV = AH paid × (SR − AR)",
+          "sub": "AH paid: hours paid. SR/AR: std/actual rate"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And slow work is efficiency, right?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, on hours worked. 30 hours were idle, so worked is 420. Fifty times 400 minus 420 is ₹1,000 adverse.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "formula",
+          "title": "Efficiency Var.",
+          "formula": "LEV = SR × (SH − AH worked)",
+          "sub": "SH: std hours. AH worked = paid − idle"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "What about those 30 idle hours?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Paid but no output. Fifty times 30 is ₹1,500, always adverse.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Idle Time Variance",
+          "formula": "Idle TV = SR × Idle hours",
+          "sub": "Idle hours × standard rate; always Adverse"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Do all three add up to the total?",
+        "shot": "desk",
+        "pose": "excited",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! 900 plus 1,000 plus 1,500 is ₹3,400 adverse. It matches the total.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "list",
+          "title": "Tally with LCV",
+          "lines": [
+            "Rate: ₹900 A",
+            "Efficiency: ₹1,000 A",
+            "Idle: ₹1,500 A",
+            "Total: ₹3,400 A"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Got it! Rate is price, the others are hours.",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: rate is price per hour, while efficiency and idle are hours used.",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Rate = price",
+            "Hours = use"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Worked example: SH=100×4=400, SR ₹50, AH paid 450, idle 30, worked 420, AR ₹52. LCV=20,000−23,400=−3,400 A; LRV=−900; LEV=−1,000; Idle=−1,500; sum −3,400. Assumes standard 4 hrs/unit and actual output 100 units.",
+    "Checker: Line 14 (voice and board 'Hours = use'): calling idle time 'hours used' is misleading, because idle hours are paid but not worked. Better: 'Rate is price per hour; efficiency is hours worked versus standard; idle time is hours paid but not worked.'",
+    "Checker: Line 4: the script never says the 450 hours are hours paid, which the rate and idle split depend on. Better: 'Actual is 450 hours paid at ₹52, so ₹23,400.'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "Worked example: SH=100×4=400, SR ₹50, AH paid 450, idle 30, worked 420, AR ₹52. LCV=20,000−23,400=−3,400 A; LRV=−900; LEV=−1,000; Idle=−1,500; sum −3,400. Assumes standard 4 hrs/unit and actual output 100 units.",
+  "caption": "🎬 🟦 CA Inter · Labour Variances: rate, efficiency, idle time\n\nLabour cost went up: did you pay more, or work slow?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 4: Cost and Management Accounting\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAInter #CAIntermediate #ICAI #CAStudents\n\nref explainer2-261107",
   "hold": false,
   "hold_reason": ""
 }

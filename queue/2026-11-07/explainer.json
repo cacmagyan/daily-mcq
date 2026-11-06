@@ -1,0 +1,164 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 1B",
+  "paper_name": "Applied Business and Industrial Laws",
+  "topic": "Offer vs Invitation to Offer",
+  "concept_topic": "Offer vs Invitation to Offer",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 59.59,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Offer vs Invitation to Offer",
+    "caption_hook": "Is a price tag really an offer? Most people get this wrong.",
+    "hook_label": "PRICE TAG = OFFER?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Wait, a shirt with a price tag isn't actually an offer?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Right. An offer can be accepted to make a contract. An invitation only asks people to make offers.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "title",
+          "title": "Offer / Invitation",
+          "sub": "Who is offering what?"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So what's the shop doing with the price tag then?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "The shop only invites you. You bring the shirt to the counter. That's your offer, and the shopkeeper accepts.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "flow",
+          "from": "Customer",
+          "from_note": "brings shirt",
+          "to": "Shop",
+          "to_note": "takes price",
+          "label": "Offer",
+          "to_on": "accepts"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Okay. What about catalogues and price lists?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Same thing. A catalogue, a price list, a tender notice and an auctioneer's call all only invite offers.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Only invitations",
+          "lines": [
+            "Price tag on display",
+            "Catalogue, price list",
+            "Tender notice",
+            "Auctioneer's call"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Then where's the real offer in an auction?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Each bid is an offer. The auctioneer accepts it for the seller when the hammer falls.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "flow",
+          "from": "Bidder",
+          "from_note": "makes a bid",
+          "to": "Hammer",
+          "to_note": "sale is done",
+          "label": "Bid = offer",
+          "to_on": "hammer"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And a reward advertisement? Is that also just an invitation?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "No. A reward promised to anyone who performs a condition is a general offer. The case is Carlill versus Carbolic Smoke Ball Company.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "list",
+          "title": "General offer",
+          "lines": [
+            "Reward for a condition",
+            "Accepted by performing it",
+            "Carlill case"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Got it! Window shows, bidder offers.",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Perfect. Remember that line. The reward advertisement is the one exception.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Window shows,",
+            "Bidder offers"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Line 8 now says the auctioneer accepts for the seller when the hammer falls (Sale of Goods Act, s.64); the board shows Bidder to Hammer, so no conflicting 'Seller' label. Word count about 165.",
+    "Checker: Line 2 (voice): 'An offer can be accepted to make a contract' skips a step. Under Section 2(b) of the Indian Contract Act, an accepted proposal becomes a promise or agreement. It becomes a contract only if it is enforceable by law (Section 2(h), Section 10). Suggested wording: 'An offer, once accepted, becomes an agreement. An invitation only asks people to make offers.'",
+    "Checker: Line 12 (voice): 'The reward advertisement is the one exception' is too absolute, and it isn't clear what it is an exception to. Suggested wording: 'Unlike ordinary advertisements, a reward advertisement is a general offer, not an invitation.'",
+    "Checker: Line 4 (board flow): the 'to_note=takes price' label is vague. It should show acceptance, e.g. 'to_note=accepts at counter', so the board matches the voice line ('the shopkeeper accepts')."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Line 8 now says the auctioneer accepts for the seller when the hammer falls (Sale of Goods Act, s.64); the board shows Bidder to Hammer, so no conflicting 'Seller' label. Word count about 165.",
+  "caption": "🎬 🟨 CMA CAT · Offer vs Invitation to Offer\n\nIs a price tag really an offer? Most people get this wrong.\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 1B: Applied Business and Industrial Laws\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref explainer-261107",
+  "hold": false,
+  "hold_reason": ""
+}

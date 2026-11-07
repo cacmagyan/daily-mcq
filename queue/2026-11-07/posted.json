@@ -34,5 +34,15 @@
   "cma_inter:story": {
     "media_id": "18037291712665373",
     "posted_at": "2026-11-07T18:42:23+05:30"
+  },
+  "explainer": {
+    "media_id": "17953958196335994",
+    "permalink": "https://www.instagram.com/reel/DfcXgL8iOVS/",
+    "video_url": "https://raw.githubusercontent.com/cacmagyan/daily-mcq/86fa6751c3b585a2450d8c0ecaf1cfa2ad35e588/queue/2026-11-07/explainer.mp4",
+    "posted_at": "2026-11-07T19:42:57+05:30"
+  },
+  "explainer:story": {
+    "media_id": "17947483308358649",
+    "posted_at": "2026-11-07T19:43:34+05:30"
   }
 }

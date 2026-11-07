@@ -54,5 +54,21 @@
   "concept:story": {
     "media_id": "18646565251045868",
     "posted_at": "2026-11-07T20:42:35+05:30"
+  },
+  "cma_final": {
+    "media_id": "18347168038250875",
+    "permalink": "https://www.instagram.com/p/DfcoSp3EVgX/",
+    "image_host": "github_raw",
+    "posted_at": "2026-11-07T22:08:57+05:30"
+  },
+  "news": {
+    "media_id": "18000970266013056",
+    "permalink": "https://www.instagram.com/p/DfcoW_kkYG4/",
+    "image_host": "github_raw",
+    "posted_at": "2026-11-07T22:09:27+05:30"
+  },
+  "cma_final:story": {
+    "media_id": "18639849673015663",
+    "posted_at": "2026-11-07T22:09:39+05:30"
   }
 }

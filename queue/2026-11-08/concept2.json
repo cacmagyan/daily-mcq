@@ -1,0 +1,152 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_final",
+  "paper_code": "Paper 18",
+  "paper_name": "Corporate Financial Reporting",
+  "author": "Rahul kp",
+  "linked_mcq": "Ind AS 10 - Events after Reporting Period",
+  "topic": "Ind AS 10: Events after Reporting Period",
+  "title": "Events After",
+  "title_highlight": "Reporting Period",
+  "hook": "adjust or just disclose?",
+  "simple_words": "Something happens after the year-end but before accounts are approved. Ask: did it prove a year-end condition, or is it new?",
+  "definitions": [
+    {
+      "term": "Events after reporting period",
+      "meaning": "Favourable or unfavourable events between the end of the reporting period and the date the financial statements are approved for issue.",
+      "note": "Window ends at approval date, not AGM date"
+    },
+    {
+      "term": "Adjusting event",
+      "meaning": "Event giving evidence of conditions that existed at the end of the reporting period. Amounts in the statements are changed.",
+      "note": ""
+    }
+  ],
+  "key_points": [
+    "==Adjusting events==: evidence of conditions existing at the reporting date; recognised amounts are changed.",
+    "==Non-adjusting events==: conditions arose after the reporting date; only disclosed if material.",
+    "!!Dividends declared after the reporting period are not recognised as a liability at that date!!; disclose them.",
+    "If going concern no longer holds after the period, accounts are not prepared on a going concern basis (adjusting in effect)."
+  ],
+  "formula_heading": "Adjusting vs Non-adjusting",
+  "formula_hook": "sort every event into a box",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Event",
+      "Adjusting?",
+      "Treatment"
+    ],
+    "rows": [
+      [
+        "Customer insolvent after year-end, owed old debt",
+        "Yes",
+        "Adjust receivable"
+      ],
+      [
+        "Court case settled, existing obligation at year-end",
+        "Yes",
+        "Adjust provision"
+      ],
+      [
+        "Fraud or error found, shows statements wrong",
+        "Yes",
+        "Adjust accounts"
+      ],
+      [
+        "Fire destroys stock after year-end",
+        "No",
+        "Disclose if material"
+      ],
+      [
+        "Fall in market value of investments after year-end",
+        "No",
+        "Disclose if material"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Condition at year-end? Adjust!",
+    "text": "Adjust only if the event confirms a condition that already existed on the reporting date; new conditions are disclosed."
+  },
+  "trick_hook": "Ask one question",
+  "memory_trick": {
+    "mnemonic": "Old Cause = Adjust",
+    "explanation": "If the cause is old (existed at year-end), adjust. If the cause is new (arose after year-end), only disclose. Think of a fire: new cause, so disclose."
+  },
+  "steps": [
+    "Note year-end and approval date",
+    "Is event inside this window?",
+    "Did the condition exist at year-end?",
+    "Yes: adjust amounts",
+    "No: disclose nature and estimate"
+  ],
+  "exam_tip": "Use the approval date by the board for issue as the cut-off. Always state the reason for adjusting or not adjusting in your answer.",
+  "doubt": {
+    "question": "Dividend declared after year-end: why no liability?",
+    "answer": "There is no present obligation at the reporting date, since the dividend was not declared then. So it is not recognised; it is disclosed."
+  },
+  "mistakes_hook": "Watch the cut-off",
+  "mistakes": [
+    {
+      "wrong": "Adjusting for a fire loss that happened after year-end",
+      "right": "It is a non-adjusting event; disclose nature and financial effect if material."
+    },
+    {
+      "wrong": "Recognising proposed dividend after year-end as a liability",
+      "right": "No liability at the reporting date; disclose the dividend in the notes."
+    },
+    {
+      "wrong": "Treating the AGM date as the end of the event window",
+      "right": "The window ends on the date the financial statements are approved for issue."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Ind AS 10 Events after the Reporting Period",
+  "confidence": "high",
+  "reviewer_note": "No past-paper list was given, so past_papers is empty. Check the wording of the dividend point against the current Ind AS 10 text.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No past-paper list was given, so past_papers is empty. Check the wording of the dividend point against the current Ind AS 10 text.",
+    "Checker 1: Step 5 ('No: disclose nature and estimate'): this is incomplete and should say when disclosure is needed. Correct version: 'No: if material, disclose the nature of the event and an estimate of its financial effect, or state that such an estimate cannot be made (Ind AS 10, para 21).'",
+    "Checker 1: Key point 4 ('adjusting in effect'): this wording is loose. Ind AS 10 (paras 14–15) says the effect is pervasive. It calls for a fundamental change in the basis of accounting, not just an adjustment of recognised amounts. Suggested wording: 'If, after the reporting period, management decides to liquidate or stop trading, or has no realistic alternative, the statements shall not be prepared on a going concern basis. This is a change of basis, not a mere adjustment.'",
+    "Checker 1: Table row 4 and the memory trick (fire = disclose): add a caveat. A non-adjusting event can still be serious enough to remove the going concern assumption. In that case the treatment in para 14 applies, not just disclosure."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 18: Corporate Financial Reporting\nInd AS 10: Events after Reporting Period\n\nIn simple words: Something happens after the year-end but before accounts are approved. Ask: did it prove a year-end condition, or is it new?\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CMA Final MCQ (9:30 PM) tests this concept.\n\nBased on Ind AS 10 Events after the Reporting Period.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept2-261108",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

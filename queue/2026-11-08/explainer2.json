@@ -1,0 +1,185 @@
+{
+  "kind": "explainer2",
+  "course_id": "cma_final",
+  "paper_code": "Paper 18",
+  "paper_name": "Corporate Financial Reporting",
+  "topic": "Ind AS 10: Events after Reporting Period",
+  "concept_topic": "Ind AS 10: Events after Reporting Period",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 66.32,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Ind AS 10: adjusting vs non-adjusting events",
+    "caption_hook": "Event after year-end: do you change the accounts or just mention it?",
+    "hook_label": "ADJUST OR DISCLOSE?",
+    "lines": [
+      {
+        "who": "girl",
+        "say": "Event after year-end: do I change the accounts or just mention it?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Between year-end and the board's approval date, events happen. Ind AS 10 sorts them into two boxes.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Ind AS 10",
+          "sub": "Ends at approval, not AGM"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Okay. A customer became insolvent in April. What do we do?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Ask one thing: did the condition exist at year-end? He owed money then, so adjust.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Adjust",
+            "lines": [
+              "Old cause",
+              "Change figures"
+            ],
+            "icon": "check",
+            "color": "green"
+          },
+          "right": {
+            "title": "Disclose",
+            "lines": [
+              "New cause",
+              "If material"
+            ],
+            "icon": "door",
+            "color": "blue"
+          },
+          "right_on": "adjust"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Adjust by how much?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Say he owes ₹50,000 and the liquidator says nothing will be recovered. Write the receivable down to ₹0.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "₹50,000 − ₹50,000",
+          "big": "₹0"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And if a fire burns our stock after year-end?",
+        "shot": "close",
+        "pose": "worried"
+      },
+      {
+        "who": "teacher",
+        "say": "Fire is a new cause. Don't adjust; disclose its nature and estimated effect if material.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Fire after year-end",
+          "lines": [
+            "New cause: don't adjust",
+            "Disclose if material"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "What about a dividend declared after year-end?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Nothing was declared at year-end, so no liability then. Don't recognise it; disclose it in the notes.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Dividend after year-end",
+          "lines": [
+            "No duty at year-end",
+            "Not a liability",
+            "Disclose in notes"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Any exception to this old cause, new cause rule?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, going concern. If management must liquidate or stop trading after year-end, accounts aren't prepared on a going concern basis.",
+        "shot": "board",
+        "pose": "think",
+        "board": {
+          "kind": "list",
+          "title": "Going concern",
+          "lines": [
+            "Must stop trading?",
+            "Basis of accounts changes"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: old cause, adjust. New cause, disclose if material.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Old cause =",
+            "Adjust"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Fixed: debtor case now states the liquidator assumption (nothing recoverable, so ₹0). Non-adjusting events say \"disclose if material\" throughout (Ind AS 10 para 21). Going-concern exception added (paras 14-16). Word count is about 155 excluding the follow line. Please recount to confirm it is within 120-175.",
+    "Checker: Line 4 (voice): 'He owed money then, so adjust' points to the wrong condition. A balance owed at year-end does not on its own make the event adjusting. The condition that matters is that the customer was already in financial difficulty, so the receivable was impaired at the reporting date. Ind AS 10 para 9(b)(i) says a customer's later insolvency 'usually' confirms that loss. If a new event after year-end caused the insolvency (for example a fire at the customer's premises in April), it is non-adjusting. Suggested line: 'His insolvency usually shows he was already in difficulty at year-end, so the loss existed then: adjust.'",
+    "Checker: Line 12 (voice/board): Ind AS 10 para 14 does not apply only when management 'must' liquidate or stop trading. It also applies when management intends to liquidate or cease trading, or has no realistic alternative but to do so. Suggested line: 'If, after year-end, management intends to liquidate or stop trading, or has no realistic alternative but to, the going concern basis is not used.'",
+    "Checker: Line 8 (voice): The full disclosure requirement for a material non-adjusting event is the nature of the event and an estimate of its financial effect, or a statement that such an estimate cannot be made. The line could add 'or state that it can't be estimated'."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Fixed: debtor case now states the liquidator assumption (nothing recoverable, so ₹0). Non-adjusting events say \"disclose if material\" throughout (Ind AS 10 para 21). Going-concern exception added (paras 14-16). Word count is about 155 excluding the follow line. Please recount to confirm it is within 120-175.",
+  "caption": "🎬 🟥 CMA Final · Ind AS 10: adjusting vs non-adjusting events\n\nEvent after year-end: do you change the accounts or just mention it?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 18: Corporate Financial Reporting\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref explainer2-261108",
+  "hold": false,
+  "hold_reason": ""
+}

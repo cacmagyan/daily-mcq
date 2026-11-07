@@ -1,0 +1,88 @@
+{
+  "kind": "news",
+  "date": "2026-11-07",
+  "stories": [
+    {
+      "tag": "SEBI",
+      "headline": "SEBI's new settlement rules take effect from November 7",
+      "points": [
+        "SEBI's 2026 settlement regulations replace the 2018 rules; fee is ₹25,000 for individuals and ₹35,000 for others.",
+        "Applicants generally get 90 days from the show-cause notice; pending cases get until February 4, 2027, at 20% higher amount.",
+        "Fast-track routes exist for delayed filings and for settlements up to ₹10 lakh; wilful defaulters stay barred."
+      ],
+      "why_it_matters": "Settlement rules, fees and deadlines are part of securities law and compliance work that CA and CMA professionals advise clients on.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "SEBI settlement rules from November 7: Who can apply online, how much to pay and the 90-day deadline explained",
+      "link": "https://www.livemint.com/money/personal-finance/sebi-settlement-rules-from-november-7-who-can-apply-online-how-much-to-pay-and-the-90-day-deadline-explained-11794046408426.html",
+      "published": "2026-11-07T16:12:13+05:30",
+      "check": "minor",
+      "check_notes": [
+        "'Pending cases get until February 4, 2027' leaves out the eligibility limits: the source says this applies to specified proceedings pending on Nov 7, 2026, and only to applicants who haven't filed or whose application under the 2018 rules was rejected, returned or withdrawn.",
+        "'Wilful defaulters stay barred' is slightly stronger than the source, which says the framework keeps restrictions on settling cases involving wilful defaulters (wording only)."
+      ]
+    },
+    {
+      "tag": "GST",
+      "headline": "GST may apply to free corporate guarantees between related firms",
+      "points": [
+        "A TaxGuru article says a holding company's guarantee for a subsidiary's loan can attract GST even with no commission charged.",
+        "It cites Section 7 with Schedule I, which treats certain supplies between related persons as supplies without consideration.",
+        "Rule 28(2) generally values the guarantee at 1% of the amount per year or actual consideration, whichever is higher."
+      ],
+      "why_it_matters": "Shows how GST supply, valuation, input tax credit and related-party rules apply to group transactions that students meet in practice.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | GST on Corporate Guarantees Between Related Companies: Valuation, ITC and Case Study",
+      "link": "https://taxguru.in/goods-and-service-tax/gst-corporate-guarantees-related-companies-valuation-itc-case-study.html",
+      "published": "2026-11-06T15:31:04+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 2 wording is awkward: 'treats certain supplies between related persons as supplies without consideration' could mislead; the source says such transactions are treated as supplies even when made without consideration."
+      ]
+    },
+    {
+      "tag": "GST",
+      "headline": "Madras HC: Customs must process IGST export refund on manual shipping bill",
+      "points": [
+        "TD Power Systems' export refund was sent by Customs to the GST Department; GST Department said it had no jurisdiction.",
+        "Court held Rule 96(3) of CGST Rules gives processing to Customs' designated system or the proper Customs officer.",
+        "Customs was directed to sanction the admissible IGST refund with interest within four weeks of getting the order."
+      ],
+      "why_it_matters": "Shows which authority handles IGST refunds on exports under Rule 96, a key point in GST refund practice and law papers.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | Customs Cannot Refer Manual Shipping Bill IGST Refund to GST Department: Madras HC",
+      "link": "https://taxguru.in/goods-and-service-tax/customs-cannot-refer-manual-shipping-bill-igst-refund-gst-department-madras-hc.html",
+      "published": "2026-11-06T17:01:13+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'Goods and Services Tax | Rs 9,999 Gets a Pass, Rs 10,000 Get': why_it_matters is longer than 120 characters",
+    "skipped 'CA, CS, CMA | CA Foundation Pass Rates 2018 to September 202': a point is longer than 110 characters",
+    "skipped 'Income Tax | IFSC Aircraft-Leasing Dividends: Form 1(N) No-T': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST ITC Mismatch Notices: A Stage-b': why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Form 112A for NPO Mergers: Rule 189A Conditions': a point is longer than 110 characters",
+    "skipped 'Corporate Law | Mere Non-Disclosure of Loan Does Not Establi': a point is longer than 110 characters",
+    "skipped 'Income Tax | Penalty Under Section 271(1)(c) Deleted on Esti': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Rs 48 lakh in cash received from the sale of two properties,': not usable",
+    "skipped 'Finance | Punjab National Bank Foreign Outward Remittance PN': a point is longer than 110 characters",
+    "skipped 'Income Tax | Section 80P(4) Does Not Bar Investing Society’s': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 07 Nov 2026\n\n1️⃣ SEBI's new settlement rules take effect from November 7 (Mint)\n2️⃣ GST may apply to free corporate guarantees between related firms (TaxGuru)\n3️⃣ Madras HC: Customs must process IGST export refund on manual shipping bill (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Mint, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261107",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

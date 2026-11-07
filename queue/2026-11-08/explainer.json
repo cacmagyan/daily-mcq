@@ -3,7 +3,7 @@
   "course_id": "ca_inter",
   "topic": "Offer vs Invitation to Offer",
   "concept_topic": "Offer vs Invitation to Offer",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 4: board right_on 'Invitation' is not a word of the line; line 6: board to is 10 characters; at most 9; line 6: board to_note is 18 characters; at most 12; line 6: board to_on 'accepts' is not a word of the line; line 10: board to is 10 characters; at most 9; the lines have 221",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 4: board right_on 'Invitation' is not a word of the line; line 10: board to is 10 characters; at most 9; line 12: board right_on 'Price' is not a word of the line; the lines have 192 words; write 120-175",
   "hold": false,
   "hold_reason": ""
 }

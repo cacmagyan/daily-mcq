@@ -1,0 +1,82 @@
+{
+  "kind": "news",
+  "date": "2026-11-08",
+  "stories": [
+    {
+      "tag": "GST",
+      "headline": "GSTR-7 for October 2026: GST TDS return due 10 November",
+      "points": [
+        "Per the guide, GSTR-7 for October 2026 is due 10 November 2026 unless a later notification changes it.",
+        "Section 51 requires notified deductors to deduct 2% GST TDS when a contract's taxable value exceeds ₹2.5 lakh.",
+        "The guide says GST TDS reaches the deductee's cash ledger and is not input tax credit, so it needs separate reconciliation."
+      ],
+      "why_it_matters": "GST TDS rules, tax-head choice and reconciliation of deductions are core compliance topics for CA and CMA students working in GST.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | GSTR-7 for October 2026: GST TDS Return, Deductee Credit and Reconciliation Controls",
+      "link": "https://taxguru.in/goods-and-service-tax/gstr-7-for-october-2026-gst-tds-return-deductee-credit-and-reconciliation-controls.html",
+      "published": "2026-11-08T14:00:08+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 2 presents 2% as a flat rule. The source calls it the 'standard' 2% in aggregate (1% CGST + 1% SGST/UTGST, or 2% IGST), subject to a place-of-supply exception where no deduction is made. It also says the ₹2.5 lakh threshold excludes GST and cess. Adding these qualifiers would make the point more precise.",
+        "The 'Why it matters' line about CA and CMA students is editorial framing that the source doesn't state. It's acceptable as context, not as a factual claim."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT deletes ₹4.42 lakh penalty over late PF, ESI deposits",
+      "points": [
+        "ITAT Ahmedabad removed a ₹4,42,866 Section 270A misreporting penalty on Nascent Info Technologies for AY 2017-18.",
+        "The officer had disallowed ₹7.16 lakh of employee PF and ESI contributions that were deposited after the due dates.",
+        "Tribunal held a disallowance alone is not misreporting; the department must show a case under Section 270A(9)."
+      ],
+      "why_it_matters": "Shows the difference between a disallowance and a penalty under Section 270A, a key point in tax assessments and penalty work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "PF contributions deposited late? Can the income tax department impose a penalty on your employer? ITAT clarifies",
+      "link": "https://www.livemint.com/money/personal-finance/pf-contributions-deposited-late-can-the-income-tax-department-impose-a-penalty-on-your-employer-itat-clarifies-11794122922693.html",
+      "published": "2026-11-08T13:04:15+05:30",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Cuttack deletes tax audit penalty for share trading loss case",
+      "points": [
+        "ITAT Cuttack deleted a Section 271B penalty for AY 2013-14 against individual Ratan Kumar Kejriwal.",
+        "The assessee said his share losses were not business activity, so no audit was required.",
+        "Tribunal noted the Revenue's own scrutiny selection reason described him as having no business, and called this decisive."
+      ],
+      "why_it_matters": "Section 271B penalty depends on whether a business exists and an audit was required, a key point in tax audit and penalty work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Share Trading Loss Without Business Activity Does Not Justify Tax Audit Penalty: ITAT Cuttack",
+      "link": "https://taxguru.in/income-tax/share-trading-loss-without-business-activity-not-justify-tax-audit-penalty-itat-cuttack.html",
+      "published": "2026-11-08T04:49:32+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'Fema / RBI | RBI Draft Priority Sector Lending Directions 20': a point is longer than 110 characters",
+    "skipped 'Income Tax | Supreme Court Upholds Section 10(23C)(iiiab) Re': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | Same Officer Cannot Conduct GST Aud': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Refund Cannot Be Denied on Limi': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | IFSC Aircraft-Leasing Dividends: Form 1(N) No-T': a point is longer than 110 characters",
+    "skipped 'Corporate Law | Subsequent Mediation Cannot Establish Pre-Ex': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 08 Nov 2026\n\n1️⃣ GSTR-7 for October 2026: GST TDS return due 10 November (TaxGuru)\n2️⃣ ITAT deletes ₹4.42 lakh penalty over late PF, ESI deposits (Mint)\n3️⃣ ITAT Cuttack deletes tax audit penalty for share trading loss case (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Mint, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261108",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

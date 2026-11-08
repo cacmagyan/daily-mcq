@@ -1,9 +1,194 @@
 {
   "kind": "explainer",
   "course_id": "ca_inter",
+  "paper_code": "Paper 2",
+  "paper_name": "Corporate and Other Laws",
   "topic": "Offer vs Invitation to Offer",
   "concept_topic": "Offer vs Invitation to Offer",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 4: board right_on 'Invitation' is not a word of the line; line 10: board to is 10 characters; at most 9; line 12: board right_on 'Price' is not a word of the line; the lines have 192 words; write 120-175",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 63.39,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Offer vs Invitation to Offer",
+    "caption_hook": "A price tag is not a promise! Offer vs invitation to offer, explained.",
+    "hook_label": "PRICE TAG = PROMISE?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Price tag on a shirt, yet the shopkeeper can refuse to sell?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, he can. A price tag is only an invitation to offer. First, what is an offer?",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Offer or Not?",
+          "sub": "Price tag is not a promise"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Okay, so what exactly is an offer?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "You show willingness to be bound once they say yes. That intention is the test.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Offer",
+          "lines": [
+            "Shows willingness",
+            "Intends to be bound",
+            "Yes makes a contract"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And an invitation to offer?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "It only asks others to make offers. You may accept or refuse them. Accepting it makes no contract.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Offer",
+            "lines": [
+              "Bound on yes"
+            ],
+            "icon": "doc",
+            "color": "green"
+          },
+          "right": {
+            "title": "Invitation",
+            "lines": [
+              "Invites offers"
+            ],
+            "icon": "bulb",
+            "color": "blue"
+          },
+          "right_on": "asks"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Then in a shop, who makes the offer?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "The customer. At the counter, he offers to buy at the tag price. The shopkeeper accepts, or refuses.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "Customer",
+          "from_note": "offers",
+          "to": "Seller",
+          "to_note": "accepts",
+          "label": "tag price",
+          "to_on": "accepts"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Oh! So the display just invites. What about auctions?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Same idea. The auctioneer's announcement invites. Your bid is the offer, and the fall of the hammer is acceptance.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Auction",
+          "lines": [
+            "Announcement: invitation",
+            "Bid: the offer",
+            "Hammer falls: acceptance"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Hmm, so is every advertisement only an invitation?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "No. A reward advertisement is a general offer. Performing the condition accepts it, as in Carlill's case.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "list",
+          "title": "General offer",
+          "lines": [
+            "Reward advertisement",
+            "Performing = accepting",
+            "Carlill v. Carbolic"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Got it! Tags, catalogues and tenders only invite offers.",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: window shows, hand offers.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Window shows,",
+            "hand offers"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Board \"to\" changed to \"Seller\" (6 chars). Word total is about 170 including the follow line; check it is within 175.",
+    "Checker: Line 13 (boy, desk): \"Tags, catalogues and tenders only invite offers\" is loose. Only the tender notice issued by the party inviting tenders is an invitation to offer. A tender submitted in response to it is an offer. Correct version: \"Tags, catalogues and tender notices only invite offers.\""
+  ],
+  "attempts": 3,
+  "reviewer_note": "Board \"to\" changed to \"Seller\" (6 chars). Word total is about 170 including the follow line; check it is within 175.",
+  "caption": "🎬 🟦 CA Inter · Offer vs Invitation to Offer\n\nA price tag is not a promise! Offer vs invitation to offer, explained.\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 2: Corporate and Other Laws\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAInter #CAIntermediate #ICAI #CAStudents\n\nref explainer-261108",
   "hold": false,
   "hold_reason": ""
 }

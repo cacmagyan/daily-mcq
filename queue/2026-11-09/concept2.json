@@ -1,0 +1,142 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 1",
+  "paper_name": "Accounting",
+  "author": "Rahul kp",
+  "linked_mcq": "Rectification of Errors: Suspense Account",
+  "topic": "Suspense Account in Rectification",
+  "title": "Suspense Account",
+  "title_highlight": "Rectification",
+  "hook": "park the difference here!",
+  "simple_words": "If the trial balance does not tally, the gap is parked in Suspense A/c until the errors are found.",
+  "definitions": [
+    {
+      "term": "Suspense Account",
+      "meaning": "A temporary account that holds the trial balance difference until the errors causing it are located and rectified.",
+      "note": "Nil after rectification"
+    },
+    {
+      "term": "One-sided error",
+      "meaning": "An error affecting only one account, like a wrong or omitted posting on one side. It upsets the trial balance.",
+      "note": "Needs Suspense A/c"
+    }
+  ],
+  "key_points": [
+    "If the debit total is short, Suspense A/c is placed on the ==debit== side of the trial balance.",
+    "If the credit total is short, Suspense A/c is placed on the ==credit== side.",
+    "One-sided errors go through Suspense A/c; !!two-sided errors never touch it!!.",
+    "Once all one-sided errors are rectified, the Suspense balance becomes nil."
+  ],
+  "formula_heading": "Suspense Entries",
+  "formula_hook": "one side fixed, Suspense plugs",
+  "formulas": [],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "entries": [
+    {
+      "label": "Sales under-credited (credit short)",
+      "debit": [
+        "Suspense A/c"
+      ],
+      "credit": [
+        "Sales A/c"
+      ],
+      "narration": "Being sales under-credited, now rectified"
+    },
+    {
+      "label": "Purchases under-debited (debit short)",
+      "debit": [
+        "Purchases A/c"
+      ],
+      "credit": [
+        "Suspense A/c"
+      ],
+      "narration": "Being purchases under-debited, now rectified"
+    }
+  ],
+  "insight": {
+    "punchline": "Suspense is only a parking slot!",
+    "text": "Once all one-sided errors are rectified through Suspense A/c, its balance becomes nil."
+  },
+  "trick_hook": "Debit short? Suspense gets debit",
+  "memory_trick": {
+    "mnemonic": "Short side gets the plug",
+    "explanation": "Suspense is a plug put on the shorter side so totals match. Debit short: Suspense debit. Credit short: Suspense credit."
+  },
+  "steps": [
+    "Find which trial balance side is short",
+    "Open Suspense A/c on that side",
+    "List each error: one-sided or two-sided",
+    "Pass entry; Suspense for one-sided only",
+    "Check Suspense closes to nil"
+  ],
+  "exam_tip": "Pass a rectifying entry through Suspense A/c only when the error is one-sided; two-sided errors are fixed between the real accounts.",
+  "doubt": {
+    "question": "Why does the trial balance difference need no journal entry?",
+    "answer": "The difference is simply shown in Suspense A/c on the shorter side of the trial balance. Journal entries are passed only to rectify errors."
+  },
+  "mistakes_hook": "tally first, then fix",
+  "mistakes": [
+    {
+      "wrong": "Putting Suspense on the credit side when the debit total is short",
+      "right": "Debit total short means Suspense A/c is shown on the debit side."
+    },
+    {
+      "wrong": "Passing a Suspense entry for a two-sided error like wrong head of account",
+      "right": "Two-sided errors are rectified between the two accounts concerned; Suspense is not used."
+    },
+    {
+      "wrong": "Assuming Suspense is always debited",
+      "right": "It is debited or credited depending on which trial balance side is short."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "ICAI CA Foundation Accounting study material",
+  "confidence": "high",
+  "reviewer_note": "No past-paper list was given, so past_papers is empty. Slide 2 uses entries only; the trial balance difference is not journalised.",
+  "law_sensitive": false,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No past-paper list was given, so past_papers is empty. Slide 2 uses entries only; the trial balance difference is not journalised.",
+    "Checker 1: Key point 3 / exam tip / mistake 2 (overgeneralisation): 'two-sided errors never touch it' is too absolute. A Suspense entry is needed whenever the original error caused a trial balance difference, even if two accounts are involved. Example: goods sold to X for ₹1,000 were posted to the credit of Y's account. The correction is X A/c Dr ₹1,000; Y A/c Dr ₹1,000; To Suspense A/c ₹2,000. Suggested wording: 'Errors that did not affect the trial balance (where both debit and credit are complete and equal) are rectified between the accounts concerned, without Suspense A/c. Any error that caused a difference in the trial balance is rectified through Suspense A/c.'",
+    "Checker 1: Definition 2 (wording): an error 'affecting only one account' also includes casting errors in subsidiary books and errors in carrying forward balances, not just wrong or omitted postings. Say 'e.g.' so the list is not read as complete."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.16,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟩 CA Foundation · Concept of the day\nPaper 1: Accounting\nSuspense Account in Rectification\n\nIn simple words: If the trial balance does not tally, the gap is parked in Suspense A/c until the errors are found.\n\nSwipe for the journal entries, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CA Foundation MCQ (7:30 AM) tests this concept.\n\nBased on ICAI CA Foundation Accounting study material.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFoundation #ICAI #CAStudents #CAExams\n\nref concept2-261109",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

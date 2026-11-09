@@ -1,0 +1,158 @@
+{
+  "kind": "explainer2",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 8",
+  "paper_name": "Cost Accounting",
+  "topic": "Joint Products: NRV Method",
+  "concept_topic": "Joint Products: NRV Method",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 75.93,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Joint Products: NRV Method",
+    "caption_hook": "One process, two products. How do you split the common cost?",
+    "hook_label": "SPLIT COST BY VALUE?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "One process, two products. How do we split the common cost?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "That's joint cost. One common method is to share it by net realisable value, or NRV.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Joint Products",
+          "sub": "NRV Method"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Net realisable value? Sounds heavy. What is it?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Sales value minus further processing cost and selling cost, both after split-off.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "NRV of a product",
+          "formula": "NRV = S − (F + SD)",
+          "sub": "S sales, F further cost, SD selling cost"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So we don't deduct the joint cost here?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Never. Joint cost is common. Only costs after split-off are deducted.",
+        "shot": "board",
+        "pose": "thumbs"
+      },
+      {
+        "who": "teacher",
+        "say": "Joint cost is ₹65,000. A sells for ₹1,00,000, with ₹20,000 further processing cost and no selling cost.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "calc",
+          "top": "₹1,00,000 − ₹20,000",
+          "big": "₹80,000"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So A's NRV is ₹80,000. What about B?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "B sells for ₹70,000, with ₹20,000 further processing cost and no selling cost.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "₹70,000 − ₹20,000",
+          "big": "₹50,000"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So total NRV is ₹1,30,000. Ratio eight to five?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! Share equals NRV times joint cost, over total NRV. A gets ₹40,000, B gets ₹25,000.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "formula",
+          "title": "Joint cost share",
+          "formula": "NRV × Joint cost ÷ Total NRV",
+          "sub": "A: 80/130 × 65,000 = 40,000; B = 25,000"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Why not split by units produced?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Units ignore value. A low-value product would carry too much cost. NRV matches cost to ability to bear it.",
+        "shot": "board",
+        "pose": "explain"
+      },
+      {
+        "who": "teacher",
+        "say": "Sell, Subtract, Split. Value decides the share!",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Sell, Subtract",
+            "Split"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Example: joint cost ₹65,000; A NRV 80,000, B NRV 50,000, total 1,30,000, ratio 8:5, shares 40,000 and 25,000. No selling cost stated for both. Words board shows \"Sell, Subtract\" / \"Split\" (14-char limit), matching the voice's words."
+  ],
+  "attempts": 2,
+  "reviewer_note": "Example: joint cost ₹65,000; A NRV 80,000, B NRV 50,000, total 1,30,000, ratio 8:5, shares 40,000 and 25,000. No selling cost stated for both. Words board shows \"Sell, Subtract\" / \"Split\" (14-char limit), matching the voice's words.",
+  "caption": "🎬 🟧 CMA Inter · Joint Products: NRV Method\n\nOne process, two products. How do you split the common cost?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 8: Cost Accounting\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref explainer2-261110",
+  "hold": false,
+  "hold_reason": ""
+}

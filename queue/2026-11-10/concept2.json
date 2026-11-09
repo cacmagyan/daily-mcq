@@ -1,0 +1,143 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 8",
+  "paper_name": "Cost Accounting",
+  "author": "Rahul kp",
+  "linked_mcq": "Joint Products: NRV Method",
+  "topic": "Joint Products: NRV Method",
+  "title": "Joint Products",
+  "title_highlight": "NRV Method",
+  "hook": "split the joint cost by value!",
+  "simple_words": "One process gives many products. Share the joint cost in the ratio of what each product can earn after further costs.",
+  "definitions": [
+    {
+      "term": "Joint products",
+      "meaning": "Two or more main products of equal importance, produced together from the same raw material and process, and separated at the split-off point.",
+      "note": "Same input, same process"
+    },
+    {
+      "term": "Net Realisable Value (NRV)",
+      "meaning": "Final sales value less further processing cost after split-off, less selling and distribution cost, if any.",
+      "note": "Value after all later costs"
+    }
+  ],
+  "key_points": [
+    "Joint cost is common up to the ==split-off point==; it cannot be traced to one product.",
+    "==NRV method== apportions joint cost in the ratio of NRV of each product.",
+    "It is used when products need further processing after split-off.",
+    "!!Only the further cost after split-off is deducted; joint cost is never deducted from sales value!!."
+  ],
+  "formula_heading": "The NRV Formula",
+  "formula_hook": "sales less later costs, then share",
+  "formulas": [
+    {
+      "name": "NRV of a product",
+      "lhs": "NRV",
+      "rhs": "S − (F + SD)",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "S = final sales value of the product, F = further processing cost after split-off, SD = selling and distribution cost, if any."
+    },
+    {
+      "name": "Joint cost share of a product",
+      "lhs": "Share of joint cost",
+      "rhs": "",
+      "numerator": "NRV of the product × Total joint cost",
+      "denominator": "Total NRV of all joint products",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Numerator uses the NRV of that one product; denominator is the sum of NRV of all joint products."
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Value decides the share!",
+    "text": "Higher NRV means a bigger share of joint cost, because that product can bear more of it."
+  },
+  "trick_hook": "remember the order of working",
+  "memory_trick": {
+    "mnemonic": "Sell, Subtract, Split",
+    "explanation": "Sell value first, Subtract later costs to get NRV, then Split the joint cost in the NRV ratio."
+  },
+  "steps": [
+    "Write final sales value of each",
+    "Deduct further and selling cost",
+    "Get NRV; total the NRVs",
+    "Find NRV ratio",
+    "Split joint cost in that ratio"
+  ],
+  "exam_tip": "Check whether the question gives sales value at split-off or after further processing. Use the NRV method only for the second case.",
+  "doubt": {
+    "question": "Why not split joint cost by units produced?",
+    "answer": "Units ignore value. A low-value product would carry too much cost. NRV matches cost to ability to bear it."
+  },
+  "mistakes_hook": "avoid these slips",
+  "mistakes": [
+    {
+      "wrong": "Deducting the joint cost from sales value to get NRV",
+      "right": "Deduct only further processing and selling costs after split-off. Then apportion the joint cost on NRV."
+    },
+    {
+      "wrong": "Ignoring further processing cost of a product",
+      "right": "Deduct each product's own further processing cost before finding the NRV ratio."
+    },
+    {
+      "wrong": "Adding further cost to the share of joint cost, then dividing again",
+      "right": "Joint cost share comes from the NRV ratio. Add the product's further cost afterwards only for its total cost."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "No past-paper list was given. Check the \"Mistakes\" wording against ICMAI study material.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No past-paper list was given. Check the \"Mistakes\" wording against ICMAI study material.",
+    "Checker 1: Definition 2 / Formula 1 legend: the ICMAI study material describes the NRV method as sales value at the finished stage less estimated profit margin (if given), selling and distribution expenses and post-split-off costs. The note's formula NRV = S − (F + SD) is the standard working, but it should add: 'less estimated profit margin, if the question gives one'.",
+    "Checker 1: Mistake 3 'wrong' wording is unclear: 'Adding further cost to the share of joint cost, then dividing again' does not describe a recognisable slip. Rephrase as 'Adding the further processing cost to the joint cost before apportioning it in the NRV ratio'. The 'right' text is correct.",
+    "Checker 1: Exam tip: 'Use the NRV method only for the second case' is slightly too absolute. Better: 'If the sales value at split-off is given, use the sales-value-at-split-off method. If only the final sales value after further processing is given, use the NRV method.'"
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.02,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.22,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟧 CMA Inter · Concept of the day\nPaper 8: Cost Accounting\nJoint Products: NRV Method\n\nIn simple words: One process gives many products. Share the joint cost in the ratio of what each product can earn after further costs.\n\nSwipe for the formula, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CMA Inter MCQ (6:30 PM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref concept2-261110",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

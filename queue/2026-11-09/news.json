@@ -1,0 +1,94 @@
+{
+  "kind": "news",
+  "date": "2026-11-09",
+  "stories": [
+    {
+      "tag": "Budget",
+      "headline": "Budget 2027-28 may back local manufacturing of 100 products",
+      "points": [
+        "The government may announce support measures in Budget 2027-28 to boost domestic making of 100 products.",
+        "The list includes auto components, chemicals and machinery; the aim is to cut dependence on imports.",
+        "DPIIT picked the products after consulting ministries and industry."
+      ],
+      "why_it_matters": "Budget support measures often change tax and duty rules, which CA and CMA students study for taxation and costing work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Economic Times",
+      "source_title": "Govt may extend support measures in FY28 Budget to boost manufacturing of 100 products: Official",
+      "link": "https://economictimes.indiatimes.com/news/economy/policy/govt-may-extend-support-measures-in-fy28-budget-to-boost-manufacturing-of-100-products-official/articleshow/135680256.cms",
+      "published": "2026-11-09T16:51:52+05:30",
+      "check": "minor",
+      "check_notes": [
+        "Point 1: 'domestic making of 100 products' is awkward wording; 'domestic manufacturing' would read better.",
+        "Point 1 closely follows the source's sentence structure, though it is reworded rather than copied.",
+        "Why it matters: the claim that budget support measures often change tax and duty rules is general background, not something the source says. It is framed as context and adds no new fact, number or name."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "Section 12 of Income-tax Act, 2025 covers party and electoral trust exemptions",
+      "points": [
+        "Section 12 with Schedule VIII exempts specified income of registered parties and contributions to approved electoral trusts.",
+        "Parties must keep books and donor records, get an audit, follow the ₹2,000 cash limit, file the report and return on time.",
+        "Trusts must distribute 95% of donations; their interest income is not exempt. Donor deductions moved to Sections 136 and 137."
+      ],
+      "why_it_matters": "Exemption depends on meeting every condition, so students handling audits and returns of such bodies must check each one.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Section 12 of the Income-tax Act, 2025: Political Parties, Electoral Trusts & Donor Deductions",
+      "link": "https://taxguru.in/income-tax/section-12-income-tax-act-2025-political-parties-electoral-trusts-donor-deductions.html",
+      "published": "2026-11-09T09:40:38+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 3 says trusts must distribute 95% of donations. The source says 95% of the year's donations plus any surplus brought forward from earlier years, so the story oversimplifies the test.",
+        "'Why it matters' refers to 'students handling audits and returns.' The source never mentions students; it is written from a practitioner's view. This framing is the story's own, not the source's.",
+        "Points 1 and 2 follow the source summary's sentence structure and list of items very closely, changing only a few words. They are not copied word for word, but they should be reworded more."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "Bombay HC quashes tax reassessment issued under defunct company's PAN",
+      "points": [
+        "Bombay High Court quashed reassessment started under the PAN of a company that had become an LLP in 2018.",
+        "Court said addressing notices to the LLP did not fix the defect, as proceedings stayed tied to the old company PAN.",
+        "Court also held reassessment cannot be used for verification or roving enquiries without material showing escaped income."
+      ],
+      "why_it_matters": "Shows validity of reassessment notices depends on the correct assessee, PAN and real material, key points in tax law and practice.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Reassessment Under Defunct Company PAN Quashed: Bombay High Court",
+      "link": "https://taxguru.in/income-tax/reassessment-defunct-company-pan-quashed-bombay-high-court.html",
+      "published": "2026-11-09T08:44:54+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'Will your old cheque book become invalid after December 31, ': a point is longer than 110 characters",
+    "skipped 'Sold your house and accepted ₹11 lakh in cash? ITAT deletes ': a point is longer than 110 characters",
+    "skipped 'Corporate Law | CIRP Cannot Be Withdrawn Ignoring Other Cred': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Corporate Law | ADGM Court Holds Shetty and Manghat Liable f': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Gold Seizure Limits Do Not Establish Lawful Acq': headline is longer than 70 characters",
+    "skipped 'Goods and Services Tax | GST on RWA Maintenance Above ₹7,500': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Demand Order Under Section 74(1': why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | ITAT Cuttack Cancels Section 271D Penalty on Ca': a point is longer than 110 characters",
+    "skipped 'Income Tax | Section 54 Exemption Allowed Despite Non-Filing': a point is longer than 110 characters",
+    "skipped 'Income Tax | Income Tax Search Additions: Section 132(4) Sta': a point is longer than 110 characters",
+    "skipped 'Income Tax | Late Filing of Form 56F Cannot Defeat Section 1': a point is longer than 110 characters",
+    "skipped 'Income Tax | Interest Cannot Inflate Tax Effect Beyond Reven': a point is longer than 110 characters",
+    "dropped 'Several GST orders for one year are not automatically invali': Point 1 overstates the source. The source says multiple orders are 'not automatically unlawful' and lists several tests: whether the transactions and liabilities are independent, whether each officer "
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 09 Nov 2026\n\n1️⃣ Budget 2027-28 may back local manufacturing of 100 products (Economic Times)\n2️⃣ Section 12 of Income-tax Act, 2025 covers party and electoral trust exemptions (TaxGuru)\n3️⃣ Bombay HC quashes tax reassessment issued under defunct company's PAN (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Economic Times, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261109",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

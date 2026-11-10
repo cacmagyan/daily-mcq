@@ -1,0 +1,183 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_final",
+  "paper_code": "Paper 17",
+  "paper_name": "Cost and Management Audit",
+  "topic": "Cost Audit vs Financial Audit",
+  "concept_topic": "Cost Audit vs Financial Audit",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 66.72,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Cost Audit vs Financial Audit",
+    "caption_hook": "Same company, two audits. Who checks what, and who reads the report?",
+    "hook_label": "2 AUDITS, ONE COMPANY?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Same company, two audits? Why isn't one enough?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Same company, different lens! Financial audit checks financial statements. Cost audit checks cost records.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Cost Audit",
+          "sub": "vs Financial Audit"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Does cost audit also give a true and fair opinion?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! Both do, on different things. Financial audit: financial statements. Cost audit: cost of production, cost of sales and margin.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Financial",
+            "icon": "doc",
+            "color": "navy",
+            "lines": [
+              "Statements",
+              "True and fair"
+            ]
+          },
+          "right": {
+            "title": "Cost",
+            "icon": "factory",
+            "color": "green",
+            "lines": [
+              "Cost & margin",
+              "True and fair"
+            ]
+          },
+          "right_on": "Cost"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Do the same people do both?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "No. Financial auditor is a chartered accountant in practice or a firm. Cost auditor is a cost accountant in practice.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Who audits?",
+          "lines": [
+            "Financial: CA or CA firm",
+            "Cost: cost accountant",
+            "in practice"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And who appoints them?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Members appoint the financial auditor. The Board appoints the cost auditor on the Audit Committee's recommendation; members ratify the fee.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "flow",
+          "from": "Board",
+          "from_note": "Audit Cttee",
+          "to": "Auditor",
+          "to_note": "Fee: members",
+          "label": "appoints",
+          "to_on": "cost"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Then where does the cost audit report go?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "The cost auditor reports to the Board. The company files it with the Central Government in Form CRA-4.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Cost audit report",
+          "lines": [
+            "Auditor to Board",
+            "Company files CRA-4",
+            "To Central Govt"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And the financial audit report?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "That goes to members. Cost audit also helps management with cost control and efficiency.",
+        "shot": "board",
+        "pose": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: financial audit for members, cost audit for the Board and cost control.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "F: Members",
+            "C: Board"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Check: Audit Committee recommendation applies where an Audit Committee is required (Rule 14); the report is submitted to the Board within 180 days (Rule 6(5)) and filed in CRA-4 within 30 days of receipt (Sec 148(6)). The statutory auditor cannot also be the cost auditor (Sec 148(3) proviso); not stated in the script due to length. Word count about 160.",
+    "Checker: Line 6 voice and board ('Cost: cost accountant in practice'): this makes the comparison look lopsided, because the financial side mentions a firm but the cost side doesn't. Under Section 148(3) and Rule 2(b) of the Companies (Audit and Auditors) Rules, 2014, a cost accountant in practice includes a firm of cost accountants. Suggested fix: 'Cost auditor is a cost accountant in practice or a firm of cost accountants.' On the board: 'Cost: cost accountant / firm'.",
+    "Checker: Line 1 / hook ('Same company, two audits?'): this suggests every company has both audits. A cost audit is needed only when the company is covered by the Companies (Cost Records and Audit) Rules, 2014 under Section 148, depending on the specified sector and turnover thresholds. Suggested addition: 'If the company is covered under Section 148, it has both audits.'",
+    "Checker: Line 8: the Audit Committee's recommendation applies only where the company is required to have an Audit Committee. Otherwise, the Board appoints the cost auditor directly. Suggested wording: 'The Board appoints the cost auditor, on the Audit Committee's recommendation where one is required.' A small wording point: under Rule 14, members ratify the remuneration (the fee), not the appointment, which the script already gets right.",
+    "Checker: Line 13 ('cost audit for the Board'): this is simplified but acceptable. The report goes to the Board and is then filed with the Central Government in Form CRA-4 (Line 10). Suggested wording: 'cost audit: Board, then Central Government'."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Check: Audit Committee recommendation applies where an Audit Committee is required (Rule 14); the report is submitted to the Board within 180 days (Rule 6(5)) and filed in CRA-4 within 30 days of receipt (Sec 148(6)). The statutory auditor cannot also be the cost auditor (Sec 148(3) proviso); not stated in the script due to length. Word count about 160.",
+  "caption": "🎬 🟥 CMA Final · Cost Audit vs Financial Audit\n\nSame company, two audits. Who checks what, and who reads the report?\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 17: Cost and Management Audit\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref explainer-261111",
+  "hold": false,
+  "hold_reason": ""
+}

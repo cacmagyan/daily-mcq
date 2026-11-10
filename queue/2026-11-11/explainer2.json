@@ -1,0 +1,171 @@
+{
+  "kind": "explainer2",
+  "course_id": "ca_final",
+  "paper_code": "Paper 2",
+  "paper_name": "Advanced Financial Management",
+  "topic": "Post-merger EPS (share exchange)",
+  "concept_topic": "Post-merger EPS (share exchange)",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 73.19,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Post-merger EPS in a share swap",
+    "caption_hook": "After a share swap merger, does the acquirer's EPS rise or fall?",
+    "hook_label": "DOES EPS RISE?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "After a share swap merger, does the acquirer's EPS rise?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Good question. Post-merger EPS is combined profit divided by the acquirer's old shares plus new shares issued.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Post-Merger EPS",
+          "sub": "Combined profit ÷ total shares"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "What are the new shares?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Target shares times the exchange ratio. That's how many acquirer shares we issue to target holders.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "New shares issued",
+          "formula": "N = S_B × R",
+          "sub": "S_B target shares, R ratio per share"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Let's take numbers, Ma'am.",
+        "shot": "desk",
+        "pose": "excited",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Acquirer has 2,00,000 shares and profit of ₹10,00,000. Target has 1,00,000 shares, profit ₹3,00,000. Ratio is one share per two.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "list",
+          "title": "Given data",
+          "lines": [
+            "A: 2L shares, PAT ₹10L",
+            "B: 1L shares, PAT ₹3L",
+            "Ratio: 1 A share per 2 B"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So new shares are half of 1,00,000?",
+        "shot": "close",
+        "pose": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes. 50,000 new shares. Total shares become 2,00,000 plus 50,000, so 2,50,000.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "calc",
+          "top": "2,00,000+50,000",
+          "big": "2,50,000"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Do I add the target's old shares too?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "No. They're cancelled in the swap. Now add profits: ₹10,00,000 plus ₹3,00,000 is ₹13,00,000.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Post-merger EPS",
+          "formula": "(E_A + E_B) / (S_A + N)",
+          "sub": "E = earnings after tax, S_A = old shares"
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "EPS equals ₹13,00,000 divided by 2,50,000, which is ₹5.20. Old EPS was ₹5.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "calc",
+          "top": "13,00,000÷2,50,000",
+          "big": "₹5.20"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So it rose! Why?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Target adds ₹6 profit per new share, more than ₹5. So EPS rises.",
+        "shot": "board",
+        "pose": "explain"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: shares in, profits in, divide.",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Shares in,",
+            "Profits in, divide"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Example: A EPS ₹5 (10,00,000/2,00,000); ratio 1:2 gives 50,000 new shares; post EPS 13,00,000/2,50,000 = ₹5.20; earnings per new share 3,00,000/50,000 = ₹6. No synergy assumed. Check the \"words\" board second line fits 14 characters (\"Profits in, divide\" is 18).",
+    "Checker: Line 6 (voice): 'Ratio is one share per two' is ambiguous because it doesn't say which company's shares. Say: 'The exchange ratio is one acquirer share for every two target shares (0.5 per target share).' The board already says this correctly.",
+    "Checker: Lines 2/10: 'Combined profit = ₹10,00,000 + ₹3,00,000' quietly assumes no synergy gains and no merger costs. Add 'assuming no synergy' (e.g., Line 10: 'With no synergy, combined PAT is ₹13,00,000') so the figure follows only from the given data.",
+    "Checker: Line 11 (voice): 'Old EPS was ₹5' is stated without its working. Say: 'Old EPS was ₹10,00,000 ÷ 2,00,000 = ₹5.'",
+    "Checker: Line 4 board sub: 'R ratio per share' is vague. Say: 'R = acquirer shares issued per target share (here 0.5)'."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Example: A EPS ₹5 (10,00,000/2,00,000); ratio 1:2 gives 50,000 new shares; post EPS 13,00,000/2,50,000 = ₹5.20; earnings per new share 3,00,000/50,000 = ₹6. No synergy assumed. Check the \"words\" board second line fits 14 characters (\"Profits in, divide\" is 18).",
+  "caption": "🎬 🟪 CA Final · Post-merger EPS in a share swap\n\nAfter a share swap merger, does the acquirer's EPS rise or fall?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 2: Advanced Financial Management\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFinal #ICAI #CAStudents #IndAS\n\nref explainer2-261111",
+  "hold": false,
+  "hold_reason": ""
+}

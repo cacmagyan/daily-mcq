@@ -1,0 +1,141 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_final",
+  "paper_code": "Paper 2",
+  "paper_name": "Advanced Financial Management",
+  "author": "Rahul kp",
+  "linked_mcq": "Mergers - Post-merger EPS",
+  "topic": "Post-merger EPS (share exchange)",
+  "title": "Post-Merger",
+  "title_highlight": "EPS of Acquirer",
+  "hook": "who gains, who dilutes?",
+  "simple_words": "After a share-swap merger, total earnings are divided by the old shares plus the new shares issued to the target.",
+  "definitions": [
+    {
+      "term": "Post-merger EPS",
+      "meaning": "Combined earnings after tax of both companies divided by total shares of the acquirer after issuing new shares to target holders.",
+      "note": "Use combined PAT, not one company's"
+    },
+    {
+      "term": "Exchange ratio",
+      "meaning": "Number of acquirer shares given for each share of the target company, fixed by the deal terms.",
+      "note": "Target shares x ratio = new shares"
+    }
+  ],
+  "key_points": [
+    "New shares issued = target's shares x ==exchange ratio==",
+    "Combined earnings = acquirer's earnings + target's earnings (+ synergy, only if given)",
+    "If the deal is at a higher P/E than acquirer's own, !!EPS usually falls (dilution)!!",
+    "Compare post-merger EPS with the acquirer's old EPS to see gain or dilution"
+  ],
+  "formula_heading": "The EPS Formulas",
+  "formula_hook": "swap shares, then divide",
+  "formulas": [
+    {
+      "name": "New shares issued",
+      "lhs": "N",
+      "rhs": "S_B × R",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "N = new shares of acquirer issued; S_B = target's shares; R = shares of acquirer per 1 target share"
+    },
+    {
+      "name": "Post-merger EPS",
+      "lhs": "EPS (post)",
+      "rhs": "",
+      "numerator": "E_A + E_B + Synergy",
+      "denominator": "S_A + N",
+      "square_root": false,
+      "suffix": "",
+      "legend": "E_A, E_B = earnings after tax of acquirer, target; S_A = acquirer's existing shares; N = new shares issued"
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Pool the profits, pool the shares!",
+    "text": "EPS rises only if earnings added per new share issued exceed the acquirer's old EPS."
+  },
+  "trick_hook": "swap, add, divide",
+  "memory_trick": {
+    "mnemonic": "Shares In, Profits In, Divide",
+    "explanation": "Add the new shares to old shares, add target profit to acquirer profit, then divide the total profit by the total shares."
+  },
+  "steps": [
+    "Find new shares = S_B × R",
+    "Total shares = S_A + new shares",
+    "Combined PAT (add synergy if given)",
+    "EPS = combined PAT ÷ total shares",
+    "Compare with old EPS of A"
+  ],
+  "exam_tip": "If the question gives a purchase price and market price of acquirer, first find the shares issued as price ÷ market price. Show each step.",
+  "doubt": {
+    "question": "Should I add target's old shares to the total?",
+    "answer": "No. Target's shares are cancelled in the swap. Only the acquirer's old shares and the new shares issued remain."
+  },
+  "mistakes_hook": "don't mix the two EPS",
+  "mistakes": [
+    {
+      "wrong": "Adding target's old shares to the acquirer's shares",
+      "right": "Total shares = acquirer's old shares + new shares issued to target holders only."
+    },
+    {
+      "wrong": "Using only the acquirer's earnings in the numerator",
+      "right": "Use the combined earnings after tax of both companies, plus synergy only if given."
+    },
+    {
+      "wrong": "Ignoring the exchange ratio direction",
+      "right": "Ratio is acquirer shares per 1 target share; multiply it by target's shares."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "No past-paper list was given, so past_papers is empty. Assumes a pure share-swap deal with no cash and no change in tax.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No past-paper list was given, so past_papers is empty. Assumes a pure share-swap deal with no cash and no change in tax.",
+    "Checker 1: Exam tip is ambiguous: 'shares issued = price ÷ market price' is right only if 'price' means the total purchase consideration. If the question gives the price per target share, dividing it by the acquirer's market price gives the exchange ratio, not the number of shares. Suggested wording: 'Shares issued = total purchase consideration ÷ acquirer's market price per share (or exchange ratio = price offered per target share ÷ acquirer's MPS, then × target's shares).'"
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟪 CA Final · Concept of the day\nPaper 2: Advanced Financial Management\nPost-merger EPS (share exchange)\n\nIn simple words: After a share-swap merger, total earnings are divided by the old shares plus the new shares issued to the target.\n\nSwipe for the formula, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CA Final MCQ (9:30 PM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFinal #ICAI #CAStudents #IndAS\n\nref concept2-261111",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

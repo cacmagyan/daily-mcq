@@ -1,0 +1,88 @@
+{
+  "kind": "news",
+  "date": "2026-11-10",
+  "stories": [
+    {
+      "tag": "Income Tax",
+      "headline": "Diwali gifts up to ₹15,000 tax-free; cash bonus is taxable salary",
+      "points": [
+        "Under the Income-tax Act 2025, employer gifts and vouchers have nil taxable value if combined under ₹15,000 in a tax year.",
+        "Cash or cash-convertible gifts like gift cheques are fully taxable, and a cash bonus is added to salary income.",
+        "Form 130 replaces Form 16 as the salary TDS certificate from tax year 2026-27 onwards."
+      ],
+      "why_it_matters": "Perquisite valuation, salary TDS and the new Form 130 are core payroll and tax-compliance topics for CA and CMA students.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "Received Diwali bonus or cash from your employer? Know ₹15,000 exemption limit and when income tax applies | Explained",
+      "link": "https://www.livemint.com/money/personal-finance/received-diwali-bonus-or-cash-from-your-employer-know-15-000-exemption-limit-and-when-income-tax-applies-explained-11794275279531.html",
+      "published": "2026-11-10T08:39:48+05:30",
+      "check": "minor",
+      "check_notes": [
+        "Headline says gifts 'up to ₹15,000' are tax-free, but the source says the combined value must be 'below ₹15,000'. That is a small difference in wording at the exact threshold.",
+        "The headline's 'Diwali gifts up to ₹15,000' doesn't say the limit covers all qualifying gifts combined over the whole tax year and isn't limited to Diwali. Point 1 does say the limit is combined per tax year, so this is a wording issue only.",
+        "The Form 130 point closely paraphrases the source sentence ('Form 130 replaces Form 16 for salary TDS certificates from tax year 2026-27 onwards') but doesn't copy it word for word. Consider rewording it further."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Mumbai upholds penalty on bogus purchases despite 12.5% cut",
+      "points": [
+        "ITAT Mumbai dismissed an appeal against a ₹1,84,771 penalty under Section 271(1)(c) for AY 2009-10.",
+        "The AO had added ₹43,48,834 of alleged hawala purchases; the Tribunal earlier cut the addition to 12.5% as profit element.",
+        "The Tribunal held that the cut did not make the penalty invalid, as the purchases were established as bogus on record."
+      ],
+      "why_it_matters": "Shows how penalty for concealment can stand even when a quantum addition is reduced, a key point in tax litigation and assessments.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Penalty on Bogus Purchases Upheld Despite Restriction of Addition to 12.5% Profit Element: ITAT Mumbai",
+      "link": "https://taxguru.in/income-tax/penalty-bogus-purchases-upheld-restriction-addition-12-5-percent-profit-element-itat-mumbai.html",
+      "published": "2026-11-10T09:30:45+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Headline wording '12.5% cut' is ambiguous: it could be read as the addition being reduced by 12.5%, when the Tribunal actually restricted it to 12.5% of the bogus purchases. The second point states this correctly, so this is a wording issue only."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Jaipur allows full leave encashment exemption to SBI retiree",
+      "points": [
+        "CPC had capped the exemption at ₹3 lakh and added ₹6,53,763 to the SBI retiree's income for AY 2020-21.",
+        "The Tribunal condoned a 992-day delay, citing the counsel's lapse, on payment of ₹10,000 to the PM's National Relief Fund.",
+        "It treated the ₹25 lakh limit as remedial, so the full ₹9,53,763 was exempt and the addition was ordered deleted."
+      ],
+      "why_it_matters": "Shows how Section 10(10AA) limits, delay condonation and the remedial reading of notifications can affect assessments and appeals.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Remedial Leave Encashment Revision Supports Full Exemption for SBI Retiree: ITAT Jaipur",
+      "link": "https://taxguru.in/income-tax/remedial-leave-encashment-revision-supports-full-exemption-sbi-retiree-itat-jaipur.html",
+      "published": "2026-11-10T16:00:45+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'Corporate Law | Non-Refund of Share Application Money Qualif': why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Supreme Court Dismisses SLP Against Section 271': why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | ITAT Delhi Invalidates Domestic TP Adjustment A': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "dropped 'PHDCCI wants LTCG tax on equities scrapped in Budget 2027-28': Point 2 nearly copies the source sentence word for word ('They have proposed abolishing long-term capital gains tax and reducing short-term capital gains tax rates'). Only the subject and 'reducing' →",
+    "skipped 'Income Tax | Reassessment Without Section 143(2) Notice Inva': a point is longer than 110 characters",
+    "skipped 'Income Tax | Delay in Revised Income Tax Return Condoned Und': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Roads Depreciable as Buildings at 10%: Madras H': why_it_matters is longer than 120 characters",
+    "dropped 'ITAT Delhi deletes ₹58.89 lakh Section 270A penalty on housi': Headline calls Greenwoods Govt. Officers Welfare Society a 'housing society'. The source only names it a welfare society and never says it is a housing society, so this description is not supported.",
+    "skipped 'Received cash from customers and deposited it in your bank a': a point is longer than 110 characters; why_it_matters is longer than 120 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 10 Nov 2026\n\n1️⃣ Diwali gifts up to ₹15,000 tax-free; cash bonus is taxable salary (Mint)\n2️⃣ ITAT Mumbai upholds penalty on bogus purchases despite 12.5% cut (TaxGuru)\n3️⃣ ITAT Jaipur allows full leave encashment exemption to SBI retiree (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Mint, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261110",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

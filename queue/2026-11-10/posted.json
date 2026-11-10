@@ -40,5 +40,15 @@
     "permalink": "https://www.instagram.com/reel/DfkFbpoAYbX/",
     "video_url": "https://raw.githubusercontent.com/cacmagyan/daily-mcq/f012898ec3994927393d0fe576d869b30e8a97bd/queue/2026-11-10/explainer.mp4",
     "posted_at": "2026-11-10T19:38:58+05:30"
+  },
+  "concept": {
+    "media_id": "17945846127382661",
+    "permalink": "https://www.instagram.com/p/DfkMyBBlAFG/",
+    "image_host": "github_raw",
+    "posted_at": "2026-11-10T20:42:26+05:30"
+  },
+  "concept:story": {
+    "media_id": "18101075051397966",
+    "posted_at": "2026-11-10T20:42:34+05:30"
   }
 }

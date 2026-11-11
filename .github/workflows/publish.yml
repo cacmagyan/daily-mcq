@@ -6,9 +6,11 @@ name: 4. Publish due MCQs
 on:
   schedule:
     # Same times every day; only one family's MCQs (CA or CMA) are due on a given day.
+    - cron: "32 1 * * *"            # 07:02 IST  Exam countdown Story (countdown post_time 07:00)
     - cron: "2 2 * * *"            # 07:32 IST  CA Foundation / CMA CAT MCQ  (post_time 07:30)
     - cron: "2 3 * * *"            # 08:32 IST  Second video   (explainer second_post_time 08:30)
     - cron: "32 7 * * *"           # 13:02 IST  Second concept note (concepts second post_time 13:00)
+    - cron: "32 11 * * *"           # 17:02 IST  PYQ of the day (pyq post_time 17:00)
     - cron: "2 13 * * *"           # 18:32 IST  CA Inter / CMA Inter MCQ     (18:30)
     - cron: "2 14 * * *"           # 19:32 IST  Evening video  (explainer post_time 19:30)
     - cron: "2 15 * * *"           # 20:32 IST  Concept of the day (concepts post_time 20:30)

@@ -83,6 +83,7 @@ class TempQueue(unittest.TestCase):
             p.start()
         self.cfg = C.Config()
         self.cfg.reels["enabled"] = True          # most tests cover the MCQ reel too (switched off in config.yaml)
+        self.cfg.stories["mcq_only"] = False      # older tests post MCQs to the feed (StoryOnlyMcqTests covers Stories)
 
     def tearDown(self):
         for p in self.patches:
@@ -2306,3 +2307,40 @@ class PyqCountdownTests(TempQueue):
         self.assertIn("⏳ Countdown", text)
         from mcq_agent.__main__ import parse_command
         self.assertEqual(parse_command("/regen pyq", self.cfg)[1], "pyq")
+
+
+class StoryOnlyMcqTests(TempQueue):
+    """stories.mcq_only: an MCQ goes out as two Stories (question, then answer), never as a feed post."""
+    _batch = PublishTests._batch
+
+    def test_mcq_posts_as_two_stories_not_a_carousel(self):
+        from mcq_agent import insights as INS
+        date = dt.date(2026, 10, 19)
+        self._batch(date)
+        self.cfg.stories.update(enabled=True, mcq_only=True)
+        env = {"IG_ACCESS_TOKEN": "t", "IG_USER_ID": "1"}
+        with mock.patch.dict("os.environ", env), \
+             mock.patch("mcq_agent.instagram.Instagram.find_by_ref", return_value=None), \
+             mock.patch("mcq_agent.instagram.Instagram.post_carousel") as carousel, \
+             mock.patch("mcq_agent.instagram.Instagram.post_story",
+                        side_effect=[{"media_id": "q1"}, {"media_id": "a1"}, {"media_id": "q2"}, {"media_id": "a2"}]) as story, \
+             mock.patch("mcq_agent.hosting.urls_for", return_value=(["https://x/q.jpg", "https://x/a.jpg"], "test")) as urls:
+            P.publish_due(self.cfg, date, dt.time(10, 30), limit=5)
+            P.publish_due(self.cfg, date, dt.time(10, 31), limit=5)          # a second run posts nothing again
+        self.assertEqual(carousel.call_count, 0)
+        self.assertEqual([c.args[0] for c in story.call_args_list], ["https://x/q.jpg", "https://x/a.jpg"] * 2)
+        self.assertEqual([p.name for p in urls.call_args_list[0].args[0]], ["ca_foundation_q.jpg", "ca_foundation_a.jpg"])
+        posted = B.load_posted(date)
+        self.assertEqual(sorted(posted), ["ca_foundation", "cma_cat"])        # no extra ":story" entries
+        self.assertEqual(posted["ca_foundation"]["answer_media_id"], "a1")
+        self.assertTrue(posted["ca_foundation"]["story"])
+        self.assertEqual(INS.posts_between(date, date), [])                  # Stories aren't in the weekly numbers
+
+    def test_answer_story_image(self):
+        from PIL import Image
+        from mcq_agent.render import mcq_answer_story
+        src, out = self.tmp / "a.jpg", self.tmp / "s.jpg"
+        Image.new("RGB", (1080, 1350), "white").save(src, "JPEG")
+        mcq_answer_story(src, out, self.cfg.course("cma_inter"), "C", "@x")
+        with Image.open(out) as im:
+            self.assertEqual(im.size, (1080, 1920))

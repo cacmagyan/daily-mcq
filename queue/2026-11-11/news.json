@@ -1,0 +1,87 @@
+{
+  "kind": "news",
+  "date": "2026-11-11",
+  "stories": [
+    {
+      "tag": "GST",
+      "headline": "Gauhati HC pauses GST notice that sought Section 122 penalty",
+      "points": [
+        "DGGI Guwahati alleged G.M. Coke Industries took ITC of ₹16,21,12,454 on invoices from 17 suppliers without receiving goods.",
+        "Firm argued Section 122 penalties clash with CBIC Circular 171/03/2022-GST, which bars a separate penalty beyond Section 74.",
+        "Court found the proposal in clear conflict with the circular and barred further action on the notice until 9 December 2026."
+      ],
+      "why_it_matters": "Shows how CBIC circulars, ITC rules and penalty sections under Sections 74 and 122 interact in GST litigation and notice replies.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | GST Section 122 Penalty Contrary to CBIC Circular: Gauhati HC Grants Interim Protection",
+      "link": "https://taxguru.in/goods-and-service-tax/gst-section-122-penalty-contrary-cbic-circular-gauhati-hc-grants-interim-protection.html",
+      "published": "2026-11-11T10:30:21+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 3 says the court 'found' the proposal in clear conflict with the circular. The source says the court 'considered' it to be in conflict at the interim stage and that the matter needs further examination. 'Found' sounds more final than an interim view, so it should say the court took a prima facie view.",
+        "Point 3 ties the bar on further action to 9 December 2026. The source bars action 'until the next returnable date'. It sets 9 December 2026 only as the returnable date for the interim prayer, while the main notice is returnable in four weeks. The date is probably right, but the source doesn't state the link directly."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Lucknow rejects Revenue appeal on ALIMCO's TDS default demand",
+      "points": [
+        "ITAT Lucknow dismissed the Revenue's appeal against relief given to ALIMCO for AY 2014-15; the demand was ₹2,80,84,059.",
+        "The demand was raised under sections 201(1) and 201(1A) after a TDS survey; the first appellate authority had deleted it.",
+        "Tribunal noted the Revenue showed no material that contributions went directly to employees or exceeded statutory limits."
+      ],
+      "why_it_matters": "TDS default cases turn on evidence and procedure, such as Rule 46A, and on what payments actually attract withholding.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Employer PF Contributions Within Statutory Limits: ITAT Lucknow Rejects TDS Demand",
+      "link": "https://taxguru.in/income-tax/employer-pf-contributions-statutory-limits-itat-lucknow-rejects-tds-demand.html",
+      "published": "2026-11-11T08:00:42+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "GST",
+      "headline": "GSTAT Chandigarh upholds Section 74 penalty on undeclared rent",
+      "points": [
+        "Rental income of ₹7,25,436 was found via Form 26AS, not GST returns; tax of ₹1,30,578 and equal Section 74 penalty upheld.",
+        "Tribunal held the rent was supplied from Chandigarh, but the Punjab property made it inter-State, so IGST applied.",
+        "Section 74 action on freight and two ITC items was set aside; ITC went back for fresh review under Section 73(1)."
+      ],
+      "why_it_matters": "Shows when non-disclosure is treated as suppression under Section 74 and why a notice must state facts showing fraud or suppression.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | Undeclared Rental Income Attracts Section 74 GST Penalty: GSTAT Chandigarh",
+      "link": "https://taxguru.in/goods-and-service-tax/undeclared-rental-income-attracts-section-74-gst-penalty-gstat-chandigarh.html",
+      "published": "2026-11-11T04:00:17+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 3 says ITC went back for 'fresh review under Section 73(1)'. The source says the officer must decide any tax payable under Section 75(2), treating the notice as if issued under Section 73(1). This is imprecise wording, not a factual error."
+      ]
+    }
+  ],
+  "notes": [
+    "skipped 'Income Tax | Form 130 and Form 138: Salary TDS & Payroll Com': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'CA, CS, CMA | Analysis of Notifications and Circulars for We': why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | GST Appeal Limitation Must Be Calcu': a point is longer than 110 characters",
+    "skipped 'Corporate Law | GST Paid Under Wrong Tax Head Can Be Transfe': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Section 74 Notice Without Speci': a point is longer than 110 characters",
+    "skipped 'Income Tax | Unspecified Misreporting Charge Invalidates ₹58': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | Fake GST Invoices Without Actual Su': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | Unspecified VAT TDS Objection Canno': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | TDS Credit Follows Year of Taxable Interest Inc': a point is longer than 110 characters; why_it_matters is longer than 120 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 11 Nov 2026\n\n1️⃣ Gauhati HC pauses GST notice that sought Section 122 penalty (TaxGuru)\n2️⃣ ITAT Lucknow rejects Revenue appeal on ALIMCO's TDS default demand (TaxGuru)\n3️⃣ GSTAT Chandigarh upholds Section 74 penalty on undeclared rent (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261111",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

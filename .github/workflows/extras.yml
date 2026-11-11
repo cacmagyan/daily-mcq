@@ -1,0 +1,67 @@
+name: 8. PYQ and countdown
+
+# Makes tomorrow's PYQ of the day (queue/DATE/pyq.json + 2 slides) and exam countdown Story
+# (countdown.json + countdown.jpg). The early-morning run makes today's if the evening run missed it.
+on:
+  schedule:
+    - cron: "47 16 * * *"          # 22:17 IST, for tomorrow
+    - cron: "2 0 * * *"            # 05:32 IST, back-up for today
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Date (YYYY-MM-DD, today or tomorrow)"
+        default: "tomorrow"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: extras
+  cancel-in-progress: false
+
+jobs:
+  extras:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+          if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then npm install -g @anthropic-ai/claude-code; fi
+
+      - name: Make the PYQ and the countdown
+        id: make
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SCHEDULE: ${{ github.event.schedule }}
+          INPUT_DATE: ${{ inputs.date }}
+        run: |
+          DAY="${INPUT_DATE:-tomorrow}"
+          if [ "$SCHEDULE" = "2 0 * * *" ]; then DAY=today; fi
+          python -m mcq_agent extras --date "$DAY"
+          echo "date=$(python -c "from mcq_agent.config import Config; print(Config().resolve_date('$DAY'))")" >> "$GITHUB_OUTPUT"
+
+      - name: Save
+        env:
+          DATE: ${{ steps.make.outputs.date }}
+        run: |
+          git config user.name "mcq-agent"
+          git config user.email "mcq-agent@users.noreply.github.com"
+          git add "queue/$DATE/pyq.json" "queue/$DATE/countdown.json" queue/$DATE/pyq_*.jpg queue/$DATE/countdown.jpg 2>/dev/null || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -q -m "PYQ and countdown for $DATE"
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep 5; done
+          exit 1

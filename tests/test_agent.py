@@ -84,6 +84,7 @@ class TempQueue(unittest.TestCase):
         self.cfg = C.Config()
         self.cfg.reels["enabled"] = True          # most tests cover the MCQ reel too (switched off in config.yaml)
         self.cfg.stories["mcq_only"] = False      # older tests post MCQs to the feed (StoryOnlyMcqTests covers Stories)
+        self.cfg.raw.setdefault("mcqs", {})["post"] = True    # MCQ posting is off in config.yaml; tests cover it
 
     def tearDown(self):
         for p in self.patches:
@@ -2344,3 +2345,24 @@ class StoryOnlyMcqTests(TempQueue):
         mcq_answer_story(src, out, self.cfg.course("cma_inter"), "C", "@x")
         with Image.open(out) as im:
             self.assertEqual(im.size, (1080, 1920))
+
+
+class McqsOffTests(TempQueue):
+    """mcqs.post: false: no MCQ goes out at all, while the other posts carry on."""
+    _batch = PublishTests._batch
+
+    def test_no_mcq_posts_or_stories(self):
+        date = dt.date(2026, 10, 19)
+        self._batch(date)
+        self.cfg.raw["mcqs"]["post"] = False
+        self.cfg.stories.update(enabled=True, mcq_only=True)
+        with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "t", "IG_USER_ID": "1"}), \
+             mock.patch("mcq_agent.instagram.Instagram.find_by_ref", return_value=None), \
+             mock.patch("mcq_agent.instagram.Instagram.post_carousel") as carousel, \
+             mock.patch("mcq_agent.instagram.Instagram.post_story") as story:
+            P.publish_due(self.cfg, date, dt.time(23, 50), limit=10)
+        self.assertEqual((carousel.call_count, story.call_count), (0, 0))
+        self.assertEqual(B.load_posted(date), {})
+
+    def test_config_has_mcqs_off(self):
+        self.assertFalse(C.Config().mcqs_post)

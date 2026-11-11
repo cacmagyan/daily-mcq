@@ -91,7 +91,7 @@ def build_concept_caption(cfg: Config, item: dict, date: dt.date) -> str:
         "Save 🔖 this for revision.",
         *([_cta] if (_cta := _notes_cta(cfg)) else []),
         *([f"Tomorrow's {course['name']} MCQ ({_clock(course['post_time'])}) tests this concept."]
-          if course["id"] in cfg.mcq_course_ids(date + dt.timedelta(days=1)) else []),
+          if cfg.mcqs_post and course["id"] in cfg.mcq_course_ids(date + dt.timedelta(days=1)) else []),
     ]
     if item.get("applicability"):
         lines += ["", f"Based on {item['applicability']}."]

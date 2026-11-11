@@ -684,7 +684,7 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
         reel = None                      # one reel a day: the explainer, with the MCQ reel as its backup
     explainer2 = _explainer_for_slot(cfg, date, concept2, posted, "2") if concept2 else None
     todays = set(cfg.mcq_course_ids(date))          # e.g. only the CA courses today
-    mcqs = [it for it in batch["items"] if it["course_id"] in todays or it["course_id"] in posted]
+    mcqs = [it for it in batch["items"] if it["course_id"] in todays or it["course_id"] in posted] if cfg.mcqs_post else []
     from . import news as N
     news = N.load(date) if cfg.news_due(date) else None
     from . import countdown as CD

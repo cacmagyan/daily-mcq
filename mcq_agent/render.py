@@ -140,7 +140,7 @@ class Renderer:
             c=item, course=course, brand=self.cfg.brand, slide=slide, total=SLIDES,
             heading=headings.get(slide, ""), hook=hooks.get(slide, ""), swipe=swipes.get(slide, ""),
             doodle_svg=doodle(item.get("paper_name", "")), logo=self.logo_uri,
-            font_css=font_face_css(self._real_fonts), families=FAMILIES,
+            font_css=font_face_css(self._real_fonts), families=FAMILIES, mcq_link=self.cfg.mcqs_post,
         )
 
     def _concept_fit(self, item: dict, date: dt.date, slide: int, out: Path | None) -> dict:

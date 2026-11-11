@@ -119,6 +119,11 @@ class Config:
         fam = set(fams[(date - dt.date.fromisoformat(str(start))).days % len(fams)])
         return [c for c in self.course_ids() if c in fam]
 
+    @property
+    def mcqs_post(self) -> bool:
+        """False (mcqs.post: false) stops every MCQ post and Story; MCQs are still written, unposted."""
+        return bool((self.raw.get("mcqs") or {}).get("post", True))
+
     def family_of(self, course_id: str) -> list[str]:
         for fam in (self.raw.get("mcqs") or {}).get("families") or []:
             if course_id in fam:

@@ -256,7 +256,9 @@ body::before { content: ""; position: absolute; inset: 0;
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" aria-hidden="true">
             <path d="M6 9 H42 V33 H22 L12 41 V33 H6 Z"/><path d="M15 19 H33 M15 26 H27" stroke-linecap="round"/>
           </svg>
-          {%- if story %}
+          {%- if story_only %}
+          <p>Think of your answer<br><strong>Answer in the next Story →</strong></p>
+          {%- elif story %}
           <p>Reply with A, B, C or D<br><strong>Answer: tap {{ brand.handle or "our name" }} ↖</strong></p>
           {%- else %}
           <p>Comment your answer<br><strong>before the timer ends!</strong></p>

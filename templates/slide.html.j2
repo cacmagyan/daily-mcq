@@ -175,9 +175,9 @@ body { background: var(--ink); font-family: "Inter", sans-serif; color: var(--te
     {%- set side %}
       <div class="side">
         {%- if slide == 'question' %}
-        <b>Day {{ day }}</b><span>MCQ of the day</span>
+        {%- if item.kind == "pyq" %}<b>PYQ</b><span>of the day</span>{% else %}<b>Day {{ day }}</b><span>MCQ of the day</span>{% endif %}
         {%- else %}
-        <b>Answer</b><span>Day {{ day }}</span>
+        <b>Answer</b><span>{{ "PYQ of the day" if item.kind == "pyq" else "Day " ~ day }}</span>
         {%- endif %}
       </div>
     {%- endset %}
@@ -202,7 +202,11 @@ body { background: var(--ink); font-family: "Inter", sans-serif; color: var(--te
     <div class="fields">
       <div class="field"><label>Paper</label><div><em>{{ item.paper_code }}</em> {{ item.paper_name }}</div></div>
       <div class="field"><label>Topic</label><div>{{ item.topic }}</div></div>
+      {%- if item.asked_in %}
+      <div class="field"><label>Asked in</label><div>{{ item.asked_short or item.asked_in }}</div></div>
+      {%- else %}
       <div class="field"><label>Date</label><div>{{ date_label }}</div></div>
+      {%- endif %}
     </div>
 
     <main class="body">

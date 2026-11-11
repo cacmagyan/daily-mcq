@@ -317,7 +317,7 @@ svg { display: block; overflow: visible; }
     {% for p in c.past_papers %}<div class="pp"><span class="tag">{{ p.papers }}</span><span>{{ p.point|mark }}</span></div>{% endfor %}
   </div>
   {% endif %}
-  <div class="link">{{ bulb(30) }}<div><b>Tomorrow's {{ course.name }} MCQ tests this!</b> Revise it tonight, then try the MCQ.</div></div>
+  {% if mcq_link %}<div class="link">{{ bulb(30) }}<div><b>Tomorrow's {{ course.name }} MCQ tests this!</b> Revise it tonight, then try the MCQ.</div></div>{% endif %}
 {% endif %}
 </div></div>
 

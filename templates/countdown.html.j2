@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Countdown</title>
+<style>
+@font-face { font-family: 'Poppins'; font-weight: 700; src: url('{{ fonts }}/Poppins-Bold.ttf'); }
+@font-face { font-family: 'Poppins'; font-weight: 800; src: url('{{ fonts }}/Poppins-ExtraBold.ttf'); }
+@font-face { font-family: 'Inter'; font-weight: 500; src: url('{{ fonts }}/Inter-Medium.otf'); }
+@font-face { font-family: 'Inter'; font-weight: 700; src: url('{{ fonts }}/Inter-Bold.otf'); }
+@font-face { font-family: 'Caveat'; font-weight: 400 700; src: url('{{ fonts }}/Caveat.ttf'); }
+:root { --ink: {{ course.color.ink }}; --deep: {{ course.color.deep }}; --wash: {{ course.color.wash }}; --on: {{ course.color.on_ink }}; }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; }
+body { font-family: 'Inter', sans-serif; background: var(--ink); color: var(--on); }
+.page { width: 1080px; height: 1920px; padding: 220px 80px 230px; display: flex; flex-direction: column; align-items: center; text-align: center;
+  background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.18), rgba(255,255,255,0) 60%), var(--ink); }
+.kick { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 6px; text-transform: uppercase; opacity: 0.9; }
+.num { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: {{ 420 if days < 100 else 330 }}px; line-height: 0.95; margin-top: 30px;
+  letter-spacing: -12px; text-shadow: 10px 10px 0 rgba(0,0,0,0.18); }
+.days { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 92px; line-height: 1; margin-top: 4px; }
+.exam { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 56px; line-height: 1.1; margin-top: 34px; }
+.date { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 34px; margin-top: 12px; opacity: 0.9; }
+.card { margin-top: auto; width: 100%; background: #FFFBF0; color: #1F2A44; border: 5px solid #1F2A44; border-radius: 30px 44px 34px 48px / 44px 30px 48px 34px;
+  box-shadow: 14px 14px 0 rgba(0,0,0,0.25); padding: 36px 44px 42px; text-align: left; }
+.card .lab { font-family: 'Caveat', cursive; font-weight: 700; font-size: 54px; color: #C8372F; line-height: 1; }
+.card .paper { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 1.5px; text-transform: uppercase; color: #4A5570; margin-top: 14px; }
+.card .topic { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 60px; line-height: 1.08; margin-top: 8px; }
+.card .tip { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 36px; line-height: 1.35; margin-top: 18px; }
+.foot { margin-top: 44px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 38px; }
+.foot small { display: block; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 28px; opacity: 0.85; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="kick">Exam countdown</div>
+  <div class="num">{{ days }}</div>
+  <div class="days">{{ "day" if days == 1 else "days" }} to go</div>
+  <div class="exam">{{ item.exam }}</div>
+  <div class="date">Exams start {{ exam_date }}</div>
+  {% if item.topic %}
+  <div class="card">
+    <div class="lab">Today's must-revise</div>
+    <div class="paper">{{ item.paper_code }} · {{ item.paper_name }}</div>
+    <div class="topic">{{ item.topic }}</div>
+    <div class="tip">{{ item.tip }}</div>
+  </div>
+  {% else %}
+  <div class="card"><div class="lab">Today's plan</div><div class="topic">Revise one full chapter and solve 10 MCQs</div></div>
+  {% endif %}
+  <div class="foot">{{ brand.handle or brand.name }}<small>Explainers · Notes · PYQs · News</small></div>
+</div>
+<script>window.fitStory = async function () { await document.fonts.ready; return {ok: true}; };</script>
+</body>
+</html>

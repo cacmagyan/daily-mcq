@@ -1,0 +1,16 @@
+{
+  "kind": "countdown",
+  "course_id": "ca_inter",
+  "exam": "CA Inter Jan 2027",
+  "exam_date": "2027-01-02",
+  "days": 51,
+  "paper_code": "Paper 5",
+  "paper_name": "Auditing and Ethics",
+  "topic": "Audit Report: Modified Opinions (SA 705)",
+  "tip": "Qualified: material but not pervasive. Adverse: material and pervasive. Disclaimer: no evidence, and pervasive.",
+  "hold": false,
+  "hold_reason": "",
+  "images": [
+    "countdown.jpg"
+  ]
+}

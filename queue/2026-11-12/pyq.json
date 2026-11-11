@@ -1,0 +1,48 @@
+{
+  "kind": "pyq",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 10",
+  "paper_name": "Corporate Accounting and Auditing (Auditing)",
+  "tried": [
+    "Paper 10|Auditing|7-15"
+  ],
+  "ref": "Paper 10|Auditing|7-15",
+  "topic": "Section 144 - Services not to be rendered",
+  "question": "Which of the following services by an auditor is not restricted under Section 144 of the Companies Act 2013?",
+  "options": [
+    "Actuarial services",
+    "Rendering outsourced financial services",
+    "Investment Advisory Services",
+    "Issuing Deposit Return Certificate"
+  ],
+  "correct": "D",
+  "explanation": "Section 144 bars an auditor from providing accounting and book keeping, internal audit, design of financial information systems, actuarial, investment advisory, investment banking, outsourced financial services and management services to the company. Issuing a deposit return certificate is not barred.",
+  "working": [],
+  "why_not": {
+    "A": "Actuarial services are expressly barred under Section 144.",
+    "B": "Rendering outsourced financial services is expressly barred.",
+    "C": "Investment advisory services are expressly barred."
+  },
+  "exam_tip": "Remember the Section 144 bar list: accounting, internal audit, actuarial, investment advisory/banking, outsourced financial, management services.",
+  "asked_in": "CMA Inter December 2021 exam",
+  "asked_short": "Dec 2021 exam",
+  "papers_tags": [
+    "PY D21",
+    "MQP J26 S1"
+  ],
+  "check_notes": [
+    "Explanation abbreviates the Section 144 item as 'design of financial information systems'; the Act says 'design and implementation of any financial information system'.",
+    "The exam tip's 'bar list' leaves out the financial information system design and implementation item and the 'any other kind of services as may be prescribed' item, so the list is incomplete."
+  ],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "image_prefix": "pyq",
+  "author": "Ranjith Shivahari",
+  "images": {
+    "question": "pyq_q.jpg",
+    "answer": "pyq_a.jpg"
+  },
+  "fit_notes": [],
+  "caption": "📜 PYQ of the day · CMA Inter\nPaper 10: Corporate Accounting and Auditing (Auditing)\nAsked in the CMA Inter December 2021 exam\n\nTry it first: comment your answer (A, B, C or D), then swipe for the solution.\nSave 🔖 it for revision: past papers repeat ideas.\n\nFollow @cacmagyan for a past-paper question every day.\n\n#PYQ #CMAInter #ICMAI #CMAExam #PastPapers\n\nref pyq-261112"
+}

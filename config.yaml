@@ -173,6 +173,7 @@ weekly_report:
 stories:
   enabled: true
   mcqs: true                    # the question, "Reply with A, B, C or D · Answer in today's post"
+  mcq_only: true                # MCQs go to Stories only (question, then answer); no MCQ feed posts
   concept: true                 # the concept note's first slide, pointing to the post
   reel: true                    # the reel itself, shared to the Story
   within_hours: 6               # a Story more than 6 hours late is skipped

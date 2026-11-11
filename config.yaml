@@ -99,6 +99,7 @@ news:
 
 # Which MCQs post: with alternate on, the three CA courses one day and the three CMA courses the next.
 mcqs:
+  post: false                   # false: no MCQ posts or Stories at all (videos, notes, PYQ, news go on)
   alternate: true
   start_date: "2026-10-31"      # the first family below posts on this date, the second the next day, ...
   families:

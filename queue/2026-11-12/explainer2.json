@@ -1,0 +1,172 @@
+{
+  "kind": "explainer2",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 2A",
+  "paper_name": "Financial Accounting-2",
+  "topic": "Pricing of Material Issues: FIFO vs LIFO",
+  "concept_topic": "Pricing of Material Issues: FIFO vs LIFO",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 82.21,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Pricing of material issues: FIFO vs LIFO",
+    "caption_hook": "Same material, two lots, two prices. Which lot goes out first?",
+    "hook_label": "WHICH LOT GOES FIRST?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Same material, two lots, different prices. Which lot goes out first?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Stores issue materials at the cost of a chosen lot. FIFO and LIFO choose the lot differently.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Issue of Materials",
+          "sub": "FIFO vs LIFO"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "How do they choose?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "FIFO is a ticket queue: first in, first out. LIFO is a stack of plates: take the top one.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "FIFO",
+            "icon": "people",
+            "color": "green",
+            "lines": [
+              "Oldest lot",
+              "goes first"
+            ]
+          },
+          "right": {
+            "title": "LIFO",
+            "icon": "chart_up",
+            "color": "navy",
+            "lines": [
+              "Latest lot",
+              "goes first"
+            ]
+          },
+          "right_on": "stack"
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Say we buy 100 kg at ₹10, then 100 kg at ₹12. Now stores issue 150 kg.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "list",
+          "title": "Stock received",
+          "lines": [
+            "100 kg at ₹10",
+            "100 kg at ₹12",
+            "Issue 150 kg"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "FIFO: 100 kg at ₹10, then 50 kg at ₹12. Issue ₹1,600. Closing stock is 50 kg at ₹12, ₹600.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "calc",
+          "top": "100×10 + 50×12",
+          "big": "₹1,600"
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "LIFO: latest lot in stock first. 100 kg at ₹12, then 50 kg at ₹10. Issue ₹1,700, closing stock ₹500.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "calc",
+          "top": "100×12 + 50×10",
+          "big": "₹1,700"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "But the totals differ. Did some money vanish?",
+        "shot": "close",
+        "pose": "worried"
+      },
+      {
+        "who": "teacher",
+        "say": "No. Total cost is ₹2,200 either way. Only the split between issue and stock changes.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "calc",
+          "top": "100×10 + 100×12",
+          "big": "₹2,200"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Can companies use LIFO for stock in financial statements?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "AS 2 and Ind AS 2 don't permit LIFO for valuing inventory in financial statements. Cost records can still use it.",
+        "shot": "board",
+        "pose": "explain"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: same total, different split!",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Same total,",
+            "different split!"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: The board has no stack icon, so the LIFO card uses chart_up (stacked bars) with the line saying \"stack of plates\". AS 2 (Revised) / Ind AS 2 wording follows the examiner's suggestion. Numbers: FIFO 1,600 + 600 = 2,200; LIFO 1,700 + 500 = 2,200. Word count is about 172 with the follow line.",
+    "Checker: Line 2 (voice): 'Stores issue materials at the cost of a chosen lot' is loose, because one issue can draw from more than one lot, as the 150 kg example does. Better: 'Stores price each issue from one or more lots, in an order set by the method. FIFO and LIFO follow a different order.'",
+    "Checker: Line 4 (board): the LIFO card uses the 'chart_up' icon, which doesn't fit the stack-of-plates comparison and could suggest rising prices. Use a stack or layers icon instead.",
+    "Checker: Line 8 (voice): 'But the totals differ' doesn't say which totals. Better: 'But the issue values differ, ₹1,600 and ₹1,700. Did some money vanish?'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "The board has no stack icon, so the LIFO card uses chart_up (stacked bars) with the line saying \"stack of plates\". AS 2 (Revised) / Ind AS 2 wording follows the examiner's suggestion. Numbers: FIFO 1,600 + 600 = 2,200; LIFO 1,700 + 500 = 2,200. Word count is about 172 with the follow line.",
+  "caption": "🎬 🟨 CMA CAT · Pricing of material issues: FIFO vs LIFO\n\nSame material, two lots, two prices. Which lot goes out first?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 2A: Financial Accounting-2\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref explainer2-261112",
+  "hold": false,
+  "hold_reason": ""
+}

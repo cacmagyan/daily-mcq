@@ -1,0 +1,147 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 2A",
+  "paper_name": "Financial Accounting-2",
+  "author": "Rahul kp",
+  "applicability": "",
+  "confidence": "high",
+  "definitions": [
+    {
+      "term": "FIFO (issue of materials)",
+      "meaning": "Materials are issued at the cost of the earliest lot still in stock; when that lot is used up, the next earliest lot is used.",
+      "note": "Closing stock carries the latest prices"
+    },
+    {
+      "term": "LIFO (issue of materials)",
+      "meaning": "Materials issued are priced at the cost of the latest lot still in stock (received before the issue date); when that lot runs out, the next latest lot is used.",
+      "note": "Closing stock carries the oldest prices"
+    }
+  ],
+  "doubt": {
+    "question": "Does LIFO issue the lot received last of all?",
+    "answer": "No. It uses the latest lot received before the issue date and still in stock. Lots received after the issue date cannot be issued."
+  },
+  "entries": [],
+  "exam_tip": "Draw a stores ledger with Receipts, Issues and Balance columns. Update the balance lot by lot after every issue.",
+  "formula_heading": "FIFO vs LIFO Compared",
+  "formula_hook": "same goods, different split!",
+  "formulas": [],
+  "hook": "which lot goes out first?",
+  "insight": {
+    "punchline": "Same total, different split!",
+    "text": "Total cost to account for stays the same; the method only decides how much goes to issues and how much stays in stock."
+  },
+  "key_points": [
+    "Stores ledger records receipts, issues and balance for each material in quantity and value.",
+    "==FIFO== issues from the oldest lot in stock first; issue price is the cost of that lot.",
+    "==LIFO== issues from the latest lot still in stock; !!lots received after the issue date cannot be used!!.",
+    "Under every method, opening stock + receipts = cost issued + closing stock; only the split between issues and closing stock changes."
+  ],
+  "memory_trick": {
+    "mnemonic": "FIFO = First in the queue, first out",
+    "explanation": "Picture a ticket queue: the first person leaves first (FIFO). LIFO is a stack of plates: you take the top plate, the latest one placed, still on the stack.}"
+  },
+  "mistakes": [
+    {
+      "wrong": "Under LIFO, using a lot received after the date of issue",
+      "right": "Use only lots received on or before the issue date and still in stock."
+    },
+    {
+      "wrong": "Pricing every FIFO issue at the latest purchase price",
+      "right": "FIFO prices issues at the oldest lot in stock; closing stock is at latest prices."
+    },
+    {
+      "wrong": "Not moving to the next lot when one lot is exhausted within an issue",
+      "right": "Split the issue: finish the current lot at its price, then take the balance from the next lot at its price."
+    }
+  ],
+  "mistakes_hook": "watch the lots!",
+  "past_papers": [],
+  "reviewer_note": "Corrected per examiner feedback: opening stock included in identity and step 5; LIFO definition fixed. Check that memory trick text has no stray bracket.",
+  "simple_words": "Stores issue materials at the cost of a chosen lot; FIFO and LIFO differ in which lot is taken first.",
+  "steps": [
+    "List opening stock and each receipt",
+    "Note issue dates and quantities",
+    "Price each issue lot by lot",
+    "Balance = stock lots left after issue",
+    "Check: issues + closing stock = opening stock + receipts"
+  ],
+  "table": {
+    "headers": [
+      "Point",
+      "FIFO",
+      "LIFO"
+    ],
+    "rows": [
+      [
+        "Issue priced at",
+        "Oldest lot in stock",
+        "Latest lot in stock"
+      ],
+      [
+        "Closing stock at",
+        "Latest lots' cost",
+        "Oldest lots' cost"
+      ],
+      [
+        "Issues in rising prices",
+        "Lower cost",
+        "Higher cost"
+      ],
+      [
+        "Closing stock, rising prices",
+        "Higher value",
+        "Lower value"
+      ]
+    ]
+  },
+  "title": "Issue of Materials:",
+  "title_highlight": "FIFO vs LIFO",
+  "topic": "Pricing of Material Issues: FIFO vs LIFO",
+  "trick_hook": "queue and plates!",
+  "law_sensitive": false,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Corrected per examiner feedback: opening stock included in identity and step 5; LIFO definition fixed. Check that memory trick text has no stray bracket.",
+    "Checker 1: Memory trick explanation: there is a stray closing brace '}' at the end ('...still on the stack.}'). Remove it.",
+    "Checker 1: Definition 2 says 'received before the issue date', but mistake 1 right says 'received on or before the issue date'. Use the same wording in both places, e.g. 'received on or before the issue date'. That way a lot received on the issue day itself, before the issue, is clearly covered.",
+    "Checker 1: Exam tip / insight (optional addition): add one line saying that LIFO is not permitted under AS 2 / Ind AS 2 for valuing inventory in financial statements, so students don't think LIFO closing stock is acceptable for financial reporting. The note itself is not wrong.",
+    "Checker 2: Memory trick explanation ends with a stray \"}\" after \"still on the stack.\" Delete it. The content is correct."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 0.98,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 2A: Financial Accounting-2\nPricing of Material Issues: FIFO vs LIFO\n\nIn simple words: Stores issue materials at the cost of a chosen lot; FIFO and LIFO differ in which lot is taken first.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nTomorrow's CMA CAT MCQ (7:30 AM) tests this concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept2-261112",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

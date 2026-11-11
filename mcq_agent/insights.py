@@ -36,8 +36,8 @@ def posts_between(start: dt.date, end: dt.date) -> list[dict]:
         posted = B.load_posted(d)
         batch = B.load_batch(d) or {"items": []}
         for key, rec in posted.items():
-            if ":" in key or key == "countdown" or not rec.get("media_id"):
-                continue                                     # Stories (incl. the countdown) have no lasting numbers                                     # Stories have no lasting numbers
+            if ":" in key or key == "countdown" or rec.get("story") or not rec.get("media_id"):
+                continue                                     # Stories (countdown, MCQ Stories) have no lasting numbers
             concept = B.load_concept(d, "2" if key.endswith("2") else "") or {}
             if key == "pyq":
                 from .pyqday import load as load_pyq

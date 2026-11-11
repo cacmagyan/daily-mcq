@@ -246,7 +246,7 @@ class Renderer:
             item=item, course=self.cfg.course(item["course_id"]), brand=self.cfg.brand, why=why,
             presenter=presenter(self.cfg, item.get("author") or self.cfg.brand.get("name", "")) if with_presenter else None,
             compact=with_presenter == "compact",
-            share=share, story=story,
+            share=share, story=story, story_only=story and bool(self.cfg.stories.get("mcq_only")),
             seconds=seconds, day=self.cfg.day_number(date), date_label=date_label(date), letters=LETTERS,
             fonts=self.fonts_uri, logo=self.logo_uri,
         )
@@ -341,6 +341,29 @@ def concept_story(slide: Path, out: Path, course: dict, handle: str = "") -> Pat
     ink = course["color"].get("deep", "#222222")
     draw.text((REEL_W // 2, 300), "New concept note", font=big, fill=ink, anchor="ms")
     label = f"Tap {handle or 'our name'} at the top for the full note"   # Stories from the API can't link to a post
+    draw.rounded_rectangle((90, 1580, 990, 1676), radius=48, fill=course["color"]["ink"])
+    draw.text((REEL_W // 2, 1644), label, font=small, fill=course["color"].get("on_ink", "#FFFFFF"), anchor="ms")
+    bg.save(out, "JPEG", quality=90, optimize=True)
+    return out
+
+
+def mcq_answer_story(slide: Path, out: Path, course: dict, correct: str, handle: str = "") -> Path:
+    """A 1080x1920 Story of the MCQ's answer slide on the course colour: the Story after the question."""
+    from PIL import ImageDraw, ImageFont
+
+    bg = Image.new("RGB", (REEL_W, REEL_H), course["color"].get("wash", "#F5F0E6"))
+    with Image.open(slide) as im:
+        im = im.convert("RGB").resize((920, 1150), Image.LANCZOS)
+    shadow = Image.new("RGB", (920, 1150), course["color"].get("deep", "#333333"))
+    bg.paste(shadow, (88, 392))
+    bg.paste(im, (80, 380))
+    draw = ImageDraw.Draw(bg)
+    fonts = ROOT / "assets" / "fonts"
+    big = ImageFont.truetype(str(fonts / "texgyreheroscn-bold.otf"), 78)
+    small = ImageFont.truetype(str(fonts / "texgyreheroscn-bold.otf"), 42)
+    ink = course["color"].get("deep", "#222222")
+    draw.text((REEL_W // 2, 300), f"Answer: option {correct}", font=big, fill=ink, anchor="ms")
+    label = f"Follow {handle} for tomorrow's MCQ" if handle else "A new MCQ every day"
     draw.rounded_rectangle((90, 1580, 990, 1676), radius=48, fill=course["color"]["ink"])
     draw.text((REEL_W // 2, 1644), label, font=small, fill=course["color"].get("on_ink", "#FFFFFF"), anchor="ms")
     bg.save(out, "JPEG", quality=90, optimize=True)

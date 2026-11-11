@@ -79,6 +79,16 @@ def _finish(cfg: Config, renderer: Renderer, item: dict, date: dt.date) -> None:
                 item["story"] = name
         except Exception as exc:  # noqa: BLE001
             print(f"  ! no Story for {item['course_id']}: {exc}")
+    item.pop("answer_story", None)
+    if cfg.stories.get("mcq_only"):
+        from .render import mcq_answer_story
+        name = f"{item['course_id']}_answer_story.jpg"
+        try:
+            mcq_answer_story(out / item["images"]["answer"], out / name, cfg.course(item["course_id"]),
+                             item["correct"], cfg.brand.get("handle", "").strip())
+            item["answer_story"] = name
+        except Exception as exc:  # noqa: BLE001 - the answer slide itself is the fallback
+            print(f"  ! no answer Story for {item['course_id']}: {exc}")
     set_hold(item)
 
 
@@ -730,6 +740,8 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
                 result = {"media_id": already["id"], "permalink": already.get("permalink", ""), "note": "found existing post"}
             elif is_reel:
                 result = ig.post_reel(video_urls(video, cfg.instagram), caption, **reel_options(cfg, item))
+            elif _mcq_story_only(cfg, item):                     # question Story, then the answer Story
+                result = _post_mcq_stories(cfg, ig, item, date)
             elif item.get("kind") == COUNTDOWN:                  # a Story on its own, not a feed post
                 urls, host = urls_for(paths, cfg.instagram)
                 result = ig.post_story(urls[0])
@@ -754,10 +766,37 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
     return 1 if failures else 0
 
 
+def _mcq_story_only(cfg: Config, item: dict) -> bool:
+    """MCQs go to Stories only (stories.mcq_only): no feed post."""
+    return bool(cfg.stories.get("mcq_only")) and item.get("kind") not in EXTRAS
+
+
+def _post_mcq_stories(cfg: Config, ig, item: dict, date: dt.date) -> dict:
+    """The MCQ as two Stories: the question, then the answer. Falls back to the feed slides when a
+    Story image is missing (for example, a day prepared before mcq_only was turned on)."""
+    from .hosting import urls_for
+
+    out = batch_dir(date)
+    q = out / (item.get("story") or item["images"]["question"])
+    a = out / (item.get("answer_story") or item["images"]["answer"])
+    (qurl, aurl), host = urls_for([q if q.exists() else out / item["images"]["question"],
+                                   a if a.exists() else out / item["images"]["answer"]], cfg.instagram)
+    first = ig.post_story(qurl)
+    try:
+        second = ig.post_story(aurl)
+    except Exception as exc:  # noqa: BLE001 - the question is up; say so but don't post it twice
+        print(f"  ! answer Story for {item['course_id']} not posted: {str(exc)[:200]}")
+        second = {}
+    return {"media_id": first["media_id"], "answer_media_id": second.get("media_id", ""),
+            "story": True, "image_host": host}
+
+
 def _story_file(cfg: Config, item: dict) -> tuple[str, bool] | None:
     """(file name, is_video) of the Story that follows a post, if Stories are on for its kind."""
     if not cfg.stories.get("enabled"):
         return None
+    if _mcq_story_only(cfg, item):
+        return None                                    # the MCQ already went out as Stories
     kind = item.get("kind")
     if kind in (NEWS, PYQ, COUNTDOWN):
         return None                                    # no extra Story for these

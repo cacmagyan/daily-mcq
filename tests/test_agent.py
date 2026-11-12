@@ -2366,3 +2366,34 @@ class McqsOffTests(TempQueue):
 
     def test_config_has_mcqs_off(self):
         self.assertFalse(C.Config().mcqs_post)
+
+
+class TopicStyleTests(TempQueue):
+    """concepts.topic_style reaches the writer when it picks a topic itself, and MCQs no longer pick it."""
+
+    def test_style_in_prompt_only_without_topic_or_instruction(self):
+        from mcq_agent import concept as CN
+        seen = []
+        from mcq_agent.generator import GenerationError
+        def fake2(model, system, user, tool, max_tokens=0):
+            seen.append(user)
+            raise GenerationError("stop")
+        course = self.cfg.course("cma_inter"); paper = course["papers"][0]
+        self.assertTrue(self.cfg.concepts.get("topic_style"))
+        with mock.patch("mcq_agent.generator._call_claude", side_effect=fake2):
+            for kw in ({}, {"topic": "EOQ"}, {"instruction": "Tax audit"}):
+                try:
+                    CN.write_concept(self.cfg, course, paper, dt.date(2026, 11, 15), [], **kw)
+                except Exception:  # noqa: BLE001
+                    pass
+        self.assertIn("How to choose the concept", seen[0])
+        self.assertFalse(any("How to choose the concept" in u for u in seen if "Write the note on this concept: EOQ" in u
+                             or "Reviewer's instruction for this note: Tax audit" in u))
+
+    def test_no_mcq_link_when_mcqs_off(self):
+        date = dt.date(2026, 10, 19)
+        with mock.patch.object(P, "tomorrows_mcq", return_value={"topic": "EOQ"}):
+            self.cfg.raw["mcqs"]["post"] = False
+            self.assertNotIn("linked_mcq", P._concept_base(self.cfg, date))
+            self.cfg.raw["mcqs"]["post"] = True
+            self.assertEqual(P._concept_base(self.cfg, date)["linked_mcq"], "EOQ")

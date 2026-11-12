@@ -107,7 +107,7 @@ def _concept_paper(cfg: Config, item: dict) -> dict:
 def _concept_base(cfg: Config, date: dt.date, slot: str = "") -> dict:
     course = cfg.concept_course(date, slot)
     paper = cfg.concept_paper(date, slot)
-    m = tomorrows_mcq(course["id"], date)
+    m = tomorrows_mcq(course["id"], date) if cfg.mcqs_post else None   # MCQs off: the writer picks freely
     if m:   # tomorrow's MCQ is already written: the note teaches its topic, from its paper
         paper = cfg.find_paper(course["id"], m.get("paper_code", ""), m.get("paper_name", "")) or paper
     base = {"kind": CONCEPT + slot, "course_id": course["id"], "paper_code": paper["code"],

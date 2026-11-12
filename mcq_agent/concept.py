@@ -353,6 +353,8 @@ def write_concept(cfg: Config, course: dict, paper: dict, date: dt.date, recent:
     else:
         base_user += (f"Concepts already covered on the page, for this or another course (choose a "
                       f"different one):\n{recent_lines}\n")
+        if not instruction and cfg.concepts.get("topic_style"):
+            base_user += f"\nHow to choose the concept: {cfg.concepts['topic_style']}\n"
     if instruction:
         base_user += f"\nReviewer's instruction for this note: {instruction}\n"
     bank = pyq.questions(course["id"], paper)

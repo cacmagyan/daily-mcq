@@ -1,0 +1,45 @@
+{
+  "kind": "pyq",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 6",
+  "paper_name": "Financial Accounting",
+  "tried": [
+    "Paper 6||1-67"
+  ],
+  "ref": "Paper 6||1-67",
+  "topic": "Cash Book - Triple Column",
+  "question": "The total of Discount Column appearing on the debit side of Triple Column Cash Book is posted to the",
+  "options": [
+    "Credit of Discount Allowed Account.",
+    "Debit of Discount Allowed Account.",
+    "Debit of Discount Received Account.",
+    "Credit of Discount Received Account."
+  ],
+  "correct": "B",
+  "explanation": "The debit side of the cash book records receipts from customers. Discount given to them is Discount Allowed, which is an expense or loss. So the column total is debited to Discount Allowed Account at the period end.",
+  "working": [],
+  "why_not": {
+    "A": "Discount Allowed is a loss, so it is debited, not credited.",
+    "C": "Discount Received belongs to the credit side of the cash book.",
+    "D": "Discount Received is credited, but it comes from the credit side column."
+  },
+  "exam_tip": "Debit side discount = Allowed, debited. Credit side discount = Received, credited. Remember: same side as the cash book.",
+  "asked_in": "CMA Inter December 2025 exam",
+  "asked_short": "Dec 2025 exam",
+  "papers_tags": [
+    "PY D25",
+    "MQP J26 S1"
+  ],
+  "check_notes": [],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "image_prefix": "pyq",
+  "author": "Rahul kp",
+  "images": {
+    "question": "pyq_q.jpg",
+    "answer": "pyq_a.jpg"
+  },
+  "fit_notes": [],
+  "caption": "📜 PYQ of the day · CMA Inter\nPaper 6: Financial Accounting\nAsked in the CMA Inter December 2025 exam\n\nTry it first: comment your answer (A, B, C or D), then swipe for the solution.\nSave 🔖 it for revision: past papers repeat ideas.\n\nFollow @cacmagyan for a past-paper question every day.\n\n#PYQ #CMAInter #ICMAI #CMAExam #PastPapers\n\nref pyq-261113"
+}

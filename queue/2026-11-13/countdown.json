@@ -1,0 +1,16 @@
+{
+  "kind": "countdown",
+  "course_id": "cma_inter",
+  "exam": "CMA Inter Dec 2026",
+  "exam_date": "2026-12-10",
+  "days": 27,
+  "paper_code": "Paper 11",
+  "paper_name": "Financial Management and Business Data Analytics",
+  "topic": "Cost of Capital: WACC and component costs",
+  "tip": "Cost of debt is after tax: Kd = I(1-t) on net proceeds; weight WACC by market values if given, else book.",
+  "hold": false,
+  "hold_reason": "",
+  "images": [
+    "countdown.jpg"
+  ]
+}

@@ -52,6 +52,16 @@ concepts:
     enabled: true
     start_date: "2026-10-31"
     post_time: "13:00"          # IST, lunch break; keep matched to the 13:02 line in publish.yml
+  # How the writer picks a topic when it chooses one itself (not for /regen with your own topic).
+  # Comes from the reels that reached most people: "Financial Audit vs Cost Audit" and "Blood Relations".
+  topic_style: >-
+    Prefer one of the two formats that reach most students:
+    (1) "X vs Y": two ideas of this paper that students often confuse, compared point by point
+    (for example Provision vs Reserve, Capital vs Revenue Expenditure, Tax Audit vs Statutory Audit);
+    (2) a decode trick: a quick, step-by-step way to crack a common question type
+    (for example blood relations, coding-decoding, which accounting standard applies).
+    The topic must name both sides ("A vs B") or the trick ("Decode ..."). Use another kind of topic
+    only if neither format fits this paper.
 
 # PYQ of the day: a real past-paper MCQ (with its official answer key) from the question banks in the
 # main folder, solved and checked, posted as two slides with an "Asked in" tag. The course's papers that

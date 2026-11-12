@@ -1,0 +1,155 @@
+{
+  "kind": "concept",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 2B",
+  "paper_name": "Statutory Compliance",
+  "author": "Rahul kp",
+  "topic": "Private vs Public Company",
+  "title": "Private vs Public",
+  "title_highlight": "Company",
+  "hook": "same Act, different rules!",
+  "simple_words": "A private company is closed and small. A public company is open to the public and has no cap on members.",
+  "definitions": [
+    {
+      "term": "Private company (s.2(68))",
+      "meaning": "Articles restrict share transfer, limit members to 200 and bar any invitation to the public to subscribe to its securities.",
+      "note": "No minimum paid-up capital now (removed by 2015 Amendment)."
+    },
+    {
+      "term": "Public company (s.2(71))",
+      "meaning": "A company that is not a private company. Its shares are freely transferable and it may invite the public to subscribe.",
+      "note": "Subsidiary of a public company is deemed public (s.2(71) proviso)."
+    }
+  ],
+  "key_points": [
+    "Private: min ==2 members== (OPC may have 1), max !!200!!; joint holders count as one member",
+    "The 200 cap excludes employee-members and ex-employees who became members while employed",
+    "Public: min ==7 members==, no maximum limit; the 200 cap does not apply",
+    "Names end 'Private Limited' (private) and 'Limited' (public); min directors: private 2, public 3"
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn the table, win the MCQ",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Feature",
+      "Private",
+      "Public"
+    ],
+    "rows": [
+      [
+        "Minimum members",
+        "2 (OPC: 1)",
+        "7"
+      ],
+      [
+        "Maximum members",
+        "200 (OPC: 1)",
+        "No limit"
+      ],
+      [
+        "Minimum directors",
+        "2 (OPC: 1)",
+        "3"
+      ],
+      [
+        "Share transfer",
+        "Restricted by articles",
+        "Freely transferable"
+      ],
+      [
+        "Invite public to subscribe",
+        "Prohibited",
+        "Allowed"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Private is closed, public is open!",
+    "text": "Members, directors, share transfer and public invitation are the four tests an MCQ uses to separate the two."
+  },
+  "trick_hook": "Private 2-2, Public 7-3",
+  "memory_trick": {
+    "mnemonic": "Private 2-2, Public 7-3",
+    "explanation": "First number is minimum members, second is minimum directors. Private: 2 members, 2 directors. Public: 7 members, 3 directors. OPC is the one-member exception."
+  },
+  "steps": [
+    "Check articles for the s.2(68) limits",
+    "Count members: 2/200 or 7/no cap",
+    "Count directors: 2 or 3",
+    "Check if subsidiary of a public company",
+    "Check OPC exception before answering"
+  ],
+  "exam_tip": "When the option says private company has 'minimum 2 members', check if a One Person Company is covered; an OPC can have 1 member.",
+  "doubt": {
+    "question": "Is a private company that is a subsidiary of a public company still private?",
+    "answer": "No. Under the proviso to s.2(71), it is deemed a public company for the Act, even if its articles still carry the private-company restrictions."
+  },
+  "mistakes_hook": "small slips, lost marks",
+  "mistakes": [
+    {
+      "wrong": "A private company must have minimum 2 members, with no exception",
+      "right": "Minimum is 2, but a One Person Company, a type of private company, can have 1 member."
+    },
+    {
+      "wrong": "Counting every holder, including employees, towards the 200 limit",
+      "right": "Joint holders count as one member; employee-members and ex-employees who became members while employed are excluded."
+    },
+    {
+      "wrong": "Public company needs a prescribed minimum paid-up capital",
+      "right": "No minimum paid-up capital is required now for private or public company."
+    },
+    {
+      "wrong": "Public company needs minimum 2 directors",
+      "right": "A public company needs minimum 3 directors; private needs 2 (OPC: 1)."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Companies Act, 2013 ss.2(68), 2(71); ICMAI CAT material",
+  "confidence": "medium",
+  "reviewer_note": "Reviewer feedback conflicted on the subsidiary rule. I followed the proviso to s.2(71) (subsidiary of a public company is deemed public); please verify against the current Act and ICMAI material. Also verify director minimums (OPC 1) and the OPC member position.",
+  "law_sensitive": true,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Reviewer feedback conflicted on the subsidiary rule. I followed the proviso to s.2(71) (subsidiary of a public company is deemed public); please verify against the current Act and ICMAI material. Also verify director minimums (OPC 1) and the OPC member position.",
+    "Checker 1: Key point 2 and mistake 2 'right' version: the exclusion of ex-employees is incomplete. Per s.2(68)(ii)(B), excluded persons are those who were members while in the company's employment AND have continued to be members after their employment ceased. Add 'and continue as members after employment ceased'.",
+    "Checker 1: Key point 4: the name-ending rule ('Private Limited'/'Limited') applies generally; Section 8 companies are exempt from using these words. Optionally add '(except Section 8 companies)'.",
+    "Checker 2: Wording polish only: the heading says '5-Point Comparison' and the table has 5 rows, but the insight text says 'four tests'. Minimum and maximum members are separate rows, so the insight could say 'four tests (members, directors, share transfer, public invitation) across the five table rows'."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.22,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 2B: Statutory Compliance\nPrivate vs Public Company\n\nIn simple words: A private company is closed and small. A public company is open to the public and has no cap on members.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Companies Act, 2013 ss.2(68), 2(71); ICMAI CAT material.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept-261113",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

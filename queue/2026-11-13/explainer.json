@@ -1,0 +1,188 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 2B",
+  "paper_name": "Statutory Compliance",
+  "topic": "Private vs Public Company",
+  "concept_topic": "Private vs Public Company",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 70.38,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Private vs Public Company",
+    "caption_hook": "Private or public company? Same Act, very different rules!",
+    "hook_label": "PRIVATE VS PUBLIC?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Both are companies under one Act. So what's actually different?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "A private company is closed: restricted share transfer, at most 200 members, no inviting the public. A public company is open.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Private vs Public",
+          "sub": "Same Act, different rules"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "How do I tell them apart?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Private: shares can't move freely, and no public invitation. Public: shares transfer freely, and it may invite the public.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Share rules",
+          "lines": [
+            "Pvt: transfer restricted",
+            "Pvt: no public invite",
+            "Public: free transfer",
+            "Public: may invite"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And members? Is there a limit?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Private: minimum 2 members, maximum 200, excluding present and certain former employee-members. Public: minimum 7, no maximum.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Members",
+          "lines": [
+            "Private: min 2, max 200",
+            "Excludes some employees",
+            "Public: min 7, no max"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Do joint holders count twice?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "No, joint holders count as one. And a One Person Company, a private company, can have one member.",
+        "shot": "board",
+        "pose": "happy"
+      },
+      {
+        "who": "girl",
+        "say": "And directors?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Private needs 2 directors, OPC needs 1. Public needs 3. Memory trick: private two-two, public seven-three.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Private",
+            "lines": [
+              "2 members",
+              "2 directors"
+            ],
+            "icon": "door",
+            "color": "navy"
+          },
+          "right": {
+            "title": "Public",
+            "lines": [
+              "7 members",
+              "3 directors"
+            ],
+            "icon": "people",
+            "color": "green"
+          },
+          "right_on": "Public"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Wait, what if a private company is a public company's subsidiary?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "It's deemed public under the Act, even if its articles keep private restrictions.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "Private",
+          "from_note": "of public co",
+          "to": "Public",
+          "to_note": "deemed",
+          "label": "s.2(71)",
+          "to_on": "public"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Oh! So private is closed, public is open.",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Private is closed, public is open. Remember two-two, seven-three.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Private: closed",
+            "Public: open"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Applied the three fixes: line 2 defines private by restrictions, not size; the 200 cap exclusion is worded as \"excluding present and certain former employee-members\"; the Share rules board now includes \"Pvt: transfer restricted\". Please check the word total (about 168) against the limit.",
+    "Checker: Line 10 board (versus): the figures '2 members', '2 directors', '7 members', '3 directors' should be labelled as minimums, e.g. 'Min 2 members', 'Min 2 directors' / 'Min 7 members', 'Min 3 directors'. Public directors can go up to 15 under s.149(1) without a special resolution. The voice line 'Private needs 2 directors' should also say 'at least 2 directors'.",
+    "Checker: Line 8: 'a One Person Company ... can have one member' understates the rule. A One Person Company has only one member (s.2(62)). Better: 'a One Person Company, a type of private company, has only one member.'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "Applied the three fixes: line 2 defines private by restrictions, not size; the 200 cap exclusion is worded as \"excluding present and certain former employee-members\"; the Share rules board now includes \"Pvt: transfer restricted\". Please check the word total (about 168) against the limit.",
+  "caption": "🎬 🟨 CMA CAT · Private vs Public Company\n\nPrivate or public company? Same Act, very different rules!\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 2B: Statutory Compliance\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref explainer-261113",
+  "hold": false,
+  "hold_reason": ""
+}

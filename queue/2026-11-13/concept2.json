@@ -1,0 +1,145 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 6B",
+  "paper_name": "Strategic Management",
+  "author": "Ranjith Shivahari",
+  "topic": "Ansoff's Product-Market Matrix",
+  "title": "Ansoff's Matrix",
+  "title_highlight": "Four Growth Routes",
+  "hook": "product x market = growth!",
+  "simple_words": "Ansoff's matrix tells a firm how to grow: sell old or new products in old or new markets.",
+  "definitions": [
+    {
+      "term": "Ansoff's Matrix",
+      "meaning": "A ==growth strategy grid== that combines existing/new products with existing/new markets to give four strategy choices.",
+      "note": "Also called Product-Market Growth Matrix"
+    },
+    {
+      "term": "Diversification",
+      "meaning": "Growth through a new product in a new market. It carries the highest risk of the four strategies.",
+      "note": "New + New = highest risk"
+    }
+  ],
+  "key_points": [
+    "Two axes: Product (existing or new) and Market (existing or new)",
+    "Four strategies: penetration, market development, product development, diversification",
+    "Risk rises as the firm moves away from what it already knows",
+    "==Market penetration== is the lowest risk; diversification is the highest"
+  ],
+  "formula_heading": "The 2 x 2 Grid",
+  "formula_hook": "read it row by row",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Strategy",
+      "Product",
+      "Market"
+    ],
+    "rows": [
+      [
+        "Market penetration",
+        "Existing",
+        "Existing"
+      ],
+      [
+        "Market development",
+        "Existing",
+        "New"
+      ],
+      [
+        "Product development",
+        "New",
+        "Existing"
+      ],
+      [
+        "Diversification",
+        "New",
+        "New"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "text": "Only the part that is new changes: new market means market development, new product means product development.",
+    "punchline": "Change one box, or change both!"
+  },
+  "trick_hook": "name tells you the new part",
+  "memory_trick": {
+    "mnemonic": "Old-Old, Old-New, New-Old, New-New",
+    "explanation": "Say Product then Market in order: Penetration, Market dev., Product dev., Diversification. Market dev. is Old product, New market."
+  },
+  "steps": [
+    "Read the product: existing or new?",
+    "Read the market: existing or new?",
+    "Match the pair to the grid",
+    "Name the strategy, add the risk level"
+  ],
+  "exam_tip": "In case studies, look for the verb: more sales to current customers is penetration; new region or segment is market development.",
+  "doubt": {
+    "question": "Is entering a new country with the same product diversification?",
+    "answer": "No. The product is the same, only the market is new, so it is market development. Diversification needs both product and market to be new."
+  },
+  "mistakes_hook": "swapped boxes cost marks",
+  "mistakes": [
+    {
+      "wrong": "Calling a new product in the existing market 'market development'",
+      "right": "New product in existing market is product development."
+    },
+    {
+      "wrong": "Calling same product to a new geography 'diversification'",
+      "right": "Same product in a new market is market development; diversification needs both new."
+    },
+    {
+      "wrong": "Saying market penetration means entering new markets",
+      "right": "Penetration means more sales of existing products in existing markets, with the lowest risk."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "No past-paper list was given, so past_papers is empty.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No past-paper list was given, so past_papers is empty.",
+    "Checker 1: Exam tip: 'look for the verb' is a loose wording, because the examples given (more sales to current customers, new region or segment) are clues about the market and product, not verbs. Suggested wording: 'In case studies, find out whether the product and the market are existing or new. More sales to current customers is penetration; a new region or segment is market development; a new product for current customers is product development; new products in new markets is diversification.'",
+    "Checker 2: Memory trick: 'Old-Old, Old-New, New-Old, New-New' with 'Say Product then Market in order' is consistent for penetration (Old-Old), market development (Old product, New market = Old-New), product development (New-Old), diversification (New-New). The explanation lists 'Penetration, Market dev., Product dev., Diversification' which matches, so no error.",
+    "Checker 2: Insight text: 'Only the part that is new changes' is fine, but the punchline 'Change one box, or change both!' is loose. Penetration changes neither; wording could say 'change none, one, or both'. Minor wording only."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.02,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.14,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 6B: Strategic Management\nAnsoff's Product-Market Matrix\n\nIn simple words: Ansoff's matrix tells a firm how to grow: sell old or new products in old or new markets.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Ranjith Shivahari\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept2-261113",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

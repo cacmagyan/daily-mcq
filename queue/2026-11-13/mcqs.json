@@ -1,0 +1,189 @@
+{
+  "date": "2026-11-13",
+  "day": 23,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-12T19:56:22+05:30",
+  "items": [
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2A",
+      "paper_name": "Financial Accounting-2",
+      "topic": "Pricing of Material Issues: FIFO vs LIFO",
+      "question": "Opening stock 1 Nov 2026: 200 units @ ₹50. 5 Nov: received 300 @ ₹60. 10 Nov: issued 400. 15 Nov: received 200 @ ₹70. 20 Nov: issued 150. Under LIFO, what is the value of closing stock on 30 Nov 2026?",
+      "options": [
+        "₹8,500",
+        "₹10,500",
+        "₹33,500",
+        "₹9,500"
+      ],
+      "correct": "A",
+      "explanation": "LIFO issues from the latest lot then in stock. 10 Nov: 300 @ 60 + 100 @ 50 = ₹23,000. 20 Nov: 150 @ 70 = ₹10,500. Closing = ₹42,000 available less ₹33,500 issued = ₹8,500.",
+      "working": [
+        {
+          "label": "Total cost available",
+          "value": "₹42,000"
+        },
+        {
+          "label": "10 Nov issue (300@60 + 100@50)",
+          "value": "₹23,000"
+        },
+        {
+          "label": "20 Nov issue (150@70)",
+          "value": "₹10,500"
+        },
+        {
+          "label": "Total cost issued",
+          "value": "₹33,500"
+        },
+        {
+          "label": "Closing stock (100@50 + 50@70)",
+          "value": "₹8,500"
+        }
+      ],
+      "why_not": {
+        "D": "This is the FIFO cost of the 20 Nov issue (100 @ 60 + 50 @ 70), not LIFO closing stock.",
+        "B": "This is closing stock under FIFO (150 units @ 70), not LIFO.",
+        "C": "This is the total cost of materials issued under LIFO, not the closing stock."
+      },
+      "exam_tip": "LIFO uses only lots already received on the issue date. Check: cost issued + closing stock = cost available.",
+      "calculation": "available = 200*50 + 300*60 + 200*70\nissue1 = 300*60 + 100*50\nissue2 = 150*70\nanswer = available - issue1 - issue2",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The question doesn't say whether the stock record is perpetual (issue by issue) or periodic. Periodic LIFO gives ₹7,500, which is not an option. The key of ₹8,500 relies on perpetual LIFO, which the question doesn't state.",
+        "Checker: The question doesn't say which units are issued. Stating 'perpetual' or 'store ledger/continuous' would remove the ambiguity."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Pricing of Material Issues: FIFO vs LIFO",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 23\nPaper 2A: Financial Accounting-2\nTopic: Pricing of Material Issues: FIFO vs LIFO\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261113",
+      "story": "cma_cat_story.jpg",
+      "answer_story": "cma_cat_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 11",
+      "paper_name": "Financial Management and Business Data Analytics",
+      "topic": "Working Capital: Cash Conversion Cycle",
+      "question": "Year of 360 days. Cost of goods sold ₹3,60,00,000; credit sales ₹4,80,00,000; credit purchases ₹2,40,00,000. Average inventory ₹30,00,000, receivables ₹60,00,000, payables ₹20,00,000. Cash conversion cycle is:",
+      "options": [
+        "75 days",
+        "105 days",
+        "45 days",
+        "60 days"
+      ],
+      "correct": "C",
+      "explanation": "Inventory days use COGS, receivable days use credit sales, payable days use credit purchases. Cash cycle = 30 + 45 - 30 = 45 days.",
+      "working": [
+        {
+          "label": "Inventory days (30L/360L x 360)",
+          "value": "30"
+        },
+        {
+          "label": "Receivable days (60L/480L x 360)",
+          "value": "45"
+        },
+        {
+          "label": "Payable days (20L/240L x 360)",
+          "value": "30"
+        },
+        {
+          "label": "Operating cycle (30 + 45)",
+          "value": "75"
+        },
+        {
+          "label": "Cash conversion cycle (75 - 30)",
+          "value": "45"
+        }
+      ],
+      "why_not": {
+        "A": "Operating cycle only; payables period was not deducted.",
+        "D": "Used COGS for receivable days (60), so the cycle comes to 60 days.",
+        "B": "Added payable days instead of deducting them."
+      },
+      "exam_tip": "Cash cycle = inventory days + receivable days - payable days; match each ratio to its correct base.",
+      "calculation": "inv_days = 3000000/36000000*360\nrec_days = 6000000/48000000*360\npay_days = 2000000/24000000*360\nanswer = inv_days + rec_days - pay_days",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The question doesn't say which base to use for each ratio (COGS for inventory, credit sales for receivables, credit purchases for payables). The data given makes the standard choice clear, so this is only a minor wording point.",
+        "Checker: Option A (75) can't be matched to a clean alternative method, so it is a weak distractor."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 23\nPaper 11: Financial Management and Business Data Analytics\nTopic: Working Capital: Cash Conversion Cycle\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261113",
+      "story": "cma_inter_story.jpg",
+      "answer_story": "cma_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 19",
+      "paper_name": "Indirect Tax Laws and Practice",
+      "topic": "GST - Input Tax Credit Conditions",
+      "question": "A registered buyer receives goods under a single invoice dated 5 October 2026. The supplier delivers them in three instalments: 10 October, 20 October and 5 November 2026. When may the buyer take ITC on the invoice, if other conditions are met?",
+      "options": [
+        "On receipt of each instalment, in proportion to it",
+        "On receipt of the last instalment",
+        "In October 2026, on the invoice date",
+        "On the date the supplier files its return for October 2026"
+      ],
+      "correct": "B",
+      "explanation": "Under the CGST Act, where goods are received in lots or instalments, the recipient is treated as having received the goods only on receipt of the last lot. So ITC on the invoice is available only after 5 November 2026.",
+      "working": [],
+      "why_not": {
+        "C": "Invoice date alone does not allow ITC; receipt of goods is also required.",
+        "A": "Proportionate ITC per lot is not allowed; the law waits for the last lot.",
+        "D": "Supplier's filing is a separate condition; it does not fix the date of receipt."
+      },
+      "exam_tip": "Lots or instalments: ITC is allowed only when the last lot is received.",
+      "calculation": "",
+      "applicability": "CGST Act, 2017 as amended up to 30 Nov 2025",
+      "confidence": "high",
+      "reviewer_note": "Based on the proviso to Section 16(2) (receipt in lots/instalments). Section number not stated in the question.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Based on the proviso to Section 16(2) (receipt in lots/instalments). Section number not stated in the question."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 23\nPaper 19: Indirect Tax Laws and Practice\nTopic: GST - Input Tax Credit Conditions\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on CGST Act, 2017 as amended up to 30 Nov 2025.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261113",
+      "story": "cma_final_story.jpg",
+      "answer_story": "cma_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

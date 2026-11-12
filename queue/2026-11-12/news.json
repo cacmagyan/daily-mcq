@@ -1,0 +1,84 @@
+{
+  "kind": "news",
+  "date": "2026-11-12",
+  "stories": [
+    {
+      "tag": "GST",
+      "headline": "GSTAT Bengaluru: interest due on retrospective price hike debit notes",
+      "points": [
+        "GSTAT Bengaluru partly allowed the Revenue's appeal in Gopinath TM v. Mukand Limited, decided 7 October 2026.",
+        "Goods were supplied in April–June 2017; debit notes for a price rise were issued in September and October 2018.",
+        "Tribunal restored interest under Section 50 (₹13,85,623 on ₹54,44,190 tax) but kept the penalty deletion under Section 122."
+      ],
+      "why_it_matters": "Shows how interest, time of supply and transitional rules apply to debit notes, a common GST compliance and litigation topic.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | Retrospective Price Hike via Debit Note Attracts GST Interest: GSTAT Bengaluru",
+      "link": "https://taxguru.in/goods-and-service-tax/retrospective-price-hike-debit-note-attracts-gst-interest-gstat-bengaluru.html",
+      "published": "2026-11-12T12:39:41+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "GST",
+      "headline": "Rule 86B 1% cash rule before Oct 2022 questioned in GST notices",
+      "points": [
+        "Notices under Section 73 for FY 2022-23 demand 1% of output tax in cash, though tax was paid using eligible credit.",
+        "Rule 86B limits credit ledger use when monthly taxable supplies exceed ₹50 lakh, with some exceptions.",
+        "Author argues Section 49(12), which allows capping credit use, applied only from 1 October 2022."
+      ],
+      "why_it_matters": "Shows how rule validity, delegated powers and Section 73 demands are tested in GST disputes, a core area of indirect tax study.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | GST Rule 86B Before 1 October 2022: Validity of 1% Cash Payment Requirement & Recovery",
+      "link": "https://taxguru.in/goods-and-service-tax/gst-rule-86b-1-october-2022-validity-1-percent-cash-payment-requirement-recovery.html",
+      "published": "2026-11-12T12:05:30+00:00",
+      "check": "minor",
+      "check_notes": [
+        "The headline says the rule is 'questioned in GST notices'. In the source, the notices enforce Rule 86B and demand the 1% cash payment. It is the author, Advocate Ravindra Kumar Rastogi, who questions whether the rule was valid before October 2022. The wording could mislead readers about who is questioning the rule. A better headline would be something like 'Validity of Rule 86B 1% cash rule before Oct 2022 questioned amid GST notices'.",
+        "Every fact in the story is supported by the source: the Section 73 notices for FY 2022-23, the ₹50 lakh threshold, the exceptions, and Section 49(12) applying from 1 October 2022. No sentences are copied from the source."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Delhi dismisses Revenue appeal on ₹50.11 crore GST mismatch relief",
+      "points": [
+        "ITAT Delhi dismissed the Revenue's appeal against relief of about ₹50.11 crore given to Vipin Sharma for AY 2021-22.",
+        "Tribunal accepted that the GST turnover gap was reconciled through earlier-year sales, fixed asset sales and duties or taxes.",
+        "Purchase addition of about ₹34.63 crore stayed cut to ₹23,40,827, an 8% profit element on disputed SNUFF Exim purchases."
+      ],
+      "why_it_matters": "It shows how a documented reconciliation of GST and books turnover, plus supplier proof, can answer assessment additions.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | ITAT Delhi Upholds ₹50.11 Crore Relief on GST Turnover and Purchases",
+      "link": "https://taxguru.in/income-tax/itat-delhi-upholds-rs-50-11-crore-relief-gst-turnover-purchases.html",
+      "published": "2026-11-12T09:38:18+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'RBI plans curbs on private equity firms controlling stakes i': a point is longer than 110 characters",
+    "skipped 'Corporate Law | Corporate Compliance Calendar 2026-27: ROC, ': why_it_matters is longer than 120 characters",
+    "skipped 'NCLT approves merger of Jana Holdings with Jana Capital': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | GST Order Quashed for Denial of Per': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | GST Notices for April–October 2024:': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Carbon Credits in Tax Year 2026-27: CER Account': a point is longer than 110 characters",
+    "skipped 'Income Tax | Carbon Credit Fraud in India: White-Collar Crim': a point is longer than 110 characters",
+    "skipped 'Income Tax | Accountant Resignation Justifies Delay: ITAT De': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 12 Nov 2026\n\n1️⃣ GSTAT Bengaluru: interest due on retrospective price hike debit notes (TaxGuru)\n2️⃣ Rule 86B 1% cash rule before Oct 2022 questioned in GST notices (TaxGuru)\n3️⃣ ITAT Delhi dismisses Revenue appeal on ₹50.11 crore GST mismatch relief (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261112",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

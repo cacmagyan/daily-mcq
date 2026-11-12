@@ -25,5 +25,15 @@
     "permalink": "https://www.instagram.com/p/DfpAD5REVSo/",
     "image_host": "github_raw",
     "posted_at": "2026-11-12T17:27:27+05:30"
+  },
+  "explainer": {
+    "media_id": "17967178604988445",
+    "permalink": "https://www.instagram.com/reel/DfpPiioGZP3/",
+    "video_url": "https://raw.githubusercontent.com/cacmagyan/daily-mcq/e24c7f7b3dae2369f6cf7cfe7d7c6703567b7e44/queue/2026-11-12/explainer.mp4",
+    "posted_at": "2026-11-12T19:43:23+05:30"
+  },
+  "explainer:story": {
+    "media_id": "18133828411743990",
+    "posted_at": "2026-11-12T19:44:20+05:30"
   }
 }

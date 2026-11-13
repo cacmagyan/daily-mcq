@@ -1,0 +1,16 @@
+{
+  "kind": "countdown",
+  "course_id": "ca_foundation",
+  "exam": "CA Foundation Jan 2027",
+  "exam_date": "2027-01-03",
+  "days": 50,
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Business Mathematics",
+  "topic": "Compound Interest and Effective Rate",
+  "tip": "Effective rate = (1 + i/m)^m − 1. Match rate per period and number of periods to compounding frequency.",
+  "hold": false,
+  "hold_reason": "",
+  "images": [
+    "countdown.jpg"
+  ]
+}

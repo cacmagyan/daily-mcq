@@ -1,0 +1,61 @@
+{
+  "kind": "pyq",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 11",
+  "paper_name": "Financial Management and Business Data Analytics",
+  "tried": [
+    "Paper 11||1-24"
+  ],
+  "ref": "Paper 11||1-24",
+  "topic": "Time Value of Money - Growing Perpetuity",
+  "question": "What will be the present value of a perpetuity of 10,000 payable at the beginning of each period and growing @ 5% p.a. and the interest rate is 10% p.a.?",
+  "options": [
+    "2,00,000",
+    "2,10,000",
+    "2,20,000",
+    "2,30,000"
+  ],
+  "correct": "C",
+  "explanation": "A growing perpetuity paid at the end has PV = D1/(r-g). Here the first 10,000 is paid at the start (now), so it is an annuity-due type. PV = 10,000 + 10,000×1.05/(0.10-0.05) = 10,000 + 2,10,000 = 2,20,000.",
+  "working": [
+    {
+      "label": "First payment (t=0)",
+      "value": "10,000"
+    },
+    {
+      "label": "Next payment (t=1)",
+      "value": "10,000 × 1.05 = 10,500"
+    },
+    {
+      "label": "PV of rest = 10,500/(0.10-0.05)",
+      "value": "2,10,000"
+    },
+    {
+      "label": "Total PV",
+      "value": "10,000 + 2,10,000 = 2,20,000"
+    }
+  ],
+  "why_not": {
+    "A": "2,00,000 is 10,000/0.05, which treats 10,000 as the end-of-period payment and ignores the beginning timing.",
+    "B": "2,10,000 leaves out the 10,000 paid immediately at the start.",
+    "D": "2,30,000 has no basis in the formula. It over-adds growth."
+  },
+  "exam_tip": "Payment at the beginning: add the first payment separately, then value the rest with D1/(r-g).",
+  "asked_in": "CMA Inter June 2023 exam",
+  "asked_short": "Jun 2023 exam",
+  "papers_tags": [
+    "PY J23 SY22"
+  ],
+  "check_notes": [],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "image_prefix": "pyq",
+  "author": "Rahul kp",
+  "images": {
+    "question": "pyq_q.jpg",
+    "answer": "pyq_a.jpg"
+  },
+  "fit_notes": [],
+  "caption": "📜 PYQ of the day · CMA Inter\nPaper 11: Financial Management and Business Data Analytics\nAsked in the CMA Inter June 2023 exam\n\nTry it first: comment your answer (A, B, C or D), then swipe for the solution.\nSave 🔖 it for revision: past papers repeat ideas.\n\nFollow @cacmagyan for a past-paper question every day.\n\n#PYQ #CMAInter #ICMAI #CMAExam #PastPapers\n\nref pyq-261114"
+}

@@ -1,0 +1,82 @@
+{
+  "kind": "news",
+  "date": "2026-11-13",
+  "stories": [
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Cuttack: Section 269SS not applied to cash taken at property registration",
+      "points": [
+        "ITAT Cuttack allowed Satyabrata Panda's appeal for AY 2018-19 and deleted a Section 271D penalty on cash of ₹3,69,300.",
+        "The assessee said he sold immovable property for ₹13,69,300 and got ₹10,00,000 and ₹3,69,300 in cash at registration.",
+        "Following its earlier Arati Saraf ruling, the Tribunal held final sale consideration at registration differs from an advance."
+      ],
+      "why_it_matters": "Shows how cash rules and penalties under Sections 269SS and 271D depend on facts, a common topic in tax law and assessment work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Section 269SS Not Applicable to Cash Received at Property Registration: ITAT Cuttack",
+      "link": "https://taxguru.in/income-tax/section-269ss-not-applicable-cash-received-property-registration-itat-cuttack.html",
+      "published": "2026-11-13T08:23:09+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "RBI",
+      "headline": "ICICI Bank expects 25 bps RBI rate hike in December",
+      "points": [
+        "Food inflation in India is projected to stay high in the coming months because of a crop shortfall.",
+        "The RBI is expected to raise rates by 25 basis points to manage retail inflation.",
+        "Weak monsoon and high energy prices are cited as factors pushing prices up."
+      ],
+      "why_it_matters": "Inflation and interest rate changes affect borrowing costs, business accounts, and the economy topics studied in CA and CMA courses.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Economic Times",
+      "source_title": "Food inflation to stay elevated; ICICI Bank sees 25 bps RBI rate hike in December",
+      "link": "https://economictimes.indiatimes.com/news/economy/indicators/food-inflation-to-stay-elevated-icici-bank-sees-25-bps-rbi-rate-hike-in-december/articleshow/135789519.cms",
+      "published": "2026-11-13T10:06:54+05:30",
+      "check": "minor",
+      "check_notes": [
+        "Point 1 and Point 2 stay very close to the source's sentence structure and wording. For example, 'expected to raise rates by 25 basis points to manage retail inflation' nearly copies 'anticipated to raise interest rates by 25 basis points to manage retail inflation'. They should be rewritten more fully in the story's own words.",
+        "Point 2 says 'the RBI is expected' without saying who expects it. Only the headline and source title name ICICI Bank as making the forecast, so the attribution could be clearer in the point.",
+        "The 'Why it matters' line has a grammar slip: 'and the economy topics studied in CA and CMA courses' needs a comma or rewording."
+      ]
+    },
+    {
+      "tag": "Corporate Law",
+      "headline": "NCLT Mumbai rejects IBC plea built on a settlement, not invoices",
+      "points": [
+        "P V Media Vision sought insolvency against Saikrupa Photo Offset over an alleged operational debt of Rs. 1,45,36,641.",
+        "The claim rested on a 24 April 2017 MoU; the invoices attached to the petition were from 2014, the NCLT noted.",
+        "NCLT held the settlement claim was not operational debt under Section 5(21) and dismissed the Section 9 petition."
+      ],
+      "why_it_matters": "Shows how the basis of a claim decides if it counts as operational debt under the IBC, and why limitation matters in recovery.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Corporate Law | IBC Claim Based on Settlement Rather Than Invoices Not Maintainable: NCLT Mumbai",
+      "link": "https://taxguru.in/corporate-law/ibc-claim-based-settlement-invoices-not-maintainable-nclt-mumbai.html",
+      "published": "2026-11-13T15:15:19+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'CA, CS, CMA | ICAI Removes CA for Three Months Over Manipula': a point is longer than 110 characters",
+    "skipped 'CA, CS, CMA | ICAI Fines CA ₹1 Lakh for Audit Lapses in Comp': a point is longer than 110 characters",
+    "skipped 'Corporate Law | IBBI Suspends Insolvency Professional for Tw': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "dropped 'RBI gives Paytm unit in-principle nod to issue digital walle': The 'Why it matters' line says 'System and IT audits are a growing area of work for CAs.' The source doesn't support this; it only lists ICAI's DISA as one accepted auditor qualification.",
+    "skipped 'Income Tax | Bombay HC Quashes Income Tax Scrutiny Notices A': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 13 Nov 2026\n\n1️⃣ ITAT Cuttack: Section 269SS not applied to cash taken at property registration (TaxGuru)\n2️⃣ ICICI Bank expects 25 bps RBI rate hike in December (Economic Times)\n3️⃣ NCLT Mumbai rejects IBC plea built on a settlement, not invoices (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Economic Times, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261113",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

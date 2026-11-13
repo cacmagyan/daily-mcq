@@ -1,0 +1,150 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_final",
+  "paper_code": "Paper 14",
+  "paper_name": "Strategic Financial Management",
+  "author": "Rahul kp",
+  "topic": "Forward vs Futures Contracts",
+  "title": "Forward vs",
+  "title_highlight": "Futures",
+  "hook": "same idea, different market!",
+  "simple_words": "Both fix today the price for buying or selling later. Forward is a private deal; futures is an exchange deal.",
+  "definitions": [
+    {
+      "term": "Forward contract",
+      "meaning": "A customised agreement between two parties, made over the counter, to buy or sell an asset at a fixed price on a future date.",
+      "note": "private deal, tailor-made"
+    },
+    {
+      "term": "Futures contract",
+      "meaning": "A standardised contract traded on an exchange to buy or sell an asset at a fixed price on a future date, with daily settlement.",
+      "note": "exchange deal, readymade"
+    }
+  ],
+  "key_points": [
+    "Both are ==derivatives==: value comes from an underlying asset",
+    "Both lock in a price today for delivery or settlement later",
+    "Forward has ==counterparty risk==; futures risk is covered by the clearing house",
+    "Futures are ==marked to market== daily; forwards are usually settled only at maturity"
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn it row by row",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Forward",
+      "Futures"
+    ],
+    "rows": [
+      [
+        "Where traded",
+        "Over the counter",
+        "Recognised exchange"
+      ],
+      [
+        "Terms",
+        "Customised",
+        "Standardised"
+      ],
+      [
+        "Default risk",
+        "Higher (counterparty)",
+        "Low (clearing house)"
+      ],
+      [
+        "Margin / daily MTM",
+        "Usually none",
+        "Margin and daily MTM"
+      ],
+      [
+        "Settlement",
+        "Mostly on maturity date",
+        "Daily; often closed out early"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Forward = tailor, Futures = readymade!",
+    "text": "Forward fits your exact need but carries default risk; futures is standard but safer and easy to exit."
+  },
+  "trick_hook": "think tailor vs readymade shop",
+  "memory_trick": {
+    "mnemonic": "Forward = Tailor, Futures = Mall",
+    "explanation": "Tailor stitches to your size, no guarantee he delivers (customised, default risk). Mall sells standard sizes with a guarantee (exchange, clearing house)."
+  },
+  "steps": [
+    "Read: exchange or private deal?",
+    "Check: standard or customised terms?",
+    "Look for margin and daily MTM",
+    "Identify who bears default risk",
+    "Write the point-wise comparison"
+  ],
+  "exam_tip": "In comparison questions, write at least 5 points in a table: market, terms, risk, margin, settlement.",
+  "doubt": {
+    "question": "Can a forward contract be traded on an exchange?",
+    "answer": "No. Forwards are over-the-counter and customised. Exchange trading with standard terms is the feature of futures."
+  },
+  "mistakes_hook": "avoid these slips",
+  "mistakes": [
+    {
+      "wrong": "Futures are customised to the buyer's needs",
+      "right": "Futures are !!standardised!! in lot size, expiry and quality; customisation belongs to forwards."
+    },
+    {
+      "wrong": "Forward contracts need daily margin and MTM",
+      "right": "Daily margin and mark-to-market are features of futures; forwards usually have none unless agreed."
+    },
+    {
+      "wrong": "Both have the same default risk",
+      "right": "Forward has counterparty risk; in futures the clearing house guarantees performance, so default risk is low."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Checker 1: Table row 5, Futures column: 'Daily; often closed out early' is a bit loose. Better: 'Daily MTM of gains/losses, with final settlement (cash or delivery) on expiry; most are closed out before expiry.' Daily MTM settles only the price changes, not the whole contract.",
+    "Checker 1: Key point 3: 'futures risk is covered by the clearing house' could be read as covering all risk, including price risk. Better: 'futures counterparty (default) risk is taken over by the clearing house, which guarantees performance.'",
+    "Checker 1: Definition 2: 'with daily settlement' would be clearer as 'with daily mark-to-market settlement through margins'."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.08,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 14: Strategic Financial Management\nForward vs Futures Contracts\n\nIn simple words: Both fix today the price for buying or selling later. Forward is a private deal; futures is an exchange deal.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept2-261114",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

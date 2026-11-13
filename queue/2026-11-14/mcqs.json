@@ -1,0 +1,180 @@
+{
+  "date": "2026-11-14",
+  "day": 24,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-13T19:55:53+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Business Mathematics",
+      "topic": "Calculus: Maxima and Minima",
+      "question": "A firm's profit from producing x units is P(x) = −2x² + 120x − 500 (in ₹). What is the maximum profit the firm can earn?",
+      "options": [
+        "₹1,300",
+        "₹1,800",
+        "−₹500",
+        "₹30"
+      ],
+      "correct": "A",
+      "explanation": "P'(x) = −4x + 120 = 0 gives x = 30. P'' = −4 is negative, so profit is maximum. P(30) = −1,800 + 3,600 − 500 = ₹1,300.",
+      "working": [
+        {
+          "label": "P'(x) = −4x + 120 = 0, x =",
+          "value": "30"
+        },
+        {
+          "label": "−2x² at x = 30",
+          "value": "−1,800"
+        },
+        {
+          "label": "120x at x = 30",
+          "value": "3,600"
+        },
+        {
+          "label": "Fixed term",
+          "value": "−500"
+        },
+        {
+          "label": "Maximum profit (₹)",
+          "value": "1,300"
+        }
+      ],
+      "why_not": {
+        "B": "Left out the −500 term when substituting x = 30 (−1,800 + 3,600).",
+        "D": "Gave the output level x = 30 instead of the profit value.",
+        "C": "Substituted x = 60 (the root of 120x − 2x²), which is not the maximum point."
+      },
+      "exam_tip": "Set first derivative to zero for x, check the second derivative, then put x back into the original function.",
+      "calculation": "x = 120/4\nanswer = -2*x**2 + 120*x - 500",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 24\nPaper 3: Quantitative Aptitude: Business Mathematics\nTopic: Calculus: Maxima and Minima\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261114",
+      "story": "ca_foundation_story.jpg",
+      "answer_story": "ca_foundation_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 6B",
+      "paper_name": "Strategic Management",
+      "topic": "Ansoff's Product-Market Matrix",
+      "question": "A Pune-based packaged snacks company, selling namkeen in Maharashtra, launches a new range of protein bars and sells them in the same Maharashtra market to its existing customers. Under Ansoff's matrix, this is:",
+      "options": [
+        "Market penetration",
+        "Product development",
+        "Market development",
+        "Diversification"
+      ],
+      "correct": "B",
+      "explanation": "The market is existing (Maharashtra, same customers) but the product is new (protein bars). New product in an existing market is product development under Ansoff's matrix.",
+      "working": [],
+      "why_not": {
+        "A": "Penetration means selling more of the existing product in the existing market; here the product is new.",
+        "C": "Market development means existing product in a new market; here the market is unchanged.",
+        "D": "Diversification needs both a new product and a new market; the market is the same here."
+      },
+      "exam_tip": "Ask two questions: is the product new? is the market new? Only new product with old market is product development.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept": "Ansoff's Product-Market Matrix",
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 24\nPaper 6B: Strategic Management\nTopic: Ansoff's Product-Market Matrix\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261114",
+      "story": "ca_inter_story.jpg",
+      "answer_story": "ca_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 4",
+      "paper_name": "Direct Tax Laws and International Taxation",
+      "topic": "Deemed dividend - Section 2(22)(e)",
+      "question": "Pine Pvt Ltd (public not substantially interested; not a money-lending company) has accumulated profits of ₹6,50,000 on the date of loan. It lends ₹10,00,000 to Mr. Sen, holding 15% voting power. What is the deemed dividend in Mr. Sen's hands?",
+      "options": [
+        "₹10,00,000",
+        "₹6,50,000",
+        "₹3,50,000",
+        "Nil"
+      ],
+      "correct": "B",
+      "explanation": "A loan by a closely held company to a shareholder holding at least 10% voting power is deemed dividend, but only up to accumulated profits. Here the lower of loan ₹10,00,000 and accumulated profits ₹6,50,000 is taxed.",
+      "working": [
+        {
+          "label": "Loan given",
+          "value": "₹10,00,000"
+        },
+        {
+          "label": "Accumulated profits",
+          "value": "₹6,50,000"
+        },
+        {
+          "label": "Deemed dividend (lower)",
+          "value": "₹6,50,000"
+        }
+      ],
+      "why_not": {
+        "A": "Taxes the full loan; ignores the cap of accumulated profits.",
+        "C": "Takes the excess of loan over profits, which is not the deemed dividend.",
+        "D": "Thinks 15% holding is not enough; the test is 10% or more of voting power."
+      },
+      "exam_tip": "Deemed dividend = lower of loan and accumulated profits; shareholder needs 10% or more voting power.",
+      "calculation": "loan = 1000000\nprofits = 650000\nanswer = min(loan, profits)",
+      "applicability": "Income-tax Act, 1961 as applicable for A.Y. 2026-27",
+      "confidence": "high",
+      "reviewer_note": "Section 2(22)(e) concept: 10% voting power threshold; verify no change.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Section 2(22)(e) concept: 10% voting power threshold; verify no change.",
+        "Checker: The question does not say Mr. Sen is the beneficial owner of the shares, or that they are not shares entitled to a fixed rate of dividend. Section 2(22)(e) requires both, so students must assume them.",
+        "Checker: 'Public not substantially interested' is awkward; it should read 'a company in which the public are not substantially interested'. It would also be clearer to say the company 'possesses' accumulated profits.",
+        "Second checker: The question doesn't say Mr. Sen is both registered and beneficial owner of the shares. This is implied by \"holding 15% voting power\".",
+        "Second checker: The question doesn't say the loan is not in the ordinary course of business. The statement that it is not a money-lending company covers this.",
+        "Second checker: Nothing in the question says whether the accumulated profits include current-year profits up to the date of the loan. The phrase \"on the date of loan\" covers this."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 24\nPaper 4: Direct Tax Laws and International Taxation\nTopic: Deemed dividend - Section 2(22)(e)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961 as applicable for A.Y. 2026-27.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261114",
+      "story": "ca_final_story.jpg",
+      "answer_story": "ca_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

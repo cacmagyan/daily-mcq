@@ -1,0 +1,152 @@
+{
+  "kind": "concept",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 1",
+  "paper_name": "Advanced Accounting",
+  "author": "Rahul kp",
+  "topic": "Amalgamation: Merger vs Purchase (AS 14)",
+  "title": "Merger vs Purchase",
+  "title_highlight": "AS 14 Amalgamation",
+  "hook": "same deal, two labels!",
+  "simple_words": "If all five AS 14 conditions are met it is a merger. If even one fails, it is a purchase.",
+  "definitions": [
+    {
+      "term": "Amalgamation in nature of merger",
+      "meaning": "Pooling of interests: all assets and liabilities pass over, and shareholders of the transferor continue as shareholders of the transferee.",
+      "note": "All conditions must be met"
+    },
+    {
+      "term": "Amalgamation in nature of purchase",
+      "meaning": "Any amalgamation that fails even one merger condition. The transferee in effect buys the business of the transferor.",
+      "note": "One failure is enough"
+    }
+  ],
+  "key_points": [
+    "Merger needs all assets and liabilities of the transferor to be taken over",
+    "==90%== of transferor equity shareholders (face value) become transferee shareholders",
+    "Consideration is paid in equity shares; cash only for fractional shares",
+    "!!Merger: no adjustment to book values!!, and the business is meant to continue"
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn it side by side",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Merger",
+      "Purchase"
+    ],
+    "rows": [
+      [
+        "Conditions",
+        "All conditions met",
+        "Any one condition fails"
+      ],
+      [
+        "Method",
+        "Pooling of interests",
+        "Purchase method"
+      ],
+      [
+        "Reserves",
+        "Transferor reserves preserved",
+        "Not preserved; statutory ones via AAR"
+      ],
+      [
+        "Difference",
+        "Adjusted in reserves",
+        "Goodwill or Capital Reserve"
+      ],
+      [
+        "Assets taken at",
+        "Existing book values",
+        "Book or fair values"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Merger is all-or-nothing!",
+    "text": "Meeting four of five conditions still makes it a purchase."
+  },
+  "trick_hook": "check the list first",
+  "memory_trick": {
+    "mnemonic": "Joint family vs Shopping",
+    "explanation": "Merger: the whole family (assets, liabilities, 90% holders) moves into one house, nothing re-priced. Purchase: you shop for the business and pay a price."
+  },
+  "steps": [
+    "Check all assets and liabilities taken",
+    "Check 90% shareholders become members",
+    "Check consideration is in equity shares",
+    "Check business continues, no book value change",
+    "All met: merger; else purchase"
+  ],
+  "exam_tip": "Name the type first. Then apply the pooling or purchase method to reserves and the difference.",
+  "doubt": {
+    "question": "Is paying some cash allowed in a merger?",
+    "answer": "Only for fractional shares. Any other cash makes the consideration fail the test, so it becomes a purchase."
+  },
+  "mistakes_hook": "avoid these slips",
+  "mistakes": [
+    {
+      "wrong": "Treating 75% shareholder acceptance as enough for a merger",
+      "right": "AS 14 asks for at least 90% of equity shareholders (by face value), excluding shares held by transferee."
+    },
+    {
+      "wrong": "Showing goodwill in a merger",
+      "right": "In a merger the difference is adjusted in reserves, not shown as goodwill or capital reserve."
+    },
+    {
+      "wrong": "Cancelling transferor reserves in a merger",
+      "right": "In a merger the transferor's reserves are generally carried to the transferee's books with the same identity."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "AS 14 Accounting for Amalgamations (CA Inter)",
+  "confidence": "high",
+  "reviewer_note": "Check the 90% condition and the reserves treatment against the current AS 14 text.",
+  "law_sensitive": false,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Switched to a new concept because the first one couldn't be verified",
+    "Writer: Check the 90% condition and the reserves treatment against the current AS 14 text.",
+    "Checker 1: Key point 4, step 4 and the memory trick ('nothing re-priced') say there is no adjustment to book values. AS 14 condition (v) does allow adjustments made only to ensure uniform accounting policies. Correct version: 'The business of the transferor is intended to be continued, and no adjustment is made to book values except to ensure uniformity of accounting policies.'",
+    "Checker 1: Mistake 1 'right' line: the 90% test excludes shares already held by the transferee or its subsidiaries or their nominees, not only shares held by the transferee. Correct version: 'Holders of at least 90% of the face value of equity shares of the transferor, other than shares already held by the transferee, its subsidiaries or their nominees, must become equity shareholders of the transferee.'",
+    "Checker 1: Table row 5 (Merger): better to say 'Existing carrying amounts (adjusted only for uniform accounting policies)', so it matches AS 14 and the corrected key point 4."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 0.98,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.06,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 1: Advanced Accounting\nAmalgamation: Merger vs Purchase (AS 14)\n\nIn simple words: If all five AS 14 conditions are met it is a merger. If even one fails, it is a purchase.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on AS 14 Accounting for Amalgamations (CA Inter).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept-261114",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

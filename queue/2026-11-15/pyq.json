@@ -1,0 +1,49 @@
+{
+  "kind": "pyq",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 10",
+  "paper_name": "Corporate Accounting and Auditing (Corporate Accounting)",
+  "tried": [
+    "Paper 10|Corporate Accounting|2-12",
+    "Paper 10|Corporate Accounting|2-24"
+  ],
+  "ref": "Paper 10|Corporate Accounting|2-24",
+  "topic": "Schedule III - Notes to Accounts",
+  "question": "In the Notes to Accounts, Contingent Liabilities shall be classified as _______",
+  "options": [
+    "claims against the company not acknowledged as debt",
+    "guarantees",
+    "other money for which the company is contingently liable",
+    "All of the above"
+  ],
+  "correct": "D",
+  "explanation": "Schedule III (Division I) requires contingent liabilities and commitments to be disclosed in Notes. Contingent liabilities are shown under: (a) claims against the company not acknowledged as debt, (b) guarantees, and (c) other money for which the company is contingently liable. So all three apply.",
+  "working": [],
+  "why_not": {
+    "A": "True, but it is only one of the three heads.",
+    "B": "True, but it is only one of the three heads.",
+    "C": "True, but it is only one of the three heads."
+  },
+  "exam_tip": "Remember the Schedule III contingent liability heads as: claims, guarantees, others. If all are listed, pick All of the above.",
+  "asked_in": "CMA Inter December 2024 exam",
+  "asked_short": "Dec 2024 exam",
+  "papers_tags": [
+    "PY D24",
+    "MQP D25 S2",
+    "MQP J26 S1"
+  ],
+  "check_notes": [],
+  "notes": [
+    "Paper 10|Corporate Accounting|2-12: examiner: Explanation is outdated. After the MCA amendment to Schedule III (notified 24 March 2021, effective from 1 April 2021), current maturities of long-term borrowings must be shown separately under 'Short"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "image_prefix": "pyq",
+  "author": "Rahul kp",
+  "images": {
+    "question": "pyq_q.jpg",
+    "answer": "pyq_a.jpg"
+  },
+  "fit_notes": [],
+  "caption": "📜 PYQ of the day · CMA Inter\nPaper 10: Corporate Accounting and Auditing (Corporate Accounting)\nAsked in the CMA Inter December 2024 exam\n\nTry it first: comment your answer (A, B, C or D), then swipe for the solution.\nSave 🔖 it for revision: past papers repeat ideas.\n\nFollow @cacmagyan for a past-paper question every day.\n\n#PYQ #CMAInter #ICMAI #CMAExam #PastPapers\n\nref pyq-261115"
+}

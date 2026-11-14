@@ -1,0 +1,16 @@
+{
+  "kind": "countdown",
+  "course_id": "cma_final",
+  "exam": "CMA Final Dec 2026",
+  "exam_date": "2026-12-10",
+  "days": 25,
+  "paper_code": "Paper 14",
+  "paper_name": "Strategic Financial Management",
+  "topic": "Derivatives: Option Pricing (Binomial, Black-Sch",
+  "tip": "Practise put-call parity and one-step binomial; use risk-neutral probability and discount at the risk-free rate.",
+  "hold": false,
+  "hold_reason": "",
+  "images": [
+    "countdown.jpg"
+  ]
+}

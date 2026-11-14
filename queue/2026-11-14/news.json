@@ -1,0 +1,79 @@
+{
+  "kind": "news",
+  "date": "2026-11-14",
+  "stories": [
+    {
+      "tag": "SEBI",
+      "headline": "BCAS sends SEBI its views on monitoring use of issue proceeds",
+      "points": [
+        "BCAS backed mandatory monitoring agencies for all issues, direct reports to exchanges and fines for non-cooperation.",
+        "It asked for fixed report timelines in Regulation 32A, with draft reports returned by day 40, or day 55 for the last quarter.",
+        "It also proposed that ICAI peer-reviewed CA firms act as monitoring agencies, at least for issues below a set size."
+      ],
+      "why_it_matters": "Monitoring of issue proceeds ties into audit, LODR compliance and Audit Committee work, and could open roles for CA firms.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "SEBI | BCAS Representation on SEBI Consultation Paper on Monitoring & Disclosure of Utilization of Issue Proceeds",
+      "link": "https://taxguru.in/sebi/bcas-representation-sebi-consultation-paper-monitoring-disclosure-utilization-issue-proceeds.html",
+      "published": "2026-11-14T14:17:05+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "GST",
+      "headline": "Kerala HC: Old VAT TDS can't be moved into GST credit via TRAN-1",
+      "points": [
+        "Fins Engineers claimed ₹59,05,352 of VAT-era works-contract TDS as transitional credit in TRAN-1 under Section 140(1).",
+        "The Kerala High Court held that TDS on a person's own outward receipts is not input tax or input tax credit.",
+        "Petition was dismissed, but the firm may seek a refund, and the court said limitation should not be examined."
+      ],
+      "why_it_matters": "Shows how transitional credit rules under Section 140 are read, and how credit differs from cash ledger amounts and refunds.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | VAT TDS Cannot Be Carried Forward as GST TRAN-1 Credit: Kerala HC",
+      "link": "https://taxguru.in/goods-and-service-tax/vat-tds-cannot-carried-gst-tran-1-credit-kerala-hc.html",
+      "published": "2026-11-14T10:19:45+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "Hyderabad ITAT deletes ₹63.92 lakh misreporting penalties under 270A",
+      "points": [
+        "Tribunal held the facts showed at best under-reporting, not misreporting, and deleted penalties totalling ₹63,92,064.",
+        "Late filing of Form 68 was called a curable lapse, as the section 270AA conditions of tax and interest payment were met.",
+        "The assessee had disclosed gains in the section 148 return, withdrew the 54F claim and paid taxes before assessment ended."
+      ],
+      "why_it_matters": "Shows how the line between under-reporting and misreporting decides penalty and immunity under sections 270A and 270AA.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Section 270A Misreporting Penalty Deleted After Voluntary Tax Payment",
+      "link": "https://taxguru.in/income-tax/section-270a-misreporting-penalty-deleted-voluntary-tax-payment.html",
+      "published": "2026-11-14T09:35:55+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 2 describes the section 270AA conditions as only tax and interest payment. The source also says the assessee did not appeal the assessment order, so the point is incomplete but not wrong."
+      ]
+    }
+  ],
+  "notes": [
+    "skipped 'Income Tax FAST-DS 2026 scheme: Is it for you? Complete guid': a point is longer than 110 characters",
+    "skipped 'RBI imposes monetary penalty on One Mobikwik Systems': why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Payroll TDS True-Up for Tax Year 2026-27: Forms': why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | GST Notice Uploaded Only Under Addi': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 14 Nov 2026\n\n1️⃣ BCAS sends SEBI its views on monitoring use of issue proceeds (TaxGuru)\n2️⃣ Kerala HC: Old VAT TDS can't be moved into GST credit via TRAN-1 (TaxGuru)\n3️⃣ Hyderabad ITAT deletes ₹63.92 lakh misreporting penalties under 270A (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261114",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

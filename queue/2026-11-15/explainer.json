@@ -1,0 +1,9 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_inter",
+  "topic": "Direct Tax vs Indirect Tax",
+  "concept_topic": "Direct Tax vs Indirect Tax",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 197 words; write 120-175",
+  "hold": false,
+  "hold_reason": ""
+}

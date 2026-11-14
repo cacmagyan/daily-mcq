@@ -1,0 +1,157 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Statistics",
+  "author": "Rahul kp",
+  "topic": "Mean vs Median vs Mode",
+  "title": "Mean vs Median",
+  "title_highlight": "vs Mode",
+  "hook": "three averages, one winner each!",
+  "simple_words": "Mean shares equally, median is the middle one, mode is the most popular one.",
+  "definitions": [
+    {
+      "term": "Arithmetic Mean",
+      "meaning": "Sum of all observations divided by the number of observations. It uses every value in the data.",
+      "note": "Pulled by extreme values"
+    },
+    {
+      "term": "Median and Mode",
+      "meaning": "Median is the middle value of data arranged in order. Mode is the value that occurs most often.",
+      "note": "Arrange data first for median"
+    }
+  ],
+  "key_points": [
+    "==Mean== uses every value, so one very large or small value drags it.",
+    "==Median== depends only on position, so extreme values do not disturb it.",
+    "==Mode== is the most frequent value; data can have no mode or more than one.",
+    "In a symmetrical distribution, mean = median = mode."
+  ],
+  "formula_heading": "The 3-Average Table",
+  "formula_hook": "pick the average like a pro",
+  "formulas": [
+    {
+      "name": "Empirical relation",
+      "lhs": "Mode",
+      "rhs": "3 × Median − 2 × Mean",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Holds for a moderately skewed distribution only. Use it to find the third average from two."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Average",
+      "Extreme values",
+      "Best used when"
+    ],
+    "rows": [
+      [
+        "Mean",
+        "Affects it strongly",
+        "Data is even, all values matter"
+      ],
+      [
+        "Median",
+        "Not affected",
+        "Skewed data, open-ended classes"
+      ],
+      [
+        "Mode",
+        "Not affected",
+        "Most common item or size is needed"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Same data, three stories!",
+    "text": "With an extreme value, the mean moves away while median and mode stay put."
+  },
+  "trick_hook": "Remember M-M-M",
+  "memory_trick": {
+    "mnemonic": "Mean Meets all, Median is Middle, Mode is Most",
+    "explanation": "Mean meets every value in the data. Median stands in the middle of the ordered list. Mode is the most popular value."
+  },
+  "steps": [
+    "Read which average is asked",
+    "Arrange data in order (for median)",
+    "Find the middle position or highest frequency",
+    "Check for skewness or extreme values"
+  ],
+  "exam_tip": "If the question says outliers or open-ended classes, choose median. If it says most common or most frequent, choose mode.",
+  "doubt": {
+    "question": "Can mean, median and mode all be different?",
+    "answer": "Yes. In a skewed distribution they differ. They are equal only when the distribution is symmetrical."
+  },
+  "mistakes_hook": "Don't lose easy marks!",
+  "mistakes": [
+    {
+      "wrong": "Taking the middle item without arranging the data in order",
+      "right": "!!Arrange data in ascending or descending order!! first, then locate the middle item."
+    },
+    {
+      "wrong": "Saying median is badly affected by extreme values",
+      "right": "Median depends on position, so extreme values do not affect it. The mean is the one affected."
+    },
+    {
+      "wrong": "Saying every data set has exactly one mode",
+      "right": "A data set can have no mode, one mode, or several modes."
+    },
+    {
+      "wrong": "Using mean as the best average for open-ended classes",
+      "right": "Mean needs class mid-points, which open-ended classes lack. Median is preferred."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Checker 1: Table row 1 (Mean, 'Best used when'): 'Data is even' is vague. Better: 'Data is roughly symmetrical with no extreme values, and every value should count.'",
+    "Checker 1: Doubt answer: 'They are equal only when the distribution is symmetrical' is too absolute. A symmetrical distribution with two modes has mean = median but a different mode, and the three can be equal by coincidence in data that is not symmetrical. Better: 'In a symmetrical unimodal distribution, mean = median = mode. In a skewed distribution they differ, and in a moderately skewed one the median lies between the mean and the mode.'",
+    "Checker 1: Key point 4: add 'unimodal' so it reads: 'In a symmetrical unimodal distribution, mean = median = mode.'",
+    "Checker 1: Insight text: 'median and mode stay put' is slightly overstated. If an extreme value is added (rather than replacing a value), the median's position can move by half a place. Better: 'the mean moves a lot, while the median and mode change little or not at all.'",
+    "Checker 2: Table row 1, 'Best used when': 'Data is even' is vague. Better: 'Data is fairly symmetrical with no extreme values, and every value matters'.",
+    "Checker 2: Insight text: 'median and mode stay put' is slightly loose. Better: 'median and mode are not affected, or only barely affected'."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.16,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟩 CA Foundation · Concept of the day\nPaper 3: Quantitative Aptitude: Statistics\nMean vs Median vs Mode\n\nIn simple words: Mean shares equally, median is the middle one, mode is the most popular one.\n\nSwipe for the formula, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFoundation #ICAI #CAStudents #CAExams\n\nref concept2-261115",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

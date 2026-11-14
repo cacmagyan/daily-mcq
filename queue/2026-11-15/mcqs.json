@@ -1,0 +1,203 @@
+{
+  "date": "2026-11-15",
+  "day": 25,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-14T19:29:59+05:30",
+  "items": [
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Bad debts and provisions on debtors",
+      "question": "Trial balance, 31 March 2026: Debtors ₹5,20,000; Bad debts already written off ₹6,000; Provision for doubtful debts ₹18,000; Provision for discount on debtors ₹7,000. Further bad debts ₹20,000 to be written off. Required: doubtful debts provision 5%, then discount provision 2% on remaining good debtors. Total charge to P&L?",
+      "options": [
+        "₹35,500",
+        "₹15,500",
+        "₹36,000",
+        "₹29,500"
+      ],
+      "correct": "A",
+      "explanation": "Debtors after write-off ₹5,00,000. Doubtful provision 5% = ₹25,000. Discount provision is 2% on ₹4,75,000 = ₹9,500. Closing provisions ₹34,500 less opening ₹25,000 = ₹9,500. Add bad debts ₹26,000 = ₹35,500.",
+      "working": [
+        {
+          "label": "Debtors after further bad debts",
+          "value": "₹5,00,000"
+        },
+        {
+          "label": "Provision for doubtful debts 5%",
+          "value": "₹25,000"
+        },
+        {
+          "label": "Provision for discount 2% on ₹4,75,000",
+          "value": "₹9,500"
+        },
+        {
+          "label": "Closing provisions less opening ₹25,000",
+          "value": "₹9,500"
+        },
+        {
+          "label": "Total bad debts (6,000 + 20,000)",
+          "value": "₹26,000"
+        },
+        {
+          "label": "Total charge to P&L",
+          "value": "₹35,500"
+        }
+      ],
+      "why_not": {
+        "C": "Charged discount provision on ₹5,00,000 without deducting doubtful debts provision.",
+        "D": "Left out the ₹6,000 bad debts already written off in the trial balance.",
+        "B": "Forgot the ₹20,000 further bad debts adjustment."
+      },
+      "exam_tip": "Discount provision is made on good debtors: deduct bad debts and doubtful provision first. Add bad debts already in the trial balance.",
+      "calculation": "debtors = 520000 - 20000\npdd = debtors * 5 / 100\npdisc = (debtors - pdd) * 2 / 100\nclosing = pdd + pdisc\nopening = 18000 + 7000\nbad = 6000 + 20000\nanswer = bad + closing - opening",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The wording 'Total charge to P&L' could be read as excluding the ₹6,000 already written off. That reading gives ₹29,500, which is option D. The question should say that total bad debts, including those already in the trial balance, are charged.",
+        "Checker: The discount provision is labelled 'provision for discount on debtors', which is standard. The question should say explicitly that the 2% applies after deducting the new doubtful debts provision."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 25\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Bad debts and provisions on debtors\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261115",
+      "story": "cma_cat_story.jpg",
+      "answer_story": "cma_cat_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 12",
+      "paper_name": "Management Accounting",
+      "topic": "Capital Budgeting: NPV",
+      "question": "A project needs ₹10,00,000 for machinery and ₹2,00,000 working capital, both at time 0. Annual net cash inflow is ₹3,00,000 for 5 years. At year 5 end, scrap ₹1,00,000 is realised and working capital is recovered. At 10% (annuity factor 3.79, year-5 factor 0.62), NPV is:",
+      "options": [
+        "₹1,99,000",
+        "₹1,23,000",
+        "₹2,37,000",
+        "-₹1,000"
+      ],
+      "correct": "B",
+      "explanation": "Working capital is an outflow at time 0 and is recovered at year 5 end, so it is discounted. Scrap is also a year-5 inflow. NPV = PV of inflows ₹13,23,000 less outlay ₹12,00,000.",
+      "working": [
+        {
+          "label": "PV of annual inflows",
+          "value": "₹11,37,000"
+        },
+        {
+          "label": "Year-5 scrap + WC recovery",
+          "value": "₹3,00,000"
+        },
+        {
+          "label": "PV of that at 0.62",
+          "value": "₹1,86,000"
+        },
+        {
+          "label": "Total PV of inflows",
+          "value": "₹13,23,000"
+        },
+        {
+          "label": "Initial outlay incl. WC",
+          "value": "₹12,00,000"
+        },
+        {
+          "label": "NPV",
+          "value": "₹1,23,000"
+        }
+      ],
+      "why_not": {
+        "A": "Ignores working capital completely, both the outlay and its recovery.",
+        "C": "Takes the year-5 scrap and WC recovery at full value without discounting.",
+        "D": "Treats WC as outflow but forgets to add its recovery; only scrap is counted."
+      },
+      "exam_tip": "Working capital goes out at time 0 and comes back at project end; discount the recovery like any other year-end inflow.",
+      "calculation": "pv_annuity = 300000*3.79\npv_end = (100000+200000)*0.62\noutlay = 1000000+200000\nanswer = pv_annuity + pv_end - outlay",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Scrap assumed pre-tax/no tax effect; annual inflow stated as net cash inflow.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Scrap assumed pre-tax/no tax effect; annual inflow stated as net cash inflow."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 25\nPaper 12: Management Accounting\nTopic: Capital Budgeting: NPV\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261115",
+      "story": "cma_inter_story.jpg",
+      "answer_story": "cma_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 14",
+      "paper_name": "Strategic Financial Management",
+      "topic": "Derivatives - Forward vs Futures",
+      "question": "An importer buys USD under a 3-month OTC forward with a bank. Another importer buys USD futures of the same maturity on an exchange. The rupee weakens steadily for both. Which statement is correct?",
+      "options": [
+        "Futures loss is paid daily through margin; forward loss falls due only at maturity",
+        "Forward loss is paid daily through margin; futures loss falls due only at maturity",
+        "Clearing house absorbs the futures loss, so the futures buyer pays no margin",
+        "Both carry equal default risk, as each contract has one counterparty"
+      ],
+      "correct": "A",
+      "explanation": "Futures are marked to market daily, so losses are settled through the margin account each day. A forward is usually settled only at maturity, so the bank carries credit exposure until then. The clearing house guarantees futures.",
+      "working": [],
+      "why_not": {
+        "B": "Reverses the two: the daily mark-to-market feature belongs to futures, not OTC forwards.",
+        "C": "Clearing house guarantees performance; it does not bear losses and margin is still required.",
+        "D": "Futures counterparty is the clearing house, so default risk is much lower than in a forward."
+      },
+      "exam_tip": "Futures: daily settlement and clearing house guarantee. Forward: settle at maturity and counterparty risk.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The scenario is internally inconsistent. An importer who buys USD gains when the rupee weakens, since USD appreciates. Both importers would have gains, not losses. Options A and B talk about 'loss'.",
+        "Checker: A would be cleaner as 'The rupee strengthens steadily' or as 'mark-to-market gains/losses are settled daily'.",
+        "Checker: 'Forward loss falls due only at maturity' assumes a standard OTC forward with no collateral or CSA. This is usual, but it isn't stated.",
+        "Checker: The key is still unambiguous."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Forward vs Futures Contracts",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 25\nPaper 14: Strategic Financial Management\nTopic: Derivatives - Forward vs Futures\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261115",
+      "story": "cma_final_story.jpg",
+      "answer_story": "cma_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "kind": "countdown",
+  "course_id": "ca_inter",
+  "exam": "CA Inter Jan 2027",
+  "exam_date": "2027-01-02",
+  "days": 47,
+  "paper_code": "Paper 4",
+  "paper_name": "Cost and Management Accounting",
+  "topic": "Process Costing: Abnormal Loss and Equivalent Un",
+  "tip": "Abnormal loss is valued at full cost per unit and is not absorbed into good units; scrap sale value of normal loss is cr",
+  "hold": false,
+  "hold_reason": "",
+  "images": [
+    "countdown.jpg"
+  ]
+}

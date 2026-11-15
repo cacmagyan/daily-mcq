@@ -1,0 +1,51 @@
+{
+  "kind": "pyq",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 10",
+  "paper_name": "Corporate Accounting and Auditing (Auditing)",
+  "tried": [
+    "Paper 10|Auditing|6-22",
+    "Paper 10|Auditing|8-21"
+  ],
+  "ref": "Paper 10|Auditing|6-22",
+  "topic": "Standards on Auditing (SA 210)",
+  "question": "SA 210 stands for",
+  "options": [
+    "Audit Documentation",
+    "Audit working papers",
+    "Agreeing the terms of Audit Engagements",
+    "Audit Planning"
+  ],
+  "correct": "C",
+  "explanation": "SA 210 is \"Agreeing the Terms of Audit Engagements\". It deals with the auditor's duty to agree the terms of the engagement with management or those charged with governance. This is usually done through an engagement letter.",
+  "working": [],
+  "why_not": {
+    "A": "Audit Documentation is SA 230.",
+    "B": "Working papers are covered under SA 230 (Audit Documentation), not SA 210.",
+    "D": "Planning an Audit of Financial Statements is SA 300."
+  },
+  "exam_tip": "Remember the numbers: SA 200 objectives, 210 engagement terms, 220 quality control, 230 documentation, 300 planning.",
+  "asked_in": "CMA Inter December 2021 exam",
+  "asked_short": "Dec 2021 exam",
+  "papers_tags": [
+    "PY D21",
+    "MQP D23 S1",
+    "MQP J25 S1"
+  ],
+  "check_notes": [
+    "The exam tip calls SA 220 'quality control'. ICAI has replaced it with SA 220 (Revised), 'Quality Management for an Audit of Financial Statements', which goes with SQM 1 and SQM 2 and has become effective. The memory aid should say 'quality management'. This only affects a side tip; the answer and explanation are correct."
+  ],
+  "notes": [
+    "Paper 10|Auditing|8-21: examiner: The keyed answer C (Registrar) matches the ICMAI study material, so the key itself is acceptable.; The explanation is outdated where it says 'The society does not choose its own auditor.' After the 97"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "image_prefix": "pyq",
+  "author": "Ranjith Shivahari",
+  "images": {
+    "question": "pyq_q.jpg",
+    "answer": "pyq_a.jpg"
+  },
+  "fit_notes": [],
+  "caption": "📜 PYQ of the day · CMA Inter\nPaper 10: Corporate Accounting and Auditing (Auditing)\nAsked in the CMA Inter December 2021 exam\n\nTry it first: comment your answer (A, B, C or D), then swipe for the solution.\nSave 🔖 it for revision: past papers repeat ideas.\n\nFollow @cacmagyan for a past-paper question every day.\n\n#PYQ #CMAInter #ICMAI #CMAExam #PastPapers\n\nref pyq-261116"
+}

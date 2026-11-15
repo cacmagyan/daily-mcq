@@ -1,0 +1,92 @@
+{
+  "kind": "news",
+  "date": "2026-11-15",
+  "stories": [
+    {
+      "tag": "Income Tax",
+      "headline": "Allahabad HC: Regional Rural Bank can claim Section 80P deduction",
+      "points": [
+        "Allahabad HC dismissed ten Revenue appeals against Baroda Uttar Pradesh Gramin Bank for AY 2012-13 to 2016-17.",
+        "Court said Sections 22 and 32 of the RRB Act, 1976 treat such banks as cooperative societies for income-tax purposes.",
+        "It also upheld the Tribunal's view that no concealment was shown, so Section 271(1)(c) penalties could not stand."
+      ],
+      "why_it_matters": "Shows how a special statute can override tax circulars and why a rejected deduction claim alone may not attract penalty.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Regional Rural Bank Eligible for Section 80P Deduction: Allahabad HC",
+      "link": "https://taxguru.in/income-tax/regional-rural-bank-eligible-section-80p-deduction-allahabad-hc.html",
+      "published": "2026-11-14T14:44:53+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "GST",
+      "headline": "Telangana HC sends GST cancellation dispute to revocation route",
+      "points": [
+        "Telangana HC disposed of Aqsa Begum's petition against a GST registration cancellation order dated 9 October 2026.",
+        "Cancellation was based on Rule 21(a): business allegedly not run from the declared place, with a panchanama report cited.",
+        "Court allowed a Section 30 revocation plea with documents; authority to decide preferably within four weeks of filing."
+      ],
+      "why_it_matters": "Shows how GST registration cancellation and the Section 30 revocation remedy work, a common point in GST practice and compliance.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | GST Registration Revocation Application to Be Decided in Four Weeks: Telangana HC",
+      "link": "https://taxguru.in/goods-and-service-tax/gst-registration-revocation-application-decided-weeks-telangana-hc.html",
+      "published": "2026-11-15T08:02:31+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "Banking",
+      "headline": "Bank holidays 16-22 November: where branches will be shut",
+      "points": [
+        "Per the RBI calendar, branches close 16 Nov in Patna and Ranchi for Chhath Puja, and 20 Nov in Dehradun for Igas-Bagwal.",
+        "22 November is a Sunday, so banks stay closed across India.",
+        "Branches shut, but UPI, net banking, apps, NEFT and RTGS requests stay available during holidays."
+      ],
+      "why_it_matters": "Bank closures affect cheque clearing, payment timing and cash flow, which accounting and compliance work often depends on.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "Bank holidays next week: SBI, HDFC, ICICI branches to closed on three days from 16-22 November? Check RBI calendar",
+      "link": "https://www.livemint.com/money/bank-holidays-next-week-sbi-hdfc-icici-axis-branch-close-three-days-16-22-nov-check-rbi-calendar-chhath-puja-igas-bagwal-11794703554179.html",
+      "published": "2026-11-15T07:38:08+05:30",
+      "check": "minor",
+      "check_notes": [
+        "The 'Why it matters' line about cheque clearing, payment timing, cash flow and accounting/compliance work is the writer's own framing and isn't in the source. It's general commentary, not a specific factual claim.",
+        "The point that NEFT and RTGS requests 'stay available during holidays' slightly overstates the source. The source only says transfer requests can be made using NEFT/RTGS forms; it explicitly says online banking and apps stay operational on holidays, but doesn't say this about NEFT/RTGS."
+      ]
+    }
+  ],
+  "notes": [
+    "skipped 'Corporate Law | CoC Resolution Not Mandatory for Liquidation': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Refund Paid Under Mistake of La': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | Non-Filing of GSTR-9C Does Not Auto': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Authorities Cannot Recover Inad': a point is longer than 110 characters",
+    "skipped 'Income Tax | DRP Directions and Assessment Order Without Val': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Registration Cannot Be Cancelle': why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | SEZ Refund Claim Requires Invoice-W': a point is longer than 110 characters",
+    "skipped 'Corporate Law | NCLT Mumbai Approves Resolution Plan Despite': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Maharashtra Sales Tax Information Not Covered b': a point is longer than 110 characters",
+    "skipped 'Income Tax | Payroll TDS True-Up for Tax Year 2026-27: Forms': a point is longer than 110 characters",
+    "skipped 'Finance | BookMyForex: Legal Entity, RBI Licence, AD Partner': a point is longer than 110 characters",
+    "dropped 'Delhi consumer court orders bank to refund woman ₹70,084 los': Point 2 almost exactly copies a source sentence ('The bank must also pay ₹25,000 towards compensation and litigation costs, according to The Indian Express'); only 'towards' was changed to 'as'.; All ",
+    "skipped 'Company Law | Loan Confirmation and Part-Payments Establish ': a point is longer than 110 characters",
+    "skipped 'Can income tax authorities tax money deposited in your bank ': why_it_matters is longer than 120 characters",
+    "skipped 'Got tax refund twice? Here is what you should do': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Interest Not Payable on Wrongly': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 15 Nov 2026\n\n1️⃣ Allahabad HC: Regional Rural Bank can claim Section 80P deduction (TaxGuru)\n2️⃣ Telangana HC sends GST cancellation dispute to revocation route (TaxGuru)\n3️⃣ Bank holidays 16-22 November: where branches will be shut (Mint)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Mint, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261115",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

@@ -3,7 +3,7 @@
   "course_id": "ca_final",
   "topic": "Call Option vs Put Option",
   "concept_topic": "Call Option vs Put Option",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 199 words; write 120-175",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 194 words; write 120-175",
   "hold": false,
   "hold_reason": ""
 }

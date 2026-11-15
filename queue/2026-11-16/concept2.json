@@ -1,0 +1,172 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 10",
+  "paper_name": "Corporate Accounting and Auditing (Corporate Accounting)",
+  "author": "Rahul kp",
+  "topic": "Bonus Shares vs Rights Issue",
+  "title": "Bonus Shares",
+  "title_highlight": "vs Rights Issue",
+  "hook": "free gift or paid offer?",
+  "simple_words": "Bonus shares are free, paid from reserves. Rights shares are offered to existing holders, who pay for them.",
+  "definitions": [
+    {
+      "term": "Bonus shares",
+      "meaning": "Fully paid shares given free to existing shareholders in proportion to holding, by capitalising reserves.",
+      "note": "No cash comes in!"
+    },
+    {
+      "term": "Rights issue",
+      "meaning": "Offer of new shares to existing shareholders in proportion to holding, at a stated price. The holder may accept or renounce.",
+      "note": "Cash comes in."
+    }
+  ],
+  "key_points": [
+    "Bonus: ==reserves convert into share capital==; no cash is received.",
+    "Rights: company ==raises fresh funds== from existing members.",
+    "Both go to existing shareholders in the same ratio as their holding.",
+    "!!Revaluation reserve cannot be used for bonus shares!!."
+  ],
+  "formula_heading": "Bonus vs Rights Table",
+  "formula_hook": "compare, then journal",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Bonus",
+      "Rights"
+    ],
+    "rows": [
+      [
+        "Cash received",
+        "No",
+        "Yes, at issue price"
+      ],
+      [
+        "Purpose",
+        "Capitalise profits",
+        "Raise funds"
+      ],
+      [
+        "Holder's choice",
+        "Receives free",
+        "Accept or renounce"
+      ]
+    ]
+  },
+  "entries": [
+    {
+      "label": "Bonus issue (fully paid)",
+      "debit": [
+        "General Reserve A/c"
+      ],
+      "credit": [
+        "Equity Share Capital A/c"
+      ],
+      "narration": "Being bonus shares issued out of free reserves"
+    },
+    {
+      "label": "Rights issue (at a premium)",
+      "debit": [
+        "Bank A/c"
+      ],
+      "credit": [
+        "Equity Share Capital A/c",
+        "Securities Premium A/c"
+      ],
+      "narration": "Being rights shares issued and money received"
+    }
+  ],
+  "insight": {
+    "text": "Bonus only moves money inside equity; rights bring new money into the company.",
+    "punchline": "Bonus: no cash. Rights: cash in!"
+  },
+  "trick_hook": "B for Book, R for Rupees",
+  "memory_trick": {
+    "mnemonic": "Bonus = Book entry only",
+    "explanation": "Bonus is only a book transfer from reserves to capital. Rights bring Rupees into the Bank, so the Bank A/c is debited."
+  },
+  "steps": [
+    "Check: is cash received?",
+    "No cash: bonus; debit reserve",
+    "Cash: rights; debit Bank",
+    "Check the reserve is allowed",
+    "Credit Share Capital (and premium)"
+  ],
+  "exam_tip": "In bonus-source MCQs, pick the reserve that is not free or not a premium or capital redemption reserve: revaluation reserve.",
+  "doubt": {
+    "question": "Does a bonus issue increase total shareholders' funds?",
+    "answer": "No. Reserves fall and share capital rises by the same amount, so total equity stays the same. A rights issue increases it."
+  },
+  "mistakes_hook": "don't mix the two",
+  "mistakes": [
+    {
+      "wrong": "Debiting Bank A/c when bonus shares are issued",
+      "right": "Bonus brings no cash. Debit the reserve used and credit Equity Share Capital."
+    },
+    {
+      "wrong": "Using revaluation reserve to issue bonus shares",
+      "right": "Use free reserves, securities premium or capital redemption reserve. Revaluation reserve is not allowed."
+    },
+    {
+      "wrong": "Saying rights shares must be taken up by every holder",
+      "right": "A rights offer can be accepted or renounced; the holder is not forced."
+    }
+  ],
+  "past_papers": [
+    {
+      "ref": "1-30",
+      "papers": "PY J24 · MCQ",
+      "point": "Which reserve cannot be used to issue bonus shares"
+    },
+    {
+      "ref": "1-25",
+      "papers": "PY D22 · MCQ",
+      "point": "Identifying the permitted sources for issuing bonus shares"
+    }
+  ],
+  "applicability": "Companies Act 2013: bonus and rights issue provisions",
+  "confidence": "high",
+  "reviewer_note": "Corrected past papers: removed 1-78 (rights-valuation numerical, not this concept). Please verify the bonus sources match the Companies Act 2013 provision.",
+  "law_sensitive": false,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Corrected past papers: removed 1-78 (rights-valuation numerical, not this concept). Please verify the bonus sources match the Companies Act 2013 provision.",
+    "Checker 1: Exam tip: the phrase 'pick the reserve that is not free or not a premium or capital redemption reserve' is garbled. Read literally, almost any reserve is 'not free or not a premium'. Correct version: 'In bonus-source MCQs, Section 63 allows only free reserves, securities premium account and capital redemption reserve account. So pick the reserve that is none of these: revaluation reserve.'"
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.08,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.24,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟧 CMA Inter · Concept of the day\nPaper 10: Corporate Accounting and Auditing (Corporate Accounting)\nBonus Shares vs Rights Issue\n\nIn simple words: Bonus shares are free, paid from reserves. Rights shares are offered to existing holders, who pay for them.\n\n📝 Asked in past papers: PY D22, PY J24\n\nSwipe for the journal entries, a memory trick, the mistakes that cost marks and the past exam radar.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Companies Act 2013: bonus and rights issue provisions.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref concept2-261116",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

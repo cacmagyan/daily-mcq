@@ -1,0 +1,141 @@
+{
+  "kind": "concept",
+  "course_id": "ca_final",
+  "paper_code": "Paper 2",
+  "paper_name": "Advanced Financial Management",
+  "author": "Rahul kp",
+  "topic": "Call Option vs Put Option",
+  "title": "Call Option",
+  "title_highlight": "vs Put Option",
+  "hook": "right to buy or right to sell?",
+  "simple_words": "A call gives the buyer the right to buy; a put gives the right to sell. The buyer pays a premium for this right.",
+  "definitions": [
+    {
+      "term": "Call option",
+      "meaning": "Gives the buyer the right, not the duty, to BUY the asset at strike price X on expiry (European) or on/before expiry (American).",
+      "note": "Buyer hopes price goes UP"
+    },
+    {
+      "term": "Put option",
+      "meaning": "Gives the buyer the right, not the duty, to SELL the asset at strike price X on expiry (European) or on/before expiry (American).",
+      "note": "Buyer hopes price goes DOWN"
+    }
+  ],
+  "key_points": [
+    "Buyer (holder) pays premium P and has only a ==right==; the writer has the ==obligation== if buyer exercises.",
+    "Call is in the money when S > X; put is in the money when S < X (S = spot price at exercise).",
+    "Exercise whenever the option is in the money, even if a net loss after premium remains. If out of the money, let it lapse; !!maximum loss of buyer is the premium!!.",
+    "Writer's gain is limited to the premium; writer's loss is the buyer's gain, less the premium."
+  ],
+  "formula_heading": "Payoff at Expiry",
+  "formula_hook": "buyer's payoff, before premium",
+  "formulas": [
+    {
+      "name": "Call buyer payoff",
+      "lhs": "Call payoff",
+      "rhs": "Max (S − X, 0)",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "S = spot price at expiry, X = strike price. Net profit = payoff − premium P."
+    },
+    {
+      "name": "Put buyer payoff",
+      "lhs": "Put payoff",
+      "rhs": "Max (X − S, 0)",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "S = spot price at expiry, X = strike price. Net profit = payoff − premium P."
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Call = Climb, Put = Plunge!",
+    "text": "Writer's payoff is the opposite of the buyer's, plus the premium received."
+  },
+  "trick_hook": "Call up, Put down",
+  "memory_trick": {
+    "mnemonic": "Call UP, Put DOWN",
+    "explanation": "You CALL a cab to go UP in price terms: buy now, gain if price rises. You PUT the stock DOWN on the market: sell, gain if price falls."
+  },
+  "steps": [
+    "Identify call or put",
+    "Compare spot S with strike X",
+    "Is it in the money? Exercise",
+    "Payoff minus premium = net result",
+    "Reverse sign for the writer"
+  ],
+  "exam_tip": "Always state buyer or writer, and say whether the result is before or after the premium. Marks go for this clarity.",
+  "doubt": {
+    "question": "Must the buyer always exercise the option?",
+    "answer": "No. The buyer has only a right and exercises it only if it is in the money, even if a net loss remains after premium. The writer must perform if the buyer exercises."
+  },
+  "mistakes_hook": "Don't flip the direction",
+  "mistakes": [
+    {
+      "wrong": "Put buyer gains when the spot price rises",
+      "right": "Put buyer gains when spot price falls below strike X (S < X)."
+    },
+    {
+      "wrong": "Ignoring the premium while stating net profit",
+      "right": "Net profit = payoff − premium for the buyer; for the writer, premium received − payoff."
+    },
+    {
+      "wrong": "Buyer exercises only when a net profit is made after premium",
+      "right": "Exercise whenever in the money (call S > X; put S < X); this reduces the loss even if the net result is negative."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "No past-paper list was given, so past_papers is empty. Check the exercise rules and the American vs European wording.",
+  "law_sensitive": false,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No past-paper list was given, so past_papers is empty. Check the exercise rules and the American vs European wording.",
+    "Checker 1: Key point 4: 'writer's loss is the buyer's gain, less the premium' is ambiguous. If 'buyer's gain' means the buyer's net profit, taking the premium off again counts it twice. Suggested wording: 'Writer's gain is limited to the premium received; writer's net loss = buyer's payoff − premium = buyer's net profit (for a call writer, this loss can be unlimited).'",
+    "Checker 1: Memory trick explanation: 'You CALL a cab to go UP in price terms' is confusing and adds nothing. Suggested wording: 'CALL = buy, so you gain when the price goes UP (S > X); PUT = sell, so you gain when the price goes DOWN (S < X).'"
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 0.96,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟪 CA Final · Concept of the day\nPaper 2: Advanced Financial Management\nCall Option vs Put Option\n\nIn simple words: A call gives the buyer the right to buy; a put gives the right to sell. The buyer pays a premium for this right.\n\nSwipe for the formula, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFinal #ICAI #CAStudents #IndAS\n\nref concept-261116",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

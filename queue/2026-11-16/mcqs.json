@@ -1,0 +1,177 @@
+{
+  "date": "2026-11-16",
+  "day": 26,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-15T19:31:58+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Statistics",
+      "topic": "Statistics: Mean vs Median vs Mode",
+      "question": "Daily wages (₹) of five workers are 400, 420, 430, 450 and 500. The highest wage is wrongly entered as ₹5,000 instead of ₹500. Which measure stays unchanged after this error?",
+      "options": [
+        "Median",
+        "Standard deviation",
+        "Range",
+        "Arithmetic mean"
+      ],
+      "correct": "A",
+      "explanation": "The median is the middle value after arranging the data. It stays ₹430 before and after, as only the largest value is wrong. Mean, range and standard deviation use the extreme value, so they change.",
+      "working": [],
+      "why_not": {
+        "D": "Mean uses every value, so one huge wrong value drags it up sharply.",
+        "C": "Range = largest − smallest, so it jumps from ₹100 to ₹4,600.",
+        "B": "Standard deviation uses every deviation from the mean, so it rises greatly."
+      },
+      "exam_tip": "Extreme value entered wrongly? Median depends on position, so it resists. Mean, range and SD do not.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept": "Mean vs Median vs Mode",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 26\nPaper 3: Quantitative Aptitude: Statistics\nTopic: Statistics: Mean vs Median vs Mode\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261116",
+      "story": "ca_foundation_story.jpg",
+      "answer_story": "ca_foundation_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 4",
+      "paper_name": "Cost and Management Accounting",
+      "topic": "Marginal Costing: Break-even Sales",
+      "question": "A firm sells one product at ₹50 per unit. Variable cost is ₹30 per unit. Fixed costs are ₹6,00,000 per year. What is the break-even sales value for the year?",
+      "options": [
+        "₹15,00,000",
+        "₹9,00,000",
+        "₹12,00,000",
+        "₹10,00,000"
+      ],
+      "correct": "A",
+      "explanation": "P/V ratio = contribution per unit ÷ selling price = 20 ÷ 50 = 40%. Break-even sales = fixed costs ÷ P/V ratio = ₹6,00,000 ÷ 40% = ₹15,00,000.",
+      "working": [
+        {
+          "label": "Contribution per unit (₹)",
+          "value": "20"
+        },
+        {
+          "label": "P/V ratio (%)",
+          "value": "40"
+        },
+        {
+          "label": "Fixed costs (₹)",
+          "value": "6,00,000"
+        },
+        {
+          "label": "Break-even sales (₹)",
+          "value": "15,00,000"
+        }
+      ],
+      "why_not": {
+        "D": "Divided fixed costs by the variable cost ratio (60%) instead of the P/V ratio.",
+        "C": "Divided fixed costs by an assumed 50% ratio; the actual P/V ratio is 40%.",
+        "B": "Multiplied break-even units (30,000) by variable cost instead of selling price."
+      },
+      "exam_tip": "Break-even sales (₹) = Fixed cost ÷ P/V ratio. Break-even units = Fixed cost ÷ contribution per unit.",
+      "calculation": "contribution = 50 - 30\npv = contribution / 50\nanswer = 600000 / pv",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 26\nPaper 4: Cost and Management Accounting\nTopic: Marginal Costing: Break-even Sales\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261116",
+      "story": "ca_inter_story.jpg",
+      "answer_story": "ca_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 1",
+      "paper_name": "Financial Reporting",
+      "topic": "Ind AS 12 - Deferred tax",
+      "question": "Under Ind AS 12, on 31 March 2026 a machine has carrying amount ₹80,00,000 and tax base ₹50,00,000. The enacted tax rate is 25%. There is no earlier deferred tax on it. What deferred tax balance is recognised for the machine?",
+      "options": [
+        "Deferred tax liability ₹12,50,000",
+        "Deferred tax liability ₹7,50,000",
+        "Deferred tax asset ₹7,50,000",
+        "Deferred tax liability ₹20,00,000"
+      ],
+      "correct": "B",
+      "explanation": "Carrying amount exceeds tax base, so there is a taxable temporary difference of ₹30,00,000. Deferred tax liability = 30,00,000 × 25% = ₹7,50,000.",
+      "working": [
+        {
+          "label": "Carrying amount",
+          "value": "8000000"
+        },
+        {
+          "label": "Tax base",
+          "value": "5000000"
+        },
+        {
+          "label": "Taxable temporary difference",
+          "value": "3000000"
+        },
+        {
+          "label": "Tax rate (%)",
+          "value": "25"
+        },
+        {
+          "label": "Deferred tax liability",
+          "value": "750000"
+        }
+      ],
+      "why_not": {
+        "C": "Treats a taxable temporary difference as deductible, so wrongly shows an asset.",
+        "D": "Applies the rate to the full carrying amount instead of the difference.",
+        "A": "Applies the rate to the tax base instead of the difference."
+      },
+      "exam_tip": "Asset: carrying amount above tax base gives DTL; below gives DTA. Tax the difference only.",
+      "calculation": "diff = 8000000 - 5000000\nanswer = diff * 25 / 100",
+      "applicability": "Ind AS 12 Income Taxes (balance sheet liability method)",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 26\nPaper 1: Financial Reporting\nTopic: Ind AS 12 - Deferred tax\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Ind AS 12 Income Taxes (balance sheet liability method).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261116",
+      "story": "ca_final_story.jpg",
+      "answer_story": "ca_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

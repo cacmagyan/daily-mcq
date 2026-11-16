@@ -1,0 +1,9 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_final",
+  "topic": "Shares vs Debentures",
+  "concept_topic": "Shares vs Debentures",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 191 words; write 120-175",
+  "hold": false,
+  "hold_reason": ""
+}

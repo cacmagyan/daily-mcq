@@ -1,0 +1,190 @@
+{
+  "date": "2026-11-17",
+  "day": 27,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-16T21:24:04+05:30",
+  "items": [
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2A",
+      "paper_name": "Financial Accounting-2",
+      "topic": "Payroll - EPF and net pay",
+      "question": "Monthly pay: basic ₹30,000, DA ₹10,000, HRA ₹12,000. EPF is 12% of basic plus DA for both employee and employer. Professional tax ₹200 and TDS ₹1,500 are deducted. Net pay to the employee is:",
+      "options": [
+        "₹45,500",
+        "₹44,060",
+        "₹40,700",
+        "₹50,300"
+      ],
+      "correct": "A",
+      "explanation": "Gross ₹52,000. Only the employee's EPF of 12% on basic plus DA (₹4,800) is deducted, with PT and TDS. The employer's share is the employer's own expense, not a deduction.",
+      "working": [
+        {
+          "label": "Gross earnings",
+          "value": "₹52,000"
+        },
+        {
+          "label": "EPF wages (basic + DA)",
+          "value": "₹40,000"
+        },
+        {
+          "label": "Employee EPF at 12%",
+          "value": "₹4,800"
+        },
+        {
+          "label": "PT + TDS",
+          "value": "₹1,700"
+        },
+        {
+          "label": "Net pay",
+          "value": "₹45,500"
+        }
+      ],
+      "why_not": {
+        "C": "Also deducts the employer's EPF share, which the employer bears itself.",
+        "B": "Charges EPF on gross pay including HRA instead of basic plus DA.",
+        "D": "Forgets the EPF deduction and deducts only PT and TDS."
+      },
+      "exam_tip": "Employer's PF contribution is a cost to the employer; only the employee's share comes out of pay.",
+      "calculation": "gross = 30000 + 10000 + 12000\nepf = 0.12 * (30000 + 10000)\nnet = gross - epf - 200 - 1500\nanswer = net",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Rates are stated in the question, so no outside rate is assumed.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Rates are stated in the question, so no outside rate is assumed."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 27\nPaper 2A: Financial Accounting-2\nTopic: Payroll - EPF and net pay\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261117",
+      "story": "cma_cat_story.jpg",
+      "answer_story": "cma_cat_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 10",
+      "paper_name": "Corporate Accounting and Auditing (Corporate Accounting)",
+      "topic": "Bonus Shares vs Rights Issue",
+      "question": "A company has ₹10 lakh in a revaluation reserve, ₹6 lakh in securities premium and ₹4 lakh in free general reserve. It wants to issue fully paid bonus shares without receiving cash. Which reserve can NOT be used?",
+      "options": [
+        "Capital redemption reserve",
+        "Revaluation reserve",
+        "Securities premium",
+        "Free general reserve"
+      ],
+      "correct": "B",
+      "explanation": "Bonus shares may be paid from free reserves, securities premium or capital redemption reserve. A revaluation reserve is an unrealised gain, so it cannot be capitalised for bonus shares.",
+      "working": [],
+      "why_not": {
+        "C": "Thinks premium is restricted; it can fund fully paid bonus shares.",
+        "D": "Free reserves are the main source of bonus shares.",
+        "A": "Capital redemption reserve can be used for fully paid bonus shares."
+      },
+      "exam_tip": "Bonus needs realised sources only. Revaluation reserve is unrealised, so it is never capitalised.",
+      "calculation": "",
+      "applicability": "Companies Act, 2013 – bonus shares",
+      "confidence": "high",
+      "reviewer_note": "Option D: CRR use for fully paid bonus is permitted under Companies Act s.69 and s.63; verify wording.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Option D: CRR use for fully paid bonus is permitted under Companies Act s.69 and s.63; verify wording.",
+        "Checker: Option A (capital redemption reserve) is not among the company's stated balances, though the law permits it. Some students may be confused, but it is still a valid distractor.",
+        "Checker: The question does not say that the Companies Act 2013 applies. This is a wording polish only.",
+        "Checker: 'Free general reserve' is a slightly odd term. 'Free reserves' would be more standard."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Bonus Shares vs Rights Issue",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 27\nPaper 10: Corporate Accounting and Auditing (Corporate Accounting)\nTopic: Bonus Shares vs Rights Issue\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013 – bonus shares.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261117",
+      "story": "cma_inter_story.jpg",
+      "answer_story": "cma_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 18",
+      "paper_name": "Corporate Financial Reporting",
+      "topic": "Ind AS 36 - Impairment of Assets",
+      "question": "Under Ind AS 36, a machine has a carrying amount of ₹60,00,000. Its fair value is ₹55,00,000, costs of disposal are ₹3,00,000 and its value in use is ₹54,00,000. What impairment loss is recognised?",
+      "options": [
+        "₹8,00,000",
+        "₹3,00,000",
+        "₹6,00,000",
+        "₹5,00,000"
+      ],
+      "correct": "C",
+      "explanation": "Recoverable amount is the higher of fair value less costs of disposal (₹52,00,000) and value in use (₹54,00,000), so ₹54,00,000. Loss = ₹60,00,000 - ₹54,00,000 = ₹6,00,000.",
+      "working": [
+        {
+          "label": "Fair value less costs of disposal",
+          "value": "₹52,00,000"
+        },
+        {
+          "label": "Value in use",
+          "value": "₹54,00,000"
+        },
+        {
+          "label": "Recoverable amount (higher)",
+          "value": "₹54,00,000"
+        },
+        {
+          "label": "Carrying amount",
+          "value": "₹60,00,000"
+        },
+        {
+          "label": "Impairment loss",
+          "value": "₹6,00,000"
+        }
+      ],
+      "why_not": {
+        "D": "Used fair value of ₹55,00,000 and ignored the costs of disposal.",
+        "A": "Used fair value less costs of disposal, the lower figure, instead of the higher recoverable amount.",
+        "B": "Added disposal costs to value in use, giving ₹57,00,000 as recoverable amount."
+      },
+      "exam_tip": "Recoverable amount = HIGHER of FVLCD and value in use. Loss = carrying amount minus recoverable amount.",
+      "calculation": "fvlcd = 5500000 - 300000\nviu = 5400000\nrecoverable = max(fvlcd, viu)\nanswer = 6000000 - recoverable",
+      "applicability": "Ind AS 36 Impairment of Assets",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 27\nPaper 18: Corporate Financial Reporting\nTopic: Ind AS 36 - Impairment of Assets\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Ind AS 36 Impairment of Assets.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261117",
+      "story": "cma_final_story.jpg",
+      "answer_story": "cma_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

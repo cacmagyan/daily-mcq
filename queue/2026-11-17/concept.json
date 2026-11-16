@@ -1,0 +1,154 @@
+{
+  "kind": "concept",
+  "course_id": "cma_final",
+  "paper_code": "Paper 13",
+  "paper_name": "Corporate and Economic Laws",
+  "author": "Ranjith Shivahari",
+  "topic": "Shares vs Debentures",
+  "title": "Shares vs",
+  "title_highlight": "Debentures",
+  "hook": "owner or lender?",
+  "simple_words": "Shares make you a part-owner of the company. Debentures make you a lender to the company.",
+  "definitions": [
+    {
+      "term": "Share",
+      "meaning": "A unit of the share capital of a company. The holder is a member and an owner of the company.",
+      "note": "Owner = shares"
+    },
+    {
+      "term": "Debenture",
+      "meaning": "A debt instrument of a company, such as a debenture stock, bond or other security. The holder is a creditor of the company.",
+      "note": "Lender = debenture"
+    }
+  ],
+  "key_points": [
+    "A shareholder is a ==member==; a debenture holder is a ==creditor==.",
+    "Shares earn dividend out of profits; debentures earn interest at the agreed rate.",
+    "Debenture interest is a charge on profit; dividend is an appropriation of profit.",
+    "!!Debenture holders do not get voting rights!! in general meetings."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn it row by row",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Shares",
+      "Debentures"
+    ],
+    "rows": [
+      [
+        "Status",
+        "Owner (member)",
+        "Creditor of company"
+      ],
+      [
+        "Return",
+        "Dividend, only if declared",
+        "Interest as agreed"
+      ],
+      [
+        "Voting",
+        "Equity holders can vote",
+        "No voting right"
+      ],
+      [
+        "Winding up",
+        "Paid after all creditors",
+        "Paid before shareholders"
+      ],
+      [
+        "Security",
+        "No charge on assets",
+        "Often secured by a charge"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Owner takes risk, lender takes priority!",
+    "text": "Debenture interest is a fixed obligation of the company, while dividend depends on the profits and the decision to declare it."
+  },
+  "trick_hook": "S for Say, D for Debt",
+  "memory_trick": {
+    "mnemonic": "Shares Say, Debentures Debt",
+    "explanation": "Shareholders have a Say (vote, ownership). Debenture holders are owed Debt (interest and repayment), so no say."
+  },
+  "steps": [
+    "Ask: owner or lender?",
+    "Owner: member, vote, dividend",
+    "Lender: creditor, interest, no vote",
+    "Check return: profit or fixed",
+    "Check order on winding up"
+  ],
+  "exam_tip": "In a comparison answer, write at least 4 points in a table: status, return, voting and winding-up priority.",
+  "doubt": {
+    "question": "Can a company pay debenture interest when it has a loss?",
+    "answer": "Yes. Interest is a contractual liability to a creditor, so it is payable even in a loss. Dividend depends on the company's profits."
+  },
+  "mistakes_hook": "owner and lender are not twins",
+  "mistakes": [
+    {
+      "wrong": "Debenture holders are members of the company",
+      "right": "Debenture holders are creditors. Shareholders are the members."
+    },
+    {
+      "wrong": "Dividend is a fixed charge like interest",
+      "right": "Dividend is paid out of profits when declared. Interest is payable as agreed, whatever the profit."
+    },
+    {
+      "wrong": "On winding up, shareholders are paid before debenture holders",
+      "right": "Debenture holders, as creditors, are paid before shareholders."
+    },
+    {
+      "wrong": "Debenture holders can vote at general meetings",
+      "right": "Debenture holders have no voting right as such. Equity shareholders vote."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Companies Act, 2013 (general concept)",
+  "confidence": "high",
+  "reviewer_note": "No section numbers cited. Preference shares carry limited voting rights and a fixed dividend, so the table is framed mainly for equity shares.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No section numbers cited. Preference shares carry limited voting rights and a fixed dividend, so the table is framed mainly for equity shares.",
+    "Checker 1: Definition 2 (Debenture): the phrase 'such as a debenture stock, bond or other security' is imprecise. Shares are also securities, so 'other security' blurs the distinction the note is drawing. Use the wording of Section 2(30) of the Companies Act, 2013: 'Debenture includes debenture stock, bonds or any other instrument of a company evidencing a debt, whether constituting a charge on the assets of the company or not.' The holder is a creditor of the company.",
+    "Checker 1: Key point 4 / mistake 4 (optional addition): the statement is correct, but citing the statutory basis would strengthen it: 'Under Section 71(2), no company can issue debentures carrying voting rights.'"
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.2,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.28,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 13: Corporate and Economic Laws\nShares vs Debentures\n\nIn simple words: Shares make you a part-owner of the company. Debentures make you a lender to the company.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Companies Act, 2013 (general concept).\n\nNotes by Ranjith Shivahari\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept-261117",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

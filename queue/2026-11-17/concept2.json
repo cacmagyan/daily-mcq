@@ -1,0 +1,154 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_final",
+  "paper_code": "Paper 3",
+  "paper_name": "Advanced Auditing, Assurance and Professional Ethics",
+  "author": "Ranjith Shivahari",
+  "topic": "Internal Audit vs Statutory Audit",
+  "title": "Internal Audit",
+  "title_highlight": "vs Statutory Audit",
+  "hook": "same books, different masters!",
+  "simple_words": "Statutory audit tells outsiders if accounts are true and fair. Internal audit helps management improve the business.",
+  "definitions": [
+    {
+      "term": "Statutory Audit",
+      "meaning": "Independent audit of financial statements by an appointed auditor, who reports an opinion to the members.",
+      "note": "Required by law for companies"
+    },
+    {
+      "term": "Internal Audit",
+      "meaning": "Review of operations, controls and risk by an internal auditor, who reports to management or the audit committee.",
+      "note": "Scope is set by management"
+    }
+  ],
+  "key_points": [
+    "Statutory auditor is ==independent== and is appointed by the members.",
+    "Internal auditor is appointed by the Board or management, and may be an employee or an outside firm.",
+    "Statutory audit gives an ==opinion== on the financial statements.",
+    "Internal audit gives ==recommendations== on controls, risk and efficiency."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn it row by row",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Statutory",
+      "Internal"
+    ],
+    "rows": [
+      [
+        "Objective",
+        "Opinion on true and fair view",
+        "Improve controls and efficiency"
+      ],
+      [
+        "Appointed by",
+        "Members (shareholders)",
+        "Board / management"
+      ],
+      [
+        "Reports to",
+        "Members",
+        "Management / audit committee"
+      ],
+      [
+        "Scope",
+        "Fixed by law",
+        "Decided by management"
+      ],
+      [
+        "Focus",
+        "Past financial statements",
+        "Ongoing operations and risk"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "One looks back, one looks ahead!",
+    "text": "Statutory audit protects outside users of accounts, while internal audit helps run the business better."
+  },
+  "trick_hook": "S for Shareholders, I for Inside",
+  "memory_trick": {
+    "mnemonic": "S = Shareholders, I = Inside",
+    "explanation": "Statutory serves Shareholders with an opinion. Internal works Inside, for management, with advice."
+  },
+  "steps": [
+    "Spot who appoints the auditor",
+    "Spot who receives the report",
+    "Check if it is an opinion or advice",
+    "Check if scope is law or management"
+  ],
+  "exam_tip": "In MCQs, !!independence!! decides: the statutory auditor reports to members, and the internal auditor reports to management.",
+  "doubt": {
+    "question": "Can the statutory auditor rely on internal audit work?",
+    "answer": "The statutory auditor may use it, but remains fully responsible for the opinion. Reliance does not reduce that responsibility."
+  },
+  "mistakes_hook": "don't swap the two roles",
+  "mistakes": [
+    {
+      "wrong": "Internal auditor gives the opinion on true and fair view",
+      "right": "The statutory auditor gives that opinion. The internal auditor gives recommendations to management."
+    },
+    {
+      "wrong": "Internal auditor is always an employee",
+      "right": "It may be an employee or an outside professional firm, as the Board decides."
+    },
+    {
+      "wrong": "Statutory auditor's scope is set by management",
+      "right": "Scope of statutory audit is fixed by law and auditing standards, not by management."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Companies Act, 2013; SA 610 (Using Work of Internal Auditors)",
+  "confidence": "medium",
+  "reviewer_note": "No past-paper list given. Confirm comparison against current ICAI study material and SA 610 (Revised).",
+  "law_sensitive": false,
+  "attempts": 3,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No past-paper list given. Confirm comparison against current ICAI study material and SA 610 (Revised).",
+    "Checker 1: Key point 1 / table row 2 (Appointed by – Statutory): 'appointed by the members' is too broad. Under Section 139 of the Companies Act, 2013, the members appoint the auditor at the AGM. However, the first auditor of a non-government company is appointed by the Board within 30 days of incorporation. For a government company, the C&AG appoints the auditor. Suggested wording: 'Members at the AGM (first auditor by the Board; C&AG for government companies).'",
+    "Checker 1: Key point 2 / mistake 2: add the legal basis. Section 138 and Rule 13 require prescribed companies to have an internal auditor, appointed by the Board. The internal auditor may be a chartered accountant, a cost accountant or another professional chosen by the Board, and may or may not be an employee. Also, definition 2's note 'Scope is set by management' should read 'Scope is set by the Board or audit committee, in consultation with the internal auditor (Rule 13(2)).'",
+    "Checker 1: Exam tip: 'independence decides' is muddled. The internal auditor is also expected to be independent and objective. What actually separates the two in MCQs is who appoints the auditor and who receives the report. Suggested wording: 'In MCQs, look at who appoints and who receives the report: the statutory auditor reports to the members, and the internal auditor reports to management or the audit committee.'",
+    "Checker 1: Insight punchline 'One looks back, one looks ahead!' is a slogan only. Internal audit also reviews past transactions and controls. Consider softening it to 'One mainly looks back, one mainly helps going forward.'",
+    "Checker 1: Doubt answer: name the standard. Write 'Under SA 610 (Revised), the external auditor may use the work of the internal audit function, but has sole responsibility for the opinion expressed.'",
+    "Checker 2: Insight punchline 'One looks back, one looks ahead!' is a loose simplification. Internal audit also reviews past transactions and controls, and it is not a forecast. A safer wording is 'One reports on past accounts, the other reviews ongoing operations'. This is a wording polish only.",
+    "Checker 2: Optional nuance: members appoint the statutory auditor under Section 139. The first auditor is appointed by the Board. In government companies the CAG appoints. The internal auditor is appointed by the Board under Section 138, usually on the audit committee's recommendation. The note's simplified statements are acceptable."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.02,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.24,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟪 CA Final · Concept of the day\nPaper 3: Advanced Auditing, Assurance and Professional Ethics\nInternal Audit vs Statutory Audit\n\nIn simple words: Statutory audit tells outsiders if accounts are true and fair. Internal audit helps management improve the business.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Companies Act, 2013; SA 610 (Using Work of Internal Auditors).\n\nNotes by Ranjith Shivahari\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFinal #ICAI #CAStudents #IndAS\n\nref concept2-261117",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

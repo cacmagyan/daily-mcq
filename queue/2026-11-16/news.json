@@ -1,0 +1,80 @@
+{
+  "kind": "news",
+  "date": "2026-11-16",
+  "stories": [
+    {
+      "tag": "Income Tax",
+      "headline": "CBDT's 21-day extension for audit report and ITR filing for AY27",
+      "points": [
+        "In September, the I-T Department gave corporate taxpayers 21 more days to file audit reports and ITRs for AY 2026-27 (FY26).",
+        "CBDT acted on requests from tax practitioners, according to a PTI report.",
+        "Practitioners said the audit window was squeezed after the 31 August ITR deadline for non-audit cases."
+      ],
+      "why_it_matters": "Tax audit reports and ITR filing are core CA/CMA work, and deadline changes directly affect compliance planning and reconciliation.",
+      "usable": true,
+      "confidence": "medium",
+      "source": "Mint",
+      "source_title": "ITR update: Extended deadline tax audit report filings this week — Check due date, which taxpayers are eligible, details",
+      "link": "https://www.livemint.com/money/personal-finance/itr-update-extended-deadline-filing-tax-audit-report-this-week-21-november-due-date-taxpayers-eligible-corporates-ay27-11794801731405.html",
+      "published": "2026-11-16T10:44:26+05:30",
+      "check": "minor",
+      "check_notes": [
+        "'Why it matters' says tax audit reports and ITR filing are 'core CA/CMA work'. The source doesn't say this; it's the story's own framing, not a sourced fact. The source only mentions CAs in its disclaimer and never mentions CMAs."
+      ]
+    },
+    {
+      "tag": "RBI",
+      "headline": "RBI seeks Supreme Court review of Yes Bank AT-1 bond verdict",
+      "points": [
+        "RBI filed a review plea on 13 November against the 15 October ruling that struck down the ₹8,415-crore AT-1 write-down.",
+        "Yes Bank also filed its own review plea, citing a possible hit to capital if the bonds are restored.",
+        "RBI argues the court did not fully weigh its Basel III circular and wants a stay and an open-court hearing."
+      ],
+      "why_it_matters": "AT-1 bonds, loss-absorption rules and bank capital ratios feature in financial reporting, audit and banking regulation work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "RBI moves review plea in Supreme Court against Yes Bank AT-1 bond ruling",
+      "link": "https://www.livemint.com/companies/news/rbi-moves-review-plea-in-supreme-court-against-yes-bank-at-1-bond-ruling-11794833245144.html",
+      "published": "2026-11-16T19:42:42+05:30",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "Corporate Law",
+      "headline": "Supreme Court backs sending Videocon resolution plan for fresh bids",
+      "points": [
+        "SC upheld NCLAT's order returning the Twin Star plan for Videocon to the creditors' committee for fresh bidding.",
+        "SC held the CoC can revisit an approved plan when its approval is under challenge and has been stayed or set aside.",
+        "SC also dismissed Dhoot's plea to bring foreign oil and gas assets held via subsidiaries into Videocon's insolvency."
+      ],
+      "why_it_matters": "It clarifies the CoC's powers under the IBC and how dissenting creditors' payment entitlements are treated in resolution plans.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "SC upholds NCLAT order to send Videocon insolvency case back for fresh bids",
+      "link": "https://www.livemint.com/companies/news/sc-upholds-nclat-order-to-send-videocon-insolvency-case-back-for-fresh-bids-11794808015656.html",
+      "published": "2026-11-16T12:08:30+05:30",
+      "check": "minor",
+      "check_notes": [
+        "'Why it matters' says the ruling clarifies 'how dissenting creditors' payment entitlements are treated in resolution plans'. The source says the dispute centred on this, but the SC findings it reports cover only the CoC's power to reconsider a plan and the NCLAT's power to send it back, not dissenting creditors' entitlements. Suggest: 'It clarifies the CoC's power under the IBC to revisit an approved resolution plan, in a dispute over how dissenting creditors are paid.'"
+      ]
+    }
+  ],
+  "notes": [
+    "skipped 'CA, CS, CMA | Auditor Penalised for Wrong Adjustment of Dece': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST on Scrap from 1 November 2026: ': a point is longer than 110 characters",
+    "dropped 'Govt reviewing LTCG and STT proposals ahead of Union Budget': Point 1 copies the source sentence almost word for word ('CBDT Chairman Ravi Agrawal said [that] the government is evaluating industry suggestions for/on LTCG and STT taxes').; Point 2 copies the sour"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 16 Nov 2026\n\n1️⃣ CBDT's 21-day extension for audit report and ITR filing for AY27 (Mint)\n2️⃣ RBI seeks Supreme Court review of Yes Bank AT-1 bond verdict (Mint)\n3️⃣ Supreme Court backs sending Videocon resolution plan for fresh bids (Mint)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Mint. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261116",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

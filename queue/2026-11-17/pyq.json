@@ -1,0 +1,49 @@
+{
+  "kind": "pyq",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 6",
+  "paper_name": "Financial Accounting",
+  "tried": [
+    "Paper 6||2-89"
+  ],
+  "ref": "Paper 6||2-89",
+  "topic": "Joint Venture",
+  "question": "Shyam and Ramya are entered in the business of buy and sale of food grain for a period of one year and sharing the profit in the ratio of 2 :4, this agreement is a",
+  "options": [
+    "Partnership",
+    "Consignment",
+    "Joint-venture",
+    "Lease"
+  ],
+  "correct": "C",
+  "explanation": "A joint venture is a temporary association of persons for a specific venture or limited period, with profit shared in an agreed ratio. Here the grain trading is for one year only, so the official key treats it as a joint venture.",
+  "working": [],
+  "why_not": {
+    "A": "Partnership is for continuing business; this is time-limited, so the key rejects it.",
+    "B": "Consignment is a principal-agent relationship, not two parties sharing profit.",
+    "D": "Lease is the right to use an asset for rent, not a profit-sharing trade."
+  },
+  "exam_tip": "Joint venture = temporary, specific task or fixed period, profit shared. Partnership = continuing business.",
+  "asked_in": "CMA Inter December 2018 exam",
+  "asked_short": "Dec 2018 exam",
+  "papers_tags": [
+    "PY D18",
+    "MQP J25 S1",
+    "MQP J26 S2"
+  ],
+  "check_notes": [
+    "'Why not A' line and exam tip say a partnership is only for a continuing business. That oversimplifies the law: under the Indian Partnership Act, 1932, a partnership can be for a fixed period, and Section 8 allows a 'particular partnership' for a single venture. A joint venture is essentially a particular partnership. The line should say the key prefers 'joint venture' because the arrangement is temporary and for one venture, not that a partnership can't have a time limit.",
+    "Question wording is ungrammatical ('are entered in the business of buy and sale'), and the 2:4 ratio would normally be simplified to 1:2."
+  ],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "image_prefix": "pyq",
+  "author": "Rahul kp",
+  "images": {
+    "question": "pyq_q.jpg",
+    "answer": "pyq_a.jpg"
+  },
+  "fit_notes": [],
+  "caption": "📜 PYQ of the day · CMA Inter\nPaper 6: Financial Accounting\nAsked in the CMA Inter December 2018 exam\n\nTry it first: comment your answer (A, B, C or D), then swipe for the solution.\nSave 🔖 it for revision: past papers repeat ideas.\n\nFollow @cacmagyan for a past-paper question every day.\n\n#PYQ #CMAInter #ICMAI #CMAExam #PastPapers\n\nref pyq-261117"
+}

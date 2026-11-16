@@ -1,0 +1,16 @@
+{
+  "kind": "countdown",
+  "course_id": "cma_inter",
+  "exam": "CMA Inter Dec 2026",
+  "exam_date": "2026-12-10",
+  "days": 23,
+  "paper_code": "Paper 10",
+  "paper_name": "Corporate Accounting and Auditing (Corporate Accounting)",
+  "topic": "Issue and Forfeiture of Shares, Re-issue",
+  "tip": "On re-issue of forfeited shares, the discount allowed cannot exceed the amount forfeited; transfer the balance to Capita",
+  "hold": false,
+  "hold_reason": "",
+  "images": [
+    "countdown.jpg"
+  ]
+}

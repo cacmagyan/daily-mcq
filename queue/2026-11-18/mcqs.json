@@ -1,0 +1,168 @@
+{
+  "date": "2026-11-18",
+  "day": 28,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-17T19:59:36+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Logical Reasoning",
+      "topic": "Logical Reasoning: Coding-Decoding",
+      "question": "In a certain code, each letter in an odd position of a word is replaced by the next letter of the alphabet, and each letter in an even position is replaced by the previous letter. How is the word CLOSE written in this code?",
+      "options": [
+        "BKNRD",
+        "DKPRF",
+        "DMPTF",
+        "BMNTD"
+      ],
+      "correct": "B",
+      "explanation": "Positions 1, 3, 5 move forward by one: C→D, O→P, E→F. Positions 2 and 4 move back by one: L→K, S→R. The code is DKPRF.",
+      "working": [],
+      "why_not": {
+        "D": "Reversed the rule: moved odd positions back and even positions forward.",
+        "C": "Moved every letter forward by one, ignoring the even-position rule.",
+        "A": "Moved every letter back by one, ignoring the odd-position rule."
+      },
+      "exam_tip": "Number the positions first, then apply each rule position by position, not to the whole word.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 28\nPaper 3: Quantitative Aptitude: Logical Reasoning\nTopic: Logical Reasoning: Coding-Decoding\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261118",
+      "story": "ca_foundation_story.jpg",
+      "answer_story": "ca_foundation_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 6A",
+      "paper_name": "Financial Management",
+      "topic": "Capital Budgeting: NPV",
+      "question": "A project needs an outlay of ₹10,00,000 now. It gives annual cash inflow of ₹3,00,000 for 5 years and a scrap value of ₹1,00,000 at the end of year 5. At 10%, PV annuity factor for 5 years is 3.791 and PV factor of year 5 is 0.621. Find the NPV.",
+      "options": [
+        "₹1,99,400",
+        "₹11,99,400",
+        "₹1,37,300",
+        "₹6,00,000"
+      ],
+      "correct": "A",
+      "explanation": "NPV is the PV of all cash inflows less the initial outlay. Annual inflows use the annuity factor, and scrap value, received once in year 5, uses the year 5 PV factor.",
+      "working": [
+        {
+          "label": "PV of annual inflows (₹)",
+          "value": "11,37,300"
+        },
+        {
+          "label": "PV of scrap value (₹)",
+          "value": "62,100"
+        },
+        {
+          "label": "Total PV of inflows (₹)",
+          "value": "11,99,400"
+        },
+        {
+          "label": "Less: outlay (₹)",
+          "value": "10,00,000"
+        },
+        {
+          "label": "NPV (₹)",
+          "value": "1,99,400"
+        }
+      ],
+      "why_not": {
+        "C": "Ignores the discounted scrap value received in year 5.",
+        "B": "Gives total PV of inflows and forgets to deduct the initial outlay.",
+        "D": "Uses undiscounted cash flows, ignoring time value of money."
+      },
+      "exam_tip": "Scrap or salvage value is a one-time inflow: discount it with the single-year factor, not the annuity factor.",
+      "calculation": "pv_annual = 300000 * 3.791\npv_scrap = 100000 * 0.621\nanswer = round(pv_annual + pv_scrap - 1000000)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Minor: the question doesn't say that the cash inflows arrive at year-end. This is the standard convention, and the supplied factors imply it.",
+        "Checker: Minor: B (gross PV) and C (scrap value left out) are plausible distractors, so they are not a flaw."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 28\nPaper 6A: Financial Management\nTopic: Capital Budgeting: NPV\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261118",
+      "story": "ca_inter_story.jpg",
+      "answer_story": "ca_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 3",
+      "paper_name": "Advanced Auditing, Assurance and Professional Ethics",
+      "topic": "Internal Audit vs Statutory Audit",
+      "question": "Zenith Ltd's Board engaged a CA firm as internal auditor. The firm reviewed procurement controls and suggested process changes to cut costs. Which statement correctly distinguishes this work from the statutory audit of Zenith Ltd?",
+      "options": [
+        "Internal audit gives recommendations on controls; statutory audit gives an opinion on financial statements",
+        "Internal audit gives an opinion on true and fair view; statutory audit gives recommendations on efficiency",
+        "Both are appointed by members and both report to members on financial statements",
+        "Internal auditor's scope is fixed by the Companies Act; statutory auditor's scope is set by management"
+      ],
+      "correct": "A",
+      "explanation": "Internal audit is appointed by the Board or management, and its scope is set by them. It gives recommendations on controls, risk and efficiency. Statutory audit is by an independent auditor appointed by members. It gives an opinion on the financial statements.",
+      "working": [],
+      "why_not": {
+        "B": "Reverses the roles of the two audits.",
+        "C": "Wrongly says the internal auditor is appointed by members and reports on financial statements.",
+        "D": "Reverses who sets the scope; the statutory auditor's scope comes from law, not management."
+      },
+      "exam_tip": "Statutory = members appoint, opinion on financial statements. Internal = Board appoints, advice on controls and efficiency.",
+      "calculation": "",
+      "applicability": "Companies Act, 2013 (ss. 139, 138); SA 610",
+      "confidence": "high",
+      "reviewer_note": "Option D: the internal audit scope is set by the Board or management, and the Act prescribes who must have one. Check that the wording is clearly wrong.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Option D: the internal audit scope is set by the Board or management, and the Act prescribes who must have one. Check that the wording is clearly wrong.",
+        "Checker: The stem says the firm 'suggested process changes', which closely matches option A's wording ('gives recommendations'). This points to the key.",
+        "Checker: The distractors are weak: B and D are simple reversals, and C is plainly wrong. The item does little to test finer distinctions, such as how far the statutory auditor can use the internal auditor's work under SA 610.",
+        "Checker: Option A describes internal audit as recommendations 'on controls' only. Internal audit also covers efficiency and operations. This does not make A wrong, but the wording could be tidier."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Internal Audit vs Statutory Audit",
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 28\nPaper 3: Advanced Auditing, Assurance and Professional Ethics\nTopic: Internal Audit vs Statutory Audit\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013 (ss. 139, 138); SA 610.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261118",
+      "story": "ca_final_story.jpg",
+      "answer_story": "ca_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

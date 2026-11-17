@@ -1,0 +1,189 @@
+{
+  "kind": "explainer",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 1",
+  "paper_name": "Accounting",
+  "topic": "Provision vs Reserve",
+  "concept_topic": "Provision vs Reserve",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 68.71,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Provision vs Reserve",
+    "caption_hook": "Provision and reserve look the same. They are not.",
+    "hook_label": "CHARGE FIRST OR LATER?",
+    "lines": [
+      {
+        "who": "girl",
+        "say": "Provision and reserve look so similar. What's the real difference?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Good question! Both keep money aside. But one is charged before profit, and the other comes after.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Provision/Reserve",
+          "sub": "Charge or keep later?"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Before profit, after profit... what does that mean?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Your shop earns ₹1,00,000. You expect ₹10,000 of debts may go bad. Charging it leaves profit ₹90,000.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "calc",
+          "top": "1,00,000 - 10,000",
+          "big": "₹90,000"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So the amount is deducted first, and then profit comes?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! That's a provision. A charge against profit for a known liability or fall in asset value, estimated.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "list",
+          "title": "Provision",
+          "lines": [
+            "Charge against profit",
+            "Known loss, estimated"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And a reserve? Is that also a charge?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "No. From the ₹90,000 profit, you keep ₹20,000 aside as general reserve. That's an appropriation of profit.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "Profit",
+          "from_note": "₹90,000",
+          "to": "Reserve",
+          "to_note": "₹20,000",
+          "label": "Set aside",
+          "to_on": "reserve"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Wait... what if the shop makes a loss?",
+        "shot": "close",
+        "pose": "worried"
+      },
+      {
+        "who": "teacher",
+        "say": "A provision is still made, because it is a charge. A reserve needs profit.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Provision",
+            "lines": [
+              "Loss year: yes"
+            ],
+            "icon": "check",
+            "color": "green"
+          },
+          "right": {
+            "title": "Reserve",
+            "lines": [
+              "Loss year: no"
+            ],
+            "icon": "cross",
+            "color": "red"
+          },
+          "right_on": "reserve"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Oh! Can we pay dividend from them?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Only free reserves, like general reserve, can be used for dividend. A provision cannot.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Dividend",
+          "lines": [
+            "Provision: not allowed",
+            "Free reserve: allowed"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Got it! Provision is charged before profit!",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: provision cuts profit, and reserve uses profit already earned.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Charge first",
+            "Keep later"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Word count about 165. Reserve example uses general reserve (free reserve), consistent with note.",
+    "Checker: Line 2 (voice): 'Both keep money aside' is misleading. Neither a provision nor a reserve means cash is physically set aside. A provision is a charge against profit. A reserve is profit kept in the business, and it is invested outside only in a reserve fund. Correct version: 'Both set aside an amount out of profits on paper. But one is charged before profit is found, and the other is taken from profit after it is found.'",
+    "Checker: Line 4 (voice): 'Your shop earns ₹1,00,000' could be read as revenue or sales rather than profit. Correct version: 'Your shop's profit before provision is ₹1,00,000. You expect ₹10,000 of debtors may go bad. Charging this provision leaves a net profit of ₹90,000.' The arithmetic is right: 1,00,000 − 10,000 = 90,000.",
+    "Checker: Line 12 (voice): 'Only free reserves … can be used for dividend' could suggest dividend is paid only out of reserves. Dividend is mainly paid from current-year profits, and free reserves can also be used, subject to the rules. Correct version: 'Dividend comes from profits, and free reserves like general reserve can also be used. A provision can never be used for dividend.'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "Word count about 165. Reserve example uses general reserve (free reserve), consistent with note.",
+  "caption": "🎬 🟩 CA Foundation · Provision vs Reserve\n\nProvision and reserve look the same. They are not.\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 1: Accounting\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFoundation #ICAI #CAStudents #CAExams\n\nref explainer-261118",
+  "hold": false,
+  "hold_reason": ""
+}

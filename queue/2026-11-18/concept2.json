@@ -1,0 +1,150 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 1A",
+  "paper_name": "Fundamentals of Financial Accounting",
+  "author": "Rahul kp",
+  "topic": "Cash Basis vs Accrual Basis of Accounting",
+  "title": "Cash vs Accrual",
+  "title_highlight": "Basis of Accounting",
+  "hook": "when do you record it?",
+  "simple_words": "Cash basis records when money moves. Accrual basis records when the right or duty arises.",
+  "definitions": [
+    {
+      "term": "Cash basis",
+      "meaning": "Income is recorded when cash is received and expenses when cash is paid. Dues and advances are ignored.",
+      "note": "No cash, no entry"
+    },
+    {
+      "term": "Accrual basis",
+      "meaning": "Income is recorded when earned and expenses when incurred, whether or not cash has moved. AS 1 treats it as a fundamental assumption.",
+      "note": "Earned or incurred = recorded"
+    }
+  ],
+  "key_points": [
+    "Accrual basis matches ==expenses== of a period with the income of that same period.",
+    "Accrual basis shows debtors, creditors, outstanding and prepaid items in the books.",
+    "Cash basis gives the same result only if nothing is due or paid in advance.",
+    "!!Receipts and Payments A/c of an NPO is on cash basis; Income and Expenditure A/c is on accrual basis.!!"
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "same year, two answers!",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Cash basis",
+      "Accrual basis"
+    ],
+    "rows": [
+      [
+        "Income recorded",
+        "On receipt of cash",
+        "When earned"
+      ],
+      [
+        "Expense recorded",
+        "On payment of cash",
+        "When incurred"
+      ],
+      [
+        "Outstanding / prepaid",
+        "Not adjusted",
+        "Adjusted"
+      ],
+      [
+        "Debtors, creditors",
+        "Not shown",
+        "Shown"
+      ],
+      [
+        "Profit shown",
+        "Based on cash flow",
+        "Matches income and cost"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Cash moves, accounts may not!",
+    "text": "Accrual basis records the event, not the cash, so profit reflects the true performance of the period."
+  },
+  "trick_hook": "earned or paid?",
+  "memory_trick": {
+    "mnemonic": "Cash = Counter, Accrual = Agreement",
+    "explanation": "Cash basis is a shop counter: record only when money is handed over. Accrual is an agreement: record once the deal is done, even if money comes later."
+  },
+  "steps": [
+    "Read: is cash or the event given?",
+    "Find when income is earned",
+    "Find when expense is incurred",
+    "Add outstanding, deduct prepaid",
+    "Check the period it belongs to"
+  ],
+  "exam_tip": "If the question says outstanding, prepaid, accrued or due, it is accrual basis. If it says only receipts and payments, it is cash basis.",
+  "doubt": {
+    "question": "Does accrual basis ignore cash completely?",
+    "answer": "No. Cash is still recorded in the cash book. Accrual basis also records income and expenses where cash is not yet received or paid."
+  },
+  "mistakes_hook": "don't mix the two bases",
+  "mistakes": [
+    {
+      "wrong": "Treating credit sales as income only when cash comes in, under accrual",
+      "right": "Under accrual basis, credit sales are income in the period the sale is made."
+    },
+    {
+      "wrong": "Charging the whole amount paid for next year's insurance to this year",
+      "right": "Only the part relating to this year is an expense; the rest is a prepaid expense."
+    },
+    {
+      "wrong": "Calling Income and Expenditure A/c a cash-basis statement",
+      "right": "Income and Expenditure A/c follows accrual basis; Receipts and Payments A/c follows cash basis."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Checker 1: Mistake 2 (wrong/right): 'the whole amount paid for next year's insurance' means the entire payment is for next year. In that case none of it is this year's expense and all of it is prepaid. The 'right' line, though, talks about splitting off 'the part relating to this year', so the two lines don't match. Correct version: Wrong – 'Charging the whole insurance premium paid to this year when part of it covers next year.' Right – 'Only the part relating to this year is an expense; the part for next year is a prepaid expense (an asset).'",
+    "Checker 1: Step 4: 'Add outstanding, deduct prepaid' only works for expenses. Correct version: 'Expenses: add outstanding, deduct prepaid. Incomes: add accrued income, deduct income received in advance.'",
+    "Checker 2: Step 4 'Add outstanding, deduct prepaid' is true only for expenses. For income it is the other way round: add accrued income and deduct income received in advance. Correct version: 'Adjust: expenses + outstanding − prepaid; income + accrued − received in advance.' This is wording polish only."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 1A: Fundamentals of Financial Accounting\nCash Basis vs Accrual Basis of Accounting\n\nIn simple words: Cash basis records when money moves. Accrual basis records when the right or duty arises.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept2-261118",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

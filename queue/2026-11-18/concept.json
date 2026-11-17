@@ -1,0 +1,151 @@
+{
+  "kind": "concept",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 1",
+  "paper_name": "Accounting",
+  "author": "Rahul kp",
+  "topic": "Provision vs Reserve",
+  "title": "Provision",
+  "title_highlight": "vs Reserve",
+  "hook": "charge first, or keep later?",
+  "simple_words": "A provision is charged to profit for a known loss or liability. A reserve is profit kept back for the future.",
+  "definitions": [
+    {
+      "term": "Provision",
+      "meaning": "Amount charged against profit for a known liability, or fall in asset value, where the amount cannot be fixed exactly and is estimated.",
+      "note": "Charge against profit"
+    },
+    {
+      "term": "Reserve",
+      "meaning": "Amount set aside out of profit, after profit is found, to strengthen the business or for a general or specific purpose.",
+      "note": "Appropriation of profit"
+    }
+  ],
+  "key_points": [
+    "A ==provision== is a charge, so it is debited to Profit and Loss before profit is found.",
+    "A ==reserve== is an appropriation: it is made out of profit already earned.",
+    "!!Provision is made even in a year of loss!!; a reserve needs profit.",
+    "Free reserves like general reserve can be used for dividend; a provision cannot."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "same look, different role",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Basis",
+      "Provision",
+      "Reserve"
+    ],
+    "rows": [
+      [
+        "Nature",
+        "Charge against profit",
+        "Appropriation of profit"
+      ],
+      [
+        "Purpose",
+        "Known liability or asset fall, amount estimated",
+        "Strengthen business or future need"
+      ],
+      [
+        "Loss year",
+        "Still made",
+        "Cannot be made without profit"
+      ],
+      [
+        "Effect on profit",
+        "Reduces profit",
+        "Profit is already found"
+      ],
+      [
+        "Dividend",
+        "Not distributable",
+        "Only free reserves are distributable"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Provision cuts profit; reserve uses it!",
+    "text": "A provision is deducted to arrive at profit, while a reserve is created only from the profit that remains."
+  },
+  "trick_hook": "Provision is charged before profit",
+  "memory_trick": {
+    "mnemonic": "P = Profit after charge",
+    "explanation": "Provision is charged first, so profit comes after it. Reserve is Retained out of profit already earned."
+  },
+  "steps": [
+    "Read what the amount is for",
+    "Known liability or asset fall?",
+    "Amount estimated? Then provision",
+    "Out of profit kept back? Reserve",
+    "Check free or not for dividend"
+  ],
+  "exam_tip": "In MCQs, if the item reduces profit before profit is found, choose provision. If it comes after profit, choose reserve.",
+  "doubt": {
+    "question": "Is a provision always shown as a liability?",
+    "answer": "No. A provision for a liability, like tax, is shown as a liability. A provision for doubtful debts is deducted from debtors."
+  },
+  "mistakes_hook": "don't swap the two",
+  "mistakes": [
+    {
+      "wrong": "Provision is an appropriation of profit",
+      "right": "Provision is a charge against profit; a reserve is the appropriation."
+    },
+    {
+      "wrong": "No provision is needed in a loss year",
+      "right": "A provision is needed even in a loss year, as it is a charge."
+    },
+    {
+      "wrong": "All reserves can be paid out as dividend",
+      "right": "Only free reserves can be distributed; capital reserve and securities premium are not freely distributable."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Accounting concept; Companies Act dividend rules in outline",
+  "confidence": "medium",
+  "reviewer_note": "Check the dividend statement on free reserves against the current Companies Act and rules. No past-paper list was given.",
+  "law_sensitive": false,
+  "attempts": 3,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Check the dividend statement on free reserves against the current Companies Act and rules. No past-paper list was given.",
+    "Checker 1: Table row 4 (Effect on profit), Reserve cell: 'Profit is already found' does not actually state the effect. It should read: 'Does not reduce net profit; reduces the profit available for distribution (divisible profit).'",
+    "Checker 1: Memory trick 'P = Profit after charge' is vague and could be read as 'provision = profit'. A clearer version: 'Provision → P&L A/c (charged before profit); Reserve → Retained out of profit (P&L Appropriation).'",
+    "Checker 1: Doubt answer: a short addition would help. Like the provision for doubtful debts, the provision for depreciation is also deducted from the related asset rather than shown as a liability."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.24,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟩 CA Foundation · Concept of the day\nPaper 1: Accounting\nProvision vs Reserve\n\nIn simple words: A provision is charged to profit for a known loss or liability. A reserve is profit kept back for the future.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Accounting concept; Companies Act dividend rules in outline.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFoundation #ICAI #CAStudents #CAExams\n\nref concept-261118",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

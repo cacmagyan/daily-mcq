@@ -1,0 +1,88 @@
+{
+  "kind": "news",
+  "date": "2026-11-17",
+  "stories": [
+    {
+      "tag": "GST",
+      "headline": "GST net widens on scrap: reverse charge, registration, 2% TDS",
+      "points": [
+        "From 1 November 2026, reverse charge covers used cooking oil, plastic, tyre and e-waste bought from unregistered suppliers.",
+        "Registration exemption for suppliers of these goods and metal scrap is withdrawn under Notification 06/2026.",
+        "Registered buyers must deduct 2% TDS on purchases from registered sellers when contract value exceeds ₹2.5 lakh."
+      ],
+      "why_it_matters": "Reverse charge, self-invoicing, cash payment of tax and TDS under GST are core compliance topics for CA and CMA work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | GST on Scrap from 1 November 2026: RCM, Registration and 2% TDS",
+      "link": "https://taxguru.in/goods-and-service-tax/gst-scrap-1-november-2026-rcm-registration-2-percent-tds.html",
+      "published": "2026-11-16T11:05:10+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 1 leaves out that reverse charge applies only when a registered person buys from an unregistered supplier. It names the buyer side only as 'bought from unregistered suppliers'. This is a wording gap, not a factual error.",
+        "Point 2 closely follows the source phrase 'registration exemption for suppliers of these goods and metal scrap'. It is a short fragment rather than a copied sentence, but it could be reworded.",
+        "The 'Why it matters' line about CA and CMA work is the story's own framing and isn't in the source. The topics it lists (self-invoicing, cash payment, TDS) are covered in the source."
+      ]
+    },
+    {
+      "tag": "ICAI",
+      "headline": "ICAI committee clears auditor over overdue debtors in Shirsa Labs audit",
+      "points": [
+        "ICAI Disciplinary Committee Bench-II held the auditor not guilty of misconduct under Clause (7) of Part I, Second Schedule.",
+        "Of ₹1,73,86,329 trade receivables at 31 March 2019, ₹97,53,579 was outstanding over 180 days; no provision was made.",
+        "Company's business closed in March 2021, but FY 2018-19 showed profit and positive net worth, so closure was not conclusive."
+      ],
+      "why_it_matters": "Shows how disciplinary bodies judge audit diligence on receivables and going concern (SA 570) based on the record, not hindsight.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "CA, CS, CMA | ₹97.54 Lakh Overdue Debtors: ICAI Finds Auditor Not Guilty of Misconduct",
+      "link": "https://taxguru.in/chartered-accountant/rs-97-54-lakh-overdue-debtors-icai-finds-auditor-not-guilty-misconduct.html",
+      "published": "2026-11-17T09:01:21+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 2 says 'no provision was made' as a plain fact. The source only says the complainant questioned the absence of a provision. That implies there was none, but the story should attribute it, e.g. 'the complainant questioned the absence of a provision'."
+      ]
+    },
+    {
+      "tag": "ICAI",
+      "headline": "ICAI closes case against CA over tax audits with part-time COP",
+      "points": [
+        "ICAI Disciplinary Committee gave a CA the benefit of doubt and closed proceedings on 29 October 2026.",
+        "CBDT data showed 44 tax audit reports against his membership number while he held a part-time COP.",
+        "Committee noted audits done during a year differ from audits for that year, and found little supporting evidence."
+      ],
+      "why_it_matters": "Shows that disciplinary charges must be backed by evidence, and why part-time COP limits on attest work matter to future auditors.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "CA, CS, CMA | Part-Time COP Tax Audits: ICAI Gives CA Benefit of Doubt",
+      "link": "https://taxguru.in/chartered-accountant/part-time-cop-tax-audits-icai-ca-benefit-doubt.html",
+      "published": "2026-11-17T09:15:52+00:00",
+      "check": "minor",
+      "check_notes": [
+        "The 'Why it matters' line says the case shows why part-time COP limits on attest work 'matter to future auditors'. The source does not say this. It only says the Committee's decision did not relax those restrictions. This is editorial framing, not a factual error."
+      ]
+    }
+  ],
+  "notes": [
+    "skipped 'Goods and Services Tax | GSTIN Without Delays: New CBIC Guid': why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | GST on Corporate Guarantees Upheld;': why_it_matters is longer than 120 characters",
+    "dropped 'Weekly roundup: GST advance rulings on pots, RWA fees, utili': Point 1 nearly copies the source sentence word for word. The source says: 'AAR ruled plastic nursery pots and seedling trays supplied by the party fall under HSN 3926 and attract an 18% GST rate.' The",
+    "skipped 'LTCG tax tweaks on cards? Govt considering industry proposal': a point is longer than 110 characters",
+    "dropped 'ICAI Board reprimands CA and fines ₹10,000 over partner capi': Point 2 attaches the ₹24.98 lakh figure to the transfer to the widow's capital account. The source gives about ₹24.98 lakh only as the debit balance when the partner died on 24 May 2011. It says inter",
+    "skipped 'CA, CS, CMA | Ind AS 21 Lack of Exchangeability: Spot-Rate E': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | ₹685.42 Crore GST Addition Remanded by Delhi IT': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 17 Nov 2026\n\n1️⃣ GST net widens on scrap: reverse charge, registration, 2% TDS (TaxGuru)\n2️⃣ ICAI committee clears auditor over overdue debtors in Shirsa Labs audit (TaxGuru)\n3️⃣ ICAI closes case against CA over tax audits with part-time COP (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261117",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

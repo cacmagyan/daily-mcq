@@ -1,9 +1,180 @@
 {
   "kind": "explainer",
   "course_id": "ca_inter",
+  "paper_code": "Paper 3B",
+  "paper_name": "Goods and Services Tax",
   "topic": "Forward Charge vs Reverse Charge (GST)",
   "concept_topic": "Forward Charge vs Reverse Charge (GST)",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 2: board right_on 'reverse' is not a word of the line; line 4: board from_note is 16 characters; at most 12; line 14: board lines needs 1-2 lines of at most 14 characters; the lines have 224 words; write 120-175",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 63.82,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Forward Charge vs Reverse Charge in GST",
+    "caption_hook": "Who actually pays the GST, seller or buyer? It depends on the law.",
+    "hook_label": "WHO PAYS THE GST?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Who actually pays GST to the government, seller or buyer?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Normally the seller. That's forward charge. The seller collects tax on the invoice and deposits it.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Forward Charge",
+          "sub": "Seller collects and pays"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Then what's reverse charge?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "There, the recipient pays the tax directly to the government. Only for supplies the law notifies.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Forward",
+            "lines": [
+              "Seller pays",
+              "Most supplies"
+            ],
+            "icon": "factory",
+            "color": "blue"
+          },
+          "right": {
+            "title": "Reverse",
+            "lines": [
+              "Buyer pays",
+              "Notified only"
+            ],
+            "icon": "people",
+            "color": "green"
+          },
+          "right_on": "recipient"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Wait, so no GST is charged under RCM?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Same rate of GST. The supplier doesn't collect it; the recipient pays the government.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "Recipient",
+          "from_note": "pays RCM tax",
+          "to": "Govt",
+          "to_note": "gets the tax",
+          "label": "Same GST",
+          "to_on": "government"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Can you show a small example, Ma'am?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Take a notified service of ₹1,000 with GST of ₹180. The recipient pays that ₹180 himself.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "Tax ₹180 on ₹1,000",
+          "big": "₹180"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Can he use his ITC balance for it?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "No. Pay it through the cash ledger. Later, claim ITC if the input is eligible and for business.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "list",
+          "title": "Paying RCM tax",
+          "lines": [
+            "Pay via cash ledger",
+            "Then claim ITC if eligible"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And if the supplier is unregistered?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Then the recipient raises a self-invoice for that supply.",
+        "shot": "board",
+        "pose": "explain"
+      },
+      {
+        "who": "boy",
+        "say": "So Reverse means Receiver pays!",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! Same tax, different depositor. Law decides who pays, not you.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Reverse =",
+            "Receiver pays"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Example uses an illustrative GST of ₹180 on ₹1,000 (stated as given, no rate claimed). No section numbers or notified items named."
+  ],
+  "attempts": 1,
+  "reviewer_note": "Example uses an illustrative GST of ₹180 on ₹1,000 (stated as given, no rate claimed). No section numbers or notified items named.",
+  "caption": "🎬 🟦 CA Inter · Forward Charge vs Reverse Charge in GST\n\nWho actually pays the GST, seller or buyer? It depends on the law.\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 3B: Goods and Services Tax\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAInter #CAIntermediate #ICAI #CAStudents\n\nref explainer-261120",
   "hold": false,
   "hold_reason": ""
 }

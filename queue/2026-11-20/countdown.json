@@ -1,0 +1,16 @@
+{
+  "kind": "countdown",
+  "course_id": "ca_inter",
+  "exam": "CA Inter Jan 2027",
+  "exam_date": "2027-01-02",
+  "days": 43,
+  "paper_code": "Paper 5",
+  "paper_name": "Auditing and Ethics",
+  "topic": "Audit Evidence and Sampling (SA 500, SA 530)",
+  "tip": "Know audit procedures to get evidence (inspection, observation, inquiry, confirmation, recalculation) and that sampling ",
+  "hold": false,
+  "hold_reason": "",
+  "images": [
+    "countdown.jpg"
+  ]
+}

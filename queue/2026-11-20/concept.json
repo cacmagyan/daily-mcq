@@ -1,0 +1,143 @@
+{
+  "kind": "concept",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 3B",
+  "paper_name": "Goods and Services Tax",
+  "author": "Rahul kp",
+  "topic": "Forward Charge vs Reverse Charge (GST)",
+  "title": "Forward vs Reverse",
+  "title_highlight": "Charge in GST",
+  "hook": "who pays the tax?",
+  "simple_words": "Forward charge: the seller pays GST to the government. Reverse charge: the buyer pays it.",
+  "definitions": [
+    {
+      "term": "Forward Charge",
+      "meaning": "The supplier collects GST from the recipient on the invoice and deposits it with the government. This is the normal rule.",
+      "note": "Default rule"
+    },
+    {
+      "term": "Reverse Charge (RCM)",
+      "meaning": "The recipient pays GST directly to the government instead of the supplier. It applies only to supplies the law specifically notifies.",
+      "note": "Exception, not the norm"
+    }
+  ],
+  "key_points": [
+    "Under ==forward charge== the supplier is liable to pay the tax.",
+    "Under ==reverse charge== the recipient is liable, but only for notified supplies.",
+    "!!RCM tax cannot be paid from the ITC balance!!; it is paid through the cash ledger.",
+    "If the supplier is unregistered, the recipient raises a self-invoice for the RCM supply."
+  ],
+  "formula_heading": "Forward vs Reverse",
+  "formula_hook": "compare point by point",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Forward",
+      "Reverse"
+    ],
+    "rows": [
+      [
+        "Who pays tax to government",
+        "Supplier",
+        "Recipient"
+      ],
+      [
+        "Where it applies",
+        "Most supplies",
+        "Only notified supplies"
+      ],
+      [
+        "Invoice issued by",
+        "Supplier",
+        "Supplier; recipient if unregistered"
+      ],
+      [
+        "How tax is paid",
+        "ITC or cash",
+        "Cash ledger only"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "text": "The tax is the same in both cases; only the person who deposits it with the government changes.",
+    "punchline": "Law decides who pays, not you!"
+  },
+  "trick_hook": "one letter pair, one rule",
+  "memory_trick": {
+    "mnemonic": "Reverse = Receiver pays",
+    "explanation": "Reverse and Receiver both start with Re, so under RCM the Receiver pays. Otherwise (Forward), the Seller pays."
+  },
+  "steps": [
+    "Check if supply is under RCM",
+    "Name the supplier and recipient",
+    "RCM: recipient pays in cash",
+    "Else supplier charges and pays",
+    "Claim ITC on RCM tax if eligible"
+  ],
+  "exam_tip": "Under RCM, pay the tax in cash first. Claim ITC afterwards only if the input is eligible and used for business.",
+  "doubt": {
+    "question": "Does RCM mean no GST is charged on the supply?",
+    "answer": "No. GST is still payable at the same rate. The supplier does not collect it; the recipient pays it directly to the government."
+  },
+  "mistakes_hook": "cash first, ITC later",
+  "mistakes": [
+    {
+      "wrong": "Paying RCM tax by using the ITC balance",
+      "right": "RCM tax is paid through the cash ledger; ITC can be claimed later if the input is eligible."
+    },
+    {
+      "wrong": "Applying RCM to every purchase from an unregistered supplier",
+      "right": "RCM applies only where the law notifies that supply or class of recipient."
+    },
+    {
+      "wrong": "Saying the recipient never gets ITC on RCM tax",
+      "right": "After paying the tax, the recipient can claim ITC if the input is eligible and used for business."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "CGST/IGST Act as per ICAI applicability for next attempt",
+  "confidence": "medium",
+  "reviewer_note": "No rates, section numbers or notified lists are used. Please confirm that the self-invoice point for unregistered suppliers and the cash-ledger rule for RCM match the ICAI applicability for the attempt. The memory trick explanation was corrected as the examiners advised.",
+  "law_sensitive": true,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No rates, section numbers or notified lists are used. Please confirm that the self-invoice point for unregistered suppliers and the cash-ledger rule for RCM match the ICAI applicability for the attempt. The memory trick explanation was corrected as the examiners advised."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.24,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 3B: Goods and Services Tax\nForward Charge vs Reverse Charge (GST)\n\nIn simple words: Forward charge: the seller pays GST to the government. Reverse charge: the buyer pays it.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on CGST/IGST Act as per ICAI applicability for next attempt.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept-261120",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

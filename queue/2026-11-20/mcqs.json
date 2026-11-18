@@ -1,0 +1,152 @@
+{
+  "date": "2026-11-20",
+  "day": 30,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-19T04:12:26+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 2",
+      "paper_name": "Business Laws",
+      "topic": "Indian Contract Act: Capacity to Contract",
+      "question": "Ravi, aged 16, borrows ₹50,000 from Sohan and buys a bike for his own use. Sohan sues Ravi on reaching 18 for recovery of the money or the bike. What is the legal position?",
+      "options": [
+        "Sohan can recover the money if Ravi ratifies on turning 18",
+        "Sohan cannot recover, as the agreement with a minor is void ab initio",
+        "Sohan can recover the money, as Ravi got the benefit",
+        "Sohan can recover the bike, as Ravi still holds it"
+      ],
+      "correct": "B",
+      "explanation": "A minor's agreement is void ab initio (Mohori Bibee v. Dharmodas Ghose). No restitution of money lent is allowed, and there is no ratification after majority. Sohan has no remedy against Ravi or the bike.",
+      "working": [],
+      "why_not": {
+        "C": "Confuses benefit with restitution; money lent to a minor cannot be recovered",
+        "D": "Restitution under Section 33 of the Specific Relief Act applies only to property obtained by fraud, not here",
+        "A": "Ratification on majority is invalid, since the agreement was void from the start"
+      },
+      "exam_tip": "Minor's agreement: void ab initio, no ratification, no estoppel. Only necessaries supplied are recoverable from his property.",
+      "calculation": "",
+      "applicability": "Indian Contract Act, 1872 (minor's agreement)",
+      "confidence": "medium",
+      "reviewer_note": "Option C's why_not cites the Specific Relief Act Section 33; the 2018 amendment may have changed the numbering or content. Please verify, or remove the section number. The bike was bought with the borrowed money, not obtained from Sohan by fraud.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Option C's why_not cites the Specific Relief Act Section 33; the 2018 amendment may have changed the numbering or content. Please verify, or remove the section number. The bike was bought with the borrowed money, not obtained from Sohan by fraud.",
+        "Checker: The question does not say whether Ravi lied about his age. Saying 'without misrepresenting his age' would rule out a restitution argument for D."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 30\nPaper 2: Business Laws\nTopic: Indian Contract Act: Capacity to Contract\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Indian Contract Act, 1872 (minor's agreement).\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261120",
+      "story": "ca_foundation_story.jpg",
+      "answer_story": "ca_foundation_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 5",
+      "paper_name": "Auditing and Ethics",
+      "topic": "Vouching vs Verification",
+      "question": "An auditor examines the purchase invoice, GRN and payment voucher for a machine bought during the year, and finds the entry genuine. Which further step is needed to conclude on the machine as an asset at year-end?",
+      "options": [
+        "Check existence, ownership, valuation and disclosure on the balance sheet date",
+        "Check the payment is entered in the cash book on the same date",
+        "Re-examine the same invoice for arithmetical accuracy",
+        "Check the entry was authorised by a responsible official"
+      ],
+      "correct": "A",
+      "explanation": "Vouching shows a recorded transaction is genuine and authorised. Verification of the asset goes further: existence, ownership, valuation and disclosure on the balance sheet date.",
+      "working": [],
+      "why_not": {
+        "C": "Rechecking the invoice is still vouching; it says nothing on ownership or value.",
+        "B": "Cash book date matching is vouching of the transaction, not verification of the asset.",
+        "D": "Authorisation is a vouching point; it does not prove the asset exists or is owned."
+      },
+      "exam_tip": "Vouching: books back to documents. Verification: balance sheet item to existence, ownership, value.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Option A is much longer than the others and lists the textbook verification words (existence, ownership, valuation, disclosure), so the answer is easy to spot.",
+        "Checker: The stem's phrases 'as an asset at year-end' and 'further step' hint that the answer is verification rather than vouching."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Vouching vs Verification",
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 30\nPaper 5: Auditing and Ethics\nTopic: Vouching vs Verification\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261120",
+      "story": "ca_inter_story.jpg",
+      "answer_story": "ca_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 5",
+      "paper_name": "Indirect Tax Laws",
+      "topic": "GST - Time of supply of goods",
+      "question": "Zed Ltd (registered) supplies taxable goods worth ₹10,00,000 under forward charge, with movement. It received ₹2,00,000 as advance on 2 Oct 2026, removed the goods on 10 Nov 2026, issued the invoice on 20 Nov 2026 and got the balance on 30 Nov 2026. Time of supply is:",
+      "options": [
+        "2 October 2026 for ₹2,00,000 and 30 November 2026 for ₹8,00,000",
+        "10 November 2026 for the whole ₹10,00,000",
+        "20 November 2026 for the whole ₹10,00,000",
+        "2 October 2026 for ₹2,00,000 and 10 November 2026 for ₹8,00,000"
+      ],
+      "correct": "B",
+      "explanation": "Invoice for goods with movement is due by removal, 10 Nov, which is earlier than the actual invoice date. GST on advances received for supply of goods is exempt, so the advance does not fix time of supply. Whole supply: 10 November 2026.",
+      "working": [],
+      "why_not": {
+        "D": "Applies the services rule of advance receipt; advance on goods is exempt from GST.",
+        "C": "Uses the actual invoice date, ignoring that the invoice was due by removal of goods.",
+        "A": "Taxes the advance and uses payment date for balance; payment date is not the earliest event."
+      },
+      "exam_tip": "Goods: earlier of invoice due date or actual invoice (advance ignored). Services: advance can trigger tax.",
+      "calculation": "",
+      "applicability": "CGST/IGST Act as per ICAI applicability for next attempt",
+      "confidence": "high",
+      "reviewer_note": "Relies on the notification exempting GST on advances for goods (Notification 66/2017-CT); confirm it is within ICAI's applicable amendments.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Relies on the notification exempting GST on advances for goods (Notification 66/2017-CT); confirm it is within ICAI's applicable amendments.",
+        "Checker: The question says only 'registered' and doesn't rule out a composition taxpayer, for whom the advance would still be taxable. It should say 'a normal taxpayer (not under composition levy)'.",
+        "Checker: 'Worth ₹10,00,000' doesn't say whether the amount includes GST. This doesn't change the answer, but it could be clearer.",
+        "Second checker: Option D is defensible if the advance exemption (Notification 66/2017-CT) is ignored. The question never mentions the exemption, so the key depends on knowing it.",
+        "Second checker: The question doesn't say whether the supplier is a composition dealer. It also doesn't say that the exemption still applies on the date of the supply. A student who reads s.12(2) alone will choose D.",
+        "Second checker: Option A is wrong under every reading, because the invoice due date of 10 Nov is earlier than the 30 Nov payment."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 30\nPaper 5: Indirect Tax Laws\nTopic: GST - Time of supply of goods\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on CGST/IGST Act as per ICAI applicability for next attempt.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261120",
+      "story": "ca_final_story.jpg",
+      "answer_story": "ca_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

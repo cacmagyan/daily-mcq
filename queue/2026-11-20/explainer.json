@@ -1,0 +1,9 @@
+{
+  "kind": "explainer",
+  "course_id": "ca_inter",
+  "topic": "Forward Charge vs Reverse Charge (GST)",
+  "concept_topic": "Forward Charge vs Reverse Charge (GST)",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 2: board right_on 'reverse' is not a word of the line; line 4: board from_note is 16 characters; at most 12; line 14: board lines needs 1-2 lines of at most 14 characters; the lines have 224 words; write 120-175",
+  "hold": false,
+  "hold_reason": ""
+}

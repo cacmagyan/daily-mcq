@@ -1,0 +1,161 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_final",
+  "paper_code": "Paper 19",
+  "paper_name": "Indirect Tax Laws and Practice",
+  "author": "Rahul kp",
+  "topic": "Intra-State vs Inter-State Supply (GST)",
+  "title": "Intra-State vs",
+  "title_highlight": "Inter-State Supply",
+  "hook": "same state or not? that decides tax!",
+  "simple_words": "Compare supplier's location with place of supply. Same State means CGST + SGST. Different State means IGST.",
+  "definitions": [
+    {
+      "term": "Intra-State Supply",
+      "meaning": "Supply where the location of the supplier and the place of supply are in the same State or Union territory.",
+      "note": "Tax: CGST + SGST/UTGST"
+    },
+    {
+      "term": "Inter-State Supply",
+      "meaning": "Supply where the location of the supplier and the place of supply are in different States or Union territories.",
+      "note": "Tax: IGST only"
+    }
+  ],
+  "key_points": [
+    "Test = ==location of supplier== vs ==place of supply==, not where the buyer's head office or the bill is.",
+    "Same State: tax splits into CGST (Centre) and SGST (State), both at equal rates.",
+    "Different States: one tax, IGST, goes to the Centre and is shared later with the destination State.",
+    "!!Import and export of goods or services are always inter-state supplies.!!"
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "spot the difference fast",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Intra-State",
+      "Inter-State"
+    ],
+    "rows": [
+      [
+        "Supplier and place of supply",
+        "Same State/UT",
+        "Different State/UT"
+      ],
+      [
+        "Tax charged",
+        "CGST + SGST/UTGST",
+        "IGST"
+      ],
+      [
+        "Imports / exports",
+        "Never",
+        "Always"
+      ],
+      [
+        "CGST credit can pay",
+        "CGST, then IGST",
+        "CGST, then IGST"
+      ],
+      [
+        "IGST credit can pay",
+        "IGST, CGST, then SGST",
+        "IGST, CGST, then SGST"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Location decides the tax head!",
+    "text": "Same pair of States gives two taxes; two different States give one tax. The rate level stays the same."
+  },
+  "trick_hook": "Same state? Split. Else IGST.",
+  "memory_trick": {
+    "mnemonic": "Same = Split, Apart = IGST",
+    "explanation": "Same State: the tax splits into two halves (CGST + SGST). Different States: one whole IGST travels across the border."
+  },
+  "steps": [
+    "Find supplier's location",
+    "Find the place of supply",
+    "Same State/UT? Charge CGST + SGST",
+    "Different? Charge IGST",
+    "Import or export? Always IGST"
+  ],
+  "exam_tip": "In MCQs, first fix the place of supply from the facts. Do not assume it is the supplier's State or the billing address.",
+  "doubt": {
+    "question": "Can SGST credit be used to pay IGST?",
+    "answer": "Yes, SGST credit pays SGST first, then IGST. !!It can never pay CGST.!! CGST credit likewise cannot pay SGST."
+  },
+  "mistakes_hook": "don't tax by the bill address",
+  "mistakes": [
+    {
+      "wrong": "Charging CGST + SGST because buyer and seller are both in India",
+      "right": "Compare State of supplier with place of supply; if different States, charge IGST."
+    },
+    {
+      "wrong": "Treating export of goods as an intra-state supply",
+      "right": "Export and import are inter-state supplies, so IGST applies (zero-rated in case of export)."
+    },
+    {
+      "wrong": "Using SGST credit to pay CGST liability",
+      "right": "SGST credit pays SGST first, then IGST. It cannot be used for CGST."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "CGST Act, IGST Act as per ICMAI notice (to 30 Nov 2025)",
+  "confidence": "medium",
+  "reviewer_note": "Table row on CGST credit duplicates the IGST row format; verify credit-utilisation order (SGST credit pays SGST then IGST). Row 4 cell for CGST credit is correct. No section numbers cited.",
+  "law_sensitive": true,
+  "attempts": 3,
+  "needs_check": true,
+  "serious": true,
+  "check_notes": [
+    "Not confirmed after 3 attempts",
+    "Checker 1: Table row 5 (IGST credit can pay): 'IGST, CGST, then SGST' wrongly sets a fixed order with CGST before SGST. Under Sec 49(5)(a)/49A read with Rule 88A, IGST credit must first be fully used against IGST; the balance can then pay CGST and SGST/UTGST in any order and proportion. Correct: 'IGST first; balance towards CGST and SGST/UTGST in any order/proportion'.",
+    "Checker 1: Table rows 4-5: placing the credit-utilisation rules under the Intra-State vs Inter-State columns suggests they depend on the type of supply. They don't; Sec 49 rules are the same either way. Remove them from the comparison table or note 'same for both'. For row 4, add that CGST credit can never pay SGST/UTGST.",
+    "Checker 1: Definition 1 / Key point 1 / Step 3: the same-State test leaves out the exceptions in Sec 8(1) proviso and Sec 7(5) of the IGST Act: supplies to/by an SEZ unit/developer, goods imported till they cross the customs frontier, and supplies to tourists under Sec 15 are inter-State even when supplier location and place of supply are in the same State. Add: 'Same State/UT, except supplies to/by an SEZ unit/developer, goods in transit before crossing the customs frontier and supplies to tourists u/s 15, which are inter-State'.",
+    "Checker 1: Doubt answer: correct, but add the condition that SGST credit can pay IGST only after IGST credit is fully used (Sec 49A) and only where CGST credit is not available to pay that IGST (Sec 49(5)(d) proviso).",
+    "Checker 1: Insight text (minor wording): 'Same pair of States gives two taxes' should read 'Same State gives two taxes (CGST + SGST); different States give one tax (IGST)'.",
+    "Checker 2: Table row 3 (Imports / exports): Intra-State column says 'Never' and Inter-State says 'Always'. This is acceptable in substance, but the Inter-State column is the only correct place for it. Key point 4 and step 5 agree, so there is no error here.",
+    "Checker 2: Table row 4 (CGST credit can pay): the Intra-State and Inter-State cells both say 'CGST, then IGST'. This is correct. Under Section 49 and Rule 88A, CGST credit pays CGST and IGST, and it can never pay SGST.",
+    "Checker 2: Table row 5 (IGST credit can pay): the cells say 'IGST, CGST, then SGST'. This is correct under the Rule 88A order. IGST credit must first be used for IGST, then CGST, then SGST.",
+    "Checker 2: Doubt answer: 'SGST credit pays SGST first, then IGST. It can never pay CGST.' This is correct. The sentence 'CGST credit likewise cannot pay SGST' is also correct.",
+    "Checker 2: Mistake 2 right: 'Export and import are inter-state supplies, so IGST applies (zero-rated in case of export)'. This is correct. Under Section 16 of the IGST Act, export is a zero-rated supply. Imports attract IGST.",
+    "Checker 2: Key point 3: 'IGST ... is shared later with the destination State'. This is acceptable as simplified wording. It is settled through apportionment and the consumption State gets the SGST share, which is not an error.",
+    "Checker 2: Insight text: 'The rate level stays the same'. This is misleading. The IGST rate equals CGST plus SGST, but a student could read it as saying the rate is the same for each head. Better wording: 'The total rate is the same: IGST = CGST + SGST.'"
+  ],
+  "serious_reason": "The checkers found errors that weren't fixed (Checker 1: Table row 5 (IGST credit can pay): 'IGST, CGST, then SGST' wrongly sets a fixed order with CGST before SGST. Under Sec 49(5)(a)/49A read with Rule 88)",
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 0.98,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.24,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 19: Indirect Tax Laws and Practice\nIntra-State vs Inter-State Supply (GST)\n\nIn simple words: Compare supplier's location with place of supply. Same State means CGST + SGST. Different State means IGST.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on CGST Act, IGST Act as per ICMAI notice (to 30 Nov 2025).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept2-261120",
+  "story": "concept2_story.jpg",
+  "hold": true,
+  "hold_reason": "The checkers found errors that weren't fixed (Checker 1: Table row 5 (IGST credit can pay): 'IGST, CGST, then SGST' wrongly sets a fixed order with CGST before SGST. Under Sec 49(5)(a)/49A read with Rule 88)"
+}

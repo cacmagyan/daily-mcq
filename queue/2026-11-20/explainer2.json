@@ -1,0 +1,189 @@
+{
+  "kind": "explainer2",
+  "course_id": "cma_final",
+  "paper_code": "Paper 19",
+  "paper_name": "Indirect Tax Laws and Practice",
+  "topic": "Intra-State vs Inter-State Supply (GST)",
+  "concept_topic": "Intra-State vs Inter-State Supply (GST)",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 73.92,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Intra-State vs Inter-State Supply in GST",
+    "caption_hook": "CGST + SGST or IGST? One simple test decides it",
+    "hook_label": "CGST, SGST OR IGST?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Same country, yet CGST and SGST sometimes, IGST other times? How?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Great question! One test decides it: the supplier's location versus the place of supply.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Intra vs Inter-State",
+          "sub": "Supplier vs place of supply"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Place of supply? Isn't that just the buyer's billing address?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Not always. For goods, it's generally where delivery ends. The bill address can differ.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "The test",
+          "lines": [
+            "Supplier's location",
+            "Place of supply",
+            "Goods: delivery point"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Okay, so what happens when both are in the same State?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Then it's intra-state: CGST plus SGST, or UTGST in a Union territory, at equal rates.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Intra",
+            "icon": "people",
+            "color": "green",
+            "lines": [
+              "CGST + SGST",
+              "(UTGST in UT)"
+            ]
+          },
+          "right": {
+            "title": "Inter",
+            "icon": "door",
+            "color": "blue",
+            "lines": [
+              "Different State",
+              "IGST only"
+            ]
+          }
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And if they're different?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "A Pune shop delivers a phone to Chennai. Different States, so one tax: IGST.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "Pune",
+          "from_note": "Maharashtra",
+          "to": "Chennai",
+          "to_note": "Tamil Nadu",
+          "label": "IGST",
+          "to_on": "Chennai"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Wait, what about imports, exports, or SEZ customers?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Imports and exports are always inter-state. Supplies to or by an SEZ are too.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "list",
+          "title": "Always inter-state",
+          "lines": [
+            "Import: IGST",
+            "Export: IGST (zero-rated)",
+            "Supply to or by SEZ"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Can IGST credit pay CGST or SGST liability?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes. IGST credit pays IGST first, then CGST and SGST in any order. CGST and SGST never cross-set.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Using IGST credit",
+          "lines": [
+            "1. IGST first",
+            "2. Then CGST, SGST",
+            "CGST and SGST never mix"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: generally, same State splits; apart means IGST. SEZ is always IGST.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Same: split",
+            "Apart: IGST"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Corrected: IGST credit order now IGST first, then CGST/SGST in any order (Sec 49(5) CGST Act, Rule 88A); UT shown as UTGST; SEZ qualifier added to the recap and a list; place of supply for goods now explained (where delivery ends, IGST Act Sec 10). Please confirm the SEZ phrasing (Sec 7(5)(b) IGST Act) and zero-rated export wording.",
+    "Checker: Line 13 voice 'SEZ is always IGST' (and Line 10 board 'Export: IGST (zero-rated)'): this suggests IGST is always paid. Supplies to or by an SEZ, and exports, are always INTER-STATE (s.7(5) IGST Act), but they are zero-rated (s.16) and can be made under a LUT/bond without paying IGST (with a refund of unused ITC), or with IGST paid and then refunded. Line 13 fix: 'Supplies to or by an SEZ are always inter-state.' Board fix: 'Export: inter-state, zero-rated (LUT or IGST + refund)'.",
+    "Checker: Line 10 'Imports ... are always inter-state': this is right only for the supply in the course of import. Goods count as inter-state until they cross the customs frontier (s.7(2)), and imported services always count as inter-state (s.7(4)). The importer's later domestic sale follows the normal location test. Suggested wording: 'Supplies in the course of import are inter-state.'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "Corrected: IGST credit order now IGST first, then CGST/SGST in any order (Sec 49(5) CGST Act, Rule 88A); UT shown as UTGST; SEZ qualifier added to the recap and a list; place of supply for goods now explained (where delivery ends, IGST Act Sec 10). Please confirm the SEZ phrasing (Sec 7(5)(b) IGST Act) and zero-rated export wording.",
+  "caption": "🎬 🟥 CMA Final · Intra-State vs Inter-State Supply in GST\n\nCGST + SGST or IGST? One simple test decides it\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 19: Indirect Tax Laws and Practice\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref explainer2-261120",
+  "hold": false,
+  "hold_reason": ""
+}

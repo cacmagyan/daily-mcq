@@ -1,0 +1,74 @@
+{
+  "kind": "news",
+  "date": "2026-11-19",
+  "stories": [
+    {
+      "tag": "Income Tax",
+      "headline": "Govt weighs STT cut and capital gains relief before Budget 2027",
+      "points": [
+        "Per Bloomberg, officials are reviewing a 50% STT cut and higher taxes on derivatives to curb speculative trading.",
+        "FICCI asked the Finance Minister to restore the LTCG exemption on listed securities and raise STT on delivery trades.",
+        "Presently, LTCG above ₹1.25 lakh is taxed at 12.5% and STCG at 20%. Budget is due on 1 February 2027."
+      ],
+      "why_it_matters": "STT and capital gains rules are core taxation topics, and Budget changes to them affect exam syllabus updates and client advice.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "50% STT cut, LTCG and STCG tax relief: What the government is considering ahead of Union Budget 2027",
+      "link": "https://www.livemint.com/money/personal-finance/50-stt-cut-ltcg-and-stcg-tax-relief-what-the-government-is-considering-ahead-of-union-budget-2027-11794987742451.html",
+      "published": "2026-11-18T14:05:10+05:30",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "RBI",
+      "headline": "RBI cautions Yes Bank AT1 bond ruling may hurt bank rescue plans",
+      "points": [
+        "According to the report, RBI warned that the ruling could weaken the framework used to rescue banks in future.",
+        "The case goes back to Yes Bank's 2020 rescue, when AT1 bonds worth Rs 8,415 crore were written off.",
+        "AT1 bonds are meant to take up losses when a bank is in financial distress."
+      ],
+      "why_it_matters": "AT1 bonds, loss absorption and bank resolution are part of banking regulation and financial reporting for CA and CMA work.",
+      "usable": true,
+      "confidence": "medium",
+      "source": "Economic Times",
+      "source_title": "RBI warns Yes Bank AT1 bond ruling could weaken future bank rescue framework",
+      "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/rbi-warns-yes-bank-at1-bond-ruling-could-weaken-future-bank-rescue-framework/articleshow/135963509.cms",
+      "published": "2026-11-18T18:18:43+05:30",
+      "check": "minor",
+      "check_notes": [
+        "Headline wording: 'may hurt bank rescue plans' is looser than the source's 'could weaken future bank rescue framework'. It drops 'future' and changes 'framework' to 'plans', but it is not materially misleading."
+      ]
+    },
+    {
+      "tag": "Banking",
+      "headline": "Bombay HC cancels sanction to prosecute Chanda Kochhar",
+      "points": [
+        "Bombay High Court quashed the approval given to prosecute the former ICICI Bank CEO in an alleged fraud case.",
+        "The court found the sanctioning authority did not properly apply its mind to the circumstances of the case.",
+        "The case relates to a Rs 3,250 crore loan to Videocon Group during her tenure; she was arrested in December 2022."
+      ],
+      "why_it_matters": "Shows how procedural validity of sanction matters in fraud cases, a point relevant to audit, banking law and compliance studies.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Economic Times",
+      "source_title": "Relief for Chanda Kochhar as HC quashes ICICI Bank's nod to prosecute ex-CEO in 'loan fraud' case",
+      "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/relief-for-chanda-kochhar-as-hc-quashes-icici-banks-nod-to-prosecute-ex-ceo-in-loan-fraud-case/articleshow/135956301.cms",
+      "published": "2026-11-18T14:13:21+05:30",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 19 Nov 2026\n\n1️⃣ Govt weighs STT cut and capital gains relief before Budget 2027 (Mint)\n2️⃣ RBI cautions Yes Bank AT1 bond ruling may hurt bank rescue plans (Economic Times)\n3️⃣ Bombay HC cancels sanction to prosecute Chanda Kochhar (Economic Times)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Economic Times, Mint. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261119",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

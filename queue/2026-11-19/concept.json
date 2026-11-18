@@ -1,0 +1,151 @@
+{
+  "kind": "concept",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 1B",
+  "paper_name": "Applied Business and Industrial Laws",
+  "author": "Ranjith Shivahari",
+  "topic": "Agreement vs Contract",
+  "title": "Agreement",
+  "title_highlight": "vs Contract",
+  "hook": "every contract is an agreement, but...",
+  "simple_words": "An agreement is a promise accepted. It becomes a contract only when the law can enforce it.",
+  "definitions": [
+    {
+      "term": "Agreement (Sec 2(e))",
+      "meaning": "Every promise, and every set of promises forming the consideration for each other, is an agreement.",
+      "note": "Agreement = offer + acceptance"
+    },
+    {
+      "term": "Contract (Sec 2(h))",
+      "meaning": "An agreement enforceable by law is a contract.",
+      "note": "Contract = agreement + legal enforceability"
+    }
+  ],
+  "key_points": [
+    "All contracts are agreements, but ==not all agreements are contracts==.",
+    "Agreement is the wider term; contract is the narrower, legally enforceable part.",
+    "A social or domestic promise, like a dinner invitation, is an agreement but !!not a contract!!.",
+    "A valid contract needs free consent, competent parties, lawful consideration and lawful object."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "agreement is the big circle",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Basis",
+      "Agreement",
+      "Contract"
+    ],
+    "rows": [
+      [
+        "Definition",
+        "Sec 2(e): promise(s) for consideration",
+        "Sec 2(h): agreement enforceable by law"
+      ],
+      [
+        "Legal duty",
+        "May not create one",
+        "Always creates legal obligation"
+      ],
+      [
+        "Scope",
+        "Wider",
+        "Narrower"
+      ],
+      [
+        "Enforceable in court",
+        "Not necessarily",
+        "Yes"
+      ],
+      [
+        "Example",
+        "Invitation to a friend's dinner",
+        "Sale of goods for a price"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Big circle, small circle!",
+    "text": "Contracts sit inside the larger circle of agreements; only agreements with legal force reach the inner circle."
+  },
+  "trick_hook": "picture two circles",
+  "memory_trick": {
+    "mnemonic": "Agreement = big, Contract = core",
+    "explanation": "Draw a big circle (agreement) with a small circle inside it (contract). Whatever is in the small circle is also in the big one, never the reverse."
+  },
+  "steps": [
+    "Is there offer and acceptance?",
+    "If yes, it is an agreement",
+    "Check consent, capacity, consideration",
+    "Check lawful object, not void",
+    "If all met: enforceable contract"
+  ],
+  "exam_tip": "In MCQs, 'All agreements are contracts' is always wrong. The correct form is 'All contracts are agreements'.",
+  "doubt": {
+    "question": "Is a promise to a friend to attend a party a contract?",
+    "answer": "No. Parties normally do not intend legal relations in social matters, so it stays an agreement and cannot be enforced in court."
+  },
+  "mistakes_hook": "don't flip the sentence",
+  "mistakes": [
+    {
+      "wrong": "All agreements are contracts.",
+      "right": "All contracts are agreements; only agreements enforceable by law are contracts."
+    },
+    {
+      "wrong": "Contract is the wider term than agreement.",
+      "right": "Agreement is the wider term; contract is a part of it."
+    },
+    {
+      "wrong": "Any promise accepted by the other side is enforceable.",
+      "right": "It is enforceable only if the essentials of a valid contract are present, such as lawful consideration."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Indian Contract Act, 1872 (Sec 2(e), 2(h))",
+  "confidence": "high",
+  "reviewer_note": "Definitions follow Sec 2(e) and 2(h) of the Indian Contract Act, 1872; please confirm the section numbers.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Switched to a new concept because the first one couldn't be verified",
+    "Writer: Definitions follow Sec 2(e) and 2(h) of the Indian Contract Act, 1872; please confirm the section numbers.",
+    "Checker 1: Key point 4: the list of essentials leaves some out. Sec 10 also requires that the agreement is not expressly declared void. ICMAI material also lists intention to create legal relations and certainty of meaning. Better version: 'A valid contract needs free consent, competent parties, lawful consideration, lawful object, intention to create legal relations, and must not be expressly declared void (Sec 10).'",
+    "Checker 1: Simple words: 'An agreement is a promise accepted' is loose wording. Under Sec 2(b), an accepted proposal (offer) becomes a promise, and every promise is an agreement. Better version: 'An agreement is an offer that has been accepted (a promise). It becomes a contract only when the law can enforce it.'"
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.02,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 1B: Applied Business and Industrial Laws\nAgreement vs Contract\n\nIn simple words: An agreement is a promise accepted. It becomes a contract only when the law can enforce it.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Indian Contract Act, 1872 (Sec 2(e), 2(h)).\n\nNotes by Ranjith Shivahari\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept-261119",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

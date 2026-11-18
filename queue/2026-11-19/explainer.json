@@ -1,0 +1,191 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 1B",
+  "paper_name": "Applied Business and Industrial Laws",
+  "topic": "Agreement vs Contract",
+  "concept_topic": "Agreement vs Contract",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 68.85,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Agreement vs Contract",
+    "caption_hook": "Every contract is an agreement, but not every agreement is a contract!",
+    "hook_label": "AGREEMENT = CONTRACT?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Ma'am, is every agreement a contract? Or are they the same thing?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Not quite. Every contract is an agreement, but not every agreement is a contract.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Agreement vs Contract",
+          "sub": "Big circle, small circle"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Wait, then what exactly is an agreement?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "A proposal, once accepted, becomes a promise. Promises forming consideration for each other are an agreement, Section 2(e).",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Agreement Sec 2(e)",
+          "formula": "Offer + Acceptance",
+          "sub": "Accepted proposal is a promise (Sec 2(b))"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And a contract?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Section 2(h): an agreement enforceable by law is a contract.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "formula",
+          "title": "Contract Sec 2(h)",
+          "formula": "Agreement + Enforceability",
+          "sub": "Enforceable by law makes it a contract"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So can an agreement exist without being enforceable?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! A promise to attend a friend's dinner is one. Nobody intends legal consequences, so courts won't enforce it.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Agreement",
+            "lines": [
+              "Friend's dinner",
+              "Not enforceable"
+            ],
+            "icon": "people",
+            "color": "yellow"
+          },
+          "right": {
+            "title": "Contract",
+            "lines": [
+              "Sale of goods",
+              "Enforceable"
+            ],
+            "icon": "scale",
+            "color": "green"
+          },
+          "right_on": "enforce"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Okay, and a sale of goods for a price?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Sale is a contract. It needs legal intention, free consent, competent parties, lawful consideration and object, and must not be declared void.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Valid contract needs",
+          "lines": [
+            "Intention for legal ties",
+            "Free consent, competent",
+            "Lawful consideration, object",
+            "Not expressly declared void"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So a contract sits inside agreement, like a small circle in a big one!",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Exactly! Everything in the small circle is also in the big one, never the reverse.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "flow",
+          "from": "Agreement",
+          "from_note": "Big circle",
+          "to": "Contract",
+          "to_note": "Small circle",
+          "label": "+ legal force",
+          "to_on": "small"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So all contracts are agreements, but not all agreements are contracts?",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes. Remember: agreement is big, contract is core.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Agreement = big",
+            "Contract = core"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Sec 2(e) wording now follows the Act, with Sec 2(b) for proposal becoming a promise. Valid-contract list now includes intention for legal relations and not expressly declared void (Sec 10). The board list lines are short to fit 24 characters. Please check the word count is within 120-175.",
+    "Checker: Line 12 (voice): 'Everything in the small circle is also in the big one, never the reverse' is too absolute. Read literally, it says nothing in the big circle is in the small one, but every contract is in both. Correct wording: 'Everything in the small circle is also in the big one, but not everything in the big circle is in the small one.'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "Sec 2(e) wording now follows the Act, with Sec 2(b) for proposal becoming a promise. Valid-contract list now includes intention for legal relations and not expressly declared void (Sec 10). The board list lines are short to fit 24 characters. Please check the word count is within 120-175.",
+  "caption": "🎬 🟨 CMA CAT · Agreement vs Contract\n\nEvery contract is an agreement, but not every agreement is a contract!\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 1B: Applied Business and Industrial Laws\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref explainer-261119",
+  "hold": false,
+  "hold_reason": ""
+}

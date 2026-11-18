@@ -1,0 +1,150 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 5",
+  "paper_name": "Auditing and Ethics",
+  "author": "Ranjith Shivahari",
+  "topic": "Vouching vs Verification",
+  "title": "Vouching",
+  "title_highlight": "vs Verification",
+  "hook": "entries or balances?",
+  "simple_words": "Vouching proves the entries in the books are real. Verification proves the assets and liabilities are real.",
+  "definitions": [
+    {
+      "term": "Vouching",
+      "meaning": "Checking recorded transactions against documentary evidence such as invoices, receipts and vouchers, to see they are genuine and authorised.",
+      "note": "Starts from the book entry"
+    },
+    {
+      "term": "Verification",
+      "meaning": "Confirming the existence, ownership, valuation and presentation of assets and liabilities shown in the balance sheet.",
+      "note": "Wider than vouching"
+    }
+  ],
+  "key_points": [
+    "==Vouching== deals with transactions recorded in the books of account.",
+    "==Verification== deals with assets and liabilities on the balance sheet date.",
+    "Vouching proves the entry is genuine; verification also checks ownership and valuation.",
+    "!!Vouching alone cannot prove an asset is owned or fairly valued!!."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn it row by row",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Vouching",
+      "Verification"
+    ],
+    "rows": [
+      [
+        "Concerns",
+        "Transactions in books",
+        "Assets and liabilities"
+      ],
+      [
+        "Evidence",
+        "Invoices, receipts, vouchers",
+        "Title deeds, certificates, inspection"
+      ],
+      [
+        "Main aim",
+        "Genuine, authorised, recorded",
+        "Existence, ownership, valuation"
+      ],
+      [
+        "Scope",
+        "Narrower",
+        "Wider"
+      ],
+      [
+        "Focus",
+        "Entries of the period",
+        "Position at balance sheet date"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Entries vs Balances!",
+    "text": "Vouching tests the entry in the book; verification tests the item in the balance sheet."
+  },
+  "trick_hook": "V for Voucher, V for Value",
+  "memory_trick": {
+    "mnemonic": "Vouch = Voucher, Verify = Value",
+    "explanation": "Vouching needs a voucher behind each entry. Verification looks at the value, ownership and existence of balance sheet items."
+  },
+  "steps": [
+    "Read: entry or balance sheet item?",
+    "Entry: match with voucher",
+    "Check date, amount, authority",
+    "Item: check existence, title",
+    "Then check valuation and disclosure"
+  ],
+  "exam_tip": "If the question says examine invoices for payments, write vouching. If it says title, existence or valuation of assets, write verification.",
+  "doubt": {
+    "question": "Is vouching a part of verification?",
+    "answer": "Both support the audit. Vouching covers transactions; verification is wider and covers existence, ownership and valuation of balance sheet items."
+  },
+  "mistakes_hook": "don't swap the two!",
+  "mistakes": [
+    {
+      "wrong": "Vouching is checking the value of assets",
+      "right": "Vouching checks transactions against documents; valuation of assets belongs to verification."
+    },
+    {
+      "wrong": "Verification means only checking vouchers",
+      "right": "Verification covers existence, ownership, valuation and presentation of assets and liabilities."
+    },
+    {
+      "wrong": "Seeing the voucher proves the asset is owned",
+      "right": "A voucher proves the transaction; ownership needs title documents under verification."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "medium",
+  "reviewer_note": "Check that the \"wider scope\" wording matches the ICAI study material. Some texts call vouching a part of verification. No past-paper list was given.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Check that the \"wider scope\" wording matches the ICAI study material. Some texts call vouching a part of verification. No past-paper list was given.",
+    "Checker 1: Doubt answer: the question 'Is vouching a part of verification?' is never answered with a clear yes or no; the reply only says both support the audit. Suggested version: 'Not exactly. They are separate procedures that support each other. Vouching checks the transactions recorded during the period against documents. Verification is wider: it confirms the existence, ownership (title), valuation and presentation of balance sheet items at the balance sheet date. Vouching evidence can support verification, but on its own it cannot prove ownership or value.'",
+    "Checker 2: Doubt answer: the question is \"Is vouching a part of verification?\" The answer never says yes or no. A better version is: \"No. They are different procedures. Vouching tests recorded transactions against documents. Verification tests the existence, ownership, valuation and presentation of assets and liabilities. They overlap, because vouching a purchase supports verifying the asset, but vouching is not a subset of verification.\""
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 5: Auditing and Ethics\nVouching vs Verification\n\nIn simple words: Vouching proves the entries in the books are real. Verification proves the assets and liabilities are real.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Ranjith Shivahari\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept2-261119",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

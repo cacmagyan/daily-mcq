@@ -1,0 +1,93 @@
+{
+  "kind": "news",
+  "date": "2026-11-20",
+  "stories": [
+    {
+      "tag": "Income Tax",
+      "headline": "Budget 2027: CA expects possible STT cut and bond interest tax relief",
+      "points": [
+        "CA Suresh Surana says a cut in Securities Transaction Tax merits thought, as it adds cost and applies even on losses.",
+        "He sees a balanced STT cut and targeted bond-tax relief as likelier than full abolition of STT.",
+        "Corporate bond interest is now taxed at slab rates; listed bond long-term gains are taxed at 12.5% without indexation."
+      ],
+      "why_it_matters": "Capital gains, STT and interest taxation are core Income Tax topics, and Budget changes often feed into exam and practice.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "Budget 2027 expectations: Will stock market investors and bondholders get tax relief? CA explains key changes to watch",
+      "link": "https://www.livemint.com/money/personal-finance/budget-2027-expectations-will-stock-market-investors-and-bondholders-get-tax-relief-ca-explains-key-changes-to-watch-11795078953017.html",
+      "published": "2026-11-19T15:15:44+05:30",
+      "check": "minor",
+      "check_notes": [
+        "Headline: 'CA expects' is a bit stronger than the source. Surana says both measures 'merit consideration' and that a balanced STT cut 'may be' the more practical outcome. He does not state an expectation.",
+        "Point 3 drops 'generally' and 'qualifying' from the source. The source says corporate bond interest is 'generally' taxed at slab rates, and that 'qualifying' long-term gains on listed bonds are taxed at 12.5%. The story states both without these qualifiers.",
+        "Why it matters: the claim that Budget changes 'often feed into exam and practice' is editorial framing that the source does not support.",
+        "The story does not say these are only expectations, not confirmed policy, which the source stresses."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Lucknow allows 80-IB deduction despite Form 10CCB filed late",
+      "points": [
+        "Arif Industries filed Form 10CCB on 13 Oct 2022; the Department said it was due a month before the 7 Nov 2022 deadline.",
+        "A ₹3,36,91,079 adjustment under Section 143(1)(a) was proposed, and the CIT(A) upheld the disallowance.",
+        "ITAT Lucknow called the timing rule directory, citing the Allahabad High Court, and told the AO to allow the deduction."
+      ],
+      "why_it_matters": "Shows how courts treat timing rules for audit reports in deduction claims, which matters for tax audit and return compliance work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Form 10CCB Filed Before ITR Due Date Sufficient for Section 80-IB Deduction: ITAT Lucknow",
+      "link": "https://taxguru.in/income-tax/form-10ccb-filed-itr-due-date-sufficient-section-80-ib-deduction-itat-lucknow.html",
+      "published": "2026-11-19T19:04:40+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Headline wording 'despite Form 10CCB filed late' takes the Department's view. The form was filed after the 7 Oct 2022 one-month date, so the facts hold. But the source and the Tribunal frame it as filed before the return due date (7 Nov 2022) and treat that as sufficient compliance.",
+        "Third point says the AO was told to 'allow the deduction'. The source says the AO was directed to allow the claim 'in accordance with law'. This is a small simplification.",
+        "'Why it matters' says 'courts', but the ruling is from a tribunal (ITAT). This is wording only.",
+        "The story leaves out that the Tribunal did not decide the separate Section 143(1) challenge. This is an omission, not an error."
+      ]
+    },
+    {
+      "tag": "GST",
+      "headline": "Telangana HC: Late circular doesn't void GST penalty order",
+      "points": [
+        "Telangana HC dismissed Charanji Distributors' writ against a Section 122(1)(ii) notice and order, dated Oct 13, 2026.",
+        "Petitioner argued no proper officer was assigned for Section 122 until CBIC Circular dated October 27, 2025.",
+        "Court said the Joint Commissioner is the designated officer for cases above Rs. 2 crores; other grounds go to appeal."
+      ],
+      "why_it_matters": "Shows how 'proper officer' jurisdiction and Section 160 play out in GST penalty cases, a key area in GST law and litigation work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | Delayed Proper Officer Circular Does Not Invalidate GST Penalty Order: Telangana HC",
+      "link": "https://taxguru.in/goods-and-service-tax/delayed-proper-officer-circular-not-invalidate-gst-penalty-order-telangana-hc.html",
+      "published": "2026-11-19T16:08:22+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 1: the placement of 'dated Oct 13, 2026' is ambiguous. It reads as if the Section 122(1)(ii) notice and order carry that date. The source dates the notice February 17, 2025 and the Order-in-Original October 15, 2025. October 13, 2026 is the date of the High Court's judgment. Suggested rewording: 'In an Oct 13, 2026 ruling, Telangana HC dismissed...'",
+        "Point 3: this point leaves out that the court relied on Section 160 of the CGST Act to hold the order could not be invalidated on this ground alone. It also leaves out that the Joint Commissioner's designation comes from the later Circular. This is a framing omission and does not make the point inaccurate."
+      ]
+    }
+  ],
+  "notes": [
+    "skipped 'Goods and Services Tax | CBIC Stops GST Arrests, Random E-Wa': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Subhash Chandra insolvency: Responses served to stakeholders': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | SC Dismisses Revenue SLP Against Quashing of Re': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Software Licence and Global Web Payments Not Ro': why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | GST Short Payment Alone Is Not Tax ': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST Interest Demand of ₹42.68 Lakh ': a point is longer than 110 characters",
+    "skipped 'Corporate Law | GST ITC Denied for Failure to Prove Supplier': a point is longer than 110 characters; why_it_matters is longer than 120 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 20 Nov 2026\n\n1️⃣ Budget 2027: CA expects possible STT cut and bond interest tax relief (Mint)\n2️⃣ ITAT Lucknow allows 80-IB deduction despite Form 10CCB filed late (TaxGuru)\n3️⃣ Telangana HC: Late circular doesn't void GST penalty order (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Mint, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261120",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

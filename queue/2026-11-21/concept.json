@@ -1,0 +1,168 @@
+{
+  "kind": "concept",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 6",
+  "paper_name": "Financial Accounting",
+  "author": "Rahul kp",
+  "topic": "Cash Book vs Pass Book",
+  "title": "Cash Book",
+  "title_highlight": "vs Pass Book",
+  "hook": "same bank, two diaries!",
+  "simple_words": "Cash Book is your record of the bank. Pass Book is the bank's record of you. Both are the same account, seen from two sides.",
+  "definitions": [
+    {
+      "term": "Cash Book (Bank column)",
+      "meaning": "Book kept by the business. It records every receipt and payment through the bank, and it is the account of the bank in our books.",
+      "note": "Our view of the bank"
+    },
+    {
+      "term": "Pass Book",
+      "meaning": "Copy of the customer's account in the bank's books, given by the bank. It shows deposits, withdrawals, charges and interest.",
+      "note": "Bank's view of us"
+    }
+  ],
+  "key_points": [
+    "Cash Book is kept by ==the business==; Pass Book is kept by ==the bank==.",
+    "Pass Book is the mirror image: the sides are ==reversed== in the two books.",
+    "Differences between the two balances are explained by a Bank Reconciliation Statement.",
+    "!!Cash Book credit balance = overdraft!!, but a Pass Book debit balance = overdraft."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn the mirror, win the marks",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Cash Book",
+      "Pass Book"
+    ],
+    "rows": [
+      [
+        "Kept by",
+        "Business",
+        "Bank"
+      ],
+      [
+        "Deposit into bank",
+        "Debit side",
+        "Credit side"
+      ],
+      [
+        "Payment from bank",
+        "Credit side",
+        "Debit side"
+      ],
+      [
+        "Debit balance means",
+        "Money at bank",
+        "Overdraft"
+      ],
+      [
+        "Credit balance means",
+        "Overdraft",
+        "Money at bank"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Same bank, opposite sides!",
+    "text": "The bank treats our deposit as its liability, so it credits us; we treat the bank as an asset, so we debit it."
+  },
+  "trick_hook": "picture a mirror",
+  "memory_trick": {
+    "mnemonic": "Pass Book = Mirror Book",
+    "explanation": "Stand the Cash Book in front of a mirror and every Dr becomes Cr. So a Cash Book Dr balance shows as a Pass Book Cr balance."
+  },
+  "steps": [
+    "Note who keeps the book",
+    "Read the balance: Dr or Cr",
+    "Flip the meaning for the Pass Book",
+    "Check for overdraft",
+    "Then start the BRS"
+  ],
+  "exam_tip": "In a BRS question, first check whether the given balance is from the Cash Book or the Pass Book, and whether it is an overdraft.",
+  "doubt": {
+    "question": "Why do the two balances not match?",
+    "answer": "Some items are timing differences, such as cheques not yet presented. Others are recorded only by the bank, such as charges or direct credits."
+  },
+  "mistakes_hook": "don't read it the wrong way round",
+  "mistakes": [
+    {
+      "wrong": "A credit balance in the Cash Book bank column is money in the bank",
+      "right": "A credit balance in the Cash Book bank column is a bank overdraft."
+    },
+    {
+      "wrong": "A debit balance in the Pass Book means a favourable bank balance",
+      "right": "A debit balance in the Pass Book means an overdraft, as the customer owes the bank."
+    },
+    {
+      "wrong": "Passing a Cash Book entry for cheques issued but not yet presented",
+      "right": "No entry is needed. Cheques are already in the Cash Book; show them only in the BRS."
+    }
+  ],
+  "past_papers": [
+    {
+      "ref": "1-68",
+      "papers": "PY D25 · MCQ",
+      "point": "What a credit balance in the Cash Book bank column indicates"
+    },
+    {
+      "ref": "1-65",
+      "papers": "PY J24 · MCQ",
+      "point": "Treatment of cheques issued but only partly presented while reconciling"
+    },
+    {
+      "ref": "1-79",
+      "papers": "PY D25, MQP J25 S1 · MCQ",
+      "point": "Reconciling an overdraft Cash Book balance with the Pass Book differences"
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Switched to a new concept because the first one couldn't be verified",
+    "Checker 2: Key point 2 / memory trick explanation: 'Stand the Cash Book in front of a mirror and every Dr becomes Cr. So a Cash Book Dr balance shows as a Pass Book Cr balance' is fine, but the insight text is wrong in wording: the bank treats our deposit as its liability, so it credits us (correct). No error there; however the key point 4 is ok.",
+    "Checker 2: Past paper 2 (PY J24): the note describes it as 'cheques issued but only partly presented'. This is acceptable, but the correct answer is ₹5,000 ADDED to the Cash Book balance (cheques issued but not presented, 15,000-10,000). The note does not state the amount or direction, so the radar point is incomplete. It should say: add ₹5,000 (unpresented cheques) to the Cash Book balance to reach the Pass Book balance.",
+    "Checker 2: Past paper 3: the source question is a BRS from an overdraft Cash Book balance. The radar point is fine but the question text is truncated in the source, so check the figures before use.",
+    "Checker 2: Mistake 3 wrong/right: 'Passing a Cash Book entry for cheques issued but not yet presented' is a fair mistake. The right version is correct, because no entry is needed for the cheques and they are shown only in the BRS."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 0.98,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.16,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟧 CMA Inter · Concept of the day\nPaper 6: Financial Accounting\nCash Book vs Pass Book\n\nIn simple words: Cash Book is your record of the bank. Pass Book is the bank's record of you. Both are the same account, seen from two sides.\n\n📝 Asked in past papers: PY D25, PY J24\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks and the past exam radar.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref concept-261121",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

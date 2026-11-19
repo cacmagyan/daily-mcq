@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-21",
+  "day": 31,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-20T03:12:27+05:30",
+  "items": [
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2A",
+      "paper_name": "Financial Accounting-2",
+      "topic": "Bills of Exchange - Discounting",
+      "question": "On 1 July 2026, Rao received an accepted 3-month bill of ₹1,00,000 and discounted it with his bank the same day at 12% per annum. Ignore days of grace. How much cash did the bank pay Rao?",
+      "options": [
+        "₹88,000",
+        "₹97,000",
+        "₹3,000",
+        "₹1,00,000"
+      ],
+      "correct": "B",
+      "explanation": "Discount is charged on the bill amount for the unexpired period of 3 months: 1,00,000 × 12% × 3/12 = ₹3,000. The bank pays the bill amount less discount, which is ₹97,000.",
+      "working": [
+        {
+          "label": "Bill amount",
+          "value": "₹1,00,000"
+        },
+        {
+          "label": "Discount rate p.a.",
+          "value": "12%"
+        },
+        {
+          "label": "Period in months",
+          "value": "3"
+        },
+        {
+          "label": "Discount (1,00,000×12%×3/12)",
+          "value": "₹3,000"
+        },
+        {
+          "label": "Cash received from bank",
+          "value": "₹97,000"
+        }
+      ],
+      "why_not": {
+        "C": "Gives only the discount charge, not the cash received after deducting it.",
+        "A": "Charges discount for a full year instead of 3 months.",
+        "D": "Ignores the bank's discount; full amount is received only on maturity."
+      },
+      "exam_tip": "Discounting: cash received = bill amount minus discount for the unexpired period only.",
+      "calculation": "bill = 100000\ndiscount = bill * 12 / 100 * 3 / 12\nanswer = bill - discount",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Option C (₹3,000) is the discount, so it works as a distractor. That is fine.",
+        "Checker: The wording could say more clearly that the bill is dated 1 July 2026 and has 3 months to run. The question only says Rao received it that day, so a bill drawn earlier is conceivable but unlikely. This is a minor point."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 31\nPaper 2A: Financial Accounting-2\nTopic: Bills of Exchange - Discounting\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261121",
+      "story": "cma_cat_story.jpg",
+      "answer_story": "cma_cat_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 8",
+      "paper_name": "Cost Accounting",
+      "topic": "Labour Cost: Halsey Premium Plan",
+      "question": "A job has a standard time of 40 hours. A worker finishes it in 30 hours. Hourly rate is ₹50. Under the Halsey premium plan, the worker gets 50% of the time saved as bonus. What are the total earnings for the job?",
+      "options": [
+        "₹1,750",
+        "₹2,000",
+        "₹1,500",
+        "₹1,875"
+      ],
+      "correct": "A",
+      "explanation": "Halsey earnings = time taken x rate + 50% x time saved x rate. Time saved is 10 hours. Bonus = 50% x 10 x ₹50 = ₹250. Total = ₹1,500 + ₹250 = ₹1,750.",
+      "working": [
+        {
+          "label": "Time wages (30 x ₹50)",
+          "value": "₹1,500"
+        },
+        {
+          "label": "Time saved (hours)",
+          "value": "10"
+        },
+        {
+          "label": "Value of time saved",
+          "value": "₹500"
+        },
+        {
+          "label": "Bonus at 50%",
+          "value": "₹250"
+        },
+        {
+          "label": "Total earnings",
+          "value": "₹1,750"
+        }
+      ],
+      "why_not": {
+        "C": "Only time wages; the bonus for time saved is left out.",
+        "D": "Uses the Rowan formula (time saved / time allowed x time taken x rate).",
+        "B": "Gives the full value of time saved as bonus, not 50%."
+      },
+      "exam_tip": "Halsey: bonus is a fixed share of time saved. Rowan: bonus = saved/allowed x time taken x rate.",
+      "calculation": "time_wages = 30*50\nsaved = 40-30\nbonus = 0.5*saved*50\nanswer = time_wages + bonus",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 31\nPaper 8: Cost Accounting\nTopic: Labour Cost: Halsey Premium Plan\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261121",
+      "story": "cma_inter_story.jpg",
+      "answer_story": "cma_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 19",
+      "paper_name": "Indirect Tax Laws and Practice",
+      "topic": "GST - Intra-State vs Inter-State Supply",
+      "question": "A supplier registered in Jaipur (Rajasthan) sells goods to a buyer whose head office is in Mumbai. On the buyer's instruction, the supplier delivers the goods to the buyer's branch in Surat (Gujarat). Which tax applies to this supply?",
+      "options": [
+        "IGST, as supplier's location and place of supply are in different States",
+        "CGST and Gujarat SGST, as the goods are delivered in Gujarat",
+        "CGST and Rajasthan SGST, as the supplier is in Rajasthan",
+        "CGST and Maharashtra SGST, as the buyer's head office is in Mumbai"
+      ],
+      "correct": "A",
+      "explanation": "Supplier's location is Rajasthan. Goods are delivered on the buyer's direction to Gujarat, so place of supply is Gujarat. The two States differ, so the supply is inter-State and IGST applies.",
+      "working": [],
+      "why_not": {
+        "C": "Looks only at the supplier's State and ignores the place of supply in Gujarat.",
+        "D": "Uses the buyer's head office or billing address instead of the place of delivery.",
+        "B": "Gets place of supply right but forgets the supplier is in Rajasthan, so it is inter-State."
+      },
+      "exam_tip": "Compare supplier's location with place of supply. Same State: CGST + SGST. Different States: IGST.",
+      "calculation": "",
+      "applicability": "CGST Act 2017, IGST Act 2017 (per ICMAI notice)",
+      "confidence": "high",
+      "reviewer_note": "Place of supply where goods are delivered on buyer's direction to a third place is treated as the buyer's principal place of business under the IGST Act (s.10(1)(b)). Check this: the buyer here directs delivery to its own branch, not a third person, so delivery to the branch makes place of supply Gujarat under the general rule (s.10(1)(a)). Answer is unaffected.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Place of supply where goods are delivered on buyer's direction to a third place is treated as the buyer's principal place of business under the IGST Act (s.10(1)(b)). Check this: the buyer here directs delivery to its own branch, not a third person, so delivery to the branch makes place of supply Gujarat under the general rule (s.10(1)(a)). Answer is unaffected.",
+        "Checker: The question does not say who is billed (the Mumbai head office or the Surat branch), so the place of supply could be Maharashtra or Gujarat. The answer is IGST either way, so the key is unaffected.",
+        "Checker: Option A's reason is very general and does not name the place of supply or cite section 10(1)(b), so the question does not really test the bill-to/ship-to rule.",
+        "Checker: Option D (CGST plus Maharashtra SGST for a supplier in Rajasthan) is legally impossible and is a weak distractor.",
+        "Second checker: Option A's reason does not say which State is the place of supply. Whether it is Mumbai (s.10(1)(b)) or Surat (s.10(1)(a)) is debatable because the branch is not a separate person. The IGST conclusion is the same either way, so the key is safe.",
+        "Second checker: Option D's distractor is plausible for a student who applies s.10(1)(b) but then wrongly charges Maharashtra SGST. This is a minor point."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Intra-State vs Inter-State Supply (GST)",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 31\nPaper 19: Indirect Tax Laws and Practice\nTopic: GST - Intra-State vs Inter-State Supply\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on CGST Act 2017, IGST Act 2017 (per ICMAI notice).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261121",
+      "story": "cma_final_story.jpg",
+      "answer_story": "cma_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

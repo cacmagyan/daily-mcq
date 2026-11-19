@@ -1,0 +1,150 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 4",
+  "paper_name": "Business Economics",
+  "author": "Rahul kp",
+  "topic": "Movement vs Shift of Demand Curve",
+  "title": "Movement vs Shift",
+  "title_highlight": "of Demand Curve",
+  "hook": "price moves it, or something else?",
+  "simple_words": "Own price changes: slide along the same curve. Any other factor changes: the whole curve moves.",
+  "definitions": [
+    {
+      "term": "Movement along the curve",
+      "meaning": "Change in quantity demanded caused only by a change in the good's own price, other factors constant. Called extension or contraction.",
+      "note": "Same curve, new point"
+    },
+    {
+      "term": "Shift of the curve",
+      "meaning": "Change in demand at every price, caused by a change in a factor other than own price. Called increase or decrease in demand.",
+      "note": "New curve, new position"
+    }
+  ],
+  "key_points": [
+    "Own price is the ==only cause== of a movement along the curve.",
+    "Income, tastes, related goods' prices, expectations and number of buyers cause a ==shift==.",
+    "Price fall gives extension; price rise gives contraction of demand.",
+    "!!Do not say 'increase in demand' when only own price has fallen!!"
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "spot the cause first",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Movement",
+      "Shift"
+    ],
+    "rows": [
+      [
+        "Cause",
+        "Own price only",
+        "Other factors"
+      ],
+      [
+        "Curve",
+        "Same curve",
+        "Whole curve moves"
+      ],
+      [
+        "Direction",
+        "Up or down along it",
+        "Right or left"
+      ],
+      [
+        "Terms",
+        "Extension / contraction",
+        "Increase / decrease"
+      ],
+      [
+        "Ceteris paribus",
+        "Holds",
+        "Does not hold"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Own price? Slide. Else? Shift.",
+    "text": "Check the cause first: only own price means movement; any other factor means shift."
+  },
+  "trick_hook": "price slides, others shift",
+  "memory_trick": {
+    "mnemonic": "Price Slides, Others Shift",
+    "explanation": "Picture a child on a slide: own Price makes you slide along the curve. Any Other factor shifts the whole slide to a new place."
+  },
+  "steps": [
+    "Read what has changed",
+    "Is it the good's own price?",
+    "Yes: move along the same curve",
+    "No: shift the curve",
+    "Name it: extension or increase"
+  ],
+  "exam_tip": "In MCQs, underline the changed factor. Own price means extension or contraction; anything else means increase or decrease in demand.",
+  "doubt": {
+    "question": "If income rises, does demand always shift right?",
+    "answer": "No. For a normal good it shifts right. For an inferior good, higher income shifts the curve left."
+  },
+  "mistakes_hook": "same graph, different words",
+  "mistakes": [
+    {
+      "wrong": "Price of the good falls, so 'demand increases'",
+      "right": "Own price fall causes extension of demand, a movement down along the same curve."
+    },
+    {
+      "wrong": "Income change shown as a movement along the curve",
+      "right": "Income change shifts the whole demand curve."
+    },
+    {
+      "wrong": "Rise in price of a substitute causes contraction of demand for the good",
+      "right": "It shifts the demand curve of the good to the right (increase in demand)."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Checker 1: Step 5 ('Name it: extension or increase') is incomplete. It lists only two of the four terms, which could suggest that a movement is always an extension and a shift is always an increase. Correct version: 'Name it: extension/contraction for a movement, increase/decrease in demand for a shift.'",
+    "Checker 1: Key point 4 has no full stop at the end. Correct version: 'Do not say 'increase in demand' when only own price has fallen.' It could also add: 'call it extension of demand.'",
+    "Checker 1: Table row 5 (Ceteris paribus: Holds / Does not hold) is correct but could be clearer. Suggested wording: 'Other factors constant / A factor other than own price changes.'"
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟩 CA Foundation · Concept of the day\nPaper 4: Business Economics\nMovement vs Shift of Demand Curve\n\nIn simple words: Own price changes: slide along the same curve. Any other factor changes: the whole curve moves.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFoundation #ICAI #CAStudents #CAExams\n\nref concept2-261121",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

@@ -1,0 +1,16 @@
+{
+  "kind": "countdown",
+  "course_id": "cma_inter",
+  "exam": "CMA Inter Dec 2026",
+  "exam_date": "2026-12-10",
+  "days": 19,
+  "paper_code": "Paper 8",
+  "paper_name": "Cost Accounting",
+  "topic": "Overhead Absorption and Under/Over Absorption",
+  "tip": "Do primary and secondary distribution; for reciprocal services use simultaneous equations. Then find the absorption rate",
+  "hold": false,
+  "hold_reason": "",
+  "images": [
+    "countdown.jpg"
+  ]
+}

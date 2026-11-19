@@ -1,0 +1,49 @@
+{
+  "kind": "pyq",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 6",
+  "paper_name": "Financial Accounting",
+  "tried": [
+    "Paper 6||1-11",
+    "Paper 6||4-15"
+  ],
+  "ref": "Paper 6||1-11",
+  "topic": "Introduction to Accounting",
+  "question": "Which of the following statements is correct?",
+  "options": [
+    "Financial accounts of an enterprise are treated as evidence in the court of law.",
+    "Financial statements prepared by two different accountants will always show identical results.",
+    "Financial statements need not take into consideration any statutory requirements.",
+    "Only credit transactions are recorded in the books of accounts."
+  ],
+  "correct": "A",
+  "explanation": "Properly maintained books of account are accepted as legal evidence in a court of law. This is a recognised advantage and objective of financial accounting, because it gives documentary proof of transactions and disputes.",
+  "working": [],
+  "why_not": {
+    "B": "Judgement in estimates and policies can make results differ between accountants.",
+    "C": "Statutes like the Companies Act must be followed in preparing statements.",
+    "D": "Both cash and credit transactions are recorded."
+  },
+  "exam_tip": "Remember: books of account serve as legal evidence, which is a standard advantage of accounting.",
+  "asked_in": "CMA Inter June 2025 exam",
+  "asked_short": "Jun 2025 exam",
+  "papers_tags": [
+    "PY J25"
+  ],
+  "check_notes": [
+    "Wording: 'gives documentary proof of transactions and disputes' is awkward. The books prove the transactions and serve as evidence in disputes; they do not prove the disputes themselves."
+  ],
+  "notes": [
+    "Paper 6||4-15: examiner: The 'Why not A' line is wrong. ₹9,50,000 is not a random figure: it is the capitalised value minus total assets (1,44,50,000 − 1,35,00,000), so the error is deducting total assets instead of net asset"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "image_prefix": "pyq",
+  "author": "Rahul kp",
+  "images": {
+    "question": "pyq_q.jpg",
+    "answer": "pyq_a.jpg"
+  },
+  "fit_notes": [],
+  "caption": "📜 PYQ of the day · CMA Inter\nPaper 6: Financial Accounting\nAsked in the CMA Inter June 2025 exam\n\nTry it first: comment your answer (A, B, C or D), then swipe for the solution.\nSave 🔖 it for revision: past papers repeat ideas.\n\nFollow @cacmagyan for a past-paper question every day.\n\n#PYQ #CMAInter #ICMAI #CMAExam #PastPapers\n\nref pyq-261121"
+}

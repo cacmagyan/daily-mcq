@@ -1,0 +1,47 @@
+{
+  "kind": "pyq",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 10",
+  "paper_name": "Corporate Accounting and Auditing (Corporate Accounting)",
+  "tried": [
+    "Paper 10|Corporate Accounting|1-5",
+    "Paper 10|Corporate Accounting|1-7"
+  ],
+  "ref": "Paper 10|Corporate Accounting|1-7",
+  "topic": "Issue of Shares",
+  "question": "When share is issued at a price equal to its face value, it is called issue",
+  "options": [
+    "at par",
+    "at a premium",
+    "at a discount",
+    "at bonus"
+  ],
+  "correct": "A",
+  "explanation": "A share is issued at par when the issue price equals the face (nominal) value. No securities premium or discount arises in this case.",
+  "working": [],
+  "why_not": {
+    "B": "Premium means issue price is more than face value.",
+    "C": "Discount means issue price is less than face value.",
+    "D": "Bonus issue is free allotment to members out of reserves, not a price comparison."
+  },
+  "exam_tip": "Par = equal, premium = above, discount = below face value.",
+  "asked_in": "CMA Inter December 2025 exam",
+  "asked_short": "Dec 2025 exam",
+  "papers_tags": [
+    "PY D25"
+  ],
+  "check_notes": [],
+  "notes": [
+    "Paper 10|Corporate Accounting|1-5: examiner: The answer B is correct, but the clause numbers in the 'why not' lines are wrong. Section 52(2) has five clauses: (a) fully paid bonus shares, (b) preliminary expenses, (c) expenses, commission or dis"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "image_prefix": "pyq",
+  "author": "Rahul kp",
+  "images": {
+    "question": "pyq_q.jpg",
+    "answer": "pyq_a.jpg"
+  },
+  "fit_notes": [],
+  "caption": "📜 PYQ of the day · CMA Inter\nPaper 10: Corporate Accounting and Auditing (Corporate Accounting)\nAsked in the CMA Inter December 2025 exam\n\nTry it first: comment your answer (A, B, C or D), then swipe for the solution.\nSave 🔖 it for revision: past papers repeat ideas.\n\nFollow @cacmagyan for a past-paper question every day.\n\n#PYQ #CMAInter #ICMAI #CMAExam #PastPapers\n\nref pyq-261119"
+}

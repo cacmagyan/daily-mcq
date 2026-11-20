@@ -1,4 +1,7 @@
 {
- "error": "A process in the process pool was terminated abruptly while the future was running or pending.",
- "trace": "Traceback (most recent call last):\n  File \"<stdin>\", line 9, in <module>\n  File \"/home/runner/work/daily-mcq/daily-mcq/mcq_agent/qt3d.py\", line 528, in render\n    parts = list(ex.map(_render_range, jobs))\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/concurrent/futures/process.py\", line 636, in _chain_from_iterable_of_lists\n    for element in iterable:\n                   ^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/concurrent/futures/_base.py\", line 619, in result_iterator\n    yield _result_or_cancel(fs.pop())\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/concurrent/futures/_base.py\", line 317, in _result_or_cancel\n    return fut.result(timeout)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/concurrent/futures/_base.py\", line 456, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\nconcurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.\n"
+ "seconds": 121.9,
+ "lines": 16,
+ "cover_ms": 17712,
+ "voice": "am_michael (Kokoro)",
+ "took_s": 1557
 }

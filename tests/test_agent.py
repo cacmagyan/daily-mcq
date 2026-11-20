@@ -2533,6 +2533,20 @@ class QTTrapTests(TempQueue):
         self.assertEqual((claude.call_count, d3.call_count), (0, 1))
         self.assertEqual(again["script"], it["script"])
 
+    def test_the_numbered_sting_comes_before_the_voice(self):
+        from mcq_agent import qt3d
+        from mcq_agent import qtpuzzle as QT
+        s = QT.assemble(self.FAKE, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr")
+        vl, _ = qt3d.voice_lines(s, silent=True)
+        plain = qt3d.make_plan(s, *qt3d.timeline(s, vl), "@x")
+        self.assertIsNone(plain["sting"])
+        s["series_no"] = 7
+        events, total = qt3d.timeline(s, vl)
+        plan = qt3d.make_plan(s, events, total, "@x")
+        self.assertEqual(plan["sting"], {"n": 7, "dur": qt3d.STING})
+        self.assertAlmostEqual(events[0]["start"], qt3d.LEAD + qt3d.STING, places=3)
+        self.assertGreater(len(qt3d.sfx_bank()["stamp"]), 0)
+
     def test_3d_plan_times_the_options_rows_and_countdown(self):
         from mcq_agent import qt3d
         from mcq_agent import qtpuzzle as QT

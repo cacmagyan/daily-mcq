@@ -27,6 +27,8 @@ W, H, FPS = 1080, 1920, 30
 SR = 48000
 STAGE = ROOT / "assets" / "qt3d" / "stage.html"
 LEAD, GAP, TAIL = 0.3, 0.16, 1.8
+STING = 1.25                      # the opening "QT TRAP #N" card, before the voice starts
+STAMP_TRAP, STAMP_OK = 0.42, 0.6  # when the TRAP / VERIFIED stamps land after their card (stage.js uses the same)
 COUNTDOWN = 3.0
 AZURE_VOICE = "en-IN-AaravNeural"        # default; config pyq.azure_voice (or QT3D_VOICE) picks another
 AZURE_SPEED = 1.12
@@ -182,7 +184,7 @@ def _option_times(ev: dict, options: list[str]) -> list[float]:
 
 
 def timeline(script: dict, vl: list) -> tuple[list[dict], float]:
-    t = LEAD
+    t = LEAD + (STING if script.get("series_no") else 0.0)
     events = []
     for ln, (audio, dur, words) in zip(script["lines"], vl):
         ev = {"line": ln, "start": round(t, 4), "dur": round(dur, 4), "audio": audio,
@@ -281,7 +283,8 @@ def make_plan(script: dict, events: list[dict], total: float, handle: str, logo:
             "badge": {"tag": badge.get("tag", "CA FOUNDATION"), "text": badge.get("text", "")},
             "handle": handle, "header": script.get("header", ""), "question": script.get("question", ""),
             "options": script.get("options", []), "answer": script.get("answer"), "trap": _trap_index(script),
-            "optTimes": opt_times or [], "revealAt": reveal_at, "events": out}
+            "optTimes": opt_times or [], "revealAt": reveal_at, "events": out,
+            "sting": {"n": int(script["series_no"]), "dur": STING} if script.get("series_no") else None}
 
 
 # ── sound ───────────────────────────────────────────────────
@@ -349,12 +352,17 @@ def sfx_bank() -> dict:
                            _lowpass(sq(175, 0.32), 1200) * _env(int(0.32 * SR), 0.004, 0.25)]) * 1.4
     thud = tone(90, 0.5, 8, 1.0, 45) + _lowpass(_noise(int(0.5 * SR), 5), 400) * _env(int(0.5 * SR), 0.002, 0.06) * 0.8
     impact = thud * 0.9
+    # rubber stamp: a dull body thump plus the slap of rubber on paper
+    sn = int(0.3 * SR)
+    slap = _lowpass(_noise(sn, 13), 2600) * _env(sn, 0.0008, 0.022)
+    slap = slap - _lowpass(slap, 300)
+    stamp = mixa(tone(120, 0.3, 16, 1.0, 55), slap * 1.5, tone(2400, 0.03, 120, 0.12))
     rise_n = int(0.6 * SR)
     rt = np.arange(rise_n) / SR
     rise = _lowpass(_noise(rise_n, 9), 400 + 6000 * (rt / 0.6) ** 2) * (rt / 0.6) ** 2 * 0.9
     chime = mixa(tone(1318.5, 0.9, 4, 0.45), tone(1975.5, 0.7, 5, 0.3))
     return {"whoosh": whoosh, "pop": pop, "tick": tick, "click": click, "ding": ding, "buzz": buzz,
-            "thud": thud, "impact": impact, "rise": rise, "chime": chime}
+            "thud": thud, "impact": impact, "stamp": stamp, "rise": rise, "chime": chime}
 
 
 def _music(total: float):
@@ -396,9 +404,13 @@ def mix(events: list[dict], plan: dict, total: float, with_music: bool = True):
         if kind == "attempt":
             add(fx, B["thud"], e["start"] + 0.35, 0.4)
         if kind == "trap":
-            add(fx, B["thud"], e["start"] + 0.06, 0.5)
-            add(fx, B["buzz"], e["start"] + 0.1, 0.22)
-        if kind in ("reveal", "answer"):
+            add(fx, B["stamp"], e["start"] + STAMP_TRAP, 0.75)
+            add(fx, B["buzz"], e["start"] + STAMP_TRAP + 0.03, 0.2)
+        if kind == "answer":
+            add(fx, B["rise"], e["start"] - 0.6, 0.25)
+            add(fx, B["ding"], e["start"] + 0.12, 0.38)
+            add(fx, B["stamp"], e["start"] + STAMP_OK, 0.6)
+        if kind == "reveal":
             add(fx, B["rise"], e["start"] - 0.6, 0.25)
             add(fx, B["ding"], e["start"] + 0.12, 0.42)
         for r_i, at in enumerate(e.get("rowTimes") or []):
@@ -412,6 +424,10 @@ def mix(events: list[dict], plan: dict, total: float, with_music: bool = True):
             add(fx, B["chime"], e["ctaAt"], 0.3)
         if e.get("prev") and e.get("cur") and e["prev"] != e["cur"]:
             add(fx, B["pop"], e["start"] + 0.35, 0.16)
+    if plan.get("sting"):
+        add(fx, B["whoosh"], 0.0, 0.35)
+        add(fx, B["stamp"], 0.4, 0.55)                         # the "#N" lands
+        add(fx, B["whoosh"], STING - 0.3, 0.3)                 # wipes away
     if plan.get("endAt") and plan.get("logo"):
         add(fx, B["whoosh"], plan["endAt"] - 0.1, 0.3)
         add(fx, B["chime"], plan["endAt"] + 0.15, 0.3)

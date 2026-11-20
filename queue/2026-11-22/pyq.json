@@ -1,0 +1,248 @@
+{
+  "kind": "pyq",
+  "format": "qt_video",
+  "subject": "qt",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Business Mathematics",
+  "topic_key": "Ratio and proportion",
+  "ref": "ca_foundation_qt|M25-1",
+  "tried": [
+    "ca_foundation_qt|M25-1"
+  ],
+  "topic": "Partnership: profit sharing",
+  "script": {
+    "theme": "navy",
+    "badge": {
+      "tag": "ASKED IN",
+      "text": "CA FOUNDATION MAY 2025 · QT"
+    },
+    "header": "CA Foundation May 2025 · Paper 3 · QT",
+    "question": "A startup business was initiated by an entrepreneur by investing ₹1,40,000. His friend joined him after six months with ₹2,10,000. Thereafter an angel investor joined them with ₹2,80,000 after another six months. What should be the **ratio of distribution of total earnings**, three years since beginning of business, among the entrepreneur, his friend and the angel investor?",
+    "options": [
+      "7 : 6 : 10",
+      "12 : 15 : 16",
+      "42 : 45 : 56",
+      "2 : 3 : 4"
+    ],
+    "answer": 1,
+    "scene": {
+      "type": "bars",
+      "max": 4,
+      "bars": [
+        {
+          "label": "Money",
+          "segments": [
+            {
+              "v": 2.0,
+              "label": "2"
+            },
+            {
+              "v": 3.0,
+              "label": "3"
+            },
+            {
+              "v": 4.0,
+              "label": "4"
+            }
+          ],
+          "top": "2 : 3 : 4"
+        }
+      ],
+      "note": "Ignores the time"
+    },
+    "lines": [
+      {
+        "say": "This question came in the CA Foundation May 2025 exam.",
+        "card": {
+          "kind": "attempt",
+          "exam": "CA Foundation",
+          "when": "May 2025",
+          "sub": "Paper 3 · Quantitative Aptitude"
+        }
+      },
+      {
+        "say": "An entrepreneur invests ₹1,40,000 at the start. A friend adds ₹2,10,000 after 6 months. An angel adds ₹2,80,000 after another 6 months. Divide the earnings after 3 years.",
+        "card": {
+          "kind": "hook",
+          "small": "Partnership, joining late",
+          "big": "3 partners, 3 start t…"
+        }
+      },
+      {
+        "say": "Just share in the ratio of money: 1,40,000 : 2,10,000 : 2,80,000 is 2 : 3 : 4. Right?",
+        "card": {
+          "kind": "hook",
+          "small": "So...",
+          "big": "2 : 3 : 4 ?"
+        }
+      },
+      {
+        "say": "Wrong. 2 : 3 : 4 is the trap.",
+        "card": {
+          "kind": "trap",
+          "small": "CA FOUNDATION MAY 2025 · QT",
+          "big": "2 : 3 : 4 ×",
+          "sub": "that is the trap"
+        }
+      },
+      {
+        "say": "The right answer is 12 : 15 : 16. Here's why.",
+        "card": {
+          "kind": "answer",
+          "small": "The right answer",
+          "big": "12 : 15 : 16"
+        }
+      },
+      {
+        "say": "Step one. Profit share depends on money and time.",
+        "card": {
+          "kind": "step",
+          "title": "Step 1 · Money and time both count",
+          "rows": [
+            "Share ∝ money × months"
+          ]
+        },
+        "scene": {
+          "type": "bars",
+          "max": 36,
+          "bars": [
+            {
+              "label": "Entrepreneur",
+              "segments": [
+                {
+                  "v": 36.0,
+                  "label": "36 m"
+                }
+              ]
+            },
+            {
+              "label": "Friend",
+              "segments": [
+                {
+                  "v": 30.0,
+                  "label": "30 m"
+                }
+              ]
+            },
+            {
+              "label": "Angel",
+              "segments": [
+                {
+                  "v": 24.0,
+                  "label": "24 m"
+                }
+              ]
+            }
+          ],
+          "note": "Months invested"
+        }
+      },
+      {
+        "say": "So share is amount times months.",
+        "card": {
+          "kind": "step",
+          "title": "Step 1 · Money and time both count",
+          "rows": [
+            "Share ∝ money × months"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "Step two. Entrepreneur stays 36 months.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · Find each time",
+          "rows": [
+            "E: 36 months",
+            "F: 36 − 6 = 30 months"
+          ]
+        }
+      },
+      {
+        "say": "Friend joins at 6, so 30 months. Angel joins at 12, so 24 months.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · Find each time",
+          "rows": [
+            "E: 36 months",
+            "F: 36 − 6 = 30 months",
+            "A: 36 − 12 = 24 months"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "Step three. Use 14, 21, 28 in thousands.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · Multiply",
+          "rows": [
+            "14 × 36 = 504",
+            "21 × 30 = 630",
+            "28 × 24 = 672"
+          ]
+        }
+      },
+      {
+        "say": "Step four. Divide all by 42. We get 12 : 15 : 16. Option b.",
+        "card": {
+          "kind": "step",
+          "title": "Step 4 · Simplify",
+          "rows": [
+            "504 : 630 : 672",
+            "÷ 42 = **12 : 15 : 16**"
+          ]
+        }
+      },
+      {
+        "say": "The shortcut. Use 2, 3, 4 for the money, but multiply by months. Then cancel the common factor.",
+        "card": {
+          "kind": "shortcut",
+          "rows": [
+            "2×36 : 3×30 : 4×24",
+            "72 : 90 : 96 = 12 : 15 : 16"
+          ]
+        }
+      },
+      {
+        "say": "Your turn. A invests ₹2,000 for 12 months. B invests ₹3,000 for 8 months. Find the profit ratio.",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "2000×12 : 3000×8",
+            "24000 : 24000"
+          ]
+        }
+      },
+      {
+        "say": "Comment your answer. Follow for a new trap every day.",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "2000×12 : 3000×8",
+            "24000 : 24000"
+          ],
+          "all": true
+        }
+      }
+    ],
+    "series": "QT TRAP",
+    "series_no": 3
+  },
+  "correct": "B",
+  "trap": "2 : 3 : 4",
+  "your_turn_answer": "1 : 1",
+  "asked_in": "May 2025",
+  "check_notes": [],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "video": "pyq.mp4",
+  "cover": "pyq_cover.jpg",
+  "seconds": 77.7,
+  "thumb_ms": 26968,
+  "voice": "en-IN-AaravNeural (Azure)",
+  "caption": "3 partners, 3 start t…… so 2 : 3 : 4? That's the trap. 🪤\n\nA startup business was initiated by an entrepreneur by investing ₹1,40,000. His friend joined him after six months with ₹2,10,000. Thereafter an angel investor joined them with ₹2,80,000 after another six months. What should be the ratio of distribution of total earnings, three years since beginning of business, among the entrepreneur, his friend and the angel investor?\n\n(a) 7 : 6 : 10\n(b) 12 : 15 : 16\n(c) 42 : 45 : 56\n(d) 2 : 3 : 4\n\nDid you pick the trap too? Tell me in the comments 👇\nAsked in CA Foundation May 2025 · Paper 3 (ICAI's official answer key).\nSave 🔖 it for your Quantitative Aptitude revision.\n\nFollow @cacmagyan for a new trap every day.\n\n#CAFoundation #QuantitativeAptitude #CAStudents #ICAI #MathsTricks\n\nref pyq-261122"
+}

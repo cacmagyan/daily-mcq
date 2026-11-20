@@ -1,0 +1,16 @@
+{
+  "kind": "countdown",
+  "course_id": "ca_foundation",
+  "exam": "CA Foundation Jan 2027",
+  "exam_date": "2027-01-03",
+  "days": 42,
+  "paper_code": "Paper 4",
+  "paper_name": "Business Economics",
+  "topic": "Price Elasticity of Demand",
+  "tip": "Learn the percentage and total expenditure methods. Elasticity above 1 means price and revenue move in opposite directio",
+  "hold": false,
+  "hold_reason": "",
+  "images": [
+    "countdown.jpg"
+  ]
+}

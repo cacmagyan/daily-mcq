@@ -13,38 +13,25 @@ jobs:
   papers:
     # one job per booklet, in parallel; each saves its own text and page images as soon as it is done
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
-        name: [Sep2024, Jan2025, May2025, Sep2025, Jan2026, May2026]
+        name: [Jan2025, May2025, Sep2025, Jan2026, May2026]
     steps:
       - uses: actions/checkout@v5
       - name: Tools
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils tesseract-ocr parallel >/dev/null
-      - name: Download, text (OCR for scanned pages), page images
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils >/dev/null
+      - name: Download and page images (no OCR; the pages are read as images)
         run: |
           cd demo/icai
           name=${{ matrix.name }}
           url=$(awk -v n="$name" '$1==n{print $2}' request.txt)
           curl -sSfL -o "$name.pdf" "$url"
-          mkdir -p "$name" /tmp/pg
-          n=$(pdfinfo "$name.pdf" | awk '/^Pages:/{print $2}')
-          ocr() {  # one page -> /tmp/pg/NNN.txt
-            p=$1; f=$2
-            t=$(pdftotext -layout -f "$p" -l "$p" "$f" - | tr -d '\f')
-            if [ "$(printf '%s' "$t" | tr -cd '[:alnum:]' | wc -c)" -lt 200 ]; then
-              pdftoppm -r 200 -gray -f "$p" -l "$p" -png "$f" "/tmp/pg/img$p"
-              t=$(tesseract "$(ls /tmp/pg/img$p*.png | head -1)" - --psm 6 2>/dev/null); src=ocr
-            else src=text; fi
-            printf '\n===== page %s (%s) =====\n%s\n' "$p" "$src" "$t" > "/tmp/pg/$(printf %03d "$p").txt"
-          }
-          export -f ocr
-          seq 1 "$n" | parallel -j 4 ocr {} "$name.pdf"
-          cat /tmp/pg/*.txt > "$name.txt"
+          mkdir -p "$name"
           pdftoppm -r 110 -gray -jpeg -jpegopt quality=72 "$name.pdf" "$name/p"
+          pdfinfo "$name.pdf" | grep Pages
           rm -f "$name.pdf"
-          du -sh .
       - name: Save
         run: |
           git config user.name "mcq-agent"; git config user.email "mcq-agent@users.noreply.github.com"

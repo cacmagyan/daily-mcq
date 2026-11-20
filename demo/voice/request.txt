@@ -1,0 +1,3 @@
+en-IN-PrabhatNeural|+6%|This question came in the CA Foundation May 2025 exam. A sum of money doubles in 5 years at simple interest. So it becomes four times in 10 years. Right? Wrong. 10 years is the trap.
+en-IN-AaravNeural|+6%|This question came in the CA Foundation May 2025 exam. A sum of money doubles in 5 years at simple interest. So it becomes four times in 10 years. Right? Wrong. 10 years is the trap.
+en-IN-KunalNeural|+6%|This question came in the CA Foundation May 2025 exam. A sum of money doubles in 5 years at simple interest. So it becomes four times in 10 years. Right? Wrong. 10 years is the trap.

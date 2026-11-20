@@ -1,0 +1,80 @@
+{
+  "kind": "news",
+  "date": "2026-11-21",
+  "stories": [
+    {
+      "tag": "Corporate Law",
+      "headline": "EPFO may be unable to recover ₹1,816 crore from Reliance Capital",
+      "points": [
+        "EPFO recovered ₹1,492.45 crore of its ₹3,308.67 crore claim; ₹1,816.22 crore stays unpaid under the approved plan.",
+        "Its legal advisers reportedly concluded no avenue is left, since Section 31 of IBC binds creditors to the approved plan.",
+        "In Ghanashyam Mishra (2021), the Supreme Court held claims not in an approved plan stand extinguished, including govt dues."
+      ],
+      "why_it_matters": "Section 31 of the IBC and its 'clean slate' principle are core insolvency law topics and affect how creditor claims are handled.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "Section 31 of IBC explained: Why EPFO may not recover ₹1,816 crore in unpaid Reliance Capital dues after insolvency",
+      "link": "https://www.livemint.com/money/personal-finance/section-31-of-ibc-explained-why-epfo-may-not-recover-1-816-crore-in-unpaid-reliance-capital-dues-after-insolvency-11795179605813.html",
+      "published": "2026-11-20T18:38:35+05:30",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Hyderabad deletes ₹16.01 lakh addition on gold found in search",
+      "points": [
+        "ITAT Hyderabad removed a ₹16.01 lakh addition for 807.5 grams of jewellery found at a taxpayer's home in a 2010 search.",
+        "Tribunal accepted that the jewellery belonged to family members and was within CBDT Instruction No. 1916 quantities.",
+        "It also deleted a ₹3.88 lakh cash addition, as the books showed cash in hand of ₹4,86,504."
+      ],
+      "why_it_matters": "Shows how unexplained investment additions are tested in search assessments, and why books and ownership evidence matter.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "How much gold jewellery can you keep at home? ITAT ruling explains CBDT limits during income-tax searches",
+      "link": "https://www.livemint.com/money/personal-finance/how-much-gold-jewellery-can-you-keep-at-home-itat-ruling-explains-cbdt-limits-during-income-tax-searches-11795191596907.html",
+      "published": "2026-11-20T21:58:11+05:30",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "Accounting",
+      "headline": "Ind AS 20: grant needs reasonable assurance, not just cash receipt",
+      "points": [
+        "A grant is recognised only when there is reasonable assurance of meeting its conditions and of receiving it.",
+        "Once recognised, it goes to profit or loss systematically over the periods the related costs are recognised.",
+        "Asset-related grants may be shown as deferred income or deducted from the asset's carrying amount, applied consistently."
+      ],
+      "why_it_matters": "Grant recognition and presentation under Ind AS 20 are core accounting topics and matter in audit and financial reporting work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "CA, CS, CMA | Ind AS 20 Government Grants: Recognition, Presentation and Refund Controls",
+      "link": "https://taxguru.in/chartered-accountant/ind-20-government-grants-recognition-presentation-refund-controls.html",
+      "published": "2026-11-20T13:39:21+00:00",
+      "check": "minor",
+      "check_notes": [
+        "Point 2 closely follows the source sentence ('the grant is recognised in profit or loss systematically over the periods in which the related costs are recognised') with only small word changes. It should be rephrased further so it doesn't read as copied.",
+        "All facts in the headline, the points and 'Why it matters' are supported by the source: reasonable assurance of compliance and receipt, systematic recognition in profit or loss, and the two presentation options for asset-related grants (deferred income or deduction from the carrying amount) applied consistently."
+      ]
+    }
+  ],
+  "notes": [
+    "skipped 'Failed to disclose your foreign bank account in ITR? CBDT te': not usable",
+    "skipped 'CA, CS, CMA | Parliamentary Panel Seeks MCA Explanation Over': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | FAST-DS 2026: Foreign Asset Disclosure, Row 1 v': a point is longer than 110 characters",
+    "skipped 'Fema / RBI | FEMA APR Filing Due Date 31 December 2026: Appl': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 21 Nov 2026\n\n1️⃣ EPFO may be unable to recover ₹1,816 crore from Reliance Capital (Mint)\n2️⃣ ITAT Hyderabad deletes ₹16.01 lakh addition on gold found in search (Mint)\n3️⃣ Ind AS 20: grant needs reasonable assurance, not just cash receipt (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Mint, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261121",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

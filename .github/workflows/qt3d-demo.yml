@@ -5,7 +5,7 @@ name: QT 3D reel demo (qt3d-reel branch)
 on:
   push:
     branches: [qt3d-reel]
-    paths: ["demo/qt3d/request.json", ".github/workflows/qt3d-demo.yml"]
+    paths: ["demo/qt3d/request.json", ".github/workflows/qt3d-demo.yml", "mcq_agent/qt3d.py", "assets/qt3d/**"]
 
 permissions:
   contents: write

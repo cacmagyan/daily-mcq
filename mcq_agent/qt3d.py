@@ -16,6 +16,7 @@ import math
 import os
 import re
 import subprocess
+import sys
 import tempfile
 import wave
 from pathlib import Path
@@ -500,9 +501,6 @@ def render(script: dict, out: Path, cover: Path | None = None, handle: str = "",
            logo: Path | None = None) -> dict:
     """Make the reel at `out`. silent=True skips the voice (timing estimated) for quick previews;
     frames=(t0, t1) renders only that stretch (for checking a scene)."""
-    import multiprocessing as mp
-    from concurrent.futures import ProcessPoolExecutor
-
     from playwright.sync_api import sync_playwright
 
     from .video import ffmpeg_path
@@ -523,9 +521,14 @@ def render(script: dict, out: Path, cover: Path | None = None, handle: str = "",
     jobs = [(str(plan_path), cuts[i], cuts[i + 1], str(work / f"part{i:02d}.mp4")) for i in range(k)]
     if k == 1:
         parts = [_render_range(jobs[0])]
-    else:
-        with ProcessPoolExecutor(max_workers=k, mp_context=mp.get_context("spawn")) as ex:
-            parts = list(ex.map(_render_range, jobs))
+    else:                                  # each part in its own Python process (python -m mcq_agent.qt3d part ...)
+        procs = [subprocess.Popen([sys.executable, "-m", "mcq_agent.qt3d", "part", *map(str, j)], cwd=str(ROOT),
+                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True) for j in jobs]
+        logs = [p.communicate()[0] for p in procs]
+        bad = [(i, lg) for i, (p, lg) in enumerate(zip(procs, logs)) if p.returncode]
+        if bad:
+            raise QT3DError(f"part {bad[0][0]} failed: {bad[0][1][-400:]}")
+        parts = [j[3] for j in jobs]
     lst = work / "parts.txt"
     lst.write_text("".join(f"file '{p}'\n" for p in parts))
     res = subprocess.run([ffmpeg_path(), "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0",
@@ -545,3 +548,10 @@ def render(script: dict, out: Path, cover: Path | None = None, handle: str = "",
                 browser.close()
     return {"seconds": round(total, 1), "lines": len(events), "cover_ms": int(cover_t * 1000) if cover_t else None,
             "voice": voice_used}
+
+
+if __name__ == "__main__":                 # a worker: python -m mcq_agent.qt3d part PLAN N0 N1 OUT
+    if len(sys.argv) == 6 and sys.argv[1] == "part":
+        _render_range((sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), sys.argv[5]))
+    else:
+        raise SystemExit("usage: python -m mcq_agent.qt3d part PLAN N0 N1 OUT")

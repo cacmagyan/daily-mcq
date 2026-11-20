@@ -342,10 +342,11 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
             if pyq_item.get("cover"):
                 lines += [f'<img src="{_img(repo, branch, date, pyq_item["cover"])}" width="200">', ""]
             if pyq_item.get("video"):
-                lines += [f"[▶ Watch the reel]({_img(repo, branch, date, pyq_item['video'])}) · {pyq_item.get('seconds', '?')} s", ""]
+                lines += [f"[▶ Watch the reel]({_img(repo, branch, date, pyq_item['video'])}) · {pyq_item.get('seconds', '?')} s"
+                          + (f" · voice: {pyq_item['voice']}" if pyq_item.get("voice") else ""), ""]
             lines += [f"**{pyq_item.get('topic', '')}** · {pyq_item.get('asked_in', '')} · answer ({pyq_item.get('correct', '').lower()}), "
                       f"trap: {pyq_item.get('trap', '')} · your-turn answer: {pyq_item.get('your_turn_answer', '')}",
-                      "", "`/regen pyq` makes another; `/regen pyq <instruction>` to steer it.", ""]
+                      "", "`/regen pyq` makes another; `/regen pyq <instruction>` to steer it; `/regen pyq video` remakes only the video.", ""]
         else:
             imgs = pyq_item.get("images") or {}
             lines += [" ".join(f'<img src="{_img(repo, branch, date, imgs[k])}" width="240">' for k in ("question", "answer") if k in imgs),

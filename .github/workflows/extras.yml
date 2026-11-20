@@ -23,7 +23,7 @@ concurrency:
 jobs:
   extras:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v5
         with:
@@ -53,9 +53,12 @@ jobs:
 
       - name: Make the PYQ and the countdown
         id: make
+        timeout-minutes: 50
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
           SCHEDULE: ${{ github.event.schedule }}
           INPUT_DATE: ${{ inputs.date }}
         run: |

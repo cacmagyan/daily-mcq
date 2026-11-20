@@ -2474,11 +2474,55 @@ class QTTrapTests(TempQueue):
             return {"seconds": 95.0, "lines": len(script["lines"]), "cover_ms": 9000}
         with mock.patch("mcq_agent.generator._call_claude", return_value=self.FAKE), \
              mock.patch("mcq_agent.generator.call_checker", return_value=self.OK), \
-             mock.patch("mcq_agent.qt_video.render", side_effect=fake_render):
+             mock.patch("mcq_agent.qt3d.render", side_effect=fake_render):
             it = P.make_pyq(self.cfg, date)
         self.assertEqual((it["video"], it["cover"], it["thumb_ms"]), ("pyq.mp4", "pyq_cover.jpg", 9000))
         self.assertIn("That's the trap", it["caption"])
         self.assertTrue((B.batch_dir(date) / "pyq.mp4").exists())
+
+    def test_the_2d_reel_is_the_fallback_and_video_only_keeps_the_question(self):
+        date = dt.date(2026, 11, 21)
+
+        def fake_render(script, out, cover, **kw):
+            out.write_bytes(b"x")
+            cover.write_bytes(b"x")
+            return {"seconds": 95.0, "lines": len(script["lines"]), "cover_ms": 9000}
+        with mock.patch("mcq_agent.generator._call_claude", return_value=self.FAKE), \
+             mock.patch("mcq_agent.generator.call_checker", return_value=self.OK), \
+             mock.patch("mcq_agent.qt3d.render", side_effect=RuntimeError("no WebGL")), \
+             mock.patch("mcq_agent.qt_video.render", side_effect=fake_render) as flat:
+            it = P.make_pyq(self.cfg, date)
+        self.assertEqual(flat.call_count, 1)
+        self.assertFalse(it.get("hold"))
+        self.assertIn("2D", it["voice"])
+        with mock.patch("mcq_agent.generator._call_claude") as claude, \
+             mock.patch("mcq_agent.qt3d.render", side_effect=fake_render) as d3:
+            again = P.make_pyq(self.cfg, date, "video")
+        self.assertEqual((claude.call_count, d3.call_count), (0, 1))
+        self.assertEqual(again["script"], it["script"])
+
+    def test_3d_plan_times_the_options_rows_and_countdown(self):
+        from mcq_agent import qt3d
+        from mcq_agent import qtpuzzle as QT
+        s = QT.assemble(self.FAKE, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr")
+        vl, voice = qt3d.voice_lines(s, silent=True)
+        events, total = qt3d.timeline(s, vl)
+        plan = qt3d.make_plan(s, events, total, "@x")
+        self.assertEqual(plan["trap"], 0)
+        self.assertEqual(len(plan["optTimes"]), 4)
+        self.assertEqual(plan["optTimes"], sorted(plan["optTimes"]))
+        pause = [e for e in plan["events"] if e["card"].get("kind") == "pause"][0]
+        self.assertAlmostEqual(pause["countdown"][1] - pause["countdown"][0], qt3d.COUNTDOWN)
+        self.assertGreaterEqual(plan["revealAt"], pause["countdown"][1])
+        steps = [e for e in plan["events"] if e["card"].get("kind") == "step"]
+        for e in steps:
+            self.assertEqual(len(e["rowTimes"]), len(e["card"]["rows"]))
+            self.assertEqual(e["rowTimes"], sorted(e["rowTimes"]))
+        self.assertIsNone(plan["events"][0]["prev"])
+        self.assertTrue(any(e.get("ctaAt") for e in plan["events"]))
+        audio = qt3d.mix(events, plan, total, with_music=False)
+        self.assertEqual(len(audio), int((total + 0.5) * qt3d.SR))
+        self.assertLessEqual(float(abs(audio).max()), 0.95)
 
     def test_the_reel_posts_at_the_pyq_time(self):
         from mcq_agent import pyqday as Q

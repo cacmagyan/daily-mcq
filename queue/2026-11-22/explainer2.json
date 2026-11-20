@@ -1,0 +1,201 @@
+{
+  "kind": "explainer2",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 11",
+  "paper_name": "Financial Management and Business Data Analytics",
+  "topic": "Operating Leverage vs Financial Leverage",
+  "concept_topic": "Operating Leverage vs Financial Leverage",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 88.74,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Operating vs Financial Leverage",
+    "caption_hook": "Fixed cost sits in two places. Do you know where?",
+    "hook_label": "FIXED COST, TWO PLACES",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Fixed cost sits in two places? Operating versus financial leverage?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Operating leverage magnifies a percent change in sales into a bigger percent change in EBIT.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "title",
+          "title": "Two Leverages",
+          "sub": "% change gets magnified"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Magnifies? Like a magnifying glass?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! Rent and depreciation sit above EBIT. Interest sits below it. Same idea, two spots.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Operating",
+            "lines": [
+              "Rent, deprec.",
+              "Sales to EBIT"
+            ],
+            "icon": "factory",
+            "color": "blue"
+          },
+          "right": {
+            "title": "Financial",
+            "lines": [
+              "Interest",
+              "EBIT to EPS"
+            ],
+            "icon": "bank",
+            "color": "red"
+          },
+          "right_on": "Interest"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So financial leverage magnifies EBIT changes into EPS?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Right, percent change in EBIT into EPS. Now numbers: sales ₹50,000, variable cost ₹20,000, fixed cost ₹10,000, interest ₹10,000.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Our example",
+          "lines": [
+            "Sales ₹50,000",
+            "Variable cost ₹20,000",
+            "Fixed cost ₹10,000",
+            "Interest ₹10,000"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "What's EBIT then?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Contribution is ₹30,000. Minus fixed cost ₹10,000, EBIT is ₹20,000.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "30,000 − 10,000",
+          "big": "20,000"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So how do I find DOL?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "DOL equals contribution divided by EBIT: 30,000 by 20,000, so 1.5.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Operating Leverage",
+          "formula": "DOL = Contribution / EBIT",
+          "sub": "Contribution/EBIT: 30,000 / 20,000 = 1.5"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And DFL? Interest comes in there?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "DFL equals EBIT divided by EBT. EBT is 20,000 minus 10,000 interest, so DFL is 2.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Financial Leverage",
+          "formula": "DFL = EBIT / EBT",
+          "sub": "EBT 10,000; 20,000 / 10,000 = 2"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "How do they work together?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Multiply: 1.5 times 2 is 3. Sales up 10% means EPS up 30%, tax rate and shares constant.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "formula",
+          "title": "Combined Leverage",
+          "formula": "DCL = DOL x DFL",
+          "sub": "1.5 x 2 = 3; % EPS = 3 x % sales"
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: fixed cost magnifies percent swings, above and below EBIT.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Fixed cost =",
+            "bigger % swing"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Example: sales 50,000, variable 20,000, contribution 30,000, fixed 10,000, EBIT 20,000, interest 10,000, EBT 10,000. DOL 1.5, DFL 2, DCL 3. EPS 30% assumes constant tax rate and share count, now stated. No preference dividend.",
+    "Checker: Line 6 (voice and board 'Fixed cost ₹10,000'): interest is also a fixed cost, so 'fixed cost' could be read as total fixed charges. Say 'fixed operating cost ₹10,000 (rent, depreciation)' and 'interest ₹10,000' separately.",
+    "Checker: Line 6: the figures have no period. Add 'per annum' (e.g. 'Sales ₹50,000 p.a.'). The ratios don't change, but the data should be fully stated.",
+    "Checker: Line 14: 'Sales up 10% means EPS up 30%' also assumes the selling price, variable cost per unit and fixed costs stay the same, and that there is no preference dividend. Say: 'with cost structure, interest, tax rate and number of shares unchanged, and no preference dividend'."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Example: sales 50,000, variable 20,000, contribution 30,000, fixed 10,000, EBIT 20,000, interest 10,000, EBT 10,000. DOL 1.5, DFL 2, DCL 3. EPS 30% assumes constant tax rate and share count, now stated. No preference dividend.",
+  "caption": "🎬 🟧 CMA Inter · Operating vs Financial Leverage\n\nFixed cost sits in two places. Do you know where?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 11: Financial Management and Business Data Analytics\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref explainer2-261122",
+  "hold": false,
+  "hold_reason": ""
+}

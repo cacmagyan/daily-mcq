@@ -1,0 +1,193 @@
+{
+  "kind": "explainer",
+  "course_id": "ca_final",
+  "paper_code": "Paper 3",
+  "paper_name": "Advanced Auditing, Assurance and Professional Ethics",
+  "topic": "Reasonable vs Limited Assurance",
+  "concept_topic": "Reasonable vs Limited Assurance",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 73.61,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Reasonable vs Limited Assurance",
+    "caption_hook": "An auditor says true and fair. But how sure is the auditor, really?",
+    "hook_label": "HOW SURE IS AUDITOR?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Ma'am, audit says true and fair, but is the auditor fully sure?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Assurance gives intended users confidence about the subject matter information. How much confidence?",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Assurance Levels",
+          "sub": "How sure is the auditor?"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So is it just one level?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Two levels. Statutory audit follows the SAs: reasonable assurance. Limited review follows SRE 2410: limited assurance, meaningful but lower.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Audit",
+            "lines": [
+              "SAs",
+              "Reasonable"
+            ],
+            "icon": "check",
+            "color": "green"
+          },
+          "right": {
+            "title": "Review",
+            "lines": [
+              "SRE 2410",
+              "Limited"
+            ],
+            "icon": "doc",
+            "color": "blue"
+          },
+          "right_on": "limited"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Then reasonable assurance means one hundred percent sure?",
+        "shot": "close",
+        "pose": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "No. High, never absolute, because of inherent limitations. Risk is acceptably low.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Reasonable assurance",
+          "lines": [
+            "High, not absolute",
+            "Risk acceptably low"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "And limited? Does it mean no evidence is collected?",
+        "shot": "desk",
+        "pose": "worried",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Evidence is still gathered, mainly by inquiry and analytical procedures. Fewer procedures, not zero. Risk is acceptable, but higher.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "list",
+          "title": "Limited assurance",
+          "lines": [
+            "Inquiry, analytical",
+            "Fewer, not zero",
+            "Risk acceptable, higher"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "How does the report show the level?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Wording shows it. Reasonable: positive opinion, true and fair view. Limited: negative-form, nothing has come to our attention.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Reasonable",
+            "lines": [
+              "Positive",
+              "True and fair"
+            ],
+            "icon": "check",
+            "color": "green"
+          },
+          "right": {
+            "title": "Limited",
+            "lines": [
+              "Negative form"
+            ],
+            "icon": "check",
+            "color": "yellow"
+          },
+          "right_on": "negative-form"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Oh! Like two doctors, full check-up versus quick check?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Exactly. Full check-up, doctor says you are healthy. Quick check, nothing has come to the doctor's attention.",
+        "shot": "board",
+        "pose": "wink"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: both are assurance. Reasonable is high; limited is meaningful but lower.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "High assurance",
+            "vs lower level"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Applies to Standards on Auditing (SAs) and SRE 2410 for review of interim financial information. Limited assurance described as meaningful but lower; negative-form wording uses 'nothing has come to our attention'. Neutral icons used for limited side. Please check word count (about 170 including follow line).",
+    "Checker: Line 12 (doctor analogy): 'doctor says you are healthy' sounds like certainty, which goes against Line 6 ('never absolute'). Correct version: 'Full check-up: in the doctor's opinion you are healthy (high, not absolute, assurance). Quick check: nothing has come to the doctor's attention that suggests you are unwell.'",
+    "Checker: Line 10 (voice): the negative-form wording is cut short. Correct version: 'nothing has come to our attention that causes us to believe the information is not prepared, in all material respects, in accordance with the applicable framework.' Line 12 repeats the same shortened phrase.",
+    "Checker: Line 4 (voice): SRE 2410 covers the review of interim financial information by the entity's own auditor. To be precise, say 'limited review of interim results under SRE 2410' (a review of full financial statements falls under SRE 2400), so students don't think SRE 2410 covers every review."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Applies to Standards on Auditing (SAs) and SRE 2410 for review of interim financial information. Limited assurance described as meaningful but lower; negative-form wording uses 'nothing has come to our attention'. Neutral icons used for limited side. Please check word count (about 170 including follow line).",
+  "caption": "🎬 🟪 CA Final · Reasonable vs Limited Assurance\n\nAn auditor says true and fair. But how sure is the auditor, really?\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 3: Advanced Auditing, Assurance and Professional Ethics\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFinal #ICAI #CAStudents #IndAS\n\nref explainer-261122",
+  "hold": false,
+  "hold_reason": ""
+}

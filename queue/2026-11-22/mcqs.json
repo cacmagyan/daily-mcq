@@ -1,0 +1,158 @@
+{
+  "date": "2026-11-22",
+  "day": 32,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-21T02:37:30+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 4",
+      "paper_name": "Business Economics",
+      "topic": "Demand: Movement vs Shift of Curve",
+      "question": "The price of tea falls and tea consumption rises. Separately, a rise in the price of coffee (a substitute) raises tea purchases at every price. Which describes these two changes in the demand for tea?",
+      "options": [
+        "Extension of demand, then a further extension of demand",
+        "Extension of demand, then a rightward shift of the demand curve",
+        "Increase in demand, then a movement along the same curve",
+        "Increase in demand, then a rightward shift of the demand curve"
+      ],
+      "correct": "B",
+      "explanation": "A fall in tea's own price moves buyers down the same curve: extension. A rise in the price of a substitute changes a non-price factor, so more is bought at every price: the curve shifts right (increase in demand).",
+      "working": [],
+      "why_not": {
+        "D": "Calls an own-price fall an 'increase in demand'; that is only an extension.",
+        "A": "Treats a substitute's price change as movement; it shifts the curve.",
+        "C": "Reverses both: own price causes movement, substitute price causes shift."
+      },
+      "exam_tip": "Own price changes: move along the curve. Anything else changes: shift the curve.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept": "Movement vs Shift of Demand Curve",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 32\nPaper 4: Business Economics\nTopic: Demand: Movement vs Shift of Curve\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261122",
+      "story": "ca_foundation_story.jpg",
+      "answer_story": "ca_foundation_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 6B",
+      "paper_name": "Strategic Management",
+      "topic": "Strategy Implementation: McKinsey 7S",
+      "question": "A firm's new strategy needs quick decisions, but it still keeps tall hierarchy, many approval layers and rigid reporting lines. Under McKinsey's 7S framework, which hard element is misaligned with the strategy?",
+      "options": [
+        "Structure",
+        "Shared values",
+        "Skills",
+        "Style"
+      ],
+      "correct": "A",
+      "explanation": "In McKinsey's 7S, the hard elements are strategy, structure and systems. Tall hierarchy, approval layers and reporting lines describe the organisation's structure, and this does not fit a strategy that needs quick decisions.",
+      "working": [],
+      "why_not": {
+        "B": "Shared values are a soft element; they are the core beliefs, not reporting lines.",
+        "C": "Skills are a soft element; they mean the firm's capabilities, not the hierarchy.",
+        "D": "Style is a soft element; it means leadership and culture, not formal layers."
+      },
+      "exam_tip": "7S hard: Strategy, Structure, Systems. Soft: Shared values, Skills, Style, Staff.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Asking for the 'hard element' gives the answer away: Structure is the only hard element among the options, so students can answer by elimination without reading the scenario. Consider including Systems, or another hard element, as a distractor, or dropping the word 'hard'."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 32\nPaper 6B: Strategic Management\nTopic: Strategy Implementation: McKinsey 7S\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261122",
+      "story": "ca_inter_story.jpg",
+      "answer_story": "ca_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 2",
+      "paper_name": "Advanced Financial Management",
+      "topic": "Derivatives - Hedging with index futures",
+      "question": "A fund manager holds a portfolio worth ₹5,00,00,000 with beta 1.2. To cut the portfolio beta to 0.6 using Nifty futures (price 20,000; lot size 50; futures beta 1), how many contracts should be sold?",
+      "options": [
+        "30 contracts",
+        "60 contracts",
+        "36 contracts",
+        "50 contracts"
+      ],
+      "correct": "A",
+      "explanation": "Sell futures only for the beta to be removed: (1.2 − 0.6) × portfolio value ÷ value of one futures contract. Contract value = 20,000 × 50 = ₹10,00,000, so 30 contracts.",
+      "working": [
+        {
+          "label": "Beta to be reduced (1.2 − 0.6)",
+          "value": "0.6"
+        },
+        {
+          "label": "Portfolio value (₹)",
+          "value": "5,00,00,000"
+        },
+        {
+          "label": "Value of one contract (₹)",
+          "value": "10,00,000"
+        },
+        {
+          "label": "Contracts = 0.6 × 50,00,000 ÷ 10,00,000",
+          "value": "30"
+        }
+      ],
+      "why_not": {
+        "B": "Full hedge to beta zero: used 1.2 instead of the reduction of 0.6.",
+        "D": "Ignored beta altogether: portfolio value ÷ contract value.",
+        "C": "Multiplied 1.2 by 30 wrongly instead of using the beta difference."
+      },
+      "exam_tip": "Contracts = (Existing beta − Target beta) × Portfolio value ÷ (Futures price × Lot size).",
+      "calculation": "beta_diff = 1.2 - 0.6\nportfolio = 50000000\ncontract = 20000 * 50\nanswer = round(beta_diff * portfolio / contract)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 32\nPaper 2: Advanced Financial Management\nTopic: Derivatives - Hedging with index futures\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261122",
+      "story": "ca_final_story.jpg",
+      "answer_story": "ca_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

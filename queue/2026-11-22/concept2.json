@@ -1,0 +1,165 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 11",
+  "paper_name": "Financial Management and Business Data Analytics",
+  "author": "Rahul kp",
+  "topic": "Operating Leverage vs Financial Leverage",
+  "title": "Operating vs",
+  "title_highlight": "Financial Leverage",
+  "hook": "fixed cost, two places!",
+  "simple_words": "Operating leverage magnifies sales into EBIT. Financial leverage magnifies EBIT into EPS.",
+  "definitions": [
+    {
+      "term": "Operating Leverage (DOL)",
+      "meaning": "Effect of ==fixed operating costs== on EBIT. A small change in sales causes a larger % change in EBIT.",
+      "note": "Business risk"
+    },
+    {
+      "term": "Financial Leverage (DFL)",
+      "meaning": "Effect of ==fixed financial costs== (interest) on EPS. A small change in EBIT causes a larger % change in EPS.",
+      "note": "Financial risk"
+    }
+  ],
+  "key_points": [
+    "DOL comes from fixed operating costs such as rent and depreciation.",
+    "DFL comes from debt and fixed financial charges such as interest.",
+    "With no fixed operating cost, DOL is 1. With no interest, DFL is 1.",
+    "!!Combined leverage = DOL × DFL!! shows total risk from sales to EPS."
+  ],
+  "formula_heading": "The 3 Leverage Formulas",
+  "formula_hook": "top-down: Sales, EBIT, EPS",
+  "formulas": [
+    {
+      "name": "Degree of Operating Leverage",
+      "lhs": "DOL",
+      "rhs": "",
+      "numerator": "Contribution",
+      "denominator": "EBIT",
+      "square_root": false,
+      "suffix": "",
+      "legend": "Contribution = Sales − Variable cost. EBIT = Contribution − Fixed operating cost."
+    },
+    {
+      "name": "Degree of Financial Leverage",
+      "lhs": "DFL",
+      "rhs": "",
+      "numerator": "EBIT",
+      "denominator": "EBT (EBIT − Interest)",
+      "square_root": false,
+      "suffix": "",
+      "legend": "EBT = Earnings before tax. Interest = fixed interest on debt. No preference dividend assumed."
+    },
+    {
+      "name": "Degree of Combined Leverage",
+      "lhs": "DCL",
+      "rhs": "DOL × DFL",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "DCL = % change in EPS ÷ % change in Sales."
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Same fixed cost idea, two spots!",
+    "text": "Fixed cost above EBIT gives operating leverage; fixed cost below EBIT gives financial leverage."
+  },
+  "trick_hook": "picture the EBIT line",
+  "memory_trick": {
+    "mnemonic": "Operating Over, Financial Falls",
+    "explanation": "Operating costs sit Over the EBIT line (Sales to EBIT). Interest Falls below it (EBIT to EPS). DCL multiplies both."
+  },
+  "steps": [
+    "Find Sales − Variable cost",
+    "Deduct fixed cost to get EBIT",
+    "Deduct interest to get EBT",
+    "DOL = Contribution ÷ EBIT",
+    "DFL = EBIT ÷ EBT; DCL = DOL × DFL"
+  ],
+  "exam_tip": "If a question gives fixed cost as a % of EBIT, DOL = (EBIT + Fixed cost) ÷ EBIT. Work it out from this.",
+  "doubt": {
+    "question": "Does higher leverage always mean higher profit?",
+    "answer": "No. It magnifies both gains and losses. When sales or EBIT fall, EBIT or EPS falls faster, so risk rises."
+  },
+  "mistakes_hook": "check the numerator, check the base",
+  "mistakes": [
+    {
+      "wrong": "DOL = EBIT ÷ Contribution",
+      "right": "DOL = Contribution ÷ EBIT. Contribution is on top."
+    },
+    {
+      "wrong": "DFL = EBIT ÷ (EBIT + Interest)",
+      "right": "DFL = EBIT ÷ (EBIT − Interest). Interest is deducted to get EBT."
+    },
+    {
+      "wrong": "DCL = DOL + DFL",
+      "right": "DCL = DOL × DFL. Combined leverage is a product, not a sum."
+    }
+  ],
+  "past_papers": [
+    {
+      "ref": "7-60",
+      "papers": "PY J18 · MCQ",
+      "point": "Find operating leverage from EBIT, sales and variable cost; fixed assets given as a distractor"
+    },
+    {
+      "ref": "7-61",
+      "papers": "PY D22 · MCQ",
+      "point": "Fixed cost given as a percentage of EBIT; find operating leverage"
+    },
+    {
+      "ref": "7-111",
+      "papers": "PY D19 · 4 marks",
+      "point": "Short note on the significance of the degree of financial leverage"
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": false,
+  "check_notes": [
+    "Switched to a new concept because the first one couldn't be verified"
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.02,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.16,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.2,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟧 CMA Inter · Concept of the day\nPaper 11: Financial Management and Business Data Analytics\nOperating Leverage vs Financial Leverage\n\nIn simple words: Operating leverage magnifies sales into EBIT. Financial leverage magnifies EBIT into EPS.\n\n📝 Asked in past papers: PY D19, PY D22, PY J18\n\nSwipe for the formula, a memory trick, the mistakes that cost marks and the past exam radar.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref concept2-261122",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

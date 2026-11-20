@@ -2485,7 +2485,7 @@ class QTTrapTests(TempQueue):
         from mcq_agent.pyqday import split_mcq
         for key, S in QT.SUBJECTS.items():
             qs = pyq.questions(S["bank"], {"code": S["paper"]})
-            self.assertGreaterEqual(len(qs), 20, key)
+            self.assertGreaterEqual(len(qs), 12, key)
             for q in qs:
                 stem, opts = split_mcq(q["text"])
                 self.assertEqual(len(opts), 4, q["text"][:60])

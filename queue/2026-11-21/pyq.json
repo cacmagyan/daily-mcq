@@ -287,7 +287,8 @@
         }
       }
     ],
-    "series_no": 2
+    "series_no": 2,
+    "series": "QT TRAP"
   },
   "correct": "C",
   "trap": "16 years",
@@ -298,7 +299,7 @@
   "video": "pyq.mp4",
   "cover": "pyq_cover.jpg",
   "seconds": 68.3,
-  "thumb_ms": 18358,
+  "thumb_ms": 18383,
   "voice": "en-IN-AaravNeural (Azure)",
-  "caption": "Doubles in 8 years… so 16 years? That's the trap. 🪤\n\nIf a sum doubles itself in 8 years, then in how many years will it become four times, assuming that the simple interest is calculated?\n\n(a) 16 years\n(b) 12 years\n(c) 24 years\n(d) 20 years\n\nDid you pick the trap too? Tell me in the comments 👇\nAsked in CA Foundation January 2026 · Paper 3 (ICAI's official answer key).\nSave 🔖 it for your QT revision.\n\nFollow @cacmagyan for a QT trap every day.\n\n#CAFoundation #QuantitativeAptitude #CAStudents #ICAI #MathsTricks\n\nref pyq-261121"
+  "caption": "Doubles in 8 years… so 16 years? That's the trap. 🪤\n\nIf a sum doubles itself in 8 years, then in how many years will it become four times, assuming that the simple interest is calculated?\n\n(a) 16 years\n(b) 12 years\n(c) 24 years\n(d) 20 years\n\nDid you pick the trap too? Tell me in the comments 👇\nAsked in CA Foundation January 2026 · Paper 3 (ICAI's official answer key).\nSave 🔖 it for your Quantitative Aptitude revision.\n\nFollow @cacmagyan for a new trap every day.\n\n#CAFoundation #QuantitativeAptitude #CAStudents #ICAI #MathsTricks\n\nref pyq-261121"
 }

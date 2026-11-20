@@ -478,21 +478,42 @@ def make_pyq(cfg: Config, date: dt.date, instruction: str = "") -> dict:
     return item
 
 
+VIDEO_ONLY = {"video", "video only", "remake video", "same question"}
+
+
 def _make_qt(cfg: Config, date: dt.date, instruction: str, old: dict) -> dict:
     """The QT trap reel in the PYQ slot (queue/DATE/pyq.json + pyq.mp4 + pyq_cover.jpg)."""
     from . import pyqday as Q
     from . import qt_video as V
     from . import qtpuzzle as QT
 
-    item = QT.make(cfg, date, instruction)
-    item["tried"] = sorted(set(item.get("tried") or []) | set(old.get("tried") or []))
+    if instruction.strip().lower() in VIDEO_ONLY and old.get("script") and not old.get("error"):
+        item = dict(old)                     # same question and script, only the video is made again
+        item.pop("hold", None), item.pop("hold_reason", None)
+    else:
+        item = QT.make(cfg, date, instruction)
+        item["tried"] = sorted(set(item.get("tried") or []) | set(old.get("tried") or []))
     if not item.get("error"):
         out = batch_dir(date)
         out.mkdir(parents=True, exist_ok=True)
+        handle = cfg.brand.get("handle", "").strip()
         try:
-            res = V.render(item["script"], out / "pyq.mp4", out / "pyq_cover.jpg",
-                           voice=str(cfg.pyq.get("voice", "am_michael")), handle=cfg.brand.get("handle", "").strip())
-            item.update(video="pyq.mp4", cover="pyq_cover.jpg", seconds=res["seconds"], thumb_ms=res.get("cover_ms"))
+            res = None
+            if str(cfg.pyq.get("renderer", "3d")) == "3d":
+                from . import qt3d
+                try:
+                    logo = cfg.brand.get("logo") or ""
+                    res = qt3d.render(item["script"], out / "pyq.mp4", out / "pyq_cover.jpg", handle=handle,
+                                      logo=(ROOT / logo) if logo else Path("/nonexistent"),
+                                      voice=str(cfg.pyq.get("azure_voice") or "") or None)
+                except Exception as exc:  # noqa: BLE001 - the flat 2D reel is the fallback
+                    print(f"  ! 3D QT reel failed, making the 2D one: {str(exc)[:200]}")
+            if res is None:
+                res = V.render(item["script"], out / "pyq.mp4", out / "pyq_cover.jpg",
+                               voice=str(cfg.pyq.get("voice", "am_michael")), handle=handle)
+                res.setdefault("voice", f"{cfg.pyq.get('voice', 'am_michael')} (Kokoro, 2D reel)")
+            item.update(video="pyq.mp4", cover="pyq_cover.jpg", seconds=res["seconds"], thumb_ms=res.get("cover_ms"),
+                        voice=res.get("voice", ""))
             item["caption"] = QT.caption(cfg, item, date)
         except Exception as exc:  # noqa: BLE001 - keep the script; the video can be remade with /regen pyq
             item.update(hold=True, hold_reason=f"the video could not be made: {str(exc)[:160]}")

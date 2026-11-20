@@ -2426,15 +2426,47 @@ class QTTrapTests(TempQueue):
         super().setUp()
         self.cfg.raw.setdefault("pyq", {}).update(enabled=True, format="qt_video", qt_from="2026-11-21", start_date="2026-11-01")
         self.cfg.pyq = self.cfg.raw["pyq"]
+        p = mock.patch("mcq_agent.qtpuzzle.past_paper_candidate", return_value=None)   # original questions here
+        p.start()
+        self.addCleanup(p.stop)
+
+    def test_past_paper_reel_uses_the_bank_and_opens_with_the_attempt(self):
+        from mcq_agent import qtpuzzle as QT
+        mock.patch.stopall()
+        past = QT.past_paper_candidate(self.cfg, dt.date(2026, 11, 22))
+        self.assertIsNotNone(past)
+        self.assertRegex(past["asked"], r"^(January|May|September) 20\d\d$")
+        self.assertEqual(len(past["opts"]), 4)
+        self.assertIn(past["key"], "ABCD")
+        w = dict(self.FAKE, question=past["stem"], options=past["opts"], answer="ABCD".index(past["key"]),
+                 trap="ABCD".index(past["trap"]))
+        calls = []
+
+        def fake_claude(model, system, user, tool, max_tokens=0):
+            calls.append(user)
+            return w
+        with mock.patch("mcq_agent.generator._call_claude", side_effect=fake_claude), \
+             mock.patch("mcq_agent.generator.call_checker", return_value={**self.OK, "your_answer": past["key"]}):
+            it = QT.make(self.cfg, dt.date(2026, 11, 22))
+        self.assertFalse(it.get("error"), it.get("error"))
+        self.assertIn("official answer", calls[0])
+        self.assertIn("The trap", calls[0])
+        first = it["script"]["lines"][0]
+        self.assertEqual(first["card"]["kind"], "attempt")
+        self.assertIn(past["asked"], first["say"])
+        self.assertEqual(it["ref"], past["ref"])
+        self.assertIn(past["asked"].upper(), it["script"]["badge"]["text"])
 
     def test_assemble_keeps_the_fixed_order(self):
         from mcq_agent import qtpuzzle as QT
         s = QT.assemble(self.FAKE, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr")
         kinds = [ln["card"]["kind"] for ln in s["lines"]]
-        self.assertEqual(kinds[:7], ["hook", "hook", "trap", "question", "question", "pause", "reveal"])
+        self.assertEqual(kinds[:4], ["hook", "hook", "trap", "answer"])          # no options, no pause: trap -> answer
+        self.assertNotIn("question", kinds)
         self.assertEqual(kinds[-3:], ["shortcut", "your_turn", "your_turn"])
         self.assertIn("10 years ×", s["lines"][2]["card"]["big"])
-        self.assertTrue(s["lines"][7]["say"].startswith("Step one."))
+        self.assertIn("15 years", s["lines"][3]["say"])
+        self.assertTrue(s["lines"][4]["say"].startswith("Step one."))
         self.assertNotIn("scene", [k for ln in s["lines"] if ln["say"].startswith("Step two") for k in ln])   # bad scene dropped
         self.assertEqual(s["answer"], 1)
 
@@ -2474,11 +2506,55 @@ class QTTrapTests(TempQueue):
             return {"seconds": 95.0, "lines": len(script["lines"]), "cover_ms": 9000}
         with mock.patch("mcq_agent.generator._call_claude", return_value=self.FAKE), \
              mock.patch("mcq_agent.generator.call_checker", return_value=self.OK), \
-             mock.patch("mcq_agent.qt_video.render", side_effect=fake_render):
+             mock.patch("mcq_agent.qt3d.render", side_effect=fake_render):
             it = P.make_pyq(self.cfg, date)
         self.assertEqual((it["video"], it["cover"], it["thumb_ms"]), ("pyq.mp4", "pyq_cover.jpg", 9000))
         self.assertIn("That's the trap", it["caption"])
         self.assertTrue((B.batch_dir(date) / "pyq.mp4").exists())
+
+    def test_the_2d_reel_is_the_fallback_and_video_only_keeps_the_question(self):
+        date = dt.date(2026, 11, 21)
+
+        def fake_render(script, out, cover, **kw):
+            out.write_bytes(b"x")
+            cover.write_bytes(b"x")
+            return {"seconds": 95.0, "lines": len(script["lines"]), "cover_ms": 9000}
+        with mock.patch("mcq_agent.generator._call_claude", return_value=self.FAKE), \
+             mock.patch("mcq_agent.generator.call_checker", return_value=self.OK), \
+             mock.patch("mcq_agent.qt3d.render", side_effect=RuntimeError("no WebGL")), \
+             mock.patch("mcq_agent.qt_video.render", side_effect=fake_render) as flat:
+            it = P.make_pyq(self.cfg, date)
+        self.assertEqual(flat.call_count, 1)
+        self.assertFalse(it.get("hold"))
+        self.assertIn("2D", it["voice"])
+        with mock.patch("mcq_agent.generator._call_claude") as claude, \
+             mock.patch("mcq_agent.qt3d.render", side_effect=fake_render) as d3:
+            again = P.make_pyq(self.cfg, date, "video")
+        self.assertEqual((claude.call_count, d3.call_count), (0, 1))
+        self.assertEqual(again["script"], it["script"])
+
+    def test_3d_plan_times_the_options_rows_and_countdown(self):
+        from mcq_agent import qt3d
+        from mcq_agent import qtpuzzle as QT
+        s = QT.assemble(self.FAKE, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr")
+        vl, voice = qt3d.voice_lines(s, silent=True)
+        events, total = qt3d.timeline(s, vl)
+        plan = qt3d.make_plan(s, events, total, "@x")
+        self.assertEqual(plan["trap"], 0)
+        self.assertEqual(plan["optTimes"], [])                                   # options are not read out
+        self.assertFalse(any(e.get("countdown") for e in plan["events"]))
+        answer = [e for e in plan["events"] if e["card"].get("kind") == "answer"][0]
+        self.assertEqual(plan["revealAt"], answer["start"])
+        self.assertEqual(answer["group"], "answer")
+        steps = [e for e in plan["events"] if e["card"].get("kind") == "step"]
+        for e in steps:
+            self.assertEqual(len(e["rowTimes"]), len(e["card"]["rows"]))
+            self.assertEqual(e["rowTimes"], sorted(e["rowTimes"]))
+        self.assertIsNone(plan["events"][0]["prev"])
+        self.assertTrue(any(e.get("ctaAt") for e in plan["events"]))
+        audio = qt3d.mix(events, plan, total, with_music=False)
+        self.assertEqual(len(audio), int((total + 0.5) * qt3d.SR))
+        self.assertLessEqual(float(abs(audio).max()), 0.95)
 
     def test_the_reel_posts_at_the_pyq_time(self):
         from mcq_agent import pyqday as Q
@@ -2510,6 +2586,20 @@ class QTTrapTests(TempQueue):
         from PIL import Image
         with Image.open(cover) as im:
             self.assertEqual(im.size, (1080, 1920))
+
+
+class QTAttemptOpenerTests(unittest.TestCase):
+    def test_past_paper_reels_open_with_the_attempt(self):
+        from mcq_agent import qtpuzzle as QT
+        s = QT.assemble(QTTrapTests.FAKE, {"tag": "ASKED IN", "text": "CA FOUNDATION JUNE 2024 · QT"}, "hdr", asked="June 2024")
+        first = s["lines"][0]
+        self.assertEqual(first["card"]["kind"], "attempt")
+        self.assertIn("June 2024", first["say"])
+        self.assertEqual([ln["card"]["kind"] for ln in s["lines"][1:4]], ["hook", "hook", "trap"])
+        plain = QT.assemble(QTTrapTests.FAKE, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr")
+        self.assertEqual(plain["lines"][0]["card"]["kind"], "hook")
+        self.assertEqual(QT.attempt_name("Jan 2026 exam"), "January 2026")
+        self.assertEqual(QT.attempt_name("Sept 2025"), "September 2025")
 
 
 class QTTrapWordingTests(unittest.TestCase):

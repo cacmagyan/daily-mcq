@@ -566,6 +566,10 @@ def _card_for(ev, t, script, state):
         return ("hook", c.get("small", ""), c.get("big", "")), lambda: card_small(c.get("small", ""), c.get("big", ""))
     if kind == "trap":
         return ("trap", c.get("big")), lambda: card_small(c.get("small", ""), c.get("big", ""), c.get("sub", "that is the trap"), bad=True)
+    if kind == "answer":
+        return ("answer", c.get("big")), lambda: card_small(c.get("small", "The right answer"), f"{c.get('big', '')} ✓")
+    if kind == "attempt":
+        return ("attempt", c.get("when")), lambda: card_small("Asked in", f"{c.get('exam', 'CA Foundation')} {c.get('when', '')}")
     if kind in ("question", "pause", "reveal"):
         if kind == "question" and c.get("options"):
             frac = (t - ev["start"]) / max(ev["dur"], 0.1)

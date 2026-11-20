@@ -6,6 +6,7 @@ name: 3. Fix an MCQ (/regen, /approve, /hold)
 #   /regen ca_inter                           replace it with a new MCQ (posts by itself if the check passes)
 #   /regen cma_final make it a numerical on WACC
 #   /regen reel                               make the MCQ reel again (/hold reel, /approve reel work too)
+#   /regen pyq video                          make the QT trap video again from the same question
 on:
   issue_comment:
     types: [created]
@@ -24,7 +25,7 @@ jobs:
        startsWith(github.event.comment.body, '/hold')) &&
       (github.event.issue.pull_request || contains(github.event.issue.title, 'MCQs for '))
     runs-on: ubuntu-24.04
-    timeout-minutes: 50
+    timeout-minutes: 60
     concurrency:
       group: command-${{ github.event.issue.number }}
       cancel-in-progress: false

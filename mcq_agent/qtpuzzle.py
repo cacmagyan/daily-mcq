@@ -1,4 +1,4 @@
-"""QT trap of the day: a CA Foundation Quantitative Aptitude question as a 90-110 s reel (qt_video.py).
+"""QT trap of the day: a CA Foundation Quantitative Aptitude question as a 60-80 s reel (qt3d.py / qt_video.py).
 
 It takes the PYQ slot (pyq.format: qt_video). Claude writes only the content: the trap (the tempting wrong
 answer), the question, the steps, the shortcut, a follow-up question and simple scene data. The fixed
@@ -71,7 +71,7 @@ WRITE_TOOL = {
                  "description": "Index of the tempting wrong option most students pick"},
         "hook_small": _s("Tiny label above the hook, e.g. 'Simple interest', at most 24 characters"),
         "hook_big": _s("The fact of the question in a few words, e.g. 'Doubles in 5 years', at most 22 characters"),
-        "hook_say": _s("One spoken sentence stating the fact, e.g. 'A sum of money doubles in 5 years at simple interest.'"),
+        "hook_say": _s("One or two short spoken sentences giving the whole question with every number needed (it is not read out anywhere else), e.g. 'A sum doubles in 5 years at simple interest. When does it become four times?'"),
         "wrong_big": _s("The tempting wrong working, e.g. '5 × 2 = 10 years?', at most 22 characters"),
         "wrong_say": _s("One spoken sentence of the wrong thinking, ending 'Right?'"),
         "steps": {"type": "array", "minItems": 2, "maxItems": 4, "items": {"type": "object", "properties": {
@@ -94,11 +94,11 @@ WRITE_TOOL = {
 }
 
 WRITE_SYSTEM = """You write a daily 90-110 second "trap" reel for Indian CA Foundation students, Paper 3 Quantitative Aptitude ({part}: {topic}).
-The format: the obvious answer (the trap) first, then the question with 4 options, a pause, the right answer, then why in 2-4 short steps, a shortcut, and a follow-up question for the comments.
+The format, fast and direct: the question's facts, the tempting wrong working and its answer (the trap), "Wrong", then straight to the right answer and why in 2-4 short steps, a shortcut, and a follow-up question for the comments. The question and the options are NOT read out, so hook_say must give every fact needed to solve it.
 Rules:
 - The question must be a genuine CA Foundation-level MCQ with exactly one correct option, and a tempting wrong option that most students pick for a clear reason (the trap).
 - Every number must be right. Work the answer out fully before writing; the steps must lead to the answer.
-- Spoken lines: simple Indian classroom English, short sentences, no filler, no emoji. Say numbers as digits (₹100, 15 years). Total spoken words across hook_say, wrong_say, steps, shortcut_say and your_turn_say: 120-160 (the video must stay under 110 seconds; the question itself is read out too). Don't start your_turn_say with "Your turn" or a step with "Step one"; those are added.
+- Spoken lines: simple Indian classroom English, short sentences, no filler, no emoji. Say numbers as digits (₹100, 15 years). Total spoken words across hook_say, wrong_say, steps, shortcut_say and your_turn_say: 100-140 (the reel should run about 60-80 seconds; every extra word costs time). Don't start your_turn_say with "Your turn" or a step with "Step one"; those are added.
 - Card rows are short working lines, not sentences.
 - Keep to the syllabus as it stands now; avoid anything that depends on a changed law or rate.
 {scene_help}"""
@@ -167,21 +167,24 @@ def _unlead(say: str) -> str:
     return _LEAD.sub("", str(say or "").strip(), count=1)
 
 
-def assemble(w: dict, badge: dict, header: str) -> dict:
-    """The full video script from Claude's content, in the fixed order."""
+def assemble(w: dict, badge: dict, header: str, asked: str = "") -> dict:
+    """The full video script from Claude's content, in the fixed order. `asked` ("June 2024") opens the
+    video with the attempt that asked a real past-paper question."""
     opts = [_clip(o, 24) for o in w["options"]]
     ans, trap = int(w["answer"]), int(w["trap"])
     scene0 = valid_scene(w.get("scene")) or {"type": "board", "lines": [_clip(w["hook_big"], 22)]}
-    lines = [
+    lines = []
+    if asked:
+        lines.append({"say": f"This question came in the CA Foundation {asked} exam.",
+                      "card": {"kind": "attempt", "exam": "CA Foundation", "when": asked, "sub": "Paper 3 · Quantitative Aptitude"}})
+    lines += [
         {"say": w["hook_say"], "card": {"kind": "hook", "small": w["hook_small"], "big": _clip(w["hook_big"], 22)},
          **({"scene": s} if (s := valid_scene(w.get("hook_scene"))) else {})},
         {"say": w["wrong_say"], "card": {"kind": "hook", "small": "So...", "big": _clip(w["wrong_big"], 22)}},
-        {"say": f"Wrong. {opts[trap]} looks right, but it is the trap.",
+        {"say": f"Wrong. {opts[trap]} is the trap.",
          "card": {"kind": "trap", "small": badge.get("text", ""), "big": f"{opts[trap]} ×", "sub": "that is the trap"}},
-        {"say": "Here is the question. " + _plain(w["question"]), "card": {"kind": "question"}},
-        {"say": "Is it " + ", ".join(opts[:3]) + ", or " + opts[3] + "?", "card": {"kind": "question", "options": True}},
-        {"say": "Pause the video, and pick your option.", "card": {"kind": "pause"}},
-        {"say": f"The answer is {opts[ans]}. Not {opts[trap]}.", "card": {"kind": "reveal"}},
+        {"say": f"The right answer is {opts[ans]}. Here's why.",
+         "card": {"kind": "answer", "small": "The right answer", "big": opts[ans]}},
     ]
     for n, st in enumerate(w["steps"], 1):
         title = f"Step {n} · {_clip(st['title'], 30)}"
@@ -213,9 +216,8 @@ def check_content(w: dict) -> list[str]:
         out.append("the trap must be a wrong option")
     words = sum(len(str(x).split()) for x in [w.get("hook_say"), w.get("wrong_say"), w.get("shortcut_say"),
                                                w.get("your_turn_say")] + [s for st in w.get("steps", []) for s in st.get("says", [])])
-    words += len(_plain(w.get("question", "")).split())
-    if not 130 <= words <= 215:
-        out.append(f"the spoken lines and the question have {words} words; cut to 150-200 so the video stays under 110 s")
+    if not 85 <= words <= 160:
+        out.append(f"the spoken lines have {words} words; use 100-140 so the reel runs about 60-80 s")
     return out
 
 
@@ -235,30 +237,41 @@ def topic_for(cfg: Config, date: dt.date) -> tuple[str, str]:
     return order[0]
 
 
+def attempt_name(asked: str) -> str:
+    """'Jun 2024 exam' / 'June 2024' / 'PY S25' -> 'June 2024' (what the voice says and the card shows)."""
+    t = re.sub(r"\s*exam$", "", str(asked or "").strip(), flags=re.I)
+    months = {"jan": "January", "feb": "February", "mar": "March", "apr": "April", "may": "May", "jun": "June",
+              "jul": "July", "aug": "August", "sep": "September", "sept": "September", "oct": "October",
+              "nov": "November", "dec": "December"}
+    m = re.match(r"([A-Za-z]+)\.?\s+(\d{4})$", t)
+    if m and m.group(1).lower()[:4].rstrip("t") in months or (m and m.group(1).lower()[:3] in months):
+        key = m.group(1).lower()
+        return f"{months.get(key[:4], months.get(key[:3]))} {m.group(2)}"
+    return t
+
+
+BANK_COURSE = "ca_foundation_qt"     # ca_foundation_qt_bank.json
+
+
 def past_paper_candidate(cfg: Config, date: dt.date) -> dict | None:
-    """An unused CA Foundation Paper 3 past-paper MCQ with an answer key, on alternate days (None if the
-    bank has none)."""
-    if date.toordinal() % 2:
-        return None
+    """The next unused real CA Foundation Paper 3 MCQ from the QT bank (ICAI's booklets with official keys),
+    every day while the bank lasts; None when it has run out (then an original question is written)."""
     from . import pyq
     from .pyqday import asked_short, split_mcq, used_refs
 
-    try:
-        course = cfg.course("ca_foundation")
-    except Exception:  # noqa: BLE001
-        return None
     used = used_refs()
-    for paper in course["papers"]:
-        if paper.get("code") != "Paper 3":
+    paper = {"code": "Paper 3", "name": "Quantitative Aptitude"}
+    for q in pyq.questions(BANK_COURSE, paper):
+        ref = f"{BANK_COURSE}|{q.get('chapter')}-{q.get('q')}"
+        if q.get("kind") != "mcq" or not q.get("answer") or ref in used:
             continue
-        for q in pyq.questions("ca_foundation", paper):
-            ref = f"ca_foundation|{paper.get('name', '')}|{q.get('chapter')}-{q.get('q')}"
-            if q.get("kind") != "mcq" or not q.get("answer") or ref in used:
-                continue
-            parts = split_mcq(q.get("text", ""))
-            if parts:
-                return {"ref": ref, "stem": parts[0], "opts": parts[1], "key": q["answer"].strip("()").upper(),
-                        "asked": asked_short(q.get("papers") or []), "part": paper["name"].split(":")[-1].strip()}
+        parts = split_mcq(q.get("text", ""))
+        if parts:
+            return {"ref": ref, "stem": parts[0], "opts": parts[1], "key": q["answer"].strip("()").upper(),
+                    "asked": q.get("asked") or asked_short(q.get("papers") or []),
+                    "part": q.get("section") or "Business Mathematics", "topic": q.get("chapter_title") or "",
+                    "trap": (q.get("trap") or "").strip("()").upper(), "trap_why": q.get("trap_why") or "",
+                    "qno": q.get("q")}
     return None
 
 
@@ -272,12 +285,15 @@ def make(cfg: Config, date: dt.date, instruction: str = "") -> dict:
     user = ""
     if past:
         part = past["part"]
-        topic = "as in the question"
-        badge = {"tag": "ASKED IN", "text": f"CA FOUNDATION {past['asked'].replace(' exam', '').upper()} · QT"}
-        header = f"CA Foundation {past['asked']} · Paper 3 · QT"
-        user += ("Use this real past-paper question exactly (fix only spacing). Its official answer is "
+        topic = past.get("topic") or "as in the question"
+        badge = {"tag": "ASKED IN", "text": f"CA FOUNDATION {attempt_name(past['asked']).upper()} · QT"}
+        header = f"CA Foundation {attempt_name(past['asked'])} · Paper 3 · QT"
+        user += ("Use this real past-paper question exactly (fix only spacing and obvious typos). Its official answer is "
                  f"({past['key'].lower()}).\nQuestion: {past['stem']}\n"
                  + "\n".join(f"({'abcd'[i]}) {o}" for i, o in enumerate(past["opts"])) + "\n")
+        if past.get("trap"):
+            user += (f"The trap: most students pick ({past['trap'].lower()}) because {past['trap_why']}. "
+                     "Use it as the trap unless another option is clearly the more common mistake.\n")
     else:
         badge = {"tag": "CA FOUNDATION", "text": f"QT · {topic.upper()[:28]}"}
         header = "CA Foundation pattern · Paper 3 · Quantitative Aptitude"
@@ -302,7 +318,8 @@ def make(cfg: Config, date: dt.date, instruction: str = "") -> dict:
             continue
         if not past:
             badge = {"tag": "CA FOUNDATION", "text": f"QT · {_clip(w.get('topic') or topic, 28).upper()}"}
-        script = assemble(w, badge, header)
+        real = past and "model" not in past["asked"].lower()
+        script = assemble(w, badge, header, asked=attempt_name(past["asked"]) if real else "")
         plain = (f"Question: {_plain(w['question'])}\n" + "\n".join(f"({LETTERS[i]}) {o}" for i, o in enumerate(script['options']))
                  + f"\nStated answer: {LETTERS[script['answer']]}\nTrap: {script['options'][int(w['trap'])]}\n"
                  + "\n".join(f"{ln['say']} | card: {' / '.join(ln['card'].get('rows', []))}" for ln in script["lines"])
@@ -327,10 +344,12 @@ def caption(cfg: Config, item: dict, date: dt.date) -> str:
     s = item["script"]
     handle = cfg.brand.get("handle", "").strip()
     asked = item.get("asked_in", "")
-    lines = [f"{s['lines'][0]['card']['big']}… so {item['trap']}? That's the trap. 🪤",
+    hook = next((ln["card"]["big"] for ln in s["lines"] if ln["card"].get("kind") == "hook"), "")
+    lines = [f"{hook}… so {item['trap']}? That's the trap. 🪤",
              "", _plain(s["question"]), ""] + [f"({'abcd'[i]}) {o}" for i, o in enumerate(s["options"])]
-    lines += ["", "Pause and comment your option (a, b, c or d) before the answer 👇",
-              (f"Asked in {asked}." if asked and "pattern" not in asked else "CA Foundation Paper 3 · Quantitative Aptitude."),
+    lines += ["", "Did you pick the trap too? Tell me in the comments 👇",
+              (f"Asked in CA Foundation {attempt_name(asked)} · Paper 3 (ICAI's official answer key)." if asked and "pattern" not in asked
+               else "CA Foundation Paper 3 · Quantitative Aptitude."),
               "Save 🔖 it for your QT revision."]
     if handle:
         lines += ["", f"Follow {handle} for a QT trap every day."]

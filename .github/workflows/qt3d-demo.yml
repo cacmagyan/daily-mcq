@@ -1,0 +1,62 @@
+name: QT 3D reel demo (qt3d-reel branch)
+
+# Renders demo/qt3d/request.json (a pyq.json or a bare script) with the voice and pushes the video back
+# to this branch as demo/qt3d/demo.mp4, so a new look can be checked before it goes live.
+on:
+  push:
+    branches: [qt3d-reel]
+    paths: ["demo/qt3d/request.json", ".github/workflows/qt3d-demo.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  demo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng >/dev/null
+      - name: Voice model cache
+        uses: actions/cache@v4
+        with:
+          path: .kokoro
+          key: kokoro-v1.0
+      - name: Render
+        env:
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+        run: |
+          python - <<'PY'
+          import json, time, traceback
+          from pathlib import Path
+          from mcq_agent import qt3d
+          d = json.loads(Path("demo/qt3d/request.json").read_text())
+          script = d.get("script", d)
+          out = Path("demo/qt3d/demo.mp4")
+          t0 = time.time()
+          try:
+              r = qt3d.render(script, out, cover=Path("demo/qt3d/demo_cover.jpg"), handle="@cacmagyan")
+              r["took_s"] = round(time.time() - t0)
+          except Exception as exc:
+              r = {"error": str(exc)[:500], "trace": traceback.format_exc()[-1500:]}
+          Path("demo/qt3d/result.json").write_text(json.dumps(r, indent=1))
+          print(r)
+          PY
+      - name: Save
+        run: |
+          git config user.name "mcq-agent"
+          git config user.email "mcq-agent@users.noreply.github.com"
+          git add demo/qt3d/result.json
+          [ -e demo/qt3d/demo.mp4 ] && git add demo/qt3d/demo.mp4 demo/qt3d/demo_cover.jpg
+          git commit -q -m "QT 3D demo render" || exit 0
+          for i in 1 2 3; do git pull -q --rebase origin qt3d-reel && git push -q origin HEAD:qt3d-reel && exit 0; sleep 5; done
+          exit 1

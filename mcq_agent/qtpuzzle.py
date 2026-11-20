@@ -167,12 +167,17 @@ def _unlead(say: str) -> str:
     return _LEAD.sub("", str(say or "").strip(), count=1)
 
 
-def assemble(w: dict, badge: dict, header: str) -> dict:
-    """The full video script from Claude's content, in the fixed order."""
+def assemble(w: dict, badge: dict, header: str, asked: str = "") -> dict:
+    """The full video script from Claude's content, in the fixed order. `asked` ("June 2024") opens the
+    video with the attempt that asked a real past-paper question."""
     opts = [_clip(o, 24) for o in w["options"]]
     ans, trap = int(w["answer"]), int(w["trap"])
     scene0 = valid_scene(w.get("scene")) or {"type": "board", "lines": [_clip(w["hook_big"], 22)]}
-    lines = [
+    lines = []
+    if asked:
+        lines.append({"say": f"This question came in the CA Foundation {asked} exam.",
+                      "card": {"kind": "attempt", "exam": "CA Foundation", "when": asked, "sub": "Paper 3 · Quantitative Aptitude"}})
+    lines += [
         {"say": w["hook_say"], "card": {"kind": "hook", "small": w["hook_small"], "big": _clip(w["hook_big"], 22)},
          **({"scene": s} if (s := valid_scene(w.get("hook_scene"))) else {})},
         {"say": w["wrong_say"], "card": {"kind": "hook", "small": "So...", "big": _clip(w["wrong_big"], 22)}},
@@ -233,6 +238,19 @@ def topic_for(cfg: Config, date: dt.date) -> tuple[str, str]:
         if topic not in recent:
             return part, topic
     return order[0]
+
+
+def attempt_name(asked: str) -> str:
+    """'Jun 2024 exam' / 'June 2024' / 'PY S25' -> 'June 2024' (what the voice says and the card shows)."""
+    t = re.sub(r"\s*exam$", "", str(asked or "").strip(), flags=re.I)
+    months = {"jan": "January", "feb": "February", "mar": "March", "apr": "April", "may": "May", "jun": "June",
+              "jul": "July", "aug": "August", "sep": "September", "sept": "September", "oct": "October",
+              "nov": "November", "dec": "December"}
+    m = re.match(r"([A-Za-z]+)\.?\s+(\d{4})$", t)
+    if m and m.group(1).lower()[:4].rstrip("t") in months or (m and m.group(1).lower()[:3] in months):
+        key = m.group(1).lower()
+        return f"{months.get(key[:4], months.get(key[:3]))} {m.group(2)}"
+    return t
 
 
 def past_paper_candidate(cfg: Config, date: dt.date) -> dict | None:
@@ -302,7 +320,8 @@ def make(cfg: Config, date: dt.date, instruction: str = "") -> dict:
             continue
         if not past:
             badge = {"tag": "CA FOUNDATION", "text": f"QT · {_clip(w.get('topic') or topic, 28).upper()}"}
-        script = assemble(w, badge, header)
+        real = past and "model" not in past["asked"].lower()
+        script = assemble(w, badge, header, asked=attempt_name(past["asked"]) if real else "")
         plain = (f"Question: {_plain(w['question'])}\n" + "\n".join(f"({LETTERS[i]}) {o}" for i, o in enumerate(script['options']))
                  + f"\nStated answer: {LETTERS[script['answer']]}\nTrap: {script['options'][int(w['trap'])]}\n"
                  + "\n".join(f"{ln['say']} | card: {' / '.join(ln['card'].get('rows', []))}" for ln in script["lines"])
@@ -327,7 +346,8 @@ def caption(cfg: Config, item: dict, date: dt.date) -> str:
     s = item["script"]
     handle = cfg.brand.get("handle", "").strip()
     asked = item.get("asked_in", "")
-    lines = [f"{s['lines'][0]['card']['big']}… so {item['trap']}? That's the trap. 🪤",
+    hook = next((ln["card"]["big"] for ln in s["lines"] if ln["card"].get("kind") == "hook"), "")
+    lines = [f"{hook}… so {item['trap']}? That's the trap. 🪤",
              "", _plain(s["question"]), ""] + [f"({'abcd'[i]}) {o}" for i, o in enumerate(s["options"])]
     lines += ["", "Pause and comment your option (a, b, c or d) before the answer 👇",
               (f"Asked in {asked}." if asked and "pattern" not in asked else "CA Foundation Paper 3 · Quantitative Aptitude."),

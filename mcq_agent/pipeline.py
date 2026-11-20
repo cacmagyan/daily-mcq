@@ -502,7 +502,9 @@ def _make_qt(cfg: Config, date: dt.date, instruction: str, old: dict) -> dict:
             if str(cfg.pyq.get("renderer", "3d")) == "3d":
                 from . import qt3d
                 try:
-                    res = qt3d.render(item["script"], out / "pyq.mp4", out / "pyq_cover.jpg", handle=handle)
+                    logo = cfg.brand.get("logo") or ""
+                    res = qt3d.render(item["script"], out / "pyq.mp4", out / "pyq_cover.jpg", handle=handle,
+                                      logo=(ROOT / logo) if logo else Path("/nonexistent"))
                 except Exception as exc:  # noqa: BLE001 - the flat 2D reel is the fallback
                     print(f"  ! 3D QT reel failed, making the 2D one: {str(exc)[:200]}")
             if res is None:

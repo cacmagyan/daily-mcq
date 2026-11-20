@@ -146,6 +146,8 @@ def _group(card: dict) -> str | None:
         return f"hook:{card.get('small', '')}|{card.get('big', '')}"
     if k == "trap":
         return "trap"
+    if k == "attempt":
+        return "attempt"
     if k in ("step", "shortcut", "your_turn"):
         return f"{k}:{card.get('title', '')}"
     return None
@@ -213,7 +215,10 @@ def _trap_index(script: dict) -> int | None:
     return None
 
 
-def make_plan(script: dict, events: list[dict], total: float, handle: str) -> dict:
+LOGO = ROOT / "assets" / "brand" / "logo.png"
+
+
+def make_plan(script: dict, events: list[dict], total: float, handle: str, logo: Path | None = None) -> dict:
     states, cur = [], dict(script.get("scene") or {"type": "board", "lines": []})
     for ev in events:
         prev = dict(cur)
@@ -266,7 +271,11 @@ def make_plan(script: dict, events: list[dict], total: float, handle: str) -> di
     for e in yt:                                            # the call-to-action stays once it is up
         e.setdefault("ctaAt", max([x.get("ctaAt", 1e9) for x in yt]))
     badge = script.get("badge") or {}
+    logo = logo if logo is not None else LOGO
+    last = out[-1] if out else None
+    end_at = round(last["start"] + 0.5, 4) if last and (last["card"] or {}).get("kind") == "your_turn" else None
     return {"W": W, "H": H, "total": round(total, 3), "theme": script.get("theme", "green"),
+            "logo": Path(logo).resolve().as_uri() if logo and Path(logo).exists() else "", "endAt": end_at,
             "badge": {"tag": badge.get("tag", "CA FOUNDATION"), "text": badge.get("text", "")},
             "handle": handle, "header": script.get("header", ""), "question": script.get("question", ""),
             "options": script.get("options", []), "answer": script.get("answer"), "trap": _trap_index(script),
@@ -382,6 +391,8 @@ def mix(events: list[dict], plan: dict, total: float, with_music: bool = True):
         kind = (e["card"] or {}).get("kind")
         if e["group"] and (i == 0 or pe[i - 1]["group"] != e["group"]):
             add(fx, B["impact"] if i == 0 else B["whoosh"], e["start"] - (0 if i == 0 else 0.12), 0.5 if i == 0 else 0.33)
+        if kind == "attempt":
+            add(fx, B["thud"], e["start"] + 0.35, 0.4)
         if kind == "trap":
             add(fx, B["thud"], e["start"] + 0.06, 0.5)
             add(fx, B["buzz"], e["start"] + 0.1, 0.22)
@@ -399,6 +410,9 @@ def mix(events: list[dict], plan: dict, total: float, with_music: bool = True):
             add(fx, B["chime"], e["ctaAt"], 0.3)
         if e.get("prev") and e.get("cur") and e["prev"] != e["cur"]:
             add(fx, B["pop"], e["start"] + 0.35, 0.16)
+    if plan.get("endAt") and plan.get("logo"):
+        add(fx, B["whoosh"], plan["endAt"] - 0.1, 0.3)
+        add(fx, B["chime"], plan["endAt"] + 0.15, 0.3)
     for k, at in enumerate(plan.get("optTimes") or []):
         add(fx, resample(B["pop"], SR, int(SR / (1 + 0.08 * k))), at, 0.3)
 
@@ -482,7 +496,8 @@ def workers() -> int:
 
 
 def render(script: dict, out: Path, cover: Path | None = None, handle: str = "", silent: bool = False,
-           music: bool = True, frames: tuple[float, float] | None = None, n_workers: int | None = None) -> dict:
+           music: bool = True, frames: tuple[float, float] | None = None, n_workers: int | None = None,
+           logo: Path | None = None) -> dict:
     """Make the reel at `out`. silent=True skips the voice (timing estimated) for quick previews;
     frames=(t0, t1) renders only that stretch (for checking a scene)."""
     import multiprocessing as mp
@@ -494,7 +509,7 @@ def render(script: dict, out: Path, cover: Path | None = None, handle: str = "",
 
     vl, voice_used = voice_lines(script, silent=silent)
     events, total = timeline(script, vl)
-    plan = make_plan(script, events, total, handle)
+    plan = make_plan(script, events, total, handle, logo)
     work = Path(tempfile.mkdtemp(prefix="qt3d_"))
     wav = work / "sound.wav"
     write_wav(wav, mix(events, plan, total, with_music=music))

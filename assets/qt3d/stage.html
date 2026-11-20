@@ -53,7 +53,7 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
 .ctr .v { font: 800 92px/1 "Pop"; color: var(--c); margin-top: 8px; }
 
 /* cards */
-.card { position: absolute; left: 540px; top: 150px; transform-origin: 50% 0; box-sizing: border-box; border-radius: 36px;
+.card { position: absolute; left: 540px; top: 222px; transform-origin: 50% 0; box-sizing: border-box; border-radius: 36px;
   box-shadow: 0 30px 70px rgba(0,0,0,.38), 0 2px 0 rgba(255,255,255,.06) inset; will-change: transform, opacity; }
 .card.dark { background: rgba(13,17,21,.9); color: #fff; border: 2px solid rgba(255,255,255,.08); }
 .card.cream { background: var(--cream); color: var(--ink); }
@@ -104,7 +104,7 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
   text-shadow: 0 4px 20px rgba(0,0,0,.5); }
 
 /* captions */
-#cap { position: absolute; left: 0; top: 1330px; width: 1080px; text-align: center; font: 800 86px/1.15 "Pop"; color: #fff;
+#cap { position: absolute; left: 0; top: 1352px; width: 1080px; text-align: center; font: 800 86px/1.15 "Pop"; color: #fff;
   letter-spacing: -.01em; text-shadow: 0 5px 0 rgba(0,0,0,.28), 0 10px 30px rgba(0,0,0,.4); }
 #cap .w { display: inline-block; margin: 0 12px; transform-origin: 50% 80%; }
 #cap .w.f { opacity: .35; }
@@ -114,6 +114,22 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
 #badge { position: absolute; left: 44px; top: 54px; display: flex; align-items: center; gap: 14px; background: rgba(8,12,14,.72);
   border-radius: 14px; padding: 10px 18px 10px 10px; color: #fff; font: 700 24px "Int"; letter-spacing: .04em; }
 #badge .tag { background: var(--acc); color: #2a1d00; font: 800 20px "Int"; letter-spacing: .1em; padding: 6px 12px 5px; border-radius: 8px; }
+#logo { position: absolute; left: 876px; top: 34px; width: 168px; height: 168px; border-radius: 34px; background: #fff;
+  box-shadow: 0 12px 34px rgba(0,0,0,.38); display: none; align-items: center; justify-content: center; overflow: hidden; }
+#logo img { width: 158px; height: 158px; object-fit: contain; }
+#end { position: absolute; left: 0; top: 0; width: 1080px; opacity: 0; }
+#end .tile { position: absolute; left: 330px; top: 640px; width: 420px; height: 420px; border-radius: 64px; background: #fff;
+  box-shadow: 0 30px 80px rgba(0,0,0,.45); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+#end .tile img { width: 396px; height: 396px; object-fit: contain; }
+#end .follow { position: absolute; left: 0; top: 1100px; width: 1080px; text-align: center; font: 800 54px "Pop"; color: #fff;
+  text-shadow: 0 4px 20px rgba(0,0,0,.5); }
+#end .follow span { display: inline-block; background: var(--acc); color: #2a1d00; padding: 4px 26px 2px; border-radius: 50px; text-shadow: none; }
+.card.attempt { padding: 30px 56px 36px; text-align: center; border: 3px solid rgba(255,200,61,.8); }
+.card.attempt .tag { display: inline-block; background: var(--acc); color: #2a1d00; font: 800 24px "Int"; letter-spacing: .16em;
+  padding: 7px 16px 6px; border-radius: 10px; }
+.card.attempt .exam { font: 800 50px/1.1 "Pop"; margin-top: 16px; white-space: nowrap; }
+.card.attempt .when { font: 800 104px/1.05 "Pop"; color: var(--acc); white-space: nowrap; display: inline-block; }
+.card.attempt .sub { font: 700 24px "Int"; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-top: 10px; }
 #handle { position: absolute; left: 0; top: 1846px; width: 1040px; text-align: right; font: 700 24px "Int"; color: rgba(255,255,255,.7); }
 </style>
 </head>
@@ -133,8 +149,10 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
     <div class="num" id="cdnum"></div>
     <div class="msg">Pause and pick your option</div>
   </div>
+  <div id="end"><div class="tile"><img alt=""></div><div class="follow"></div></div>
   <div id="cap"></div>
   <div id="badge"></div>
+  <div id="logo"><img alt=""></div>
   <div id="handle"></div>
 </div>
 <script type="module" src="./stage.js"></script>

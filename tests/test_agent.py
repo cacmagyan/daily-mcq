@@ -2556,6 +2556,20 @@ class QTTrapTests(TempQueue):
             self.assertEqual(im.size, (1080, 1920))
 
 
+class QTAttemptOpenerTests(unittest.TestCase):
+    def test_past_paper_reels_open_with_the_attempt(self):
+        from mcq_agent import qtpuzzle as QT
+        s = QT.assemble(QTTrapTests.FAKE, {"tag": "ASKED IN", "text": "CA FOUNDATION JUNE 2024 · QT"}, "hdr", asked="June 2024")
+        first = s["lines"][0]
+        self.assertEqual(first["card"]["kind"], "attempt")
+        self.assertIn("June 2024", first["say"])
+        self.assertEqual([ln["card"]["kind"] for ln in s["lines"][1:4]], ["hook", "hook", "trap"])
+        plain = QT.assemble(QTTrapTests.FAKE, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr")
+        self.assertEqual(plain["lines"][0]["card"]["kind"], "hook")
+        self.assertEqual(QT.attempt_name("Jan 2026 exam"), "January 2026")
+        self.assertEqual(QT.attempt_name("Sept 2025"), "September 2025")
+
+
 class QTTrapWordingTests(unittest.TestCase):
     def test_no_doubled_lead_ins(self):
         from mcq_agent import qtpuzzle as QT

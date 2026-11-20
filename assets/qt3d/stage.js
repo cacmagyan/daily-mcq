@@ -513,13 +513,13 @@ function anchorPoint(it, l) {
 function drawLabels(items, extra, t) {
   const seen = new Set();
   const host = $('labels');
-  const put = (id, text, cls, p, op, scale = 1, align = 'center') => {
+  const put = (id, text, cls, p, op, scale = 1, align = 'center', screen = null) => {
     seen.add(id);
     let el = lblEls.get(id);
     if (!el) { el = document.createElement('div'); el.className = 'lbl'; host.appendChild(el); lblEls.set(id, el); el._t = null; el._c = null; }
     if (el._t !== text) { el.textContent = text; el._t = text; }
     if (el._c !== cls) { el.className = 'lbl ' + cls; el._c = cls; }
-    const [sx, sy] = project(...p);
+    const [sx, sy] = screen || project(...p);
     const tx = align === 'left' ? '0%' : '-50%';
     el.style.transform = `translate(${sx.toFixed(1)}px, ${sy.toFixed(1)}px) translate(${tx}, -50%) scale(${scale.toFixed(3)})`;
     el.style.opacity = clamp(op).toFixed(3);
@@ -538,7 +538,7 @@ function drawLabels(items, extra, t) {
       if (l.anchor === 'mid' && (it.hh ?? 0) < 0.42) op = 0;
       put(`${it.id}#${i}`, l.text, l.cls, anchorPoint(it, l), op, l.cls.startsWith('num') ? 0.7 + 0.3 * a : 0.85 + 0.15 * a);
     });
-    if (it.litNew && (it.app ?? 1) > 0.85) {
+    if (it.litNew && (it.app ?? 1) > 0.85 && (it.s ?? 1) >= 0.7) {
       const lt = t - it.litAt;
       if (lt > 0 && lt < 0.9) {
         const top = (it.y ?? 0) + HEIGHT[it.type] * (it.s ?? 1) * 0.72;
@@ -546,7 +546,7 @@ function drawLabels(items, extra, t) {
       }
     }
   }
-  for (const e of extra) put(e.id, e.text, e.cls, e.p, e.op, e.scale ?? 1);
+  for (const e of extra) put(e.id, e.text, e.cls, e.p || [0, 0, 0], e.op, e.scale ?? 1, 'center', e.screen || null);
   for (const [id, el] of lblEls) if (!seen.has(id)) el.style.display = 'none';
 }
 
@@ -622,7 +622,10 @@ function cardEl(ev) {
   if (cardEls.has(g)) return cardEls.get(g);
   const c = ev.card || {};
   const el = document.createElement('div');
-  if (c.kind === 'hook') {
+  if (c.kind === 'attempt') {
+    el.className = 'card dark attempt';
+    el.innerHTML = `<div class="tag">ASKED IN</div><div class="exam">${esc(c.exam || 'CA Foundation')}</div><div class="when">${esc(c.when || '')}</div><div class="sub">${esc(c.sub || '')}</div>`;
+  } else if (c.kind === 'hook') {
     el.className = 'card dark hook';
     el.innerHTML = `<div class="small">${esc(c.small)}</div><div class="big">${md(c.big)}</div>`;
   } else if (c.kind === 'trap') {
@@ -660,6 +663,12 @@ function drawCard(ev, t, role) {
     const k = easeOut((t - ev.outAt) / 0.18);
     tr = `translate(-50%, ${(-24 * k).toFixed(1)}px) scale(${(1 - 0.04 * k).toFixed(4)})`;
     op = 1 - k;
+  }
+  if (c.kind === 'attempt' && role === 'in') {
+    const w = el.querySelector('.when');
+    const s = since < 0.35 ? 0 : 1.7 - 0.7 * backOut((since - 0.35) / 0.35);
+    w.style.transform = `scale(${s.toFixed(3)})`;
+    w.style.opacity = clamp((since - 0.33) / 0.1).toFixed(2);
   }
   if (c.kind === 'trap' && role === 'in') {
     const sh = Math.sin(since * 55) * 16 * Math.exp(-since * 7) * (since > 0.08 ? 1 : 0);
@@ -773,6 +782,12 @@ window.load = async (plan) => {
   const b = plan.badge || {};
   $('badge').innerHTML = `<span class="tag">${esc(b.tag || 'CA FOUNDATION')}</span><span>${esc(b.text || '')}</span>`;
   $('handle').textContent = plan.handle ? `● ${plan.handle}` : '';
+  if (plan.logo) {
+    const imgs = [document.querySelector('#logo img'), document.querySelector('#end .tile img')];
+    for (const im of imgs) { im.src = plan.logo; try { await im.decode(); } catch (e) { /* drawn without it */ } }
+    $('logo').style.display = 'flex';
+  }
+  document.querySelector('#end .follow').innerHTML = plan.handle ? `Follow <span>${esc(plan.handle)}</span>` : '';
   LAY = plan.events.map((ev) => ({ prev: layout(ev.prev), cur: layout(ev.cur) }));
   await document.fonts.ready;
   await Promise.all(['800 40px Pop', '700 40px Pop', '600 40px Pop', '600 40px Int', '700 40px Int', '800 40px Int'].map((f) => document.fonts.load(f, '₹0aA')));
@@ -813,8 +828,8 @@ window.seek = (t) => {
 
   // camera
   const hasCtr = (L.cur.counters || []).length > 0;
-  const span = (ev.group === 'q' ? 540 : 740) - (hasCtr ? 210 : 0);
-  const ty = (ev.group === 'q' ? 1010 : 950) + (hasCtr ? 170 : 0);
+  const span = (ev.group === 'q' ? 520 : 720) - (hasCtr ? 210 : 0);
+  const ty = (ev.group === 'q' ? 1065 : 1000) + (hasCtr ? 170 : 0);
   const fc = L.cur.frame || { cx: 0, cy: 1, cz: 0, w: 8, h: 4, el: 22, az: 0 };
   const camCur = { ...cameraFor(fc, span), ty };
   let camPrev = camCur;
@@ -822,7 +837,7 @@ window.seek = (t) => {
     const pe = E[idx - 1], pl = LAY[idx - 1];
     const pfr = pl.cur.frame || fc;
     const pHas = (pl.cur.counters || []).length > 0;
-    camPrev = { ...cameraFor(pfr, (pe.group === 'q' ? 540 : 740) - (pHas ? 210 : 0)), ty: (pe.group === 'q' ? 1010 : 950) + (pHas ? 170 : 0) };
+    camPrev = { ...cameraFor(pfr, (pe.group === 'q' ? 520 : 720) - (pHas ? 210 : 0)), ty: (pe.group === 'q' ? 1065 : 1000) + (pHas ? 170 : 0) };
   }
   const cam = blendCam(camPrev, camCur, ease(tl / 1.1));
   placeCamera(cam, t);
@@ -836,11 +851,11 @@ window.seek = (t) => {
     const a = same ? 1 : spring(tl - 0.35, 2.0, 0.5);
     notes.push({ n: L.cur.note, at: L.cur.noteAt, op: a, scale: 0.85 + 0.15 * clamp(a, 0, 1.2), id: same ? `note:${L.cur.note}` : `note:${idx}:${L.cur.note}` });
   }
-  for (const nt of notes) extra.push({ id: nt.id, text: nt.n, cls: 'note', p: nt.at, op: nt.op, scale: nt.scale ?? 1 });
+  for (const nt of notes) extra.push({ id: nt.id, text: nt.n, cls: 'note', screen: [W / 2, ev.group === 'q' ? 1290 : 1272], op: nt.op, scale: nt.scale ?? 1 });
   drawLabels(items, extra, t);
 
   // counters sit between the card and the scene
-  drawCounters(typeChange ? [] : (L.prev.counters || []), L.cur.counters || [], tl, ev.group === 'q' ? 700 : 560);
+  drawCounters(typeChange ? [] : (L.prev.counters || []), L.cur.counters || [], tl, ev.group === 'q' ? 760 : 620);
 
   // cards: the current group comes in, the previous group leaves
   for (const el of cardEls.values()) el.style.display = 'none';
@@ -884,6 +899,18 @@ window.seek = (t) => {
     fl.style.background = `radial-gradient(120% 80% at 50% 45%, rgba(${col},0) 45%, rgba(${col},0.75) 100%)`;
     fl.style.opacity = a.toFixed(3);
   } else fl.style.opacity = 0;
+
+  // end card: the logo, big, over the last line
+  const endEl = $('end');
+  const endAt = PLAN.endAt ?? 1e9;
+  if (PLAN.logo && t >= endAt) {
+    const a = spring(t - endAt, 1.8, 0.5);
+    endEl.style.opacity = clamp((t - endAt) / 0.2).toFixed(3);
+    endEl.querySelector('.tile').style.transform = `translateY(${((1 - a) * 60).toFixed(1)}px) scale(${(0.7 + 0.3 * a).toFixed(4)}) rotate(${((1 - a) * -6).toFixed(2)}deg)`;
+    endEl.querySelector('.follow').style.transform = `translateY(${((1 - spring(t - endAt - 0.15, 1.8, 0.55)) * 40).toFixed(1)}px)`;
+    $('dim').style.opacity = Math.max(+$('dim').style.opacity, 0.78 * clamp((t - endAt) / 0.4)).toFixed(3);
+    $('logo').style.opacity = (1 - clamp((t - endAt) / 0.3)).toFixed(3);
+  } else { endEl.style.opacity = 0; $('logo').style.opacity = 1; }
 
   drawCaption(ev, t, inCd && t >= cd[0]);
   renderer.render(scene, camera);

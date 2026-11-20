@@ -137,10 +137,14 @@ def _redact(text: str) -> str:
     return out[:300]
 
 
-def _azure(text: str, voice: str, speed: float) -> bytes:
+def _azure(text: str, voice: str, speed: float, tight: bool = False) -> bytes:
+    """tight=True shortens the pauses at full stops and commas (a quicker, reel-style pace)."""
     region = os.environ["AZURE_SPEECH_REGION"].strip()
     rate = f"{round((speed - 1) * 100):+d}%"
-    ssml = (f"<speak version='1.0' xml:lang='en-IN'><voice name='{escape(voice)}'>"
+    pauses = ("<mstts:silence type='Sentenceboundary-exact' value='230ms'/>"
+              "<mstts:silence type='Comma-exact' value='110ms'/>") if tight else ""
+    ssml = (f"<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' "
+            f"xmlns:mstts='http://www.w3.org/2001/mstts' xml:lang='en-IN'><voice name='{escape(voice)}'>{pauses}"
             f"<prosody rate='{rate}'>{escape(text)}</prosody></voice></speak>")
     r = requests.post(f"https://{region}.tts.speech.microsoft.com/cognitiveservices/v1", data=ssml.encode("utf-8"),
                       headers={"Ocp-Apim-Subscription-Key": os.environ["AZURE_SPEECH_KEY"].strip(),

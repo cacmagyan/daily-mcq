@@ -26,10 +26,10 @@ from .config import ROOT
 W, H, FPS = 1080, 1920, 30
 SR = 48000
 STAGE = ROOT / "assets" / "qt3d" / "stage.html"
-LEAD, GAP, TAIL = 0.35, 0.24, 1.8
+LEAD, GAP, TAIL = 0.3, 0.16, 1.8
 COUNTDOWN = 3.0
 AZURE_VOICE = "en-IN-PrabhatNeural"      # default; config pyq.azure_voice (or QT3D_VOICE) picks another
-AZURE_SPEED = 1.08
+AZURE_SPEED = 1.12
 KOKORO_VOICE = "am_michael"
 KOKORO_SPEED = 1.12
 CHROME_ARGS = ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist",
@@ -124,7 +124,7 @@ def voice_lines(script: dict, silent: bool = False, azure_voice: str | None = No
         try:
             for ln in lines:
                 text = tts.speakable(spoken_text(ln["say"]))
-                a = _trim(_wav_to_float(tts._azure(text, azure_voice, AZURE_SPEED)))
+                a = _trim(_wav_to_float(tts._azure(text, azure_voice, AZURE_SPEED, tight=True)))
                 out.append((a, len(a) / SR, words_for(ln["say"], a)))
             return out, f"{azure_voice} (Azure)"
         except Exception as exc:                           # fall back to the free voice, never fail the reel

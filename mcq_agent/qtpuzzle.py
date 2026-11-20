@@ -98,7 +98,7 @@ The format: the obvious answer (the trap) first, then the question with 4 option
 Rules:
 - The question must be a genuine CA Foundation-level MCQ with exactly one correct option, and a tempting wrong option that most students pick for a clear reason (the trap).
 - Every number must be right. Work the answer out fully before writing; the steps must lead to the answer.
-- Spoken lines: simple Indian classroom English, short sentences, no filler, no emoji. Say numbers as digits (₹100, 15 years). Total spoken words across hook_say, wrong_say, steps, shortcut_say and your_turn_say: 120-160 (the video must stay under 110 seconds; the question itself is read out too). Don't start your_turn_say with "Your turn" or a step with "Step one"; those are added.
+- Spoken lines: simple Indian classroom English, short sentences, no filler, no emoji. Say numbers as digits (₹100, 15 years). Total spoken words across hook_say, wrong_say, steps, shortcut_say and your_turn_say: 100-135 (the video must stay under 110 seconds; the question and its options are read out too, so every extra word costs time). Don't start your_turn_say with "Your turn" or a step with "Step one"; those are added.
 - Card rows are short working lines, not sentences.
 - Keep to the syllabus as it stands now; avoid anything that depends on a changed law or rate.
 {scene_help}"""
@@ -219,8 +219,8 @@ def check_content(w: dict) -> list[str]:
     words = sum(len(str(x).split()) for x in [w.get("hook_say"), w.get("wrong_say"), w.get("shortcut_say"),
                                                w.get("your_turn_say")] + [s for st in w.get("steps", []) for s in st.get("says", [])])
     words += len(_plain(w.get("question", "")).split())
-    if not 130 <= words <= 215:
-        out.append(f"the spoken lines and the question have {words} words; cut to 150-200 so the video stays under 110 s")
+    if not 120 <= words <= 195:
+        out.append(f"the spoken lines and the question have {words} words; cut to 140-180 so the video stays under 110 s")
     return out
 
 

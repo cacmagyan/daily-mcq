@@ -98,7 +98,7 @@ The format: the obvious answer (the trap) first, then the question with 4 option
 Rules:
 - The question must be a genuine CA Foundation-level MCQ with exactly one correct option, and a tempting wrong option that most students pick for a clear reason (the trap).
 - Every number must be right. Work the answer out fully before writing; the steps must lead to the answer.
-- Spoken lines: simple Indian classroom English, short sentences, no filler, no emoji. Say numbers as digits (₹100, 15 years). Total spoken words across hook_say, wrong_say, steps, shortcut_say and your_turn_say: 150-210.
+- Spoken lines: simple Indian classroom English, short sentences, no filler, no emoji. Say numbers as digits (₹100, 15 years). Total spoken words across hook_say, wrong_say, steps, shortcut_say and your_turn_say: 120-160 (the video must stay under 110 seconds; the question itself is read out too). Don't start your_turn_say with "Your turn" or a step with "Step one"; those are added.
 - Card rows are short working lines, not sentences.
 - Keep to the syllabus as it stands now; avoid anything that depends on a changed law or rate.
 {scene_help}"""
@@ -142,7 +142,7 @@ def valid_scene(sc) -> dict | None:
         if sc["type"] == "bars":
             sc["bars"] = sc.get("bars", [])[:6]
             for b in sc["bars"]:
-                b["label"] = _clip(b.get("label", ""), 10)
+                b["label"] = _clip(b.get("label", ""), 12)
                 b["segments"] = [{**g, "v": float(g.get("v", 0))} for g in b.get("segments", [])[:5]]
         if sc["type"] == "line":
             float(sc.get("from", 0)), float(sc.get("to", 10))
@@ -159,6 +159,14 @@ def valid_scene(sc) -> dict | None:
     return sc
 
 
+_LEAD = re.compile(r"^\s*(your turn|the shortcut|shortcut|step\s+(one|two|three|four|\d))\s*[.:!,-]*\s*", re.I)
+
+
+def _unlead(say: str) -> str:
+    """Drops a leading "Your turn." / "Step two:" / "The shortcut:" (the fixed lines add their own)."""
+    return _LEAD.sub("", str(say or "").strip(), count=1)
+
+
 def assemble(w: dict, badge: dict, header: str) -> dict:
     """The full video script from Claude's content, in the fixed order."""
     opts = [_clip(o, 24) for o in w["options"]]
@@ -168,7 +176,7 @@ def assemble(w: dict, badge: dict, header: str) -> dict:
         {"say": w["hook_say"], "card": {"kind": "hook", "small": w["hook_small"], "big": _clip(w["hook_big"], 22)},
          **({"scene": s} if (s := valid_scene(w.get("hook_scene"))) else {})},
         {"say": w["wrong_say"], "card": {"kind": "hook", "small": "So...", "big": _clip(w["wrong_big"], 22)}},
-        {"say": f"Wrong. {opts[trap]} is the trap, and most students fall for it.",
+        {"say": f"Wrong. {opts[trap]} looks right, but it is the trap.",
          "card": {"kind": "trap", "small": badge.get("text", ""), "big": f"{opts[trap]} ×", "sub": "that is the trap"}},
         {"say": "Here is the question. " + _plain(w["question"]), "card": {"kind": "question"}},
         {"say": "Is it " + ", ".join(opts[:3]) + ", or " + opts[3] + "?", "card": {"kind": "question", "options": True}},
@@ -182,15 +190,15 @@ def assemble(w: dict, badge: dict, header: str) -> dict:
         for i, say in enumerate(says):
             last = i == len(says) - 1
             shown = rows if last else rows[: max(1, round(len(rows) * (i + 1) / len(says)))]
-            ln = {"say": (f"Step {['one', 'two', 'three', 'four'][n - 1]}. " if i == 0 else "") + say,
+            ln = {"say": (f"Step {['one', 'two', 'three', 'four'][n - 1]}. " if i == 0 else "") + _unlead(say),
                   "card": {"kind": "step", "title": title, "rows": shown, **({"all": True} if i else {})}}
             if i == 0 and (sc := valid_scene(st.get("scene"))):
                 ln["scene"] = sc
             lines.append(ln)
     srows = [_clip(r, 44) for r in w["shortcut_rows"]][:2]
-    lines.append({"say": "The shortcut. " + w["shortcut_say"], "card": {"kind": "shortcut", "rows": srows}})
+    lines.append({"say": "The shortcut. " + _unlead(w["shortcut_say"]), "card": {"kind": "shortcut", "rows": srows}})
     yrows = [_clip(r, 40) for r in w["your_turn_rows"]][:2]
-    lines.append({"say": "Your turn. " + w["your_turn_say"], "card": {"kind": "your_turn", "rows": yrows}})
+    lines.append({"say": "Your turn. " + _unlead(w["your_turn_say"]), "card": {"kind": "your_turn", "rows": yrows}})
     lines.append({"say": "Comment your answer. Follow for a QT trap every day.",
                   "card": {"kind": "your_turn", "rows": yrows, "all": True}})
     return {"theme": w["theme"] if w["theme"] in THEMES else "green", "badge": badge, "header": header,
@@ -205,8 +213,9 @@ def check_content(w: dict) -> list[str]:
         out.append("the trap must be a wrong option")
     words = sum(len(str(x).split()) for x in [w.get("hook_say"), w.get("wrong_say"), w.get("shortcut_say"),
                                                w.get("your_turn_say")] + [s for st in w.get("steps", []) for s in st.get("says", [])])
-    if not 110 <= words <= 260:
-        out.append(f"the spoken lines have {words} words; write 150-210")
+    words += len(_plain(w.get("question", "")).split())
+    if not 130 <= words <= 215:
+        out.append(f"the spoken lines and the question have {words} words; cut to 150-200 so the video stays under 110 s")
     return out
 
 

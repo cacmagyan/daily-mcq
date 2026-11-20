@@ -2510,3 +2510,14 @@ class QTTrapTests(TempQueue):
         from PIL import Image
         with Image.open(cover) as im:
             self.assertEqual(im.size, (1080, 1920))
+
+
+class QTTrapWordingTests(unittest.TestCase):
+    def test_no_doubled_lead_ins(self):
+        from mcq_agent import qtpuzzle as QT
+        fake = {**QTTrapTests.FAKE, "your_turn_say": "Your turn. A sum becomes 3 times in 8 years. When 5 times?",
+                "shortcut_say": "The shortcut: count the interest, not the multiple."}
+        s = QT.assemble(fake, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr")
+        says = [ln["say"] for ln in s["lines"]]
+        self.assertFalse(any("Your turn. Your turn" in x or "shortcut. The shortcut" in x.lower() for x in says))
+        self.assertNotIn("most students", " ".join(says))

@@ -589,7 +589,7 @@ def _card_for(ev, t, script, state):
     return None, None
 
 
-def render(script: dict, out: Path, cover: Path | None = None, voice: str = "am_michael", speed: float = 1.08,
+def render(script: dict, out: Path, cover: Path | None = None, voice: str = "am_michael", speed: float = 1.14,
            handle: str = "", silent: bool = False) -> dict:
     """Make the reel. silent=True skips the voice (timing estimated) for quick previews."""
     import numpy as np
@@ -611,6 +611,9 @@ def render(script: dict, out: Path, cover: Path | None = None, voice: str = "am_
             continue
         audio = v.synth(spoken_text(say), voice, speed)
         words = word_times(say, audio)
+        raw = [w for w, _ in tokens(say) if re.search(r"[\w₹%]", w)]
+        if len(raw) == len(words):              # keep "due." so the caption phrase ends at the full stop
+            words = [(r, a, b) for r, (_, a, b) in zip(raw, words)]
         vl.append((audio, len(audio) / SR, words))
     events, total = build(script, vl)
 

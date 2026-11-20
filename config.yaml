@@ -78,13 +78,15 @@ pyq:
   post_time: "17:00"            # IST; keep matched to the 17:02 line in publish.yml
   course: cma_inter
   hashtags: ["#PYQ", "#CMAInter", "#ICMAI", "#CMAExam", "#PastPapers"]
-  # From qt_from on, this slot is the CA Foundation QT trap reel (90-110 s, trap -> question -> pause ->
-  # answer -> steps -> shortcut -> your turn): a real Paper 3 past-paper MCQ on alternate days when the
-  # bank has one, else an original question in the CA Foundation pattern. /regen pyq makes another.
+  # From qt_from on, this slot is the CA Foundation QT trap reel (about 60-80 s: "This question came in the
+  # CA Foundation <attempt> exam" -> the facts -> the tempting wrong working -> "Wrong" -> the right answer ->
+  # steps -> shortcut -> your turn). Every day it uses the next real Paper 3 MCQ from ca_foundation_qt_bank.json
+  # (ICAI's booklets with official keys); when the bank runs out, an original question in the CA Foundation
+  # pattern. /regen pyq makes another.
   format: qt_video
   qt_from: "2026-11-21"
   # 3d = lit 3D scenes, moving camera and sound effects (assets/qt3d); 2d = the older flat drawing.
-  # The voice is Azure's en-IN Prabhat when AZURE_SPEECH_KEY/AZURE_SPEECH_REGION are set, else Kokoro.
+  # The voice is Azure's azure_voice (below) when AZURE_SPEECH_KEY/AZURE_SPEECH_REGION are set, else Kokoro.
   # "/regen pyq video" makes the video again from the same question.
   renderer: "3d"
   azure_voice: "en-IN-AaravNeural"     # chosen 20 Nov; or en-IN-PrabhatNeural / en-IN-KunalNeural

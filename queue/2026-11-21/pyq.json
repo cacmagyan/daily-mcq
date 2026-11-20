@@ -4,249 +4,274 @@
   "course_id": "ca_foundation",
   "paper_code": "Paper 3",
   "paper_name": "Quantitative Aptitude: Business Mathematics",
-  "topic_key": "Annuities and present value",
-  "ref": "",
+  "topic_key": "Simple interest",
+  "ref": "ca_foundation_qt|J26-5",
   "tried": [
     "Paper 6||1-11",
-    "Paper 6||4-15"
+    "Paper 6||4-15",
+    "ca_foundation_qt|J26-5"
   ],
-  "topic": "Annuity due present value",
+  "topic": "Simple interest: multiplying a sum",
   "script": {
-    "theme": "teal",
+    "theme": "navy",
     "badge": {
-      "tag": "CA FOUNDATION",
-      "text": "QT · ANNUITY DUE PRESENT VALUE"
+      "tag": "ASKED IN",
+      "text": "CA FOUNDATION JANUARY 2026 · QT"
     },
-    "header": "CA Foundation pattern · Paper 3 · Quantitative Aptitude",
-    "question": "A person receives **₹2,200 at the start of each year** for 2 years. Interest is 10% p.a. compounded annually. What is the **present value** of this annuity?",
+    "header": "CA Foundation January 2026 · Paper 3 · QT",
+    "question": "If a sum **doubles itself in 8 years**, then in how many years will it become **four times**, assuming that the **simple interest** is calculated?",
     "options": [
-      "₹3,818.18",
-      "₹4,200",
-      "₹4,400",
-      "₹4,000"
+      "16 years",
+      "12 years",
+      "24 years",
+      "20 years"
     ],
-    "answer": 1,
+    "answer": 2,
     "scene": {
       "type": "bars",
-      "max": 4400,
+      "max": 400,
       "bars": [
         {
-          "label": "Pay 1 now",
+          "label": "Start",
           "segments": [
             {
-              "v": 2200.0,
-              "label": "₹2,200"
+              "v": 100.0,
+              "label": "₹100"
             }
           ]
         },
         {
-          "label": "Pay 2 in…",
+          "label": "8 years",
           "segments": [
             {
-              "v": 2200.0,
-              "label": "₹2,200"
+              "v": 200.0,
+              "label": "₹200"
             }
-          ]
+          ],
+          "top": "2 times"
+        },
+        {
+          "label": "? years",
+          "segments": [
+            {
+              "v": 400.0,
+              "label": "₹400"
+            }
+          ],
+          "top": "4 times"
         }
       ],
-      "note": "Start of each year"
+      "note": "Simple interest"
     },
     "lines": [
       {
-        "say": "When payments come at the start of each year, it is an annuity due. Many students forget this and use the ordinary formula.",
+        "say": "This question came in the CA Foundation January 2026 exam.",
         "card": {
-          "kind": "hook",
-          "small": "Annuity due",
-          "big": "Paid at the START"
+          "kind": "attempt",
+          "exam": "CA Foundation",
+          "when": "January 2026",
+          "sub": "Paper 3 · Quantitative Aptitude"
         }
       },
       {
-        "say": "Discount the first payment by 1 year and the second by 2 years. That gives ₹3,818.18. Right?",
+        "say": "A sum doubles itself in 8 years at simple interest. In how many years will it become four times?",
+        "card": {
+          "kind": "hook",
+          "small": "Simple interest",
+          "big": "Doubles in 8 years"
+        }
+      },
+      {
+        "say": "It doubled in 8 years, so four times is double again. 2 × 8 = 16 years. Right?",
         "card": {
           "kind": "hook",
           "small": "So...",
-          "big": "2,200÷1.1 + 2,200÷1.21"
+          "big": "2 × 8 = 16 years?"
         }
       },
       {
-        "say": "Wrong. ₹3,818.18 is the trap, and most students fall for it.",
+        "say": "Wrong. 16 years is the trap.",
         "card": {
           "kind": "trap",
-          "small": "QT · ANNUITY DUE PRESENT VALUE",
-          "big": "₹3,818.18 ×",
+          "small": "CA FOUNDATION JANUARY 2026 · QT",
+          "big": "16 years ×",
           "sub": "that is the trap"
         }
       },
       {
-        "say": "Here is the question. A person receives ₹2,200 at the start of each year for 2 years. Interest is 10% p.a. compounded annually. What is the present value of this annuity?",
+        "say": "The right answer is 24 years. Here's why.",
         "card": {
-          "kind": "question"
+          "kind": "answer",
+          "small": "The right answer",
+          "big": "24 years"
         }
       },
       {
-        "say": "Is it ₹3,818.18, ₹4,200, ₹4,400, or ₹4,000?",
-        "card": {
-          "kind": "question",
-          "options": true
-        }
-      },
-      {
-        "say": "Pause the video, and pick your option.",
-        "card": {
-          "kind": "pause"
-        }
-      },
-      {
-        "say": "The answer is ₹4,200. Not ₹3,818.18.",
-        "card": {
-          "kind": "reveal"
-        }
-      },
-      {
-        "say": "Step one. The payments are at the start of each year.",
+        "say": "Step one. Doubling means the interest equals the principal.",
         "card": {
           "kind": "step",
-          "title": "Step 1 · Spot the timing",
+          "title": "Step 1 · What doubling means",
           "rows": [
-            "Pay 1: time 0"
+            "P = ₹100",
+            "Amount = ₹200"
           ]
         },
         "scene": {
           "type": "bars",
-          "max": 4400,
+          "max": 400,
           "bars": [
             {
-              "label": "Pay 1 now",
+              "label": "Start",
               "segments": [
                 {
-                  "v": 2200.0,
-                  "label": "₹2,200"
-                }
-              ]
-            }
-          ],
-          "note": "No discount today"
-        }
-      },
-      {
-        "say": "So the first ₹2,200 comes today. Today means no discounting.",
-        "card": {
-          "kind": "step",
-          "title": "Step 1 · Spot the timing",
-          "rows": [
-            "Pay 1: time 0",
-            "PV of pay 1 = **₹2,200**"
-          ],
-          "all": true
-        }
-      },
-      {
-        "say": "Step two. The second payment comes after 1 year only.",
-        "card": {
-          "kind": "step",
-          "title": "Step 2 · Discount the second payment",
-          "rows": [
-            "Pay 2: time 1 year"
-          ]
-        },
-        "scene": {
-          "type": "bars",
-          "max": 4400,
-          "bars": [
-            {
-              "label": "Pay 1 now",
-              "segments": [
-                {
-                  "v": 2200.0,
-                  "label": "₹2,200"
+                  "v": 100.0,
+                  "label": "₹100"
                 }
               ]
             },
             {
-              "label": "Pay 2 PV",
+              "label": "8 years",
               "segments": [
                 {
-                  "v": 2000.0,
-                  "label": "₹2,000"
+                  "v": 100.0,
+                  "label": "₹100"
+                },
+                {
+                  "v": 100.0,
+                  "label": "+₹100"
                 }
               ]
             }
           ],
-          "note": "Discount once"
+          "note": "Interest = principal"
         }
       },
       {
-        "say": "Discount it once at 10%. Divide by 1.1.",
+        "say": "Take ₹100. It becomes ₹200, so interest is ₹100 in 8 years.",
         "card": {
           "kind": "step",
-          "title": "Step 2 · Discount the second payment",
+          "title": "Step 1 · What doubling means",
           "rows": [
-            "Pay 2: time 1 year",
-            "2,200 ÷ 1.1 = **₹2,000**"
+            "P = ₹100",
+            "Amount = ₹200",
+            "Interest = ₹100 in 8 years"
           ],
           "all": true
         }
       },
       {
-        "say": "Step three. Add the two values.",
+        "say": "Step two. Simple interest is the same every year.",
         "card": {
           "kind": "step",
-          "title": "Step 3 · Add both present values",
+          "title": "Step 2 · Simple interest is fixed",
           "rows": [
-            "2,200 + 2,000"
+            "₹100 per 8 years"
+          ]
+        }
+      },
+      {
+        "say": "So ₹100 is added every 8 years.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · Simple interest is fixed",
+          "rows": [
+            "₹100 per 8 years",
+            "Always on the original ₹100"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "Step three. Four times means ₹400. Interest needed is ₹300.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · Now four times",
+          "rows": [
+            "Amount = ₹400",
+            "Interest = ₹300 = 3 lots"
           ]
         },
         "scene": {
           "type": "bars",
-          "max": 4400,
+          "max": 400,
           "bars": [
             {
-              "label": "Total PV",
+              "label": "Start",
               "segments": [
                 {
-                  "v": 2200.0,
-                  "label": "₹2,200"
+                  "v": 100.0,
+                  "label": "₹100"
+                }
+              ]
+            },
+            {
+              "label": "8 yrs",
+              "segments": [
+                {
+                  "v": 100.0,
+                  "label": "₹100"
                 },
                 {
-                  "v": 2000.0,
-                  "label": "₹2,000"
+                  "v": 100.0,
+                  "label": "+₹100"
                 }
-              ],
-              "top": "₹4,200"
+              ]
+            },
+            {
+              "label": "24 yrs",
+              "segments": [
+                {
+                  "v": 100.0,
+                  "label": "₹100"
+                },
+                {
+                  "v": 100.0,
+                  "label": "+₹100"
+                },
+                {
+                  "v": 100.0,
+                  "label": "+₹100"
+                },
+                {
+                  "v": 100.0,
+                  "label": "+₹100"
+                }
+              ]
             }
           ],
-          "note": "Annuity due"
+          "note": "3 lots = 24 years"
         }
       },
       {
-        "say": "The ₹3,818.18 is correct only for payments at the end of each year.",
+        "say": "That is three lots of ₹100, so 3 × 8 = 24 years.",
         "card": {
           "kind": "step",
-          "title": "Step 3 · Add both present values",
+          "title": "Step 3 · Now four times",
           "rows": [
-            "2,200 + 2,000",
-            "= **₹4,200**"
+            "Amount = ₹400",
+            "Interest = ₹300 = 3 lots",
+            "3 × 8 = **24 years**"
           ],
           "all": true
         }
       },
       {
-        "say": "The shortcut. Annuity due equals ordinary annuity multiplied by 1 plus i. Here 3,818.18 × 1.1 gives ₹4,200. Or take the first payment, plus an ordinary annuity for one year less.",
+        "say": "The shortcut. Lots of interest needed is always one less than the multiple. Four times needs 3 lots. So 3 × 8 = 24 years.",
         "card": {
           "kind": "shortcut",
           "rows": [
-            "Due = Ordinary × (1 + i)",
-            "3,818.18 × 1.1 = 4,200"
+            "Lots = multiple − 1",
+            "(4 − 1) × 8 = 24 years"
           ]
         }
       },
       {
-        "say": "Your turn. Your turn. A person receives ₹3,300 at the start of each year for 2 years, at 10% p.a. Find the present value. Write your answer in the comments.",
+        "say": "Your turn. A sum triples in 6 years at simple interest. In how many years will it become 7 times?",
         "card": {
           "kind": "your_turn",
           "rows": [
-            "3,300 + 3,300 ÷ 1.1",
-            "3,300 + 3,000"
+            "Triple = 2 lots in 6 years",
+            "7 times = 6 lots: 3 × 6"
           ]
         }
       },
@@ -255,29 +280,26 @@
         "card": {
           "kind": "your_turn",
           "rows": [
-            "3,300 + 3,300 ÷ 1.1",
-            "3,300 + 3,000"
+            "Triple = 2 lots in 6 years",
+            "7 times = 6 lots: 3 × 6"
           ],
           "all": true
         }
       }
     ]
   },
-  "correct": "B",
-  "trap": "₹3,818.18",
-  "your_turn_answer": "₹6,300",
-  "asked_in": "CA Foundation pattern",
-  "check_notes": [
-    "\"Your turn.\" is said twice in a row.",
-    "The card \"2,200 + 2,000 = ₹4,200\" appears while the spoken line is about ₹3,818.18 being correct only for end-of-year payments, so speech and card don't match.",
-    "\"Most students fall for it\" is an unsupported claim."
-  ],
+  "correct": "C",
+  "trap": "16 years",
+  "your_turn_answer": "18 years",
+  "asked_in": "January 2026",
+  "check_notes": [],
   "notes": [],
   "hold": false,
   "hold_reason": "",
   "video": "pyq.mp4",
   "cover": "pyq_cover.jpg",
-  "seconds": 134.2,
-  "thumb_ms": 19033,
-  "caption": "Paid at the START… so ₹3,818.18? That's the trap. 🪤\n\nA person receives ₹2,200 at the start of each year for 2 years. Interest is 10% p.a. compounded annually. What is the present value of this annuity?\n\n(a) ₹3,818.18\n(b) ₹4,200\n(c) ₹4,400\n(d) ₹4,000\n\nPause and comment your option (a, b, c or d) before the answer 👇\nCA Foundation Paper 3 · Quantitative Aptitude.\nSave 🔖 it for your QT revision.\n\nFollow @cacmagyan for a QT trap every day.\n\n#CAFoundation #QuantitativeAptitude #CAStudents #ICAI #MathsTricks\n\nref pyq-261121"
+  "seconds": 67.1,
+  "thumb_ms": 17133,
+  "voice": "en-IN-AaravNeural (Azure)",
+  "caption": "Doubles in 8 years… so 16 years? That's the trap. 🪤\n\nIf a sum doubles itself in 8 years, then in how many years will it become four times, assuming that the simple interest is calculated?\n\n(a) 16 years\n(b) 12 years\n(c) 24 years\n(d) 20 years\n\nDid you pick the trap too? Tell me in the comments 👇\nAsked in CA Foundation January 2026 · Paper 3 (ICAI's official answer key).\nSave 🔖 it for your QT revision.\n\nFollow @cacmagyan for a QT trap every day.\n\n#CAFoundation #QuantitativeAptitude #CAStudents #ICAI #MathsTricks\n\nref pyq-261121"
 }

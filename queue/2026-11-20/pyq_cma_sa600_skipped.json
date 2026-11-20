@@ -1,0 +1,44 @@
+{
+  "kind": "pyq",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 10",
+  "paper_name": "Corporate Accounting and Auditing (Auditing)",
+  "tried": [
+    "Paper 10|Auditing|6-25"
+  ],
+  "ref": "Paper 10|Auditing|6-25",
+  "topic": "Using work of another auditor (SA 600)",
+  "question": "Use of the work of another auditor is guided by ___________",
+  "options": [
+    "SA 600",
+    "SA 550",
+    "SA 500",
+    "SA 450"
+  ],
+  "correct": "A",
+  "explanation": "SA 600 deals with Using the Work of Another Auditor. It applies when the principal auditor uses the work of other auditors, for example on branches or components. The principal auditor stays responsible for the opinion.",
+  "working": [],
+  "why_not": {
+    "B": "SA 550 is Related Parties.",
+    "C": "SA 500 is Audit Evidence.",
+    "D": "SA 450 is Evaluation of Misstatements Identified during the Audit."
+  },
+  "exam_tip": "Remember SA 600 as another auditor. SA 610 is internal audit, and SA 620 is auditor's expert.",
+  "asked_in": "CMA Inter June 2025 exam",
+  "asked_short": "Jun 2025 exam",
+  "papers_tags": [
+    "PY J25"
+  ],
+  "check_notes": [],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "image_prefix": "pyq",
+  "author": "Ranjith Shivahari",
+  "images": {
+    "question": "pyq_q.jpg",
+    "answer": "pyq_a.jpg"
+  },
+  "fit_notes": [],
+  "caption": "📜 PYQ of the day · CMA Inter\nPaper 10: Corporate Accounting and Auditing (Auditing)\nAsked in the CMA Inter June 2025 exam\n\nTry it first: comment your answer (A, B, C or D), then swipe for the solution.\nSave 🔖 it for revision: past papers repeat ideas.\n\nFollow @cacmagyan for a past-paper question every day.\n\n#PYQ #CMAInter #ICMAI #CMAExam #PastPapers\n\nref pyq-261120"
+}

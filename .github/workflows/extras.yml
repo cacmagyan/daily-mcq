@@ -1,6 +1,7 @@
 name: 8. PYQ and countdown
 
-# Makes tomorrow's PYQ of the day (queue/DATE/pyq.json + 2 slides) and exam countdown Story
+# Makes tomorrow's PYQ slot (the CA Foundation QT trap reel: queue/DATE/pyq.json + pyq.mp4, or the
+# older PYQ slides) and exam countdown Story
 # (countdown.json + countdown.jpg). The early-morning run makes today's if the evening run missed it.
 on:
   schedule:
@@ -22,7 +23,7 @@ concurrency:
 jobs:
   extras:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
         with:
@@ -39,7 +40,16 @@ jobs:
         run: |
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
+          # ffmpeg makes the QT trap reel; espeak-ng gives its voice the pronunciation
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng >/dev/null
           if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then npm install -g @anthropic-ai/claude-code; fi
+
+      # the free voice (Kokoro, ~340 MB): the same cache the explainers use
+      - name: Voice model cache
+        uses: actions/cache@v4
+        with:
+          path: .kokoro
+          key: kokoro-v1.0
 
       - name: Make the PYQ and the countdown
         id: make
@@ -60,7 +70,9 @@ jobs:
         run: |
           git config user.name "mcq-agent"
           git config user.email "mcq-agent@users.noreply.github.com"
-          git add "queue/$DATE/pyq.json" "queue/$DATE/countdown.json" queue/$DATE/pyq_*.jpg queue/$DATE/countdown.jpg 2>/dev/null || true
+          for f in queue/$DATE/pyq.json queue/$DATE/countdown.json queue/$DATE/pyq_*.jpg queue/$DATE/pyq.mp4 queue/$DATE/countdown.jpg; do
+            [ -e "$f" ] && git add "$f"
+          done
           if git diff --cached --quiet; then exit 0; fi
           git commit -q -m "PYQ and countdown for $DATE"
           for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep 5; done

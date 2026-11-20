@@ -2397,3 +2397,116 @@ class TopicStyleTests(TempQueue):
             self.assertNotIn("linked_mcq", P._concept_base(self.cfg, date))
             self.cfg.raw["mcqs"]["post"] = True
             self.assertEqual(P._concept_base(self.cfg, date)["linked_mcq"], "EOQ")
+
+
+class QTTrapTests(TempQueue):
+    """The CA Foundation QT trap reel in the PYQ slot (qtpuzzle.py + qt_video.py)."""
+
+    FAKE = {"topic": "Simple interest", "theme": "navy",
+            "question": "A sum **doubles in 5 years** at simple interest. In how many years will it become **four times**?",
+            "options": ["10 years", "15 years", "20 years", "12 years"], "answer": 1, "trap": 0,
+            "hook_small": "Simple interest", "hook_big": "Doubles in 5 years",
+            "hook_say": "A sum of money doubles in 5 years at simple interest, and you have to find when it becomes four times.",
+            "wrong_big": "5 × 2 = 10 years?", "wrong_say": "Four times is double the double, so 10 years. Right?",
+            "scene": {"type": "bars", "max": 400, "bars": [{"label": "Start", "segments": [{"v": 100, "label": "₹100"}]}]},
+            "steps": [{"title": "What doubling means", "says": ["Take 100 rupees. Doubling means 200 rupees, so the interest for 5 years is 100 rupees.",
+                                                                "That is 100 percent of the principal in 5 years."],
+                       "rows": ["₹100 → ₹200 in 5 years", "Interest = **₹100**"],
+                       "scene": {"bars": [{"label": "5 yrs", "segments": [{"v": 100}, {"v": 100}]}]}},
+                      {"title": "Four times", "says": ["Four times means 400 rupees, which is 300 rupees of interest.",
+                                                       "100 rupees every 5 years, so 300 takes three blocks of 5 years, which is 15 years."],
+                       "rows": ["Interest needed = ₹300", "**3 × 5 = 15 years**"], "scene": {"type": "nonsense"}}],
+            "shortcut_say": "Under simple interest count the interest, not the multiple. n times takes n minus 1 doublings worth of time.",
+            "shortcut_rows": ["n times in (n − 1) × T years"],
+            "your_turn_say": "A sum becomes three times in 8 years at simple interest. When will it become five times?",
+            "your_turn_rows": ["3 times in 8 years", "5 times in ? years"], "your_turn_answer": "16 years"}
+    OK = {"your_answer": "B", "follow_up_answer": "16 years", "issues": [], "severity": "none"}
+
+    def setUp(self):
+        super().setUp()
+        self.cfg.raw.setdefault("pyq", {}).update(enabled=True, format="qt_video", qt_from="2026-11-21", start_date="2026-11-01")
+        self.cfg.pyq = self.cfg.raw["pyq"]
+
+    def test_assemble_keeps_the_fixed_order(self):
+        from mcq_agent import qtpuzzle as QT
+        s = QT.assemble(self.FAKE, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr")
+        kinds = [ln["card"]["kind"] for ln in s["lines"]]
+        self.assertEqual(kinds[:7], ["hook", "hook", "trap", "question", "question", "pause", "reveal"])
+        self.assertEqual(kinds[-3:], ["shortcut", "your_turn", "your_turn"])
+        self.assertIn("10 years ×", s["lines"][2]["card"]["big"])
+        self.assertTrue(s["lines"][7]["say"].startswith("Step one."))
+        self.assertNotIn("scene", [k for ln in s["lines"] if ln["say"].startswith("Step two") for k in ln])   # bad scene dropped
+        self.assertEqual(s["answer"], 1)
+
+    def test_scene_validation(self):
+        from mcq_agent import qtpuzzle as QT
+        self.assertIsNone(QT.valid_scene({"type": "spaceship"}))
+        self.assertEqual(QT.valid_scene({"type": "row", "n": 99})["n"], 20)
+        self.assertIsNone(QT.valid_scene({"type": "line", "from": "x"}))
+
+    def test_content_checks(self):
+        from mcq_agent import qtpuzzle as QT
+        self.assertEqual(QT.check_content(self.FAKE), [])
+        bad = {**self.FAKE, "trap": 1, "options": ["a", "a", "b", "c"]}
+        self.assertEqual(len(QT.check_content(bad)), 2)
+
+    def test_make_needs_the_examiner_to_agree(self):
+        from mcq_agent import qtpuzzle as QT
+        date = dt.date(2026, 11, 21)
+        with mock.patch("mcq_agent.generator._call_claude", return_value=self.FAKE), \
+             mock.patch("mcq_agent.generator.call_checker", return_value={**self.OK, "your_answer": "A"}):
+            it = QT.make(self.cfg, date)
+        self.assertIn("examiner got (a)", it["error"])
+        with mock.patch("mcq_agent.generator._call_claude", return_value=self.FAKE), \
+             mock.patch("mcq_agent.generator.call_checker", return_value=self.OK):
+            it = QT.make(self.cfg, date)
+        self.assertEqual((it["correct"], it["trap"], it["format"]), ("B", "10 years", "qt_video"))
+        self.assertEqual(it["script"]["badge"]["text"], "QT · SIMPLE INTEREST")
+
+    def test_make_pyq_switches_to_the_reel_from_qt_from(self):
+        date = dt.date(2026, 11, 21)
+        self.assertFalse(self.cfg.qt_video_on(dt.date(2026, 11, 20)))
+        self.assertTrue(self.cfg.qt_video_on(date))
+
+        def fake_render(script, out, cover, **kw):
+            out.write_bytes(b"x")
+            cover.write_bytes(b"x")
+            return {"seconds": 95.0, "lines": len(script["lines"]), "cover_ms": 9000}
+        with mock.patch("mcq_agent.generator._call_claude", return_value=self.FAKE), \
+             mock.patch("mcq_agent.generator.call_checker", return_value=self.OK), \
+             mock.patch("mcq_agent.qt_video.render", side_effect=fake_render):
+            it = P.make_pyq(self.cfg, date)
+        self.assertEqual((it["video"], it["cover"], it["thumb_ms"]), ("pyq.mp4", "pyq_cover.jpg", 9000))
+        self.assertIn("That's the trap", it["caption"])
+        self.assertTrue((B.batch_dir(date) / "pyq.mp4").exists())
+
+    def test_the_reel_posts_at_the_pyq_time(self):
+        from mcq_agent import pyqday as Q
+        date = dt.date(2026, 11, 21)
+        PublishTests._batch(self, date)
+        Q.save(date, {"kind": "pyq", "format": "qt_video", "course_id": "ca_foundation", "video": "pyq.mp4",
+                      "caption": "cap", "thumb_ms": 9000, "topic": "SI", "hold": False})
+        (B.batch_dir(date) / "pyq.mp4").write_bytes(b"x")
+        with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "t", "IG_USER_ID": "1"}), \
+             mock.patch("mcq_agent.instagram.Instagram.find_by_ref", return_value=None), \
+             mock.patch("mcq_agent.hosting.video_urls", return_value=["https://x/pyq.mp4"]), \
+             mock.patch("mcq_agent.instagram.Instagram.post_reel", return_value={"media_id": "r1"}) as reel, \
+             mock.patch("mcq_agent.instagram.Instagram.post_carousel") as carousel:
+            P.publish_due(self.cfg, date, dt.time(17, 5), limit=10)
+        self.assertEqual(carousel.call_count, 0)
+        self.assertEqual(reel.call_args.args[1], "cap")
+        self.assertEqual(reel.call_args.kwargs.get("thumb_offset"), 9000)
+        self.assertEqual(B.load_posted(date)["pyq"]["media_id"], "r1")
+
+    def test_silent_render_makes_a_vertical_video(self):
+        from mcq_agent import qt_video as V
+        from mcq_agent import qtpuzzle as QT
+        s = QT.assemble(self.FAKE, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr")
+        s["lines"] = s["lines"][:3]
+        out, cover = self.tmp / "t.mp4", self.tmp / "c.jpg"
+        r = V.render(s, out, cover, silent=True)
+        self.assertTrue(out.exists() and cover.exists())
+        self.assertGreater(r["seconds"], 5)
+        from PIL import Image
+        with Image.open(cover) as im:
+            self.assertEqual(im.size, (1080, 1920))

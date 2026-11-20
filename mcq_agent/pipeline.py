@@ -461,6 +461,8 @@ def make_pyq(cfg: Config, date: dt.date, instruction: str = "") -> dict:
     from . import pyqday as Q
     _not_posted(date, PYQ)
     old = Q.load(date) or {}
+    if cfg.qt_video_on(date):
+        return _make_qt(cfg, date, instruction, old)
     item = Q.make(cfg, date, instruction)
     item["tried"] = sorted(set(item.get("tried") or []) | set(old.get("tried") or []))
     if not item.get("error"):
@@ -473,6 +475,31 @@ def make_pyq(cfg: Config, date: dt.date, instruction: str = "") -> dict:
         set_hold(item)
     Q.save(date, item)
     print(f"  {'✗' if item.get('error') else '✓'} PYQ for {date}: " + (item.get("error") or f"{item['asked_in']}, {item['topic']}"))
+    return item
+
+
+def _make_qt(cfg: Config, date: dt.date, instruction: str, old: dict) -> dict:
+    """The QT trap reel in the PYQ slot (queue/DATE/pyq.json + pyq.mp4 + pyq_cover.jpg)."""
+    from . import pyqday as Q
+    from . import qt_video as V
+    from . import qtpuzzle as QT
+
+    item = QT.make(cfg, date, instruction)
+    item["tried"] = sorted(set(item.get("tried") or []) | set(old.get("tried") or []))
+    if not item.get("error"):
+        out = batch_dir(date)
+        out.mkdir(parents=True, exist_ok=True)
+        try:
+            res = V.render(item["script"], out / "pyq.mp4", out / "pyq_cover.jpg",
+                           voice=str(cfg.pyq.get("voice", "am_michael")), handle=cfg.brand.get("handle", "").strip())
+            item.update(video="pyq.mp4", cover="pyq_cover.jpg", seconds=res["seconds"], thumb_ms=res.get("cover_ms"))
+            item["caption"] = QT.caption(cfg, item, date)
+        except Exception as exc:  # noqa: BLE001 - keep the script; the video can be remade with /regen pyq
+            item.update(hold=True, hold_reason=f"the video could not be made: {str(exc)[:160]}")
+    Q.save(date, item)
+    print(f"  {'✗' if item.get('error') else '✓'} QT trap for {date}: "
+          + (item.get("error") or f"{item['topic']} ({item['asked_in']}), {item.get('seconds', '?')} s")
+          + (f" (on hold: {item['hold_reason']})" if item.get("hold") else ""))
     return item
 
 
@@ -718,8 +745,13 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
     failures = 0
     for item in due[:limit]:
         cid = _key(item)
-        is_reel = item.get("kind") in (REEL, *EXPLAINERS)
-        if item.get("kind") in EXPLAINERS:
+        is_reel = item.get("kind") in (REEL, *EXPLAINERS) or (item.get("kind") == PYQ and bool(item.get("video")))
+        if item.get("kind") == PYQ and item.get("video"):        # the QT trap reel
+            from . import qtpuzzle as QT
+            video = batch_dir(date) / item["video"]
+            paths, alts = [video], []
+            caption = item.get("caption") or QT.caption(cfg, item, date)
+        elif item.get("kind") in EXPLAINERS:
             from . import explainer as X
             video = batch_dir(date) / item["video"]
             paths, alts = [video], []
@@ -843,6 +875,10 @@ def reel_options(cfg: Config, item: dict | None = None) -> dict:
     trial = cfg.reels.get("trial")
     opts = {"share_to_feed": not trial, "trial": "SS_PERFORMANCE" if trial else None,
             "audio_name": str(cfg.reels.get("audio_name") or "").strip()}
+    if item and item.get("kind") == PYQ and item.get("video"):
+        opts["audio_name"] = "QT trap · CA CMA Gyan"
+        if item.get("thumb_ms"):
+            opts["thumb_offset"] = int(item["thumb_ms"])
     if item and item.get("kind") in EXPLAINERS:
         opts["audio_name"] = str(cfg.explainer.get("audio_name") or "Concept explained · CA CMA Gyan").strip()
         if item.get("thumb_ms"):

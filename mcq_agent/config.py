@@ -179,6 +179,11 @@ class Config:
         start = self.pyq.get("start_date")
         return bool(self.pyq.get("enabled") and (not start or date >= dt.date.fromisoformat(str(start))))
 
+    def qt_video_on(self, date: dt.date) -> bool:
+        """The PYQ slot carries the QT trap reel (pyq.format: qt_video) from pyq.qt_from on."""
+        start = self.pyq.get("qt_from")
+        return self.pyq.get("format") == "qt_video" and (not start or date >= dt.date.fromisoformat(str(start)))
+
     def pyq_time(self) -> str:
         return str(self.pyq.get("post_time", "17:00"))
 

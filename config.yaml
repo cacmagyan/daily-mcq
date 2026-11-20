@@ -78,6 +78,12 @@ pyq:
   post_time: "17:00"            # IST; keep matched to the 17:02 line in publish.yml
   course: cma_inter
   hashtags: ["#PYQ", "#CMAInter", "#ICMAI", "#CMAExam", "#PastPapers"]
+  # From qt_from on, this slot is the CA Foundation QT trap reel (90-110 s, trap -> question -> pause ->
+  # answer -> steps -> shortcut -> your turn): a real Paper 3 past-paper MCQ on alternate days when the
+  # bank has one, else an original question in the CA Foundation pattern. /regen pyq makes another.
+  format: qt_video
+  qt_from: "2026-11-21"
+  hashtags_qt: ["#CAFoundation", "#QuantitativeAptitude", "#CAStudents", "#ICAI", "#MathsTricks"]
 
 # Exam countdown: a daily Story "N days to <exam>" with one must-revise topic. It follows the day's MCQ
 # family (CMA one day, CA the next); that family's exams take turns. Update the dates each term.

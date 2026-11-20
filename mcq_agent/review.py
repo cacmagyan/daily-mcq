@@ -334,9 +334,18 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
     if reel and not reel_held:
         lines += ["", "## MCQ reel" + (" (backup)" if ex_ok else ""), ""] + _reel_block(cfg, reel, repo, branch, date)
     if pyq_item:
-        lines += ["", f"## 📜 PYQ of the day ({cfg.pyq_time()})", ""]
+        qt = pyq_item.get("format") == "qt_video"
+        lines += ["", f"## {'🧮 QT trap of the day' if qt else '📜 PYQ of the day'} ({cfg.pyq_time()})", ""]
         if pyq_item.get("error"):
             lines += [f"❌ Not made: {pyq_item['error']}. Comment `/regen pyq` to try again.", ""]
+        elif qt:
+            if pyq_item.get("cover"):
+                lines += [f'<img src="{_img(repo, branch, date, pyq_item["cover"])}" width="200">', ""]
+            if pyq_item.get("video"):
+                lines += [f"[▶ Watch the reel]({_img(repo, branch, date, pyq_item['video'])}) · {pyq_item.get('seconds', '?')} s", ""]
+            lines += [f"**{pyq_item.get('topic', '')}** · {pyq_item.get('asked_in', '')} · answer ({pyq_item.get('correct', '').lower()}), "
+                      f"trap: {pyq_item.get('trap', '')} · your-turn answer: {pyq_item.get('your_turn_answer', '')}",
+                      "", "`/regen pyq` makes another; `/regen pyq <instruction>` to steer it.", ""]
         else:
             imgs = pyq_item.get("images") or {}
             lines += [" ".join(f'<img src="{_img(repo, branch, date, imgs[k])}" width="240">' for k in ("question", "answer") if k in imgs),

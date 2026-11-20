@@ -5,7 +5,7 @@ name: Past papers (qt3d-reel branch)
 on:
   push:
     branches: [qt3d-reel]
-    paths: ["demo/papers/request.txt"]
+    paths: ["demo/papers/request.txt", "demo/papers/pages.txt"]
 
 permissions:
   contents: write
@@ -26,7 +26,7 @@ jobs:
             case "$name" in \#*) continue;; esac
             [ -d "$name" ] && continue
             mkdir -p "$name"
-            if curl -sSfL -o "$name.pdf" "$url"; then
+            if curl -sSfL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36" -o "$name.pdf" "$url"; then
               pdfinfo "$name.pdf" | grep Pages
               pdftoppm -r 110 -gray -jpeg -jpegopt quality=72 "$name.pdf" "$name/p"
               rm -f "$name.pdf"
@@ -34,6 +34,17 @@ jobs:
               echo "could not download $name"; rmdir "$name"
             fi
           done < request.txt
+      - name: List the PDF links on the pages in pages.txt
+        run: |
+          cd demo/papers
+          [ -f pages.txt ] || exit 0
+          : > links.txt
+          while read -r url; do
+            [ -z "$url" ] && continue
+            echo "== $url" >> links.txt
+            curl -sSL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36" "$url" \
+              | grep -oiE 'href="[^"]+\.pdf"[^<]*<?[^<]{0,120}' | head -200 >> links.txt || echo "failed" >> links.txt
+          done < pages.txt
       - name: Save
         run: |
           git config user.name "mcq-agent"; git config user.email "mcq-agent@users.noreply.github.com"

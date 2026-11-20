@@ -2,13 +2,7 @@ ca_inter_p4/May2025 https://resource.cdn.icai.org/86871exam-mcq-int-may2025-kp4.
 ca_inter_p4/Sep2025 https://resource.cdn.icai.org/89262exam-aps3009-int-p4.pdf
 ca_inter_p4/Jan2026 https://resource.cdn.icai.org/91190exam-aps4305-mcq-jan2026-int-p4.pdf
 ca_inter_p4/May2026 https://resource.cdn.icai.org/92869exam-may2026-mcq-keys-int-p4.pdf
-cma_final_p16/June-24 https://icmai.in/upload/suggestedanswer/June-24/P16.pdf
-cma_final_p14/June-24 https://icmai.in/upload/suggestedanswer/June-24/P14.pdf
-cma_final_p16/Dec-24 https://icmai.in/upload/suggestedanswer/Dec-24/P16.pdf
-cma_final_p14/Dec-24 https://icmai.in/upload/suggestedanswer/Dec-24/P14.pdf
-cma_final_p16/June-25 https://icmai.in/upload/suggestedanswer/June-25/P16.pdf
-cma_final_p14/June-25 https://icmai.in/upload/suggestedanswer/June-25/P14.pdf
-cma_final_p16/Dec-25 https://icmai.in/upload/suggestedanswer/Dec-25/P16.pdf
-cma_final_p14/Dec-25 https://icmai.in/upload/suggestedanswer/Dec-25/P14.pdf
-cma_final_p16/June-26 https://icmai.in/upload/suggestedanswer/June-26/P16.pdf
-cma_final_p14/June-26 https://icmai.in/upload/suggestedanswer/June-26/P14.pdf
+cma_final_p16_key/June-24 https://icmai.in/upload/suggestedanswer/June-24/P16.pdf
+cma_final_p16_key/Dec-24 https://icmai.in/upload/suggestedanswer/Dec-24/P16.pdf
+cma_final_p16_key/June-25 https://icmai.in/upload/suggestedanswer/June-25/P16.pdf
+cma_final_p16_key/Dec-25 https://icmai.in/upload/suggestedanswer/Dec-25/P16.pdf

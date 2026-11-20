@@ -6,6 +6,36 @@
  "paper_name": "Quantitative Aptitude",
  "questions": [
   {
+   "q": 5,
+   "chapter": "J26",
+   "chapter_title": "Simple interest",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY J26"
+   ],
+   "asked": "January 2026",
+   "kind": "mcq",
+   "text": "If a sum doubles itself in 8 years, then in how many years will it become four times, assuming that the simple interest is calculated? (a) 16 years (b) 12 years (c) 24 years (d) 20 years",
+   "answer": "(c)",
+   "trap": "(a)",
+   "trap_why": "they double the time (2 × 8 = 16), but under simple interest four times needs three lots of interest: 3 × 8 = 24"
+  },
+  {
+   "q": 1,
+   "chapter": "M25",
+   "chapter_title": "Ratio and proportion",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY M25"
+   ],
+   "asked": "May 2025",
+   "kind": "mcq",
+   "text": "A startup business was initiated by an entrepreneur by investing ₹1,40,000. His friend joined him after six months with an amount of ₹2,10,000. Thereafter an angel investor joined them with ₹2,80,000 after another six months. What should be the ratio of distribution of total earnings, three years since beginning of business among entrepreneur, his friend and angel investor? (a) 7 : 6 : 10 (b) 12 : 15 : 16 (c) 42 : 45 : 56 (d) 2 : 3 : 4",
+   "answer": "(b)",
+   "trap": "(d)",
+   "trap_why": "they share in the ratio of the amounts invested (2 : 3 : 4) and ignore how many months each amount stayed in"
+  },
+  {
    "q": 17,
    "chapter": "S24",
    "chapter_title": "Time value of money",
@@ -19,6 +49,66 @@
    "answer": "(d)",
    "trap": "(a)",
    "trap_why": "20 years is 4 blocks of 5 years, so they multiply by 2 × 4 = 8 instead of doubling 4 times (2⁴ = 16)"
+  },
+  {
+   "q": 46,
+   "chapter": "J25",
+   "chapter_title": "Direction sense",
+   "section": "Logical Reasoning",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "Anil started walking 5 kms towards north then he turned left and walked 3 kms. Again he turned left and walked 5 kms. Then the total number of kms he walked is (a) 13 kms (b) 8 kms (c) 3 kms (d) 5 kms",
+   "answer": "(a)",
+   "trap": "(c)",
+   "trap_why": "3 km is how far he ends up from the start; the question asks for the total distance walked, 5 + 3 + 5"
+  },
+  {
+   "q": 13,
+   "chapter": "M26",
+   "chapter_title": "Sequence and series",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY M26"
+   ],
+   "asked": "May 2026",
+   "kind": "mcq",
+   "text": "If the first term of a geometric progression exceeds the second term by 4 and the sum of its terms till infinity is 100, then the common ratio is (a) 1/5 (b) 4/5 (c) 3/5 (d) 2/5",
+   "answer": "(b)",
+   "trap": "(a)",
+   "trap_why": "they get 1 − r = 1/5 and stop there, writing r = 1/5"
+  },
+  {
+   "q": 2,
+   "chapter": "S25",
+   "chapter_title": "Ratio and proportion",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY S25"
+   ],
+   "asked": "September 2025",
+   "kind": "mcq",
+   "text": "XYZ invested ₹1,68,000 in a business. After a few months, MNP joined in the business by investing ₹1,12,000 in the business. At the end of year, the total profit was divided between them in the ratio 2 : 1. After how many months did MNP join the business? (a) 3 (b) 2 (c) 4 (d) 9",
+   "answer": "(a)",
+   "trap": "(d)",
+   "trap_why": "9 is how many months MNP's money was in the business; he joined after 12 − 9 = 3 months"
+  },
+  {
+   "q": 6,
+   "chapter": "M25",
+   "chapter_title": "Equations",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY M25"
+   ],
+   "asked": "May 2025",
+   "kind": "mcq",
+   "text": "Puru gets on the elevator at the 11th floor of a building and rides up at the rate of 57 floors per minute. At the same time, Ishu gets on an elevator at the 51st floor of the same building and rides down at the rate of 63 floors per minute. If they continue travelling at these rates, then at which floor will their paths cross? (a) 17 (b) 19 (c) 27 (d) 30",
+   "answer": "(d)",
+   "trap": "(b)",
+   "trap_why": "19 is how many floors Puru climbs before they meet; he started at floor 11, so they cross at 11 + 19 = 30"
   },
   {
    "q": 20,
@@ -36,6 +126,66 @@
    "trap_why": "they take 10% of ₹1,000 off twice, simple-interest style, instead of dividing by 1.1²"
   },
   {
+   "q": 40,
+   "chapter": "J25",
+   "chapter_title": "Permutations and combinations",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "A committee of 3 members is formed from 5 women and 3 men in such a way that it consists at least 2 members who are women. In how many different ways can it be done? (a) 40 (b) 50 (c) 60 (d) 30",
+   "answer": "(a)",
+   "trap": "(d)",
+   "trap_why": "they count only 2 women + 1 man (5C2 × 3C1 = 30) and forget the all-women committee (5C3 = 10)"
+  },
+  {
+   "q": 12,
+   "chapter": "M26",
+   "chapter_title": "Permutations and combinations",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY M26"
+   ],
+   "asked": "May 2026",
+   "kind": "mcq",
+   "text": "Find out the number of 5-digit even numbers that can be formed from digits 1 to 7 without repetition of any digit. (a) 720 (b) 360 (c) 1080 (d) 840",
+   "answer": "(c)",
+   "trap": "(b)",
+   "trap_why": "they fill the places after fixing one even digit at the end (6 × 5 × 4 × 3 = 360) and forget there are 3 choices for it: 2, 4 or 6"
+  },
+  {
+   "q": 15,
+   "chapter": "S25",
+   "chapter_title": "Compound interest",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY S25"
+   ],
+   "asked": "September 2025",
+   "kind": "mcq",
+   "text": "Mr. X borrowed ₹6,000 from Mr. Y at 10% per annum simple interest. After two years Mr. X wanted to repay this amount, Mr. Y insisted on paying the amount at compound interest at the same rate compounded annually. How much extra does Mr. X have to pay? (a) ₹60 (b) ₹1,260 (c) ₹1,200 (d) ₹80",
+   "answer": "(a)",
+   "trap": "(b)",
+   "trap_why": "₹1,260 is the whole compound interest; the question asks only for the extra over the ₹1,200 simple interest"
+  },
+  {
+   "q": 45,
+   "chapter": "M25",
+   "chapter_title": "Coding and decoding",
+   "section": "Logical Reasoning",
+   "papers": [
+    "PY M25"
+   ],
+   "asked": "May 2025",
+   "kind": "mcq",
+   "text": "A certain code \"564\" means \"all the best\", \"736\" means \"best of luck\" and \"423\" means \"all is luck\". Which of the following is the code for \"luck\"? (a) 6 (b) 4 (c) 3 (d) 7",
+   "answer": "(c)",
+   "trap": "(a)",
+   "trap_why": "6 is the digit common to the first two codes, so it stands for 'best', not 'luck'"
+  },
+  {
    "q": 2,
    "chapter": "S24",
    "chapter_title": "Ratio and proportion",
@@ -49,6 +199,36 @@
    "answer": "(a)",
    "trap": "(d)",
    "trap_why": "they take the average (12 + 27) ÷ 2 = 19.5; the mean proportional is the square root of the product"
+  },
+  {
+   "q": 8,
+   "chapter": "J26",
+   "chapter_title": "Compound interest",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY J26"
+   ],
+   "asked": "January 2026",
+   "kind": "mcq",
+   "text": "Bank B provides loans at 15% per annum compound interest. If Mr. XYZ borrowed ₹3,200 for 2 years from Bank B, then how much interest must Mr. XYZ pay to his bank? (a) ₹400 (b) ₹960 (c) ₹4,232 (d) ₹1,032",
+   "answer": "(d)",
+   "trap": "(b)",
+   "trap_why": "₹960 is simple interest (2 × 15% of ₹3,200); compound interest also charges interest on the first year's interest"
+  },
+  {
+   "q": 17,
+   "chapter": "M25",
+   "chapter_title": "Time value of money",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY M25"
+   ],
+   "asked": "May 2025",
+   "kind": "mcq",
+   "text": "Shiv deposits ₹10,000 annually in a bank for 5 years, at 10 percent annual compounding interest rate. Calculate the approximate value of this series of deposits at the end of five years, if each deposit occurs at the beginning of the year. (a) ₹61,050 (b) ₹67,156 (c) ₹71,050 (d) ₹77,160",
+   "answer": "(b)",
+   "trap": "(a)",
+   "trap_why": "₹61,050 is the ordinary annuity (deposits at the end of each year); deposits at the beginning earn one more year, so multiply by 1.1"
   },
   {
    "q": 25,
@@ -66,6 +246,51 @@
    "trap_why": "they place the 3 girls in the 5 gaps (5P3 = 60) and forget that the 4 boys can also be arranged in 4! = 24 ways"
   },
   {
+   "q": 49,
+   "chapter": "S25",
+   "chapter_title": "Direction sense",
+   "section": "Logical Reasoning",
+   "papers": [
+    "PY S25"
+   ],
+   "asked": "September 2025",
+   "kind": "mcq",
+   "text": "Two persons, P and Q, start walking from a meeting point towards North. After walking 100 metres, P turns left and Q turns right. P, after walking 50 metres, takes a left turn and walks 150 metres. But Q walks 30 metres, turns to his right and walks 90 metres. What is the shortest distance between P and Q now in metres? (a) 80 (b) 90 (c) 100 (d) 110",
+   "answer": "(c)",
+   "trap": "(a)",
+   "trap_why": "80 m is only the east-west gap; they also end 60 m apart north-south, so the distance is √(80² + 60²) = 100"
+  },
+  {
+   "q": 10,
+   "chapter": "J25",
+   "chapter_title": "Ratio and proportion",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "Three Employees A, B and C of a firm receive variable incentive money in the ratio 3 : 4 : 5. Then the Management also gave a fixed incentive of ₹4,000 to each of them. As a result now the total incentive amount of A, B and C becomes in the ratio 5 : 6 : 7. How much amount did B get as variable incentive? (a) ₹2,000 (b) ₹4,000 (c) ₹6,000 (d) ₹8,000",
+   "answer": "(d)",
+   "trap": "(a)",
+   "trap_why": "they find the ratio unit x = ₹2,000 and stop; B's variable incentive is 4x = ₹8,000"
+  },
+  {
+   "q": 47,
+   "chapter": "M25",
+   "chapter_title": "Direction sense",
+   "section": "Logical Reasoning",
+   "papers": [
+    "PY M25"
+   ],
+   "asked": "May 2025",
+   "kind": "mcq",
+   "text": "Rajni walked 20 m towards the North. Then she turned right and walks 30 m. Then she turns right and walks 35 m. Then she turns left and walks 15 m. Finally she turns left and walks 15 m. In which direction and how many meters is she from the starting position? (a) 15 m West (b) 30 m East (c) 30 m West (d) 45 m East",
+   "answer": "(d)",
+   "trap": "(b)",
+   "trap_why": "they count only the first 30 m east and miss the later 15 m east; the north and south walks cancel out"
+  },
+  {
    "q": 35,
    "chapter": "S24",
    "chapter_title": "Sets",
@@ -79,6 +304,36 @@
    "answer": "(b)",
    "trap": "(a)",
    "trap_why": "2ⁿ counts every subset, including the set itself, which is not a proper subset"
+  },
+  {
+   "q": 3,
+   "chapter": "M25",
+   "chapter_title": "Logarithms",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY M25"
+   ],
+   "asked": "May 2025",
+   "kind": "mcq",
+   "text": "If log((a + b)/4) = ½(log a + log b), then the value of a/b + b/a will be (a) 12 (b) 14 (c) 16 (d) 8",
+   "answer": "(b)",
+   "trap": "(c)",
+   "trap_why": "they reach (a + b)² = 16ab and pick 16, but a/b + b/a = (a² + b²)/ab = 16 − 2 = 14"
+  },
+  {
+   "q": 1,
+   "chapter": "J25",
+   "chapter_title": "Ratio and proportion",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "Suppose a father had a sum of ₹3,600 and he decided to divide this amount among his three sons Anil, Sunil and Nimal in such a way that 3 times Anil's share, 6 times Sunil's share, and 8 times Nimal's share are all equal. Then Anil's share is (a) ₹1,920 (b) ₹960 (c) ₹720 (d) ₹1,860",
+   "answer": "(a)",
+   "trap": "(c)",
+   "trap_why": "they read '3 times Anil's share' as Anil getting 3 parts; equal multiples mean shares of 1/3 : 1/6 : 1/8 = 8 : 4 : 3, so Anil gets the most"
   },
   {
    "q": 5,

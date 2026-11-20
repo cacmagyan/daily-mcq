@@ -1,4 +1,4 @@
-"""QT trap of the day: a CA Foundation Quantitative Aptitude question as a 60-80 s reel (qt3d.py / qt_video.py).
+"""Trap of the day: a past-paper MCQ (CA Foundation QT, or another paper in SUBJECTS) as a 60-80 s reel (qt3d.py / qt_video.py).
 
 It takes the PYQ slot (pyq.format: qt_video). Claude writes only the content: the trap (the tempting wrong
 answer), the question, the steps, the shortcut, a follow-up question and simple scene data. The fixed
@@ -34,6 +34,34 @@ TOPICS = [
     ("Statistics", "Probability"), ("Statistics", "Binomial and Poisson distribution"),
     ("Statistics", "Correlation and regression"), ("Statistics", "Index numbers"),
 ]
+ECO_TOPICS = [
+    ("Theory of Demand and Supply", "Price elasticity of demand"), ("Theory of Demand and Supply", "Cross and income elasticity"),
+    ("Theory of Demand and Supply", "Elasticity of supply"), ("Theory of Production and Cost", "Total, average and marginal product"),
+    ("Theory of Production and Cost", "Fixed, variable and average costs"), ("Theory of Production and Cost", "Normal and supernormal profit"),
+    ("Price Determination in Different Markets", "Total, average and marginal revenue"),
+    ("Price Determination in Different Markets", "MR, AR and elasticity"),
+    ("National Income Accounting", "GDP, GNP, NNP at market price and factor cost"), ("National Income Accounting", "Real GDP and the GDP deflator"),
+    ("Determination of National Income", "Consumption, saving and equilibrium income"), ("Determination of National Income", "The investment multiplier"),
+    ("Public Finance", "Fiscal, revenue and primary deficit"), ("Money Market", "Money supply measures and the money multiplier"),
+    ("Money Market", "Credit creation"), ("International Trade", "Real and nominal exchange rates"),
+]
+
+# The papers that have a trap reel. `bank` is the question bank's course (<bank>_bank.json, ICAI's booklets with
+# official keys); `short` is the series name ("QT TRAP #12") and the badge tail; pyq.trap_days picks the day.
+SUBJECTS = {
+    "qt": {"exam": "CA Foundation", "course_id": "ca_foundation", "paper": "Paper 3", "paper_name": "Quantitative Aptitude",
+           "short": "QT", "bank": "ca_foundation_qt", "topics": TOPICS, "hashtags_key": "hashtags_qt",
+           "hashtags": ["#CAFoundation", "#QuantitativeAptitude", "#CAStudents", "#ICAI", "#MathsTricks"]},
+    "eco": {"exam": "CA Foundation", "course_id": "ca_foundation", "paper": "Paper 4", "paper_name": "Business Economics",
+            "short": "ECO", "bank": "ca_foundation_eco", "topics": ECO_TOPICS, "hashtags_key": "hashtags_eco",
+            "hashtags": ["#CAFoundation", "#BusinessEconomics", "#CAStudents", "#ICAI", "#Economics"]},
+}
+
+
+def subject(key: str | None) -> dict:
+    return SUBJECTS.get(key or "qt", SUBJECTS["qt"])
+
+
 SCENE_HELP = """Scene (the picture in the middle of the screen; keep it simple, it only illustrates):
 - {"type": "row", "item": "bell|pole|tree|coin|person|box|dot", "n": 4, "lit": 0 or "all" or [indexes],
    "gaps": ["3 s", "3 s", "3 s"] (one short label per gap, optional), "note": "3 gaps = 9 s",
@@ -93,10 +121,10 @@ WRITE_TOOL = {
                     "your_turn_rows", "your_turn_answer", "scene"]},
 }
 
-WRITE_SYSTEM = """You write a daily 90-110 second "trap" reel for Indian CA Foundation students, Paper 3 Quantitative Aptitude ({part}: {topic}).
+WRITE_SYSTEM = """You write a daily 90-110 second "trap" reel for Indian {exam} students, {paper} {paper_name} ({part}: {topic}).
 The format, fast and direct: the question's facts, the tempting wrong working and its answer (the trap), "Wrong", then straight to the right answer and why in 2-4 short steps, a shortcut, and a follow-up question for the comments. The question and the options are NOT read out, so hook_say must give every fact needed to solve it.
 Rules:
-- The question must be a genuine CA Foundation-level MCQ with exactly one correct option, and a tempting wrong option that most students pick for a clear reason (the trap).
+- The question must be a genuine {exam}-level MCQ with exactly one correct option, and a tempting wrong option that most students pick for a clear reason (the trap).
 - Every number must be right. Work the answer out fully before writing; the steps must lead to the answer.
 - Spoken lines: simple Indian classroom English, short sentences, no filler, no emoji. Say numbers as digits (₹100, 15 years). Total spoken words across hook_say, wrong_say, steps, shortcut_say and your_turn_say: 100-140 (the reel should run about 60-80 seconds; every extra word costs time). Don't start your_turn_say with "Your turn" or a step with "Step one"; those are added.
 - Card rows are short working lines, not sentences.
@@ -114,8 +142,8 @@ CHECK_TOOL = {
         "required": ["your_answer", "follow_up_answer", "issues", "severity"]},
 }
 
-CHECK_SYSTEM = """You are a strict examiner for CA Foundation Paper 3 (Quantitative Aptitude). Solve the MCQ and the follow-up yourself first, then read the script.
-"major" if the question has no single correct option, the stated answer or the trap is wrong, any working row or spoken line has a wrong number or wrong reasoning, the follow-up answer is wrong, or the question is outside the CA Foundation QT syllabus. "minor" for wording only. "none" otherwise."""
+CHECK_SYSTEM = """You are a strict examiner for {exam} {paper} ({paper_name}). Solve the MCQ and the follow-up yourself first, then read the script.
+"major" if the question has no single correct option, the stated answer or the trap is wrong, any working row or spoken line has a wrong number or wrong reasoning, the follow-up answer is wrong, or the question is outside the {exam} {paper_name} syllabus. "minor" for wording only. "none" otherwise."""
 
 
 def _clip(s: str, n: int) -> str:
@@ -167,16 +195,17 @@ def _unlead(say: str) -> str:
     return _LEAD.sub("", str(say or "").strip(), count=1)
 
 
-def assemble(w: dict, badge: dict, header: str, asked: str = "") -> dict:
+def assemble(w: dict, badge: dict, header: str, asked: str = "", subj: str = "qt") -> dict:
     """The full video script from Claude's content, in the fixed order. `asked` ("June 2024") opens the
     video with the attempt that asked a real past-paper question."""
     opts = [_clip(o, 24) for o in w["options"]]
     ans, trap = int(w["answer"]), int(w["trap"])
     scene0 = valid_scene(w.get("scene")) or {"type": "board", "lines": [_clip(w["hook_big"], 22)]}
+    S = subject(subj)
     lines = []
     if asked:
-        lines.append({"say": f"This question came in the CA Foundation {asked} exam.",
-                      "card": {"kind": "attempt", "exam": "CA Foundation", "when": asked, "sub": "Paper 3 · Quantitative Aptitude"}})
+        lines.append({"say": f"This question came in the {S['exam']} {asked} exam.",
+                      "card": {"kind": "attempt", "exam": S["exam"], "when": asked, "sub": f"{S['paper']} · {S['paper_name']}"}})
     lines += [
         {"say": w["hook_say"], "card": {"kind": "hook", "small": w["hook_small"], "big": _clip(w["hook_big"], 22)},
          **({"scene": s} if (s := valid_scene(w.get("hook_scene"))) else {})},
@@ -202,7 +231,7 @@ def assemble(w: dict, badge: dict, header: str, asked: str = "") -> dict:
     lines.append({"say": "The shortcut. " + _unlead(w["shortcut_say"]), "card": {"kind": "shortcut", "rows": srows}})
     yrows = [_clip(r, 40) for r in w["your_turn_rows"]][:2]
     lines.append({"say": "Your turn. " + _unlead(w["your_turn_say"]), "card": {"kind": "your_turn", "rows": yrows}})
-    lines.append({"say": "Comment your answer. Follow for a QT trap every day.",
+    lines.append({"say": "Comment your answer. Follow for a new trap every day.",
                   "card": {"kind": "your_turn", "rows": yrows, "all": True}})
     return {"theme": w["theme"] if w["theme"] in THEMES else "green", "badge": badge, "header": header,
             "question": w["question"], "options": opts, "answer": ans, "scene": scene0, "lines": lines}
@@ -221,7 +250,7 @@ def check_content(w: dict) -> list[str]:
     return out
 
 
-def topic_for(cfg: Config, date: dt.date) -> tuple[str, str]:
+def topic_for(cfg: Config, date: dt.date, subj: str = "qt") -> tuple[str, str]:
     recent = set()
     for i in range(1, 15):
         p = path(date - dt.timedelta(days=i))
@@ -230,7 +259,8 @@ def topic_for(cfg: Config, date: dt.date) -> tuple[str, str]:
                 recent.add(json.loads(p.read_text(encoding="utf-8")).get("topic_key", ""))
             except ValueError:
                 pass
-    order = TOPICS[date.toordinal() % len(TOPICS):] + TOPICS[: date.toordinal() % len(TOPICS)]
+    topics = subject(subj)["topics"]
+    order = topics[date.toordinal() % len(topics):] + topics[: date.toordinal() % len(topics)]
     for part, topic in order:
         if topic not in recent:
             return part, topic
@@ -251,43 +281,61 @@ def attempt_name(asked: str) -> str:
 
 
 BANK_COURSE = "ca_foundation_qt"     # ca_foundation_qt_bank.json
+DAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 
 
-def past_paper_candidate(cfg: Config, date: dt.date) -> dict | None:
-    """The next unused real CA Foundation Paper 3 MCQ from the QT bank (ICAI's booklets with official keys),
-    every day while the bank lasts; None when it has run out (then an original question is written)."""
+def subject_for(cfg: Config, date: dt.date) -> str:
+    """The paper whose trap goes out on `date` (pyq.trap_days, e.g. {thu: eco}); QT on any other day, or when
+    that paper's bank has no unused question left."""
+    days = cfg.pyq.get("trap_days") or {}
+    key = str(days.get(DAYS[date.weekday()]) or "qt").lower()
+    if key not in SUBJECTS:
+        return "qt"
+    if key != "qt" and past_paper_candidate(cfg, date, key) is None:
+        return "qt"
+    return key
+
+
+def past_paper_candidate(cfg: Config, date: dt.date, subj: str = "qt") -> dict | None:
+    """The next unused real past-paper MCQ from the paper's bank (ICAI's booklets with official keys),
+    while the bank lasts; None when it has run out (then an original question is written)."""
     from . import pyq
     from .pyqday import asked_short, split_mcq, used_refs
 
+    S = subject(subj)
     used = used_refs()
-    paper = {"code": "Paper 3", "name": "Quantitative Aptitude"}
-    for q in pyq.questions(BANK_COURSE, paper):
-        ref = f"{BANK_COURSE}|{q.get('chapter')}-{q.get('q')}"
+    paper = {"code": S["paper"], "name": S["paper_name"]}
+    for q in pyq.questions(S["bank"], paper):
+        ref = f"{S['bank']}|{q.get('chapter')}-{q.get('q')}"
         if q.get("kind") != "mcq" or not q.get("answer") or ref in used:
             continue
         parts = split_mcq(q.get("text", ""))
         if parts:
             return {"ref": ref, "stem": parts[0], "opts": parts[1], "key": q["answer"].strip("()").upper(),
                     "asked": q.get("asked") or asked_short(q.get("papers") or []),
-                    "part": q.get("section") or "Business Mathematics", "topic": q.get("chapter_title") or "",
+                    "part": q.get("section") or S["topics"][0][0], "topic": q.get("chapter_title") or "",
                     "trap": (q.get("trap") or "").strip("()").upper(), "trap_why": q.get("trap_why") or "",
                     "qno": q.get("q")}
     return None
 
 
-def make(cfg: Config, date: dt.date, instruction: str = "") -> dict:
-    """Write and check the day's QT trap (not yet voiced or drawn)."""
+def make(cfg: Config, date: dt.date, instruction: str = "", subj: str | None = None) -> dict:
+    """Write and check the day's trap (not yet voiced or drawn). `subj` picks the paper (default: the day's)."""
     from .generator import GenerationError, _call_claude, call_checker
 
     model = cfg.models.get("writer", "claude-sonnet-5-5")
-    past = past_paper_candidate(cfg, date)
-    part, topic = topic_for(cfg, date)
+    if instruction.strip().lower() in SUBJECTS:          # "/regen pyq eco": that paper's trap today
+        subj, instruction = instruction.strip().lower(), ""
+    subj = subj if subj in SUBJECTS else subject_for(cfg, date)
+    S = subject(subj)
+    past = past_paper_candidate(cfg, date, subj)
+    part, topic = topic_for(cfg, date, subj)
     user = ""
     if past:
         part = past["part"]
         topic = past.get("topic") or "as in the question"
-        badge = {"tag": "ASKED IN", "text": f"CA FOUNDATION {attempt_name(past['asked']).upper()} · QT"}
-        header = f"CA Foundation {attempt_name(past['asked'])} · Paper 3 · QT"
+        badge = {"tag": "ASKED IN", "text": f"{S['exam'].upper()} {attempt_name(past['asked']).upper()} · {S['short']}"}
+        header = f"{S['exam']} {attempt_name(past['asked'])} · {S['paper']} · {S['short']}"
         user += ("Use this real past-paper question exactly (fix only spacing and obvious typos). Its official answer is "
                  f"({past['key'].lower()}).\nQuestion: {past['stem']}\n"
                  + "\n".join(f"({'abcd'[i]}) {o}" for i, o in enumerate(past["opts"])) + "\n")
@@ -295,14 +343,14 @@ def make(cfg: Config, date: dt.date, instruction: str = "") -> dict:
             user += (f"The trap: most students pick ({past['trap'].lower()}) because {past['trap_why']}. "
                      "Use it as the trap unless another option is clearly the more common mistake.\n")
     else:
-        badge = {"tag": "CA FOUNDATION", "text": f"QT · {topic.upper()[:28]}"}
-        header = "CA Foundation pattern · Paper 3 · Quantitative Aptitude"
+        badge = {"tag": S["exam"].upper(), "text": f"{S['short']} · {topic.upper()[:28]}"}
+        header = f"{S['exam']} pattern · {S['paper']} · {S['paper_name']}"
         user += f"Write an original question on {topic} ({part}).\n"
     if instruction:
         user += f"Reviewer's instruction: {instruction}\n"
-    system = WRITE_SYSTEM.format(part=part, topic=topic, scene_help=SCENE_HELP)
-    base = {"kind": KIND, "format": "qt_video", "course_id": "ca_foundation", "paper_code": "Paper 3",
-            "paper_name": f"Quantitative Aptitude: {part}", "topic_key": topic, "ref": past["ref"] if past else "",
+    system = WRITE_SYSTEM.format(part=part, topic=topic, scene_help=SCENE_HELP, **S)
+    base = {"kind": KIND, "format": "qt_video", "subject": subj, "course_id": S["course_id"], "paper_code": S["paper"],
+            "paper_name": f"{S['paper_name']}: {part}", "topic_key": topic, "ref": past["ref"] if past else "",
             "tried": [past["ref"]] if past else []}
     notes = []
     for attempt in range(3):
@@ -317,14 +365,15 @@ def make(cfg: Config, date: dt.date, instruction: str = "") -> dict:
             notes.append("; ".join(probs))
             continue
         if not past:
-            badge = {"tag": "CA FOUNDATION", "text": f"QT · {_clip(w.get('topic') or topic, 28).upper()}"}
+            badge = {"tag": S["exam"].upper(), "text": f"{S['short']} · {_clip(w.get('topic') or topic, 28).upper()}"}
         real = past and "model" not in past["asked"].lower()
-        script = assemble(w, badge, header, asked=attempt_name(past["asked"]) if real else "")
+        script = assemble(w, badge, header, asked=attempt_name(past["asked"]) if real else "", subj=subj)
+        script["series"] = f"{S['short']} TRAP"
         plain = (f"Question: {_plain(w['question'])}\n" + "\n".join(f"({LETTERS[i]}) {o}" for i, o in enumerate(script['options']))
                  + f"\nStated answer: {LETTERS[script['answer']]}\nTrap: {script['options'][int(w['trap'])]}\n"
                  + "\n".join(f"{ln['say']} | card: {' / '.join(ln['card'].get('rows', []))}" for ln in script["lines"])
                  + f"\nFollow-up answer stated: {w['your_turn_answer']}")
-        check = call_checker(cfg, CHECK_SYSTEM, plain, CHECK_TOOL, max_tokens=1500)
+        check = call_checker(cfg, CHECK_SYSTEM.format(**S), plain, CHECK_TOOL, max_tokens=1500)
         if check.get("your_answer") != LETTERS[script["answer"]]:
             notes.append(f"the examiner got ({check.get('your_answer', '?').lower()}): " + "; ".join(check.get("issues", []))[:200])
             continue
@@ -333,7 +382,7 @@ def make(cfg: Config, date: dt.date, instruction: str = "") -> dict:
             continue
         return {**base, "topic": w["topic"][:40], "script": script, "correct": LETTERS[script["answer"]],
                 "trap": script["options"][int(w["trap"])], "your_turn_answer": w["your_turn_answer"],
-                "asked_in": past["asked"] if past else "CA Foundation pattern", "check_notes": check.get("issues", []),
+                "asked_in": past["asked"] if past else f"{S['exam']} pattern", "check_notes": check.get("issues", []),
                 "notes": notes, "hold": False, "hold_reason": ""}
     return {**base, "error": "no script passed the checks: " + " | ".join(notes)[-300:]}
 
@@ -342,17 +391,18 @@ def caption(cfg: Config, item: dict, date: dt.date) -> str:
     from .caption import post_ref
 
     s = item["script"]
+    S = subject(item.get("subject"))
     handle = cfg.brand.get("handle", "").strip()
     asked = item.get("asked_in", "")
     hook = next((ln["card"]["big"] for ln in s["lines"] if ln["card"].get("kind") == "hook"), "")
     lines = [f"{hook}… so {item['trap']}? That's the trap. 🪤",
              "", _plain(s["question"]), ""] + [f"({'abcd'[i]}) {o}" for i, o in enumerate(s["options"])]
     lines += ["", "Did you pick the trap too? Tell me in the comments 👇",
-              (f"Asked in CA Foundation {attempt_name(asked)} · Paper 3 (ICAI's official answer key)." if asked and "pattern" not in asked
-               else "CA Foundation Paper 3 · Quantitative Aptitude."),
-              "Save 🔖 it for your QT revision."]
+              (f"Asked in {S['exam']} {attempt_name(asked)} · {S['paper']} (ICAI's official answer key)." if asked and "pattern" not in asked
+               else f"{S['exam']} {S['paper']} · {S['paper_name']}."),
+              f"Save 🔖 it for your {S['paper_name']} revision."]
     if handle:
-        lines += ["", f"Follow {handle} for a QT trap every day."]
-    tags = cfg.pyq.get("hashtags_qt") or ["#CAFoundation", "#QuantitativeAptitude", "#CAStudents", "#ICAI", "#MathsTricks"]
+        lines += ["", f"Follow {handle} for a new trap every day."]
+    tags = cfg.pyq.get(S["hashtags_key"]) or S["hashtags"]
     lines += ["", " ".join(tags[: int(cfg.instagram.get("max_hashtags", 5))]), "", post_ref(KIND, date)]
     return "\n".join(lines)[:2200]

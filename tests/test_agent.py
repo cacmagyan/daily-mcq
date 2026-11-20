@@ -2457,6 +2457,40 @@ class QTTrapTests(TempQueue):
         self.assertEqual(it["ref"], past["ref"])
         self.assertIn(past["asked"].upper(), it["script"]["badge"]["text"])
 
+    def test_thursday_is_the_economics_trap_from_its_own_bank(self):
+        from mcq_agent import qtpuzzle as QT
+        mock.patch.stopall()
+        self.cfg.pyq["trap_days"] = {"thu": "eco"}
+        thu, fri = dt.date(2026, 11, 26), dt.date(2026, 11, 27)
+        self.assertEqual(QT.subject_for(self.cfg, thu), "eco")
+        self.assertEqual(QT.subject_for(self.cfg, fri), "qt")
+        past = QT.past_paper_candidate(self.cfg, thu, "eco")
+        self.assertTrue(past["ref"].startswith("ca_foundation_eco|"))
+        w = dict(self.FAKE, question=past["stem"], options=past["opts"], answer="ABCD".index(past["key"]),
+                 trap="ABCD".index(past["trap"]))
+        with mock.patch("mcq_agent.generator._call_claude", return_value=w), \
+             mock.patch("mcq_agent.generator.call_checker", return_value={**self.OK, "your_answer": past["key"]}):
+            it = QT.make(self.cfg, thu)
+        self.assertFalse(it.get("error"), it.get("error"))
+        self.assertEqual((it["subject"], it["paper_code"], it["script"]["series"]), ("eco", "Paper 4", "ECO TRAP"))
+        self.assertIn("· ECO", it["script"]["badge"]["text"])
+        self.assertIn("Business Economics", it["script"]["lines"][0]["card"]["sub"])
+        cap = QT.caption(self.cfg, it, thu)
+        self.assertIn("Paper 4", cap)
+        self.assertIn("#BusinessEconomics", cap)
+
+    def test_every_bank_question_has_a_key_and_a_different_trap(self):
+        from mcq_agent import pyq
+        from mcq_agent import qtpuzzle as QT
+        from mcq_agent.pyqday import split_mcq
+        for key, S in QT.SUBJECTS.items():
+            qs = pyq.questions(S["bank"], {"code": S["paper"]})
+            self.assertGreaterEqual(len(qs), 20, key)
+            for q in qs:
+                stem, opts = split_mcq(q["text"])
+                self.assertEqual(len(opts), 4, q["text"][:60])
+                self.assertNotEqual(q["answer"], q["trap"], q["text"][:60])
+
     def test_assemble_keeps_the_fixed_order(self):
         from mcq_agent import qtpuzzle as QT
         s = QT.assemble(self.FAKE, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr")
@@ -2543,7 +2577,7 @@ class QTTrapTests(TempQueue):
         s["series_no"] = 7
         events, total = qt3d.timeline(s, vl)
         plan = qt3d.make_plan(s, events, total, "@x")
-        self.assertEqual(plan["sting"], {"n": 7, "dur": qt3d.STING})
+        self.assertEqual(plan["sting"], {"n": 7, "dur": qt3d.STING, "label": "QT TRAP"})
         self.assertAlmostEqual(events[0]["start"], qt3d.LEAD + qt3d.STING, places=3)
         self.assertGreater(len(qt3d.sfx_bank()["stamp"]), 0)
 

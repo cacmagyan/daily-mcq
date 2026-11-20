@@ -2581,6 +2581,20 @@ class QTTrapTests(TempQueue):
         self.assertAlmostEqual(events[0]["start"], qt3d.LEAD + qt3d.STING, places=3)
         self.assertGreater(len(qt3d.sfx_bank()["stamp"]), 0)
 
+    def test_sound_effects_stay_under_the_voice(self):
+        import numpy as np
+        from mcq_agent import qt3d
+        from mcq_agent import qtpuzzle as QT
+        s = QT.assemble(self.FAKE, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr", asked="May 2025")
+        s["series_no"] = 3
+        vl, _ = qt3d.voice_lines(s, silent=True)
+        events, total = qt3d.timeline(s, vl)
+        plan = qt3d.make_plan(s, events, total, "@x")
+        fx = np.asarray(qt3d.mix(events, plan, total, with_music=False), float)
+        win = int(0.05 * qt3d.SR)
+        loudest = max(np.sqrt(np.mean(fx[i:i + win] ** 2)) for i in range(0, len(fx) - win, win // 2))
+        self.assertLess(20 * np.log10(loudest), -17.0)   # Aarav's loud words sit around -17 dB
+
     def test_3d_plan_times_the_options_rows_and_countdown(self):
         from mcq_agent import qt3d
         from mcq_agent import qtpuzzle as QT

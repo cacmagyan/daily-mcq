@@ -401,19 +401,19 @@ def mix(events: list[dict], plan: dict, total: float, with_music: bool = True):
     for i, e in enumerate(pe):
         kind = (e["card"] or {}).get("kind")
         if e["group"] and (i == 0 or pe[i - 1]["group"] != e["group"]):
-            add(fx, B["impact"] if i == 0 else B["whoosh"], e["start"] - (0 if i == 0 else 0.12), 0.5 if i == 0 else 0.33)
+            add(fx, B["impact"] if i == 0 else B["whoosh"], e["start"] - (0 if i == 0 else 0.12), 0.2 if i == 0 else 0.09)
         if kind == "attempt":
-            add(fx, B["thud"], e["start"] + 0.35, 0.4)
+            add(fx, B["thud"], e["start"] + 0.35, 0.17)
         if kind == "trap":
-            add(fx, B["stamp"], e["start"] + STAMP_TRAP, 0.75)
-            add(fx, B["buzz"], e["start"] + STAMP_TRAP + 0.03, 0.2)
+            add(fx, B["stamp"], e["start"] + STAMP_TRAP, 0.25)
+            add(fx, B["buzz"], e["start"] + STAMP_TRAP + 0.03, 0.1)
         if kind == "answer":
             add(fx, B["rise"], e["start"] - 0.6, 0.25)
-            add(fx, B["ding"], e["start"] + 0.12, 0.38)
-            add(fx, B["stamp"], e["start"] + STAMP_OK, 0.6)
+            add(fx, B["ding"], e["start"] + 0.12, 0.3)
+            add(fx, B["stamp"], e["start"] + STAMP_OK, 0.2)
         if kind == "reveal":
             add(fx, B["rise"], e["start"] - 0.6, 0.25)
-            add(fx, B["ding"], e["start"] + 0.12, 0.42)
+            add(fx, B["ding"], e["start"] + 0.12, 0.3)
         for r_i, at in enumerate(e.get("rowTimes") or []):
             if at > e["start"] + 0.15 and (i == 0 or at not in (pe[i - 1].get("rowTimes") or [])):
                 add(fx, B["click"], at, 0.3)
@@ -424,22 +424,22 @@ def mix(events: list[dict], plan: dict, total: float, with_music: bool = True):
         if e.get("ctaAt") and (i == 0 or pe[i - 1].get("ctaAt") != e["ctaAt"]) and e["ctaAt"] < e["start"] + e["dur"]:
             add(fx, B["chime"], e["ctaAt"], 0.3)
         if e.get("prev") and e.get("cur") and e["prev"] != e["cur"]:
-            add(fx, B["pop"], e["start"] + 0.35, 0.16)
+            add(fx, B["pop"], e["start"] + 0.35, 0.12)
     if plan.get("sting"):
-        add(fx, B["whoosh"], 0.0, 0.35)
-        add(fx, B["stamp"], 0.4, 0.55)                         # the "#N" lands
-        add(fx, B["whoosh"], STING - 0.3, 0.3)                 # wipes away
+        add(fx, B["whoosh"], 0.0, 0.12)
+        add(fx, B["stamp"], 0.4, 0.22)                         # the "#N" lands
+        add(fx, B["whoosh"], STING - 0.3, 0.1)                 # wipes away
     if plan.get("endAt") and plan.get("logo"):
-        add(fx, B["whoosh"], plan["endAt"] - 0.1, 0.3)
+        add(fx, B["whoosh"], plan["endAt"] - 0.1, 0.1)
         add(fx, B["chime"], plan["endAt"] + 0.15, 0.3)
     for k, at in enumerate(plan.get("optTimes") or []):
-        add(fx, resample(B["pop"], SR, int(SR / (1 + 0.08 * k))), at, 0.3)
+        add(fx, resample(B["pop"], SR, int(SR / (1 + 0.08 * k))), at, 0.15)
 
     out = voice * 1.0 + fx
     if with_music:
         mus = _music(total)[:n]
         mus = np.concatenate([mus, np.zeros(n - len(mus), np.float32)])
-        env = np.sqrt(np.convolve(voice ** 2, np.ones(4800) / 4800, mode="same"))
+        env = np.sqrt(np.convolve(voice ** 2, np.ones(19200) / 19200, mode="same"))   # slow, so music does not swell in short gaps
         duck = 1 - 0.55 * np.clip(env / 0.05, 0, 1)
         fade = np.minimum(1, np.arange(n) / (0.6 * SR)) * np.minimum(1, (n - np.arange(n)) / (1.5 * SR))
         out += mus * 0.075 * duck * fade

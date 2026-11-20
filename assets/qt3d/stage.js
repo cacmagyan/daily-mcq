@@ -40,13 +40,13 @@ const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
 const isNum = (w) => /[0-9₹%]/.test(w);
 
 // ── look ────────────────────────────────────────────────────
-// each theme is a time of day over a grass field: sky top / middle / horizon, grass, hills
+// each theme is a desk-top set: wood tint, the wall behind (top / middle / near the desk), lamp glow
 const THEMES = {
-  green:  { floor: '#5d9440', bg: '#2a6a37', top: '#6f7db6', mid: '#c49cb8', hor: '#f3c49c', hill: '#77a06a' },
-  purple: { floor: '#5a8c46', bg: '#2c2350', top: '#3a2c6c', mid: '#8a68aa', hor: '#f2b4a2', hill: '#6c8070' },
-  navy:   { floor: '#4f8445', bg: '#1a2d58', top: '#22376e', mid: '#5b7cb6', hor: '#bccbe8', hill: '#5f8078' },
-  teal:   { floor: '#5f9c4c', bg: '#145656', top: '#3b8db2', mid: '#8fc6da', hor: '#e8f2e2', hill: '#7aa88a' },
-  maroon: { floor: '#86923f', bg: '#561b27', top: '#5a2a40', mid: '#c46f5a', hor: '#f7c47c', hill: '#8f8456' },
+  green:  { floor: '#c89668', bg: '#0f1c46', top: '#0b1638', mid: '#1b2f6b', hor: '#3a4f86', lamp: '#ffd98a' },
+  purple: { floor: '#b98a63', bg: '#1d1844', top: '#120f2e', mid: '#2c2566', hor: '#56508e', lamp: '#ffd2a0' },
+  navy:   { floor: '#c4986e', bg: '#0f1c46', top: '#0a1534', mid: '#17295f', hor: '#33497f', lamp: '#ffe0a0' },
+  teal:   { floor: '#cfa278', bg: '#0e2a3c', top: '#0a1d2c', mid: '#154158', hor: '#33677c', lamp: '#fff0b8' },
+  maroon: { floor: '#b88560', bg: '#2a1530', top: '#1a0d22', mid: '#3a1f46', hor: '#6a4466', lamp: '#ffcf8a' },
 };
 const PAL = ['#e9524a', '#3c7ce8', '#35b66b', '#f4b63a', '#9a66e2', '#2fbfd0'];
 const SEG = ['#3c7ce8', '#f4b63a', '#35b66b', '#e9524a', '#9a66e2'];
@@ -78,23 +78,25 @@ sun.shadow.normalBias = 0.03;
 scene.add(sun, sun.target);
 // seeded random, so every render of a plan places the world the same way
 function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
-const grassTex = (() => {
-  const c = document.createElement('canvas'); c.width = c.height = 512;
-  const g = c.getContext('2d'); g.fillStyle = '#e6e6e6'; g.fillRect(0, 0, 512, 512);
-  const r = rng(11);
-  for (let i = 0; i < 9000; i++) {
-    const v = 170 + Math.floor(r() * 85); g.fillStyle = `rgb(${v},${v},${v})`;
-    const x = r() * 512, y = r() * 512; g.fillRect(x, y, 1.5 + r() * 2, 4 + r() * 7);
+// wood desk top: planks with grain, painted grey so the theme tints it
+const woodTex = (() => {
+  const c = document.createElement('canvas'); c.width = c.height = 1024;
+  const g = c.getContext('2d'); const r = rng(11);
+  const PL = 9;                                     // planks across the texture
+  for (let p = 0; p < PL; p++) {
+    const y0 = p * 1024 / PL, hgt = 1024 / PL, base = 205 + Math.floor(r() * 22);
+    g.fillStyle = `rgb(${base},${base},${base})`; g.fillRect(0, y0, 1024, hgt);
+    for (let i = 0; i < 90; i++) {                 // grain: long wavy streaks along the plank
+      const v = base - 25 - Math.floor(r() * 45), yy = y0 + r() * hgt, amp = 2 + r() * 5, ph = r() * 6, f = 0.004 + r() * 0.01;
+      g.strokeStyle = `rgba(${v},${v},${v},${0.25 + r() * 0.4})`; g.lineWidth = 0.8 + r() * 2.2;
+      g.beginPath(); for (let x = 0; x <= 1024; x += 16) g.lineTo(x, yy + Math.sin(x * f + ph) * amp); g.stroke();
+    }
+    if (p % 3 === 0) { g.fillStyle = 'rgba(70,70,70,0.5)'; g.fillRect(0, y0, 1024, 2); }   // a faint joint now and then
   }
-  for (let i = 0; i < 60; i++) {           // soft darker patches
-    const x = r() * 512, y = r() * 512, rr = 20 + r() * 60;
-    const gr = g.createRadialGradient(x, y, 0, x, y, rr); gr.addColorStop(0, 'rgba(120,120,120,0.18)'); gr.addColorStop(1, 'rgba(120,120,120,0)');
-    g.fillStyle = gr; g.fillRect(x - rr, y - rr, rr * 2, rr * 2);
-  }
-  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(140, 140);
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(10, 10); t.rotation = Math.PI / 2;
   t.anisotropy = 8; t.colorSpace = THREE.SRGBColorSpace; return t;
 })();
-const floorMat = new THREE.MeshStandardMaterial({ color: '#5d9440', map: grassTex, roughness: 1, metalness: 0, envMapIntensity: 0.2 });
+const floorMat = new THREE.MeshStandardMaterial({ color: '#c89668', map: woodTex, roughness: 0.62, metalness: 0, envMapIntensity: 0.35 });
 const floor = new THREE.Mesh(new THREE.PlaneGeometry(600, 600), floorMat);
 floor.rotation.x = -Math.PI / 2;
 floor.receiveShadow = true;
@@ -102,7 +104,7 @@ scene.add(floor);
 const root = new THREE.Group();
 scene.add(root);
 
-// ── the world around the puzzle: sky, hills, trees ─────────
+// ── the world around the puzzle: a CA's desk (wall, lamp light, calculator, ledgers, coins, pen) ──
 const skyMat = new THREE.ShaderMaterial({
   side: THREE.BackSide, depthWrite: false, fog: false,
   uniforms: { top: { value: new THREE.Color() }, mid: { value: new THREE.Color() }, hor: { value: new THREE.Color() } },
@@ -118,52 +120,113 @@ const sky = new THREE.Mesh(new THREE.SphereGeometry(420, 32, 16), skyMat);
 scene.add(sky);
 const world = new THREE.Group();
 scene.add(world);
+function canvasTex(w, h, draw) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  draw(c.getContext('2d'), w, h);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
+}
+// lamp pool: a warm soft light on the desk under the puzzle
+const poolTex = canvasTex(256, 256, (g) => {
+  const gr = g.createRadialGradient(128, 128, 0, 128, 128, 128);
+  gr.addColorStop(0, 'rgba(255,255,255,0.55)'); gr.addColorStop(0.5, 'rgba(255,255,255,0.22)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, 256, 256);
+});
+const calcTex = canvasTex(512, 900, (g, w, h) => {
+  g.fillStyle = '#1d2433'; g.fillRect(0, 0, w, h);
+  g.fillStyle = '#9fb59a'; g.fillRect(40, 60, w - 80, 170);                       // display
+  g.fillStyle = '#26331f'; g.font = '700 110px Courier New, monospace'; g.textAlign = 'right'; g.textBaseline = 'middle';
+  g.fillText('1,00,000', w - 60, 150);
+  g.fillStyle = '#c9d2e6'; g.font = '700 30px Arial'; g.textAlign = 'left'; g.fillText('CA', 44, 270);
+  const keys = ['MC', 'MR', 'M-', 'M+', '7', '8', '9', '÷', '4', '5', '6', '×', '1', '2', '3', '−', '0', '.', '=', '+'];
+  keys.forEach((k, i) => {
+    const cx = 40 + (i % 4) * 112, cy = 310 + Math.floor(i / 4) * 112;
+    g.fillStyle = k === '=' ? '#f0b429' : (i < 4 ? '#3c4a66' : '#e9edf5'); g.beginPath(); g.roundRect(cx, cy, 96, 90, 16); g.fill();
+    g.fillStyle = k === '=' ? '#1d2433' : (i < 4 ? '#e9edf5' : '#1d2433'); g.font = '700 44px Arial'; g.textAlign = 'center'; g.fillText(k, cx + 48, cy + 47);
+  });
+});
+const ledgerTex = canvasTex(512, 700, (g, w, h) => {
+  g.fillStyle = '#fbf7ea'; g.fillRect(0, 0, w, h);
+  g.strokeStyle = 'rgba(70,110,180,0.45)'; g.lineWidth = 2;
+  for (let y = 70; y < h; y += 34) { g.beginPath(); g.moveTo(0, y); g.lineTo(w, y); g.stroke(); }
+  g.strokeStyle = 'rgba(200,60,60,0.6)'; for (const x of [60, 360, 440]) { g.beginPath(); g.moveTo(x, 0); g.lineTo(x, h); g.stroke(); }
+  g.fillStyle = 'rgba(30,40,80,0.75)'; g.font = 'italic 600 26px Georgia';
+  const rows = ['Cash  Dr.', 'To Sales', 'By Bank', 'To Capital', 'By Rent', 'Interest', 'Annuity', 'Balance c/d'];
+  rows.forEach((t, i) => { g.textAlign = 'left'; g.fillText(t, 72, 96 + i * 68); g.textAlign = 'right'; g.fillText(String(1200 + i * 375), 430, 96 + i * 68); });
+});
 function buildWorld(th, seed) {
   world.clear();
-  scene.fog = new THREE.Fog(th.hor, 70, 340);
+  scene.fog = new THREE.Fog(th.hor, 46, 210);
   skyMat.uniforms.top.value.set(th.top); skyMat.uniforms.mid.value.set(th.mid); skyMat.uniforms.hor.value.set(th.hor);
   const r = rng(seed);
-  const hillM = new THREE.MeshStandardMaterial({ color: th.hill, roughness: 1 });
-  const hillG = new THREE.SphereGeometry(1, 28, 14);
-  for (let i = 0; i < 9; i++) {
-    const a = -1.25 + 2.5 * (i / 8) + (r() - 0.5) * 0.15;                       // an arc behind the puzzle only
-    const d = 170 + r() * 80;
-    const h = new THREE.Mesh(hillG, hillM);
-    h.scale.set(40 + r() * 45, 10 + r() * 22, 26 + r() * 20);
-    h.position.set(Math.sin(a) * d, -2, -Math.cos(a) * d * 0.8 - 40);
-    world.add(h);
+  const S = 1.6;                                       // props are a little larger than life next to the toy puzzle
+  const pool = new THREE.Mesh(new THREE.PlaneGeometry(46, 30), new THREE.MeshBasicMaterial({ map: poolTex, color: th.lamp, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.55 }));
+  pool.rotation.x = -Math.PI / 2; pool.position.set(0, 0.002, -1); world.add(pool);
+  const place = (obj, x, z, ry) => { obj.position.set(x, 0, z); obj.rotation.y = ry; obj.traverse((m) => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true; } }); world.add(obj); return obj; };
+  // calculator
+  const calc = new THREE.Group();
+  const body = new THREE.Mesh(new RoundedBoxGeometry(3.4 * S, 0.5 * S, 6 * S, 4, 0.25 * S), std('#2a3246', { r: 0.45 }));
+  body.position.y = 0.25 * S;
+  const face = new THREE.Mesh(new THREE.PlaneGeometry(3.1 * S, 5.6 * S), new THREE.MeshStandardMaterial({ map: calcTex, roughness: 0.5 }));
+  face.rotation.x = -Math.PI / 2; face.position.y = 0.505 * S;
+  calc.add(body, face); calc.rotation.x = 0;
+  place(calc, -11 - r() * 2, -12 - r() * 2, 0.35 + r() * 0.2);
+  // ledger books, a stack of three
+  const covers = ['#16285e', '#7a1f2b', '#1e5b47', '#f0b429'];
+  const stack = new THREE.Group();
+  let y = 0;
+  for (let i = 0; i < 3; i++) {
+    const bw = (5.6 - i * 0.3) * S, bd = (7.6 - i * 0.4) * S, bh = (0.75 + r() * 0.35) * S;
+    const b = new THREE.Group();
+    const cover = new THREE.Mesh(new RoundedBoxGeometry(bw, bh, bd, 2, 0.08 * S), std(covers[(i + Math.floor(r() * 4)) % 4], { r: 0.6 }));
+    const pages = new THREE.Mesh(new THREE.BoxGeometry(bw * 0.96, bh * 0.78, bd * 0.97), std('#f6f0de', { r: 0.9 }));
+    pages.position.set(0.12 * S, 0, 0);
+    b.add(cover, pages); b.position.y = y + bh / 2; b.rotation.y = (r() - 0.5) * 0.35; y += bh;
+    stack.add(b);
   }
-  // trees: round ones and pines, kept out of the puzzle and out of the camera's way
-  const spots = [];
-  let guard = 0;
-  while (spots.length < 230 && guard++ < 6000) {
-    const x = (r() - 0.5) * 190, z = -120 + r() * 160;
-    if (Math.abs(x) < 14 && z > -9 && z < 7) continue;                         // the puzzle
-    if (z > 3 && Math.abs(x) < 7 + 0.5 * (z - 3)) continue;                    // in front of the camera
-    spots.push([x, z, 0.75 + r() * 1.1, r(), r()]);
+  place(stack, 12 + r() * 2, -14 - r() * 2, -0.3 + r() * 0.2);
+  // open ledger lying flat at the back
+  const open = new THREE.Group();
+  for (const sx of [-1, 1]) {
+    const pg = new THREE.Mesh(new THREE.BoxGeometry(5 * S, 0.12 * S, 7 * S), new THREE.MeshStandardMaterial({ map: ledgerTex, roughness: 0.9 }));
+    pg.position.set(sx * 2.55 * S, 0.06 * S, 0); pg.rotation.z = sx * -0.04; open.add(pg);
   }
-  const trunkG = new THREE.CylinderGeometry(0.07, 0.11, 1, 7); trunkG.translate(0, 0.5, 0);
-  const crownG = new THREE.IcosahedronGeometry(0.62, 1); crownG.translate(0, 1.35, 0);
-  const pineG = new THREE.ConeGeometry(0.55, 1.6, 8); pineG.translate(0, 1.45, 0);
-  const trunkM = new THREE.MeshStandardMaterial({ color: '#6f4a2c', roughness: 0.9 });
-  const leafM = new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.75, flatShading: true });
-  const n = spots.length;
-  const trunks = new THREE.InstancedMesh(trunkG, trunkM, n);
-  const crowns = new THREE.InstancedMesh(crownG, leafM, n);
-  const pines = new THREE.InstancedMesh(pineG, leafM, n);
-  const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), v = new THREE.Vector3(), sc = new THREE.Vector3(), col = new THREE.Color();
-  const greens = ['#3f8f3a', '#4c9a3c', '#357f36', '#5aa646', '#2f7333'];
-  let nc = 0, np = 0;
-  for (const [x, z, s, a, b] of spots) {
-    q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), a * 6.28);
-    m4.compose(v.set(x, 0, z), q, sc.set(s, s * (0.9 + b * 0.3), s));
-    trunks.setMatrixAt(nc + np, m4);
-    col.set(greens[Math.floor(b * greens.length)]);
-    if (a < 0.72) { crowns.setMatrixAt(nc, m4); crowns.setColorAt(nc, col); nc++; }
-    else { pines.setMatrixAt(np, m4); pines.setColorAt(np, col); np++; }
+  const back = new THREE.Mesh(new THREE.BoxGeometry(10.5 * S, 0.06 * S, 7.3 * S), std('#16285e', { r: 0.6 })); back.position.y = 0.01; open.add(back);
+  place(open, -1 + r() * 2, -24 - r() * 3, (r() - 0.5) * 0.4);
+  // coins: a few stacks and some loose ones
+  const gold = std('#d9a33a', { m: 0.85, r: 0.28, env: 1.0 });
+  const coinG = new THREE.CylinderGeometry(0.44 * S, 0.44 * S, 0.12 * S, 40);
+  const coins = new THREE.Group();
+  const spots = [[-5, -11], [-3.6, -12.2], [5.5, -10.5], [6.9, -11.6], [-16, -4], [16, -5]];
+  spots.forEach(([x, z], i) => {
+    const n = i < 4 ? 2 + Math.floor(r() * 6) : 1;
+    for (let k = 0; k < n; k++) {
+      const c = new THREE.Mesh(coinG, gold);
+      c.position.set(x + (r() - 0.5) * 0.12, 0.06 * S + k * 0.125 * S, z + (r() - 0.5) * 0.12); c.rotation.y = r() * 6;
+      coins.add(c);
+    }
+  });
+  place(coins, 0, 0, 0);
+  // pen lying across the desk
+  const pen = new THREE.Group();
+  const barrel = new THREE.Mesh(new THREE.CylinderGeometry(0.22 * S, 0.22 * S, 8 * S, 24), std('#16285e', { r: 0.25, m: 0.2 }));
+  const tip = new THREE.Mesh(new THREE.ConeGeometry(0.22 * S, 0.9 * S, 24), std('#d9a33a', { m: 0.9, r: 0.25 }));
+  tip.position.y = -4.45 * S; tip.rotation.x = Math.PI;
+  const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.23 * S, 0.23 * S, 0.5 * S, 24), std('#d9a33a', { m: 0.9, r: 0.25 }));
+  cap.position.y = 4 * S;
+  pen.add(barrel, tip, cap); pen.rotation.z = Math.PI / 2; pen.position.y = 0.22 * S;
+  const penHolder = new THREE.Group(); penHolder.add(pen);
+  place(penHolder, -2 + r() * 3, -15.5 - r(), 0.5 + r() * 0.4);
+  // sticky notes
+  const notes = ['#ffd54a', '#8fd3ff', '#ff9fb2'];
+  for (let i = 0; i < 2; i++) {
+    const n = new THREE.Mesh(new THREE.BoxGeometry(2.6 * S, 0.03, 2.6 * S), std(notes[(i + Math.floor(r() * 3)) % 3], { r: 0.85 }));
+    n.position.y = 0.015; place(n, (i ? 1 : -1) * (19 + r() * 3), -2 - r() * 3, r() * 0.6 - 0.3);
   }
-  trunks.count = nc + np; crowns.count = nc; pines.count = np;
-  for (const im of [trunks, crowns, pines]) { im.castShadow = true; im.instanceMatrix.needsUpdate = true; if (im.instanceColor) im.instanceColor.needsUpdate = true; world.add(im); }
+  // the wall: a dark navy panel far behind the desk, with a soft lamp glow on it
+  const wall = new THREE.Mesh(new THREE.PlaneGeometry(500, 160), new THREE.MeshStandardMaterial({ color: th.mid, roughness: 1 }));
+  wall.position.set(0, 60, -95); world.add(wall);
+  const glow = new THREE.Mesh(new THREE.PlaneGeometry(140, 90), new THREE.MeshBasicMaterial({ map: poolTex, color: th.lamp, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.35, fog: false }));
+  glow.position.set(-10, 22, -94.5); world.add(glow);
 }
 
 // blob (contact) shadow texture
@@ -755,6 +818,7 @@ function placeCamera(c, t) {
 
 // ── cards ───────────────────────────────────────────────────
 const cardEls = new Map();
+const STAMP_TRAP = 0.42, STAMP_OK = 0.6;   // seconds after the card comes in (qt3d.py times the thud to these)
 function cardEl(ev) {
   const g = ev.group;
   if (cardEls.has(g)) return cardEls.get(g);
@@ -765,14 +829,14 @@ function cardEl(ev) {
     el.innerHTML = `<div class="tag">ASKED IN</div><div class="exam">${esc(c.exam || 'CA Foundation')}</div><div class="when">${esc(c.when || '')}</div><div class="sub">${esc(c.sub || '')}</div>`;
   } else if (c.kind === 'answer') {
     el.className = 'card dark answer';
-    el.innerHTML = `<div class="small">${esc(c.small || 'The right answer')}</div><div class="big"><span class="t">${esc(c.big)}</span><span class="ok">✓</span></div>`;
+    el.innerHTML = `<div class="small">${esc(c.small || 'The right answer')}</div><div class="big"><span class="t">${esc(c.big)}</span><span class="ok">✓</span></div><div class="stamp green">VERIFIED ✓</div>`;
   } else if (c.kind === 'hook') {
     el.className = 'card dark hook';
     el.innerHTML = `<div class="small">${esc(c.small)}</div><div class="big">${String(c.big || '').split(/\s+/).map((w) => `<span class="hw">${md(w)}</span>`).join(' ')}</div>`;
   } else if (c.kind === 'trap') {
     el.className = 'card dark trap';
     const big = String(c.big || '').replace(/\s*[×✕x]\s*$/, '');
-    el.innerHTML = `<div class="small">${esc(c.small)}</div><div class="big"><span class="t">${esc(big)}</span><span class="x">✕</span></div><div class="sub">${esc(c.sub || 'that is the trap')}</div>`;
+    el.innerHTML = `<div class="small">${esc(c.small)}</div><div class="big"><span class="t">${esc(big)}</span><span class="x">✕</span></div><div class="sub">${esc(c.sub || 'that is the trap')}</div><div class="stamp red">TRAP</div>`;
   } else if (g === 'q') {
     el.className = 'card cream q';
     const opts = (PLAN.options || []).map((o, i) => `<div class="opt" data-i="${i}"><span class="l">(${'abcd'[i]})</span><span class="t">${esc(o)}</span><span class="mark"></span><span class="strike" style="display:none"></span></div>`).join('');
@@ -826,12 +890,28 @@ function drawCard(ev, t, role) {
     w.style.opacity = clamp((since - 0.33) / 0.1).toFixed(2);
   }
   if (c.kind === 'trap' && role === 'in') {
-    const sh = Math.sin(since * 55) * 16 * Math.exp(-since * 7) * (since > 0.08 ? 1 : 0);
+    const ss = since - STAMP_TRAP;
+    const sh = Math.sin(ss * 55) * 18 * Math.exp(-ss * 7) * (ss > 0 ? 1 : 0);
     tr = `translate(calc(-50% + ${sh.toFixed(1)}px), 0px) scale(${(0.9 + 0.1 * spring(since, 2.2, 0.5)).toFixed(4)})`;
     const big = el.querySelector('.big');
     const s = since < 0.08 ? 0 : 1.9 - 0.9 * backOut((since - 0.08) / 0.32);
     big.style.transform = `scale(${s.toFixed(3)})`;
     big.style.opacity = clamp((since - 0.06) / 0.1).toFixed(2);
+  }
+  if ((c.kind === 'trap' || c.kind === 'answer') && role === 'in') {
+    const st = el.querySelector('.stamp');
+    const ss = since - (c.kind === 'trap' ? STAMP_TRAP : STAMP_OK);
+    const rot = c.kind === 'trap' ? -14 : 10;
+    st.style.display = ss >= 0 ? 'block' : 'none';
+    // slams down from big and tilted, overshoots a hair, settles with a little rotation
+    const k = easeIn(clamp(ss / 0.13));
+    const settle = ss > 0.13 ? 1 + 0.05 * Math.sin((ss - 0.13) * 30) * Math.exp(-(ss - 0.13) * 12) : 1;
+    st.style.transform = `rotate(${(rot + (1 - k) * 10).toFixed(2)}deg) scale(${((2.6 - 1.6 * k) * settle).toFixed(3)})`;
+    st.style.opacity = clamp(ss / 0.06).toFixed(2);
+    if (c.kind === 'answer') {
+      const sk = ss > 0 ? Math.exp(-ss * 9) * Math.sin(ss * 50) * 8 : 0;
+      tr = tr.replace('translate(-50%,', `translate(calc(-50% + ${sk.toFixed(1)}px),`);
+    }
   }
   el.style.display = op > 0.01 ? 'block' : 'none';
   el.style.transform = tr;
@@ -921,12 +1001,35 @@ function drawCaption(ev, t, hide) {
     const on = t >= ws0 - 0.03;
     const isCur = on && (i === ws.length - 1 || t < ws[i + 1][1] - 0.03);
     sp.classList.toggle('f', !on);
-    sp.classList.toggle('n', isCur && isNum(w));
+    const hl = on && (isNum(w) || isCur && ws.length === 1);
+    sp.classList.toggle('hl', hl);
+    sp.style.backgroundSize = hl ? `${(easeOut((t - ws0 + 0.02) / 0.2) * 100).toFixed(1)}% 84%` : '0% 46%';
     const k = on ? 1 - easeOut((t - ws0) / 0.22) : 0;
-    sp.style.transform = `translateY(${(-10 * k).toFixed(1)}px) scale(${(1 + 0.14 * k).toFixed(3)})`;
+    sp.style.transform = `translateY(${(-8 * k).toFixed(1)}px) scale(${(1 + 0.08 * k).toFixed(3)}) rotate(${hl ? -1.5 : 0}deg)`;
   });
   const a0 = t - ws[0][1];
   el.style.opacity = clamp((a0 + 0.1) / 0.12).toFixed(2);
+}
+
+// ── opening sting: logo + "QT TRAP #N" ─────────────────────
+function drawSting(t) {
+  const S = PLAN.sting, el = $('sting');
+  if (!S || t > S.dur + 0.05) { el.style.display = 'none'; return 0; }
+  el.style.display = 'block';
+  const tile = el.querySelector('.tile'), ttl = el.querySelector('.ttl'), no = el.querySelector('.no b');
+  const bars = el.querySelectorAll('.bar');
+  const a = spring(t - 0.02, 2.4, 0.5);
+  tile.style.transform = `translateY(${((1 - a) * 120).toFixed(1)}px) rotate(${((1 - a) * -18).toFixed(2)}deg) scale(${(0.4 + 0.6 * a).toFixed(3)})`;
+  const b = spring(t - 0.18, 2.6, 0.55);
+  ttl.style.transform = `translateY(${((1 - b) * 60).toFixed(1)}px)`; ttl.style.opacity = clamp((t - 0.18) / 0.1).toFixed(2);
+  const c = t < 0.4 ? 0 : 2.2 - 1.2 * backOut((t - 0.4) / 0.25);
+  no.style.transform = `rotate(-4deg) scale(${c.toFixed(3)})`;
+  bars[0].style.transform = `translateY(${(-60 * (1 - easeOut(t / 0.25))).toFixed(1)}px)`;
+  bars[1].style.transform = `translateY(${(60 * (1 - easeOut(t / 0.25))).toFixed(1)}px)`;
+  // exit: the panel wipes up and away to reveal the desk
+  const out = easeIn(clamp((t - (S.dur - 0.28)) / 0.28));
+  el.style.clipPath = `inset(0 0 ${(out * 100).toFixed(2)}% 0)`;
+  return 1 - out;
 }
 
 // ── frame ───────────────────────────────────────────────────
@@ -948,6 +1051,11 @@ window.load = async (plan) => {
     const imgs = [document.querySelector('#logo img'), document.querySelector('#end .tile img')];
     for (const im of imgs) { im.src = plan.logo; try { await im.decode(); } catch (e) { /* drawn without it */ } }
     $('logo').style.display = 'flex';
+  }
+  if (plan.sting) {
+    const im = document.querySelector('#sting .tile img');
+    if (plan.logo) { im.src = plan.logo; try { await im.decode(); } catch (e) { /* drawn without it */ } }
+    document.querySelector('#sting .no b').textContent = '#' + plan.sting.n;
   }
   document.querySelector('#end .follow').innerHTML = plan.handle ? `Follow <span>${esc(plan.handle)}</span>` : '';
   LAY = plan.events.map((ev) => ({ prev: layout(ev.prev), cur: layout(ev.cur) }));
@@ -1060,7 +1168,7 @@ window.seek = (t) => {
   const kind = ev.card && ev.card.kind;
   if (kind === 'trap' || kind === 'reveal' || kind === 'answer') {
     const col = kind === 'trap' ? '255,70,60' : '60,220,120';
-    const a = 0.8 * Math.exp(-Math.max(0, tl - (kind === 'trap' ? 0.08 : 0.15)) * 3.5) * (tl > (kind === 'trap' ? 0.08 : 0.15) ? 1 : 0);
+    const a = 0.8 * Math.exp(-Math.max(0, tl - (kind === 'trap' ? STAMP_TRAP : 0.15)) * 3.5) * (tl > (kind === 'trap' ? STAMP_TRAP : 0.15) ? 1 : 0);
     fl.style.background = `radial-gradient(120% 80% at 50% 45%, rgba(${col},0) 45%, rgba(${col},0.75) 100%)`;
     fl.style.opacity = a.toFixed(3);
   } else fl.style.opacity = 0;
@@ -1078,6 +1186,7 @@ window.seek = (t) => {
   } else { endEl.style.opacity = 0; $('logo').style.opacity = 1; }
 
   drawCaption(ev, t, inCd && t >= cd[0]);
+  drawSting(t);
   renderer.render(scene, camera);
   return idx;
 };

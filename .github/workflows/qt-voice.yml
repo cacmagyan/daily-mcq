@@ -1,0 +1,58 @@
+name: QT voice check (qt3d-reel branch)
+
+# One Azure line per voice in demo/voice/request.txt -> demo/voice/ (status + short samples).
+on:
+  push:
+    branches: [qt3d-reel]
+    paths: ["demo/voice/request.txt"]
+
+permissions:
+  contents: write
+
+jobs:
+  voice:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install requests numpy
+      - name: Speak one line
+        env:
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+        run: |
+          mkdir -p demo/voice
+          python - <<'PY'
+          import json, os, requests
+          from pathlib import Path
+          key = os.environ.get("AZURE_SPEECH_KEY", "").strip()
+          region = os.environ.get("AZURE_SPEECH_REGION", "").strip()
+          out = {"region": region, "key_length": len(key), "key_is_hex": all(c in "0123456789abcdefABCDEF" for c in key)}
+          # token check: tells a bad key (401) apart from a voice/endpoint problem
+          t = requests.post(f"https://{region}.api.cognitive.microsoft.com/sts/v1.0/issueToken",
+                            headers={"Ocp-Apim-Subscription-Key": key, "Content-Length": "0"}, timeout=30)
+          out["token_status"] = t.status_code
+          lines = Path("demo/voice/request.txt").read_text().strip().splitlines()
+          for i, ln in enumerate(lines):
+              voice, rate, text = ln.split("|", 2)
+              ssml = (f"<speak version='1.0' xml:lang='en-IN'><voice name='{voice}'><prosody rate='{rate}'>{text}"
+                      "</prosody></voice></speak>")
+              r = requests.post(f"https://{region}.tts.speech.microsoft.com/cognitiveservices/v1", data=ssml.encode(),
+                                headers={"Ocp-Apim-Subscription-Key": key, "Content-Type": "application/ssml+xml",
+                                         "X-Microsoft-OutputFormat": "audio-48khz-192kbitrate-mono-mp3",
+                                         "User-Agent": "mcq-agent"}, timeout=60)
+              out[f"tts_{i}"] = [voice, r.status_code, len(r.content)]
+              if r.status_code == 200:
+                  Path(f"demo/voice/sample_{i}_{voice}.mp3").write_bytes(r.content)
+          Path("demo/voice/result.json").write_text(json.dumps(out, indent=1))
+          print(out)
+          PY
+      - name: Save
+        run: |
+          git config user.name "mcq-agent"; git config user.email "mcq-agent@users.noreply.github.com"
+          git add demo/voice; git commit -q -m "Voice check" || exit 0
+          for i in 1 2 3; do git pull -q --rebase origin qt3d-reel && git push -q origin HEAD:qt3d-reel && exit 0; sleep 5; done; exit 1
+

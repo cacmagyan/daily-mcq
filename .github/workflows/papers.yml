@@ -1,0 +1,41 @@
+name: Past papers (qt3d-reel branch)
+
+# Downloads the PDFs listed in demo/papers/request.txt ("folder/name url" per line) and saves each as page
+# images under demo/papers/folder/name/ for building trap-question banks.
+on:
+  push:
+    branches: [qt3d-reel]
+    paths: ["demo/papers/request.txt"]
+
+permissions:
+  contents: write
+
+jobs:
+  papers:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - name: Tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils >/dev/null
+      - name: Download and page images
+        run: |
+          cd demo/papers
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            case "$name" in \#*) continue;; esac
+            [ -d "$name" ] && continue
+            mkdir -p "$name"
+            if curl -sSfL -o "$name.pdf" "$url"; then
+              pdfinfo "$name.pdf" | grep Pages
+              pdftoppm -r 110 -gray -jpeg -jpegopt quality=72 "$name.pdf" "$name/p"
+              rm -f "$name.pdf"
+            else
+              echo "could not download $name"; rmdir "$name"
+            fi
+          done < request.txt
+      - name: Save
+        run: |
+          git config user.name "mcq-agent"; git config user.email "mcq-agent@users.noreply.github.com"
+          git add demo/papers; git commit -q -m "Past papers: page images [skip ci]" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin qt3d-reel && git push -q origin HEAD:qt3d-reel && exit 0; sleep $((RANDOM % 10 + 3)); done; exit 1

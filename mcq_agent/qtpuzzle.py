@@ -250,30 +250,28 @@ def attempt_name(asked: str) -> str:
     return t
 
 
+BANK_COURSE = "ca_foundation_qt"     # ca_foundation_qt_bank.json
+
+
 def past_paper_candidate(cfg: Config, date: dt.date) -> dict | None:
-    """An unused CA Foundation Paper 3 past-paper MCQ with an answer key, on alternate days (None if the
-    bank has none)."""
-    if date.toordinal() % 2:
-        return None
+    """The next unused real CA Foundation Paper 3 MCQ from the QT bank (ICAI's booklets with official keys),
+    every day while the bank lasts; None when it has run out (then an original question is written)."""
     from . import pyq
     from .pyqday import asked_short, split_mcq, used_refs
 
-    try:
-        course = cfg.course("ca_foundation")
-    except Exception:  # noqa: BLE001
-        return None
     used = used_refs()
-    for paper in course["papers"]:
-        if paper.get("code") != "Paper 3":
+    paper = {"code": "Paper 3", "name": "Quantitative Aptitude"}
+    for q in pyq.questions(BANK_COURSE, paper):
+        ref = f"{BANK_COURSE}|{q.get('chapter')}-{q.get('q')}"
+        if q.get("kind") != "mcq" or not q.get("answer") or ref in used:
             continue
-        for q in pyq.questions("ca_foundation", paper):
-            ref = f"ca_foundation|{paper.get('name', '')}|{q.get('chapter')}-{q.get('q')}"
-            if q.get("kind") != "mcq" or not q.get("answer") or ref in used:
-                continue
-            parts = split_mcq(q.get("text", ""))
-            if parts:
-                return {"ref": ref, "stem": parts[0], "opts": parts[1], "key": q["answer"].strip("()").upper(),
-                        "asked": asked_short(q.get("papers") or []), "part": paper["name"].split(":")[-1].strip()}
+        parts = split_mcq(q.get("text", ""))
+        if parts:
+            return {"ref": ref, "stem": parts[0], "opts": parts[1], "key": q["answer"].strip("()").upper(),
+                    "asked": q.get("asked") or asked_short(q.get("papers") or []),
+                    "part": q.get("section") or "Business Mathematics", "topic": q.get("chapter_title") or "",
+                    "trap": (q.get("trap") or "").strip("()").upper(), "trap_why": q.get("trap_why") or "",
+                    "qno": q.get("q")}
     return None
 
 
@@ -287,12 +285,15 @@ def make(cfg: Config, date: dt.date, instruction: str = "") -> dict:
     user = ""
     if past:
         part = past["part"]
-        topic = "as in the question"
-        badge = {"tag": "ASKED IN", "text": f"CA FOUNDATION {past['asked'].replace(' exam', '').upper()} · QT"}
-        header = f"CA Foundation {past['asked']} · Paper 3 · QT"
-        user += ("Use this real past-paper question exactly (fix only spacing). Its official answer is "
+        topic = past.get("topic") or "as in the question"
+        badge = {"tag": "ASKED IN", "text": f"CA FOUNDATION {attempt_name(past['asked']).upper()} · QT"}
+        header = f"CA Foundation {attempt_name(past['asked'])} · Paper 3 · QT"
+        user += ("Use this real past-paper question exactly (fix only spacing and obvious typos). Its official answer is "
                  f"({past['key'].lower()}).\nQuestion: {past['stem']}\n"
                  + "\n".join(f"({'abcd'[i]}) {o}" for i, o in enumerate(past["opts"])) + "\n")
+        if past.get("trap"):
+            user += (f"The trap: most students pick ({past['trap'].lower()}) because {past['trap_why']}. "
+                     "Use it as the trap unless another option is clearly the more common mistake.\n")
     else:
         badge = {"tag": "CA FOUNDATION", "text": f"QT · {topic.upper()[:28]}"}
         header = "CA Foundation pattern · Paper 3 · Quantitative Aptitude"
@@ -347,7 +348,8 @@ def caption(cfg: Config, item: dict, date: dt.date) -> str:
     lines = [f"{hook}… so {item['trap']}? That's the trap. 🪤",
              "", _plain(s["question"]), ""] + [f"({'abcd'[i]}) {o}" for i, o in enumerate(s["options"])]
     lines += ["", "Did you pick the trap too? Tell me in the comments 👇",
-              (f"Asked in {asked}." if asked and "pattern" not in asked else "CA Foundation Paper 3 · Quantitative Aptitude."),
+              (f"Asked in CA Foundation {attempt_name(asked)} · Paper 3 (ICAI's official answer key)." if asked and "pattern" not in asked
+               else "CA Foundation Paper 3 · Quantitative Aptitude."),
               "Save 🔖 it for your QT revision."]
     if handle:
         lines += ["", f"Follow {handle} for a QT trap every day."]

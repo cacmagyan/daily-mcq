@@ -2426,6 +2426,36 @@ class QTTrapTests(TempQueue):
         super().setUp()
         self.cfg.raw.setdefault("pyq", {}).update(enabled=True, format="qt_video", qt_from="2026-11-21", start_date="2026-11-01")
         self.cfg.pyq = self.cfg.raw["pyq"]
+        p = mock.patch("mcq_agent.qtpuzzle.past_paper_candidate", return_value=None)   # original questions here
+        p.start()
+        self.addCleanup(p.stop)
+
+    def test_past_paper_reel_uses_the_bank_and_opens_with_the_attempt(self):
+        from mcq_agent import qtpuzzle as QT
+        mock.patch.stopall()
+        past = QT.past_paper_candidate(self.cfg, dt.date(2026, 11, 22))
+        self.assertIsNotNone(past)
+        self.assertEqual(past["asked"], "September 2024")
+        self.assertEqual(len(past["opts"]), 4)
+        self.assertIn(past["key"], "ABCD")
+        w = dict(self.FAKE, question=past["stem"], options=past["opts"], answer="ABCD".index(past["key"]),
+                 trap="ABCD".index(past["trap"]))
+        calls = []
+
+        def fake_claude(model, system, user, tool, max_tokens=0):
+            calls.append(user)
+            return w
+        with mock.patch("mcq_agent.generator._call_claude", side_effect=fake_claude), \
+             mock.patch("mcq_agent.generator.call_checker", return_value={**self.OK, "your_answer": past["key"]}):
+            it = QT.make(self.cfg, dt.date(2026, 11, 22))
+        self.assertFalse(it.get("error"), it.get("error"))
+        self.assertIn("official answer", calls[0])
+        self.assertIn("The trap", calls[0])
+        first = it["script"]["lines"][0]
+        self.assertEqual(first["card"]["kind"], "attempt")
+        self.assertIn("September 2024", first["say"])
+        self.assertEqual(it["ref"], past["ref"])
+        self.assertIn("SEPTEMBER 2024", it["script"]["badge"]["text"])
 
     def test_assemble_keeps_the_fixed_order(self):
         from mcq_agent import qtpuzzle as QT

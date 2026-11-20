@@ -1,0 +1,144 @@
+{
+ "source": "ICAI CA Foundation Paper 3 MCQ booklets with answer keys (icai.org, 'MCQ Questions and Keys')",
+ "note": "Only for the QT trap reel (course ca_foundation_qt keeps it out of the notes and the PYQ posts). Answers are ICAI's official keys; 'trap' is our reading of the tempting wrong option.",
+ "course": "ca_foundation_qt",
+ "paper_code": "Paper 3",
+ "paper_name": "Quantitative Aptitude",
+ "questions": [
+  {
+   "q": 17,
+   "chapter": "S24",
+   "chapter_title": "Time value of money",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "Mr. X makes a deposit of ₹12,000 in a bank where the amount doubles at compound interest in 5 years, then what will be the total amount he will have after twenty years? (a) ₹96,000 (b) ₹1,20,000 (c) ₹1,24,000 (d) ₹1,92,000",
+   "answer": "(d)",
+   "trap": "(a)",
+   "trap_why": "20 years is 4 blocks of 5 years, so they multiply by 2 × 4 = 8 instead of doubling 4 times (2⁴ = 16)"
+  },
+  {
+   "q": 20,
+   "chapter": "S24",
+   "chapter_title": "Time value of money",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "What is the present value of ₹1,000 to be received after two years compounded annually at 10% interest rate? (a) ₹800 (b) ₹826 (c) ₹836 (d) ₹835",
+   "answer": "(b)",
+   "trap": "(a)",
+   "trap_why": "they take 10% of ₹1,000 off twice, simple-interest style, instead of dividing by 1.1²"
+  },
+  {
+   "q": 2,
+   "chapter": "S24",
+   "chapter_title": "Ratio and proportion",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "The mean proportional between 12x² and 27y² is: (a) 18xy (b) 81xy (c) 8xy (d) 19.5xy",
+   "answer": "(a)",
+   "trap": "(d)",
+   "trap_why": "they take the average (12 + 27) ÷ 2 = 19.5; the mean proportional is the square root of the product"
+  },
+  {
+   "q": 25,
+   "chapter": "S24",
+   "chapter_title": "Permutations and combinations",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "In a class of 4 boys and 3 girls, they are required to sit in a row in such a way that no two girls can sit together. Compute, in how many different ways they can sit together. (a) 60 (b) 480 (c) 720 (d) 1,440",
+   "answer": "(d)",
+   "trap": "(a)",
+   "trap_why": "they place the 3 girls in the 5 gaps (5P3 = 60) and forget that the 4 boys can also be arranged in 4! = 24 ways"
+  },
+  {
+   "q": 35,
+   "chapter": "S24",
+   "chapter_title": "Sets",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "If a set contains n elements, then the total number of proper subsets of the set is: (a) 2ⁿ (b) 2ⁿ − 1 (c) 2ⁿ⁻¹ (d) 2ⁿ − 2",
+   "answer": "(b)",
+   "trap": "(a)",
+   "trap_why": "2ⁿ counts every subset, including the set itself, which is not a proper subset"
+  },
+  {
+   "q": 5,
+   "chapter": "S24",
+   "chapter_title": "Equations",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "A number consists of two digits. The digit in the ten's place is 3 times the digit in the unit's place. If 54 is subtracted from the number, then the digits are reversed. The number is: (a) 39 (b) 62 (c) 93 (d) 31",
+   "answer": "(c)",
+   "trap": "(a)",
+   "trap_why": "in 39 the unit's digit is 3 times the ten's digit, the reverse of what is asked"
+  },
+  {
+   "q": 7,
+   "chapter": "S24",
+   "chapter_title": "Equations",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "If one of the roots of the equation x² − 3x + k = 0 is 1, then the value of k is: (a) 2 (b) 1 (c) −2 (d) −1",
+   "answer": "(a)",
+   "trap": "(c)",
+   "trap_why": "1 − 3 = −2, so they write k = −2 and forget to move it across the equals sign"
+  },
+  {
+   "q": 32,
+   "chapter": "S24",
+   "chapter_title": "Sequence and series",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "If the fourth term of an A.P. is zero, then what is the ratio of the twenty-fifth term to the eleventh term? (a) 5 (b) 4 (c) 3 (d) 2",
+   "answer": "(c)",
+   "trap": "(d)",
+   "trap_why": "they compare the term numbers 25 ÷ 11 ≈ 2 instead of the terms a + 24d and a + 10d"
+  },
+  {
+   "q": 27,
+   "chapter": "S24",
+   "chapter_title": "Permutations and combinations",
+   "section": "Business Mathematics",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "In a party every person shakes hands with every other person. If there are 105 handshakes in total, find the number of persons in the party. (a) 14 (b) 15 (c) 21 (d) 22",
+   "answer": "(b)",
+   "trap": "(a)",
+   "trap_why": "they guess from √210 ≈ 14.5 and round down instead of solving n(n − 1) ÷ 2 = 105"
+  }
+ ]
+}

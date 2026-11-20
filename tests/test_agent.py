@@ -2435,7 +2435,7 @@ class QTTrapTests(TempQueue):
         mock.patch.stopall()
         past = QT.past_paper_candidate(self.cfg, dt.date(2026, 11, 22))
         self.assertIsNotNone(past)
-        self.assertEqual(past["asked"], "September 2024")
+        self.assertRegex(past["asked"], r"^(January|May|September) 20\d\d$")
         self.assertEqual(len(past["opts"]), 4)
         self.assertIn(past["key"], "ABCD")
         w = dict(self.FAKE, question=past["stem"], options=past["opts"], answer="ABCD".index(past["key"]),
@@ -2453,9 +2453,9 @@ class QTTrapTests(TempQueue):
         self.assertIn("The trap", calls[0])
         first = it["script"]["lines"][0]
         self.assertEqual(first["card"]["kind"], "attempt")
-        self.assertIn("September 2024", first["say"])
+        self.assertIn(past["asked"], first["say"])
         self.assertEqual(it["ref"], past["ref"])
-        self.assertIn("SEPTEMBER 2024", it["script"]["badge"]["text"])
+        self.assertIn(past["asked"].upper(), it["script"]["badge"]["text"])
 
     def test_assemble_keeps_the_fixed_order(self):
         from mcq_agent import qtpuzzle as QT

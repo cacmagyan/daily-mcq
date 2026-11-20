@@ -1056,6 +1056,8 @@ window.load = async (plan) => {
     const im = document.querySelector('#sting .tile img');
     if (plan.logo) { im.src = plan.logo; try { await im.decode(); } catch (e) { /* drawn without it */ } }
     document.querySelector('#sting .no b').textContent = '#' + plan.sting.n;
+    const [w1, ...rest] = String(plan.sting.label || 'QT TRAP').split(' ');
+    document.querySelector('#sting .ttl').innerHTML = `${esc(w1)} <span>${esc(rest.join(' '))}</span>`;
   }
   document.querySelector('#end .follow').innerHTML = plan.handle ? `Follow <span>${esc(plan.handle)}</span>` : '';
   LAY = plan.events.map((ev) => ({ prev: layout(ev.prev), cur: layout(ev.cur) }));

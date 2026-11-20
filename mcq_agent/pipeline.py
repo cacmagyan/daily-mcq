@@ -481,8 +481,8 @@ def make_pyq(cfg: Config, date: dt.date, instruction: str = "") -> dict:
 VIDEO_ONLY = {"video", "video only", "remake video", "same question"}
 
 
-def qt_series_no(date: dt.date) -> int:
-    """The "QT TRAP #N" number for the reel on `date`: one more than the reels before it."""
+def qt_series_no(date: dt.date, subject: str = "qt") -> int:
+    """The "QT TRAP #N" number for the reel on `date`: one more than that paper's reels before it."""
     before = []
     root = batch_dir(date).parent
     for f in sorted(root.glob("*/pyq.json")):
@@ -492,7 +492,7 @@ def qt_series_no(date: dt.date) -> int:
             d = json.loads(f.read_text())
         except (ValueError, OSError):
             continue
-        if d.get("format") == "qt_video" and not d.get("error"):
+        if d.get("format") == "qt_video" and not d.get("error") and (d.get("subject") or "qt") == subject:
             before.append(int((d.get("script") or {}).get("series_no") or 0))
     return max([len(before)] + before) + 1
 
@@ -511,7 +511,9 @@ def _make_qt(cfg: Config, date: dt.date, instruction: str, old: dict) -> dict:
         item["tried"] = sorted(set(item.get("tried") or []) | set(old.get("tried") or []))
     if not item.get("error"):
         if cfg.pyq.get("sting", True):
-            item["script"]["series_no"] = (old.get("script") or {}).get("series_no") or qt_series_no(date)
+            subj = item.get("subject") or "qt"
+            item["script"]["series_no"] = (old.get("script") or {}).get("series_no") or qt_series_no(date, subj)
+            item["script"].setdefault("series", f"{QT.subject(subj)['short']} TRAP")
         out = batch_dir(date)
         out.mkdir(parents=True, exist_ok=True)
         handle = cfg.brand.get("handle", "").strip()

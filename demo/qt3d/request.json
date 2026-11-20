@@ -1,306 +1,205 @@
 {
  "kind": "pyq",
  "format": "qt_video",
+ "subject": "eco",
  "course_id": "ca_foundation",
- "paper_code": "Paper 3",
- "paper_name": "Quantitative Aptitude: Business Mathematics",
- "topic_key": "Simple interest",
- "ref": "ca_foundation_qt|J26-5",
- "tried": [
-  "Paper 6||1-11",
-  "Paper 6||4-15",
-  "ca_foundation_qt|J26-5"
- ],
- "topic": "Simple interest: multiplying a sum",
+ "paper_code": "Paper 4",
+ "paper_name": "Business Economics",
+ "topic": "Arc elasticity of supply",
  "script": {
   "theme": "navy",
   "badge": {
    "tag": "ASKED IN",
-   "text": "CA FOUNDATION JANUARY 2026 · QT"
+   "text": "CA FOUNDATION MAY 2025 · ECO"
   },
-  "header": "CA Foundation January 2026 · Paper 3 · QT",
-  "question": "If a sum **doubles itself in 8 years**, then in how many years will it become **four times**, assuming that the **simple interest** is calculated?",
+  "header": "CA Foundation May 2025 · Paper 4 · ECO",
+  "question": "Due to an increase in price of product X from **₹100 to ₹110**, quantity supplied increases from **150 units to 200 units**. Calculate elasticity of supply using the **arc-elasticity method**.",
   "options": [
-   "16 years",
-   "12 years",
-   "24 years",
-   "20 years"
+   "2.3",
+   "3",
+   "3.33",
+   "3.5"
   ],
-  "answer": 2,
+  "answer": 1,
   "scene": {
    "type": "bars",
-   "max": 400,
+   "max": 220,
    "bars": [
     {
-     "label": "Start",
+     "label": "₹100",
      "segments": [
       {
-       "v": 100.0,
-       "label": "₹100"
+       "v": 150.0,
+       "label": "150 units"
       }
      ]
     },
     {
-     "label": "8 years",
+     "label": "₹110",
      "segments": [
       {
        "v": 200.0,
-       "label": "₹200"
+       "label": "200 units"
       }
      ],
-     "top": "2 times"
-    },
-    {
-     "label": "? years",
-     "segments": [
-      {
-       "v": 400.0,
-       "label": "₹400"
-      }
-     ],
-     "top": "4 times"
+     "top": "+50"
     }
    ],
-   "note": "Simple interest"
+   "note": "price up 10%"
   },
   "lines": [
    {
-    "say": "This question came in the CA Foundation January 2026 exam.",
+    "say": "This question came in the CA Foundation May 2025 exam.",
     "card": {
      "kind": "attempt",
      "exam": "CA Foundation",
-     "when": "January 2026",
-     "sub": "Paper 3 · Quantitative Aptitude"
+     "when": "May 2025",
+     "sub": "Paper 4 · Business Economics"
     }
    },
    {
-    "say": "A sum doubles itself in 8 years at simple interest. In how many years will it become four times?",
+    "say": "Price goes up from ₹100 to ₹110. Supply goes up from 150 units to 200 units. Find the elasticity of supply by the arc method.",
     "card": {
      "kind": "hook",
-     "small": "Simple interest",
-     "big": "Doubles in 8 years"
+     "small": "Elasticity of supply",
+     "big": "₹100 → ₹110"
     }
    },
    {
-    "say": "It doubled in 8 years, so four times is double again. 2 × 8 = 16 years. Right?",
+    "say": "Quantity is up 50 on 150, that's 33.3 percent. Price is up 10 percent. So 3.33. Right?",
     "card": {
      "kind": "hook",
      "small": "So...",
-     "big": "2 × 8 = 16 years?"
+     "big": "33.3% ÷ 10% = 3.33?"
     }
    },
    {
-    "say": "Wrong. 16 years is the trap.",
+    "say": "Wrong. 3.33 is the trap.",
     "card": {
      "kind": "trap",
-     "small": "CA FOUNDATION JANUARY 2026 · QT",
-     "big": "16 years ×",
+     "small": "CA FOUNDATION MAY 2025 · ECO",
+     "big": "3.33 ×",
      "sub": "that is the trap"
     }
    },
    {
-    "say": "The right answer is 24 years. Here's why.",
+    "say": "The right answer is 3. Here's why.",
     "card": {
      "kind": "answer",
      "small": "The right answer",
-     "big": "24 years"
+     "big": "3"
     }
    },
    {
-    "say": "Step one. Doubling means the interest equals the principal.",
+    "say": "Step one. The arc method divides each change by the average, not by the starting value.",
     "card": {
      "kind": "step",
-     "title": "Step 1 · What doubling means",
+     "title": "Step 1 · Arc uses averages",
      "rows": [
-      "P = ₹100",
-      "Amount = ₹200"
+      "Avg quantity = (150 + 200) ÷ 2 = **175**",
+      "Avg price = (100 + 110) ÷ 2 = **105**"
      ]
     },
     "scene": {
      "type": "bars",
-     "max": 400,
+     "max": 220,
      "bars": [
       {
-       "label": "Start",
+       "label": "Before",
        "segments": [
         {
-         "v": 100.0,
-         "label": "₹100"
+         "v": 150.0,
+         "label": "150"
         }
        ]
       },
       {
-       "label": "8 years",
+       "label": "Average",
        "segments": [
         {
-         "v": 100.0,
-         "label": "₹100"
-        },
+         "v": 175.0,
+         "label": "175"
+        }
+       ],
+       "top": "use this"
+      },
+      {
+       "label": "After",
+       "segments": [
         {
-         "v": 100.0,
-         "label": "+₹100"
+         "v": 200.0,
+         "label": "200"
         }
        ]
       }
      ],
-     "note": "Interest = principal"
+     "note": "divide by the middle"
     }
    },
    {
-    "say": "Take ₹100. It becomes ₹200, so interest is ₹100 in 8 years.",
+    "say": "Step two. Change in quantity, 50 over 175. Change in price, 10 over 105.",
     "card": {
      "kind": "step",
-     "title": "Step 1 · What doubling means",
+     "title": "Step 2 · Divide the changes",
      "rows": [
-      "P = ₹100",
-      "Amount = ₹200",
-      "Interest = ₹100 in 8 years"
-     ],
-     "all": true
-    }
-   },
-   {
-    "say": "Step two. Simple interest is the same every year.",
-    "card": {
-     "kind": "step",
-     "title": "Step 2 · Simple interest is fixed",
-     "rows": [
-      "₹100 per 8 years"
+      "50 ÷ 175 = 0.2857",
+      "10 ÷ 105 = 0.0952"
      ]
     }
    },
    {
-    "say": "So ₹100 is added every 8 years.",
+    "say": "Step three. 0.2857 divided by 0.0952 gives exactly 3.",
     "card": {
      "kind": "step",
-     "title": "Step 2 · Simple interest is fixed",
+     "title": "Step 3 · The answer",
      "rows": [
-      "₹100 per 8 years",
-      "Always on the original ₹100"
-     ],
-     "all": true
-    }
-   },
-   {
-    "say": "Step three. Four times means ₹400. Interest needed is ₹300.",
-    "card": {
-     "kind": "step",
-     "title": "Step 3 · Now four times",
-     "rows": [
-      "Amount = ₹400",
-      "Interest = ₹300 = 3 lots"
+      "0.2857 ÷ 0.0952 = **3**"
      ]
     },
     "scene": {
-     "type": "bars",
-     "max": 400,
-     "bars": [
-      {
-       "label": "Start",
-       "segments": [
-        {
-         "v": 100.0,
-         "label": "₹100"
-        }
-       ]
-      },
-      {
-       "label": "8 yrs",
-       "segments": [
-        {
-         "v": 100.0,
-         "label": "₹100"
-        },
-        {
-         "v": 100.0,
-         "label": "+₹100"
-        }
-       ]
-      },
-      {
-       "label": "24 yrs",
-       "segments": [
-        {
-         "v": 100.0,
-         "label": "₹100"
-        },
-        {
-         "v": 100.0,
-         "label": "+₹100"
-        },
-        {
-         "v": 100.0,
-         "label": "+₹100"
-        },
-        {
-         "v": 100.0,
-         "label": "+₹100"
-        }
-       ]
-      }
-     ],
-     "note": "3 lots = 24 years"
+     "type": "board",
+     "lines": [
+      "(50 ÷ 175) ÷ (10 ÷ 105)",
+      "= 3"
+     ]
     }
    },
    {
-    "say": "That is three lots of ₹100, so 3 × 8 = 24 years.",
-    "card": {
-     "kind": "step",
-     "title": "Step 3 · Now four times",
-     "rows": [
-      "Amount = ₹400",
-      "Interest = ₹300 = 3 lots",
-      "3 × 8 = **24 years**"
-     ],
-     "all": true
-    }
-   },
-   {
-    "say": "The shortcut. Lots of interest needed is always one less than the multiple. Four times needs 3 lots. So 3 × 8 = 24 years.",
+    "say": "The shortcut. Arc elasticity is change in Q over sum of Qs, divided by change in P over sum of Ps. The twos cancel.",
     "card": {
      "kind": "shortcut",
      "rows": [
-      "Lots = multiple − 1",
-      "(4 − 1) × 8 = 24 years"
+      "(ΔQ ÷ ΣQ) ÷ (ΔP ÷ ΣP)",
+      "(50 ÷ 350) ÷ (10 ÷ 210) = 3"
      ]
     }
    },
    {
-    "say": "Your turn. A sum triples in 6 years at simple interest. In how many years will it become 7 times?",
+    "say": "Your turn. Price rises from ₹20 to ₹30 and supply rises from 40 to 60 units. What is the arc elasticity?",
     "card": {
      "kind": "your_turn",
      "rows": [
-      "Triple = 2 lots in 6 years",
-      "7 times = 6 lots: 3 × 6"
+      "₹20 → ₹30",
+      "40 → 60 units"
      ]
     }
    },
    {
-    "say": "Comment your answer. Follow for a QT trap every day.",
+    "say": "Comment your answer. Follow for a new trap every day.",
     "card": {
      "kind": "your_turn",
      "rows": [
-      "Triple = 2 lots in 6 years",
-      "7 times = 6 lots: 3 × 6"
+      "₹20 → ₹30",
+      "40 → 60 units"
      ],
      "all": true
     }
    }
   ],
-  "series_no": 2
+  "series": "ECO TRAP",
+  "series_no": 1
  },
- "correct": "C",
- "trap": "16 years",
- "your_turn_answer": "18 years",
- "asked_in": "January 2026",
- "check_notes": [],
- "notes": [],
- "hold": false,
- "hold_reason": "",
- "video": "pyq.mp4",
- "cover": "pyq_cover.jpg",
- "seconds": 67.1,
- "thumb_ms": 17133,
- "voice": "en-IN-AaravNeural (Azure)",
- "caption": "Doubles in 8 years… so 16 years? That's the trap. 🪤\n\nIf a sum doubles itself in 8 years, then in how many years will it become four times, assuming that the simple interest is calculated?\n\n(a) 16 years\n(b) 12 years\n(c) 24 years\n(d) 20 years\n\nDid you pick the trap too? Tell me in the comments 👇\nAsked in CA Foundation January 2026 · Paper 3 (ICAI's official answer key).\nSave 🔖 it for your QT revision.\n\nFollow @cacmagyan for a QT trap every day.\n\n#CAFoundation #QuantitativeAptitude #CAStudents #ICAI #MathsTricks\n\nref pyq-261121"
+ "correct": "B",
+ "trap": "3.33",
+ "asked_in": "May 2025"
 }

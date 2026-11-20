@@ -1,0 +1,429 @@
+{
+ "source": "ICAI CA Foundation Paper 4 MCQ booklets with answer keys (icai.org, 'MCQ Questions and Keys')",
+ "note": "Only for the trap reel. Answers are ICAI's official keys; 'trap' is our reading of the tempting wrong option.",
+ "course": "ca_foundation_eco",
+ "paper_code": "Paper 4",
+ "paper_name": "Business Economics",
+ "questions": [
+  {
+   "q": 14,
+   "chapter": "M25",
+   "chapter_title": "Elasticity of supply",
+   "section": "Theory of Demand and Supply",
+   "papers": [
+    "PY M25"
+   ],
+   "asked": "May 2025",
+   "kind": "mcq",
+   "text": "Due to an increase in price of product X from ₹100 to ₹110, quantity supplied increases from 150 units to 200 units. Calculate elasticity of supply using the arc-elasticity method. (a) 2.3 (b) 3 (c) 3.33 (d) 3.5",
+   "answer": "(b)",
+   "trap": "(c)",
+   "trap_why": "they use the point method, (50/150) ÷ (10/100) = 3.33, but the arc method divides by the averages: (50/175) ÷ (10/105) = 3"
+  },
+  {
+   "q": 36,
+   "chapter": "J25",
+   "chapter_title": "Marginal revenue",
+   "section": "Price Determination in Different Markets",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "When price is ₹20 the quantity demanded is 9 units, and when price is ₹19 the quantity demanded is 10 units. What is the marginal revenue from increasing output from 9 units to 10 units? (a) ₹20 (b) ₹19 (c) ₹10 (d) ₹1",
+   "answer": "(c)",
+   "trap": "(b)",
+   "trap_why": "they take the new price ₹19 as MR, but MR is the change in total revenue: 10 × 19 − 9 × 20 = 190 − 180 = ₹10"
+  },
+  {
+   "q": 26,
+   "chapter": "J26",
+   "chapter_title": "GDP at market price",
+   "section": "National Income Accounting",
+   "papers": [
+    "PY J26"
+   ],
+   "asked": "January 2026",
+   "kind": "mcq",
+   "text": "From: operating surplus ₹2,500 cr, mixed income of self-employed ₹1,500 cr, rent ₹680 cr, profit ₹720 cr, interest ₹1,100 cr, net indirect tax ₹400 cr, consumption of fixed capital ₹300 cr, compensation of employees ₹1,000 cr — calculate GDP at market price. (a) ₹5,700 crores (b) ₹8,200 crores (c) ₹5,000 crores (d) ₹7,500 crores",
+   "answer": "(a)",
+   "trap": "(b)",
+   "trap_why": "they add rent, profit and interest again, but these are already inside operating surplus: 2,500 + 1,500 + 1,000 + 400 + 300 = 5,700"
+  },
+  {
+   "q": 19,
+   "chapter": "M26",
+   "chapter_title": "Normal and supernormal profit",
+   "section": "Theory of Production and Cost",
+   "papers": [
+    "PY M26"
+   ],
+   "asked": "May 2026",
+   "kind": "mcq",
+   "text": "The cost of producing 500 units is ₹25,000. The entrepreneur has invested ₹1,50,000 in the business and the normal market return is 10%. The selling price at which the firm will earn supernormal profit is: (a) ₹78 (b) ₹80 (c) ₹82 (d) ₹76",
+   "answer": "(c)",
+   "trap": "(b)",
+   "trap_why": "₹80 only covers all costs including the ₹15,000 normal return, which is just normal profit; supernormal profit needs a price above ₹80, so ₹82"
+  },
+  {
+   "q": 14,
+   "chapter": "S24",
+   "chapter_title": "Cross price elasticity",
+   "section": "Theory of Demand and Supply",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "The price of 1 kg of tea is ₹50 and 10 kg of tea is demanded. If the price of coffee rises from ₹30 to ₹40 per kg, the quantity demanded of tea rises from 10 kg to 15 kg. What is the cross price elasticity of tea? (a) +1 (b) −1.5 (c) +1.5 (d) −1",
+   "answer": "(c)",
+   "trap": "(b)",
+   "trap_why": "they put a minus sign out of habit, but tea and coffee are substitutes, so the cross elasticity is positive: 50% ÷ 33.3% = +1.5"
+  },
+  {
+   "q": 75,
+   "chapter": "J25",
+   "chapter_title": "Currency with the public",
+   "section": "Money Market",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "Calculate currency with the public: notes in circulation ₹45,000 cr, circulation of rupee coins ₹1,500 cr, circulation of small coins ₹750 cr, cash on hand with banks ₹27,500 cr. (a) ₹74,750 cr (b) ₹19,750 cr (c) ₹73,250 cr (d) ₹29,750 cr",
+   "answer": "(b)",
+   "trap": "(a)",
+   "trap_why": "they add the banks' cash, but cash held by banks is not with the public, so it is subtracted: 45,000 + 1,500 + 750 − 27,500 = 19,750"
+  },
+  {
+   "q": 75,
+   "chapter": "M26",
+   "chapter_title": "Equilibrium income",
+   "section": "Determination of National Income",
+   "papers": [
+    "PY M26"
+   ],
+   "asked": "May 2026",
+   "kind": "mcq",
+   "text": "Calculate the equilibrium level of income if the saving function is S = −20 + 0.25Y and autonomous investment (I) = ₹100 crores. (a) 320 crores (b) 160 crores (c) 480 crores (d) 240 crores",
+   "answer": "(c)",
+   "trap": "(a)",
+   "trap_why": "they drop the minus sign and solve 0.25Y = 100 − 20, but S = I gives −20 + 0.25Y = 100, so 0.25Y = 120 and Y = 480"
+  },
+  {
+   "q": 46,
+   "chapter": "J25",
+   "chapter_title": "Average propensity to save",
+   "section": "Determination of National Income",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "Calculate the average propensity to save when C = 300 and Y = 1,200. (a) 0.25 (b) 0.50 (c) 0.75 (d) 0.80",
+   "answer": "(c)",
+   "trap": "(a)",
+   "trap_why": "300 ÷ 1,200 = 0.25 is the APC; saving is 1,200 − 300 = 900, so APS = 900 ÷ 1,200 = 0.75"
+  },
+  {
+   "q": 62,
+   "chapter": "M26",
+   "chapter_title": "Marginal revenue from a table",
+   "section": "Price Determination in Different Markets",
+   "papers": [
+    "PY M26"
+   ],
+   "asked": "May 2026",
+   "kind": "mcq",
+   "text": "Units 1–5 have total revenue ₹100, 180, 240, 300, 330 and average revenue ₹100, 90, 80, 75, 66. Calculate the marginal revenue of the 4th unit. (a) ₹75 (b) ₹80 (c) ₹66 (d) ₹60",
+   "answer": "(d)",
+   "trap": "(a)",
+   "trap_why": "they read ₹75 off the AR column, but MR of the 4th unit is the rise in TR: 300 − 240 = ₹60"
+  },
+  {
+   "q": 4,
+   "chapter": "J26",
+   "chapter_title": "Elasticity and new quantity",
+   "section": "Theory of Demand and Supply",
+   "papers": [
+    "PY J26"
+   ],
+   "asked": "January 2026",
+   "kind": "mcq",
+   "text": "The price of a product is ₹100 per unit. If price falls by 20% the quantity increases by 120 units. The price elasticity of demand is −1. The new quantity demanded due to the fall in price is: (a) 480 units (b) 600 units (c) 680 units (d) 720 units",
+   "answer": "(d)",
+   "trap": "(b)",
+   "trap_why": "600 is the old quantity (120 is 20% of 600); the question asks for the new quantity, 600 + 120 = 720"
+  },
+  {
+   "q": 71,
+   "chapter": "S24",
+   "chapter_title": "Quantity theory of money",
+   "section": "Money Market",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "Money supply (M) is ₹500 crores, velocity (V) is 5 and the number of transactions (T) is 10,000. Calculate the average price level (P). (a) ₹25 thousand (b) ₹25 lakhs (c) ₹50 lakhs (d) ₹50 thousand",
+   "answer": "(b)",
+   "trap": "(a)",
+   "trap_why": "the digits are right but the unit slips: P = MV ÷ T = ₹2,500 crore ÷ 10,000 = ₹0.25 crore = ₹25 lakhs"
+  },
+  {
+   "q": 56,
+   "chapter": "M26",
+   "chapter_title": "Arc elasticity of demand",
+   "section": "Theory of Demand and Supply",
+   "papers": [
+    "PY M26"
+   ],
+   "asked": "May 2026",
+   "kind": "mcq",
+   "text": "Calculate the arc elasticity if P1 = ₹15, P2 = ₹20, Q1 = 50 units and Q2 = 75 units. (a) 1.4 (b) 1.2 (c) 2.1 (d) 1.5",
+   "answer": "(a)",
+   "trap": "(d)",
+   "trap_why": "the point method gives (25/50) ÷ (5/15) = 1.5, but arc elasticity uses the averages: (25/62.5) ÷ (5/17.5) = 1.4"
+  },
+  {
+   "q": 52,
+   "chapter": "J25",
+   "chapter_title": "Gross value added",
+   "section": "National Income Accounting",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "Calculate gross value added at market price if sales = 750, opening stock = 300, closing stock = 200 and intermediate consumption = 250. (a) 400 (b) 450 (c) 600 (d) 650",
+   "answer": "(a)",
+   "trap": "(c)",
+   "trap_why": "stock fell by 100, so the change in stock is −100, not +100: 750 − 100 − 250 = 400"
+  },
+  {
+   "q": 73,
+   "chapter": "J26",
+   "chapter_title": "Consumption from a saving function",
+   "section": "Determination of National Income",
+   "papers": [
+    "PY J26"
+   ],
+   "asked": "January 2026",
+   "kind": "mcq",
+   "text": "Given the saving function S = −20 + 0.5Y and autonomous investment I = ₹100 crores, what is the consumption? (a) ₹240 crores (b) ₹140 crores (c) ₹340 crores (d) ₹440 crores",
+   "answer": "(b)",
+   "trap": "(a)",
+   "trap_why": "₹240 crores is the equilibrium income; consumption is income minus saving: 240 − 100 = 140"
+  },
+  {
+   "q": 15,
+   "chapter": "S24",
+   "chapter_title": "Advertisement elasticity",
+   "section": "Theory of Demand and Supply",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "If the change in quantity demanded is 60% and the change in advertisement expenditure is 20%, what is the advertisement elasticity? (a) 3 (b) 0.33 (c) 6 (d) 20",
+   "answer": "(a)",
+   "trap": "(b)",
+   "trap_why": "they divide the wrong way round; elasticity is the response over the cause: 60% ÷ 20% = 3"
+  },
+  {
+   "q": 71,
+   "chapter": "M26",
+   "chapter_title": "Subsidies from NNP",
+   "section": "National Income Accounting",
+   "papers": [
+    "PY M26"
+   ],
+   "asked": "May 2026",
+   "kind": "mcq",
+   "text": "Calculate the subsidies when national income is ₹4,500 crore, NNP at market price is ₹4,800 crore and indirect taxes are ₹350 crore. (a) ₹400 crore (b) ₹650 crore (c) ₹50 crore (d) ₹100 crore",
+   "answer": "(c)",
+   "trap": "(b)",
+   "trap_why": "NI = NNP at MP − indirect taxes + subsidies, so 4,500 = 4,800 − 350 + S and S = 50, not 4,800 + 350 − 4,500"
+  },
+  {
+   "q": 73,
+   "chapter": "J25",
+   "chapter_title": "Monetary base",
+   "section": "Money Market",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "With a money multiplier of 1.5 there has been an increase of ₹600 crore in money supply. Find the monetary base. (a) ₹800 cr (b) ₹200 cr (c) ₹400 cr (d) ₹900 cr",
+   "answer": "(c)",
+   "trap": "(d)",
+   "trap_why": "they multiply 600 × 1.5, but money supply = multiplier × base, so base = 600 ÷ 1.5 = 400"
+  },
+  {
+   "q": 39,
+   "chapter": "M25",
+   "chapter_title": "Negative marginal revenue",
+   "section": "Price Determination in Different Markets",
+   "papers": [
+    "PY M25"
+   ],
+   "asked": "May 2025",
+   "kind": "mcq",
+   "text": "When price is ₹30 the quantity demanded is 19 units and when price is ₹28 the quantity demanded is 20 units. What is the marginal revenue from increasing output from 19 to 20 units? (a) ₹10 (b) −₹10 (c) ₹20 (d) −₹20",
+   "answer": "(b)",
+   "trap": "(a)",
+   "trap_why": "total revenue falls from 570 to 560, so MR is −₹10; dropping the minus gives the trap"
+  },
+  {
+   "q": 73,
+   "chapter": "M26",
+   "chapter_title": "GDP deflator",
+   "section": "National Income Accounting",
+   "papers": [
+    "PY M26"
+   ],
+   "asked": "May 2026",
+   "kind": "mcq",
+   "text": "Real GDP is ₹4,500 crore and nominal GDP is ₹6,750 crore. Calculate the GDP deflator. (a) 150 (b) 66.67 (c) 120 (d) 80.33",
+   "answer": "(a)",
+   "trap": "(b)",
+   "trap_why": "they divide real by nominal; the deflator is nominal ÷ real × 100 = 6,750 ÷ 4,500 × 100 = 150"
+  },
+  {
+   "q": 50,
+   "chapter": "J25",
+   "chapter_title": "Investment multiplier",
+   "section": "Determination of National Income",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "Investment expenditure increases by ₹300 crores and the marginal propensity to consume is 0.6. Calculate the total increase in income. (a) ₹300 crores (b) ₹100 crores (c) ₹650 crores (d) ₹750 crores",
+   "answer": "(d)",
+   "trap": "(a)",
+   "trap_why": "income rises by more than the investment; multiplier = 1 ÷ (1 − 0.6) = 2.5, so 300 × 2.5 = 750"
+  },
+  {
+   "q": 72,
+   "chapter": "S24",
+   "chapter_title": "Money multiplier",
+   "section": "Money Market",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "The monetary base is ₹250 crores and the money supply is ₹1,000 crores. Calculate the money multiplier. (a) 0.25 (b) 1 (c) 4 (d) 0.40",
+   "answer": "(c)",
+   "trap": "(a)",
+   "trap_why": "they divide base by supply; the multiplier is money supply ÷ base = 1,000 ÷ 250 = 4"
+  },
+  {
+   "q": 15,
+   "chapter": "J26",
+   "chapter_title": "Marginal revenue per unit",
+   "section": "Price Determination in Different Markets",
+   "papers": [
+    "PY J26"
+   ],
+   "asked": "January 2026",
+   "kind": "mcq",
+   "text": "Output increases from 60 units to 70 units, and total revenue increases from ₹100 to ₹120. What is the marginal revenue? (a) ₹10 (b) ₹20 (c) ₹100 (d) ₹2",
+   "answer": "(d)",
+   "trap": "(b)",
+   "trap_why": "₹20 is the change in total revenue for 10 extra units; per unit MR = 20 ÷ 10 = ₹2"
+  },
+  {
+   "q": 74,
+   "chapter": "J25",
+   "chapter_title": "Narrow money M1",
+   "section": "Money Market",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "Calculate narrow money M1: currency with public ₹88,000 cr, demand deposits with banks ₹2,20,000 cr, time deposits with banks ₹2,40,000 cr, other deposits with RBI ₹2,60,000 cr, savings deposits with post office savings bank ₹50,000 cr. (a) ₹5,68,000 cr (b) ₹6,18,000 cr (c) ₹5,98,000 cr (d) ₹6,38,000 cr",
+   "answer": "(a)",
+   "trap": "(b)",
+   "trap_why": "post office savings deposits belong to M2, not M1: M1 = 88,000 + 2,20,000 + 2,60,000 = 5,68,000"
+  },
+  {
+   "q": 64,
+   "chapter": "M26",
+   "chapter_title": "AR from MR and elasticity",
+   "section": "Price Determination in Different Markets",
+   "papers": [
+    "PY M26"
+   ],
+   "asked": "May 2026",
+   "kind": "mcq",
+   "text": "Calculate AR when MR = 15 and price elasticity of demand = 1.5. (a) 30 (b) 60 (c) 45 (d) 22.5",
+   "answer": "(c)",
+   "trap": "(d)",
+   "trap_why": "they multiply MR × e, but AR = MR × e ÷ (e − 1) = 15 × 1.5 ÷ 0.5 = 45"
+  },
+  {
+   "q": 73,
+   "chapter": "S24",
+   "chapter_title": "Change in money supply",
+   "section": "Money Market",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "If the reserve ratio is 0.10 and reserves increase by ₹1,000, what will be the change in the money supply? (a) ₹10,000 (b) ₹1,000 (c) ₹100 (d) ₹10",
+   "answer": "(a)",
+   "trap": "(c)",
+   "trap_why": "they multiply by the reserve ratio, but the multiplier is 1 ÷ 0.10 = 10, so 1,000 × 10 = ₹10,000"
+  },
+  {
+   "q": 44,
+   "chapter": "J25",
+   "chapter_title": "Real GDP",
+   "section": "National Income Accounting",
+   "papers": [
+    "PY J25"
+   ],
+   "asked": "January 2025",
+   "kind": "mcq",
+   "text": "Find the real GDP if nominal GDP = 720 and price index = 120. (a) 864 (b) 500 (c) 600 (d) 700",
+   "answer": "(c)",
+   "trap": "(a)",
+   "trap_why": "they multiply by 1.2, but real GDP removes inflation: 720 ÷ 120 × 100 = 600"
+  },
+  {
+   "q": 74,
+   "chapter": "M26",
+   "chapter_title": "NNP at market price",
+   "section": "National Income Accounting",
+   "papers": [
+    "PY M26"
+   ],
+   "asked": "May 2026",
+   "kind": "mcq",
+   "text": "Calculate NNP at MP when NNP at FC is ₹15,000 crore, indirect taxes ₹450 crore, direct taxes ₹175 crore and subsidies ₹250 crore. (a) ₹15,025 crore (b) ₹15,200 crore (c) ₹15,275 crore (d) ₹15,525 crore",
+   "answer": "(b)",
+   "trap": "(a)",
+   "trap_why": "direct taxes play no part in moving from factor cost to market price: 15,000 + 450 − 250 = 15,200"
+  },
+  {
+   "q": 20,
+   "chapter": "S24",
+   "chapter_title": "Average product",
+   "section": "Theory of Production and Cost",
+   "papers": [
+    "PY S24"
+   ],
+   "asked": "September 2024",
+   "kind": "mcq",
+   "text": "Hours of labour 1, 2, 3 give total product 20, 50, 90 (marginal product of the 3rd hour is 40). What is the average product for the third hour of labour? (a) 25 (b) 30 (c) 35 (d) 40",
+   "answer": "(b)",
+   "trap": "(d)",
+   "trap_why": "40 is the marginal product of the 3rd hour; average product is total ÷ hours = 90 ÷ 3 = 30"
+  }
+ ]
+}

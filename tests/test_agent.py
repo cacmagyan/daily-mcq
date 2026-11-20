@@ -2431,10 +2431,12 @@ class QTTrapTests(TempQueue):
         from mcq_agent import qtpuzzle as QT
         s = QT.assemble(self.FAKE, {"tag": "CA FOUNDATION", "text": "QT"}, "hdr")
         kinds = [ln["card"]["kind"] for ln in s["lines"]]
-        self.assertEqual(kinds[:7], ["hook", "hook", "trap", "question", "question", "pause", "reveal"])
+        self.assertEqual(kinds[:4], ["hook", "hook", "trap", "answer"])          # no options, no pause: trap -> answer
+        self.assertNotIn("question", kinds)
         self.assertEqual(kinds[-3:], ["shortcut", "your_turn", "your_turn"])
         self.assertIn("10 years ×", s["lines"][2]["card"]["big"])
-        self.assertTrue(s["lines"][7]["say"].startswith("Step one."))
+        self.assertIn("15 years", s["lines"][3]["say"])
+        self.assertTrue(s["lines"][4]["say"].startswith("Step one."))
         self.assertNotIn("scene", [k for ln in s["lines"] if ln["say"].startswith("Step two") for k in ln])   # bad scene dropped
         self.assertEqual(s["answer"], 1)
 
@@ -2509,11 +2511,11 @@ class QTTrapTests(TempQueue):
         events, total = qt3d.timeline(s, vl)
         plan = qt3d.make_plan(s, events, total, "@x")
         self.assertEqual(plan["trap"], 0)
-        self.assertEqual(len(plan["optTimes"]), 4)
-        self.assertEqual(plan["optTimes"], sorted(plan["optTimes"]))
-        pause = [e for e in plan["events"] if e["card"].get("kind") == "pause"][0]
-        self.assertAlmostEqual(pause["countdown"][1] - pause["countdown"][0], qt3d.COUNTDOWN)
-        self.assertGreaterEqual(plan["revealAt"], pause["countdown"][1])
+        self.assertEqual(plan["optTimes"], [])                                   # options are not read out
+        self.assertFalse(any(e.get("countdown") for e in plan["events"]))
+        answer = [e for e in plan["events"] if e["card"].get("kind") == "answer"][0]
+        self.assertEqual(plan["revealAt"], answer["start"])
+        self.assertEqual(answer["group"], "answer")
         steps = [e for e in plan["events"] if e["card"].get("kind") == "step"]
         for e in steps:
             self.assertEqual(len(e["rowTimes"]), len(e["card"]["rows"]))

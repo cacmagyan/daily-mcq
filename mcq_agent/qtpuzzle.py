@@ -1,4 +1,4 @@
-"""QT trap of the day: a CA Foundation Quantitative Aptitude question as a 90-110 s reel (qt_video.py).
+"""QT trap of the day: a CA Foundation Quantitative Aptitude question as a 60-80 s reel (qt3d.py / qt_video.py).
 
 It takes the PYQ slot (pyq.format: qt_video). Claude writes only the content: the trap (the tempting wrong
 answer), the question, the steps, the shortcut, a follow-up question and simple scene data. The fixed
@@ -71,7 +71,7 @@ WRITE_TOOL = {
                  "description": "Index of the tempting wrong option most students pick"},
         "hook_small": _s("Tiny label above the hook, e.g. 'Simple interest', at most 24 characters"),
         "hook_big": _s("The fact of the question in a few words, e.g. 'Doubles in 5 years', at most 22 characters"),
-        "hook_say": _s("One spoken sentence stating the fact, e.g. 'A sum of money doubles in 5 years at simple interest.'"),
+        "hook_say": _s("One or two short spoken sentences giving the whole question with every number needed (it is not read out anywhere else), e.g. 'A sum doubles in 5 years at simple interest. When does it become four times?'"),
         "wrong_big": _s("The tempting wrong working, e.g. '5 × 2 = 10 years?', at most 22 characters"),
         "wrong_say": _s("One spoken sentence of the wrong thinking, ending 'Right?'"),
         "steps": {"type": "array", "minItems": 2, "maxItems": 4, "items": {"type": "object", "properties": {
@@ -94,11 +94,11 @@ WRITE_TOOL = {
 }
 
 WRITE_SYSTEM = """You write a daily 90-110 second "trap" reel for Indian CA Foundation students, Paper 3 Quantitative Aptitude ({part}: {topic}).
-The format: the obvious answer (the trap) first, then the question with 4 options, a pause, the right answer, then why in 2-4 short steps, a shortcut, and a follow-up question for the comments.
+The format, fast and direct: the question's facts, the tempting wrong working and its answer (the trap), "Wrong", then straight to the right answer and why in 2-4 short steps, a shortcut, and a follow-up question for the comments. The question and the options are NOT read out, so hook_say must give every fact needed to solve it.
 Rules:
 - The question must be a genuine CA Foundation-level MCQ with exactly one correct option, and a tempting wrong option that most students pick for a clear reason (the trap).
 - Every number must be right. Work the answer out fully before writing; the steps must lead to the answer.
-- Spoken lines: simple Indian classroom English, short sentences, no filler, no emoji. Say numbers as digits (₹100, 15 years). Total spoken words across hook_say, wrong_say, steps, shortcut_say and your_turn_say: 100-135 (the video must stay under 110 seconds; the question and its options are read out too, so every extra word costs time). Don't start your_turn_say with "Your turn" or a step with "Step one"; those are added.
+- Spoken lines: simple Indian classroom English, short sentences, no filler, no emoji. Say numbers as digits (₹100, 15 years). Total spoken words across hook_say, wrong_say, steps, shortcut_say and your_turn_say: 100-140 (the reel should run about 60-80 seconds; every extra word costs time). Don't start your_turn_say with "Your turn" or a step with "Step one"; those are added.
 - Card rows are short working lines, not sentences.
 - Keep to the syllabus as it stands now; avoid anything that depends on a changed law or rate.
 {scene_help}"""
@@ -181,12 +181,10 @@ def assemble(w: dict, badge: dict, header: str, asked: str = "") -> dict:
         {"say": w["hook_say"], "card": {"kind": "hook", "small": w["hook_small"], "big": _clip(w["hook_big"], 22)},
          **({"scene": s} if (s := valid_scene(w.get("hook_scene"))) else {})},
         {"say": w["wrong_say"], "card": {"kind": "hook", "small": "So...", "big": _clip(w["wrong_big"], 22)}},
-        {"say": f"Wrong. {opts[trap]} looks right, but it is the trap.",
+        {"say": f"Wrong. {opts[trap]} is the trap.",
          "card": {"kind": "trap", "small": badge.get("text", ""), "big": f"{opts[trap]} ×", "sub": "that is the trap"}},
-        {"say": "Here is the question. " + _plain(w["question"]), "card": {"kind": "question"}},
-        {"say": "Is it " + ", ".join(opts[:3]) + ", or " + opts[3] + "?", "card": {"kind": "question", "options": True}},
-        {"say": "Pause the video, and pick your option.", "card": {"kind": "pause"}},
-        {"say": f"The answer is {opts[ans]}. Not {opts[trap]}.", "card": {"kind": "reveal"}},
+        {"say": f"The right answer is {opts[ans]}. Here's why.",
+         "card": {"kind": "answer", "small": "The right answer", "big": opts[ans]}},
     ]
     for n, st in enumerate(w["steps"], 1):
         title = f"Step {n} · {_clip(st['title'], 30)}"
@@ -218,9 +216,8 @@ def check_content(w: dict) -> list[str]:
         out.append("the trap must be a wrong option")
     words = sum(len(str(x).split()) for x in [w.get("hook_say"), w.get("wrong_say"), w.get("shortcut_say"),
                                                w.get("your_turn_say")] + [s for st in w.get("steps", []) for s in st.get("says", [])])
-    words += len(_plain(w.get("question", "")).split())
-    if not 120 <= words <= 195:
-        out.append(f"the spoken lines and the question have {words} words; cut to 140-180 so the video stays under 110 s")
+    if not 85 <= words <= 160:
+        out.append(f"the spoken lines have {words} words; use 100-140 so the reel runs about 60-80 s")
     return out
 
 
@@ -349,7 +346,7 @@ def caption(cfg: Config, item: dict, date: dt.date) -> str:
     hook = next((ln["card"]["big"] for ln in s["lines"] if ln["card"].get("kind") == "hook"), "")
     lines = [f"{hook}… so {item['trap']}? That's the trap. 🪤",
              "", _plain(s["question"]), ""] + [f"({'abcd'[i]}) {o}" for i, o in enumerate(s["options"])]
-    lines += ["", "Pause and comment your option (a, b, c or d) before the answer 👇",
+    lines += ["", "Did you pick the trap too? Tell me in the comments 👇",
               (f"Asked in {asked}." if asked and "pattern" not in asked else "CA Foundation Paper 3 · Quantitative Aptitude."),
               "Save 🔖 it for your QT revision."]
     if handle:

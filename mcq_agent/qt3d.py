@@ -28,7 +28,7 @@ SR = 48000
 STAGE = ROOT / "assets" / "qt3d" / "stage.html"
 LEAD, GAP, TAIL = 0.3, 0.16, 1.8
 COUNTDOWN = 3.0
-AZURE_VOICE = "en-IN-PrabhatNeural"      # default; config pyq.azure_voice (or QT3D_VOICE) picks another
+AZURE_VOICE = "en-IN-AaravNeural"        # default; config pyq.azure_voice (or QT3D_VOICE) picks another
 AZURE_SPEED = 1.12
 KOKORO_VOICE = "am_michael"
 KOKORO_SPEED = 1.12
@@ -148,8 +148,8 @@ def _group(card: dict) -> str | None:
         return f"hook:{card.get('small', '')}|{card.get('big', '')}"
     if k == "trap":
         return "trap"
-    if k == "attempt":
-        return "attempt"
+    if k in ("attempt", "answer"):
+        return k
     if k in ("step", "shortcut", "your_turn"):
         return f"{k}:{card.get('title', '')}"
     return None
@@ -245,7 +245,7 @@ def make_plan(script: dict, events: list[dict], total: float, handle: str, logo:
             pe["countdown"] = ev["countdown"]
         if card.get("kind") == "question" and card.get("options") and opt_times is None:
             opt_times = _option_times(ev, script.get("options", []))
-        if card.get("kind") == "reveal" and reveal_at is None:
+        if card.get("kind") in ("reveal", "answer") and reveal_at is None:
             reveal_at = ev["start"]
         if card.get("kind") in ("step", "shortcut", "your_turn"):
             rows = card.get("rows") or []
@@ -398,7 +398,7 @@ def mix(events: list[dict], plan: dict, total: float, with_music: bool = True):
         if kind == "trap":
             add(fx, B["thud"], e["start"] + 0.06, 0.5)
             add(fx, B["buzz"], e["start"] + 0.1, 0.22)
-        if kind == "reveal":
+        if kind in ("reveal", "answer"):
             add(fx, B["rise"], e["start"] - 0.6, 0.25)
             add(fx, B["ding"], e["start"] + 0.12, 0.42)
         for r_i, at in enumerate(e.get("rowTimes") or []):

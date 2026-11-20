@@ -53,7 +53,7 @@
   },
   "lines": [
    {
-    "say": "When payments come at the start of each year, it is an annuity due. Many students forget this and use the ordinary formula.",
+    "say": "A person gets ₹2,200 at the start of each year for 2 years, at 10% compound interest. What is the present value?",
     "card": {
      "kind": "hook",
      "small": "Annuity due",
@@ -61,7 +61,7 @@
     }
    },
    {
-    "say": "Discount the first payment by 1 year and the second by 2 years. That gives ₹3,818.18. Right?",
+    "say": "Most students discount both payments, 2,200 divided by 1.1, plus 2,200 divided by 1.21. That gives ₹3,818.18. Right?",
     "card": {
      "kind": "hook",
      "small": "So...",
@@ -69,7 +69,7 @@
     }
    },
    {
-    "say": "Wrong. ₹3,818.18 is the trap, and most students fall for it.",
+    "say": "Wrong. ₹3,818.18 is the trap.",
     "card": {
      "kind": "trap",
      "small": "QT · ANNUITY DUE PRESENT VALUE",
@@ -78,28 +78,11 @@
     }
    },
    {
-    "say": "Here is the question. A person receives ₹2,200 at the start of each year for 2 years. Interest is 10% p.a. compounded annually. What is the present value of this annuity?",
+    "say": "The right answer is ₹4,200. Here's why.",
     "card": {
-     "kind": "question"
-    }
-   },
-   {
-    "say": "Is it ₹3,818.18, ₹4,200, ₹4,400, or ₹4,000?",
-    "card": {
-     "kind": "question",
-     "options": true
-    }
-   },
-   {
-    "say": "Pause the video, and pick your option.",
-    "card": {
-     "kind": "pause"
-    }
-   },
-   {
-    "say": "The answer is ₹4,200. Not ₹3,818.18.",
-    "card": {
-     "kind": "reveal"
+     "kind": "answer",
+     "small": "The right answer",
+     "big": "₹4,200"
     }
    },
    {
@@ -241,7 +224,7 @@
     }
    },
    {
-    "say": "Your turn. Your turn. A person receives ₹3,300 at the start of each year for 2 years, at 10% p.a. Find the present value. Write your answer in the comments.",
+    "say": "Your turn. A person receives ₹3,300 at the start of each year for 2 years, at 10% p.a. Find the present value. Write your answer in the comments.",
     "card": {
      "kind": "your_turn",
      "rows": [
@@ -280,5 +263,5 @@
  "seconds": 134.2,
  "thumb_ms": 19033,
  "caption": "Paid at the START… so ₹3,818.18? That's the trap. 🪤\n\nA person receives ₹2,200 at the start of each year for 2 years. Interest is 10% p.a. compounded annually. What is the present value of this annuity?\n\n(a) ₹3,818.18\n(b) ₹4,200\n(c) ₹4,400\n(d) ₹4,000\n\nPause and comment your option (a, b, c or d) before the answer 👇\nCA Foundation Paper 3 · Quantitative Aptitude.\nSave 🔖 it for your QT revision.\n\nFollow @cacmagyan for a QT trap every day.\n\n#CAFoundation #QuantitativeAptitude #CAStudents #ICAI #MathsTricks\n\nref pyq-261121",
- "_demo_note": "voiced demo with the Azure key (Prabhat)"
+ "_demo_note": "new short format (no options, no pause), Aarav voice"
 }

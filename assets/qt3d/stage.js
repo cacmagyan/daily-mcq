@@ -625,6 +625,9 @@ function cardEl(ev) {
   if (c.kind === 'attempt') {
     el.className = 'card dark attempt';
     el.innerHTML = `<div class="tag">ASKED IN</div><div class="exam">${esc(c.exam || 'CA Foundation')}</div><div class="when">${esc(c.when || '')}</div><div class="sub">${esc(c.sub || '')}</div>`;
+  } else if (c.kind === 'answer') {
+    el.className = 'card dark answer';
+    el.innerHTML = `<div class="small">${esc(c.small || 'The right answer')}</div><div class="big"><span class="t">${esc(c.big)}</span><span class="ok">✓</span></div>`;
   } else if (c.kind === 'hook') {
     el.className = 'card dark hook';
     el.innerHTML = `<div class="small">${esc(c.small)}</div><div class="big">${md(c.big)}</div>`;
@@ -663,6 +666,12 @@ function drawCard(ev, t, role) {
     const k = easeOut((t - ev.outAt) / 0.18);
     tr = `translate(-50%, ${(-24 * k).toFixed(1)}px) scale(${(1 - 0.04 * k).toFixed(4)})`;
     op = 1 - k;
+  }
+  if (c.kind === 'answer' && role === 'in') {
+    const big = el.querySelector('.big');
+    const s = since < 0.12 ? 0 : 1.6 - 0.6 * backOut((since - 0.12) / 0.35);
+    big.style.transform = `scale(${s.toFixed(3)})`;
+    big.style.opacity = clamp((since - 0.1) / 0.1).toFixed(2);
   }
   if (c.kind === 'attempt' && role === 'in') {
     const w = el.querySelector('.when');
@@ -893,7 +902,7 @@ window.seek = (t) => {
   // flash on the trap and on the answer
   const fl = $('flash');
   const kind = ev.card && ev.card.kind;
-  if (kind === 'trap' || (kind === 'reveal')) {
+  if (kind === 'trap' || kind === 'reveal' || kind === 'answer') {
     const col = kind === 'trap' ? '255,70,60' : '60,220,120';
     const a = 0.8 * Math.exp(-Math.max(0, tl - (kind === 'trap' ? 0.08 : 0.15)) * 3.5) * (tl > (kind === 'trap' ? 0.08 : 0.15) ? 1 : 0);
     fl.style.background = `radial-gradient(120% 80% at 50% 45%, rgba(${col},0) 45%, rgba(${col},0.75) 100%)`;

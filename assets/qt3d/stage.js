@@ -20,17 +20,33 @@ function spring(t, f = 2.2, z = 0.5) {           // step response in seconds: ri
   const w = 2 * Math.PI * f, wd = w * Math.sqrt(1 - z * z);
   return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
 }
+// count-up for a shown number ("₹4,200", "250 m", "3,818.18"): returns the text at progress k, or null
+function countText(orig, k) {
+  const m = String(orig).match(/^(₹?\s?)(\d[\d,]*(?:\.\d+)?)(\s?[%A-Za-z/ ]{0,12})$/);
+  if (!m) return null;
+  const num = parseFloat(m[2].replace(/,/g, ''));
+  if (!(num >= 10)) return null;
+  const dec = (m[2].split('.')[1] || '').length;
+  const v = num * clamp(k);
+  let [ip, fp] = v.toFixed(dec).split('.');
+  if (m[2].includes(',')) {
+    if (/\d,\d\d,\d{3}/.test(m[2])) { const last = ip.slice(-3), rest = ip.slice(0, -3); ip = (rest ? rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' : '') + last; }
+    else ip = ip.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  return m[1] + ip + (fp ? '.' + fp : '') + m[3];
+}
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
 const isNum = (w) => /[0-9₹%]/.test(w);
 
 // ── look ────────────────────────────────────────────────────
+// each theme is a time of day over a grass field: sky top / middle / horizon, grass, hills
 const THEMES = {
-  green:  { floor: '#3c8a49', bg: '#2a6a37' },
-  purple: { floor: '#4a3a7c', bg: '#2c2350' },
-  navy:   { floor: '#2b4a88', bg: '#1a2d58' },
-  teal:   { floor: '#1f7d7a', bg: '#145656' },
-  maroon: { floor: '#86323f', bg: '#561b27' },
+  green:  { floor: '#5d9440', bg: '#2a6a37', top: '#6f7db6', mid: '#c49cb8', hor: '#f3c49c', hill: '#77a06a' },
+  purple: { floor: '#5a8c46', bg: '#2c2350', top: '#3a2c6c', mid: '#8a68aa', hor: '#f2b4a2', hill: '#6c8070' },
+  navy:   { floor: '#4f8445', bg: '#1a2d58', top: '#22376e', mid: '#5b7cb6', hor: '#bccbe8', hill: '#5f8078' },
+  teal:   { floor: '#5f9c4c', bg: '#145656', top: '#3b8db2', mid: '#8fc6da', hor: '#e8f2e2', hill: '#7aa88a' },
+  maroon: { floor: '#86923f', bg: '#561b27', top: '#5a2a40', mid: '#c46f5a', hor: '#f7c47c', hill: '#8f8456' },
 };
 const PAL = ['#e9524a', '#3c7ce8', '#35b66b', '#f4b63a', '#9a66e2', '#2fbfd0'];
 const SEG = ['#3c7ce8', '#f4b63a', '#35b66b', '#e9524a', '#9a66e2'];
@@ -60,20 +76,95 @@ sun.shadow.mapSize.set(+(Q.get('sh') || 2048), +(Q.get('sh') || 2048));
 sun.shadow.bias = -0.0005;
 sun.shadow.normalBias = 0.03;
 scene.add(sun, sun.target);
-const gridTex = (() => {
-  const c = document.createElement('canvas'); c.width = c.height = 256;
-  const g = c.getContext('2d'); g.fillStyle = '#ffffff'; g.fillRect(0, 0, 256, 256);
-  g.fillStyle = '#e9e9e9'; g.fillRect(0, 0, 256, 3); g.fillRect(0, 0, 3, 256);
-  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(300, 300);
+// seeded random, so every render of a plan places the world the same way
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const grassTex = (() => {
+  const c = document.createElement('canvas'); c.width = c.height = 512;
+  const g = c.getContext('2d'); g.fillStyle = '#e6e6e6'; g.fillRect(0, 0, 512, 512);
+  const r = rng(11);
+  for (let i = 0; i < 9000; i++) {
+    const v = 170 + Math.floor(r() * 85); g.fillStyle = `rgb(${v},${v},${v})`;
+    const x = r() * 512, y = r() * 512; g.fillRect(x, y, 1.5 + r() * 2, 4 + r() * 7);
+  }
+  for (let i = 0; i < 60; i++) {           // soft darker patches
+    const x = r() * 512, y = r() * 512, rr = 20 + r() * 60;
+    const gr = g.createRadialGradient(x, y, 0, x, y, rr); gr.addColorStop(0, 'rgba(120,120,120,0.18)'); gr.addColorStop(1, 'rgba(120,120,120,0)');
+    g.fillStyle = gr; g.fillRect(x - rr, y - rr, rr * 2, rr * 2);
+  }
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(140, 140);
   t.anisotropy = 8; t.colorSpace = THREE.SRGBColorSpace; return t;
 })();
-const floorMat = new THREE.MeshStandardMaterial({ color: '#3c8a49', map: gridTex, roughness: 1, metalness: 0, envMapIntensity: 0.25 });
+const floorMat = new THREE.MeshStandardMaterial({ color: '#5d9440', map: grassTex, roughness: 1, metalness: 0, envMapIntensity: 0.2 });
 const floor = new THREE.Mesh(new THREE.PlaneGeometry(600, 600), floorMat);
 floor.rotation.x = -Math.PI / 2;
 floor.receiveShadow = true;
 scene.add(floor);
 const root = new THREE.Group();
 scene.add(root);
+
+// ── the world around the puzzle: sky, hills, trees ─────────
+const skyMat = new THREE.ShaderMaterial({
+  side: THREE.BackSide, depthWrite: false, fog: false,
+  uniforms: { top: { value: new THREE.Color() }, mid: { value: new THREE.Color() }, hor: { value: new THREE.Color() } },
+  vertexShader: 'varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+  fragmentShader: `uniform vec3 top; uniform vec3 mid; uniform vec3 hor; varying vec3 vP;
+    void main(){ float h = vP.y; vec3 c = mix(hor, mid, smoothstep(0.0, 0.22, h)); c = mix(c, top, smoothstep(0.22, 0.75, h));
+      gl_FragColor = vec4(c, 1.0);
+      #include <tonemapping_fragment>
+      #include <colorspace_fragment>
+    }`,
+});
+const sky = new THREE.Mesh(new THREE.SphereGeometry(420, 32, 16), skyMat);
+scene.add(sky);
+const world = new THREE.Group();
+scene.add(world);
+function buildWorld(th, seed) {
+  world.clear();
+  scene.fog = new THREE.Fog(th.hor, 70, 340);
+  skyMat.uniforms.top.value.set(th.top); skyMat.uniforms.mid.value.set(th.mid); skyMat.uniforms.hor.value.set(th.hor);
+  const r = rng(seed);
+  const hillM = new THREE.MeshStandardMaterial({ color: th.hill, roughness: 1 });
+  const hillG = new THREE.SphereGeometry(1, 28, 14);
+  for (let i = 0; i < 9; i++) {
+    const a = -1.25 + 2.5 * (i / 8) + (r() - 0.5) * 0.15;                       // an arc behind the puzzle only
+    const d = 170 + r() * 80;
+    const h = new THREE.Mesh(hillG, hillM);
+    h.scale.set(40 + r() * 45, 10 + r() * 22, 26 + r() * 20);
+    h.position.set(Math.sin(a) * d, -2, -Math.cos(a) * d * 0.8 - 40);
+    world.add(h);
+  }
+  // trees: round ones and pines, kept out of the puzzle and out of the camera's way
+  const spots = [];
+  let guard = 0;
+  while (spots.length < 230 && guard++ < 6000) {
+    const x = (r() - 0.5) * 190, z = -120 + r() * 160;
+    if (Math.abs(x) < 14 && z > -9 && z < 7) continue;                         // the puzzle
+    if (z > 3 && Math.abs(x) < 7 + 0.5 * (z - 3)) continue;                    // in front of the camera
+    spots.push([x, z, 0.75 + r() * 1.1, r(), r()]);
+  }
+  const trunkG = new THREE.CylinderGeometry(0.07, 0.11, 1, 7); trunkG.translate(0, 0.5, 0);
+  const crownG = new THREE.IcosahedronGeometry(0.62, 1); crownG.translate(0, 1.35, 0);
+  const pineG = new THREE.ConeGeometry(0.55, 1.6, 8); pineG.translate(0, 1.45, 0);
+  const trunkM = new THREE.MeshStandardMaterial({ color: '#6f4a2c', roughness: 0.9 });
+  const leafM = new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.75, flatShading: true });
+  const n = spots.length;
+  const trunks = new THREE.InstancedMesh(trunkG, trunkM, n);
+  const crowns = new THREE.InstancedMesh(crownG, leafM, n);
+  const pines = new THREE.InstancedMesh(pineG, leafM, n);
+  const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), v = new THREE.Vector3(), sc = new THREE.Vector3(), col = new THREE.Color();
+  const greens = ['#3f8f3a', '#4c9a3c', '#357f36', '#5aa646', '#2f7333'];
+  let nc = 0, np = 0;
+  for (const [x, z, s, a, b] of spots) {
+    q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), a * 6.28);
+    m4.compose(v.set(x, 0, z), q, sc.set(s, s * (0.9 + b * 0.3), s));
+    trunks.setMatrixAt(nc + np, m4);
+    col.set(greens[Math.floor(b * greens.length)]);
+    if (a < 0.72) { crowns.setMatrixAt(nc, m4); crowns.setColorAt(nc, col); nc++; }
+    else { pines.setMatrixAt(np, m4); pines.setColorAt(np, col); np++; }
+  }
+  trunks.count = nc + np; crowns.count = nc; pines.count = np;
+  for (const im of [trunks, crowns, pines]) { im.castShadow = true; im.instanceMatrix.needsUpdate = true; if (im.instanceColor) im.instanceColor.needsUpdate = true; world.add(im); }
+}
 
 // blob (contact) shadow texture
 const blobTex = (() => {
@@ -329,7 +420,7 @@ function layoutTrack(s) {
   });
   const lo = pos.length ? Math.min(...pos) : 0;
   const v0 = Number.isFinite(Number(s.view_from)) && s.view_from !== undefined ? Number(s.view_from) : (lo > 0.4 * L ? Math.max(0, lo - 0.3 * L) : 0);
-  const cx = (X(v0) + X(L)) / 2 + 0.3, w = Math.max(5.5, (X(L) - X(v0)) * 0.92 + 1.4);
+  const cx = (X(v0) + X(L)) / 2 + 0.3, w = Math.max(6, (X(L) - X(v0)) * 1.08 + 2.2);
   return { items, note: s.note, noteAt: [cx, 0, d / 2 + 1.3], frame: { cx, cy: 0.6, cz: 0, w, h: 3.2, el: 26, az: 16 } };
 }
 
@@ -355,7 +446,7 @@ function layoutBars(s) {
     });
   });
   const width = Math.max(5.6, (n - 1) * sp + bw + 1.0);
-  return { items, note: s.note, noteAt: [0, 0, bw / 2 + 1.45], frame: { cx: 0, cy: HM * 0.42, cz: 0.3, w: width, h: HM + 1.3, el: 18, az: 0 } };
+  return { items, note: s.note, noteAt: [0, 0, bw / 2 + 2.4], frame: { cx: 0, cy: HM * 0.42, cz: 0.3, w: width, h: HM + 1.3, el: 18, az: 0 } };
 }
 
 function layoutLine(s) {
@@ -599,10 +690,57 @@ function blendCam(a, b, k) {
   for (const key of ['cx', 'cy', 'cz', 'dist', 'el', 'az', 'ty']) o[key] = lerp(a[key], b[key], k);
   return o;
 }
+// ── camera director: a different move on every beat ────────
+// Each run of lines with the same card gets one shot; within it the camera keeps moving, and it eases
+// into the next shot (the trap cuts in hard, with a zoom punch).
+let RUNS = [];
+const SHOTS = {
+  hero:  (u) => ({ el: 7, az: 12 - 12 * u, dist: 0.94 }),
+  side:  (u) => ({ el: 12, az: -26 + 8 * u, dist: 0.95 }),
+  punch: (u, tl) => ({ el: 15, az: 3, dist: 0.98 - 0.16 * easeOut(tl / 0.35) }),
+  orbit: (u) => ({ el: 19, az: -16 + 30 * u, dist: 0.96 }),
+  high:  (u) => ({ el: 44, az: 12 - 18 * u, dist: 0.98 }),
+  push:  (u) => ({ el: 16, az: 6 - 6 * u, dist: 1.14 - 0.24 * u }),
+  pull:  (u) => ({ el: 21, az: -8 + 8 * u, dist: 0.9 + 0.22 * u }),
+  wide:  (u) => ({ el: 24, az: 10 * u, dist: 1.05 }),
+};
+function shotRuns(E) {
+  const steps = ['push', 'high', 'side', 'orbit'];
+  const out = [];
+  let k = 0, cur = null;
+  E.forEach((e, i) => {
+    const kind = (e.card || {}).kind;
+    if (cur && e.group && e.group === E[i - 1].group) { out.push(cur); return; }
+    let name = 'wide';
+    if (kind === 'attempt') name = 'hero';
+    else if (kind === 'hook') name = (i === 0 || (E[i - 1].card || {}).kind === 'attempt') ? 'hero' : 'side';
+    else if (kind === 'trap') name = 'punch';
+    else if (kind === 'answer') name = 'orbit';
+    else if (kind === 'step') name = steps[k++ % steps.length];
+    else if (kind === 'shortcut') name = 'high';
+    else if (kind === 'your_turn') name = 'pull';
+    cur = { name, first: i, start: e.start, end: e.start + e.dur };
+    out.push(cur);
+  });
+  out.forEach((r) => { const last = E.map((e, i) => [e, i]).filter(([, i]) => out[i] === r).pop(); r.end = last[0].start + last[0].dur + 0.3; r.dur = Math.max(0.5, r.end - r.start); });
+  return out;
+}
+function shotCam(run, t, base) {
+  const u = clamp((t - run.start) / run.dur), tl = t - run.start;
+  const s = SHOTS[run.name](u, tl);
+  let el = s.el, az = base.az + s.az, dist = s.dist;
+  if (base.type === 'board') { el = Math.min(el, 14); az = clamp(az, -20, 20); }
+  if (base.type === 'track') { el = Math.max(el, 12); az = base.az + 0.35 * s.az; dist = Math.max(dist, 1.0); }
+  if (base.type === 'row' || base.type === 'line') dist = Math.max(dist, 0.97);   // keep every item in the frame
+  const out = { ...base, el, az, dist: base.dist * dist };
+  if (run.name === 'punch') { const k = Math.exp(-tl * 7) * (tl > 0.02 ? 1 : 0); out.cx += Math.sin(tl * 47) * 0.18 * k; out.cy += Math.cos(tl * 39) * 0.12 * k; }
+  return out;
+}
+
 function placeCamera(c, t) {
-  const az = THREE.MathUtils.degToRad(c.az + 3.2 * Math.sin(t * 0.21));
-  const el = THREE.MathUtils.degToRad(c.el + 1.6 * Math.sin(t * 0.17 + 1.3));
-  const d = c.dist * (1 - 0.018 * Math.sin(t * 0.13));
+  const az = THREE.MathUtils.degToRad(c.az + 1.6 * Math.sin(t * 0.21));
+  const el = THREE.MathUtils.degToRad(Math.max(3, c.el + 0.8 * Math.sin(t * 0.17 + 1.3)));
+  const d = c.dist * (1 - 0.01 * Math.sin(t * 0.13));
   camera.position.set(c.cx + d * Math.sin(az) * Math.cos(el), c.cy + d * Math.sin(el), c.cz + d * Math.cos(az) * Math.cos(el));
   camera.lookAt(c.cx, c.cy, c.cz);
   camera.setViewOffset(W, H, 0, H / 2 - c.ty, W, H);
@@ -630,7 +768,7 @@ function cardEl(ev) {
     el.innerHTML = `<div class="small">${esc(c.small || 'The right answer')}</div><div class="big"><span class="t">${esc(c.big)}</span><span class="ok">✓</span></div>`;
   } else if (c.kind === 'hook') {
     el.className = 'card dark hook';
-    el.innerHTML = `<div class="small">${esc(c.small)}</div><div class="big">${md(c.big)}</div>`;
+    el.innerHTML = `<div class="small">${esc(c.small)}</div><div class="big">${String(c.big || '').split(/\s+/).map((w) => `<span class="hw">${md(w)}</span>`).join(' ')}</div>`;
   } else if (c.kind === 'trap') {
     el.className = 'card dark trap';
     const big = String(c.big || '').replace(/\s*[×✕x]\s*$/, '');
@@ -666,6 +804,14 @@ function drawCard(ev, t, role) {
     const k = easeOut((t - ev.outAt) / 0.18);
     tr = `translate(-50%, ${(-24 * k).toFixed(1)}px) scale(${(1 - 0.04 * k).toFixed(4)})`;
     op = 1 - k;
+  }
+  if (c.kind === 'hook' && role === 'in') {
+    el.querySelectorAll('.hw').forEach((w, i) => {
+      const a = spring(since - 0.1 - 0.07 * i, 2.4, 0.5);
+      w.style.display = 'inline-block';
+      w.style.transform = `translateY(${((1 - a) * 28).toFixed(1)}px) scale(${(0.8 + 0.2 * a).toFixed(3)})`;
+      w.style.opacity = clamp((since - 0.1 - 0.07 * i) / 0.12).toFixed(2);
+    });
   }
   if (c.kind === 'answer' && role === 'in') {
     const big = el.querySelector('.big');
@@ -734,6 +880,11 @@ function drawCard(ev, t, role) {
       r.style.display = t >= at ? 'block' : 'none';
       r.style.maxHeight = `${(clamp(a, 0, 1) * 80).toFixed(1)}px`;
       inner.style.transform = `translateY(${((1 - a) * 26).toFixed(1)}px)`;
+      inner.querySelectorAll('b').forEach((b) => {            // key numbers count up as their row appears
+        if (b._o === undefined) b._o = b.textContent;
+        const ct = countText(b._o, easeOut((t - at - 0.12) / 0.5));
+        if (ct !== null) b.textContent = ct;
+      });
       inner.style.opacity = clamp((t - at) / 0.2).toFixed(2);
     });
     const cta = el.querySelector('.cta');
@@ -785,9 +936,11 @@ window.load = async (plan) => {
   PLAN = plan;
   const th = THEMES[plan.theme] || THEMES.green;
   floorMat.color.set(th.floor);
-  renderer.setClearColor(th.bg);
+  renderer.setClearColor(th.hor);
   document.body.style.background = th.bg;
-  hemi.groundColor.set(th.bg);
+  hemi.color.set(th.mid); hemi.groundColor.set(th.floor); hemi.intensity = 0.75;
+  buildWorld(th, 1 + Math.floor((plan.total || 1) * 7) % 97);
+  RUNS = shotRuns(plan.events);
   const b = plan.badge || {};
   $('badge').innerHTML = `<span class="tag">${esc(b.tag || 'CA FOUNDATION')}</span><span>${esc(b.text || '')}</span>`;
   $('handle').textContent = plan.handle ? `● ${plan.handle}` : '';
@@ -835,20 +988,20 @@ window.seek = (t) => {
   }
   applyItems(items, t);
 
-  // camera
-  const hasCtr = (L.cur.counters || []).length > 0;
-  const span = (ev.group === 'q' ? 520 : 720) - (hasCtr ? 210 : 0);
-  const ty = (ev.group === 'q' ? 1050 : 975) + (hasCtr ? 170 : 0);
-  const fc = L.cur.frame || { cx: 0, cy: 1, cz: 0, w: 8, h: 4, el: 22, az: 0 };
-  const camCur = { ...cameraFor(fc, span), ty };
-  let camPrev = camCur;
-  if (idx > 0) {
-    const pe = E[idx - 1], pl = LAY[idx - 1];
-    const pfr = pl.cur.frame || fc;
-    const pHas = (pl.cur.counters || []).length > 0;
-    camPrev = { ...cameraFor(pfr, (pe.group === 'q' ? 520 : 720) - (pHas ? 210 : 0)), ty: (pe.group === 'q' ? 1050 : 975) + (pHas ? 170 : 0) };
+  // camera: the content framing (eases when the scene changes), then the shot for this beat
+  const baseOf = (i) => {
+    const l = LAY[i], has = (l.cur.counters || []).length > 0;
+    const fr = l.cur.frame || { cx: 0, cy: 1, cz: 0, w: 8, h: 4, el: 22, az: 0 };
+    return { ...cameraFor(fr, 720 - (has ? 210 : 0)), ty: 975 + (has ? 170 : 0), type: l.cur.type };
+  };
+  const base = idx > 0 ? { ...blendCam(baseOf(idx - 1), baseOf(idx), ease(tl / 1.1)), type: L.cur.type } : baseOf(0);
+  const run = RUNS[idx];
+  let cam = shotCam(run, t, base);
+  if (run.first === idx && idx > 0 && run.name !== 'punch') {
+    const pr = RUNS[idx - 1];
+    const k = ease((t - run.start) / 0.95);
+    if (k < 1) cam = blendCam(shotCam(pr, Math.min(t, pr.end), { ...baseOf(idx - 1), type: LAY[idx - 1].cur.type }), cam, k);
   }
-  const cam = blendCam(camPrev, camCur, ease(tl / 1.1));
   placeCamera(cam, t);
 
   // labels: scene note
@@ -860,7 +1013,10 @@ window.seek = (t) => {
     const a = same ? 1 : spring(tl - 0.35, 2.0, 0.5);
     notes.push({ n: L.cur.note, at: L.cur.noteAt, op: a, scale: 0.85 + 0.15 * clamp(a, 0, 1.2), id: same ? `note:${L.cur.note}` : `note:${idx}:${L.cur.note}` });
   }
-  for (const nt of notes) extra.push({ id: nt.id, text: nt.n, cls: 'note', screen: [W / 2, 1298], op: nt.op, scale: nt.scale ?? 1 });
+  for (const nt of notes) {
+    const [nx, ny] = project(...(nt.at || [0, 0, 2]));
+    extra.push({ id: nt.id, text: nt.n, cls: 'note', screen: [clamp(nx, 220, W - 220), clamp(ny + 40, 560, 1300)], op: nt.op, scale: nt.scale ?? 1 });
+  }
   drawLabels(items, extra, t);
 
   // counters sit between the card and the scene

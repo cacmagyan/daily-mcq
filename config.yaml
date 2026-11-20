@@ -87,6 +87,7 @@ pyq:
   # The voice is Azure's en-IN Prabhat when AZURE_SPEECH_KEY/AZURE_SPEECH_REGION are set, else Kokoro.
   # "/regen pyq video" makes the video again from the same question.
   renderer: "3d"
+  azure_voice: "en-IN-PrabhatNeural"   # or en-IN-AaravNeural / en-IN-KunalNeural
   hashtags_qt: ["#CAFoundation", "#QuantitativeAptitude", "#CAStudents", "#ICAI", "#MathsTricks"]
 
 # Exam countdown: a daily Story "N days to <exam>" with one must-revise topic. It follows the day's MCQ

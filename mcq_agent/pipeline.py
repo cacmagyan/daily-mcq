@@ -504,7 +504,8 @@ def _make_qt(cfg: Config, date: dt.date, instruction: str, old: dict) -> dict:
                 try:
                     logo = cfg.brand.get("logo") or ""
                     res = qt3d.render(item["script"], out / "pyq.mp4", out / "pyq_cover.jpg", handle=handle,
-                                      logo=(ROOT / logo) if logo else Path("/nonexistent"))
+                                      logo=(ROOT / logo) if logo else Path("/nonexistent"),
+                                      voice=str(cfg.pyq.get("azure_voice") or "") or None)
                 except Exception as exc:  # noqa: BLE001 - the flat 2D reel is the fallback
                     print(f"  ! 3D QT reel failed, making the 2D one: {str(exc)[:200]}")
             if res is None:

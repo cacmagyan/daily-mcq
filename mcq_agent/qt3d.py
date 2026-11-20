@@ -28,7 +28,7 @@ SR = 48000
 STAGE = ROOT / "assets" / "qt3d" / "stage.html"
 LEAD, GAP, TAIL = 0.35, 0.24, 1.8
 COUNTDOWN = 3.0
-AZURE_VOICE = os.environ.get("QT3D_VOICE") or "en-IN-PrabhatNeural"   # the pipeline passes pyq.azure_voice
+AZURE_VOICE = "en-IN-PrabhatNeural"      # default; config pyq.azure_voice (or QT3D_VOICE) picks another
 AZURE_SPEED = 1.08
 KOKORO_VOICE = "am_michael"
 KOKORO_SPEED = 1.12
@@ -90,8 +90,9 @@ def estimate_words(say: str, dur: float):
     return out
 
 
-def voice_lines(script: dict, silent: bool = False) -> tuple[list, str]:
+def voice_lines(script: dict, silent: bool = False, azure_voice: str | None = None) -> tuple[list, str]:
     """[(audio at SR or None, seconds, [(word, start, end)])] per line, and which voice was used."""
+    azure_voice = azure_voice or os.environ.get("QT3D_VOICE") or AZURE_VOICE
     import numpy as np
 
     lines = script["lines"]
@@ -123,9 +124,9 @@ def voice_lines(script: dict, silent: bool = False) -> tuple[list, str]:
         try:
             for ln in lines:
                 text = tts.speakable(spoken_text(ln["say"]))
-                a = _trim(_wav_to_float(tts._azure(text, AZURE_VOICE, AZURE_SPEED)))
+                a = _trim(_wav_to_float(tts._azure(text, azure_voice, AZURE_SPEED)))
                 out.append((a, len(a) / SR, words_for(ln["say"], a)))
-            return out, f"{AZURE_VOICE} (Azure)"
+            return out, f"{azure_voice} (Azure)"
         except Exception as exc:                           # fall back to the free voice, never fail the reel
             out = []
             print(f"Azure voice failed, using Kokoro: {str(exc)[:160]}")
@@ -498,14 +499,14 @@ def workers() -> int:
 
 def render(script: dict, out: Path, cover: Path | None = None, handle: str = "", silent: bool = False,
            music: bool = True, frames: tuple[float, float] | None = None, n_workers: int | None = None,
-           logo: Path | None = None) -> dict:
+           logo: Path | None = None, voice: str | None = None) -> dict:
     """Make the reel at `out`. silent=True skips the voice (timing estimated) for quick previews;
     frames=(t0, t1) renders only that stretch (for checking a scene)."""
     from playwright.sync_api import sync_playwright
 
     from .video import ffmpeg_path
 
-    vl, voice_used = voice_lines(script, silent=silent)
+    vl, voice_used = voice_lines(script, silent=silent, azure_voice=voice)
     events, total = timeline(script, vl)
     plan = make_plan(script, events, total, handle, logo)
     work = Path(tempfile.mkdtemp(prefix="qt3d_"))

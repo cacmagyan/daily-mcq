@@ -661,6 +661,8 @@ def _key(item: dict) -> str:
 
 
 def _slot(cfg: Config, item: dict) -> dt.time:
+    if item.get("post_time"):                     # a one-off time set on the item (e.g. "post this now")
+        return dt.time.fromisoformat(item["post_time"])
     kind = item.get("kind")
     if kind in CONCEPTS:
         return dt.time.fromisoformat(cfg.concept_time(slot_of(kind)))

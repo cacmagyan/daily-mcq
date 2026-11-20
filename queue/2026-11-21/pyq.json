@@ -1,49 +1,283 @@
 {
   "kind": "pyq",
-  "course_id": "cma_inter",
-  "paper_code": "Paper 6",
-  "paper_name": "Financial Accounting",
+  "format": "qt_video",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Business Mathematics",
+  "topic_key": "Annuities and present value",
+  "ref": "",
   "tried": [
     "Paper 6||1-11",
     "Paper 6||4-15"
   ],
-  "ref": "Paper 6||1-11",
-  "topic": "Introduction to Accounting",
-  "question": "Which of the following statements is correct?",
-  "options": [
-    "Financial accounts of an enterprise are treated as evidence in the court of law.",
-    "Financial statements prepared by two different accountants will always show identical results.",
-    "Financial statements need not take into consideration any statutory requirements.",
-    "Only credit transactions are recorded in the books of accounts."
-  ],
-  "correct": "A",
-  "explanation": "Properly maintained books of account are accepted as legal evidence in a court of law. This is a recognised advantage and objective of financial accounting, because it gives documentary proof of transactions and disputes.",
-  "working": [],
-  "why_not": {
-    "B": "Judgement in estimates and policies can make results differ between accountants.",
-    "C": "Statutes like the Companies Act must be followed in preparing statements.",
-    "D": "Both cash and credit transactions are recorded."
+  "topic": "Annuity due present value",
+  "script": {
+    "theme": "teal",
+    "badge": {
+      "tag": "CA FOUNDATION",
+      "text": "QT · ANNUITY DUE PRESENT VALUE"
+    },
+    "header": "CA Foundation pattern · Paper 3 · Quantitative Aptitude",
+    "question": "A person receives **₹2,200 at the start of each year** for 2 years. Interest is 10% p.a. compounded annually. What is the **present value** of this annuity?",
+    "options": [
+      "₹3,818.18",
+      "₹4,200",
+      "₹4,400",
+      "₹4,000"
+    ],
+    "answer": 1,
+    "scene": {
+      "type": "bars",
+      "max": 4400,
+      "bars": [
+        {
+          "label": "Pay 1 now",
+          "segments": [
+            {
+              "v": 2200.0,
+              "label": "₹2,200"
+            }
+          ]
+        },
+        {
+          "label": "Pay 2 in…",
+          "segments": [
+            {
+              "v": 2200.0,
+              "label": "₹2,200"
+            }
+          ]
+        }
+      ],
+      "note": "Start of each year"
+    },
+    "lines": [
+      {
+        "say": "When payments come at the start of each year, it is an annuity due. Many students forget this and use the ordinary formula.",
+        "card": {
+          "kind": "hook",
+          "small": "Annuity due",
+          "big": "Paid at the START"
+        }
+      },
+      {
+        "say": "Discount the first payment by 1 year and the second by 2 years. That gives ₹3,818.18. Right?",
+        "card": {
+          "kind": "hook",
+          "small": "So...",
+          "big": "2,200÷1.1 + 2,200÷1.21"
+        }
+      },
+      {
+        "say": "Wrong. ₹3,818.18 is the trap, and most students fall for it.",
+        "card": {
+          "kind": "trap",
+          "small": "QT · ANNUITY DUE PRESENT VALUE",
+          "big": "₹3,818.18 ×",
+          "sub": "that is the trap"
+        }
+      },
+      {
+        "say": "Here is the question. A person receives ₹2,200 at the start of each year for 2 years. Interest is 10% p.a. compounded annually. What is the present value of this annuity?",
+        "card": {
+          "kind": "question"
+        }
+      },
+      {
+        "say": "Is it ₹3,818.18, ₹4,200, ₹4,400, or ₹4,000?",
+        "card": {
+          "kind": "question",
+          "options": true
+        }
+      },
+      {
+        "say": "Pause the video, and pick your option.",
+        "card": {
+          "kind": "pause"
+        }
+      },
+      {
+        "say": "The answer is ₹4,200. Not ₹3,818.18.",
+        "card": {
+          "kind": "reveal"
+        }
+      },
+      {
+        "say": "Step one. The payments are at the start of each year.",
+        "card": {
+          "kind": "step",
+          "title": "Step 1 · Spot the timing",
+          "rows": [
+            "Pay 1: time 0"
+          ]
+        },
+        "scene": {
+          "type": "bars",
+          "max": 4400,
+          "bars": [
+            {
+              "label": "Pay 1 now",
+              "segments": [
+                {
+                  "v": 2200.0,
+                  "label": "₹2,200"
+                }
+              ]
+            }
+          ],
+          "note": "No discount today"
+        }
+      },
+      {
+        "say": "So the first ₹2,200 comes today. Today means no discounting.",
+        "card": {
+          "kind": "step",
+          "title": "Step 1 · Spot the timing",
+          "rows": [
+            "Pay 1: time 0",
+            "PV of pay 1 = **₹2,200**"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "Step two. The second payment comes after 1 year only.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · Discount the second payment",
+          "rows": [
+            "Pay 2: time 1 year"
+          ]
+        },
+        "scene": {
+          "type": "bars",
+          "max": 4400,
+          "bars": [
+            {
+              "label": "Pay 1 now",
+              "segments": [
+                {
+                  "v": 2200.0,
+                  "label": "₹2,200"
+                }
+              ]
+            },
+            {
+              "label": "Pay 2 PV",
+              "segments": [
+                {
+                  "v": 2000.0,
+                  "label": "₹2,000"
+                }
+              ]
+            }
+          ],
+          "note": "Discount once"
+        }
+      },
+      {
+        "say": "Discount it once at 10%. Divide by 1.1.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · Discount the second payment",
+          "rows": [
+            "Pay 2: time 1 year",
+            "2,200 ÷ 1.1 = **₹2,000**"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "Step three. Add the two values.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · Add both present values",
+          "rows": [
+            "2,200 + 2,000"
+          ]
+        },
+        "scene": {
+          "type": "bars",
+          "max": 4400,
+          "bars": [
+            {
+              "label": "Total PV",
+              "segments": [
+                {
+                  "v": 2200.0,
+                  "label": "₹2,200"
+                },
+                {
+                  "v": 2000.0,
+                  "label": "₹2,000"
+                }
+              ],
+              "top": "₹4,200"
+            }
+          ],
+          "note": "Annuity due"
+        }
+      },
+      {
+        "say": "The ₹3,818.18 is correct only for payments at the end of each year.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · Add both present values",
+          "rows": [
+            "2,200 + 2,000",
+            "= **₹4,200**"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "The shortcut. Annuity due equals ordinary annuity multiplied by 1 plus i. Here 3,818.18 × 1.1 gives ₹4,200. Or take the first payment, plus an ordinary annuity for one year less.",
+        "card": {
+          "kind": "shortcut",
+          "rows": [
+            "Due = Ordinary × (1 + i)",
+            "3,818.18 × 1.1 = 4,200"
+          ]
+        }
+      },
+      {
+        "say": "Your turn. Your turn. A person receives ₹3,300 at the start of each year for 2 years, at 10% p.a. Find the present value. Write your answer in the comments.",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "3,300 + 3,300 ÷ 1.1",
+            "3,300 + 3,000"
+          ]
+        }
+      },
+      {
+        "say": "Comment your answer. Follow for a QT trap every day.",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "3,300 + 3,300 ÷ 1.1",
+            "3,300 + 3,000"
+          ],
+          "all": true
+        }
+      }
+    ]
   },
-  "exam_tip": "Remember: books of account serve as legal evidence, which is a standard advantage of accounting.",
-  "asked_in": "CMA Inter June 2025 exam",
-  "asked_short": "Jun 2025 exam",
-  "papers_tags": [
-    "PY J25"
-  ],
+  "correct": "B",
+  "trap": "₹3,818.18",
+  "your_turn_answer": "₹6,300",
+  "asked_in": "CA Foundation pattern",
   "check_notes": [
-    "Wording: 'gives documentary proof of transactions and disputes' is awkward. The books prove the transactions and serve as evidence in disputes; they do not prove the disputes themselves."
+    "\"Your turn.\" is said twice in a row.",
+    "The card \"2,200 + 2,000 = ₹4,200\" appears while the spoken line is about ₹3,818.18 being correct only for end-of-year payments, so speech and card don't match.",
+    "\"Most students fall for it\" is an unsupported claim."
   ],
-  "notes": [
-    "Paper 6||4-15: examiner: The 'Why not A' line is wrong. ₹9,50,000 is not a random figure: it is the capitalised value minus total assets (1,44,50,000 − 1,35,00,000), so the error is deducting total assets instead of net asset"
-  ],
+  "notes": [],
   "hold": false,
   "hold_reason": "",
-  "image_prefix": "pyq",
-  "author": "Rahul kp",
-  "images": {
-    "question": "pyq_q.jpg",
-    "answer": "pyq_a.jpg"
-  },
-  "fit_notes": [],
-  "caption": "📜 PYQ of the day · CMA Inter\nPaper 6: Financial Accounting\nAsked in the CMA Inter June 2025 exam\n\nTry it first: comment your answer (A, B, C or D), then swipe for the solution.\nSave 🔖 it for revision: past papers repeat ideas.\n\nFollow @cacmagyan for a past-paper question every day.\n\n#PYQ #CMAInter #ICMAI #CMAExam #PastPapers\n\nref pyq-261121"
+  "video": "pyq.mp4",
+  "cover": "pyq_cover.jpg",
+  "seconds": 134.2,
+  "thumb_ms": 19033,
+  "caption": "Paid at the START… so ₹3,818.18? That's the trap. 🪤\n\nA person receives ₹2,200 at the start of each year for 2 years. Interest is 10% p.a. compounded annually. What is the present value of this annuity?\n\n(a) ₹3,818.18\n(b) ₹4,200\n(c) ₹4,400\n(d) ₹4,000\n\nPause and comment your option (a, b, c or d) before the answer 👇\nCA Foundation Paper 3 · Quantitative Aptitude.\nSave 🔖 it for your QT revision.\n\nFollow @cacmagyan for a QT trap every day.\n\n#CAFoundation #QuantitativeAptitude #CAStudents #ICAI #MathsTricks\n\nref pyq-261121"
 }

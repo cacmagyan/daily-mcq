@@ -829,7 +829,7 @@ window.seek = (t) => {
   // camera
   const hasCtr = (L.cur.counters || []).length > 0;
   const span = (ev.group === 'q' ? 520 : 720) - (hasCtr ? 210 : 0);
-  const ty = (ev.group === 'q' ? 1065 : 1000) + (hasCtr ? 170 : 0);
+  const ty = (ev.group === 'q' ? 1050 : 975) + (hasCtr ? 170 : 0);
   const fc = L.cur.frame || { cx: 0, cy: 1, cz: 0, w: 8, h: 4, el: 22, az: 0 };
   const camCur = { ...cameraFor(fc, span), ty };
   let camPrev = camCur;
@@ -837,7 +837,7 @@ window.seek = (t) => {
     const pe = E[idx - 1], pl = LAY[idx - 1];
     const pfr = pl.cur.frame || fc;
     const pHas = (pl.cur.counters || []).length > 0;
-    camPrev = { ...cameraFor(pfr, (pe.group === 'q' ? 520 : 720) - (pHas ? 210 : 0)), ty: (pe.group === 'q' ? 1065 : 1000) + (pHas ? 170 : 0) };
+    camPrev = { ...cameraFor(pfr, (pe.group === 'q' ? 520 : 720) - (pHas ? 210 : 0)), ty: (pe.group === 'q' ? 1050 : 975) + (pHas ? 170 : 0) };
   }
   const cam = blendCam(camPrev, camCur, ease(tl / 1.1));
   placeCamera(cam, t);
@@ -851,7 +851,7 @@ window.seek = (t) => {
     const a = same ? 1 : spring(tl - 0.35, 2.0, 0.5);
     notes.push({ n: L.cur.note, at: L.cur.noteAt, op: a, scale: 0.85 + 0.15 * clamp(a, 0, 1.2), id: same ? `note:${L.cur.note}` : `note:${idx}:${L.cur.note}` });
   }
-  for (const nt of notes) extra.push({ id: nt.id, text: nt.n, cls: 'note', screen: [W / 2, ev.group === 'q' ? 1290 : 1272], op: nt.op, scale: nt.scale ?? 1 });
+  for (const nt of notes) extra.push({ id: nt.id, text: nt.n, cls: 'note', screen: [W / 2, 1298], op: nt.op, scale: nt.scale ?? 1 });
   drawLabels(items, extra, t);
 
   // counters sit between the card and the scene

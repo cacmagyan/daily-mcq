@@ -494,6 +494,10 @@ def qt_series_no(date: dt.date, subject: str = "qt") -> int:
             continue
         if d.get("format") == "qt_video" and not d.get("error") and (d.get("subject") or "qt") == subject:
             before.append(int((d.get("script") or {}).get("series_no") or 0))
+    from .pyqday import manual_posts
+    for m in manual_posts():
+        if (m.get("subject") or "qt") == subject and str(m.get("date", "")) < date.isoformat():
+            before.append(int(m.get("series_no") or 0))
     return max([len(before)] + before) + 1
 
 

@@ -1,0 +1,83 @@
+{
+  "kind": "news",
+  "date": "2026-11-22",
+  "stories": [
+    {
+      "tag": "Banking",
+      "headline": "IndusInd Bank terminates ex-CEO Sumant Kathpalia, to seek pay recovery",
+      "points": [
+        "IndusInd Bank's board ended Sumant Kathpalia's employment after a disciplinary probe into alleged misconduct.",
+        "Proceedings began after misreporting of accounting details was linked to significant financial losses.",
+        "The bank will try to recover his compensation since March 2020; its shares are up 16% this year."
+      ],
+      "why_it_matters": "It shows how accounting misreporting can lead to losses, disciplinary action and pay recovery, a key theme in audit and governance.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Economic Times",
+      "source_title": "IndusInd Bank ends ex-CEO Kathpalia's employment, seeks to recover pay",
+      "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/indusind-bank-ends-ex-ceo-kathpalias-employment-seeks-to-recover-pay/articleshow/136042443.cms",
+      "published": "2026-11-21T06:24:52+05:30",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "GST",
+      "headline": "GSTN adds metro rail as a transport mode in e-way bill system",
+      "points": [
+        "GSTN has added metro rail as a new mode of transport in the e-way bill system.",
+        "The change follows a government notification issued on October 26.",
+        "The system now offers five modes: Road, Rail, Air, Ship and Metro Rail."
+      ],
+      "why_it_matters": "E-way bill rules are part of GST compliance, so students should know how the portal's transport options and document entries change.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Economic Times",
+      "source_title": "GST Network adds metro rail as fifth mode of transport in e-way bill system",
+      "link": "https://economictimes.indiatimes.com/news/economy/policy/gst-network-adds-metro-rail-as-fifth-mode-of-transport-in-e-way-bill-system/articleshow/136050476.cms",
+      "published": "2026-11-21T15:10:22+05:30",
+      "check": "minor",
+      "check_notes": [
+        "Point 1 is a near-verbatim paraphrase of the source's opening sentence (only 'introduced' changed to 'added'); Point 3 also closely mirrors source wording. Consider rewording more substantially."
+      ]
+    },
+    {
+      "tag": "Budget",
+      "headline": "Sitharaman holds ninth pre-Budget meeting on housing and culture",
+      "points": [
+        "Finance Minister Nirmala Sitharaman chaired the ninth pre-Budget consultation for Union Budget 2027-28.",
+        "Experts from housing, urbanisation and culture sectors took part, the Finance Ministry said in a post on X.",
+        "Secretaries of the Department of Economic Affairs and Department of Urban Development attended; no proposals were disclosed."
+      ],
+      "why_it_matters": "Pre-Budget talks shape tax and spending proposals that CA and CMA students study in taxation and later handle in practice.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Economic Times",
+      "source_title": "Nirmala Sitharaman chairs ninth pre-Budget consultation with housing, urbanisation and culture stakeholders",
+      "link": "https://economictimes.indiatimes.com/news/economy/policy/nirmala-sitharaman-chairs-ninth-pre-budget-consultation-with-housing-urbanisation-and-culture-stakeholders/articleshow/136033324.cms",
+      "published": "2026-11-20T21:55:30+05:30",
+      "check": "minor",
+      "check_notes": [
+        "'Why it matters' line about CA and CMA students is the outlet's own commentary and isn't in the source; it's framing, not a factual error.",
+        "Point 2 says only 'Experts' took part, while the source says 'experts and stakeholders'. This is a small wording narrowing.",
+        "Point 3's 'no proposals were disclosed' is a fair paraphrase, but the source says more narrowly that the ministry's post gave no details of the proposals.",
+        "Headline leaves out urbanisation. It's a wording omission and doesn't mislead."
+      ]
+    }
+  ],
+  "notes": [
+    "skipped 'Foreign asset disclosure for small taxpayers: Do you need to': not usable",
+    "skipped 'RBI clarifies new FEMA rules: Who needs to file export decla': why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax rules: Delhi ITAT holds capital gains on transfer': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 22 Nov 2026\n\n1️⃣ IndusInd Bank terminates ex-CEO Sumant Kathpalia, to seek pay recovery (Economic Times)\n2️⃣ GSTN adds metro rail as a transport mode in e-way bill system (Economic Times)\n3️⃣ Sitharaman holds ninth pre-Budget meeting on housing and culture (Economic Times)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Economic Times. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261122",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

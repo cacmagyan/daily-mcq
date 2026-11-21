@@ -1,0 +1,149 @@
+{
+  "kind": "concept",
+  "course_id": "cma_final",
+  "paper_code": "Paper 16",
+  "paper_name": "Strategic Cost Management",
+  "author": "Rahul kp",
+  "topic": "ABC vs Traditional Costing",
+  "title": "ABC vs",
+  "title_highlight": "Traditional Costing",
+  "hook": "who really causes the cost?",
+  "simple_words": "Traditional spreads overhead by volume. ABC charges it by the activities each product actually uses.",
+  "definitions": [
+    {
+      "term": "Traditional Costing",
+      "meaning": "Overheads are collected by department and absorbed on a volume base such as labour hours or machine hours.",
+      "note": "one rate, volume only"
+    },
+    {
+      "term": "Activity Based Costing",
+      "meaning": "Overheads are collected in activity cost pools and charged to products by cost drivers, the cause of each activity's cost.",
+      "note": "many pools, many drivers"
+    }
+  ],
+  "key_points": [
+    "Traditional costing assumes ==volume== causes overhead; ABC assumes ==activities== cause it.",
+    "ABC links cost to the real driver: set-ups, orders, inspections, machine runs.",
+    "Traditional costing tends to over-cost high-volume simple products and under-cost low-volume complex ones.",
+    "!!ABC does not change total overhead!!; it only changes how it is shared among products."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "same overhead, different sharing",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Traditional",
+      "ABC"
+    ],
+    "rows": [
+      [
+        "Cost pools",
+        "By department or one plant-wide",
+        "By activity"
+      ],
+      [
+        "Absorption base",
+        "Volume: labour or machine hours",
+        "Cost drivers of each activity"
+      ],
+      [
+        "Number of rates",
+        "One or few",
+        "Many, one per pool"
+      ],
+      [
+        "Product cost accuracy",
+        "Weak when products are diverse",
+        "Better when products are diverse"
+      ],
+      [
+        "Best suited to",
+        "Simple, uniform products",
+        "Complex, high overhead, varied mix"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Same total, fairer split!",
+    "text": "Both methods recover the same total overhead; they differ only in how it is spread across products."
+  },
+  "trick_hook": "remember who pays for what",
+  "memory_trick": {
+    "mnemonic": "Thali bill vs Menu bill",
+    "explanation": "Traditional is a fixed thali bill: everyone at the table pays equally. ABC is the menu bill: you pay only for the dishes you ordered."
+  },
+  "steps": [
+    "List the main activities",
+    "Collect overhead in each cost pool",
+    "Pick a cost driver per pool",
+    "Rate = pool cost ÷ driver units",
+    "Charge products by driver usage"
+  ],
+  "exam_tip": "In a comparison question, name the base for each method and state the effect on low-volume complex products.",
+  "doubt": {
+    "question": "Does ABC reduce total cost?",
+    "answer": "No. ABC only gives more accurate product costs. Cost falls only if management acts on the information, for example by dropping activities that add no value."
+  },
+  "mistakes_hook": "don't mix the bases",
+  "mistakes": [
+    {
+      "wrong": "ABC reduces the total overhead of the firm",
+      "right": "ABC only re-distributes the same total overhead among products more accurately."
+    },
+    {
+      "wrong": "Labour hours are the cost driver in ABC for every pool",
+      "right": "Each activity has its own driver, such as number of set-ups, orders or inspections."
+    },
+    {
+      "wrong": "Traditional costing over-costs low-volume complex products",
+      "right": "It tends to under-cost them and over-cost high-volume simple products."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Checker 1: Definition 1 note ('one rate, volume only') contradicts the definition itself ('collected by department') and table row 3 ('One or few'). Traditional costing can use one plant-wide rate or separate departmental rates. Correct version: 'one or few rates, volume bases only'.",
+    "Checker 1: Memory trick explanation: 'everyone at the table pays equally' could suggest that traditional costing splits overhead equally between products. It actually charges overhead in proportion to volume (labour or machine hours), whatever activities each product really uses. Suggested wording: 'Traditional is a thali bill shared by head count: each person pays the same rate whatever they ate, so the big eaters of activities are subsidised. ABC is the menu bill: you pay for the dishes you ordered.'"
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 0.98,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 16: Strategic Cost Management\nABC vs Traditional Costing\n\nIn simple words: Traditional spreads overhead by volume. ABC charges it by the activities each product actually uses.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept-261123",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

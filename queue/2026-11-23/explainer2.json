@@ -1,0 +1,9 @@
+{
+  "kind": "explainer2",
+  "course_id": "ca_final",
+  "topic": "Tax Avoidance vs Tax Evasion",
+  "concept_topic": "Tax Avoidance vs Tax Evasion",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 14: board lines needs 1-2 lines of at most 14 characters; the lines have 227 words; write 120-175; line 12: the teacher's line is too long (at most 22 words)",
+  "hold": false,
+  "hold_reason": ""
+}

@@ -1,0 +1,217 @@
+{
+  "date": "2026-11-23",
+  "day": 33,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-22T01:37:46+05:30",
+  "items": [
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Ratio Analysis - Quick Ratio",
+      "question": "On 31 March 2026 a firm had stock ₹2,00,000, debtors ₹3,00,000, cash and bank ₹1,00,000, prepaid expenses ₹40,000 and current liabilities ₹2,00,000 (no bank overdraft). Its quick (acid-test) ratio is:",
+      "options": [
+        "3.2 : 1",
+        "2.2 : 1",
+        "2.0 : 1",
+        "1.5 : 1"
+      ],
+      "correct": "C",
+      "explanation": "Quick assets are current assets less stock and prepaid expenses, so debtors plus cash and bank = ₹4,00,000. Divided by current liabilities ₹2,00,000, the ratio is 2 : 1.",
+      "working": [
+        {
+          "label": "Debtors",
+          "value": "₹3,00,000"
+        },
+        {
+          "label": "Cash and bank",
+          "value": "₹1,00,000"
+        },
+        {
+          "label": "Quick assets",
+          "value": "₹4,00,000"
+        },
+        {
+          "label": "Current liabilities",
+          "value": "₹2,00,000"
+        },
+        {
+          "label": "Quick ratio (times)",
+          "value": "2.0"
+        }
+      ],
+      "why_not": {
+        "A": "That is the current ratio: all current assets ₹6,40,000 over ₹2,00,000.",
+        "B": "Stock was removed but prepaid expenses were wrongly kept as a quick asset.",
+        "D": "Only debtors ₹3,00,000 were counted; cash and bank were left out."
+      },
+      "exam_tip": "Quick assets = current assets minus stock and prepaid expenses. Prepaids cannot be turned into cash.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Some textbooks include prepaid expenses in quick assets, which would give 2.2:1 (option B). The standard ICMAI/ICAI definition excludes them, so this is a possible but minor ambiguity.",
+        "Checker: Prepaid expenses act as a distractor. The question could say outright that quick assets exclude stock and prepaid expenses."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 33\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Ratio Analysis - Quick Ratio\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261123",
+      "story": "cma_cat_story.jpg",
+      "answer_story": "cma_cat_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 11",
+      "paper_name": "Financial Management and Business Data Analytics",
+      "topic": "Leverage: Operating vs Financial",
+      "question": "A firm has sales of ₹10,00,000, variable cost ₹6,00,000, fixed operating cost ₹2,00,000 and no debt or preference capital. What are its DOL and DFL?",
+      "options": [
+        "DOL 1; DFL 2",
+        "DOL 2; DFL 1",
+        "DOL 1.5; DFL 1",
+        "DOL 2; DFL 2"
+      ],
+      "correct": "B",
+      "explanation": "Contribution = ₹4,00,000; EBIT = ₹2,00,000. DOL = Contribution/EBIT = 2. With no interest or preference dividend, EBIT equals EBT, so DFL = 1.",
+      "working": [
+        {
+          "label": "Contribution (10,00,000 - 6,00,000)",
+          "value": "₹4,00,000"
+        },
+        {
+          "label": "EBIT (4,00,000 - 2,00,000)",
+          "value": "₹2,00,000"
+        },
+        {
+          "label": "DOL = Contribution / EBIT",
+          "value": "2"
+        },
+        {
+          "label": "Interest",
+          "value": "₹0"
+        },
+        {
+          "label": "DFL = EBIT / EBT",
+          "value": "1"
+        },
+        {
+          "label": "DOL and DFL",
+          "value": "2 and 1"
+        }
+      ],
+      "why_not": {
+        "C": "Divided sales less variable cost by something wrong: used 3,00,000 style base; contribution/EBIT is 2",
+        "D": "Assumed DFL equals DOL; with no debt, DFL is 1, not 2",
+        "A": "Swapped the two; fixed operating cost exists so DOL is not 1"
+      },
+      "exam_tip": "DOL = Contribution ÷ EBIT. DFL = EBIT ÷ EBT. No interest means DFL = 1.",
+      "calculation": "contribution = 1000000 - 600000\nebit = contribution - 200000\nanswer = contribution / ebit",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Option B why_not text is awkward; consider rewording as \"Used sales-based figure instead of contribution/EBIT\". Answer is unaffected.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Option B why_not text is awkward; consider rewording as \"Used sales-based figure instead of contribution/EBIT\". Answer is unaffected."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Operating Leverage vs Financial Leverage",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 33\nPaper 11: Financial Management and Business Data Analytics\nTopic: Leverage: Operating vs Financial\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261123",
+      "story": "cma_inter_story.jpg",
+      "answer_story": "cma_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 14",
+      "paper_name": "Strategic Financial Management",
+      "topic": "Mutual Funds - NAV Computation",
+      "question": "An open-ended scheme has 10,00,000 units outstanding. Market value of its investments is ₹12,50,00,000, cash balance is ₹50,00,000 and accrued expenses payable are ₹10,00,000. What is the NAV per unit?",
+      "options": [
+        "₹129",
+        "₹125",
+        "₹131",
+        "₹130"
+      ],
+      "correct": "A",
+      "explanation": "NAV = (market value of investments + cash and other assets - liabilities) ÷ units outstanding. Net assets = 12,50,00,000 + 50,00,000 - 10,00,000 = ₹12,90,00,000, divided by 10,00,000 units.",
+      "working": [
+        {
+          "label": "Market value of investments",
+          "value": "₹12,50,00,000"
+        },
+        {
+          "label": "Add: cash",
+          "value": "₹50,00,000"
+        },
+        {
+          "label": "Less: accrued expenses",
+          "value": "₹10,00,000"
+        },
+        {
+          "label": "Net assets",
+          "value": "₹12,90,00,000"
+        },
+        {
+          "label": "Units outstanding",
+          "value": "10,00,000"
+        },
+        {
+          "label": "NAV per unit",
+          "value": "₹129"
+        }
+      ],
+      "why_not": {
+        "D": "Ignores accrued expenses payable; liabilities must be deducted.",
+        "B": "Uses only investments and leaves out cash and liabilities.",
+        "C": "Adds the liabilities instead of deducting them."
+      },
+      "exam_tip": "NAV per unit = (Assets - Liabilities) ÷ Units. Liabilities always reduce NAV.",
+      "calculation": "investments = 125000000\ncash = 5000000\nliab = 1000000\nunits = 1000000\nanswer = (investments + cash - liab) / units",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 33\nPaper 14: Strategic Financial Management\nTopic: Mutual Funds - NAV Computation\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261123",
+      "story": "cma_final_story.jpg",
+      "answer_story": "cma_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

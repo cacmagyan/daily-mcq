@@ -1,0 +1,147 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_final",
+  "paper_code": "Paper 4",
+  "paper_name": "Direct Tax Laws and International Taxation",
+  "author": "Rahul kp",
+  "topic": "Tax Avoidance vs Tax Evasion",
+  "title": "Tax Avoidance",
+  "title_highlight": "vs Tax Evasion",
+  "hook": "legal trick or crime?",
+  "simple_words": "Avoidance cuts tax by arranging affairs cleverly. Evasion cuts tax by hiding or faking facts.",
+  "definitions": [
+    {
+      "term": "Tax Avoidance",
+      "meaning": "Arranging transactions to reduce tax by using gaps in law, without breaking its words. It may still defeat the purpose of the law.",
+      "note": "Legal in form, doubtful in spirit"
+    },
+    {
+      "term": "Tax Evasion",
+      "meaning": "Reducing tax by illegal means such as concealing income, inflating expenses or producing false records.",
+      "note": "Always illegal"
+    }
+  ],
+  "key_points": [
+    "==Tax planning== uses incentives the way the law intends. It is fully valid.",
+    "==Avoidance== sits in the grey zone: no direct breach, but the arrangement may be challenged.",
+    "==Evasion== means false facts or concealment, so !!penalty and prosecution!! can follow.",
+    "GAAR can ignore an impermissible avoidance arrangement made mainly to get a tax benefit."
+  ],
+  "formula_heading": "The 4-Point Comparison",
+  "formula_hook": "spot the line between them",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Avoidance",
+      "Evasion"
+    ],
+    "rows": [
+      [
+        "Legality",
+        "Within words of law",
+        "Breaks the law"
+      ],
+      [
+        "Method",
+        "Structuring to cut tax",
+        "Hiding income, false claims"
+      ],
+      [
+        "Facts",
+        "Disclosed openly",
+        "Concealed or falsified"
+      ],
+      [
+        "Consequence",
+        "Benefit denied if GAAR applies",
+        "Penalty and prosecution"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Same goal, different road!",
+    "text": "Both lower tax, but avoidance bends the structure while evasion bends the truth."
+  },
+  "trick_hook": "remember with a road story",
+  "memory_trick": {
+    "mnemonic": "Avoid = Around, Evade = Escape",
+    "explanation": "Avoidance goes around the tax wall using gaps. Evasion escapes over the wall by hiding or lying, which is illegal."
+  },
+  "steps": [
+    "Check: are all facts disclosed?",
+    "Any false record or concealment?",
+    "If yes, it is evasion",
+    "If no, is it only structured for tax?",
+    "Then avoidance; test for GAAR"
+  ],
+  "exam_tip": "In case studies, ask first: were facts hidden or false? Hidden means evasion. Open but tax-driven means avoidance.",
+  "doubt": {
+    "question": "Is tax avoidance legal then?",
+    "answer": "It does not breach the words of law, but GAAR can deny the tax benefit if the arrangement is impermissible. Evasion is always illegal."
+  },
+  "mistakes_hook": "don't mix the two",
+  "mistakes": [
+    {
+      "wrong": "Tax planning and tax evasion are the same",
+      "right": "Tax planning is legal use of incentives as intended; evasion is illegal."
+    },
+    {
+      "wrong": "Avoidance is always safe from the department",
+      "right": "An impermissible avoidance arrangement can be disregarded under GAAR."
+    },
+    {
+      "wrong": "Evasion means paying less tax by any method",
+      "right": "Evasion needs illegal means: concealment, false claims or fake records."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Income-tax Act, 1961 (A.Y. 2026-27); GAAR concept",
+  "confidence": "high",
+  "reviewer_note": "No section numbers or rates used. Check GAAR wording is acceptable (main purpose test) for the target audience.",
+  "law_sensitive": true,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Switched to a new concept because the first one couldn't be verified",
+    "Writer: No section numbers or rates used. Check GAAR wording is acceptable (main purpose test) for the target audience.",
+    "Checker 1: Key point 4 and mistake 2 (wording): 'made mainly to get a tax benefit' can suggest that main purpose alone is enough. Under s.96, an arrangement is an impermissible avoidance arrangement only if its main purpose is a tax benefit AND it meets at least one tainted-element test: (a) it creates rights or obligations not normally created at arm's length; (b) it results in misuse or abuse of the Act; (c) it lacks commercial substance (s.97); or (d) it is entered into or carried out in a manner not normally used for bona fide purposes. Suggested version: 'GAAR (Chapter X-A, ss.95–102) can disregard an arrangement whose main purpose is a tax benefit and which meets one of the four tainted-element tests.' Also note that Rule 10U(1)(a) generally keeps GAAR out where the tax benefit from the arrangement in the relevant year is ₹3 crore or less.",
+    "Checker 1: Table row 4 (Consequence – Avoidance) and the doubt answer: GAAR is not the only way to deny an avoidance benefit. Specific anti-avoidance rules (for example transfer pricing, s.94 and s.94A) and the judicial substance-over-form doctrine (McDowell) can also deny it. Suggested version: 'Benefit can be denied under GAAR/SAAR or substance-over-form'.",
+    "Checker 1: Exam tip (wording): 'Hidden means evasion' leaves out falsification. Suggested version: 'Facts hidden or falsified means evasion; facts fully disclosed but the arrangement is tax-driven means avoidance (then test under GAAR/SAAR).'"
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.2,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟪 CA Final · Concept of the day\nPaper 4: Direct Tax Laws and International Taxation\nTax Avoidance vs Tax Evasion\n\nIn simple words: Avoidance cuts tax by arranging affairs cleverly. Evasion cuts tax by hiding or faking facts.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Income-tax Act, 1961 (A.Y. 2026-27); GAAR concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFinal #ICAI #CAStudents #IndAS\n\nref concept2-261123",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

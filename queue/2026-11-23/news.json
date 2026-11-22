@@ -1,0 +1,79 @@
+{
+  "kind": "news",
+  "date": "2026-11-23",
+  "stories": [
+    {
+      "tag": "Income Tax",
+      "headline": "Karnataka HC quashes reassessment over unsigned Section 148A(b) notice",
+      "points": [
+        "Karnataka HC quashed the 148A(b) notice, 148A(d) order, Section 148 notice and the AY 2015-16 reassessment order.",
+        "The 148A(b) notice had neither a digital nor a manual signature, which the Revenue did not dispute.",
+        "Court followed the Bombay HC view and left the Revenue free to start fresh proceedings as the law allows."
+      ],
+      "why_it_matters": "Reassessment follows strict procedure under the Income-tax Act. Defects in a notice can invalidate later orders, penalty and demand.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Unsigned Section 148A(b) Notice Invalid; Reassessment Quashed by Karnataka HC",
+      "link": "https://taxguru.in/income-tax/unsigned-section-148a-notice-invalid-reassessment-quashed-karnataka-hc.html",
+      "published": "2026-11-22T05:55:29+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "Delhi HC sends partner remuneration tax cases back for fresh review",
+      "points": [
+        "Delhi HC disposed of seven connected writ petitions on extra remuneration and performance rewards taxed in partners' hands.",
+        "Petitioners said the firm had already paid tax on these sums; CBDT issued a clarification letter dated 16 October 2026.",
+        "Court set aside the assessment, reassessment and penalty orders; Assessing Officers must pass fresh orders after a hearing."
+      ],
+      "why_it_matters": "Shows how single-point taxation of firm income and partner remuneration under Sections 10(2A) and 28(v) can be disputed and reassessed.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Partner Remuneration Taxation: Delhi HC Orders Fresh Assessment Under CBDT Clarification",
+      "link": "https://taxguru.in/income-tax/partner-remuneration-taxation-delhi-hc-orders-fresh-assessment-cbdt-clarification.html",
+      "published": "2026-11-22T07:17:17+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Delhi quashes reassessment over notice sent to old address",
+      "points": [
+        "In Ranbir Singh vs ITO (AY 2011-12), ITAT Delhi held reassessment invalid as the Section 148 notice was not validly served.",
+        "The notice dated 31 March 2018 went to his former DTC office, though he had retired from DTC on 30 April 2010.",
+        "The tribunal said the notice must be served, not just issued, and quashed the reassessment on 23 March 2026."
+      ],
+      "why_it_matters": "Valid service of a Section 148 notice is a key condition for reassessment, a recurring topic in tax law and litigation work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Mint",
+      "source_title": "Income tax notice sent to your old address? When can ITAT declare reassessment proceedings invalid for taxpayers",
+      "link": "https://www.livemint.com/money/personal-finance/income-tax-notice-sent-to-your-old-address-when-can-itat-declare-reassessment-proceedings-invalid-for-taxpayers-11795365987908.html",
+      "published": "2026-11-22T22:32:35+05:30",
+      "check": "minor",
+      "check_notes": [
+        "'Why it matters' describes valid service of a Section 148 notice as a 'key condition'. The source calls it a 'mandatory condition', so the story softens the wording.",
+        "'Why it matters' also calls this 'a recurring topic in tax law and litigation work'. The source does not say this. It is generic editorial framing, not a specific fact.",
+        "The headline says 'old address', but the notice went to his former office address. This is close enough and is not misleading."
+      ]
+    }
+  ],
+  "notes": [
+    "skipped 'Goods and Services Tax | GSTAT Bengaluru Restores 100% Penal': a point is longer than 110 characters",
+    "skipped 'Income Tax | Section 54F Exemption Cannot Be Denied for Non-': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 23 Nov 2026\n\n1️⃣ Karnataka HC quashes reassessment over unsigned Section 148A(b) notice (TaxGuru)\n2️⃣ Delhi HC sends partner remuneration tax cases back for fresh review (TaxGuru)\n3️⃣ ITAT Delhi quashes reassessment over notice sent to old address (Mint)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Mint, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261123",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

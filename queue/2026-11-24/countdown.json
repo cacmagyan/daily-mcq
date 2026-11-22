@@ -1,0 +1,16 @@
+{
+  "kind": "countdown",
+  "course_id": "ca_inter",
+  "exam": "CA Inter Jan 2027",
+  "exam_date": "2027-01-02",
+  "days": 39,
+  "paper_code": "Paper 4",
+  "paper_name": "Cost and Management Accounting",
+  "topic": "Marginal Costing: CVP and Break-even Analysis",
+  "tip": "Contribution = Sales - Variable cost. BEP = Fixed cost / PV ratio. Margin of safety = Profit / PV ratio.",
+  "hold": false,
+  "hold_reason": "",
+  "images": [
+    "countdown.jpg"
+  ]
+}

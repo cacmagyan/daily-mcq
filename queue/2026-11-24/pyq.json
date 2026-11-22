@@ -1,0 +1,182 @@
+{
+  "kind": "pyq",
+  "format": "qt_video",
+  "subject": "qt",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Logical Reasoning",
+  "topic_key": "Direction sense",
+  "ref": "ca_foundation_qt|J25-46",
+  "tried": [
+    "ca_foundation_qt|J25-46"
+  ],
+  "topic": "Direction sense",
+  "script": {
+    "theme": "navy",
+    "badge": {
+      "tag": "ASKED IN",
+      "text": "CA FOUNDATION JANUARY 2025 · QT"
+    },
+    "header": "CA Foundation January 2025 · Paper 3 · QT",
+    "question": "Anil started walking 5 kms towards north then he turned left and walked 3 kms. Again he turned left and walked 5 kms. Then the **total number of kms he walked** is",
+    "options": [
+      "13 kms",
+      "8 kms",
+      "3 kms",
+      "5 kms"
+    ],
+    "answer": 0,
+    "scene": {
+      "type": "line",
+      "from": 0,
+      "to": 5,
+      "tick": 1,
+      "jumps": [
+        {
+          "from": 0,
+          "to": 5,
+          "label": "5 km N"
+        }
+      ],
+      "note": "Then 3 W, 5 S"
+    },
+    "lines": [
+      {
+        "say": "This question came in the CA Foundation January 2025 exam.",
+        "card": {
+          "kind": "attempt",
+          "exam": "CA Foundation",
+          "when": "January 2025",
+          "sub": "Paper 3 · Quantitative Aptitude"
+        }
+      },
+      {
+        "say": "Anil walks 5 km north. He turns left and walks 3 km. He turns left again and walks 5 km. What is the total distance he walked?",
+        "card": {
+          "kind": "hook",
+          "small": "Direction sense",
+          "big": "5 N, 3 left, 5 left"
+        }
+      },
+      {
+        "say": "He ends up 3 km from the start, so the answer is 3 km. Right?",
+        "card": {
+          "kind": "hook",
+          "small": "So...",
+          "big": "Ends 3 km away = 3"
+        }
+      },
+      {
+        "say": "Wrong. 3 kms is the trap.",
+        "card": {
+          "kind": "trap",
+          "small": "CA FOUNDATION JANUARY 2025 · QT",
+          "big": "3 kms ×",
+          "sub": "that is the trap"
+        }
+      },
+      {
+        "say": "The right answer is 13 kms. Here's why.",
+        "card": {
+          "kind": "answer",
+          "small": "The right answer",
+          "big": "13 kms"
+        }
+      },
+      {
+        "say": "Step one. Path first. North 5 km. Left turn means west, 3 km. Left again means south, 5 km.",
+        "card": {
+          "kind": "step",
+          "title": "Step 1 · Draw the path",
+          "rows": [
+            "5 km North",
+            "3 km West",
+            "5 km South"
+          ]
+        },
+        "scene": {
+          "type": "board",
+          "lines": [
+            "N 5 → W 3 → S 5"
+          ]
+        }
+      },
+      {
+        "say": "Step two. The question asks total distance walked, not distance from the start.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · Read the question",
+          "rows": [
+            "Asked: distance walked",
+            "Not: distance from start"
+          ]
+        }
+      },
+      {
+        "say": "Step three. Add every leg. 5 plus 3 plus 5 is 13 km.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · Add every leg",
+          "rows": [
+            "5 + 3 + 5",
+            "= **13 km**"
+          ]
+        },
+        "scene": {
+          "type": "board",
+          "lines": [
+            "5 + 3 + 5",
+            "= 13 km"
+          ]
+        }
+      },
+      {
+        "say": "The shortcut. Distance walked is the sum of all legs. Displacement is only the straight gap from the start. Here that gap is 3 km.",
+        "card": {
+          "kind": "shortcut",
+          "rows": [
+            "Distance walked = sum of all legs",
+            "Gap from start = displacement"
+          ]
+        }
+      },
+      {
+        "say": "Your turn. Ravi walks 4 km east, turns left, walks 6 km, turns left, and walks 4 km. How far is he from the start, and how far did he walk in total?",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "Legs: 4 + 6 + 4 = 14 km",
+            "Gap from start = 6 km"
+          ]
+        }
+      },
+      {
+        "say": "Comment your answer. Follow for a new trap every day.",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "Legs: 4 + 6 + 4 = 14 km",
+            "Gap from start = 6 km"
+          ],
+          "all": true
+        }
+      }
+    ],
+    "series": "QT TRAP",
+    "series_no": 5
+  },
+  "correct": "A",
+  "trap": "3 kms",
+  "your_turn_answer": "6 km from start; 14 km walked",
+  "asked_in": "January 2025",
+  "check_notes": [],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "video": "pyq.mp4",
+  "cover": "pyq_cover.jpg",
+  "seconds": 70.3,
+  "thumb_ms": 20824,
+  "voice": "en-IN-AaravNeural (Azure)",
+  "caption": "5 N, 3 left, 5 left… so 3 kms? That's the trap. 🪤\n\nAnil started walking 5 kms towards north then he turned left and walked 3 kms. Again he turned left and walked 5 kms. Then the total number of kms he walked is\n\n(a) 13 kms\n(b) 8 kms\n(c) 3 kms\n(d) 5 kms\n\nDid you pick the trap too? Tell me in the comments 👇\nAsked in CA Foundation January 2025 · Paper 3 (ICAI's official answer key).\nSave 🔖 it for your Quantitative Aptitude revision.\n\nFollow @cacmagyan for a new trap every day.\n\n#CAFoundation #QuantitativeAptitude #CAStudents #ICAI #MathsTricks\n\nref pyq-261124"
+}

@@ -1,9 +1,150 @@
 {
   "kind": "explainer",
   "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Logical Reasoning",
   "topic": "Decode Coding-Decoding (Letter Codes)",
   "concept_topic": "Decode Coding-Decoding (Letter Codes)",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 193 words; write 120-175",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 58.47,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Decode letter codes with one rule",
+    "caption_hook": "Crack any letter code in 10 seconds with this simple method",
+    "hook_label": "CRACK THE CODE FAST?",
+    "lines": [
+      {
+        "who": "girl",
+        "say": "Wait, how do people crack letter codes so fast?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Every code follows a fixed rule, which may have more than one step. Find it from one pair, then test every letter.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "title",
+          "title": "Decode Coding",
+          "sub": "Find the rule, then test it"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Okay, but how do I find the rule?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Say CAT becomes FDW. Write places: 3, 1, 20 become 6, 4, 23. Every gap is plus three.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "calc",
+          "top": "3,1,20 → 6,4,23",
+          "big": "+3"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So DOG would become GRJ?",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, GRJ! That's a fixed shift. Common types: fixed shift, mirror, changing shift, reversal, and others.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "list",
+          "title": "Common Code Types",
+          "lines": [
+            "Fixed shift: same +n",
+            "Mirror: sum is 27",
+            "Changing: +1, +2, +3",
+            "Word reversed"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Hmm, what's a mirror code?",
+        "shot": "close",
+        "pose": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "A and Z are mirror twins. Their places always add to twenty-seven. So B pairs with Y.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Mirror Rule",
+          "formula": "place + code place = 27",
+          "sub": "A=1, Z=26, so A-Z, B-Y, C-X"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "What if the shift goes past Z?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Wrap around. Shift X by three: twenty-four plus three is twenty-seven. Subtract twenty-six and you get one, which is A.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "calc",
+          "top": "24+3=27, 27−26=1",
+          "big": "A"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So I test every letter, not just the first one?",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Exactly! One pair shows the rule, all pairs prove it.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Find the rule,",
+            "test every one"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Fixed that the code types are described as common ones, not the only ones. Line 2 now says the rule may have more than one step. The wrap-around board is now 24+3=27, 27−26=1. Check that the word count is within 120-175."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Fixed that the code types are described as common ones, not the only ones. Line 2 now says the rule may have more than one step. The wrap-around board is now 24+3=27, 27−26=1. Check that the word count is within 120-175.",
+  "caption": "🎬 🟩 CA Foundation · Decode letter codes with one rule\n\nCrack any letter code in 10 seconds with this simple method\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 3: Quantitative Aptitude: Logical Reasoning\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFoundation #ICAI #CAStudents #CAExams\n\nref explainer-261124",
   "hold": false,
   "hold_reason": ""
 }

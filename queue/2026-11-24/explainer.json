@@ -1,0 +1,9 @@
+{
+  "kind": "explainer",
+  "course_id": "ca_foundation",
+  "topic": "Decode Coding-Decoding (Letter Codes)",
+  "concept_topic": "Decode Coding-Decoding (Letter Codes)",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: the lines have 193 words; write 120-175",
+  "hold": false,
+  "hold_reason": ""
+}

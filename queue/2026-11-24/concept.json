@@ -1,0 +1,149 @@
+{
+  "kind": "concept",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Logical Reasoning",
+  "author": "Rahul kp",
+  "topic": "Decode Coding-Decoding (Letter Codes)",
+  "title": "Decode Coding",
+  "title_highlight": "Letter Codes",
+  "hook": "crack the code in 10 seconds!",
+  "simple_words": "Each letter is changed by one fixed rule. Find the rule from one pair, then test it on the next letter.",
+  "definitions": [
+    {
+      "term": "Coding-Decoding",
+      "meaning": "A word is changed into a code by a hidden rule. You find the rule and apply it to a new word.",
+      "note": "Rule first, answer later"
+    },
+    {
+      "term": "Letter position",
+      "meaning": "A=1, B=2 ... Z=26. Shifts and mirror pairs are easy when you work with these numbers.",
+      "note": "Learn EJOTY = 5, 10, 15, 20, 25"
+    }
+  ],
+  "key_points": [
+    "Write the ==position numbers== of the word letter by letter, and the code letters below them.",
+    "Compare each pair: is the gap the same (+n or −n), or does it change?",
+    "Check the rule on ==every letter==, not only the first one.",
+    "!!Test the rule on all letters!! before you mark the option; many wrong options fit only the first letter."
+  ],
+  "formula_heading": "The 4 Code Types",
+  "formula_hook": "spot the type, then solve",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Type",
+      "What to check",
+      "Clue"
+    ],
+    "rows": [
+      [
+        "Fixed shift",
+        "Same +n or −n for every letter",
+        "Gap is equal in all pairs"
+      ],
+      [
+        "Mirror (opposite)",
+        "Letter place + code place = 27",
+        "A-Z, B-Y, C-X ..."
+      ],
+      [
+        "Changing shift",
+        "Gap follows a pattern, e.g. +1, +2, +3",
+        "Gaps differ letter to letter"
+      ],
+      [
+        "Word reversed",
+        "Code is the same word backwards",
+        "Same letters, reverse order"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "One pair shows it, all pairs prove it!",
+    "text": "The rule is the same for every letter of the word, so one wrong letter means you have the wrong rule."
+  },
+  "trick_hook": "remember the mirror sum",
+  "memory_trick": {
+    "mnemonic": "Mirror makes 27; EJOTY",
+    "explanation": "A and Z, B and Y are mirror twins and their places always add to 27. EJOTY gives the places 5, 10, 15, 20, 25 as anchors for counting."
+  },
+  "steps": [
+    "Write place numbers of the word",
+    "Write place numbers of the code",
+    "Find the gap for each letter",
+    "Name the type and test all letters",
+    "Apply the rule to the new word"
+  ],
+  "exam_tip": "Wrap-around: after Z comes A again. When a shift goes past Z, subtract 26 from the place number.",
+  "doubt": {
+    "question": "Forward shift or backward shift: how do I know?",
+    "answer": "Compare the code place with the word place. If the code is bigger it is +n; if smaller it is −n. Add 26 if the value goes below 1."
+  },
+  "mistakes_hook": "one slip and the code breaks",
+  "mistakes": [
+    {
+      "wrong": "Checking only the first letter and picking the option",
+      "right": "Test the rule on every letter of the word before choosing the option."
+    },
+    {
+      "wrong": "Using the mirror rule as place + code = 26",
+      "right": "For opposite letters the sum of places is 27 (A=1 and Z=26)."
+    },
+    {
+      "wrong": "Stopping at Z when a forward shift goes beyond it",
+      "right": "Wrap around: after Z the count continues from A, so subtract 26."
+    },
+    {
+      "wrong": "Applying a fixed shift when the gaps change along the word",
+      "right": "If the gaps differ, look for a pattern such as +1, +2, +3 and apply it to the new word."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Checker 1: Key points 3 and 4 say the same thing (both tell you to test the rule on every letter). Suggested fix: change key point 4 to something new, e.g. 'Note whether the code is a forward shift, a backward shift or a mirror before you apply it to the new word.'",
+    "Checker 1: The doubt answer can confuse a student when the shift wraps past Z. It says a bigger code place means +n and a smaller one means -n, but Y->B (25->2) is a forward shift of +3 with wrap-around, which that rule would read as -23. Suggested fix: 'Compare the code place with the word place. If the code is bigger it is +n; if smaller it is -n. Add 26 if the value goes below 1. If a big gap like -23 shows up, read it as the short forward wrap (+3) and check which reading fits all the letters.'",
+    "Checker 2: Key point 3 and key point 4 say the same thing (test the rule on every letter). This is wording polish only. Merge them or replace one with a new point, for example 'also check for a reversed word or a changing shift'. All facts are correct: A=1 to Z=26, EJOTY = 5, 10, 15, 20, 25, mirror sum 27, wrap-around by ±26."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟩 CA Foundation · Concept of the day\nPaper 3: Quantitative Aptitude: Logical Reasoning\nDecode Coding-Decoding (Letter Codes)\n\nIn simple words: Each letter is changed by one fixed rule. Find the rule from one pair, then test it on the next letter.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFoundation #ICAI #CAStudents #CAExams\n\nref concept-261124",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

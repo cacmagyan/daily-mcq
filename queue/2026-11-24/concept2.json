@@ -1,0 +1,145 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 2A",
+  "paper_name": "Financial Accounting-2",
+  "author": "Rahul kp",
+  "topic": "Consignment vs Joint Venture",
+  "title": "Consignment",
+  "title_highlight": "vs Joint Venture",
+  "hook": "agent or partner-like?",
+  "simple_words": "Consignment: you send goods to an agent to sell. Joint venture: two or more people team up for one venture and share profit.",
+  "definitions": [
+    {
+      "term": "Consignment",
+      "meaning": "Consignor sends goods to the consignee to sell on his behalf. Ownership stays with the consignor until the goods are sold.",
+      "note": "Principal and agent"
+    },
+    {
+      "term": "Joint Venture",
+      "meaning": "Two or more persons (co-venturers) carry out a particular business venture together and share profit or loss in an agreed ratio.",
+      "note": "Not a firm, one venture only"
+    }
+  ],
+  "key_points": [
+    "In consignment, the ==consignee== is only an agent and earns commission.",
+    "In a joint venture, co-venturers share ==profit or loss== in the agreed ratio.",
+    "!!Unsold goods with the consignee are consignor's stock!! and are valued in his books.",
+    "A joint venture usually ends when the venture is complete."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn it row by row",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Consignment",
+      "Joint Venture"
+    ],
+    "rows": [
+      [
+        "Parties",
+        "Consignor, consignee",
+        "Co-venturers"
+      ],
+      [
+        "Relationship",
+        "Principal and agent",
+        "Like partners, for one venture"
+      ],
+      [
+        "Reward",
+        "Commission to consignee",
+        "Share of profit or loss"
+      ],
+      [
+        "Account kept",
+        "Consignment A/c",
+        "Joint Venture A/c"
+      ],
+      [
+        "Duration",
+        "Continuing, many consignments",
+        "Usually one venture, then ends"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Agent earns fee, partners share result!",
+    "text": "The consignee gets commission whatever the result; co-venturers bear the profit or loss together."
+  },
+  "trick_hook": "C = Commission, J = Join",
+  "memory_trick": {
+    "mnemonic": "C for Commission, J for Join",
+    "explanation": "Consignment pays the agent a Commission. Joint Venture means people Join hands and share the result."
+  },
+  "steps": [
+    "Spot the parties in the question",
+    "Agent selling goods? Consignment",
+    "Sharing profit in a ratio? Joint venture",
+    "Open the matching account"
+  ],
+  "exam_tip": "Look for the words 'commission' or 'profit sharing ratio' in the question. They tell you which one applies.",
+  "doubt": {
+    "question": "Does the consignee own the goods he holds?",
+    "answer": "No. He is only an agent and holds the goods. The consignor stays the owner until the goods are sold to a customer."
+  },
+  "mistakes_hook": "don't mix the two!",
+  "mistakes": [
+    {
+      "wrong": "Treating consignment dispatch as a sale by the consignor",
+      "right": "Dispatch to the consignee is not a sale. Revenue arises only when the consignee sells to a customer."
+    },
+    {
+      "wrong": "Calling a joint venture a partnership firm",
+      "right": "A joint venture is for a particular venture. It is not a firm and usually ends when the venture is complete."
+    },
+    {
+      "wrong": "Giving the consignee a share of profit as a co-venturer",
+      "right": "The consignee earns commission as an agent. He does not share the profit or loss."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": false,
+  "check_notes": [],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 0.98,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.2,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 2A: Financial Accounting-2\nConsignment vs Joint Venture\n\nIn simple words: Consignment: you send goods to an agent to sell. Joint venture: two or more people team up for one venture and share profit.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept2-261124",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

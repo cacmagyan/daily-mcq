@@ -1,0 +1,188 @@
+{
+  "kind": "explainer2",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 2A",
+  "paper_name": "Financial Accounting-2",
+  "topic": "Consignment vs Joint Venture",
+  "concept_topic": "Consignment vs Joint Venture",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 68.91,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Consignment vs Joint Venture",
+    "caption_hook": "Agent or partner-like? Consignment vs Joint Venture in one minute",
+    "hook_label": "AGENT OR PARTNER?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Consignment and joint venture sound so similar. Agent or partner?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Good question! Both involve two parties working together, but the relationship is different. Let's see how.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Consignment",
+          "sub": "vs Joint Venture"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Okay, so what exactly is consignment?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "The consignor sends goods to a consignee to sell on his behalf. The consignor stays owner until a customer buys.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "Consignor",
+          "from_note": "Owner",
+          "to": "Consignee",
+          "to_note": "Agent",
+          "label": "Goods",
+          "to_on": "consignee"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Wait, so the consignee owns the goods he holds?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "No. He is only an agent. The consignee earns commission on sales and does not bear the consignment's profit or loss.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "list",
+          "title": "Consignee is an agent",
+          "lines": [
+            "Holds goods, not owner",
+            "Earns commission on sales",
+            "Bears no profit or loss"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Hmm, got it. And joint venture?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Two or more co-venturers carry out one particular venture together. They share profit or loss in an agreed ratio.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Joint Venture",
+          "lines": [
+            "Co-venturers, one venture",
+            "Share profit or loss",
+            "Not a firm"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So it's basically a partnership firm?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Partner-like, but not a firm. It usually ends when the venture is complete. Consignment continues, with many consignments.",
+        "shot": "board",
+        "pose": "shrug"
+      },
+      {
+        "who": "girl",
+        "say": "Can you put them side by side?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Sure! The consignee earns commission. Co-venturers share the result in their agreed ratio.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Consignee",
+            "lines": [
+              "Commission",
+              "Agent"
+            ],
+            "icon": "people",
+            "color": "blue"
+          },
+          "right": {
+            "title": "Venturer",
+            "lines": [
+              "Shares result",
+              "Partner-like"
+            ],
+            "icon": "scale",
+            "color": "green"
+          },
+          "right_on": "result"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Oh! Commission means consignment, profit ratio means joint venture!",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Exactly! C for Commission, J for Join.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "C = Commission",
+            "J = Join"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Versus cards now both name the person (Consignee / Venturer) because card titles are limited to 10 characters; 'Co-venturer' would not fit. The consignee line now says commission on sales and no share of profit or loss.",
+    "Checker: Line 10 (voice): 'Consignment continues, with many consignments' is loosely worded and sounds like a rule that every consignment must continue. Better: 'A consignment relationship can carry on over many consignments, while a joint venture usually ends when its one venture is complete.'",
+    "Checker: Line 6 (voice and board 'Bears no profit or loss'): this is true for an ordinary consignee, but a consignee paid del credere commission does bear the loss from bad debts. Better: 'An ordinary consignee does not bear the profit or loss on the consignment; with del credere commission, he bears bad debts.'",
+    "Checker: Line 2 (voice): 'Both involve two parties' doesn't fit a joint venture, which can have two or more co-venturers, as Line 8 itself says. Better: 'Both involve parties working together.'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "Versus cards now both name the person (Consignee / Venturer) because card titles are limited to 10 characters; 'Co-venturer' would not fit. The consignee line now says commission on sales and no share of profit or loss.",
+  "caption": "🎬 🟨 CMA CAT · Consignment vs Joint Venture\n\nAgent or partner-like? Consignment vs Joint Venture in one minute\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 2A: Financial Accounting-2\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref explainer2-261124",
+  "hold": false,
+  "hold_reason": ""
+}

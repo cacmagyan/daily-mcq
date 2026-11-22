@@ -1,0 +1,203 @@
+{
+  "date": "2026-11-24",
+  "day": 34,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-23T01:53:28+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 1",
+      "paper_name": "Accounting",
+      "topic": "Provision for Doubtful Debts and Discount",
+      "question": "On 31 March 2026, debtors are ₹5,20,000 before writing off bad debts of ₹20,000. Required: provision for doubtful debts 5% and then provision for discount 2% on the remaining good debtors. Opening provisions: doubtful debts ₹18,000; discount ₹6,000. Total charge to P&L for FY 2025-26?",
+      "options": [
+        "₹30,500",
+        "₹54,500",
+        "₹27,000",
+        "₹10,500"
+      ],
+      "correct": "A",
+      "explanation": "Debtors after bad debts are ₹5,00,000. Provision for doubtful debts is 5% of this, and discount provision is 2% of the balance after it. Only the increase over opening provisions is charged, plus the bad debts.",
+      "working": [
+        {
+          "label": "Debtors after bad debts",
+          "value": "₹5,00,000"
+        },
+        {
+          "label": "New doubtful debts provision (5%)",
+          "value": "₹25,000"
+        },
+        {
+          "label": "New discount provision (2% of 4,75,000)",
+          "value": "₹9,500"
+        },
+        {
+          "label": "Extra provisions (7,000 + 3,500)",
+          "value": "₹10,500"
+        },
+        {
+          "label": "Add bad debts written off",
+          "value": "₹20,000"
+        },
+        {
+          "label": "Total charge to P&L",
+          "value": "₹30,500"
+        }
+      ],
+      "why_not": {
+        "C": "Left out the extra discount provision of ₹3,500; charged only bad debts and doubtful debts increase.",
+        "B": "Charged full new provisions and ignored the opening provisions, which must be adjusted.",
+        "D": "Counted only the increase in provisions and forgot the bad debts written off."
+      },
+      "exam_tip": "Bad debts first, then provision for doubtful debts, then discount on what is left. Charge only the change in provision.",
+      "calculation": "debtors = 520000 - 20000\npdd = debtors * 0.05\npd = (debtors - pdd) * 0.02\nanswer = 20000 + (pdd - 18000) + (pd - 6000)",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: \"Total charge to P&L\" must be read as including the ₹20,000 bad debts. Option D (₹10,500, provisions only) is a distractor that some may defend if the wording is read narrowly.",
+        "Checker: The question should say clearly that the charge covers bad debts plus the net increase in provisions.",
+        "Checker: The question doesn't say whether the opening provision for doubtful debts was already used to absorb the bad debts. The standard treatment is to charge bad debts to P&L separately."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 74%; consider shortening"
+      ],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 34\nPaper 1: Accounting\nTopic: Provision for Doubtful Debts and Discount\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261124",
+      "story": "ca_foundation_story.jpg",
+      "answer_story": "ca_foundation_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 4",
+      "paper_name": "Cost and Management Accounting",
+      "topic": "Process Costing: Abnormal Loss",
+      "question": "Process X: input 10,000 units; total cost ₹5,95,000. Normal loss is 10% of input, sold at ₹10 per unit. Output is 8,500 units; the rest is abnormal loss, also sold at ₹10 per unit. What is the net abnormal loss charged to Costing Profit and Loss A/c?",
+      "options": [
+        "₹32,500",
+        "₹27,500",
+        "₹29,750",
+        "₹24,750"
+      ],
+      "correct": "B",
+      "explanation": "Normal loss scrap is deducted from cost to get the cost per good unit. Abnormal loss is valued at that rate, then its own scrap sale is credited. The balance goes to Costing P&L.",
+      "working": [
+        {
+          "label": "Normal loss units (10% of 10,000)",
+          "value": "1,000"
+        },
+        {
+          "label": "Normal loss scrap value (₹)",
+          "value": "10,000"
+        },
+        {
+          "label": "Net cost of normal output (₹)",
+          "value": "5,85,000"
+        },
+        {
+          "label": "Cost per unit, 9,000 units (₹)",
+          "value": "65"
+        },
+        {
+          "label": "Abnormal loss units, 500 × ₹65 (₹)",
+          "value": "32,500"
+        },
+        {
+          "label": "Less scrap 500 × ₹10; net loss (₹)",
+          "value": "27,500"
+        }
+      ],
+      "why_not": {
+        "A": "Forgot to credit the scrap sale of the abnormal loss units (₹5,000).",
+        "D": "Spread cost over 10,000 units, ignoring normal loss and its scrap value, then deducted scrap.",
+        "C": "Valued units at ₹59.50 on full input and forgot to deduct the abnormal scrap sale."
+      },
+      "exam_tip": "Cost per unit = (Total cost − normal loss scrap) ÷ (Input − normal loss units). Abnormal loss gets this rate.",
+      "calculation": "normal_units = 10000*0.10\nscrap = normal_units*10\nrate = (595000 - scrap)/(10000 - normal_units)\nabn_units = 10000 - normal_units - 8500\nanswer = abn_units*rate - abn_units*10",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 34\nPaper 4: Cost and Management Accounting\nTopic: Process Costing: Abnormal Loss\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261124",
+      "story": "ca_inter_story.jpg",
+      "answer_story": "ca_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 4",
+      "paper_name": "Direct Tax Laws and International Taxation",
+      "topic": "Tax avoidance vs tax evasion",
+      "question": "Which of the following is tax EVASION, and not tax planning or avoidance, under Indian tax law?",
+      "options": [
+        "Routing a real transaction via a conduit with no commercial substance, only to save tax",
+        "Booking bills for goods never received, to claim a false expense",
+        "Setting up a unit in an area where the law gives a tax holiday",
+        "Investing in a specified instrument to claim a deduction the law allows"
+      ],
+      "correct": "B",
+      "explanation": "Booking bills for goods never received uses false facts and a false entry to reduce tax. This is evasion, which can lead to penalty and prosecution. The other cases are genuine planning or a structure that GAAR may challenge.",
+      "working": [],
+      "why_not": {
+        "D": "Using a deduction as the law intends is valid tax planning, not evasion.",
+        "A": "Real deal with no commercial substance is impermissible avoidance (GAAR), not false facts.",
+        "C": "Locating a unit to get an incentive the law offers is valid tax planning."
+      },
+      "exam_tip": "Evasion = false facts or concealment. Real but artificial structure = avoidance. Lawful use of incentives = planning.",
+      "calculation": "",
+      "applicability": "Income-tax Act, 1961 (A.Y. 2026-27); GAAR concepts",
+      "confidence": "high",
+      "reviewer_note": "Revised so the evasion option has fictitious bills (false facts) and the avoidance option states a real transaction with no commercial substance. No rates or section numbers used.",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Revised so the evasion option has fictitious bills (false facts) and the avoidance option states a real transaction with no commercial substance. No rates or section numbers used.",
+        "Checker: Minor: in option C, most location-based tax holidays have been phased out. The idea is still valid, but 'where the law gives' could be read as referring to current law. The option still works because it is framed as a hypothetical.",
+        "Checker: Minor: option A is labelled avoidance, not evasion. Students might wrongly treat an arrangement caught by GAAR as evasion, but under the standard concepts the key is still correct.",
+        "Second checker: Option A could be argued as evasion by some if the conduit transaction is a sham, but it says the transaction is real, so it is impermissible avoidance. Minor ambiguity only.",
+        "Second checker: Wording 'false expense' signals the answer (giveaway)."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Tax Avoidance vs Tax Evasion",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 34\nPaper 4: Direct Tax Laws and International Taxation\nTopic: Tax avoidance vs tax evasion\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961 (A.Y. 2026-27); GAAR concepts.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261124",
+      "story": "ca_final_story.jpg",
+      "answer_story": "ca_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

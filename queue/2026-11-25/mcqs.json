@@ -1,0 +1,214 @@
+{
+  "date": "2026-11-25",
+  "day": 35,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-24T06:23:04+05:30",
+  "items": [
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2A",
+      "paper_name": "Financial Accounting-2",
+      "topic": "Joint Venture - Profit Sharing",
+      "question": "A and B start a joint venture, sharing profit 3:2. A supplies goods costing ₹2,00,000 and pays expenses ₹10,000. B sells goods for ₹3,00,000, pays expenses ₹20,000 and keeps unsold goods at ₹30,000. No commission is payable. A's share of profit is:",
+      "options": [
+        "₹42,000",
+        "₹60,000",
+        "₹78,000",
+        "₹40,000"
+      ],
+      "correct": "B",
+      "explanation": "Venture profit = sales + value of unsold goods taken over - goods cost - all expenses of both venturers. This profit is shared in the agreed ratio 3:2, so A gets 3/5.",
+      "working": [
+        {
+          "label": "Sales plus unsold goods taken",
+          "value": "₹3,30,000"
+        },
+        {
+          "label": "Goods supplied by A",
+          "value": "₹2,00,000"
+        },
+        {
+          "label": "Expenses (10,000 + 20,000)",
+          "value": "₹30,000"
+        },
+        {
+          "label": "Profit of the venture",
+          "value": "₹1,00,000"
+        },
+        {
+          "label": "A's share (3/5)",
+          "value": "₹60,000"
+        }
+      ],
+      "why_not": {
+        "D": "Gives B's 2/5 share instead of A's 3/5 share.",
+        "A": "Ignores the unsold goods B kept: profit ₹70,000 x 3/5.",
+        "C": "Ignores the venture expenses: profit ₹1,30,000 x 3/5."
+      },
+      "exam_tip": "In a joint venture, both parties are principals: pool all sales, costs and unsold stock, then split profit in the agreed ratio.",
+      "calculation": "profit = 300000 + 30000 - 200000 - 10000 - 20000\nanswer = profit * 3 / 5",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: \"Keeps unsold goods at ₹30,000\" is slightly loose. It is read as B taking over the stock at that value. It could be read as stock valued at cost, but the result is the same.",
+        "Checker: Distractor C (78,000) is probably the figure that comes from adding the stock and forgetting the expenses. The distractors are plausible."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Consignment vs Joint Venture",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 35\nPaper 2A: Financial Accounting-2\nTopic: Joint Venture - Profit Sharing\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261125",
+      "story": "cma_cat_story.jpg",
+      "answer_story": "cma_cat_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 12",
+      "paper_name": "Management Accounting",
+      "topic": "Budgetary Control: Flexible Budget",
+      "question": "A semi-variable overhead was ₹50,000 at 8,000 units and ₹62,000 at 10,000 units of output. Using the high-low method, what is the budgeted amount of this overhead in a flexible budget for 11,000 units?",
+      "options": [
+        "₹74,000",
+        "₹66,000",
+        "₹68,000",
+        "₹68,200"
+      ],
+      "correct": "C",
+      "explanation": "Variable rate = change in cost ÷ change in units = ₹12,000 ÷ 2,000 = ₹6 per unit. Fixed part = ₹50,000 − ₹48,000 = ₹2,000. At 11,000 units: ₹2,000 + ₹66,000 = ₹68,000.",
+      "working": [
+        {
+          "label": "Change in cost",
+          "value": "₹12,000"
+        },
+        {
+          "label": "Change in units",
+          "value": "2,000"
+        },
+        {
+          "label": "Variable rate per unit",
+          "value": "₹6"
+        },
+        {
+          "label": "Fixed part",
+          "value": "₹2,000"
+        },
+        {
+          "label": "Variable cost at 11,000 units",
+          "value": "₹66,000"
+        },
+        {
+          "label": "Budgeted overhead",
+          "value": "₹68,000"
+        }
+      ],
+      "why_not": {
+        "D": "Scaled ₹62,000 in proportion to units, treating the whole overhead as variable.",
+        "B": "Charged only the variable part at ₹6 and left out the fixed element.",
+        "A": "Added the ₹12,000 cost change to ₹62,000, ignoring that the change was for 2,000 units."
+      },
+      "exam_tip": "Semi-variable cost: find the variable rate from the difference of two levels, then back out the fixed part.",
+      "calculation": "var = (62000-50000)/(10000-8000)\nfixed = 50000 - var*8000\nanswer = fixed + var*11000",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Minor: 11,000 units lies outside the given range, so this is extrapolation. The question doesn't state that the two data points are the highest and lowest activity levels."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 78%; consider shortening"
+      ],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 35\nPaper 12: Management Accounting\nTopic: Budgetary Control: Flexible Budget\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261125",
+      "story": "cma_inter_story.jpg",
+      "answer_story": "cma_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 18",
+      "paper_name": "Corporate Financial Reporting",
+      "topic": "Ind AS 115 - Allocation of Transaction Price",
+      "question": "Under Ind AS 115, a company sells a machine with 2 years' maintenance for a total ₹9,00,000. Stand-alone selling prices: machine ₹8,00,000; maintenance ₹2,00,000. Delivery and maintenance start 1 October 2026. Revenue for FY 2026-27 is?",
+      "options": [
+        "₹7,65,000",
+        "₹9,00,000",
+        "₹7,20,000",
+        "₹8,45,000"
+      ],
+      "correct": "A",
+      "explanation": "Price is allocated on relative stand-alone selling prices: machine 80%, maintenance 20%. Machine revenue is recognised at delivery. Maintenance is a service recognised over time, 6 of 24 months in FY 2026-27.",
+      "working": [
+        {
+          "label": "Machine share (8/10 × 9,00,000)",
+          "value": "₹7,20,000"
+        },
+        {
+          "label": "Maintenance share (2/10 × 9,00,000)",
+          "value": "₹1,80,000"
+        },
+        {
+          "label": "Maintenance for 6 of 24 months",
+          "value": "₹45,000"
+        },
+        {
+          "label": "Revenue FY 2026-27 (7,20,000 + 45,000)",
+          "value": "₹7,65,000"
+        }
+      ],
+      "why_not": {
+        "B": "Recognises the whole price at delivery, ignoring separate performance obligations.",
+        "C": "Counts only the machine and leaves out the maintenance earned in 6 months.",
+        "D": "Uses the stand-alone price of the machine instead of its allocated share."
+      },
+      "exam_tip": "Allocate the bundle price by relative stand-alone selling prices, then time the revenue of each obligation separately.",
+      "calculation": "total = 900000\nmachine = total*800000/(800000+200000)\nmaint = total*200000/(800000+200000)\nmaint_fy = maint*6/24\nanswer = machine + maint_fy",
+      "applicability": "Ind AS 115 Revenue from Contracts with Customers",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The question doesn't say that maintenance revenue is recognised on a straight-line (time) basis over the service period. This is the usual assumption.",
+        "Checker: The question doesn't say that the year ends on 31 March. FY 2026-27 implies it.",
+        "Checker: The question doesn't say that control of the machine passes on delivery on 1 Oct 2026. This is implied.",
+        "Checker: Distractor C (₹7,20,000) is the machine revenue alone. Distractor B is the full price."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 35\nPaper 18: Corporate Financial Reporting\nTopic: Ind AS 115 - Allocation of Transaction Price\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Ind AS 115 Revenue from Contracts with Customers.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261125",
+      "story": "cma_final_story.jpg",
+      "answer_story": "cma_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

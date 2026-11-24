@@ -1,0 +1,149 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 6A",
+  "paper_name": "Financial Management",
+  "author": "Rahul kp",
+  "topic": "Profit Maximisation vs Wealth Maximisation",
+  "title": "Profit Max vs",
+  "title_highlight": "Wealth Max",
+  "hook": "which goal is better?",
+  "simple_words": "Profit max chases more profit now. Wealth max grows the share's value, counting time and risk.",
+  "definitions": [
+    {
+      "term": "Profit Maximisation",
+      "meaning": "Aim of earning the highest possible accounting profit in the short run, without looking at time or risk.",
+      "note": "Old, narrow goal"
+    },
+    {
+      "term": "Wealth Maximisation",
+      "meaning": "Aim of increasing the market value of the shareholders' equity, by taking decisions whose present value of benefits exceeds cost.",
+      "note": "Modern goal of FM"
+    }
+  ],
+  "key_points": [
+    "Profit max ignores the ==time value of money==: ₹1 today and ₹1 later look equal.",
+    "Profit max ignores ==risk==; a risky high profit looks better than a safe lower one.",
+    "Wealth max uses cash flows and discounting, so it is the accepted goal in Financial Management.",
+    "!!Profit is vague!!: it may mean EBIT, PAT or EPS, so it cannot be measured one way."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn the table, win the MCQ",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Basis",
+      "Profit Max.",
+      "Wealth Max."
+    ],
+    "rows": [
+      [
+        "Focus",
+        "Higher profit or EPS",
+        "Higher market value of equity"
+      ],
+      [
+        "Time value",
+        "Ignored",
+        "Considered by discounting"
+      ],
+      [
+        "Risk",
+        "Ignored",
+        "Considered"
+      ],
+      [
+        "Measure",
+        "Accounting profit",
+        "Cash flows, NPV, share price"
+      ],
+      [
+        "Horizon",
+        "Short term",
+        "Long term"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Profit is a number, wealth is value!",
+    "text": "Wealth maximisation covers timing, risk and all shareholders' returns, which profit maximisation misses."
+  },
+  "trick_hook": "remember three letters",
+  "memory_trick": {
+    "mnemonic": "Wealth = T R M",
+    "explanation": "Wealth max looks at Time value, Risk and Market price. Profit max looks at none of the three."
+  },
+  "steps": [
+    "Read what the goal looks at",
+    "Is time value or risk counted?",
+    "Yes: wealth maximisation",
+    "No, only profit figure: profit max",
+    "Pick the option on market value"
+  ],
+  "exam_tip": "If an option says 'maximise market value of equity shares' or 'maximise NPV', it is wealth maximisation.",
+  "doubt": {
+    "question": "Does wealth maximisation mean ignoring profit?",
+    "answer": "No. Profit still matters, but it is one input. Wealth max judges profit along with timing, risk and cash flows."
+  },
+  "mistakes_hook": "don't fall for the profit trap",
+  "mistakes": [
+    {
+      "wrong": "Profit maximisation considers risk and time value",
+      "right": "Profit maximisation ignores both time value of money and risk."
+    },
+    {
+      "wrong": "Wealth maximisation means maximising profit of the year",
+      "right": "It means maximising the market value of shareholders' equity over the long run."
+    },
+    {
+      "wrong": "Profit is a clear, single measure",
+      "right": "Profit can mean EBIT, PAT or EPS, so the term is ambiguous."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Checker 1: Steps 4–5: Step 5 ('Pick the option on market value') comes right after Step 4 concludes 'profit max', so the flow reads badly. Suggested fix: make Step 5 'In MCQs on the goal of FM, choose the option based on market value of shares (wealth max)' or fold it into Step 3.",
+    "Checker 1: Insight text: 'all shareholders' returns' is vague. Suggested wording: 'total shareholder returns – dividends plus capital gains (share price)'."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.24,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 6A: Financial Management\nProfit Maximisation vs Wealth Maximisation\n\nIn simple words: Profit max chases more profit now. Wealth max grows the share's value, counting time and risk.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept2-261125",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

@@ -1,0 +1,9 @@
+{
+  "kind": "explainer2",
+  "course_id": "ca_inter",
+  "topic": "Profit Maximisation vs Wealth Maximisation",
+  "concept_topic": "Profit Maximisation vs Wealth Maximisation",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 2: board title is 24 characters; at most 18",
+  "hold": false,
+  "hold_reason": ""
+}

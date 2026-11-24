@@ -1,0 +1,157 @@
+{
+  "kind": "concept",
+  "course_id": "cma_cat",
+  "paper_code": "Paper 2B",
+  "paper_name": "Statutory Compliance",
+  "author": "Rahul kp",
+  "topic": "Company vs Partnership Firm",
+  "title": "Company vs",
+  "title_highlight": "Partnership Firm",
+  "hook": "same business, different person!",
+  "simple_words": "A company is a separate person in law. A partnership firm is just the partners together.",
+  "definitions": [
+    {
+      "term": "Company",
+      "meaning": "An artificial person formed and registered under the Companies Act, with its own separate legal identity from its members.",
+      "note": "Company owns assets, not members"
+    },
+    {
+      "term": "Partnership Firm",
+      "meaning": "Relation between persons who agree to share profits of a business carried on by all or any of them acting for all.",
+      "note": "Firm = partners, in law"
+    }
+  ],
+  "key_points": [
+    "A company has a ==separate legal entity==; a firm has none apart from its partners.",
+    "Members of a limited company have ==limited liability==; partners have unlimited, joint and several liability.",
+    "A company has ==perpetual succession==; a firm is affected by death or retirement of a partner unless agreed otherwise.",
+    "!!Registration is compulsory for a company!!; for a firm it is optional."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn it row by row",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Company",
+      "Partnership"
+    ],
+    "rows": [
+      [
+        "Legal entity",
+        "Separate person",
+        "Not separate from partners"
+      ],
+      [
+        "Liability",
+        "Limited (if limited co.)",
+        "Unlimited, joint and several"
+      ],
+      [
+        "Succession",
+        "Perpetual",
+        "Not perpetual by default"
+      ],
+      [
+        "Registration",
+        "Compulsory",
+        "Optional"
+      ],
+      [
+        "Governing law",
+        "Companies Act, 2013",
+        "Indian Partnership Act, 1932"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Company sues; partners sue together!",
+    "text": "A company can own property, sue and be sued in its own name, but a firm acts through its partners."
+  },
+  "trick_hook": "remember with LAPPS",
+  "memory_trick": {
+    "mnemonic": "Company = Corporate Cloak",
+    "explanation": "Company wears a cloak: members hide behind it, so liability is limited and it never dies. Firm has no cloak: partners stand bare and exposed."
+  },
+  "steps": [
+    "Check: is it registered as company?",
+    "Ask: separate entity or not?",
+    "Check liability of members",
+    "Check succession on death",
+    "Name the governing Act"
+  ],
+  "exam_tip": "In MCQs, a statement saying a firm is a separate legal entity from its partners is false under the Partnership Act. Check the word 'separate'.",
+  "doubt": {
+    "question": "Do all companies have limited liability?",
+    "answer": "No. An unlimited company exists too, but a company limited by shares or guarantee limits member liability. The separate entity status stays in all cases."
+  },
+  "mistakes_hook": "don't mix the two up",
+  "mistakes": [
+    {
+      "wrong": "A firm is a separate legal entity like a company",
+      "right": "Under the Partnership Act, a firm is not separate from its partners; a company is separate."
+    },
+    {
+      "wrong": "Partners have limited liability like shareholders",
+      "right": "Partners of a general partnership have unlimited, joint and several liability for firm debts."
+    },
+    {
+      "wrong": "Registration of a firm is compulsory",
+      "right": "Firm registration is optional, though unregistered firms face disabilities in suing. Company registration is compulsory."
+    },
+    {
+      "wrong": "Death of a member ends a company",
+      "right": "A company has perpetual succession; membership changes do not end it."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Companies Act, 2013; Indian Partnership Act, 1932",
+  "confidence": "high",
+  "reviewer_note": "Check wording against ICMAI study material; LLP deliberately left out.",
+  "law_sensitive": true,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Check wording against ICMAI study material; LLP deliberately left out.",
+    "Checker 1: trick_hook says 'remember with LAPPS', but the memory trick is 'Corporate Cloak' and LAPPS is never explained. LAPPS also does not match the table rows (Legal entity, Liability, Succession, Registration, Governing law). Fix: change the hook to the Cloak trick, or use an acronym that matches the five rows.",
+    "Checker 1: Insight punchline 'Company sues; partners sue together!' oversimplifies. Under Order XXX CPC, partners may sue or be sued in the firm name, and a registered firm can sue third parties (s. 69). Suggested wording: 'A company sues in its own right; a firm's suit in the firm name is really a suit by all the partners.'",
+    "Checker 1: Memory trick explanation: 'members hide behind it, so liability is limited and it never dies' is too absolute. Unlimited companies exist (as the doubt answer itself says), and a company can end through winding up or striking off. Suggested wording: 'liability can be limited, and the company does not die when a member dies or leaves; it ends only by a legal process.'",
+    "Checker 2: trick_hook says 'remember with LAPPS', but the memory trick given is 'Company = Corporate Cloak', and LAPPS is never explained. Make the two match. Either give a LAPPS expansion that covers the 5 table rows (Legal entity, Act, Perpetual succession, Personal liability, Registration), or change the hook to match the Cloak trick. The Cloak trick also covers only liability and succession, not all 5 rows.",
+    "Checker 2: Insight punchline 'Company sues; partners sue together!' is loose wording. A registered firm sues in the firm's name through its partners, and an unregistered firm is barred by S.69. It is better to say 'Company sues in its own name; a firm sues through its partners'."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.16,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟨 CMA CAT · Concept of the day\nPaper 2B: Statutory Compliance\nCompany vs Partnership Firm\n\nIn simple words: A company is a separate person in law. A partnership firm is just the partners together.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Companies Act, 2013; Indian Partnership Act, 1932.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMACAT #ICMAI #CATCourse #AccountingTechnician\n\nref concept-261125",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

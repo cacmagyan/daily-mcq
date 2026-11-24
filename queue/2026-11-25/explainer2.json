@@ -1,9 +1,164 @@
 {
   "kind": "explainer2",
   "course_id": "ca_inter",
+  "paper_code": "Paper 6A",
+  "paper_name": "Financial Management",
   "topic": "Profit Maximisation vs Wealth Maximisation",
   "concept_topic": "Profit Maximisation vs Wealth Maximisation",
-  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 2: board title is 24 characters; at most 18",
+  "video": "explainer2.mp4",
+  "cover": "explainer2_cover.jpg",
+  "style": "story",
+  "seconds": 61.79,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Profit Maximisation vs Wealth Maximisation",
+    "caption_hook": "Profit or wealth: which goal should a company really chase?",
+    "hook_label": "PROFIT OR WEALTH?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Ma'am, profit or wealth: which goal should a company chase?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Good question! Profit maximisation means earning the highest accounting profit, mostly in the short run.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Profit Maximisation",
+          "sub": "Highest profit, short run"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "That sounds fine to me. What's wrong with more profit?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Take ₹1 lakh today or ₹1 lakh after five years. Profit alone sees them as equal.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "flow",
+          "from": "Today",
+          "from_note": "₹1,00,000",
+          "to": "5 years",
+          "to_note": "₹1,00,000",
+          "label": "Equal?",
+          "to_on": "five"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "But today's money is worth more! I can invest it.",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Exactly. Profit ignores time value and risk. A risky profit looks as good as a safe one.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "list",
+          "title": "Profit Max ignores",
+          "lines": [
+            "Time value of money",
+            "Risk"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Then what does wealth maximisation do differently?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "It maximises the market value of shareholders' equity. We discount future cash flows, and benefits must exceed cost.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Profit Max",
+            "icon": "cross",
+            "color": "red",
+            "lines": [
+              "Accounting profit",
+              "Short term"
+            ]
+          },
+          "right": {
+            "title": "Wealth Max",
+            "icon": "chart_up",
+            "color": "green",
+            "lines": [
+              "Market value",
+              "Cash flows, NPV"
+            ]
+          },
+          "right_on": "market"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So does that mean we ignore profit completely?",
+        "shot": "desk",
+        "pose": "worried",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "No. Profit is one input. Wealth maximisation judges it along with timing, risk and cash flows.",
+        "shot": "board",
+        "pose": "explain"
+      },
+      {
+        "who": "boy",
+        "say": "Is there an easy way to remember it?",
+        "shot": "close",
+        "pose": "excited"
+      },
+      {
+        "who": "teacher",
+        "say": "Wealth equals T R M: Time value, Risk and Market price. Profit maximisation looks at none.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Wealth = T R M",
+            "Time, Risk, Market"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Word count about 151. Wealth maximisation described per the checked note; T R M is spelt letter by letter.",
+    "Checker: Line 10 (voice): 'Profit is one input. Wealth maximisation judges it along with timing, risk and cash flows' clashes with Line 8 and the board, which say wealth maximisation works on cash flows and NPV rather than accounting profit. It also lists cash flows as a separate factor alongside profit. Suggested wording: 'No. Profit still matters, but wealth maximisation looks at the cash flows behind it, along with their timing and risk.'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "Word count about 151. Wealth maximisation described per the checked note; T R M is spelt letter by letter.",
+  "caption": "🎬 🟦 CA Inter · Profit Maximisation vs Wealth Maximisation\n\nProfit or wealth: which goal should a company really chase?\n\n📒 Full concept note today at 1:00 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 6A: Financial Management\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAInter #CAIntermediate #ICAI #CAStudents\n\nref explainer2-261125",
   "hold": false,
   "hold_reason": ""
 }

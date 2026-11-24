@@ -1,0 +1,16 @@
+{
+  "kind": "countdown",
+  "course_id": "cma_inter",
+  "exam": "CMA Inter Dec 2026",
+  "exam_date": "2026-12-10",
+  "days": 15,
+  "paper_code": "Paper 12",
+  "paper_name": "Management Accounting",
+  "topic": "Standard Costing: Variance Analysis",
+  "tip": "Revise material, labour and overhead variances; check Price = (SP-AP)×AQ and Usage = (SQ-AQ)×SP, and sign F/A.",
+  "hold": false,
+  "hold_reason": "",
+  "images": [
+    "countdown.jpg"
+  ]
+}

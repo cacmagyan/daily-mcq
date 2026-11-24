@@ -1,0 +1,263 @@
+{
+  "kind": "pyq",
+  "format": "qt_video",
+  "subject": "costing",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 4",
+  "paper_name": "Cost and Management Accounting: Marginal Costing",
+  "topic_key": "P/V ratio after a price cut",
+  "ref": "ca_inter_costing|S24-11",
+  "tried": [
+    "ca_inter_costing|S24-11"
+  ],
+  "topic": "Marginal Costing: P/V ratio",
+  "script": {
+    "theme": "navy",
+    "badge": {
+      "tag": "ASKED IN",
+      "text": "CA INTERMEDIATE SEPTEMBER 2024 · COSTING"
+    },
+    "header": "CA Intermediate September 2024 · Paper 4 · COSTING",
+    "question": "PS Limited plans to reduce its **selling price by 5%**. Variable cost is **76% of the current selling price**. Find the **P/V ratio** after reducing the price by 5%.",
+    "options": [
+      "20%",
+      "24%",
+      "25.26%",
+      "19%"
+    ],
+    "answer": 0,
+    "scene": {
+      "type": "bars",
+      "max": 100,
+      "bars": [
+        {
+          "label": "Old price",
+          "segments": [
+            {
+              "v": 76.0,
+              "label": "VC ₹76"
+            },
+            {
+              "v": 24.0,
+              "label": "C ₹24"
+            }
+          ]
+        },
+        {
+          "label": "New price",
+          "segments": [
+            {
+              "v": 76.0,
+              "label": "VC ₹76"
+            },
+            {
+              "v": 19.0,
+              "label": "C ₹19"
+            }
+          ]
+        }
+      ],
+      "note": "Price cut 5%"
+    },
+    "lines": [
+      {
+        "say": "This question came in the CA Intermediate September 2024 exam.",
+        "card": {
+          "kind": "attempt",
+          "exam": "CA Intermediate",
+          "when": "September 2024",
+          "sub": "Paper 4 · Cost and Management Accounting"
+        }
+      },
+      {
+        "say": "PS Limited cuts its selling price by 5%. Variable cost is 76% of the current selling price. Find the new P/V ratio.",
+        "card": {
+          "kind": "hook",
+          "small": "P/V after price cut",
+          "big": "5% price cut, VC 76%"
+        }
+      },
+      {
+        "say": "Price ₹100, variable cost ₹76. After the cut, contribution is ₹19 on ₹100. So P/V is 19%. Right?",
+        "card": {
+          "kind": "hook",
+          "small": "So...",
+          "big": "₹19 on ₹100 = 19%?"
+        }
+      },
+      {
+        "say": "Wrong. 19% is the trap.",
+        "card": {
+          "kind": "trap",
+          "small": "CA INTERMEDIATE SEPTEMBER 2024 · COSTING",
+          "big": "19% ×",
+          "sub": "that is the trap"
+        }
+      },
+      {
+        "say": "The right answer is 20%. Here's why.",
+        "card": {
+          "kind": "answer",
+          "small": "The right answer",
+          "big": "20%"
+        }
+      },
+      {
+        "say": "Step one. Assume the current price is ₹100. A 5% cut makes it ₹95.",
+        "card": {
+          "kind": "step",
+          "title": "Step 1 · Find the new price",
+          "rows": [
+            "Old price = ₹100",
+            "New price = 100 × 95% = **₹95**"
+          ]
+        },
+        "scene": {
+          "type": "bars",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Old price",
+              "segments": [
+                {
+                  "v": 100.0,
+                  "label": "₹100"
+                }
+              ]
+            },
+            {
+              "label": "New price",
+              "segments": [
+                {
+                  "v": 95.0,
+                  "label": "₹95"
+                }
+              ]
+            }
+          ],
+          "note": "5% cut"
+        }
+      },
+      {
+        "say": "Step two. Variable cost is 76% of the old price. So it stays ₹76 per unit.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · Variable cost stays ₹76",
+          "rows": [
+            "VC = ₹76 (unchanged)"
+          ]
+        },
+        "scene": {
+          "type": "bars",
+          "max": 100,
+          "bars": [
+            {
+              "label": "New price",
+              "segments": [
+                {
+                  "v": 76.0,
+                  "label": "VC ₹76"
+                },
+                {
+                  "v": 19.0,
+                  "label": "C ₹19"
+                }
+              ]
+            }
+          ],
+          "note": "Price ₹95"
+        }
+      },
+      {
+        "say": "Contribution is 95 minus 76, which is ₹19.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · Variable cost stays ₹76",
+          "rows": [
+            "VC = ₹76 (unchanged)",
+            "Contribution = 95 − 76 = **₹19**"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "Step three. P/V is contribution over sales. Sales is now ₹95, not ₹100.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · Divide by the new sales",
+          "rows": [
+            "P/V = 19 ÷ 95"
+          ]
+        },
+        "scene": {
+          "type": "board",
+          "lines": [
+            "P/V = 19 ÷ 95",
+            "= 20%"
+          ]
+        }
+      },
+      {
+        "say": "19 divided by 95 is 20%.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · Divide by the new sales",
+          "rows": [
+            "P/V = 19 ÷ 95",
+            "= **20%**"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "The shortcut. Always divide by the new price. Or find the new variable cost ratio: 76 by 95 is 80%. So P/V is 100 minus 80, which is 20%.",
+        "card": {
+          "kind": "shortcut",
+          "rows": [
+            "VC ratio = 76 ÷ 95 = 80%",
+            "P/V = 100% − 80% = **20%**"
+          ]
+        }
+      },
+      {
+        "say": "Your turn. Variable cost is 60% of the current price. The price is cut by 10%. Find the new P/V ratio.",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "New price 90, VC 60",
+            "30 ÷ 90"
+          ]
+        }
+      },
+      {
+        "say": "Comment your answer. Follow for a new trap every day.",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "New price 90, VC 60",
+            "30 ÷ 90"
+          ],
+          "all": true
+        }
+      }
+    ],
+    "series": "COSTING TRAP",
+    "series_no": 1
+  },
+  "correct": "A",
+  "trap": "19%",
+  "your_turn_answer": "33.33%",
+  "asked_in": "September 2024",
+  "check_notes": [
+    "The script says the question came in the CA Intermediate September 2024 exam. I couldn't check this without outside sources, but it doesn't change the maths. The working (19 ÷ 95 = 20%), the trap (19%) and the follow-up (30 ÷ 90 = 33.33%) are all correct."
+  ],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "video": "pyq.mp4",
+  "cover": "pyq_cover.jpg",
+  "seconds": 82.6,
+  "thumb_ms": 25862,
+  "voice": "en-IN-AaravNeural (Azure)",
+  "caption": "5% price cut, VC 76%… so 19%? That's the trap. 🪤\n\nPS Limited plans to reduce its selling price by 5%. Variable cost is 76% of the current selling price. Find the P/V ratio after reducing the price by 5%.\n\n(a) 20%\n(b) 24%\n(c) 25.26%\n(d) 19%\n\nDid you pick the trap too? Tell me in the comments 👇\nAsked in CA Intermediate September 2024 · Paper 4 (ICAI's official answer key).\nSave 🔖 it for your Cost and Management Accounting revision.\n\nFollow @cacmagyan for a new trap every day.\n\n#CAInter #CostingCA #CAStudents #ICAI #CostAccounting\n\nref pyq-261125"
+}

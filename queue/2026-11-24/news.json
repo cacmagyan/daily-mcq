@@ -1,0 +1,86 @@
+{
+  "kind": "news",
+  "date": "2026-11-24",
+  "stories": [
+    {
+      "tag": "Income Tax",
+      "headline": "Form 26 to replace 3CA, 3CB and 3CD for tax audits from 2026-27",
+      "points": [
+        "One consolidated Form 26 under Section 63 of the Income-tax Act, 2025 replaces Forms 3CA, 3CB and 3CD from Tax Year 2026-27.",
+        "Old forms still apply up to AY 2026-27. Form 26 has four parts, and every clause needs a Yes/No answer.",
+        "Late filing fee under Section 428(c): ₹75,000 for delay up to one month, ₹1,50,000 for longer delay, replacing Section 271B."
+      ],
+      "why_it_matters": "Tax audit reporting is core CA work. The new form, schedules and fixed late fees change how audits are planned and filed.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Form 26 Tax Audit Report from Tax Year 2026-27: Key Changes, Due Dates and Default Fees",
+      "link": "https://taxguru.in/income-tax/form-26-tax-audit-report-tax-year-2026-27-key-due-dates-default-fees.html",
+      "published": "2026-11-23T07:00:51+00:00",
+      "check": "minor",
+      "check_notes": [
+        "The headline says 'from 2026-27' without saying it means Tax Year 2026-27. The old forms still apply up to Assessment Year 2026-27, so readers could take the wrong year. The first point does make this clear.",
+        "The 'Why it matters' line says tax audit reporting is 'core CA work'. That is editorial framing: the source says only that an accountant under section 515(3)(b) must sign the report.",
+        "The fee wording ('₹75,000 for delay up to one month, ₹1,50,000 for longer delay') closely follows the source phrasing. It is a short factual phrase, so this is a wording note only."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "Audit-case ITR for AY 2026-27 must be verified within 30 days of upload",
+      "points": [
+        "Circular 7/2026 moved the AY 2026-27 filing date for specified audit cases from 31 October to 21 November 2026.",
+        "Verification must be done within 30 days of upload, by e-verification or by signed ITR-V reaching CPC in time.",
+        "If verified later, that later date becomes the filing date and late-filing consequences follow, per the Department's FAQ."
+      ],
+      "why_it_matters": "Filing a return is not complete until it is verified. CA and CMA students handling compliance must track this deadline.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | AY 2026-27 Audit-Case ITR E-Verification: 30-Day Control After the 21 November Filing Date",
+      "link": "https://taxguru.in/income-tax/ay-2026-27-audit-case-itr-verification-30-day-control-21-november-filing-date.html",
+      "published": "2026-11-23T13:20:42+00:00",
+      "check": "minor",
+      "check_notes": [
+        "'Why it matters' names 'CA and CMA students' as the audience. The source is addressed to taxpayers, finance teams and advisers and never mentions students. This is framing rather than a factual error, but the wording should match the source's audience."
+      ]
+    },
+    {
+      "tag": "Accounting",
+      "headline": "Ind AS 34 interim tax uses annual effective rate, not quarterly rate",
+      "points": [
+        "Interim tax expense uses the best estimate of the weighted-average annual effective rate for the full financial year.",
+        "That rate is applied to year-to-date profit; the current quarter books the gap after deducting tax already recognised.",
+        "In the guide's assumed example, the rate moved from 25% to 27% and Q2 tax was ₹85 lakh, about 28.33% of Q2 profit."
+      ],
+      "why_it_matters": "Ind AS 34 and Ind AS 12 interim tax workings are core to financial reporting and audit of quarterly results.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "CA, CS, CMA | Ind AS 34 Interim Tax Expense: Annual Effective Rate, Year-to-Date True-Ups and Loss-Year Controls",
+      "link": "https://taxguru.in/chartered-accountant/ind-34-interim-tax-expense-annual-effective-rate-year-date-true-ups-loss-year-controls.html",
+      "published": "2026-11-23T13:19:41+00:00",
+      "check": "minor",
+      "check_notes": [
+        "The first point closely follows the source's wording ('best estimate of the weighted-average annual effective ... rate expected for the full financial year'). That phrasing comes from the standard, so this is not a copied sentence, but it could be reworded.",
+        "The 'Why it matters' line says the workings are 'core to financial reporting and audit of quarterly results'. That is the story's own framing, and the source does not say it. The Ind AS 12 mention is supported, because the source says current and deferred tax are analysed under Ind AS 12."
+      ]
+    }
+  ],
+  "notes": [
+    "skipped 'RBI proposes new rules to protect bank accounts from fraud; ': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | Section 74 of GST Act: Lapse of Tim': a point is longer than 110 characters",
+    "skipped 'Taxpayer sold Bitcoin worth ₹4.94 crore and disclosed it in ': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Corporate Law | Tork Motors Insolvency: NCLT Clears Revival ': a point is longer than 110 characters; why_it_matters is longer than 120 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 24 Nov 2026\n\n1️⃣ Form 26 to replace 3CA, 3CB and 3CD for tax audits from 2026-27 (TaxGuru)\n2️⃣ Audit-case ITR for AY 2026-27 must be verified within 30 days of upload (TaxGuru)\n3️⃣ Ind AS 34 interim tax uses annual effective rate, not quarterly rate (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261124",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

@@ -1,0 +1,189 @@
+{
+  "kind": "explainer",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 3A",
+  "paper_name": "Income-tax Law",
+  "topic": "Previous Year vs Assessment Year",
+  "concept_topic": "Previous Year vs Assessment Year",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 70.07,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Previous Year vs Assessment Year",
+    "caption_hook": "Earn first, tax next! Previous Year vs Assessment Year made simple",
+    "hook_label": "EARN FIRST, TAX NEXT?",
+    "lines": [
+      {
+        "who": "girl",
+        "say": "Ma'am, I earn money this year, but the tax comes next year?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes! Income is earned first and taxed later. That gives us two different years.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Previous Year vs AY",
+          "sub": "Earn first, tax next"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Two years? Which one is which?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "The year you earn income is the previous year. The next year, when it is taxed, is the assessment year.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "PY",
+            "lines": [
+              "Year of earning",
+              "2025-26"
+            ],
+            "icon": "money",
+            "color": "green"
+          },
+          "right": {
+            "title": "AY",
+            "lines": [
+              "Year of taxing",
+              "2026-27"
+            ],
+            "icon": "doc",
+            "color": "navy"
+          },
+          "right_on": "assessment"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So salary earned in 2025-26 is taxed in which year?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Add one year. Salary earned in 2025-26 is taxed in the assessment year 2026-27.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "flow",
+          "from": "2025-26",
+          "from_note": "Income earned",
+          "to": "2026-27",
+          "to_note": "Income taxed",
+          "label": "Add one year",
+          "to_on": "assessment"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Can I choose January to December as my previous year?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "No. For every assessee, the year runs from 1 April to 31 March. Books may follow another year, but tax doesn't.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Same for everyone",
+          "lines": [
+            "Starts 1 April",
+            "Ends 31 March",
+            "No choice of year"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Oh! So is the previous year always twelve months?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Not always. For a new business, the first previous year starts on the set-up date and ends on 31 March.",
+        "shot": "board",
+        "pose": "think",
+        "board": {
+          "kind": "list",
+          "title": "New business",
+          "lines": [
+            "Starts: set-up date",
+            "Ends: 31 March",
+            "Can be under 12 months"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Then does the assessment year also get shorter?",
+        "shot": "desk",
+        "pose": "worried",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Never. An assessment year is always twelve months, starting on 1 April.",
+        "shot": "board",
+        "pose": "thumbs"
+      },
+      {
+        "who": "boy",
+        "say": "Got it! P comes before A, so previous comes first!",
+        "shot": "desk",
+        "pose": "aha",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "Exactly! Remember: previous year earns, assessment year taxes.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "PY earns,",
+            "AY taxes"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": false,
+  "serious": true,
+  "serious_reason": "The checker found errors that weren't fixed (Checker: Line 13 (boy) + Line 14 (teacher 'Exactly!'): the mnemonic 'P comes before A, so previous comes first' is false. In the alphabet A comes before P, so t)",
+  "check_notes": [
+    "Not confirmed after 3 attempts",
+    "Checker: Line 13 (boy) + Line 14 (teacher 'Exactly!'): the mnemonic 'P comes before A, so previous comes first' is false. In the alphabet A comes before P, so the memory aid points the wrong way, and the teacher endorses it. Correct version: drop the alphabet link and use the meaning instead, e.g. Line 13: 'Got it! Previous means before, so the previous year comes first!' The Line 14 board 'PY earns, AY taxes' is fine.",
+    "Checker: Line 2 / Line 4 / Line 6: 'Income is earned first and taxed later' is stated as an absolute rule. Under the Income-tax Act, 1961 there are exceptions where income is assessed in the previous year itself: non-resident shipping business (s.172), persons leaving India (s.174), AOP/BOI formed for a particular event (s.174A), persons likely to transfer property to avoid tax (s.175), and discontinued business (s.176). Correct version: add 'as a general rule' (e.g. 'Generally, income is earned first and taxed later'), or briefly note that a few exceptions exist.",
+    "Checker: Line 1 / Line 2: 'the tax comes next year' could suggest that no tax is paid during the year of earning. In fact, TDS and advance tax are paid during the previous year itself; it is the assessment of that income that happens in the assessment year. Suggested wording: 'income is earned in one year and assessed in the next year'."
+  ],
+  "attempts": 3,
+  "caption": "🎬 🟦 CA Inter · Previous Year vs Assessment Year\n\nEarn first, tax next! Previous Year vs Assessment Year made simple\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 3A: Income-tax Law\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAInter #CAIntermediate #ICAI #CAStudents\n\nref explainer-261126",
+  "hold": true,
+  "hold_reason": "The checker found errors that weren't fixed (Checker: Line 13 (boy) + Line 14 (teacher 'Exactly!'): the mnemonic 'P comes before A, so previous comes first' is false. In the alphabet A comes before P, so t)"
+}

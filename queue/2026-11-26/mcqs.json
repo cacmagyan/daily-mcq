@@ -1,0 +1,184 @@
+{
+  "date": "2026-11-26",
+  "day": 36,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-25T04:33:51+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 1",
+      "paper_name": "Accounting",
+      "topic": "Company Accounts: Forfeiture and Reissue",
+      "question": "1,000 shares of ₹10 each, issued at par, were forfeited after the holder paid only ₹5 per share. Of these, 600 shares were reissued at ₹9 per share as fully paid-up. What amount is transferred to Capital Reserve on this reissue?",
+      "options": [
+        "₹4,400",
+        "₹2,400",
+        "₹3,000",
+        "₹3,600"
+      ],
+      "correct": "B",
+      "explanation": "Capital Reserve is the forfeited amount on the reissued shares, less the discount allowed on reissue. Forfeited amount on 600 shares is ₹3,000. Discount is ₹1 × 600 = ₹600. So ₹3,000 − ₹600 = ₹2,400.",
+      "working": [
+        {
+          "label": "Amount paid per share",
+          "value": "₹5"
+        },
+        {
+          "label": "Forfeited amount on 600 shares",
+          "value": "₹3,000"
+        },
+        {
+          "label": "Discount on reissue (₹1 × 600)",
+          "value": "₹600"
+        },
+        {
+          "label": "Capital Reserve (₹3,000 − ₹600)",
+          "value": "₹2,400"
+        }
+      ],
+      "why_not": {
+        "C": "Ignores the discount allowed on reissue; takes full forfeited amount of 600 shares.",
+        "D": "Adds the discount to the forfeited amount instead of deducting it.",
+        "A": "Uses forfeited amount on all 1,000 shares, though only 600 were reissued."
+      },
+      "exam_tip": "Only the forfeited balance on shares actually reissued, after setting off the reissue loss, goes to Capital Reserve.",
+      "calculation": "paid = 5\nforfeited = paid * 600\ndiscount = (10 - 9) * 600\nanswer = forfeited - discount",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 36\nPaper 1: Accounting\nTopic: Company Accounts: Forfeiture and Reissue\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261126",
+      "story": "ca_foundation_story.jpg",
+      "answer_story": "ca_foundation_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 6A",
+      "paper_name": "Financial Management",
+      "topic": "Profit vs Wealth Maximisation",
+      "question": "A company must choose between two projects. Project P gives higher accounting profit in the first year but its profits come late in the next years and are uncertain. Project Q gives lower, steady and earlier cash flows. Which approach favours Q?",
+      "options": [
+        "Wealth maximisation, as it weighs timing and risk of cash flows",
+        "Profit maximisation, as it adjusts for risk through EPS",
+        "Profit maximisation, as it looks at total accounting profit",
+        "Wealth maximisation, as it ignores cash flows beyond one year"
+      ],
+      "correct": "A",
+      "explanation": "Wealth maximisation uses discounted cash flows, so timing (time value) and risk are both considered. Earlier, steadier cash flows have higher present value, so Q can be preferred even if P shows higher profit.",
+      "working": [],
+      "why_not": {
+        "C": "Profit maximisation ignores time value and risk, so it would favour P, not Q.",
+        "B": "EPS does not adjust for risk or timing; this is a common false belief.",
+        "D": "Wealth maximisation looks at all future cash flows, not one year only."
+      },
+      "exam_tip": "Profit max: no time value, no risk, vague meaning. Wealth max: discounted cash flows adjusted for risk.",
+      "calculation": "",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Option A is much longer and more complete than the others, which may hint that it is correct.",
+        "Checker: The stem says P's profits come 'late in the next years' but doesn't say whether P's total profit exceeds Q's. This makes C weaker, but it doesn't create a second defensible answer."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Profit Maximisation vs Wealth Maximisation",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 36\nPaper 6A: Financial Management\nTopic: Profit vs Wealth Maximisation\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261126",
+      "story": "ca_inter_story.jpg",
+      "answer_story": "ca_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 1",
+      "paper_name": "Financial Reporting",
+      "topic": "Ind AS 103 - Goodwill with NCI",
+      "question": "Under Ind AS 103, on 1 October 2026 Alfa Ltd buys 80% of Beta Ltd for ₹4,40,00,000 cash. Fair value of Beta's identifiable net assets is ₹5,00,00,000. NCI's fair value is ₹1,05,00,000. Acquisition costs paid were ₹6,00,000. NCI is measured at fair value. Goodwill is?",
+      "options": [
+        "₹51,00,000",
+        "₹40,00,000",
+        "₹45,00,000",
+        "Bargain purchase gain of ₹60,00,000"
+      ],
+      "correct": "C",
+      "explanation": "Goodwill = consideration + NCI at fair value − fair value of identifiable net assets. Acquisition-related costs are expensed in profit or loss under Ind AS 103, not added to goodwill.",
+      "working": [
+        {
+          "label": "Consideration transferred",
+          "value": "4,40,00,000"
+        },
+        {
+          "label": "Add: NCI at fair value",
+          "value": "1,05,00,000"
+        },
+        {
+          "label": "Total",
+          "value": "5,45,00,000"
+        },
+        {
+          "label": "Less: Net assets at fair value",
+          "value": "5,00,00,000"
+        },
+        {
+          "label": "Goodwill",
+          "value": "45,00,000"
+        }
+      ],
+      "why_not": {
+        "A": "Capitalised the ₹6,00,000 acquisition costs into goodwill; they are expensed.",
+        "B": "Measured NCI at proportionate share (₹1,00,00,000) though fair value was stated.",
+        "D": "Ignored NCI and compared consideration with full net assets, getting a gain."
+      },
+      "exam_tip": "Full goodwill method: NCI at fair value. Acquisition costs always go to P&L, never goodwill.",
+      "calculation": "consideration = 44000000\nnci = 10500000\nnet_assets = 50000000\nanswer = consideration + nci - net_assets",
+      "applicability": "Ind AS 103 Business Combinations",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The question says 'Goodwill is?', which is slightly informal, but it is unambiguous.",
+        "Checker: The question states that NCI is measured at fair value, and this is redundant because the NCI fair value is already given. It is not a real problem.",
+        "Checker: The date 1 October 2026 is irrelevant, but that is harmless."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 36\nPaper 1: Financial Reporting\nTopic: Ind AS 103 - Goodwill with NCI\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Ind AS 103 Business Combinations.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261126",
+      "story": "ca_final_story.jpg",
+      "answer_story": "ca_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

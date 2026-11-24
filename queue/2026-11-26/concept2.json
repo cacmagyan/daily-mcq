@@ -1,0 +1,146 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_final",
+  "paper_code": "Paper 15",
+  "paper_name": "Direct Tax Laws and International Taxation",
+  "author": "Rahul kp",
+  "topic": "Gross Total Income vs Total Income",
+  "title": "GTI vs Total Income",
+  "title_highlight": "Know the gap",
+  "hook": "tax is charged on the lower one!",
+  "simple_words": "GTI is income before Chapter VI-A deductions. Total Income is what is left after them, and tax is computed on it.",
+  "definitions": [
+    {
+      "term": "Gross Total Income (GTI)",
+      "meaning": "Sum of income under the five heads, after clubbing, set-off and carry forward of losses, but before Chapter VI-A deductions.",
+      "note": "Exempt income is never in GTI"
+    },
+    {
+      "term": "Total Income",
+      "meaning": "GTI minus the deductions allowed under Chapter VI-A. Tax rates are applied on this figure.",
+      "note": "Cannot go below nil"
+    }
+  ],
+  "key_points": [
+    "GTI comes first; Total Income comes after ==Chapter VI-A deductions==",
+    "Clubbing of income and set-off of losses are done BEFORE reaching GTI",
+    "Exempt income (e.g. agricultural income) is left out of both",
+    "!!Chapter VI-A deductions are not allowed from the heads' income before GTI!!, only from GTI"
+  ],
+  "formula_heading": "The Two-Step Route",
+  "formula_hook": "heads first, deductions next",
+  "formulas": [
+    {
+      "name": "Gross Total Income",
+      "lhs": "GTI",
+      "rhs": "S + H + B + C + O (after set-off, carry forward, clubbing)",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "S = Salary, H = House Property, B = Business or Profession, C = Capital Gains, O = Other Sources"
+    },
+    {
+      "name": "Total Income",
+      "lhs": "Total Income",
+      "rhs": "GTI − D",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "D = deductions allowed under Chapter VI-A, limited to the income available"
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Heads, then losses, then VI-A!",
+    "text": "Order matters: five heads, set-off and clubbing give GTI; Chapter VI-A deductions then give Total Income."
+  },
+  "trick_hook": "G comes before T",
+  "memory_trick": {
+    "mnemonic": "Gross is the Garden, Total is the Trimmed",
+    "explanation": "GTI is the wild, full garden of income. Chapter VI-A deductions trim it. Tax is levied on the trimmed Total Income."
+  },
+  "steps": [
+    "Compute income under each head",
+    "Club income and set off losses",
+    "Add up to get GTI",
+    "Deduct Chapter VI-A items",
+    "Result is Total Income"
+  ],
+  "exam_tip": "If the question asks for GTI, stop before Chapter VI-A deductions. If it asks for Total Income, deduct them.",
+  "doubt": {
+    "question": "Is exempt income part of GTI?",
+    "answer": "No. Income exempt under the Act is excluded from computation, so it is not in GTI or Total Income."
+  },
+  "mistakes_hook": "don't deduct too early",
+  "mistakes": [
+    {
+      "wrong": "Deducting Chapter VI-A items while computing a head's income",
+      "right": "Compute heads first; deduct Chapter VI-A only from GTI."
+    },
+    {
+      "wrong": "Reporting GTI as the final figure for tax",
+      "right": "Tax is computed on Total Income, i.e. GTI less Chapter VI-A deductions."
+    },
+    {
+      "wrong": "Including exempt income in GTI",
+      "right": "Exempt income is excluded from GTI and Total Income."
+    },
+    {
+      "wrong": "Ignoring brought-forward loss set-off before GTI",
+      "right": "Set-off and carry-forward of losses are applied before arriving at GTI."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Income-tax Act; Finance Act, 2025 basis (no rates used)",
+  "confidence": "medium",
+  "reviewer_note": "No past-paper list was given. Key point 4 and mistake 4 are worded loosely; check them. Some Chapter VI-A deductions are restricted for special-rate incomes, which this note does not cover.",
+  "law_sensitive": true,
+  "attempts": 3,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No past-paper list was given. Key point 4 and mistake 4 are worded loosely; check them. Some Chapter VI-A deductions are restricted for special-rate incomes, which this note does not cover.",
+    "Checker 1: Key point 3 / definition 1 note: 'agricultural income is left out of both' is correct for GTI and Total Income, but students may read it as having no tax effect at all. Add: 'Agricultural income is exempt under section 10(1), but for non-corporate assessees it is still taken into account (partial integration) to work out the tax rate on non-agricultural income.'",
+    "Checker 1: Formula 2 legend: 'limited to the income available' is vague. Better: 'D = Chapter VI-A deductions. They are limited to GTI and are not allowed against income taxed at special rates, such as STCG under section 111A, LTCG under sections 112/112A and casual income under section 115BB.'",
+    "Checker 1: Definition 2 / formula 2: the note does not say that under the default new regime (section 115BAC) most Chapter VI-A deductions are not available. Only a few, such as 80CCD(2), 80CCH and 80JJAA, are allowed. Add a one-line note so students do not deduct 80C or 80D under the default regime."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.02,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.16,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 15: Direct Tax Laws and International Taxation\nGross Total Income vs Total Income\n\nIn simple words: GTI is income before Chapter VI-A deductions. Total Income is what is left after them, and tax is computed on it.\n\nSwipe for the formula, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Income-tax Act; Finance Act, 2025 basis (no rates used).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept2-261126",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

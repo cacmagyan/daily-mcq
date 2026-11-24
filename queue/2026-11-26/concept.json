@@ -1,0 +1,152 @@
+{
+  "kind": "concept",
+  "course_id": "ca_inter",
+  "paper_code": "Paper 3A",
+  "paper_name": "Income-tax Law",
+  "author": "Rahul kp",
+  "topic": "Previous Year vs Assessment Year",
+  "title": "Previous Year",
+  "title_highlight": "vs Assessment Year",
+  "hook": "earn first, tax next!",
+  "simple_words": "Income earned in the previous year is taxed in the next year, called the assessment year.",
+  "definitions": [
+    {
+      "term": "Previous Year (PY)",
+      "meaning": "The financial year immediately before the assessment year. Income earned in it is taxed in the assessment year.",
+      "note": "PY 2025-26 → AY 2026-27"
+    },
+    {
+      "term": "Assessment Year (AY)",
+      "meaning": "The 12-month period starting on 1 April, in which the income of the previous year is assessed and taxed.",
+      "note": "AY always starts 1 April"
+    }
+  ],
+  "key_points": [
+    "Income of ==previous year== is taxed in the ==assessment year==, so income is earned first and taxed later.",
+    "Both run from 1 April to 31 March, for every assessee. !!No choice of a different year!!",
+    "For a new business or profession, the first PY starts from the date of set-up and ends on 31 March.",
+    "So the first PY can be shorter than 12 months, but an AY is always 12 months."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "PY earns, AY taxes",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Previous Year",
+      "Assessment Year"
+    ],
+    "rows": [
+      [
+        "Meaning",
+        "Year of earning income",
+        "Year of assessing income"
+      ],
+      [
+        "Comes",
+        "First (earlier)",
+        "Next (after PY)"
+      ],
+      [
+        "Length",
+        "12 months; shorter if new set-up",
+        "Always 12 months"
+      ],
+      [
+        "Starts",
+        "1 April or date of set-up",
+        "Always 1 April"
+      ],
+      [
+        "Example",
+        "2025-26",
+        "2026-27"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "PY earns, AY taxes!",
+    "text": "Income is taxed in the year after it is earned. Law and rates of the AY apply to the income of the PY, in general."
+  },
+  "trick_hook": "P before A, like alphabet",
+  "memory_trick": {
+    "mnemonic": "P pays later, A assesses",
+    "explanation": "P comes before A in the alphabet, just as the Previous year comes before the Assessment year. Salary earned in P is assessed in A."
+  },
+  "steps": [
+    "Find the date income was earned",
+    "Locate the financial year (1 Apr-31 Mar)",
+    "That year is the previous year",
+    "Add one year to get the AY",
+    "Check if a new business was set up"
+  ],
+  "exam_tip": "Read the question: if it says 'income earned in 2025-26', the AY is 2026-27. !!Do not write 2025-26 as the AY.!!",
+  "doubt": {
+    "question": "Can I choose calendar year as my previous year?",
+    "answer": "No. The previous year is the financial year from 1 April to 31 March for all assessees, even if books follow another year."
+  },
+  "mistakes_hook": "Don't swap the years!",
+  "mistakes": [
+    {
+      "wrong": "Income earned in 2025-26 is taxed in AY 2025-26",
+      "right": "Income earned in PY 2025-26 is taxed in AY 2026-27, the next year."
+    },
+    {
+      "wrong": "The previous year is always a full 12 months",
+      "right": "For a new business, the first PY runs from set-up date to 31 March, so it can be shorter."
+    },
+    {
+      "wrong": "A business can pick its own previous year, like Jan-Dec",
+      "right": "The previous year is the financial year, 1 April to 31 March, for every assessee."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Income-tax Act, 1961 (A.Y. 2026-27); basic PY/AY concept",
+  "confidence": "high",
+  "reviewer_note": "No past-paper list given. Special cases where income is taxed in the same year are left out on purpose; no section numbers used.",
+  "law_sensitive": true,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No past-paper list given. Special cases where income is taxed in the same year are left out on purpose; no section numbers used.",
+    "Checker 1: Insight text and key point 1 state as an absolute rule that income is taxed in the year after it is earned. ICAI teaches this as the general rule, with exceptions under sections 172 to 176. In those cases, income of the PY is taxed in the same year: shipping business of non-residents, persons leaving India, an AOP or BOI formed for a particular event, persons likely to transfer property to avoid tax, and a discontinued business. Correct version: 'As a general rule, income of the PY is taxed in the following AY; in certain exceptional cases (ss. 172-176), it is taxed in the PY itself.'",
+    "Checker 1: Memory trick 'P pays later, A assesses': the words 'P pays later' are loose and could mislead. Tax is often paid during the PY itself through advance tax and TDS. Better: 'P earns, A assesses' (the formula hook already says 'PY earns, AY taxes').",
+    "Checker 1: Key point 2 says the PY runs from 1 April to 31 March 'for every assessee'. This contradicts key point 3 and table row 4, where a newly set-up business or a new source of income has a first PY that starts on the set-up date. Correct version: 'The PY is the financial year ending 31 March, uniform for all assessees; no different accounting year can be chosen. For a new business/profession or new source of income, the first PY starts from the date of set-up or the date the new source arises.'",
+    "Checker 1: Key point 3, step 5 and mistake 2 mention only a new business or profession. The ICAI rule also covers a newly arising source of income: the first PY starts from the date that source comes into existence. Correct version: 'For a newly set-up business or profession, or a new source of income, the first PY begins on the date of set-up or the date the new source arises, and ends on 31 March.'"
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟦 CA Inter · Concept of the day\nPaper 3A: Income-tax Law\nPrevious Year vs Assessment Year\n\nIn simple words: Income earned in the previous year is taxed in the next year, called the assessment year.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Income-tax Act, 1961 (A.Y. 2026-27); basic PY/AY concept.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAInter #CAIntermediate #ICAI #CAStudents\n\nref concept-261126",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

@@ -1,0 +1,232 @@
+{
+  "kind": "pyq",
+  "format": "qt_video",
+  "subject": "eco",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 4",
+  "paper_name": "Business Economics: Price Determination in Different Markets",
+  "topic_key": "Marginal revenue",
+  "ref": "ca_foundation_eco|J25-36",
+  "tried": [
+    "ca_foundation_eco|J25-36"
+  ],
+  "topic": "Marginal revenue",
+  "script": {
+    "theme": "navy",
+    "badge": {
+      "tag": "ASKED IN",
+      "text": "CA FOUNDATION JANUARY 2025 · ECO"
+    },
+    "header": "CA Foundation January 2025 · Paper 4 · ECO",
+    "question": "When price is ₹20 the quantity demanded is 9 units, and when price is ₹19 the quantity demanded is 10 units. What is the **marginal revenue** from increasing output from **9 units to 10 units**?",
+    "options": [
+      "₹20",
+      "₹19",
+      "₹10",
+      "₹1"
+    ],
+    "answer": 2,
+    "scene": {
+      "type": "bars",
+      "max": 200,
+      "bars": [
+        {
+          "label": "Price 9th",
+          "segments": [
+            {
+              "v": 20.0,
+              "label": "₹20"
+            }
+          ]
+        },
+        {
+          "label": "Price 10th",
+          "segments": [
+            {
+              "v": 19.0,
+              "label": "₹19"
+            }
+          ]
+        }
+      ],
+      "note": "MR is not price"
+    },
+    "lines": [
+      {
+        "say": "This question came in the CA Foundation January 2025 exam.",
+        "card": {
+          "kind": "attempt",
+          "exam": "CA Foundation",
+          "when": "January 2025",
+          "sub": "Paper 4 · Business Economics"
+        }
+      },
+      {
+        "say": "Price is ₹20 and demand is 9 units. Price falls to ₹19 and demand rises to 10 units. Find the marginal revenue of the 10th unit.",
+        "card": {
+          "kind": "hook",
+          "small": "Marginal revenue",
+          "big": "MR of the 10th unit"
+        }
+      },
+      {
+        "say": "MR is the price of the new unit, so it is ₹19. Right?",
+        "card": {
+          "kind": "hook",
+          "small": "So...",
+          "big": "MR = new price ₹19"
+        }
+      },
+      {
+        "say": "Wrong. ₹19 is the trap.",
+        "card": {
+          "kind": "trap",
+          "small": "CA FOUNDATION JANUARY 2025 · ECO",
+          "big": "₹19 ×",
+          "sub": "that is the trap"
+        }
+      },
+      {
+        "say": "The right answer is ₹10. Here's why.",
+        "card": {
+          "kind": "answer",
+          "small": "The right answer",
+          "big": "₹10"
+        }
+      },
+      {
+        "say": "Step one. Wrong. MR is the extra total revenue, not the price.",
+        "card": {
+          "kind": "step",
+          "title": "Step 1 · What MR means",
+          "rows": [
+            "MR = change in TR",
+            "Not the price"
+          ]
+        }
+      },
+      {
+        "say": "Step two. At 9 units, TR is 9 × 20, which is ₹180.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · TR at 9 units",
+          "rows": [
+            "9 × 20 = **₹180**"
+          ]
+        },
+        "scene": {
+          "type": "bars",
+          "max": 200,
+          "bars": [
+            {
+              "label": "TR at 9",
+              "segments": [
+                {
+                  "v": 180.0,
+                  "label": "₹180"
+                }
+              ]
+            }
+          ],
+          "note": "9 × ₹20"
+        }
+      },
+      {
+        "say": "Step three. At 10 units, TR is 10 × 19, which is ₹190.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · TR at 10 units",
+          "rows": [
+            "10 × 19 = **₹190**"
+          ]
+        },
+        "scene": {
+          "type": "bars",
+          "max": 200,
+          "bars": [
+            {
+              "label": "TR at 9",
+              "segments": [
+                {
+                  "v": 180.0,
+                  "label": "₹180"
+                }
+              ]
+            },
+            {
+              "label": "TR at 10",
+              "segments": [
+                {
+                  "v": 190.0,
+                  "label": "₹190"
+                }
+              ]
+            }
+          ],
+          "note": "10 × ₹19"
+        }
+      },
+      {
+        "say": "Step four. MR is 190 minus 180. That is ₹10.",
+        "card": {
+          "kind": "step",
+          "title": "Step 4 · Take the difference",
+          "rows": [
+            "190 − 180 = **₹10**"
+          ]
+        }
+      },
+      {
+        "say": "The shortcut. Price falls on all units. You gain ₹19 on the new unit, but lose ₹1 on each of the 9 old units. 19 minus 9 is 10.",
+        "card": {
+          "kind": "shortcut",
+          "rows": [
+            "MR = 19 − (9 × 1)",
+            "= **₹10**"
+          ]
+        }
+      },
+      {
+        "say": "Your turn. Price ₹30 gives 5 units. Price ₹28 gives 6 units. What is the MR of the 6th unit?",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "TR: 5 × 30 = 150",
+            "6 × 28 = 168; MR = 18"
+          ]
+        }
+      },
+      {
+        "say": "Comment your answer. Follow for a new trap every day.",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "TR: 5 × 30 = 150",
+            "6 × 28 = 168; MR = 18"
+          ],
+          "all": true
+        }
+      }
+    ],
+    "series": "ECO TRAP",
+    "series_no": 2
+  },
+  "correct": "C",
+  "trap": "₹19",
+  "your_turn_answer": "₹18",
+  "asked_in": "January 2025",
+  "check_notes": [
+    "The claim that this question 'came in the CA Foundation January 2025 exam' can't be checked and may not be true. Keep it only if there's a source.",
+    "The 'Your turn' card already shows the working and the answer (MR = 18) before viewers are asked to comment, so it gives the answer away. Show the answer on a later card.",
+    "'Step one. Wrong.' is awkward. It sounds like step one itself is wrong. Better: 'Step one. MR is the extra total revenue, not the price.'"
+  ],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "video": "pyq.mp4",
+  "cover": "pyq_cover.jpg",
+  "seconds": 68.3,
+  "thumb_ms": 19362,
+  "voice": "en-IN-AaravNeural (Azure)",
+  "caption": "MR of the 10th unit… so ₹19? That's the trap. 🪤\n\nWhen price is ₹20 the quantity demanded is 9 units, and when price is ₹19 the quantity demanded is 10 units. What is the marginal revenue from increasing output from 9 units to 10 units?\n\n(a) ₹20\n(b) ₹19\n(c) ₹10\n(d) ₹1\n\nDid you pick the trap too? Tell me in the comments 👇\nAsked in CA Foundation January 2025 · Paper 4 (ICAI's official answer key).\nSave 🔖 it for your Business Economics revision.\n\nFollow @cacmagyan for a new trap every day.\n\n#CAFoundation #BusinessEconomics #CAStudents #ICAI #Economics\n\nref pyq-261126"
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "countdown",
+  "course_id": "ca_foundation",
+  "exam": "CA Foundation Jan 2027",
+  "exam_date": "2027-01-03",
+  "days": 38,
+  "paper_code": "Paper 1",
+  "paper_name": "Accounting",
+  "topic": "",
+  "tip": "",
+  "hold": false,
+  "hold_reason": "",
+  "notes": [
+    "topic left out: 'Start with the correct balance' is misleading: a BRS can start from either the cash book or the passbook balance, whichever is given. Neither one is the 'correct' balance; the point of the statement "
+  ],
+  "images": [
+    "countdown.jpg"
+  ]
+}

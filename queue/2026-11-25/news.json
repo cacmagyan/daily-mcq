@@ -1,0 +1,86 @@
+{
+  "kind": "news",
+  "date": "2026-11-25",
+  "stories": [
+    {
+      "tag": "GST",
+      "headline": "ICAI's November 2026 guides on GSTR-9 and GSTR-9C bring six changes",
+      "points": [
+        "Table 5N turnover now leaves out supplies on which e-commerce operators pay tax under Section 9(5), via new Table 4G1.",
+        "Table 8I formula now counts import IGST credit taken in the next financial year, so no false difference shows up.",
+        "Credit reclaimed under Rules 37 and 37A goes in Table 6H of the reclaim year; Circular 212/6/2024-GST is noted as withdrawn."
+      ],
+      "why_it_matters": "GSTR-9 and GSTR-9C reconciliation is core GST compliance and audit work, so students should know how the reporting tables change.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Goods and Services Tax | ICAI November 2026 Technical Guides on GSTR-9 and GSTR-9C: Six Key Changes With Practical Examples",
+      "link": "https://taxguru.in/goods-and-service-tax/icai-november-2026-technical-guides-gstr-9-gstr-9c-key-practical-examples.html",
+      "published": "2026-11-24T19:31:09+00:00",
+      "check": "minor",
+      "check_notes": [
+        "The 'Why it matters' line is aimed at 'students', but the source aims its guidance at taxpayers and professionals. Calling the work 'core GST compliance and audit work' is the story's own framing, not the source's. This is wording only, and every fact, number and table reference in the story matches the source."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Nagpur allows ₹35.17 lakh Section 80P deduction despite late return",
+      "points": [
+        "ITAT Nagpur allowed a co-operative society's ₹35,17,251 deduction under Section 80P(2)(a)(i) even though its return was late.",
+        "It found reasonable cause for delay, citing CBDT Circular 13/2023 and a Madras High Court ruling on co-operative societies.",
+        "A separate ₹6,29,400 accrued FD interest addition was sent back to the Assessing Officer for verification."
+      ],
+      "why_it_matters": "Section 80AC links the 80P deduction to timely return filing, a point that often comes up in tax law and assessment work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | ITAT Nagpur Allows ₹35.17 Lakh Section 80P Deduction Despite Delayed ITR",
+      "link": "https://taxguru.in/income-tax/itat-nagpur-rs-35-17-lakh-section-80p-deduction-delayed-itr.html",
+      "published": "2026-11-24T20:34:30+00:00",
+      "check": "minor",
+      "check_notes": [
+        "'Why it matters' says the Section 80AC timely-filing point 'often comes up in tax law and assessment work'. The source doesn't say this; it's the writer's own framing."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "Telangana HC: Demand notice with draft order voids Section 144C process",
+      "points": [
+        "Telangana HC rejected the Revenue's appeal in PCIT vs Hyundai Motor India Engineering for AY 2015-16.",
+        "The 11 Dec 2018 order, called a draft, said the assessment was complete and came with a demand notice and penalty steps.",
+        "The court held that such an order is not a genuine draft, a jurisdictional defect that denied the assessee access to the DRP."
+      ],
+      "why_it_matters": "Section 144C draft orders and DRP objections are part of transfer pricing and assessment procedure that CA/CMA students must know.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | Demand and Penalty Notice With Draft Assessment Invalidates Section 144C Proceedings: Telangana HC",
+      "link": "https://taxguru.in/income-tax/demand-penalty-notice-draft-assessment-invalidates-section-144c-proceedings-telangana-hc.html",
+      "published": "2026-11-24T13:51:25+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'Company Law | NFRA to Resume Action on 100 Auditor Notices A': why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | GST ITC Deadline for FY 2025-26: Wh': a point is longer than 110 characters",
+    "skipped 'Can the income-tax department tax your GST refund? ITAT rule': why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | GST E-Invoice Default Cannot Automa': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Income Tax | Income Tax Portal Closed Before Reply Deadline:': a point is longer than 110 characters",
+    "skipped 'Income Tax | Vodafone–Hutchison Tax Dispute: Supreme Court V': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'RBI approves SBI Mutual Fund to acquire up to 9.99% stake in': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Goods and Services Tax | Patna HC Grants Anticipatory Bail i': a point is longer than 110 characters",
+    "skipped 'Income Tax | Automated Foreign Roaming and Interconnect Char': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 25 Nov 2026\n\n1️⃣ ICAI's November 2026 guides on GSTR-9 and GSTR-9C bring six changes (TaxGuru)\n2️⃣ ITAT Nagpur allows ₹35.17 lakh Section 80P deduction despite late return (TaxGuru)\n3️⃣ Telangana HC: Demand notice with draft order voids Section 144C process (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261125",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

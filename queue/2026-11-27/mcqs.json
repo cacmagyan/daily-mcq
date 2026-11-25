@@ -1,0 +1,212 @@
+{
+  "date": "2026-11-27",
+  "day": 37,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-26T04:04:40+05:30",
+  "items": [
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 1A",
+      "paper_name": "Fundamentals of Financial Accounting",
+      "topic": "Depreciation - Disposal of Asset (WDV)",
+      "question": "A machine was bought on 1 April 2023 for ₹10,00,000. Depreciation is 10% p.a. on written-down value; books close on 31 March. The machine was sold on 31 March 2026 for ₹6,50,000, after charging depreciation for FY 2025-26. Result of sale?",
+      "options": [
+        "Loss of ₹3,50,000",
+        "Loss of ₹79,000",
+        "Loss of ₹1,60,000",
+        "Loss of ₹50,000"
+      ],
+      "correct": "B",
+      "explanation": "Under the WDV method, depreciation each year is 10% of the opening book value. After three years the book value is ₹7,29,000. Sale price ₹6,50,000 is lower, so the loss is ₹79,000.",
+      "working": [
+        {
+          "label": "WDV after FY 2023-24",
+          "value": "9,00,000"
+        },
+        {
+          "label": "WDV after FY 2024-25",
+          "value": "8,10,000"
+        },
+        {
+          "label": "WDV after FY 2025-26",
+          "value": "7,29,000"
+        },
+        {
+          "label": "Sale price",
+          "value": "6,50,000"
+        },
+        {
+          "label": "Loss on sale",
+          "value": "79,000"
+        }
+      ],
+      "why_not": {
+        "D": "Used straight-line depreciation on cost (₹3,00,000 total) instead of WDV.",
+        "C": "Charged depreciation for only two years, leaving book value ₹8,10,000.",
+        "A": "Ignored depreciation altogether and compared sale price with cost."
+      },
+      "exam_tip": "On disposal, first find the book value on the date of sale, then compare it with the sale price.",
+      "calculation": "cost = 1000000\nwdv = cost*0.9*0.9*0.9\nsale = 650000\nanswer = wdv - sale",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 37\nPaper 1A: Fundamentals of Financial Accounting\nTopic: Depreciation - Disposal of Asset (WDV)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261127",
+      "story": "cma_cat_story.jpg",
+      "answer_story": "cma_cat_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 10",
+      "paper_name": "Corporate Accounting and Auditing (Corporate Accounting)",
+      "topic": "Redemption of Preference Shares: CRR",
+      "question": "A company redeems 10,000 preference shares of ₹100 each at 10% premium, out of profits and a fresh issue of 3,000 equity shares of ₹100 each issued at ₹110. What amount must be transferred to Capital Redemption Reserve?",
+      "options": [
+        "₹8,00,000",
+        "₹6,70,000",
+        "₹7,00,000",
+        "₹10,00,000"
+      ],
+      "correct": "C",
+      "explanation": "CRR equals the nominal value of shares redeemed less the nominal value of fresh shares issued for redemption. Premium on the fresh issue and premium payable on redemption are ignored for this calculation.",
+      "working": [
+        {
+          "label": "Nominal value redeemed",
+          "value": "₹10,00,000"
+        },
+        {
+          "label": "Nominal value of fresh equity",
+          "value": "₹3,00,000"
+        },
+        {
+          "label": "CRR (difference)",
+          "value": "₹7,00,000"
+        }
+      ],
+      "why_not": {
+        "B": "Deducts the fresh issue proceeds of ₹3,30,000 including premium, not its nominal value.",
+        "A": "Adds the ₹1,00,000 redemption premium to the CRR figure.",
+        "D": "Ignores the fresh issue; transfers the full nominal value redeemed."
+      },
+      "exam_tip": "CRR = face value redeemed minus face value of fresh shares issued. Premiums never enter this figure.",
+      "calculation": "redeemed = 10000*100\nfresh = 3000*100\nanswer = redeemed - fresh",
+      "applicability": "Companies Act, 2013: redemption of preference shares and CRR",
+      "confidence": "high",
+      "reviewer_note": "Assumes redemption is out of profits as well as a fresh issue; the premium on redemption is paid from securities premium or profits.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Assumes redemption is out of profits as well as a fresh issue; the premium on redemption is paid from securities premium or profits.",
+        "Checker: Option B is defensible if 'proceeds of fresh issue' is read to include the ₹10 premium (₹3,30,000). The question does not say that the premium is excluded.",
+        "Checker: The question does not say how the 10% redemption premium (₹1,00,000) is financed. It does not affect the CRR but leaves the scenario incomplete.",
+        "Checker: 'Out of profits' is vague. It does not say which profits are used, for example whether the premium comes from securities premium or from profits.",
+        "Checker: The question does not say whether the shares are redeemed under the Companies Act, 2013 (Section 55)."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 37\nPaper 10: Corporate Accounting and Auditing (Corporate Accounting)\nTopic: Redemption of Preference Shares: CRR\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Companies Act, 2013: redemption of preference shares and CRR.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261127",
+      "story": "cma_inter_story.jpg",
+      "answer_story": "cma_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 15",
+      "paper_name": "Direct Tax Laws and International Taxation",
+      "topic": "Gross Total Income vs Total Income",
+      "question": "Mr. Rao, a resident individual, has opted out of section 115BAC for FY 2025-26. Salary (net of standard deduction) ₹9,00,000; house property loss ₹1,50,000 (self-occupied, interest allowed); taxable bank interest of minor son, to be clubbed, ₹40,000; agricultural income ₹2,00,000; eligible 80C deduction ₹1,50,000. His total income is:",
+      "options": [
+        "₹7,90,000",
+        "₹6,00,000",
+        "₹8,40,000",
+        "₹6,40,000"
+      ],
+      "correct": "D",
+      "explanation": "Clubbing and house property loss set-off come before GTI: 9,00,000 + 40,000 − 1,50,000 = 7,90,000. Agricultural income is exempt. Chapter VI-A deduction comes from GTI: 7,90,000 − 1,50,000 = 6,40,000.",
+      "working": [
+        {
+          "label": "Salary",
+          "value": "₹9,00,000"
+        },
+        {
+          "label": "Add: clubbed income of minor son",
+          "value": "₹40,000"
+        },
+        {
+          "label": "Less: house property loss",
+          "value": "₹1,50,000"
+        },
+        {
+          "label": "Gross Total Income",
+          "value": "₹7,90,000"
+        },
+        {
+          "label": "Less: 80C deduction",
+          "value": "₹1,50,000"
+        },
+        {
+          "label": "Total Income",
+          "value": "₹6,40,000"
+        }
+      ],
+      "why_not": {
+        "B": "Left out the minor son's clubbed income of ₹40,000.",
+        "A": "Stopped at Gross Total Income and did not deduct the 80C amount.",
+        "C": "Added exempt agricultural income of ₹2,00,000 and did not deduct 80C."
+      },
+      "exam_tip": "Order: heads, clubbing, set-off give GTI. Then Chapter VI-A gives Total Income. Exempt income stays out.",
+      "calculation": "salary = 900000\nclubbed = 40000\nhp_loss = 150000\ngti = salary + clubbed - hp_loss\ndeduction = 150000\nanswer = gti - deduction",
+      "applicability": "Income-tax Act, 1961 as per Finance Act, 2025 (old regime)",
+      "confidence": "high",
+      "reviewer_note": "Old regime stated explicitly. Self-occupied interest ₹1,50,000 is within the ₹2,00,000 cap. Clubbed ₹40,000 stated as taxable, so no exemption adjustment is needed (the minor child exemption is ignored).",
+      "attempts": 2,
+      "check_notes": [
+        "Writer: Old regime stated explicitly. Self-occupied interest ₹1,50,000 is within the ₹2,00,000 cap. Clubbed ₹40,000 stated as taxable, so no exemption adjustment is needed (the minor child exemption is ignored).",
+        "Checker: Section 10(32) exempts up to ₹1,500 of a clubbed minor's income. The word 'taxable' suggests ₹40,000 is already net of this, but it isn't explicit. A student who deducts ₹1,500 gets ₹6,38,500, which is not an option. Better to say 'after the s.10(32) exemption'.",
+        "Second checker: The wording \"taxable bank interest\" is meant to say that the section 10(32) exemption of ₹1,500 is already allowed. This could be stated more clearly. If 40,000 is gross interest, the answer would be 6,38,500, which is not an option.",
+        "Second checker: Agricultural income is a distractor. It is exempt, and with a total income below the exemption limit the partial integration does not matter. The question could say this more clearly.",
+        "Second checker: Option A (7,90,000) is the total before the 80C deduction. Option C (8,40,000) probably comes from setting off the HP loss wrongly or adding agricultural income. These are reasonable distractors."
+      ],
+      "difficulty": "medium",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "linked_concept": "Gross Total Income vs Total Income",
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 37\nPaper 15: Direct Tax Laws and International Taxation\nTopic: Gross Total Income vs Total Income\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on Income-tax Act, 1961 as per Finance Act, 2025 (old regime).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261127",
+      "story": "cma_final_story.jpg",
+      "answer_story": "cma_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

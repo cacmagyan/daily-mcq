@@ -1,0 +1,154 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Business Mathematics",
+  "author": "Rahul kp",
+  "topic": "Permutation vs Combination",
+  "title": "Permutation",
+  "title_highlight": "vs Combination",
+  "hook": "does order matter?",
+  "simple_words": "Permutation is arranging, where order counts. Combination is selecting, where order does not count.",
+  "definitions": [
+    {
+      "term": "Permutation (nPr)",
+      "meaning": "Number of ways of arranging r items out of n different items, where the ==order matters==.",
+      "note": "ABC and BAC are different"
+    },
+    {
+      "term": "Combination (nCr)",
+      "meaning": "Number of ways of selecting r items out of n different items, where the ==order does not matter==.",
+      "note": "ABC and BAC are the same"
+    }
+  ],
+  "key_points": [
+    "Words like arrange, line up, rank, form a number, seat point to ==permutation==.",
+    "Words like select, choose, committee, team, hand of cards point to ==combination==.",
+    "!!Ask first: if I swap two items, is it a new result?!! Yes means permutation, no means combination.",
+    "For the same n and r, nPr is never less than nCr."
+  ],
+  "formula_heading": "The Two Formulas",
+  "formula_hook": "same n, same r, one extra r!",
+  "formulas": [
+    {
+      "name": "Permutation",
+      "lhs": "nPr",
+      "rhs": "",
+      "numerator": "n!",
+      "denominator": "(n − r)!",
+      "square_root": false,
+      "suffix": "",
+      "legend": "n = total different items, r = items taken at a time, n! = n × (n−1) × … × 1, 0! = 1"
+    },
+    {
+      "name": "Combination",
+      "lhs": "nCr",
+      "rhs": "",
+      "numerator": "n!",
+      "denominator": "r! × (n − r)!",
+      "square_root": false,
+      "suffix": "",
+      "legend": "n = total different items, r = items chosen. Also nCr = nC(n−r)"
+    },
+    {
+      "name": "Link between the two",
+      "lhs": "nPr",
+      "rhs": "nCr × r!",
+      "numerator": "",
+      "denominator": "",
+      "square_root": false,
+      "suffix": "",
+      "legend": "First select r items (nCr), then arrange them in r! ways"
+    }
+  ],
+  "table": {
+    "headers": [],
+    "rows": []
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Combination + arranging = Permutation!",
+    "text": "Permutation is a combination whose chosen items are then arranged, so it is larger by the factor r!."
+  },
+  "trick_hook": "P for Position, C for Committee",
+  "memory_trick": {
+    "mnemonic": "P = Position, C = Committee",
+    "explanation": "Positions like President and Secretary differ, so order counts (P). In a committee all members are equal, so order does not count (C)."
+  },
+  "steps": [
+    "Read the question: order matter?",
+    "Write down n and r",
+    "Pick nPr or nCr",
+    "Expand factorials and cancel",
+    "Check r ≤ n and answer is whole"
+  ],
+  "exam_tip": "Cancel factorials before multiplying. Write n! as n × (n−1)! so the big terms cut out and the sums stay small.",
+  "doubt": {
+    "question": "Why is nPr bigger than nCr?",
+    "answer": "Each chosen group of r items can be arranged in r! ways, so nPr = nCr × r!. They are equal only when r = 0 or r = 1."
+  },
+  "mistakes_hook": "order is the whole game",
+  "mistakes": [
+    {
+      "wrong": "Using nCr to form a 3-digit number or to arrange people in a row",
+      "right": "When order gives a different result (numbers, ranks, seating), use nPr."
+    },
+    {
+      "wrong": "Using nPr to select a committee or a team",
+      "right": "Selection with no order and no distinct roles needs nCr."
+    },
+    {
+      "wrong": "Taking 0! = 0",
+      "right": "0! = 1, so nCn = 1 and nC0 = 1."
+    },
+    {
+      "wrong": "Calculating nCr for r larger than n",
+      "right": "r cannot exceed n, as you cannot select more items than are available."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Checker 1: Exam tip: 'so the big terms cut out and the sums stay small' – 'sums' is loose, because the work is multiplication and division. Better: 'so the large factorial terms cancel and the calculation stays small.'",
+    "Checker 1: Key point 1: 'form a number' leads to nPr only when the digits are not repeated. Better: 'form a number (digits not repeated)'. If repetition is allowed, the count is n^r, not nPr."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.2,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟩 CA Foundation · Concept of the day\nPaper 3: Quantitative Aptitude: Business Mathematics\nPermutation vs Combination\n\nIn simple words: Permutation is arranging, where order counts. Combination is selecting, where order does not count.\n\nSwipe for the formula, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFoundation #ICAI #CAStudents #CAExams\n\nref concept2-261127",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

@@ -1,0 +1,202 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 9",
+  "paper_name": "Operations Management and Strategic Management (Operations Management)",
+  "topic": "Job vs Mass Production",
+  "concept_topic": "Job vs Mass Production",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 69.9,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Job vs Mass Production",
+    "caption_hook": "Why is a custom suit costly but a readymade shirt cheap?",
+    "hook_label": "WHY SUITS COST MORE?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Why is a custom suit costly but readymade shirts are cheap?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Great question! That's job production versus mass production.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Job vs Mass",
+          "sub": "One-off or in bulk"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So what exactly is job production, Ma'am?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "A tailor stitches one suit per order. That's job. A readymade factory makes the same shirt in thousands. That's Mass.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Job",
+            "lines": [
+              "One suit",
+              "Per order"
+            ],
+            "icon": "people",
+            "color": "navy"
+          },
+          "right": {
+            "title": "Mass",
+            "lines": [
+              "Same shirt",
+              "Thousands"
+            ],
+            "icon": "factory",
+            "color": "green"
+          },
+          "right_on": "Mass"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "So if nobody orders, the tailor doesn't stitch?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Exactly. No order, no production. Job is high variety, low volume. Mass is the opposite.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "list",
+          "title": "Variety and volume",
+          "lines": [
+            "Job: more variety",
+            "Mass: more volume"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Hmm, what about machines and workers?",
+        "shot": "close",
+        "pose": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Job uses general-purpose machines and skilled labour. Mass uses special-purpose machines, so semi-skilled workers are enough.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Machines and labour",
+          "lines": [
+            "Job: general machines",
+            "Job: skilled labour",
+            "Mass: special machines",
+            "Mass: semi-skilled"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And the factory floor layout?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Job uses a process layout, grouping similar machines. Mass uses a product layout, one fixed line.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "list",
+          "title": "Layout",
+          "lines": [
+            "Job: process layout",
+            "Mass: product line layout"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Oh! So why is the shirt cheaper?",
+        "shot": "close",
+        "pose": "aha"
+      },
+      {
+        "who": "teacher",
+        "say": "Mass spreads its cost over a large volume, so cost per unit is lower. Job costs more per unit.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "list",
+          "title": "Cost per unit",
+          "lines": [
+            "Job: higher",
+            "Mass: lower"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Is batch production the same as job?",
+        "shot": "desk",
+        "pose": "doubt",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "No. Batch makes a group of identical units at a time. It lies in between.",
+        "shot": "board",
+        "pose": "explain"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: job is tailor-made, one order. Mass is readymade, standard, in bulk.",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Tailor = Job",
+            "Readymade = Mass"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Versus right_on \"Mass\" now appears as a word in line 4. Check total word count is within 120-175.",
+    "Checker: Line 12 (voice): 'Mass spreads its cost over a large volume' is imprecise. Only the fixed costs (special machines, tooling, set-up) get spread over the volume. Correct version: 'Mass production spreads its fixed costs over a very large volume and gains economies of scale, so cost per unit is lower.'",
+    "Checker: Lines 4 and 15 (example): many Operations Management texts give readymade garments as a standard example of batch production (sizes and designs are made in batches), not mass production. To keep the example clear, say 'the same shirt design made continuously in thousands on a fixed line', or use a standard mass production example such as cars, cement or sugar. This keeps Line 14's batch category distinct.",
+    "Checker: Line 4 (voice): 'That's Mass.' has a capital M that isn't needed. Correct version: 'That's mass production.'"
+  ],
+  "attempts": 3,
+  "reviewer_note": "Versus right_on \"Mass\" now appears as a word in line 4. Check total word count is within 120-175.",
+  "caption": "🎬 🟧 CMA Inter · Job vs Mass Production\n\nWhy is a custom suit costly but a readymade shirt cheap?\n\n📒 Full concept note today at 8:30 PM. Save 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 9: Operations Management and Strategic Management (Operations Management)\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref explainer-261127",
+  "hold": false,
+  "hold_reason": ""
+}

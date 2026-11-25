@@ -1,0 +1,90 @@
+{
+  "kind": "news",
+  "date": "2026-11-26",
+  "stories": [
+    {
+      "tag": "RBI",
+      "headline": "RBI steps up checks on importers' forex deals near $2 million",
+      "points": [
+        "RBI has increased scrutiny of importers' forex transactions over concerns that deals may be split below $2 million.",
+        "The worry is that firms may be doing this to avoid additional reserve requirements.",
+        "Average dollar-buying deal sizes have fallen sharply since October 10, while the number of deals has risen."
+      ],
+      "why_it_matters": "Forex rules and thresholds affect compliance and audit work, especially for banks and companies that handle import payments.",
+      "usable": true,
+      "confidence": "high",
+      "source": "Economic Times",
+      "source_title": "RBI hunts for possible '$2 million loophole' in importers' forex transactions",
+      "link": "https://economictimes.indiatimes.com/news/economy/foreign-trade/rbi-hunts-for-possible-2-million-loophole-in-importers-forex-transactions-reserve-bank-of-india-importers-foreign-exchange-deals-split-for-benefits-scams/articleshow/136156504.cms",
+      "published": "2026-11-25T15:42:37+05:30",
+      "check": "minor",
+      "check_notes": [
+        "The 'Why it matters' line mentions 'audit work' and gives general context that the source doesn't state. It is framed as analysis, not as a reported fact.",
+        "The third point closely follows the source's wording ('sharp fall in average dollar-buying transaction sizes since October 10, even as the number of deals has risen'). It is paraphrased rather than copied, but it is close.",
+        "The headline says 'near $2 million', but the source says deals may be split to come in below the $2 million threshold. This is a small wording difference and does not mislead.",
+        "The story leaves out that RBI's move led to fresh compliance checks on banks. This is a missing detail, not an error."
+      ]
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Delhi deletes ₹51.15 lakh penalty after 14A disallowance set aside",
+      "points": [
+        "For AY 2014–15, the AO disallowed ₹1,70,48,420 under section 14A and later levied a ₹51,14,629 penalty under 271(1)(c).",
+        "The Tribunal sent the 14A issue back to the AO for fresh Rule 8D recomputation, so the original figure no longer stood.",
+        "The CIT(A) dismissed the penalty appeal as infructuous; the ITAT instead deleted the penalty, citing loss of its foundation."
+      ],
+      "why_it_matters": "Shows how penalty under section 271(1)(c) depends on the underlying addition, a key point in assessment and appeal work.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | ITAT Delhi: Section 271(1)(c) Penalty Unsustainable Once Section 14A Disallowance Is Set Aside",
+      "link": "https://taxguru.in/income-tax/itat-delhi-section-271-1-penalty-unsustainable-section-14a-disallowance-set.html",
+      "published": "2026-11-25T08:52:15+00:00",
+      "check": "ok",
+      "check_notes": []
+    },
+    {
+      "tag": "Income Tax",
+      "headline": "ITAT Raipur quashes reassessment over shortened return-filing period",
+      "points": [
+        "ITAT Raipur held a Section 148 notice void if it gives less time to file a return than the Act allows.",
+        "The 29 March 2024 notice asked for a return within 90 days of issue; the Act gave three months from month-end.",
+        "The Tribunal called it a jurisdictional defect, quashed the reassessment for AY 2020-21 and allowed the appeal."
+      ],
+      "why_it_matters": "Shows how procedural details of a reassessment notice can decide its validity, a key point in income tax law and practice.",
+      "usable": true,
+      "confidence": "high",
+      "source": "TaxGuru",
+      "source_title": "Income Tax | ITAT Raipur: Section 148 Notice Void if Statutory Return Filing Period Is Shortened",
+      "link": "https://taxguru.in/income-tax/itat-raipur-section-148-notice-void-statutory-return-filing-period-shortened.html",
+      "published": "2026-11-25T10:56:19+00:00",
+      "check": "ok",
+      "check_notes": []
+    }
+  ],
+  "notes": [
+    "skipped 'Company Law | Delhi High Court Upholds NFRA Powers, Quashes ': a point is longer than 110 characters",
+    "skipped 'Income Tax | AY 2026-27 Section 92E ITR Due 30 November 2026': a point is longer than 110 characters; why_it_matters is longer than 120 characters",
+    "skipped 'Digital arrest: When your bank has to compensate cyber fraud': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | GST on Hospitality Sector: 57 FAQs ': a point is longer than 110 characters",
+    "skipped 'Goods and Services Tax | Representation to CBIC Seeking ITC ': a point is longer than 110 characters",
+    "skipped 'CA, CS, CMA | SA 570 Going Concern: Six Audit Reporting Situ': why_it_matters is longer than 120 characters",
+    "skipped 'CA, CS, CMA | Ind AS 109 Debt Modification: 10% Test, Dereco': a point is longer than 110 characters",
+    "skipped 'ITAT cancels ₹20.94 lakh income tax penalty on property sale': a point is longer than 110 characters",
+    "skipped 'Income Tax | ITAT Delhi: Short TDS Deduction Does Not Justif': a point is longer than 110 characters",
+    "skipped 'Income Tax | TDS U/s 194J Alone Cannot Trigger Section 44ADA': a point is longer than 110 characters",
+    "skipped 'Insurance | ABSLI Assured Income Plus V19: Income Benefits, ': a point is longer than 110 characters",
+    "skipped 'Income Tax | Cash Collected for Bank by Business Corresponde': a point is longer than 110 characters"
+  ],
+  "hold": false,
+  "hold_reason": "",
+  "caption": "📰 CA · CMA Daily News · 26 Nov 2026\n\n1️⃣ RBI steps up checks on importers' forex deals near $2 million (Economic Times)\n2️⃣ ITAT Delhi deletes ₹51.15 lakh penalty after 14A disallowance set aside (TaxGuru)\n3️⃣ ITAT Raipur quashes reassessment over shortened return-filing period (TaxGuru)\n\nSwipe for what happened and why it matters for your CA / CMA studies.\nSummarised for students from Economic Times, TaxGuru. Read the full reports there.\nSave 🔖 and share with your study group.\n\nFollow @cacmagyan for daily MCQs, concept notes and news.\n\n#CANews #CMANews #ICAI #ICMAI #TaxNews\n\nref news-261126",
+  "images": [
+    "news_1.jpg",
+    "news_2.jpg",
+    "news_3.jpg",
+    "news_4.jpg",
+    "news_5.jpg"
+  ],
+  "fit_notes": []
+}

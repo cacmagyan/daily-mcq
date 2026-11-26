@@ -1,0 +1,237 @@
+{
+  "kind": "pyq",
+  "format": "qt_video",
+  "subject": "qt",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Business Mathematics",
+  "topic_key": "Sequence and series",
+  "ref": "ca_foundation_qt|M26-13",
+  "tried": [
+    "ca_foundation_qt|M26-13"
+  ],
+  "topic": "Infinite GP",
+  "script": {
+    "theme": "navy",
+    "badge": {
+      "tag": "ASKED IN",
+      "text": "CA FOUNDATION MAY 2026 · QT"
+    },
+    "header": "CA Foundation May 2026 · Paper 3 · QT",
+    "question": "If the **first term** of a geometric progression **exceeds the second term by 4** and the **sum of its terms till infinity is 100**, then the common ratio is",
+    "options": [
+      "1/5",
+      "4/5",
+      "3/5",
+      "2/5"
+    ],
+    "answer": 1,
+    "scene": {
+      "type": "board",
+      "lines": [
+        "a − ar = 4",
+        "S∞ = a/(1 − r) = 100",
+        "r = ?"
+      ]
+    },
+    "lines": [
+      {
+        "say": "This question came in the CA Foundation May 2026 exam.",
+        "card": {
+          "kind": "attempt",
+          "exam": "CA Foundation",
+          "when": "May 2026",
+          "sub": "Paper 3 · Quantitative Aptitude"
+        }
+      },
+      {
+        "say": "In a GP, the first term exceeds the second by 4. The sum to infinity is 100. Find the common ratio.",
+        "card": {
+          "kind": "hook",
+          "small": "Infinite GP",
+          "big": "a − ar = 4, S∞ = 100"
+        }
+      },
+      {
+        "say": "a minus ar is 4, so 1 minus r is 1 by 5. So r is 1 by 5. Right?",
+        "card": {
+          "kind": "hook",
+          "small": "So...",
+          "big": "1 − r = 1/5, so r = 1…"
+        }
+      },
+      {
+        "say": "Wrong. 1/5 is the trap.",
+        "card": {
+          "kind": "trap",
+          "small": "CA FOUNDATION MAY 2026 · QT",
+          "big": "1/5 ×",
+          "sub": "that is the trap"
+        }
+      },
+      {
+        "say": "The right answer is 4/5. Here's why.",
+        "card": {
+          "kind": "answer",
+          "small": "The right answer",
+          "big": "4/5"
+        }
+      },
+      {
+        "say": "Step one. First term minus second term is 4.",
+        "card": {
+          "kind": "step",
+          "title": "Step 1 · Use the difference",
+          "rows": [
+            "a − ar = 4"
+          ]
+        },
+        "scene": {
+          "type": "board",
+          "lines": [
+            "a − ar = 4",
+            "a(1 − r) = 4"
+          ]
+        }
+      },
+      {
+        "say": "So a times 1 minus r equals 4.",
+        "card": {
+          "kind": "step",
+          "title": "Step 1 · Use the difference",
+          "rows": [
+            "a − ar = 4",
+            "a(1 − r) = 4"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "Step two. Sum to infinity is a by 1 minus r, and it is 100.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · Use the infinite sum",
+          "rows": [
+            "a/(1 − r) = 100"
+          ]
+        },
+        "scene": {
+          "type": "board",
+          "lines": [
+            "a/(1 − r) = 100",
+            "a = 100(1 − r)"
+          ]
+        }
+      },
+      {
+        "say": "So a is 100 times 1 minus r.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · Use the infinite sum",
+          "rows": [
+            "a/(1 − r) = 100",
+            "a = 100(1 − r)"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "Step three. 100 times 1 minus r, squared, is 4.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · Put a in the first",
+          "rows": [
+            "100(1 − r)² = 4"
+          ]
+        },
+        "scene": {
+          "type": "board",
+          "lines": [
+            "(1 − r)² = 4/100",
+            "1 − r = 1/5",
+            "r = 4/5"
+          ]
+        }
+      },
+      {
+        "say": "So 1 minus r squared is 0.04.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · Put a in the first",
+          "rows": [
+            "100(1 − r)² = 4",
+            "(1 − r)² = 1/25",
+            "1 − r = 1/5"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "1 minus r is 0.2, so r is 0.8, which is 4 by 5.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · Put a in the first",
+          "rows": [
+            "100(1 − r)² = 4",
+            "(1 − r)² = 1/25",
+            "1 − r = 1/5",
+            "r = **4/5**"
+          ],
+          "all": true
+        }
+      },
+      {
+        "say": "The shortcut. Remember: 1 minus r squared equals difference divided by sum. Here it is 4 by 100. Take the root, then find r.",
+        "card": {
+          "kind": "shortcut",
+          "rows": [
+            "(1 − r)² = difference ÷ sum",
+            "= 4/100 → 1 − r = 1/5"
+          ]
+        }
+      },
+      {
+        "say": "Your turn. First term exceeds the second by 9, and the infinite sum is 25. Find r.",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "(1 − r)² = 9/25",
+            "1 − r = 3/5"
+          ]
+        }
+      },
+      {
+        "say": "Comment your answer. Follow for a new trap every day.",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "(1 − r)² = 9/25",
+            "1 − r = 3/5"
+          ],
+          "all": true
+        }
+      }
+    ],
+    "series": "QT TRAP",
+    "series_no": 6
+  },
+  "correct": "B",
+  "trap": "1/5",
+  "your_turn_answer": "r = 2/5",
+  "asked_in": "May 2026",
+  "check_notes": [
+    "Spoken line 'So 1 minus r squared is 0.04' can be heard as 1 − r² instead of (1 − r)²; the card shows the correct form.",
+    "Spoken shortcut '1 minus r squared equals difference divided by sum' has the same ambiguity; the card writes (1 − r)² correctly.",
+    "The claim that the question appeared in the CA Foundation May 2026 exam can't be verified and should be confirmed or removed.",
+    "The trap line '1 minus r is 1 by 5. So r is 1 by 5' doesn't follow even as a deliberate mistake (1 − r = 1/5 gives r = 4/5), so it may confuse viewers."
+  ],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "video": "pyq.mp4",
+  "cover": "pyq_cover.jpg",
+  "seconds": 68.7,
+  "thumb_ms": 19429,
+  "voice": "en-IN-AaravNeural (Azure)",
+  "caption": "a − ar = 4, S∞ = 100… so 1/5? That's the trap. 🪤\n\nIf the first term of a geometric progression exceeds the second term by 4 and the sum of its terms till infinity is 100, then the common ratio is\n\n(a) 1/5\n(b) 4/5\n(c) 3/5\n(d) 2/5\n\nDid you pick the trap too? Tell me in the comments 👇\nAsked in CA Foundation May 2026 · Paper 3 (ICAI's official answer key).\nSave 🔖 it for your Quantitative Aptitude revision.\n\nFollow @cacmagyan for a new trap every day.\n\n#CAFoundation #QuantitativeAptitude #CAStudents #ICAI #MathsTricks\n\nref pyq-261127"
+}

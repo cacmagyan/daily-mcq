@@ -85,6 +85,8 @@ class TempQueue(unittest.TestCase):
         self.cfg.reels["enabled"] = True          # most tests cover the MCQ reel too (switched off in config.yaml)
         self.cfg.stories["mcq_only"] = False      # older tests post MCQs to the feed (StoryOnlyMcqTests covers Stories)
         self.cfg.raw.setdefault("mcqs", {})["post"] = True    # MCQ posting is off in config.yaml; tests cover it
+        self.cfg.instagram["post_images"] = True  # image posts are off in config.yaml; older tests cover them
+        self.cfg.news["enabled"] = True
 
     def tearDown(self):
         for p in self.patches:
@@ -2580,6 +2582,13 @@ class QTTrapTests(TempQueue):
         self.assertEqual(plan["sting"], {"n": 7, "dur": qt3d.STING, "label": "QT TRAP"})
         self.assertAlmostEqual(events[0]["start"], qt3d.LEAD + qt3d.STING, places=3)
         self.assertGreater(len(qt3d.sfx_bank()["stamp"]), 0)
+
+    def test_with_images_off_only_videos_and_the_countdown_post(self):
+        from mcq_agent import pipeline as P
+        cfg = C.Config()
+        self.assertFalse(P.post_images(cfg))             # as config.yaml has it now
+        cfg.instagram["post_images"] = True
+        self.assertTrue(P.post_images(cfg))
 
     def test_sound_effects_stay_under_the_voice(self):
         import numpy as np

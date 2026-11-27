@@ -481,6 +481,11 @@ def make_pyq(cfg: Config, date: dt.date, instruction: str = "") -> dict:
 VIDEO_ONLY = {"video", "video only", "remake video", "same question"}
 
 
+def post_images(cfg: Config) -> bool:
+    """instagram.post_images: false keeps image posts (notes, news, PYQ slides, MCQs) off the feed."""
+    return bool(cfg.instagram.get("post_images", True))
+
+
 def qt_series_no(date: dt.date, subject: str = "qt") -> int:
     """The "QT TRAP #N" number for the reel on `date`: one more than that paper's reels before it."""
     before = []
@@ -767,6 +772,8 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
     countdown = CD.load(date) if cfg.countdown_due(date) else None
     items = (mcqs + [c for c in (concept, concept2) if c] + ([reel] if reel else [])
              + [e for e in (explainer, explainer2) if e] + [x for x in (news, pyq, countdown) if x])
+    if not post_images(cfg):             # videos only on the feed; the countdown is a Story
+        items = [it for it in items if it.get("video") or it.get("kind") == COUNTDOWN]
     due = [it for it in items
            if _key(it) not in posted and not it.get("error") and not it.get("hold")
            and (it.get("images") or it.get("video")) and _slot(cfg, it) <= at]

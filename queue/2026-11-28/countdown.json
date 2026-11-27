@@ -1,0 +1,19 @@
+{
+  "kind": "countdown",
+  "course_id": "ca_inter",
+  "exam": "CA Inter Jan 2027",
+  "exam_date": "2027-01-02",
+  "days": 35,
+  "paper_code": "Paper 5",
+  "paper_name": "Auditing and Ethics",
+  "topic": "",
+  "tip": "",
+  "hold": false,
+  "hold_reason": "",
+  "notes": [
+    "topic left out: Claude Code didn't return a usable answer: success: Your organization has disabled Claude subscription access for Claude Code · Use an Anthropic API key instead, or ask your admin to e"
+  ],
+  "images": [
+    "countdown.jpg"
+  ]
+}

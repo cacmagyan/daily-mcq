@@ -1,0 +1,14 @@
+{
+  "kind": "pyq",
+  "format": "qt_video",
+  "subject": "qt",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Business Mathematics",
+  "topic_key": "Ratio and proportion",
+  "ref": "ca_foundation_qt|S25-2",
+  "tried": [
+    "ca_foundation_qt|S25-2"
+  ],
+  "error": "Claude Code didn't return a usable answer: success: Your organization has disabled Claude subscription access for Claude Code · Use an Anthropic API key instead, or ask your admin to enable access"
+}

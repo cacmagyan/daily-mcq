@@ -341,6 +341,22 @@ function makeBox(color) {
   g.add(b); g.userData = { glow: [m] };
   return g;
 }
+// a small house model on the desk (house-property videos)
+function makeHouse(color) {
+  const g = new THREE.Group();
+  const wall = std(color || '#f3efe4', { r: 0.6 }), roof = std('#c0392b', { r: 0.5 }), trim = std('#13235b', { r: 0.4 });
+  const body = new THREE.Mesh(rbox(2.4, 1.7, 1.9, 0.06), wall); body.position.y = 0.85;
+  const rg = new THREE.CylinderGeometry(0.01, 1.75, 1.1, 4, 1); rg.rotateY(Math.PI / 4);
+  const r = new THREE.Mesh(rg, roof); r.scale.set(1.0, 1, 0.8); r.position.y = 1.7 + 0.55;
+  const door = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.85, 0.05), trim); door.position.set(0, 0.43, 0.96);
+  const win1 = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.42, 0.05), std('#8fd3ff', { r: 0.15, env: 1 })); win1.position.set(-0.75, 1.05, 0.96);
+  const win2 = win1.clone(); win2.position.x = 0.75;
+  const chim = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.6, 0.28), trim); chim.position.set(0.6, 2.25, -0.2);
+  g.add(body, r, door, win1, win2, chim, blob(1.6));
+  g.traverse((m) => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true; } });
+  g.userData = { glow: [wall] };
+  return g;
+}
 function makeDot(color) {
   const g = new THREE.Group();
   const m = std(color, { r: 0.28, env: 0.8 });
@@ -438,6 +454,7 @@ function makeObj(it) {
     case 'tick': return makeTick();
     case 'arc': return makeArc(it);
     case 'board': return makeBoard(it);
+    case 'house': return makeHouse(it.color);
     default: return makeDot(it.color);
   }
 }
@@ -543,7 +560,13 @@ function layoutBoard(s) {
     frame: { cx: 0, cy: bh / 2 + 0.75, cz: 0, w: bw + 0.8, h: bh + 1.2, el: 8, az: 0 } };
 }
 
-const LAYOUTS = { row: layoutRow, track: layoutTrack, bars: layoutBars, line: layoutLine, board: layoutBoard };
+// "desk": no puzzle, just a prop (e.g. a house) on the desk behind a big card; the camera drifts around it
+function layoutDesk(s) {
+  const items = s.prop ? [{ id: 'prop', type: s.prop, x: 0, z: 0, s: 1, color: s.color }] : [];
+  return { items, note: s.note || null, frame: { cx: 0, cy: 1.2, cz: 0, w: 7, h: 4, el: 18, az: 0 } };
+}
+
+const LAYOUTS = { row: layoutRow, track: layoutTrack, bars: layoutBars, line: layoutLine, board: layoutBoard, desk: layoutDesk };
 function layout(state) {
   if (!state) return { items: [], note: null, frame: null };
   const f = LAYOUTS[state.type] || layoutBoard;
@@ -826,7 +849,7 @@ function cardEl(ev) {
   const el = document.createElement('div');
   if (c.kind === 'attempt') {
     el.className = 'card dark attempt';
-    el.innerHTML = `<div class="tag">ASKED IN</div><div class="exam">${esc(c.exam || 'CA Foundation')}</div><div class="when">${esc(c.when || '')}</div><div class="sub">${esc(c.sub || '')}</div>`;
+    el.innerHTML = `<div class="tag">${esc(c.tag || 'ASKED IN')}</div><div class="exam">${esc(c.exam || 'CA Foundation')}</div><div class="when">${esc(c.when || '')}</div><div class="sub">${esc(c.sub || '')}</div>`;
   } else if (c.kind === 'answer') {
     el.className = 'card dark answer';
     el.innerHTML = `<div class="small">${esc(c.small || 'The right answer')}</div><div class="big"><span class="t">${esc(c.big)}</span><span class="ok">✓</span></div><div class="stamp green">VERIFIED ✓</div>`;
@@ -837,6 +860,9 @@ function cardEl(ev) {
     el.className = 'card dark trap';
     const big = String(c.big || '').replace(/\s*[×✕x]\s*$/, '');
     el.innerHTML = `<div class="small">${esc(c.small)}</div><div class="big"><span class="t">${esc(big)}</span><span class="x">✕</span></div><div class="sub">${esc(c.sub || 'that is the trap')}</div><div class="stamp red">TRAP</div>`;
+  } else if (c.kind === 'stmt') {
+    el.className = 'card stmt';
+    el.innerHTML = `<div class="hd"><div class="t">${esc(c.title || '')}</div><div class="s">${esc(c.sub || '')}</div></div><div class="rows"></div><div class="stamp red">TRAP</div><div class="stamp green">VERIFIED ✓</div>`;
   } else if (c.kind === 'loop') {
     el.className = 'card dark loop';
     el.innerHTML = `<div class="tag">${esc(c.tag || 'OPEN LOOP')}</div><div class="ring"><svg viewBox="0 0 220 220"><circle cx="110" cy="110" r="96" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="14"/><circle class="arc" cx="110" cy="110" r="96" fill="none" stroke="#b07cff" stroke-width="14" stroke-linecap="round" stroke-dasharray="603" stroke-dashoffset="603" transform="rotate(-90 110 110)"/><circle class="dot" cx="110" cy="14" r="11" fill="#fff"/></svg><div class="q">?</div></div><div class="line"></div>`;
@@ -932,6 +958,42 @@ function drawCard(ev, t, role) {
     const dot = el.querySelector('.dot');
     dot.setAttribute('cx', (110 + 96 * Math.sin(ang)).toFixed(1)); dot.setAttribute('cy', (110 - 96 * Math.cos(ang)).toFixed(1));
     el.querySelector('.q').style.transform = `scale(${(1 + 0.06 * Math.sin(since * 7)).toFixed(3)})`;
+  }
+  if (c.kind === 'stmt') {
+    // rows of this line: the ones from earlier lines stay, rows from `from` on slide in one by one
+    const rows = (c.rows || []).slice(0, c.show ?? (c.rows || []).length);
+    const box = el.querySelector('.rows');
+    const key = String(ev.start);
+    if (el.dataset.k !== key) {
+      el.dataset.k = key;
+      box.innerHTML = rows.map((r) => `<div class="r${r.tot ? ' tot' : ''}${r.final ? ' final' : ''}${r.trap ? ' trap' : ''}${r.ok ? ' ok' : ''}"><span class="l">${r.op ? `<span class="op">${esc(r.op)}</span>` : ''}${md(r.l || '')}</span>${r.sec ? `<span class="sec">${esc(r.sec)}</span>` : ''}<span class="a" data-v="${esc(r.a || '')}"></span>${r.struck ? '<span class="strike"></span>' : ''}</div>`).join('');
+    }
+    const lt = t - ev.start, from = c.from ?? 0;
+    box.querySelectorAll('.r').forEach((rowEl, i) => {
+      const r = rows[i], k = i < from ? 1 : spring(lt - 0.15 - (i - from) * 0.45, 2.2, 0.6);
+      rowEl.style.opacity = clamp(k * 1.4).toFixed(2);
+      rowEl.style.transform = `translateX(${((1 - k) * 80).toFixed(1)}px)`;
+      const a = rowEl.querySelector('.a'), v = a.dataset.v;
+      const num = Number(String(v).replace(/[^0-9.]/g, ''));
+      const ca = i < from ? 1 : clamp((lt - 0.25 - (i - from) * 0.45) / 0.55);
+      a.textContent = !v ? '' : (num && ca < 1 ? '₹' + Math.round(num * easeOut(ca)).toLocaleString('en-IN') : (/^[₹\-−]/.test(v) ? v : '₹' + v));
+      const s = rowEl.querySelector('.strike');
+      if (s) s.style.transform = `scaleX(${(i < from ? 1 : easeOut((lt - 0.2) / 0.4)).toFixed(3)})`;
+    });
+    // stamps: red on the trap row, green on the corrected one
+    for (const [cls, flag] of [['red', 'trap'], ['green', 'ok']]) {
+      const st = el.querySelector('.stamp.' + cls);
+      const idx = rows.findIndex((r) => r[flag] && !r.struck);
+      const isNew = idx >= from;
+      if (idx < 0) { st.style.display = 'none'; continue; }
+      st.style.display = 'block';
+      st.style.top = '22px'; st.style.bottom = 'auto'; st.style.right = '28px';   // lands in the header, clear of the figures
+      const ss = isNew ? lt - 0.15 - (idx - from) * 0.45 - 0.55 : 9;
+      const kk = easeIn(clamp(ss / 0.13));
+      st.style.opacity = clamp(ss / 0.06).toFixed(2);
+      st.style.transform = `rotate(${(cls === 'red' ? -8 : 6) + (1 - kk) * 10}deg) scale(${(0.68 * (2.4 - 1.4 * kk)).toFixed(3)})`;
+      st.style.transformOrigin = '100% 0';
+    }
   }
   if (c.kind === 'cta') {
     const on = since > 1.3;

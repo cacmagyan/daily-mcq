@@ -112,6 +112,25 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
   background: #fff; color: var(--navy); box-shadow: 0 8px 0 #9aa6c8; }
 .card.cta .btn.save.on { background: #3ddc97; color: #062b1c; box-shadow: 0 8px 0 #1f8f5f; }
 .card.cta .btn svg { width: 40px; height: 40px; }
+/* computation statement: a ledger page that fills line by line */
+.card.stmt { width: 1000px; padding: 0 0 26px; text-align: left; overflow: hidden; color: #13235b; border: 5px solid #fff; border-radius: 34px;
+  background: repeating-linear-gradient(180deg, #fffdf6 0 77px, #c9d6f0 77px 79px); box-shadow: 0 12px 0 #b9b3a0, 0 34px 70px rgba(0,0,0,.42); }
+.card.stmt::before { content: ""; position: absolute; left: 92px; top: 0; bottom: 0; width: 3px; background: rgba(214,58,47,.55); }
+.card.stmt .hd { background: #13235b; color: #fff; padding: 22px 34px 18px 34px; }
+.card.stmt .hd .t { font: 800 44px/1.1 "Pop"; }
+.card.stmt .hd .s { font: 700 22px "Int"; letter-spacing: .14em; text-transform: uppercase; color: var(--acc); margin-top: 6px; }
+.card.stmt .r { position: relative; display: flex; align-items: center; height: 79px; padding: 0 34px 0 110px; font: 600 36px/1 "Pop"; }
+.card.stmt .r .l { flex: 1; white-space: nowrap; overflow: hidden; }
+.card.stmt .r .l .op { color: #6b7799; font-weight: 700; margin-right: 10px; }
+.card.stmt .r .sec { font: 700 25px/1 "Int"; color: #13235b; background: #e6ecfa; border: 2px solid #c3cfee; border-radius: 10px; padding: 6px 10px; margin-right: 18px; }
+.card.stmt .r .a { font: 800 40px/1 "Pop"; font-variant-numeric: tabular-nums; min-width: 230px; text-align: right; }
+.card.stmt .r.tot { font-weight: 800; }
+.card.stmt .r.tot .a { border-top: 3px solid #13235b; border-bottom: 7px double #13235b; padding: 6px 0; }
+.card.stmt .r.final { background: var(--acc); }
+.card.stmt .r.trap { color: #d63a2f; }
+.card.stmt .r .strike { position: absolute; left: 100px; right: 24px; top: 38px; height: 5px; background: #d63a2f; border-radius: 3px; transform-origin: 0 50%; }
+.card.stmt .r.ok .a { color: #138a4b; }
+.card.stmt .stamp { position: absolute; right: 40px; }
 #prog { position: absolute; left: 44px; right: 44px; top: 14px; height: 10px; display: none; gap: 8px; }
 #prog i { flex: 1; border-radius: 6px; background: rgba(255,255,255,.18); position: relative; overflow: hidden; }
 #prog i b { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 6px; }

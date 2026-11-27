@@ -152,6 +152,8 @@ def _group(card: dict) -> str | None:
         return "trap"
     if k in ("attempt", "answer"):
         return k
+    if k in ("loop", "cta"):
+        return f"{k}:{card.get('text', '')}"
     if k in ("step", "shortcut", "your_turn"):
         return f"{k}:{card.get('title', '')}"
     return None
@@ -242,7 +244,8 @@ def make_plan(script: dict, events: list[dict], total: float, handle: str, logo:
         last_group = g
         pe = {"start": ev["start"], "dur": ev["dur"], "card": card, "group": g, "gStart": g_start,
               "words": ev["words"], "phrases": _phrases(ev["words"]),
-              "prev": None if i == 0 else states[i][0], "cur": states[i][1]}
+              "prev": None if i == 0 else states[i][0], "cur": states[i][1],
+              "block": ev["line"].get("block")}
         if ev.get("countdown"):
             pe["countdown"] = ev["countdown"]
         if card.get("kind") == "question" and card.get("options") and opt_times is None:

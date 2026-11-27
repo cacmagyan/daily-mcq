@@ -2579,7 +2579,7 @@ class QTTrapTests(TempQueue):
         s["series_no"] = 7
         events, total = qt3d.timeline(s, vl)
         plan = qt3d.make_plan(s, events, total, "@x")
-        self.assertEqual(plan["sting"], {"n": 7, "dur": qt3d.STING, "label": "QT TRAP"})
+        self.assertEqual(plan["sting"], {"n": 7, "dur": qt3d.STING, "label": "QT TRAP", "style": None, "sub": ""})
         self.assertAlmostEqual(events[0]["start"], qt3d.LEAD + qt3d.STING, places=3)
         self.assertGreater(len(qt3d.sfx_bank()["stamp"]), 0)
 

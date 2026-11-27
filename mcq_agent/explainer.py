@@ -512,7 +512,10 @@ def caption(cfg: Config, item: dict, date: dt.date) -> str:
     if script.get("caption_hook"):
         lines += ["", script["caption_hook"]]
     from .replies import cta
-    lines += ["", f"📒 Full concept note today at {_clock(cfg.concept_time(slot_of(item)))}. Save 🔖 this for revision."]
+    if cfg.instagram.get("post_images", True):
+        lines += ["", f"📒 Full concept note today at {_clock(cfg.concept_time(slot_of(item)))}. Save 🔖 this for revision."]
+    else:
+        lines += ["", "Save 🔖 this for revision."]
     if cta(cfg):
         lines.append(cta(cfg))
     lines.append(f"{item['paper_code']}: {item['paper_name']}")

@@ -152,6 +152,8 @@ def _group(card: dict) -> str | None:
         return "trap"
     if k in ("attempt", "answer"):
         return k
+    if k == "stmt":
+        return f"stmt:{card.get('title', '')}"
     if k in ("loop", "cta"):
         return f"{k}:{card.get('text', '')}"
     if k in ("step", "shortcut", "your_turn"):
@@ -410,6 +412,14 @@ def mix(events: list[dict], plan: dict, total: float, with_music: bool = True):
         if kind == "trap":
             add(fx, B["stamp"], e["start"] + STAMP_TRAP, 0.25)
             add(fx, B["buzz"], e["start"] + STAMP_TRAP + 0.03, 0.1)
+        if kind == "stmt":                       # a ledger line slides in; stamps land on a trap / corrected row
+            card = e["card"] or {}
+            rows = (card.get("rows") or [])[: card.get("show", len(card.get("rows") or []))]
+            frm = int(card.get("from", 0))
+            for i in range(frm, len(rows)):
+                add(fx, B["pop"], e["start"] + 0.15 + (i - frm) * 0.45, 0.1)
+                if (rows[i].get("trap") or rows[i].get("ok")) and not rows[i].get("struck"):
+                    add(fx, B["stamp"], e["start"] + 0.15 + (i - frm) * 0.45 + 0.6, 0.22)
         if kind == "answer":
             add(fx, B["rise"], e["start"] - 0.6, 0.25)
             add(fx, B["ding"], e["start"] + 0.12, 0.3)

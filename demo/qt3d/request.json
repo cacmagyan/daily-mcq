@@ -1,289 +1,233 @@
 {
  "kind": "pyq",
  "format": "qt_video",
- "subject": "eco",
- "course_id": "ca_foundation",
- "paper_code": "Paper 4",
- "paper_name": "Business Economics",
- "topic": "Equilibrium income",
+ "subject": "tax",
+ "course_id": "ca_inter",
+ "topic": "House property: 30% on annual value",
  "script": {
   "theme": "navy",
   "badge": {
-   "tag": "ASKED IN",
-   "text": "CA FOUNDATION MAY 2026 · ECO"
+   "tag": "DIRECT TAX",
+   "text": "ITA 2025 · HOUSE PROPERTY"
   },
-  "header": "CA Foundation May 2026 · Paper 4 · ECO",
-  "question": "Calculate the equilibrium level of income if the saving function is **S = −20 + 0.25Y** and autonomous investment **I = ₹100 crores**.",
-  "options": [
-   "320 crores",
-   "160 crores",
-   "480 crores",
-   "240 crores"
-  ],
-  "answer": 2,
+  "header": "Income-tax Act, 2025 · House property",
+  "question": "",
+  "options": [],
   "scene": {
-   "type": "bars",
-   "max": 130,
-   "bars": [
-    {
-     "label": "Investment",
-     "segments": [
-      {
-       "v": 100,
-       "label": "I = 100"
-      }
-     ]
-    }
-   ],
-   "note": "find Y where S = I"
+   "type": "desk",
+   "prop": "house"
   },
-  "series": "ECO TRAP",
-  "series_no": 3,
+  "series": "TAX TRAP",
+  "series_no": 1,
   "lines": [
    {
-    "block": [
-     1,
-     "hook"
-    ],
-    "say": "One minus sign is costing students this question.",
+    "say": "Most students take the 30% deduction on the wrong number.",
     "card": {
      "kind": "hook",
-     "small": "CA Foundation · Economics",
-     "big": "One sign. Wrong answer."
+     "small": "House property · ITA 2025",
+     "big": "30% of WHAT?"
     }
    },
    {
-    "block": [
-     2,
-     "lead"
-    ],
-    "say": "This came in the CA Foundation May 2026 exam.",
+    "say": "This is house property under the new Income-tax Act, 2025.",
     "card": {
      "kind": "attempt",
-     "exam": "CA Foundation",
-     "when": "May 2026",
-     "sub": "Paper 4 · Business Economics"
+     "tag": "AS PER",
+     "exam": "Income-tax Act, 2025",
+     "when": "Tax year 2026-27",
+     "sub": "Sections 20 to 22 · House property"
     }
    },
    {
-    "block": [
-     2,
-     "lead"
-    ],
-    "say": "Saving is minus 20 plus 0.25 Y. Investment is ₹100 crore. Find the equilibrium income. Try it before I solve it.",
-    "card": {
-     "kind": "hook",
-     "small": "Find equilibrium income",
-     "big": "S = −20 + 0.25Y,  I = 100"
-    }
-   },
-   {
-    "block": [
-     3,
-     "body"
-    ],
-    "say": "Most students do this. 0.25 Y equals 100 minus 20, which is 80. So Y is 320 crore. Option A. Looks right.",
+    "say": "A let-out flat. Expected rent, ₹3 lakh. Actual rent, ₹30,000 a month. Municipal tax paid, ₹20,000. Home-loan interest, ₹1.5 lakh.",
     "card": {
      "kind": "step",
-     "title": "The quick way",
+     "title": "The facts",
      "rows": [
-      "0.25Y = 100 − 20 = 80",
-      "Y = **320**?"
+      "Expected rent: ₹3,00,000",
+      "Actual rent: ₹30,000 × 12 = **₹3,60,000**",
+      "Municipal tax paid: ₹20,000",
+      "Loan interest: ₹1,50,000"
      ]
     }
    },
    {
-    "block": [
-     4,
-     "loop"
-    ],
-    "say": "But the examiner hid the trap in one sign.",
+    "say": "Under section 21, annual value starts with the higher of expected rent and actual rent. That's ₹3,60,000.",
     "card": {
-     "kind": "loop",
-     "text": "“But the trap is in one sign…”"
-    }
-   },
-   {
-    "block": [
-     5,
-     "body"
-    ],
-    "say": "Wrong. 320 is the trap.",
-    "card": {
-     "kind": "trap",
-     "small": "CA FOUNDATION MAY 2026 · ECO",
-     "big": "₹320 crore ×",
-     "sub": "that is the trap"
-    },
-    "scene": {
-     "type": "bars",
-     "max": 130,
-     "bars": [
-      {
-       "label": "Saving at 320",
-       "segments": [
-        {
-         "v": 60,
-         "label": "S = 60"
-        }
-       ]
-      },
-      {
-       "label": "Investment",
-       "segments": [
-        {
-         "v": 100,
-         "label": "I = 100"
-        }
-       ]
-      }
-     ],
-     "note": "S must equal I"
-    }
-   },
-   {
-    "block": [
-     5,
-     "body"
-    ],
-    "say": "At equilibrium, saving equals investment. So minus 20 plus 0.25 Y equals 100. Move the minus 20 across, and it becomes plus 20. So 0.25 Y equals 120.",
-    "card": {
-     "kind": "step",
-     "title": "Saving = Investment",
+     "kind": "stmt",
+     "title": "Income from House Property",
+     "sub": "Income-tax Act, 2025 · Tax year 2026-27",
      "rows": [
-      "−20 + 0.25Y = 100",
-      "0.25Y = 100 **+ 20** = 120"
-     ]
-    },
-    "scene": {
-     "type": "bars",
-     "max": 130,
-     "bars": [
       {
-       "label": "Saving at 320",
-       "segments": [
-        {
-         "v": 60,
-         "label": "S = 60"
-        }
-       ]
-      },
-      {
-       "label": "Investment",
-       "segments": [
-        {
-         "v": 100,
-         "label": "I = 100"
-        }
-       ]
+       "l": "Gross annual value",
+       "sec": "s.21(1)",
+       "a": "3,60,000"
       }
      ],
-     "note": "S must equal I"
+     "from": 0
     }
    },
    {
-    "block": [
-     6,
-     "loop"
-    ],
-    "say": "Now watch what that does to the answer.",
+    "say": "Take off the municipal tax actually paid. Annual value is ₹3,40,000.",
     "card": {
-     "kind": "loop",
-     "text": "“Now watch the answer change…”"
-    }
-   },
-   {
-    "block": [
-     7,
-     "body"
-    ],
-    "say": "The right answer is 480 crore.",
-    "card": {
-     "kind": "answer",
-     "small": "The right answer",
-     "big": "₹480 crore"
-    },
-    "scene": {
-     "type": "bars",
-     "max": 130,
-     "bars": [
-      {
-       "label": "Saving at 480",
-       "segments": [
-        {
-         "v": 100,
-         "label": "S = 100"
-        }
-       ]
-      },
-      {
-       "label": "Investment",
-       "segments": [
-        {
-         "v": 100,
-         "label": "I = 100"
-        }
-       ]
-      }
-     ],
-     "note": "S must equal I"
-    }
-   },
-   {
-    "block": [
-     7,
-     "body"
-    ],
-    "say": "120 divided by 0.25 is 480. Check it. At 480, saving is minus 20 plus 120, which is exactly 100. Saving equals investment.",
-    "card": {
-     "kind": "step",
-     "title": "Check it",
+     "kind": "stmt",
+     "title": "Income from House Property",
+     "sub": "Income-tax Act, 2025 · Tax year 2026-27",
      "rows": [
-      "Y = 120 ÷ 0.25 = **480**",
-      "S = −20 + 120 = **100** = I ✓"
-     ]
-    },
-    "scene": {
-     "type": "bars",
-     "max": 130,
-     "bars": [
       {
-       "label": "Saving at 480",
-       "segments": [
-        {
-         "v": 100,
-         "label": "S = 100"
-        }
-       ]
+       "l": "Gross annual value",
+       "sec": "s.21(1)",
+       "a": "3,60,000"
       },
       {
-       "label": "Investment",
-       "segments": [
-        {
-         "v": 100,
-         "label": "I = 100"
-        }
-       ]
+       "op": "Less:",
+       "l": "Municipal tax paid",
+       "sec": "s.21(3)",
+       "a": "20,000"
+      },
+      {
+       "l": "Annual value",
+       "a": "3,40,000",
+       "tot": true
       }
      ],
-     "note": "S must equal I"
+     "from": 1
     }
    },
    {
-    "block": [
-     8,
-     "cta"
-    ],
-    "say": "Did you get 320? Comment, and save this for your revision.",
+    "say": "Now most students take 30% of ₹3,60,000. That's ₹1,08,000.",
+    "card": {
+     "kind": "stmt",
+     "title": "Income from House Property",
+     "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+     "rows": [
+      {
+       "l": "Gross annual value",
+       "sec": "s.21(1)",
+       "a": "3,60,000"
+      },
+      {
+       "op": "Less:",
+       "l": "Municipal tax paid",
+       "sec": "s.21(3)",
+       "a": "20,000"
+      },
+      {
+       "l": "Annual value",
+       "a": "3,40,000",
+       "tot": true
+      },
+      {
+       "op": "Less:",
+       "l": "30% of ₹3,60,000",
+       "a": "1,08,000",
+       "trap": true
+      }
+     ],
+     "from": 3
+    }
+   },
+   {
+    "say": "Wrong. Section 22 gives 30% of the annual value, after municipal tax. 30% of ₹3,40,000 is ₹1,02,000.",
+    "card": {
+     "kind": "stmt",
+     "title": "Income from House Property",
+     "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+     "rows": [
+      {
+       "l": "Gross annual value",
+       "sec": "s.21(1)",
+       "a": "3,60,000"
+      },
+      {
+       "op": "Less:",
+       "l": "Municipal tax paid",
+       "sec": "s.21(3)",
+       "a": "20,000"
+      },
+      {
+       "l": "Annual value",
+       "a": "3,40,000",
+       "tot": true
+      },
+      {
+       "op": "Less:",
+       "l": "30% of ₹3,60,000",
+       "a": "1,08,000",
+       "trap": true,
+       "struck": true
+      },
+      {
+       "op": "Less:",
+       "l": "30% of annual value",
+       "sec": "s.22(1)(a)",
+       "a": "1,02,000",
+       "ok": true
+      }
+     ],
+     "from": 3
+    }
+   },
+   {
+    "say": "Then the full loan interest. A let-out house has no ₹2 lakh cap. Income from house property: ₹88,000.",
+    "card": {
+     "kind": "stmt",
+     "title": "Income from House Property",
+     "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+     "rows": [
+      {
+       "l": "Gross annual value",
+       "sec": "s.21(1)",
+       "a": "3,60,000"
+      },
+      {
+       "op": "Less:",
+       "l": "Municipal tax paid",
+       "sec": "s.21(3)",
+       "a": "20,000"
+      },
+      {
+       "l": "Annual value",
+       "a": "3,40,000",
+       "tot": true
+      },
+      {
+       "op": "Less:",
+       "l": "30% of ₹3,60,000",
+       "a": "1,08,000",
+       "trap": true,
+       "struck": true
+      },
+      {
+       "op": "Less:",
+       "l": "30% of annual value",
+       "sec": "s.22(1)(a)",
+       "a": "1,02,000",
+       "ok": true
+      },
+      {
+       "op": "Less:",
+       "l": "Interest on loan",
+       "sec": "s.22(1)(b)",
+       "a": "1,50,000"
+      },
+      {
+       "l": "House property income",
+       "a": "88,000",
+       "tot": true,
+       "final": true
+      }
+     ],
+     "from": 5
+    }
+   },
+   {
+    "say": "Save this for your tax revision. Follow for one computation every week.",
     "card": {
      "kind": "cta",
-     "text": "Got **320**? Comment & save it"
+     "text": "Save this for your **tax revision**"
     }
    }
   ]
- },
- "correct": "C",
- "trap": "320 crores",
- "asked_in": "May 2026",
- "ref": "ca_foundation_eco|M26-75"
+ }
 }

@@ -115,7 +115,7 @@ countdown:
 # each article, and posted at post_time. If fewer than `stories` pass the check, or the writer is unsure,
 # it is held: comment /approve news (or /regen news) on the day's issue.
 news:
-  enabled: true
+  enabled: false                # off 28 Nov 2026: news carousels reached ~12 people (image posts stopped)
   start_date: "2026-10-31"
   post_time: "22:00"            # IST; keep matched to the 22:02 line in publish.yml
   stories: 3
@@ -224,6 +224,10 @@ instagram:
   image_hosts: ["github_raw", "jsdelivr"]
   public_base_url: ""
   max_posts_per_run: 2          # catch-up limit if a run was missed
+  # false: no image posts on the feed (concept notes, news, PYQ slides, MCQs). Videos only: trap reels and
+  # explainers. Concept notes are still written (the explainer is made from them) but not posted.
+  # The countdown Story and the reel Stories go on.
+  post_images: false
   max_hashtags: 5               # Instagram allows at most 5 hashtags per post
   alt_text: true
 

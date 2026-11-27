@@ -6,6 +6,8 @@
 <script type="importmap">{"imports": {"three": "../vendor/three/three.module.min.js"}}</script>
 <style>
 @font-face { font-family: "Pop"; src: url("../fonts/Poppins-SemiBold.ttf"); font-weight: 600; }
+@font-face { font-family: "Ser"; src: url("../fonts/DejaVuSerif-Bold.ttf"); font-weight: 700 800; }
+@font-face { font-family: "Mono"; src: url("../fonts/DejaVuSansMono-Bold.ttf"); font-weight: 600 800; }
 @font-face { font-family: "Pop"; src: url("../fonts/Poppins-Bold.ttf"); font-weight: 700; }
 @font-face { font-family: "Pop"; src: url("../fonts/Poppins-ExtraBold.ttf"); font-weight: 800; }
 @font-face { font-family: "Int"; src: url("../fonts/Inter-Regular.otf"); font-weight: 400; }
@@ -131,6 +133,52 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
 .card.stmt .r .strike { position: absolute; left: 100px; right: 24px; top: 38px; height: 5px; background: #d63a2f; border-radius: 3px; transform-origin: 0 50%; }
 .card.stmt .r.ok .a { color: #138a4b; }
 .card.stmt .stamp { position: absolute; right: 40px; }
+/* ── TAX series look: emerald desk, cream ledger paper, gold, serif headings, typewriter figures ── */
+body.look-tax { --acc: #e8b04b; --navy: #0f3d33; }
+body.look-tax .card.dark { background: linear-gradient(180deg, #17553f 0%, #0f3d33 60%, #0b3029 100%); border: 4px solid var(--acc);
+  border-radius: 14px; box-shadow: 0 10px 0 #06211b, 0 34px 70px rgba(0,0,0,.45), inset 0 0 0 3px rgba(232,176,75,.25); }
+body.look-tax .card.dark::after { content: ""; position: absolute; inset: 10px; border: 1.5px solid rgba(232,176,75,.45); border-radius: 8px; pointer-events: none; }
+body.look-tax .card .big, body.look-tax .card.attempt .exam, body.look-tax .card.attempt .when, body.look-tax .card.cta .big,
+body.look-tax .card.stmt .hd .t { font-family: "Ser"; font-weight: 700; letter-spacing: -.01em; }
+body.look-tax .card .small, body.look-tax .card .title, body.look-tax .card.attempt .tag, body.look-tax .card.attempt .sub,
+body.look-tax .card.stmt .hd .s { font-family: "Mono"; letter-spacing: .12em; }
+body.look-tax .card .row { font-family: "Mono"; font-size: 40px; }
+body.look-tax .card.stmt { border-radius: 10px; border: 3px solid #d9cfae;
+  background: repeating-linear-gradient(180deg, #fbf7ea 0 77px, #cfe3d8 77px 79px); box-shadow: 0 10px 0 #a99f80, 0 34px 70px rgba(0,0,0,.45); }
+body.look-tax .card.stmt::before { background: rgba(196,52,42,.5); width: 2px; box-shadow: 6px 0 0 rgba(196,52,42,.35); }
+body.look-tax .card.stmt .hd { background: #0f3d33; border-bottom: 4px solid var(--acc); }
+body.look-tax .card.stmt .hd .t { color: #f3e6c4; }
+body.look-tax .card.stmt .r { font-family: "Pop"; color: #13241f; }
+body.look-tax .card.stmt .r .a { font-family: "Mono"; font-weight: 800; }
+body.look-tax .card.stmt .r .sec { font-family: "Mono"; background: transparent; border: 2px solid #b08a3a; color: #7a5b1c; border-radius: 4px; }
+body.look-tax .card.stmt .r.final { background: #0f3d33; color: var(--acc); }
+body.look-tax .card.stmt .r.final .a { border-color: var(--acc); }
+body.look-tax .card.stmt .r.tot .a { border-color: #0f3d33; }
+body.look-tax .card.stmt .r.final.tot .a { border-color: var(--acc); }
+body.look-tax .stamp { font-family: "Ser"; border-radius: 6px; letter-spacing: .12em; }
+body.look-tax #cap { font: 800 74px/1.25 "Mono"; letter-spacing: -.02em; text-shadow: 0 5px 0 rgba(6,33,27,.6), 0 10px 30px rgba(0,0,0,.45); }
+body.look-tax #cap .w { border-radius: 4px; }
+body.look-tax #cap .w.hl { color: #0f3d33; }
+body.look-tax #badge { background: rgba(15,61,51,.92); border-radius: 6px; }
+body.look-tax #badge .tag { border-radius: 3px; color: #0f3d33; }
+body.look-tax .card.cta .btn { border-radius: 8px; }
+body.look-tax .card.cta .btn.save.on { background: var(--acc); color: #0f3d33; box-shadow: 0 8px 0 #9b7224; }
+/* receipt sting: a calculator tape prints the series name */
+#sting.receipt { background: radial-gradient(90% 60% at 50% 40%, #1d6650 0%, #0f3d33 55%, #06211b 100%); }
+#sting.receipt .slot { position: absolute; left: 250px; top: 520px; width: 580px; height: 46px; border-radius: 12px; background: #062019;
+  box-shadow: inset 0 6px 12px rgba(0,0,0,.7), 0 2px 0 rgba(255,255,255,.08); }
+#sting.receipt .lg { position: absolute; left: 450px; top: 300px; width: 180px; height: 180px; border-radius: 26px; background: #fff;
+  border: 5px solid var(--acc); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+#sting.receipt .lg img { width: 170px; height: 170px; object-fit: contain; }
+#sting.receipt .paperclip { position: absolute; left: 280px; top: 543px; width: 520px; height: 900px; overflow: hidden; }
+#sting.receipt .paper { position: absolute; left: 0; bottom: 0; width: 520px; padding: 34px 36px 40px; box-sizing: border-box; background: #fbf7ea;
+  font: 700 34px/1.5 "Mono"; color: #13241f; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,.35);
+  -webkit-mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 18px), transparent calc(100% - 18px)),
+    repeating-linear-gradient(135deg, #000 0 12px, transparent 12px 24px); }
+#sting.receipt .paper .big { font: 700 96px/1.05 "Ser"; color: #0f3d33; margin: 8px 0; }
+#sting.receipt .paper .big span { color: #b0412f; }
+#sting.receipt .paper .dash { letter-spacing: .2em; color: #8a8f88; }
+#sting.receipt .paper .tot { display: flex; justify-content: space-between; font-size: 44px; color: #0f3d33; }
 #prog { position: absolute; left: 44px; right: 44px; top: 14px; height: 10px; display: none; gap: 8px; }
 #prog i { flex: 1; border-radius: 6px; background: rgba(255,255,255,.18); position: relative; overflow: hidden; }
 #prog i b { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 6px; }

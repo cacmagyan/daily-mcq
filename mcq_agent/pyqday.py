@@ -46,7 +46,20 @@ def used_refs() -> set[str]:
         out.update(d.get("tried") or [])
         if d.get("ref"):
             out.add(d["ref"])
+    out.update(p["ref"] for p in manual_posts() if p.get("ref"))
     return out
+
+
+MANUAL = ROOT / "queue" / "manual_trap_posts.json"
+
+
+def manual_posts() -> list[dict]:
+    """Trap reels posted by hand ([{"date", "subject", "ref", "series_no"}]); their questions count as used
+    and they count in the series numbers."""
+    try:
+        return json.loads(MANUAL.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
 
 
 def _clean(s: str) -> str:

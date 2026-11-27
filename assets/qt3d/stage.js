@@ -837,6 +837,14 @@ function cardEl(ev) {
     el.className = 'card dark trap';
     const big = String(c.big || '').replace(/\s*[×✕x]\s*$/, '');
     el.innerHTML = `<div class="small">${esc(c.small)}</div><div class="big"><span class="t">${esc(big)}</span><span class="x">✕</span></div><div class="sub">${esc(c.sub || 'that is the trap')}</div><div class="stamp red">TRAP</div>`;
+  } else if (c.kind === 'loop') {
+    el.className = 'card dark loop';
+    el.innerHTML = `<div class="tag">${esc(c.tag || 'OPEN LOOP')}</div><div class="ring"><svg viewBox="0 0 220 220"><circle cx="110" cy="110" r="96" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="14"/><circle class="arc" cx="110" cy="110" r="96" fill="none" stroke="#b07cff" stroke-width="14" stroke-linecap="round" stroke-dasharray="603" stroke-dashoffset="603" transform="rotate(-90 110 110)"/><circle class="dot" cx="110" cy="14" r="11" fill="#fff"/></svg><div class="q">?</div></div><div class="line"></div>`;
+  } else if (c.kind === 'cta') {
+    el.className = 'card dark cta';
+    const chat = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/></svg>';
+    const mark = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+    el.innerHTML = `<div class="big">${md(c.text || '')}</div><div class="btns"><div class="btn">${chat}Comment</div><div class="btn save">${mark}<span>Save</span></div></div>`;
   } else if (g === 'q') {
     el.className = 'card cream q';
     const opts = (PLAN.options || []).map((o, i) => `<div class="opt" data-i="${i}"><span class="l">(${'abcd'[i]})</span><span class="t">${esc(o)}</span><span class="mark"></span><span class="strike" style="display:none"></span></div>`).join('');
@@ -912,6 +920,25 @@ function drawCard(ev, t, role) {
       const sk = ss > 0 ? Math.exp(-ss * 9) * Math.sin(ss * 50) * 8 : 0;
       tr = tr.replace('translate(-50%,', `translate(calc(-50% + ${sk.toFixed(1)}px),`);
     }
+  }
+  if (c.kind === 'loop') {
+    // the curiosity line types itself out while the ring spins and fills
+    const txt = String(c.text || ''), k = clamp(since / Math.max(0.6, ev.dur * 0.8));
+    const n = Math.round(txt.length * k);
+    el.querySelector('.line').innerHTML = esc(txt.slice(0, n)) + (k < 1 ? '<span class="caret"></span>' : '');
+    const fill = 0.12 + 0.8 * easeOut(clamp(since / Math.max(0.8, ev.dur)));
+    el.querySelector('.arc').setAttribute('stroke-dashoffset', (603 * (1 - fill)).toFixed(1));
+    const ang = since * 4.2;
+    const dot = el.querySelector('.dot');
+    dot.setAttribute('cx', (110 + 96 * Math.sin(ang)).toFixed(1)); dot.setAttribute('cy', (110 - 96 * Math.cos(ang)).toFixed(1));
+    el.querySelector('.q').style.transform = `scale(${(1 + 0.06 * Math.sin(since * 7)).toFixed(3)})`;
+  }
+  if (c.kind === 'cta') {
+    const on = since > 1.3;
+    const sv = el.querySelector('.btn.save');
+    sv.classList.toggle('on', on); sv.querySelector('span').textContent = on ? 'Saved' : 'Save';
+    const p = on ? 1 - 0.1 * Math.exp(-(since - 1.3) * 10) * Math.cos((since - 1.3) * 30) : 1;
+    sv.style.transform = `scale(${p.toFixed(3)})`;
   }
   el.style.display = op > 0.01 ? 'block' : 'none';
   el.style.transform = tr;
@@ -1030,6 +1057,28 @@ function drawSting(t) {
   const out = easeIn(clamp((t - (S.dur - 0.28)) / 0.28));
   el.style.clipPath = `inset(0 0 ${(out * 100).toFixed(2)}% 0)`;
   return 1 - out;
+}
+
+// ── 8-block progress bar ────────────────────────────────────
+const BLOCK_COL = { hook: '#ff4fa3', lead: '#ffc93c', body: '#3fd6ff', loop: '#b07cff', cta: '#3ddc97' };
+function drawProgress(t) {
+  const el = $('prog');
+  const bs = (PLAN.events || []).filter((e) => e.block);
+  if (!bs.length) { el.style.display = 'none'; return; }
+  if (!el.children.length) {
+    const kinds = [];
+    bs.forEach((e) => { kinds[e.block[0] - 1] = e.block[1]; });
+    el.innerHTML = kinds.map((k) => `<i><b style="background:${BLOCK_COL[k] || '#fff'}"></b></i>`).join('');
+  }
+  el.style.display = 'flex';
+  const bars = el.querySelectorAll('b');
+  const first = {}, last = {};
+  bs.forEach((e) => { const n = e.block[0]; first[n] = Math.min(first[n] ?? 1e9, e.start); last[n] = Math.max(last[n] ?? 0, e.start + e.dur); });
+  bars.forEach((b, i) => {
+    const n = i + 1, s = first[n], f = last[n];
+    const k = s === undefined ? 0 : clamp((t - s) / Math.max(0.2, f - s));
+    b.style.width = (k * 100).toFixed(1) + '%';
+  });
 }
 
 // ── frame ───────────────────────────────────────────────────
@@ -1189,6 +1238,7 @@ window.seek = (t) => {
 
   drawCaption(ev, t, inCd && t >= cd[0]);
   drawSting(t);
+  drawProgress(t);
   renderer.render(scene, camera);
   return idx;
 };

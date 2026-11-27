@@ -46,12 +46,23 @@ ECO_TOPICS = [
     ("Money Market", "Credit creation"), ("International Trade", "Real and nominal exchange rates"),
 ]
 
+COSTING_TOPICS = [
+    ("Material Cost", "EOQ, re-order levels and stock valuation"), ("Employee Cost and Direct Expenses", "Wages, incentives and labour turnover"),
+    ("Overheads: Absorption Costing", "Absorption and under/over-absorption"), ("Marginal Costing", "P/V ratio and break-even"),
+    ("Standard Costing", "Material, labour and overhead variances"), ("Process and Operation Costing", "Normal and abnormal loss"),
+    ("Joint Products and By-Products", "Apportioning joint costs"), ("Service Costing", "Cost units such as tonne-km"),
+    ("Budgets and Budgetary Control", "Production and purchase budgets"),
+]
+
 # The papers that have a trap reel. `bank` is the question bank's course (<bank>_bank.json, ICAI's booklets with
 # official keys); `short` is the series name ("QT TRAP #12") and the badge tail; pyq.trap_days picks the day.
 SUBJECTS = {
     "qt": {"exam": "CA Foundation", "course_id": "ca_foundation", "paper": "Paper 3", "paper_name": "Quantitative Aptitude",
            "short": "QT", "bank": "ca_foundation_qt", "topics": TOPICS, "hashtags_key": "hashtags_qt",
            "hashtags": ["#CAFoundation", "#QuantitativeAptitude", "#CAStudents", "#ICAI", "#MathsTricks"]},
+    "costing": {"exam": "CA Intermediate", "course_id": "ca_inter", "paper": "Paper 4", "paper_name": "Cost and Management Accounting",
+                "short": "COSTING", "bank": "ca_inter_costing", "topics": COSTING_TOPICS, "hashtags_key": "hashtags_costing",
+                "hashtags": ["#CAInter", "#CostingCA", "#CAStudents", "#ICAI", "#CostAccounting"]},
     "eco": {"exam": "CA Foundation", "course_id": "ca_foundation", "paper": "Paper 4", "paper_name": "Business Economics",
             "short": "ECO", "bank": "ca_foundation_eco", "topics": ECO_TOPICS, "hashtags_key": "hashtags_eco",
             "hashtags": ["#CAFoundation", "#BusinessEconomics", "#CAStudents", "#ICAI", "#Economics"]},

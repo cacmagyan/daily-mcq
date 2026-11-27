@@ -5,201 +5,285 @@
  "course_id": "ca_foundation",
  "paper_code": "Paper 4",
  "paper_name": "Business Economics",
- "topic": "Arc elasticity of supply",
+ "topic": "Equilibrium income",
  "script": {
   "theme": "navy",
   "badge": {
    "tag": "ASKED IN",
-   "text": "CA FOUNDATION MAY 2025 · ECO"
+   "text": "CA FOUNDATION MAY 2026 · ECO"
   },
-  "header": "CA Foundation May 2025 · Paper 4 · ECO",
-  "question": "Due to an increase in price of product X from **₹100 to ₹110**, quantity supplied increases from **150 units to 200 units**. Calculate elasticity of supply using the **arc-elasticity method**.",
+  "header": "CA Foundation May 2026 · Paper 4 · ECO",
+  "question": "Calculate the equilibrium level of income if the saving function is **S = −20 + 0.25Y** and autonomous investment **I = ₹100 crores**.",
   "options": [
-   "2.3",
-   "3",
-   "3.33",
-   "3.5"
+   "320 crores",
+   "160 crores",
+   "480 crores",
+   "240 crores"
   ],
-  "answer": 1,
+  "answer": 2,
   "scene": {
    "type": "bars",
-   "max": 220,
+   "max": 130,
    "bars": [
     {
-     "label": "₹100",
+     "label": "Investment",
      "segments": [
       {
-       "v": 150.0,
-       "label": "150 units"
+       "v": 100,
+       "label": "I = 100"
       }
      ]
-    },
-    {
-     "label": "₹110",
-     "segments": [
-      {
-       "v": 200.0,
-       "label": "200 units"
-      }
-     ],
-     "top": "+50"
     }
    ],
-   "note": "price up 10%"
+   "note": "find Y where S = I"
   },
+  "series": "ECO TRAP",
+  "series_no": 3,
   "lines": [
    {
-    "say": "This question came in the CA Foundation May 2025 exam.",
+    "block": [
+     1,
+     "hook"
+    ],
+    "say": "One minus sign is costing students this question.",
+    "card": {
+     "kind": "hook",
+     "small": "CA Foundation · Economics",
+     "big": "One sign. Wrong answer."
+    }
+   },
+   {
+    "block": [
+     2,
+     "lead"
+    ],
+    "say": "This came in the CA Foundation May 2026 exam.",
     "card": {
      "kind": "attempt",
      "exam": "CA Foundation",
-     "when": "May 2025",
+     "when": "May 2026",
      "sub": "Paper 4 · Business Economics"
     }
    },
    {
-    "say": "Price goes up from ₹100 to ₹110. Supply goes up from 150 units to 200 units. Find the elasticity of supply by the arc method.",
+    "block": [
+     2,
+     "lead"
+    ],
+    "say": "Saving is minus 20 plus 0.25 Y. Investment is ₹100 crore. Find the equilibrium income. Try it before I solve it.",
     "card": {
      "kind": "hook",
-     "small": "Elasticity of supply",
-     "big": "₹100 → ₹110"
+     "small": "Find equilibrium income",
+     "big": "S = −20 + 0.25Y,  I = 100"
     }
    },
    {
-    "say": "Quantity is up 50 on 150, that's 33.3 percent. Price is up 10 percent. So 3.33. Right?",
-    "card": {
-     "kind": "hook",
-     "small": "So...",
-     "big": "33.3% ÷ 10% = 3.33?"
-    }
-   },
-   {
-    "say": "Wrong. 3.33 is the trap.",
-    "card": {
-     "kind": "trap",
-     "small": "CA FOUNDATION MAY 2025 · ECO",
-     "big": "3.33 ×",
-     "sub": "that is the trap"
-    }
-   },
-   {
-    "say": "The right answer is 3. Here's why.",
-    "card": {
-     "kind": "answer",
-     "small": "The right answer",
-     "big": "3"
-    }
-   },
-   {
-    "say": "Step one. The arc method divides each change by the average, not by the starting value.",
+    "block": [
+     3,
+     "body"
+    ],
+    "say": "Most students do this. 0.25 Y equals 100 minus 20, which is 80. So Y is 320 crore. Option A. Looks right.",
     "card": {
      "kind": "step",
-     "title": "Step 1 · Arc uses averages",
+     "title": "The quick way",
      "rows": [
-      "Avg quantity = (150 + 200) ÷ 2 = **175**",
-      "Avg price = (100 + 110) ÷ 2 = **105**"
+      "0.25Y = 100 − 20 = 80",
+      "Y = **320**?"
      ]
+    }
+   },
+   {
+    "block": [
+     4,
+     "loop"
+    ],
+    "say": "But the examiner hid the trap in one sign.",
+    "card": {
+     "kind": "loop",
+     "text": "“But the trap is in one sign…”"
+    }
+   },
+   {
+    "block": [
+     5,
+     "body"
+    ],
+    "say": "Wrong. 320 is the trap.",
+    "card": {
+     "kind": "trap",
+     "small": "CA FOUNDATION MAY 2026 · ECO",
+     "big": "₹320 crore ×",
+     "sub": "that is the trap"
     },
     "scene": {
      "type": "bars",
-     "max": 220,
+     "max": 130,
      "bars": [
       {
-       "label": "Before",
+       "label": "Saving at 320",
        "segments": [
         {
-         "v": 150.0,
-         "label": "150"
+         "v": 60,
+         "label": "S = 60"
         }
        ]
       },
       {
-       "label": "Average",
+       "label": "Investment",
        "segments": [
         {
-         "v": 175.0,
-         "label": "175"
-        }
-       ],
-       "top": "use this"
-      },
-      {
-       "label": "After",
-       "segments": [
-        {
-         "v": 200.0,
-         "label": "200"
+         "v": 100,
+         "label": "I = 100"
         }
        ]
       }
      ],
-     "note": "divide by the middle"
+     "note": "S must equal I"
     }
    },
    {
-    "say": "Step two. Change in quantity, 50 over 175. Change in price, 10 over 105.",
+    "block": [
+     5,
+     "body"
+    ],
+    "say": "At equilibrium, saving equals investment. So minus 20 plus 0.25 Y equals 100. Move the minus 20 across, and it becomes plus 20. So 0.25 Y equals 120.",
     "card": {
      "kind": "step",
-     "title": "Step 2 · Divide the changes",
+     "title": "Saving = Investment",
      "rows": [
-      "50 ÷ 175 = 0.2857",
-      "10 ÷ 105 = 0.0952"
-     ]
-    }
-   },
-   {
-    "say": "Step three. 0.2857 divided by 0.0952 gives exactly 3.",
-    "card": {
-     "kind": "step",
-     "title": "Step 3 · The answer",
-     "rows": [
-      "0.2857 ÷ 0.0952 = **3**"
+      "−20 + 0.25Y = 100",
+      "0.25Y = 100 **+ 20** = 120"
      ]
     },
     "scene": {
-     "type": "board",
-     "lines": [
-      "(50 ÷ 175) ÷ (10 ÷ 105)",
-      "= 3"
-     ]
-    }
-   },
-   {
-    "say": "The shortcut. Arc elasticity is change in Q over sum of Qs, divided by change in P over sum of Ps. The twos cancel.",
-    "card": {
-     "kind": "shortcut",
-     "rows": [
-      "(ΔQ ÷ ΣQ) ÷ (ΔP ÷ ΣP)",
-      "(50 ÷ 350) ÷ (10 ÷ 210) = 3"
-     ]
-    }
-   },
-   {
-    "say": "Your turn. Price rises from ₹20 to ₹30 and supply rises from 40 to 60 units. What is the arc elasticity?",
-    "card": {
-     "kind": "your_turn",
-     "rows": [
-      "₹20 → ₹30",
-      "40 → 60 units"
-     ]
-    }
-   },
-   {
-    "say": "Comment your answer. Follow for a new trap every day.",
-    "card": {
-     "kind": "your_turn",
-     "rows": [
-      "₹20 → ₹30",
-      "40 → 60 units"
+     "type": "bars",
+     "max": 130,
+     "bars": [
+      {
+       "label": "Saving at 320",
+       "segments": [
+        {
+         "v": 60,
+         "label": "S = 60"
+        }
+       ]
+      },
+      {
+       "label": "Investment",
+       "segments": [
+        {
+         "v": 100,
+         "label": "I = 100"
+        }
+       ]
+      }
      ],
-     "all": true
+     "note": "S must equal I"
+    }
+   },
+   {
+    "block": [
+     6,
+     "loop"
+    ],
+    "say": "Now watch what that does to the answer.",
+    "card": {
+     "kind": "loop",
+     "text": "“Now watch the answer change…”"
+    }
+   },
+   {
+    "block": [
+     7,
+     "body"
+    ],
+    "say": "The right answer is 480 crore.",
+    "card": {
+     "kind": "answer",
+     "small": "The right answer",
+     "big": "₹480 crore"
+    },
+    "scene": {
+     "type": "bars",
+     "max": 130,
+     "bars": [
+      {
+       "label": "Saving at 480",
+       "segments": [
+        {
+         "v": 100,
+         "label": "S = 100"
+        }
+       ]
+      },
+      {
+       "label": "Investment",
+       "segments": [
+        {
+         "v": 100,
+         "label": "I = 100"
+        }
+       ]
+      }
+     ],
+     "note": "S must equal I"
+    }
+   },
+   {
+    "block": [
+     7,
+     "body"
+    ],
+    "say": "120 divided by 0.25 is 480. Check it. At 480, saving is minus 20 plus 120, which is exactly 100. Saving equals investment.",
+    "card": {
+     "kind": "step",
+     "title": "Check it",
+     "rows": [
+      "Y = 120 ÷ 0.25 = **480**",
+      "S = −20 + 120 = **100** = I ✓"
+     ]
+    },
+    "scene": {
+     "type": "bars",
+     "max": 130,
+     "bars": [
+      {
+       "label": "Saving at 480",
+       "segments": [
+        {
+         "v": 100,
+         "label": "S = 100"
+        }
+       ]
+      },
+      {
+       "label": "Investment",
+       "segments": [
+        {
+         "v": 100,
+         "label": "I = 100"
+        }
+       ]
+      }
+     ],
+     "note": "S must equal I"
+    }
+   },
+   {
+    "block": [
+     8,
+     "cta"
+    ],
+    "say": "Did you get 320? Comment, and save this for your revision.",
+    "card": {
+     "kind": "cta",
+     "text": "Got **320**? Comment & save it"
     }
    }
-  ],
-  "series": "ECO TRAP",
-  "series_no": 1
+  ]
  },
- "correct": "B",
- "trap": "3.33",
- "asked_in": "May 2025"
+ "correct": "C",
+ "trap": "320 crores",
+ "asked_in": "May 2026",
+ "ref": "ca_foundation_eco|M26-75"
 }

@@ -95,6 +95,26 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
 .card.dark .row b { color: var(--acc); }
 .card.cream .row b { background: var(--navy); color: var(--acc); padding: 0 12px; border-radius: 12px; }
 .card.yt { }
+/* 8-block reels: open loop and CTA cards, progress bar */
+.card.loop { width: 900px; padding: 34px 40px 36px; text-align: center; border-color: #a46bff !important;
+  background: linear-gradient(180deg, #2b1f6e 0%, #1a1550 60%, #120f3d 100%) !important; box-shadow: 0 12px 0 #0b0930, 0 34px 70px rgba(0,0,0,.45) !important; }
+.card.loop .ring { width: 220px; height: 220px; margin: 0 auto 18px; position: relative; }
+.card.loop .ring svg { position: absolute; inset: 0; }
+.card.loop .ring .q { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 800 120px/1 "Pop"; color: #fff; }
+.card.loop .line { font: 700 54px/1.25 "Pop"; color: #fff; min-height: 68px; }
+.card.loop .line .caret { display: inline-block; width: 4px; height: 52px; background: #c9a8ff; margin-left: 4px; vertical-align: -6px; }
+.card.loop .tag { font: 700 24px "Int"; letter-spacing: .2em; color: #c9a8ff; margin-bottom: 14px; }
+.card.cta { width: 900px; padding: 34px 40px 40px; text-align: center; border-color: #3ddc97 !important; }
+.card.cta .big { font: 800 66px/1.18 "Pop"; color: #fff; }
+.card.cta .big b { color: var(--acc); }
+.card.cta .btns { display: flex; gap: 22px; justify-content: center; margin-top: 30px; }
+.card.cta .btn { display: flex; align-items: center; gap: 14px; font: 800 40px/1 "Pop"; padding: 20px 34px; border-radius: 999px;
+  background: #fff; color: var(--navy); box-shadow: 0 8px 0 #9aa6c8; }
+.card.cta .btn.save.on { background: #3ddc97; color: #062b1c; box-shadow: 0 8px 0 #1f8f5f; }
+.card.cta .btn svg { width: 40px; height: 40px; }
+#prog { position: absolute; left: 44px; right: 44px; top: 14px; height: 10px; display: none; gap: 8px; }
+#prog i { flex: 1; border-radius: 6px; background: rgba(255,255,255,.18); position: relative; overflow: hidden; }
+#prog i b { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 6px; }
 .cta { display: inline-flex; align-items: center; gap: 14px; margin-top: 18px; background: var(--acc); color: #2a1d00;
   font: 800 34px "Pop"; padding: 12px 28px 10px; border-radius: 40px; }
 .cta svg { width: 36px; height: 36px; }
@@ -185,6 +205,7 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
   <div id="badge"></div>
   <div id="logo"><img alt=""></div>
   <div id="handle"></div>
+  <div id="prog"></div>
   <div id="sting"><div class="bar" style="top:0"></div><div class="bar" style="bottom:0;top:auto"></div><div class="tile"><img alt=""></div><div class="ttl">QT <span>TRAP</span></div><div class="no"><b></b></div></div>
 </div>
 <script type="module" src="./stage.js"></script>

@@ -1,0 +1,193 @@
+{
+  "date": "2026-11-29",
+  "day": 39,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-28T03:30:22+05:30",
+  "items": [
+    {
+      "course_id": "cma_cat",
+      "paper_code": "Paper 2A",
+      "paper_name": "Financial Accounting-2",
+      "topic": "Estimating Uncollectible Receivables (Ageing)",
+      "question": "On 31 March 2026, debtors (after write-offs) were ₹8,00,000: not yet due ₹5,00,000 (1% uncollectible), up to 30 days overdue ₹2,00,000 (5%), over 30 days overdue ₹1,00,000 (20%). Allowance A/c opened at ₹30,000 Cr; ₹18,000 of bad debts were written off against it. Bad debts expense for the year?",
+      "options": [
+        "₹17,000",
+        "₹23,000",
+        "₹35,000",
+        "₹47,000"
+      ],
+      "correct": "B",
+      "explanation": "Required closing allowance by ageing is ₹35,000. The allowance already has a credit balance of ₹12,000 after the write-offs. Only the shortfall of ₹23,000 is charged to profit and loss as the year's expense.",
+      "working": [
+        {
+          "label": "Not due 5,00,000 x 1%",
+          "value": "₹5,000"
+        },
+        {
+          "label": "Up to 30 days 2,00,000 x 5%",
+          "value": "₹10,000"
+        },
+        {
+          "label": "Over 30 days 1,00,000 x 20%",
+          "value": "₹20,000"
+        },
+        {
+          "label": "Required closing allowance",
+          "value": "₹35,000"
+        },
+        {
+          "label": "Balance before adjustment (30,000-18,000)",
+          "value": "₹12,000"
+        },
+        {
+          "label": "Bad debts expense (35,000-12,000)",
+          "value": "₹23,000"
+        }
+      ],
+      "why_not": {
+        "C": "Charged the full required allowance and ignored the existing credit balance.",
+        "A": "Deducted the opening ₹30,000-18,000 wrongly, using only the write-offs, not the balance.",
+        "D": "Added the existing ₹12,000 balance to the required allowance instead of deducting it."
+      },
+      "exam_tip": "Ageing method fixes the closing allowance; expense = required balance minus balance already in the allowance account.",
+      "calculation": "required = 500000*0.01 + 200000*0.05 + 100000*0.20\nexisting = 30000 - 18000\nanswer = required - existing",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "Write-offs assumed charged against the allowance (allowance method), stated in question.",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Write-offs assumed charged against the allowance (allowance method), stated in question."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_cat_q.jpg",
+        "answer": "cma_cat_a.jpg"
+      },
+      "fit_notes": [
+        "answer slide text shrunk to 76%; consider shortening"
+      ],
+      "caption": "🟨 CMA CAT · MCQ of the day · Day 39\nPaper 2A: Financial Accounting-2\nTopic: Estimating Uncollectible Receivables (Ageing)\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMACAT #ICMAI #CATCourse #DailyMCQ #AccountingTechnician\n\nref cma-cat-261129",
+      "story": "cma_cat_story.jpg",
+      "answer_story": "cma_cat_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_inter",
+      "paper_code": "Paper 10",
+      "paper_name": "Corporate Accounting and Auditing (Auditing)",
+      "topic": "SA 530: Audit Sampling",
+      "question": "Under SA 530, an auditor finds a deviation in a sample that seems caused by a one-off computer failure. To treat it as an anomaly, what must the auditor do?",
+      "options": [
+        "Obtain a high degree of certainty it is not representative of the population",
+        "Exclude it without any further work",
+        "Treat it as proof that the control is ineffective",
+        "Extrapolate it to the whole population as a likely error"
+      ],
+      "correct": "A",
+      "explanation": "SA 530 defines an anomaly as a misstatement or deviation clearly not representative of the population. The auditor must obtain a high degree of certainty, by performing additional procedures, before treating an item as an anomaly.",
+      "working": [],
+      "why_not": {
+        "B": "Excluding it without extra work is wrong; certainty must come from specific procedures.",
+        "D": "Extrapolation applies to genuine errors, not to a demonstrated anomaly.",
+        "C": "One isolated, explained deviation does not automatically make the control ineffective."
+      },
+      "exam_tip": "Anomaly means clearly unrepresentative, and the auditor must prove it with high certainty, not assume it.",
+      "calculation": "",
+      "applicability": "SA 530, Audit Sampling",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The wrong options are weak. B, C and D are plainly incorrect, so a student who half-remembers SA 530 can still pick A by elimination. A stronger distractor would help, such as 'obtain management's written representation that the failure was isolated'.",
+        "Checker: Option A leaves out the standard's words 'by performing additional audit procedures' and 'in extremely rare circumstances'. The answer is still correct, but quoting the standard in full would be more precise."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "cma_inter_q.jpg",
+        "answer": "cma_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟧 CMA Inter · MCQ of the day · Day 39\nPaper 10: Corporate Accounting and Auditing (Auditing)\nTopic: SA 530: Audit Sampling\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on SA 530, Audit Sampling.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAInter #CMAIntermediate #ICMAI #DailyMCQ #CMAStudents\n\nref cma-inter-261129",
+      "story": "cma_inter_story.jpg",
+      "answer_story": "cma_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "cma_final",
+      "paper_code": "Paper 19",
+      "paper_name": "Indirect Tax Laws and Practice",
+      "topic": "GST - Composite and Mixed Supply",
+      "question": "A registered trader sells a festival hamper for a single price of ₹1,00,000 (excl. GST): sweets ₹40,000 (5% GST), crockery ₹40,000 (18% GST), exempt books ₹20,000. Items are not naturally bundled; no one item is principal. GST payable?",
+      "options": [
+        "₹14,400",
+        "₹5,000",
+        "₹18,000",
+        "₹9,200"
+      ],
+      "correct": "C",
+      "explanation": "The hamper is a mixed supply (not naturally bundled, single price). It is taxed at the rate of the supply attracting the highest rate, 18%, on the whole price: 18% of ₹1,00,000.",
+      "working": [
+        {
+          "label": "Type of supply",
+          "value": "Mixed"
+        },
+        {
+          "label": "Highest rate among items",
+          "value": "18%"
+        },
+        {
+          "label": "Taxable value (whole price)",
+          "value": "₹1,00,000"
+        },
+        {
+          "label": "GST at 18%",
+          "value": "₹18,000"
+        }
+      ],
+      "why_not": {
+        "D": "Taxed each item at its own rate and ignored exempt books; that applies only to separate supplies.",
+        "A": "Applied 18% only on the 5% and 18% items, leaving out the exempt books value.",
+        "B": "Used the lowest rate of 5% on the whole price instead of the highest rate."
+      },
+      "exam_tip": "Composite: principal supply's rate. Mixed: highest-rate item's rate on the whole price.",
+      "calculation": "price = 100000\nrate = 0.18\nanswer = price * rate",
+      "applicability": "CGST Act, 2017 (as per ICMAI notice, up to 30 Nov 2025)",
+      "confidence": "high",
+      "reviewer_note": "Rates are stated in the question. Rule is from the CGST Act provision on composite and mixed supplies (section 8).",
+      "attempts": 1,
+      "check_notes": [
+        "Writer: Rates are stated in the question. Rule is from the CGST Act provision on composite and mixed supplies (section 8).",
+        "Checker: The 18% rate for crockery may not match the post-September 2025 rate schedule (ceramic tableware was rationalised to a lower rate). This does not change the answer, because the question states the rates itself, but a real-world item with a disputed rate could confuse students. Consider calling it a generic item 'taxable at 18%'.",
+        "Checker: The phrase 'single price' together with 'no one item is principal' strongly signals a mixed supply, which comes close to giving the answer away.",
+        "Second checker: Wording such as 'not naturally bundled; no one item is principal' tells the student it is a mixed supply. This is minor.",
+        "Second checker: The question does not say the ₹1,00,000 is the whole value for GST purposes, but 'excl. GST' covers it."
+      ],
+      "difficulty": "hard",
+      "law_sensitive": true,
+      "serious": false,
+      "needs_check": true,
+      "author": "Rahul kp",
+      "images": {
+        "question": "cma_final_q.jpg",
+        "answer": "cma_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟥 CMA Final · MCQ of the day · Day 39\nPaper 19: Indirect Tax Laws and Practice\nTopic: GST - Composite and Mixed Supply\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on CGST Act, 2017 (as per ICMAI notice, up to 30 Nov 2025).\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CMAFinal #ICMAI #CMAStudents #DailyMCQ #CostAccountant\n\nref cma-final-261129",
+      "story": "cma_final_story.jpg",
+      "answer_story": "cma_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

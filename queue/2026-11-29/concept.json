@@ -1,0 +1,152 @@
+{
+  "kind": "concept",
+  "course_id": "cma_final",
+  "paper_code": "Paper 20A",
+  "paper_name": "Strategic Performance Management and Business Valuation",
+  "author": "Rahul kp",
+  "topic": "Book Value vs Market Value",
+  "title": "Book Value",
+  "title_highlight": "vs Market Value",
+  "hook": "what books say vs what market pays!",
+  "simple_words": "Book value is what the accounts show. Market value is what buyers will actually pay today.",
+  "definitions": [
+    {
+      "term": "Book Value of equity",
+      "meaning": "Net worth shown in the balance sheet: total assets less outside liabilities (and preference capital), shared among equity shares.",
+      "note": "Per share = equity net worth ÷ equity shares"
+    },
+    {
+      "term": "Market Value of equity",
+      "meaning": "Market price per share multiplied by the number of equity shares outstanding. It is also called market capitalisation.",
+      "note": "Needs a quoted price"
+    }
+  ],
+  "key_points": [
+    "==Book value== comes from accounting records and is based on past cost.",
+    "==Market value== reflects what investors expect about future earnings and risk.",
+    "The two are rarely equal; a gap shows goodwill, hidden assets or market sentiment.",
+    "!!Unlisted companies have no market price!!, so valuation needs other methods."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "compare point by point",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Book Value",
+      "Market Value"
+    ],
+    "rows": [
+      [
+        "Source",
+        "Balance sheet",
+        "Stock exchange price"
+      ],
+      [
+        "Basis",
+        "Past cost and accounting policy",
+        "Future expectations"
+      ],
+      [
+        "Changes",
+        "When accounts change",
+        "Changes with trading"
+      ],
+      [
+        "Unlisted company",
+        "Available",
+        "No quoted price"
+      ],
+      [
+        "Use",
+        "Net asset method",
+        "Market cap, P/B, P/E"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Books look back, market looks ahead!",
+    "text": "Market value above book value means investors expect returns higher than the accounts show."
+  },
+  "trick_hook": "B for Back, M for Meeting buyers",
+  "memory_trick": {
+    "mnemonic": "Book = Back, Market = Meet",
+    "explanation": "Book value looks Back at recorded cost. Market value is where buyers and sellers Meet today and price the future."
+  },
+  "steps": [
+    "Read what the question gives",
+    "Net worth given? Use book value",
+    "Share price given? Use market value",
+    "Multiply price by shares for market cap",
+    "State which basis you used"
+  ],
+  "exam_tip": "Write the basis in your answer. A valuation without saying book, market or intrinsic basis loses marks.",
+  "doubt": {
+    "question": "Can market value be below book value?",
+    "answer": "Yes. If investors expect poor earnings, the price falls below net worth per share, so the price-to-book ratio is below 1."
+  },
+  "mistakes_hook": "don't mix the two!",
+  "mistakes": [
+    {
+      "wrong": "Book value of equity = total assets",
+      "right": "Book value of equity = total assets less outside liabilities (and preference capital, if any)."
+    },
+    {
+      "wrong": "Market value = face value × shares",
+      "right": "Market value = market price per share × number of equity shares."
+    },
+    {
+      "wrong": "Book value equals market value for a listed company",
+      "right": "The two usually differ, because market price reflects expectations and not only recorded cost."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "No past-paper list was given, so past_papers is empty.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: No past-paper list was given, so past_papers is empty.",
+    "Checker 1: Key point 1 / table row 2: 'based on past cost' is oversimplified. Under Ind AS, some assets and liabilities are carried at fair value or revalued amounts. Better: 'Book value comes from accounting records, mainly historical cost, as per the accounting policies used.'",
+    "Checker 1: Table row 5 (Use, Market Value column): P/B is market price ÷ book value per share, so it uses both values. Better: Market Value column 'Market capitalisation, P/E and market-based (relative) valuation'. P/B can be noted as linking the two.",
+    "Checker 1: Definition 1 / mistake 1 right: for net worth (book value of equity), also remove fictitious assets and debit balances of accumulated losses. Better: 'Total assets (excluding fictitious assets) less outside liabilities and preference capital.'",
+    "Checker 1: Exam tip: 'loses marks' is stated as a firm rule, which the study material does not lay down. Better: 'Always state the basis (book, market or intrinsic) clearly in your answer.'"
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 0.98,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.2,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟥 CMA Final · Concept of the day\nPaper 20A: Strategic Performance Management and Business Valuation\nBook Value vs Market Value\n\nIn simple words: Book value is what the accounts show. Market value is what buyers will actually pay today.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref concept-261129",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

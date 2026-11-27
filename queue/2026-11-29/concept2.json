@@ -1,0 +1,149 @@
+{
+  "kind": "concept2",
+  "course_id": "ca_final",
+  "paper_code": "Paper 5",
+  "paper_name": "Indirect Tax Laws",
+  "author": "Rahul kp",
+  "topic": "Exempt vs Nil-rated vs Zero-rated Supply",
+  "title": "Exempt vs Zero-rated",
+  "title_highlight": "Supply in GST",
+  "hook": "same \"no tax\", different ITC!",
+  "simple_words": "Exempt, nil-rated and non-taxable supplies lose ITC. Zero-rated supply (export, SEZ) keeps ITC and can get a refund.",
+  "definitions": [
+    {
+      "term": "Exempt supply",
+      "meaning": "Supply on which no tax is payable. It includes nil-rated supply, wholly exempt supply and non-taxable supply.",
+      "note": "Inputs used for it get no ITC"
+    },
+    {
+      "term": "Zero-rated supply",
+      "meaning": "Export of goods or services, or supply to an SEZ developer or SEZ unit for authorised operations (IGST Act).",
+      "note": "ITC allowed, refund possible"
+    }
+  ],
+  "key_points": [
+    "Nil-rated, wholly exempt and non-taxable supplies all fall under ==exempt supply== for ITC purposes",
+    "ITC used ==exclusively== for exempt supplies is not available at all",
+    "!!ITC on common inputs is reversed in proportion!! to exempt supplies (Sec 17(2) and 17(3), CGST Act)",
+    "==Zero-rated== supply is a separate category: ITC stays and refund can be claimed"
+  ],
+  "formula_heading": "The 4-Way Comparison",
+  "formula_hook": "spot the type, spot the ITC",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Type",
+      "Meaning",
+      "ITC on inputs"
+    ],
+    "rows": [
+      [
+        "Wholly exempt",
+        "Tax relief by notification or law",
+        "Not allowed"
+      ],
+      [
+        "Nil-rated",
+        "Rate of 0% in rate notification",
+        "Not allowed"
+      ],
+      [
+        "Non-taxable",
+        "Outside GST, e.g. alcohol for human use",
+        "Not allowed"
+      ],
+      [
+        "Zero-rated",
+        "Export; SEZ developer/unit, authorised ops",
+        "Allowed; refund possible"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Exempt loses ITC, zero-rated keeps it!",
+    "text": "Zero-rated supply keeps ITC and refund even if the same goods are otherwise exempt when sold locally."
+  },
+  "trick_hook": "Zero = Zoom out with refund",
+  "memory_trick": {
+    "mnemonic": "Zero Zooms out, Exempt Eats ITC",
+    "explanation": "Zero-rated goods zoom out of India or into SEZ and come back with a refund. Exempt supply stays home and eats (loses) the ITC."
+  },
+  "steps": [
+    "Check: export or SEZ supply?",
+    "If yes: zero-rated, ITC allowed",
+    "If no: is any tax payable?",
+    "None payable: exempt, no ITC",
+    "Common inputs: reverse pro rata"
+  ],
+  "exam_tip": "In MCQs, first check for export or SEZ. Zero-rated supply is a separate category: ITC and refund are allowed even if the goods are otherwise exempt.",
+  "doubt": {
+    "question": "Is nil-rated supply the same as zero-rated supply?",
+    "answer": "No. Nil-rated is a domestic supply at 0% rate and counts as exempt, so ITC is lost. Zero-rated is export or SEZ supply and keeps ITC."
+  },
+  "mistakes_hook": "\"No tax\" does not mean \"same ITC\"",
+  "mistakes": [
+    {
+      "wrong": "Treating nil-rated supply as zero-rated and allowing ITC",
+      "right": "Nil-rated is an exempt supply. ITC is not available on inputs used exclusively for it."
+    },
+    {
+      "wrong": "Saying all ITC is blocked if a business makes some exempt supplies",
+      "right": "Only exclusive-use ITC is blocked; ITC on common inputs is reversed in proportion (Sec 17(2), 17(3), CGST Act)."
+    },
+    {
+      "wrong": "Treating every supply to an SEZ as zero-rated",
+      "right": "Zero-rated only if made to an SEZ developer or unit for authorised operations."
+    },
+    {
+      "wrong": "Denying ITC on exports because the goods are exempt",
+      "right": "Export is zero-rated; ITC is allowed even if the supply is otherwise exempt."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "CGST/IGST Acts as per ICAI applicability, next attempt",
+  "confidence": "medium",
+  "reviewer_note": "Please verify against current ICAI study material: Sec 2(47) CGST (exempt supply includes nil-rated and non-taxable), Sec 16 IGST (zero-rated), Sec 17(2)/(3) CGST (reversal). Section references kept to those named in the examiner feedback.",
+  "law_sensitive": true,
+  "attempts": 2,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Please verify against current ICAI study material: Sec 2(47) CGST (exempt supply includes nil-rated and non-taxable), Sec 16 IGST (zero-rated), Sec 17(2)/(3) CGST (reversal). Section references kept to those named in the examiner feedback.",
+    "Checker 1: Definition 1 meaning and Steps 3–4 ('no tax is payable' / 'If no: is any tax payable? None payable: exempt'): 'no tax payable' is looser than Sec 2(47). A supply taxed under reverse charge also has no tax payable by the supplier, but it is not an exempt supply. Better: 'Supply attracting a nil rate of tax, wholly exempt under Sec 11 CGST / Sec 6 IGST, or a non-taxable supply (Sec 2(47), CGST Act)'. Step 3 better: 'If no: is it nil-rated, wholly exempt or non-taxable?'",
+    "Checker 1: Key point 3 / Mistake 2 right: you could add that the proportionate reversal is worked out under Rules 42/43 of the CGST Rules, and that under the Explanation to Sec 17(3), Schedule III activities other than sale of land, and of buildings after the completion certificate (Sch II para 5(b)), are left out of the value of exempt supply. This adds precision; nothing in the note is wrong."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.02,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.12,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.28,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟪 CA Final · Concept of the day\nPaper 5: Indirect Tax Laws\nExempt vs Nil-rated vs Zero-rated Supply\n\nIn simple words: Exempt, nil-rated and non-taxable supplies lose ITC. Zero-rated supply (export, SEZ) keeps ITC and can get a refund.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on CGST/IGST Acts as per ICAI applicability, next attempt.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFinal #ICAI #CAStudents #IndAS\n\nref concept2-261129",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

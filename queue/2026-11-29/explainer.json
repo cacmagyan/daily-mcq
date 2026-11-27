@@ -1,0 +1,194 @@
+{
+  "kind": "explainer",
+  "course_id": "cma_final",
+  "paper_code": "Paper 20A",
+  "paper_name": "Strategic Performance Management and Business Valuation",
+  "topic": "Book Value vs Market Value",
+  "concept_topic": "Book Value vs Market Value",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 59.91,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Book Value vs Market Value",
+    "caption_hook": "Books say ₹10 a share, market says ₹25. Which one is right?",
+    "hook_label": "BOOK VS MARKET?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Ma'am, books say ₹10 a share, market says ₹25. Why?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Book value is what accounts show. Market value is what buyers will pay today.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Book vs Market",
+          "sub": "Accounts or buyers?"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So which one is real?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Both. Book looks back at past cost. Market looks ahead at future earnings.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Book",
+            "lines": [
+              "Past cost",
+              "Balance sheet"
+            ],
+            "icon": "doc",
+            "color": "navy"
+          },
+          "right": {
+            "title": "Market",
+            "lines": [
+              "Future hopes",
+              "Exchange price"
+            ],
+            "icon": "chart_up",
+            "color": "green"
+          },
+          "right_on": "Market"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "How do we calculate book value?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Net worth divided by equity shares. Net worth is assets less outside liabilities and preference capital.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "formula",
+          "title": "Book value/share",
+          "formula": "Net worth / Equity shares",
+          "sub": "Net worth = assets - liabilities - pref"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Can you show us with numbers?",
+        "shot": "close",
+        "pose": "ask"
+      },
+      {
+        "who": "teacher",
+        "say": "Net worth is ₹6,00,000, shares are 60,000. So book value is ₹10 per share.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "calc",
+          "top": "₹6,00,000 ÷ 60,000",
+          "big": "₹10"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "And market value, at ₹25 a share?",
+        "shot": "desk",
+        "pose": "think",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Price times shares. That's market capitalisation: ₹15,00,000.",
+        "shot": "board",
+        "pose": "excited",
+        "board": {
+          "kind": "calc",
+          "top": "₹25 × 60,000",
+          "big": "₹15 lakh"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Why is market higher?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Investors expect strong future earnings. Goodwill and hidden assets widen the gap.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Why market is higher",
+          "lines": [
+            "Future earnings",
+            "Goodwill",
+            "Hidden assets"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Can market be below book?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Yes, if earnings look poor. Then price to book ratio is below one.",
+        "shot": "board",
+        "pose": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: Book is Back. Market is where buyers Meet.",
+        "shot": "board",
+        "pose": "thumbs",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Book = Back",
+            "Market = Meet"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "wink"
+      }
+    ]
+  },
+  "checked": true,
+  "serious": false,
+  "check_notes": [
+    "Writer: Example: assets ₹10,00,000 less outside liabilities ₹4,00,000 = net worth ₹6,00,000 (assets/liabilities not spoken, no preference capital assumed). 60,000 shares gives ₹10 book value; ₹25 x 60,000 = ₹15,00,000.",
+    "Checker: Line 6 board sub: 'Net worth = assets - liabilities - pref' says only 'liabilities', which could be read as all liabilities, including equity capital. It should match the voice line: 'Net worth = assets - outside liabilities - pref capital'.",
+    "Checker: Line 6 voice/board (wording): to be precise, net worth for book value should leave out fictitious assets and accumulated losses. A better line is 'real assets less outside liabilities and preference capital'.",
+    "Checker: Line 4 board: 'Future hopes' doesn't match the voice line's 'future earnings'. Use 'Future earnings' so the two are the same.",
+    "Checker: Line 10 (wording): the question is about market value at ₹25 a share, but the answer gives the total market capitalisation. Say clearly that market value per share is ₹25, and market capitalisation (₹25 × 60,000) is ₹15 lakh, against a book net worth of ₹6 lakh."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Example: assets ₹10,00,000 less outside liabilities ₹4,00,000 = net worth ₹6,00,000 (assets/liabilities not spoken, no preference capital assumed). 60,000 shares gives ₹10 book value; ₹25 x 60,000 = ₹15,00,000.",
+  "caption": "🎬 🟥 CMA Final · Book Value vs Market Value\n\nBooks say ₹10 a share, market says ₹25. Which one is right?\n\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 20A: Strategic Performance Management and Business Valuation\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CMAFinal #ICMAI #CMAStudents #CostAccountant\n\nref explainer-261129",
+  "hold": false,
+  "hold_reason": ""
+}

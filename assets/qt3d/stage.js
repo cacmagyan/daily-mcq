@@ -42,6 +42,7 @@ const isNum = (w) => /[0-9₹%]/.test(w);
 // ── look ────────────────────────────────────────────────────
 // each theme is a desk-top set: wood tint, the wall behind (top / middle / near the desk), lamp glow
 const THEMES = {
+  tax:    { floor: '#2f6b55', bg: '#0b2a22', top: '#06201a', mid: '#123d32', hor: '#2a5a4b', lamp: '#ffd98a', felt: true },
   green:  { floor: '#c89668', bg: '#0f1c46', top: '#0b1638', mid: '#1b2f6b', hor: '#3a4f86', lamp: '#ffd98a' },
   purple: { floor: '#b98a63', bg: '#1d1844', top: '#120f2e', mid: '#2c2566', hor: '#56508e', lamp: '#ffd2a0' },
   navy:   { floor: '#c4986e', bg: '#0f1c46', top: '#0a1534', mid: '#17295f', hor: '#33497f', lamp: '#ffe0a0' },
@@ -95,6 +96,15 @@ const woodTex = (() => {
   }
   const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(10, 10); t.rotation = Math.PI / 2;
   t.anisotropy = 8; t.colorSpace = THREE.SRGBColorSpace; return t;
+})();
+// desk felt (tax series): fine fibres and soft mottling, painted grey so the theme tints it
+const feltTex = (() => {
+  const c = document.createElement('canvas'); c.width = c.height = 512;
+  const g = c.getContext('2d'); const r = rng(29);
+  g.fillStyle = '#d4d4d4'; g.fillRect(0, 0, 512, 512);
+  for (let i = 0; i < 60; i++) { const v = 190 + Math.floor(r() * 40); g.fillStyle = `rgba(${v},${v},${v},0.25)`; g.beginPath(); g.arc(r() * 512, r() * 512, 20 + r() * 70, 0, 6.29); g.fill(); }
+  for (let i = 0; i < 26000; i++) { const v = 150 + Math.floor(r() * 100); g.fillStyle = `rgba(${v},${v},${v},0.5)`; g.fillRect(r() * 512, r() * 512, 1 + r() * 1.5, 1); }
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(40, 40); t.colorSpace = THREE.SRGBColorSpace; return t;
 })();
 const floorMat = new THREE.MeshStandardMaterial({ color: '#c89668', map: woodTex, roughness: 0.62, metalness: 0, envMapIntensity: 0.35 });
 const floor = new THREE.Mesh(new THREE.PlaneGeometry(600, 600), floorMat);
@@ -987,11 +997,11 @@ function drawCard(ev, t, role) {
       const isNew = idx >= from;
       if (idx < 0) { st.style.display = 'none'; continue; }
       st.style.display = 'block';
-      st.style.top = '22px'; st.style.bottom = 'auto'; st.style.right = '28px';   // lands in the header, clear of the figures
+      st.style.top = '14px'; st.style.bottom = 'auto'; st.style.right = '18px';   // lands in the header, clear of the figures
       const ss = isNew ? lt - 0.15 - (idx - from) * 0.45 - 0.55 : 9;
       const kk = easeIn(clamp(ss / 0.13));
       st.style.opacity = clamp(ss / 0.06).toFixed(2);
-      st.style.transform = `rotate(${(cls === 'red' ? -8 : 6) + (1 - kk) * 10}deg) scale(${(0.68 * (2.4 - 1.4 * kk)).toFixed(3)})`;
+      st.style.transform = `rotate(${(cls === 'red' ? -8 : 6) + (1 - kk) * 10}deg) scale(${(0.56 * (2.4 - 1.4 * kk)).toFixed(3)})`;
       st.style.transformOrigin = '100% 0';
     }
   }
@@ -1101,10 +1111,28 @@ function drawCaption(ev, t, hide) {
 }
 
 // ── opening sting: logo + "QT TRAP #N" ─────────────────────
+function drawReceipt(t, S, el) {
+  // the tape prints out of the slot in steps (like a printer head), then the panel wipes up
+  const paper = el.querySelector('.paper'), lg = el.querySelector('.lg');
+  const H = paper.offsetHeight || 560;
+  const p = clamp((t - 0.12) / 0.7);
+  const steps = Math.floor(p * 18) / 18;                     // stepped feed
+  const shown = H * (steps * 0.85 + p * 0.15);
+  // the slip unrolls from the slot downward: header first, then each line
+  paper.style.transform = `translateX(${(Math.sin(t * 90) * (p < 1 ? 1.2 : 0)).toFixed(1)}px)`;
+  paper.parentElement.style.height = `${Math.max(0, shown + 4).toFixed(0)}px`;
+  paper.style.top = '0'; paper.style.bottom = 'auto';
+  const a = spring(t - 0.02, 2.4, 0.5);
+  lg.style.transform = `scale(${(0.5 + 0.5 * a).toFixed(3)})`;
+  const out = easeIn(clamp((t - (S.dur - 0.28)) / 0.28));
+  el.style.clipPath = `inset(0 0 ${(out * 100).toFixed(2)}% 0)`;
+  return 1 - out;
+}
 function drawSting(t) {
   const S = PLAN.sting, el = $('sting');
   if (!S || t > S.dur + 0.05) { el.style.display = 'none'; return 0; }
   el.style.display = 'block';
+  if (S.style === 'receipt') return drawReceipt(t, S, el);
   const tile = el.querySelector('.tile'), ttl = el.querySelector('.ttl'), no = el.querySelector('.no b');
   const bars = el.querySelectorAll('.bar');
   const a = spring(t - 0.02, 2.4, 0.5);
@@ -1150,6 +1178,8 @@ window.load = async (plan) => {
   PLAN = plan;
   const th = THEMES[plan.theme] || THEMES.green;
   floorMat.color.set(th.floor);
+  floorMat.map = th.felt ? feltTex : woodTex; floorMat.roughness = th.felt ? 0.95 : 0.62; floorMat.needsUpdate = true;
+  document.body.classList.toggle('look-tax', plan.look === 'tax');
   renderer.setClearColor(th.hor);
   document.body.style.background = th.bg;
   hemi.color.set(th.mid); hemi.groundColor.set(th.floor); hemi.intensity = 0.75;
@@ -1163,7 +1193,15 @@ window.load = async (plan) => {
     for (const im of imgs) { im.src = plan.logo; try { await im.decode(); } catch (e) { /* drawn without it */ } }
     $('logo').style.display = 'flex';
   }
-  if (plan.sting) {
+  if (plan.sting && plan.sting.style === 'receipt') {
+    const st = $('sting'); st.classList.add('receipt');
+    const [w1, ...rest] = String(plan.sting.label || 'TAX TRAP').split(' ');
+    const no = String(plan.sting.n).padStart(4, '0');
+    st.innerHTML = `<div class="lg"><img alt=""></div><div class="slot"></div><div class="paperclip"><div class="paper">
+      <div>CA CMA GYAN</div><div class="dash">- - - - - - - -</div><div class="big">${esc(w1)} <span>${esc(rest.join(' '))}</span></div>
+      <div>${esc(plan.sting.sub || '')}</div><div class="dash">- - - - - - - -</div><div class="tot"><span>No.</span><span>${no}</span></div></div></div>`;
+    if (plan.logo) { const im = st.querySelector('.lg img'); im.src = plan.logo; try { await im.decode(); } catch (e) { /* drawn without it */ } }
+  } else if (plan.sting) {
     const im = document.querySelector('#sting .tile img');
     if (plan.logo) { im.src = plan.logo; try { await im.decode(); } catch (e) { /* drawn without it */ } }
     document.querySelector('#sting .no b').textContent = '#' + plan.sting.n;
@@ -1173,7 +1211,7 @@ window.load = async (plan) => {
   document.querySelector('#end .follow').innerHTML = plan.handle ? `Follow <span>${esc(plan.handle)}</span>` : '';
   LAY = plan.events.map((ev) => ({ prev: layout(ev.prev), cur: layout(ev.cur) }));
   await document.fonts.ready;
-  await Promise.all(['800 40px Pop', '700 40px Pop', '600 40px Pop', '600 40px Int', '700 40px Int', '800 40px Int'].map((f) => document.fonts.load(f, '₹0aA')));
+  await Promise.all(['800 40px Pop', '700 40px Pop', '600 40px Pop', '600 40px Int', '700 40px Int', '800 40px Int', '700 40px Ser', '800 40px Mono'].map((f) => document.fonts.load(f, '₹0aA')));
   drawRupee(); rupeeTex.needsUpdate = true;
   // warm up: draw every scene once so shaders compile before frame 0
   for (let i = 0; i < plan.events.length; i += 1) window.seek(plan.events[i].start + 1.0);

@@ -289,7 +289,9 @@ def make_plan(script: dict, events: list[dict], total: float, handle: str, logo:
             "handle": handle, "header": script.get("header", ""), "question": script.get("question", ""),
             "options": script.get("options", []), "answer": script.get("answer"), "trap": _trap_index(script),
             "optTimes": opt_times or [], "revealAt": reveal_at, "events": out,
-            "sting": {"n": int(script["series_no"]), "dur": STING, "label": script.get("series") or "QT TRAP"}
+            "look": script.get("look"),
+            "sting": {"n": int(script["series_no"]), "dur": STING, "label": script.get("series") or "QT TRAP",
+                      "style": script.get("sting_style"), "sub": script.get("sting_sub", "")}
             if script.get("series_no") else None}
 
 

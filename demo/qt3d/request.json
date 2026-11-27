@@ -5,7 +5,7 @@
  "course_id": "ca_inter",
  "topic": "House property: 30% on annual value",
  "script": {
-  "theme": "navy",
+  "theme": "tax",
   "badge": {
    "tag": "DIRECT TAX",
    "text": "ITA 2025 · HOUSE PROPERTY"
@@ -159,7 +159,7 @@
       },
       {
        "op": "Less:",
-       "l": "30% of annual value",
+       "l": "30% of ₹3,40,000",
        "sec": "s.22(1)(a)",
        "a": "1,02,000",
        "ok": true
@@ -200,7 +200,7 @@
       },
       {
        "op": "Less:",
-       "l": "30% of annual value",
+       "l": "30% of ₹3,40,000",
        "sec": "s.22(1)(a)",
        "a": "1,02,000",
        "ok": true
@@ -228,6 +228,9 @@
      "text": "Save this for your **tax revision**"
     }
    }
-  ]
+  ],
+  "look": "tax",
+  "sting_style": "receipt",
+  "sting_sub": "ITA 2025 · TY 2026-27"
  }
 }

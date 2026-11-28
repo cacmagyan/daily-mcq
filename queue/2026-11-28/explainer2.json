@@ -1,0 +1,9 @@
+{
+  "kind": "explainer2",
+  "course_id": "cma_inter",
+  "topic": "Audit Report vs Audit Certificate",
+  "concept_topic": "Audit Report vs Audit Certificate",
+  "error": "Claude's explainer scripts didn't fit the format: Format problems: line 4: board right_on 'certificate' is not a word of the line; the lines have 202 words; write 120-175",
+  "hold": false,
+  "hold_reason": ""
+}

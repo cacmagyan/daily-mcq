@@ -1,0 +1,165 @@
+{
+  "kind": "concept2",
+  "course_id": "cma_inter",
+  "paper_code": "Paper 10",
+  "paper_name": "Corporate Accounting and Auditing (Auditing)",
+  "author": "Ranjith Shivahari",
+  "topic": "Audit Report vs Audit Certificate",
+  "title": "Audit Report",
+  "title_highlight": "vs Audit Certificate",
+  "hook": "opinion or guarantee?",
+  "simple_words": "A report gives the auditor's opinion. A certificate confirms a fact is correct.",
+  "definitions": [
+    {
+      "term": "Audit Report",
+      "meaning": "Written ==opinion== of the auditor on whether the financial statements give a true and fair view, based on audit work and judgement.",
+      "note": "Opinion, not a guarantee"
+    },
+    {
+      "term": "Audit Certificate",
+      "meaning": "A written ==confirmation== that specific facts or figures are correct, given after checking them fully against records.",
+      "note": "Certifies a fact"
+    }
+  ],
+  "key_points": [
+    "Report covers the whole set of financial statements; certificate covers one item or fact.",
+    "Report is prepared with sampling and test checks; certificate needs full checking of that item.",
+    "Report can be qualified, adverse or a disclaimer; certificate is !!clean and positive only!!.",
+    "Auditor carries more responsibility for a certificate because he vouches for the fact."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "learn it row by row",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Basis",
+      "Audit Report",
+      "Audit Certificate"
+    ],
+    "rows": [
+      [
+        "Nature",
+        "Opinion on true and fair view",
+        "Statement that a fact is correct"
+      ],
+      [
+        "Scope",
+        "Whole financial statements",
+        "A specific item or fact"
+      ],
+      [
+        "Checking",
+        "Test checks, sampling, judgement",
+        "Full checking of that item"
+      ],
+      [
+        "Modification",
+        "Can be qualified or adverse",
+        "Cannot be qualified"
+      ],
+      [
+        "Example",
+        "Statutory audit report (SA 700)",
+        "Turnover or net worth certificate"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Report = opinion, Certificate = fact!",
+    "text": "The auditor gives a view in a report, but a certificate states that a thing is exactly so."
+  },
+  "trick_hook": "O for Opinion, F for Fact",
+  "memory_trick": {
+    "mnemonic": "Report = Reporter's view",
+    "explanation": "A news reporter gives a view on the whole story (opinion, whole accounts). A certificate is like a marksheet: one fixed fact, no 'maybe'."
+  },
+  "steps": [
+    "Write the meaning of each in one line",
+    "Compare scope: whole vs one item",
+    "Compare checking: sampling vs full",
+    "Add modification and an example"
+  ],
+  "exam_tip": "In a 'distinguish' question, draw a two-column table with at least 5 points. Always include scope and the qualification point.",
+  "doubt": {
+    "question": "Can a certificate also be given with a qualification?",
+    "answer": "No. A certificate states a fact positively. If the auditor cannot confirm the fact, he does not certify it. A report can be qualified."
+  },
+  "mistakes_hook": "don't call opinion a guarantee",
+  "mistakes": [
+    {
+      "wrong": "Audit report certifies that the accounts are 100% correct",
+      "right": "Audit report gives an opinion on a true and fair view. It is not a guarantee of accuracy."
+    },
+    {
+      "wrong": "Audit certificate can be qualified like a report",
+      "right": "A certificate is positive and unqualified. If a fact cannot be confirmed, the auditor does not certify it."
+    },
+    {
+      "wrong": "Both are based on test checking",
+      "right": "Report relies on test checks and sampling. Certificate needs full checking of the item certified."
+    }
+  ],
+  "past_papers": [
+    {
+      "ref": "7-140",
+      "papers": "MQP D25 S1, PY J23 SY16, MQP J23 S1 · theory",
+      "point": "Distinguish between an audit report and an audit certificate"
+    },
+    {
+      "ref": "7-150",
+      "papers": "PY D24 · 7 marks",
+      "point": "State differences between audit report and audit certificate for 7 marks"
+    },
+    {
+      "ref": "7-121",
+      "papers": "PY J25 · practical",
+      "point": "What an audit report contains: facts or expression of opinion"
+    }
+  ],
+  "applicability": "",
+  "confidence": "high",
+  "reviewer_note": "Check the differences against the ICMAI study material wording. Point rows are standard but order may differ.",
+  "law_sensitive": false,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Check the differences against the ICMAI study material wording. Point rows are standard but order may differ.",
+    "Checker 1: Past paper 3 tag: the PY J25 source is a multiple-choice item that asks what an audit report contains, with options (e) details of facts, (f) details of frauds, (g) expression of opinion and (h) expression of suggestions. Calling it 'practical' is misleading. Tag it 'MCQ' and say the answer is (g) expression of opinion. The description should also list all four options, not just two ('facts or expression of opinion').",
+    "Checker 1: Table row 4 and key point 3: for completeness the report side should read 'Can be unmodified, qualified, adverse or a disclaimer of opinion', so the table matches key point 3. You could also add a brief line saying the 'certificate cannot be qualified' rule follows the traditional ICMAI textbook distinction. This is wording polish only."
+  ],
+  "images": [
+    "concept2_1.jpg",
+    "concept2_2.jpg",
+    "concept2_3.jpg",
+    "concept2_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.12,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟧 CMA Inter · Concept of the day\nPaper 10: Corporate Accounting and Auditing (Auditing)\nAudit Report vs Audit Certificate\n\nIn simple words: A report gives the auditor's opinion. A certificate confirms a fact is correct.\n\n📝 Asked in past papers: PY D24, PY J23, PY J25\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks and the past exam radar.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nNotes by Ranjith Shivahari\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CMAInter #CMAIntermediate #ICMAI #CMAStudents\n\nref concept2-261128",
+  "story": "concept2_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

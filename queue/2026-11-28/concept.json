@@ -1,0 +1,151 @@
+{
+  "kind": "concept",
+  "course_id": "ca_final",
+  "paper_code": "Paper 4",
+  "paper_name": "Direct Tax Laws and International Taxation",
+  "author": "Rahul kp",
+  "topic": "Exemption vs Deduction (Income-tax)",
+  "title": "Exemption vs",
+  "title_highlight": "Deduction",
+  "hook": "same relief? not at all!",
+  "simple_words": "Exemption keeps income out of the computation. Deduction cuts income after it is counted in Gross Total Income.",
+  "definitions": [
+    {
+      "term": "Exemption",
+      "meaning": "An income that the Act says is not taxed, so it is left out of total income and does not enter Gross Total Income.",
+      "note": "Out before GTI"
+    },
+    {
+      "term": "Deduction",
+      "meaning": "An amount allowed under Chapter VI-A that is subtracted from Gross Total Income to reach Total Income.",
+      "note": "Out after GTI"
+    }
+  ],
+  "key_points": [
+    "==Exemption== works first: the income is excluded, so it is never in GTI.",
+    "==Deduction== works later: income is first included in GTI, then Chapter VI-A is subtracted.",
+    "Both reduce tax, but at different stages of the computation.",
+    "!!Chapter VI-A deductions cannot exceed GTI!! and are not given against exempt income."
+  ],
+  "formula_heading": "The 5-Point Comparison",
+  "formula_hook": "spot the stage, spot the type",
+  "formulas": [],
+  "table": {
+    "headers": [
+      "Point",
+      "Exemption",
+      "Deduction"
+    ],
+    "rows": [
+      [
+        "Stage",
+        "Before GTI",
+        "After GTI"
+      ],
+      [
+        "Included in GTI?",
+        "No",
+        "Yes"
+      ],
+      [
+        "Where found",
+        "Exempt-income provisions",
+        "Chapter VI-A"
+      ],
+      [
+        "Example",
+        "Agricultural income",
+        "Donation, 80C investment"
+      ],
+      [
+        "Effect",
+        "Income never taxed",
+        "Total Income reduced"
+      ]
+    ]
+  },
+  "entries": [],
+  "insight": {
+    "punchline": "Exempt out, deduct after!",
+    "text": "Exemption removes the income itself; deduction removes an amount from GTI that already includes the income."
+  },
+  "trick_hook": "GTI is the dividing line",
+  "memory_trick": {
+    "mnemonic": "Exempt = Exit before GTI",
+    "explanation": "Exempt income exits at the door and never enters GTI. Deduction is a guest already inside who leaves later, through Chapter VI-A."
+  },
+  "steps": [
+    "Compute income under each head",
+    "Leave out exempt income",
+    "Add heads and set off losses: GTI",
+    "Subtract Chapter VI-A deductions",
+    "Result is Total Income"
+  ],
+  "exam_tip": "In a computation, never show exempt income in GTI, and never subtract Chapter VI-A items before arriving at GTI.",
+  "doubt": {
+    "question": "Is a rebate also a deduction?",
+    "answer": "No. Deduction reduces income. Rebate reduces the tax itself, after tax is computed on Total Income."
+  },
+  "mistakes_hook": "stage mix-ups cost marks",
+  "mistakes": [
+    {
+      "wrong": "Including exempt income in GTI and then deducting it under Chapter VI-A",
+      "right": "Exempt income is excluded at the head level and never enters GTI."
+    },
+    {
+      "wrong": "Deducting Chapter VI-A items from each head of income",
+      "right": "Chapter VI-A deductions are subtracted from Gross Total Income, not from individual heads."
+    },
+    {
+      "wrong": "Treating rebate as a deduction from income",
+      "right": "Rebate is a reduction in tax payable, not in income."
+    }
+  ],
+  "past_papers": [],
+  "applicability": "Income-tax Act, 1961 as applicable for A.Y. 2026-27",
+  "confidence": "medium",
+  "reviewer_note": "Chapter VI-A deductions are largely unavailable under the new regime (section 115BAC); the note speaks of the general scheme. Consider adding that caveat. Example 80C is old-regime only.",
+  "law_sensitive": true,
+  "attempts": 1,
+  "serious": false,
+  "needs_check": true,
+  "check_notes": [
+    "Writer: Chapter VI-A deductions are largely unavailable under the new regime (section 115BAC); the note speaks of the general scheme. Consider adding that caveat. Example 80C is old-regime only.",
+    "Checker 1: Table row 4 (Example – Deduction: 'Donation, 80C investment') and key points 2–4: these only apply under the old regime. For A.Y. 2026-27 the default is the new regime u/s 115BAC(1A), which does not allow most Chapter VI-A deductions, including 80C and 80G; under it, only a few, such as 80CCD(2) and 80JJAA, are allowed. Add a line: 'Deductions like 80C/80G are available only if the assessee opts out of the new regime u/s 115BAC.'",
+    "Checker 1: Table row 5 (Effect – Exemption: 'Income never taxed'): this is too absolute for agricultural income. For individuals/HUFs it is still counted for rate purposes under partial integration. Suggested wording: 'Income excluded from total income (agricultural income may still affect the rate through partial integration).'",
+    "Checker 1: Key point 4: 'cannot exceed GTI' is correct u/s 80A(2). For completeness, also say that Chapter VI-A deductions are not allowed against certain incomes inside GTI, such as STCG u/s 111A, LTCG u/s 112/112A and winnings u/s 115BB."
+  ],
+  "images": [
+    "concept_1.jpg",
+    "concept_2.jpg",
+    "concept_3.jpg",
+    "concept_4.jpg"
+  ],
+  "fit_notes": [],
+  "fit": [
+    {
+      "slide": 1,
+      "zoom": 1.04,
+      "overflow": false
+    },
+    {
+      "slide": 2,
+      "zoom": 1.3,
+      "overflow": false
+    },
+    {
+      "slide": 3,
+      "zoom": 1.18,
+      "overflow": false
+    },
+    {
+      "slide": 4,
+      "zoom": 1.3,
+      "overflow": false
+    }
+  ],
+  "caption": "📒 🟪 CA Final · Concept of the day\nPaper 4: Direct Tax Laws and International Taxation\nExemption vs Deduction (Income-tax)\n\nIn simple words: Exemption keeps income out of the computation. Deduction cuts income after it is counted in Gross Total Income.\n\nSwipe for the summary table, a memory trick, the mistakes that cost marks.\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\n\nBased on Income-tax Act, 1961 as applicable for A.Y. 2026-27.\n\nNotes by Rahul kp\n\nFollow @cacmagyan for daily MCQs and concept notes.\n\n#ConceptNotes #CAFinal #ICAI #CAStudents #IndAS\n\nref concept-261128",
+  "story": "concept_story.jpg",
+  "hold": false,
+  "hold_reason": ""
+}

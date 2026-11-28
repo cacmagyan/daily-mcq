@@ -1,0 +1,158 @@
+{
+  "date": "2026-11-28",
+  "day": 38,
+  "status": "pending_review",
+  "approved": false,
+  "created_at": "2026-11-28T13:29:11+05:30",
+  "items": [
+    {
+      "course_id": "ca_foundation",
+      "paper_code": "Paper 3",
+      "paper_name": "Quantitative Aptitude: Business Mathematics",
+      "topic": "Permutations and Combinations",
+      "question": "A society has 6 members. In how many more ways can a president, a secretary and a treasurer (three different posts, one person each) be appointed than a 3-member committee with no posts be selected?",
+      "options": [
+        "20",
+        "120",
+        "100",
+        "140"
+      ],
+      "correct": "C",
+      "explanation": "Posts are different, so order matters: 6P3 = 120. A committee has no order: 6C3 = 20. Difference = 120 − 20 = 100.",
+      "working": [
+        {
+          "label": "Office bearers = 6P3",
+          "value": "120"
+        },
+        {
+          "label": "Committee = 6C3",
+          "value": "20"
+        },
+        {
+          "label": "Difference",
+          "value": "100"
+        }
+      ],
+      "why_not": {
+        "B": "Gave only the ways to appoint office bearers, 6P3, and did not subtract the committee ways.",
+        "A": "Gave only the committee ways, 6C3, and ignored the difference asked.",
+        "D": "Added 120 and 20 instead of finding the difference."
+      },
+      "exam_tip": "Different posts mean swapping people gives a new result, so use nPr. Plain selection means nCr.",
+      "calculation": "p = 6*5*4\nc = 6*5*4/(3*2*1)\nanswer = p - c",
+      "applicability": "",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": false,
+      "linked_concept": "Permutation vs Combination",
+      "author": "Rahul kp",
+      "images": {
+        "question": "ca_foundation_q.jpg",
+        "answer": "ca_foundation_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟩 CA Foundation · MCQ of the day · Day 38\nPaper 3: Quantitative Aptitude: Business Mathematics\nTopic: Permutations and Combinations\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nPrepared by Rahul kp\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFoundation #ICAI #CAStudents #DailyMCQ #CAExams\n\nref ca-foundation-261128",
+      "story": "ca_foundation_story.jpg",
+      "answer_story": "ca_foundation_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_inter",
+      "paper_code": "Paper 5",
+      "paper_name": "Auditing and Ethics",
+      "topic": "SA 200 Auditor's Responsibilities",
+      "question": "Under SA 200, an auditor plans and performs the audit with an attitude that includes a questioning mind and a critical assessment of audit evidence. What is this attitude called?",
+      "options": [
+        "Professional judgment",
+        "Reasonable assurance",
+        "Materiality",
+        "Professional skepticism"
+      ],
+      "correct": "D",
+      "explanation": "SA 200 defines professional skepticism as an attitude with a questioning mind, alertness to conditions indicating possible misstatement, and critical assessment of audit evidence.",
+      "working": [],
+      "why_not": {
+        "A": "Judgment is applying knowledge and experience to decisions, not the questioning attitude.",
+        "B": "Reasonable assurance is a high level of assurance, not an attitude.",
+        "C": "Materiality is a threshold for misstatements, not an attitude."
+      },
+      "exam_tip": "Skepticism = attitude (questioning mind). Judgment = application of knowledge and experience.",
+      "calculation": "",
+      "applicability": "SA 200",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: Pure recall: the stem closely paraphrases the SA 200 definition. That is acceptable at this level, but it makes the question easy.",
+        "Checker: The stem leaves out one part of the definition, \"being alert to conditions which may indicate possible misstatement due to error or fraud\". This does not make the answer ambiguous."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_inter_q.jpg",
+        "answer": "ca_inter_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟦 CA Inter · MCQ of the day · Day 38\nPaper 5: Auditing and Ethics\nTopic: SA 200 Auditor's Responsibilities\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on SA 200.\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAInter #CAIntermediate #ICAI #DailyMCQ #CAStudents\n\nref ca-inter-261128",
+      "story": "ca_inter_story.jpg",
+      "answer_story": "ca_inter_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    },
+    {
+      "course_id": "ca_final",
+      "paper_code": "Paper 3",
+      "paper_name": "Advanced Auditing, Assurance and Professional Ethics",
+      "topic": "SA 505 - External Confirmations",
+      "question": "Under SA 505, management refuses to allow the auditor to send a confirmation request to a particular debtor. What should the auditor do first?",
+      "options": [
+        "Inquire why management refuses and evaluate the reasons given",
+        "Drop the balance from testing as it is not material",
+        "Treat the refusal as proof of fraud and resign immediately",
+        "Accept the refusal and report a qualified opinion at once"
+      ],
+      "correct": "A",
+      "explanation": "SA 505 requires the auditor to inquire into management's reasons and seek audit evidence on their validity and reasonableness. The auditor then evaluates the effect on risk assessment and designs alternative procedures.",
+      "working": [],
+      "why_not": {
+        "D": "Modifying the opinion comes only after inquiry and alternative procedures fail to give evidence.",
+        "C": "Refusal does not automatically prove fraud; resignation is not the first step.",
+        "B": "Materiality is not assumed; the balance cannot be dropped just because management objects."
+      },
+      "exam_tip": "Refusal to allow confirmation: inquire, evaluate, then alternative procedures. Modify opinion only if evidence is still lacking.",
+      "calculation": "",
+      "applicability": "SA 505 External Confirmations (ICAI)",
+      "confidence": "high",
+      "reviewer_note": "",
+      "attempts": 1,
+      "check_notes": [
+        "Checker: The distractors are too easy to rule out: they use extreme wording ('resign immediately', 'at once', 'proof of fraud') and an unsupported materiality assumption. Any student can eliminate them without really knowing paragraph 8 of SA 505. Better distractors would be plausible steps from later in the sequence, such as going straight to alternative procedures or straight to telling those charged with governance.",
+        "Checker: Option A leaves out part of the first step. SA 505 also requires the auditor to seek evidence on whether management's reasons are valid and reasonable, not just to evaluate them. This is a polish point only."
+      ],
+      "difficulty": "easy",
+      "law_sensitive": false,
+      "serious": false,
+      "needs_check": true,
+      "author": "Ranjith Shivahari",
+      "images": {
+        "question": "ca_final_q.jpg",
+        "answer": "ca_final_a.jpg"
+      },
+      "fit_notes": [],
+      "caption": "🟪 CA Final · MCQ of the day · Day 38\nPaper 3: Advanced Auditing, Assurance and Professional Ethics\nTopic: SA 505 - External Confirmations\n\nTry it before you swipe. Comment A, B, C or D 👇\nSlide 2 has the answer with the full working.\n\nBased on SA 505 External Confirmations (ICAI).\n\nPrepared by Ranjith Shivahari\n\nFind your course by colour:\n🟩 CA Foundation  🟦 CA Inter  🟪 CA Final\n🟨 CMA CAT  🟧 CMA Inter  🟥 CMA Final\n\nFollow @cacmagyan for one MCQ a day in every course.\n\n#CAFinal #ICAI #CAStudents #DailyMCQ #IndAS\n\nref ca-final-261128",
+      "story": "ca_final_story.jpg",
+      "answer_story": "ca_final_answer_story.jpg",
+      "hold": false,
+      "hold_reason": ""
+    }
+  ]
+}

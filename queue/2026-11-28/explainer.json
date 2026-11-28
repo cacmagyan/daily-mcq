@@ -1,0 +1,191 @@
+{
+  "kind": "explainer",
+  "course_id": "ca_final",
+  "paper_code": "Paper 4",
+  "paper_name": "Direct Tax Laws and International Taxation",
+  "topic": "Exemption vs Deduction (Income-tax)",
+  "concept_topic": "Exemption vs Deduction (Income-tax)",
+  "video": "explainer.mp4",
+  "cover": "explainer_cover.jpg",
+  "style": "story",
+  "seconds": 86.29,
+  "thumb_ms": 1300,
+  "voice": "teacher: af_heart, girl: af_sarah, boy: am_fenrir",
+  "script": {
+    "title": "Exemption vs Deduction in Income-tax",
+    "caption_hook": "Exemption and deduction both cut tax. But are they the same?",
+    "hook_label": "SAME RELIEF?",
+    "lines": [
+      {
+        "who": "boy",
+        "say": "Exemption and deduction both reduce tax, right? Same thing, no?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Not the same. The difference is timing. Watch one line on the board: Gross Total Income, or GTI.",
+        "shot": "board",
+        "pose": "present",
+        "board": {
+          "kind": "title",
+          "title": "Exempt vs Deduct",
+          "sub": "The dividing line is GTI"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "So which one comes before GTI?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "Exemption stays out before GTI. Deduction is counted in GTI first, then subtracted after it.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "versus",
+          "left": {
+            "title": "Exemption",
+            "lines": [
+              "Before GTI",
+              "Never included"
+            ],
+            "icon": "door",
+            "color": "green"
+          },
+          "right": {
+            "title": "Deduction",
+            "lines": [
+              "After GTI",
+              "Included first"
+            ],
+            "icon": "scale",
+            "color": "blue"
+          },
+          "right_on": "Deduction"
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Any example, Ma'am?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "listen"
+      },
+      {
+        "who": "teacher",
+        "say": "Agricultural income is exempt, so it's not in GTI. Under the old regime it may still set the tax rate: partial integration.",
+        "shot": "board",
+        "pose": "explain",
+        "board": {
+          "kind": "list",
+          "title": "Agricultural income",
+          "lines": [
+            "Exempt: not in GTI",
+            "Old regime: rate only"
+          ]
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Hmm, and standard deduction? That's a deduction too, no?",
+        "shot": "close",
+        "pose": "doubt"
+      },
+      {
+        "who": "teacher",
+        "say": "Head-wise deductions, like standard deduction under section 16, come before GTI. Chapter VI-A deductions come after GTI.",
+        "shot": "board",
+        "pose": "think",
+        "board": {
+          "kind": "list",
+          "title": "Before vs after GTI",
+          "lines": [
+            "Section 16: before GTI",
+            "Chapter VI-A: after GTI"
+          ]
+        }
+      },
+      {
+        "who": "boy",
+        "say": "Can we try numbers?",
+        "shot": "desk",
+        "pose": "excited",
+        "react": "happy"
+      },
+      {
+        "who": "teacher",
+        "say": "GTI is ₹6,00,000. He invests ₹1,50,000 in instruments eligible under section 80C. Total income is ₹4,50,000.",
+        "shot": "board",
+        "pose": "happy",
+        "board": {
+          "kind": "calc",
+          "top": "6,00,000-1,50,000",
+          "big": "₹4,50,000"
+        }
+      },
+      {
+        "who": "girl",
+        "say": "Wait, so agricultural income of ₹20,000 isn't in that ₹6,00,000?",
+        "shot": "close",
+        "pose": "shocked"
+      },
+      {
+        "who": "teacher",
+        "say": "Correct. It's excluded from GTI, so no Chapter VI-A deduction is claimed against it.",
+        "shot": "board",
+        "pose": "thumbs"
+      },
+      {
+        "who": "boy",
+        "say": "Is a rebate also a deduction?",
+        "shot": "desk",
+        "pose": "ask",
+        "react": "think"
+      },
+      {
+        "who": "teacher",
+        "say": "No. Deduction reduces income. Rebate reduces the tax itself, after tax is computed on total income.",
+        "shot": "board",
+        "pose": "explain"
+      },
+      {
+        "who": "teacher",
+        "say": "Remember: exempt exits before GTI, deduct after GTI.",
+        "shot": "board",
+        "pose": "wink",
+        "board": {
+          "kind": "words",
+          "lines": [
+            "Exempt: before",
+            "Deduct: after"
+          ]
+        }
+      },
+      {
+        "who": "teacher",
+        "say": "Comment NOTES for the full note, and follow for one concept every day!",
+        "shot": "follow",
+        "pose": "happy"
+      }
+    ]
+  },
+  "checked": false,
+  "serious": true,
+  "serious_reason": "The checker found errors that weren't fixed (Checker: Line 6 (voice and board 'Old regime: rate only'): this suggests partial integration of agricultural income applies only under the old regime. For A.Y. )",
+  "check_notes": [
+    "Not confirmed after 3 attempts",
+    "Checker: Line 6 (voice and board 'Old regime: rate only'): this suggests partial integration of agricultural income applies only under the old regime. For A.Y. 2026-27 the Finance Act also applies partial integration to individuals/HUFs taxed under the default new regime of section 115BAC. Correct version: 'Agricultural income is exempt, so it's not in GTI, but it may still be used to work out the tax rate (partial integration), under both the old and new regimes, when the conditions are met.'",
+    "Checker: Line 10 (example): an 80C deduction is allowed only if the individual opts out of section 115BAC. The new regime is the default for A.Y. 2026-27 and does not allow 80C. The example has to say 'under the old regime', and also that no other Chapter VI-A deduction applies, for ₹4,50,000 to be the only correct total income.",
+    "Checker: Line 4 board ('Deduction: After GTI') and Line 15 voice and board ('deduct after GTI', 'Deduct: after'): this contradicts Line 8, which correctly says head-wise deductions such as standard deduction under section 16 come before GTI. As a general rule it is wrong. Correct version: 'Exempt income never enters GTI; Chapter VI-A deductions come after GTI (head-wise deductions are allowed while computing GTI).'",
+    "Checker: Line 2 ('The difference is timing'): this is misleading. The real difference is that exempt income is never part of total income at all, while a deduction is allowed out of income that is otherwise taxable. Rephrase it as a difference in nature, not just timing."
+  ],
+  "attempts": 3,
+  "reviewer_note": "Added caveats: partial integration for agricultural income (old regime, ₹20,000 > ₹5,000 and total income above basic exemption limit, per examiner), standard deduction u/s 16 is head-wise (before GTI), and 80C wording changed to eligible instruments. Please verify word count (~175 max) and that ₹6,00,000 is post-standard-deduction salary, which the script says only implicitly as GTI.",
+  "caption": "🎬 🟪 CA Final · Exemption vs Deduction in Income-tax\n\nExemption and deduction both cut tax. But are they the same?\n\nSave 🔖 this for revision.\n💬 Comment NOTES and we'll DM you the full concept note (PDF).\nPaper 4: Direct Tax Laws and International Taxation\n\nFollow @cacmagyan for one concept every day.\n\n#ConceptExplained #CAFinal #ICAI #CAStudents #IndAS\n\nref explainer-261128",
+  "hold": true,
+  "hold_reason": "The checker found errors that weren't fixed (Checker: Line 6 (voice and board 'Old regime: rate only'): this suggests partial integration of agricultural income applies only under the old regime. For A.Y. )"
+}

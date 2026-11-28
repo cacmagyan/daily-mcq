@@ -94,7 +94,7 @@ pyq:
   # Which paper's trap goes out on which weekday (keys in qtpuzzle.SUBJECTS; any day not listed is QT).
   # A paper whose bank has run out falls back to QT. Each paper numbers its own series ("ECO TRAP #3").
   # "/regen pyq eco" makes that day's reel from a given paper.
-  trap_days: { wed: costing, thu: eco, sat: tax }
+  trap_days: { tue: tax, wed: costing, thu: eco, sat: tax }
   hashtags_tax: ["#IncomeTax", "#ITA2025", "#CAInter", "#CMAInter", "#TaxComputation"]
   hashtags_costing: ["#CAInter", "#CostingCA", "#CAStudents", "#ICAI", "#CostAccounting"]
   hashtags_eco: ["#CAFoundation", "#BusinessEconomics", "#CAStudents", "#ICAI", "#Economics"]

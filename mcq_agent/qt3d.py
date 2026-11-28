@@ -570,7 +570,18 @@ def render(script: dict, out: Path, cover: Path | None = None, handle: str = "",
     if res.returncode:
         raise QT3DError("ffmpeg could not join the reel: " + res.stderr[-200:])
 
-    cover_t = next((e["start"] + 0.9 for e in plan["events"] if (e["card"] or {}).get("kind") == "trap"), None)
+    def _trap_at(e):
+        c = e["card"] or {}
+        if c.get("kind") == "trap":
+            return e["start"] + 0.9
+        if c.get("kind") == "stmt":                         # the ledger row the TRAP stamp lands on
+            rows = (c.get("rows") or [])[: c.get("show", len(c.get("rows") or []))]
+            frm = int(c.get("from", 0))
+            for i in range(frm, len(rows)):
+                if rows[i].get("trap") and not rows[i].get("struck"):
+                    return e["start"] + 0.15 + (i - frm) * 0.45 + 1.1
+        return None
+    cover_t = next((x for x in map(_trap_at, plan["events"]) if x is not None), None)
     if cover is not None and cover_t is not None:
         errors: list[str] = []
         with sync_playwright() as p:

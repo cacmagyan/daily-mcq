@@ -1,14 +1,469 @@
 {
   "kind": "pyq",
   "format": "qt_video",
-  "subject": "qt",
-  "course_id": "ca_foundation",
-  "paper_code": "Paper 3",
-  "paper_name": "Quantitative Aptitude: Business Mathematics",
-  "topic_key": "Ratio and proportion",
-  "ref": "ca_foundation_qt|S25-2",
+  "subject": "tax",
+  "course_id": "ca_inter",
+  "paper_code": "Direct Tax",
+  "paper_name": "Income-tax Act, 2025",
+  "date": "2026-11-28",
+  "ref": "tax|hp-30pct",
+  "topic": "House property: 30% on annual value",
+  "script": {
+    "theme": "tax",
+    "look": "tax",
+    "sting_style": "receipt",
+    "sting_sub": "ITA 2025 · TY 2026-27",
+    "badge": {
+      "tag": "DIRECT TAX",
+      "text": "ITA 2025 · HOUSE PROPERTY"
+    },
+    "header": "Income-tax Act, 2025 · House property: 30% on annual value",
+    "question": "",
+    "options": [],
+    "scene": {
+      "type": "desk",
+      "prop": "house"
+    },
+    "series": "TAX TRAP",
+    "lines": [
+      {
+        "say": "Most students take the 30% deduction on the wrong number.",
+        "card": {
+          "kind": "hook",
+          "small": "House property · ITA 2025",
+          "big": "30% of WHAT?"
+        }
+      },
+      {
+        "say": "This is house property under the new Income-tax Act, 2025.",
+        "card": {
+          "kind": "attempt",
+          "tag": "AS PER",
+          "exam": "Income-tax Act, 2025",
+          "when": "Tax year 2026-27",
+          "sub": "Sections 20 to 22 · House property"
+        }
+      },
+      {
+        "say": "A let-out flat. Expected rent, ₹3 lakh. Actual rent, ₹30,000 a month. Municipal tax paid, ₹20,000. Home-loan interest, ₹1.5 lakh.",
+        "card": {
+          "kind": "step",
+          "title": "The facts",
+          "rows": [
+            "Expected rent: ₹3,00,000",
+            "Actual rent: ₹30,000 × 12 = **₹3,60,000**",
+            "Municipal tax paid: ₹20,000",
+            "Loan interest: ₹1,50,000"
+          ]
+        }
+      },
+      {
+        "say": "Under section 21, annual value starts with the higher of expected rent and actual rent. That's ₹3,60,000.",
+        "card": {
+          "kind": "stmt",
+          "title": "Income from House Property",
+          "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+          "rows": [
+            {
+              "l": "Gross annual value",
+              "sec": "s.21(1)",
+              "a": "3,60,000"
+            }
+          ],
+          "from": 0
+        }
+      },
+      {
+        "say": "Take off the municipal tax actually paid. Annual value is ₹3,40,000.",
+        "card": {
+          "kind": "stmt",
+          "title": "Income from House Property",
+          "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+          "rows": [
+            {
+              "l": "Gross annual value",
+              "sec": "s.21(1)",
+              "a": "3,60,000"
+            },
+            {
+              "op": "Less:",
+              "l": "Municipal tax paid",
+              "sec": "s.21(3)",
+              "a": "20,000"
+            },
+            {
+              "l": "Annual value",
+              "a": "3,40,000",
+              "tot": true
+            }
+          ],
+          "from": 1
+        }
+      },
+      {
+        "say": "Now most students take 30% of ₹3,60,000. That's ₹1,08,000.",
+        "card": {
+          "kind": "stmt",
+          "title": "Income from House Property",
+          "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+          "rows": [
+            {
+              "l": "Gross annual value",
+              "sec": "s.21(1)",
+              "a": "3,60,000"
+            },
+            {
+              "op": "Less:",
+              "l": "Municipal tax paid",
+              "sec": "s.21(3)",
+              "a": "20,000"
+            },
+            {
+              "l": "Annual value",
+              "a": "3,40,000",
+              "tot": true
+            },
+            {
+              "op": "Less:",
+              "l": "30% of ₹3,60,000",
+              "a": "1,08,000",
+              "trap": true
+            }
+          ],
+          "from": 3
+        }
+      },
+      {
+        "say": "Wrong. Section 22 gives 30% of the annual value, after municipal tax. 30% of ₹3,40,000 is ₹1,02,000.",
+        "card": {
+          "kind": "stmt",
+          "title": "Income from House Property",
+          "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+          "rows": [
+            {
+              "l": "Gross annual value",
+              "sec": "s.21(1)",
+              "a": "3,60,000"
+            },
+            {
+              "op": "Less:",
+              "l": "Municipal tax paid",
+              "sec": "s.21(3)",
+              "a": "20,000"
+            },
+            {
+              "l": "Annual value",
+              "a": "3,40,000",
+              "tot": true
+            },
+            {
+              "op": "Less:",
+              "l": "30% of ₹3,60,000",
+              "a": "1,08,000",
+              "trap": true,
+              "struck": true
+            },
+            {
+              "op": "Less:",
+              "l": "30% of ₹3,40,000",
+              "sec": "s.22(1)(a)",
+              "a": "1,02,000",
+              "ok": true
+            }
+          ],
+          "from": 3
+        }
+      },
+      {
+        "say": "Then the full loan interest. A let-out house has no ₹2 lakh cap. Income from house property: ₹88,000.",
+        "card": {
+          "kind": "stmt",
+          "title": "Income from House Property",
+          "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+          "rows": [
+            {
+              "l": "Gross annual value",
+              "sec": "s.21(1)",
+              "a": "3,60,000"
+            },
+            {
+              "op": "Less:",
+              "l": "Municipal tax paid",
+              "sec": "s.21(3)",
+              "a": "20,000"
+            },
+            {
+              "l": "Annual value",
+              "a": "3,40,000",
+              "tot": true
+            },
+            {
+              "op": "Less:",
+              "l": "30% of ₹3,60,000",
+              "a": "1,08,000",
+              "trap": true,
+              "struck": true
+            },
+            {
+              "op": "Less:",
+              "l": "30% of ₹3,40,000",
+              "sec": "s.22(1)(a)",
+              "a": "1,02,000",
+              "ok": true
+            },
+            {
+              "op": "Less:",
+              "l": "Interest on loan",
+              "sec": "s.22(1)(b)",
+              "a": "1,50,000"
+            },
+            {
+              "l": "House property income",
+              "a": "88,000",
+              "tot": true,
+              "final": true
+            }
+          ],
+          "from": 5
+        }
+      },
+      {
+        "say": "Save this for your tax revision. Follow for one computation every week.",
+        "card": {
+          "kind": "cta",
+          "text": "Save this for your **tax revision**"
+        }
+      }
+    ],
+    "series_no": 1
+  },
+  "tax": {
+    "id": "hp-30pct",
+    "badge": "ITA 2025 · HOUSE PROPERTY",
+    "topic": "House property: 30% on annual value",
+    "hook": "Most students take the 30% deduction on the wrong number.",
+    "facts": "House property under the Income-tax Act, 2025 (tax year 2026-27):\nExpected rent ₹3,00,000 · Actual rent ₹30,000/month · Municipal tax paid ₹20,000 · Loan interest ₹1,50,000",
+    "ask": "Is the 30% on ₹3,60,000 or ₹3,40,000? Watch till the end 👀",
+    "law": "Sections 20–22, Income-tax Act, 2025.",
+    "lines": [
+      {
+        "say": "Most students take the 30% deduction on the wrong number.",
+        "card": {
+          "kind": "hook",
+          "small": "House property · ITA 2025",
+          "big": "30% of WHAT?"
+        }
+      },
+      {
+        "say": "This is house property under the new Income-tax Act, 2025.",
+        "card": {
+          "kind": "attempt",
+          "tag": "AS PER",
+          "exam": "Income-tax Act, 2025",
+          "when": "Tax year 2026-27",
+          "sub": "Sections 20 to 22 · House property"
+        }
+      },
+      {
+        "say": "A let-out flat. Expected rent, ₹3 lakh. Actual rent, ₹30,000 a month. Municipal tax paid, ₹20,000. Home-loan interest, ₹1.5 lakh.",
+        "card": {
+          "kind": "step",
+          "title": "The facts",
+          "rows": [
+            "Expected rent: ₹3,00,000",
+            "Actual rent: ₹30,000 × 12 = **₹3,60,000**",
+            "Municipal tax paid: ₹20,000",
+            "Loan interest: ₹1,50,000"
+          ]
+        }
+      },
+      {
+        "say": "Under section 21, annual value starts with the higher of expected rent and actual rent. That's ₹3,60,000.",
+        "card": {
+          "kind": "stmt",
+          "title": "Income from House Property",
+          "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+          "rows": [
+            {
+              "l": "Gross annual value",
+              "sec": "s.21(1)",
+              "a": "3,60,000"
+            }
+          ],
+          "from": 0
+        }
+      },
+      {
+        "say": "Take off the municipal tax actually paid. Annual value is ₹3,40,000.",
+        "card": {
+          "kind": "stmt",
+          "title": "Income from House Property",
+          "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+          "rows": [
+            {
+              "l": "Gross annual value",
+              "sec": "s.21(1)",
+              "a": "3,60,000"
+            },
+            {
+              "op": "Less:",
+              "l": "Municipal tax paid",
+              "sec": "s.21(3)",
+              "a": "20,000"
+            },
+            {
+              "l": "Annual value",
+              "a": "3,40,000",
+              "tot": true
+            }
+          ],
+          "from": 1
+        }
+      },
+      {
+        "say": "Now most students take 30% of ₹3,60,000. That's ₹1,08,000.",
+        "card": {
+          "kind": "stmt",
+          "title": "Income from House Property",
+          "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+          "rows": [
+            {
+              "l": "Gross annual value",
+              "sec": "s.21(1)",
+              "a": "3,60,000"
+            },
+            {
+              "op": "Less:",
+              "l": "Municipal tax paid",
+              "sec": "s.21(3)",
+              "a": "20,000"
+            },
+            {
+              "l": "Annual value",
+              "a": "3,40,000",
+              "tot": true
+            },
+            {
+              "op": "Less:",
+              "l": "30% of ₹3,60,000",
+              "a": "1,08,000",
+              "trap": true
+            }
+          ],
+          "from": 3
+        }
+      },
+      {
+        "say": "Wrong. Section 22 gives 30% of the annual value, after municipal tax. 30% of ₹3,40,000 is ₹1,02,000.",
+        "card": {
+          "kind": "stmt",
+          "title": "Income from House Property",
+          "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+          "rows": [
+            {
+              "l": "Gross annual value",
+              "sec": "s.21(1)",
+              "a": "3,60,000"
+            },
+            {
+              "op": "Less:",
+              "l": "Municipal tax paid",
+              "sec": "s.21(3)",
+              "a": "20,000"
+            },
+            {
+              "l": "Annual value",
+              "a": "3,40,000",
+              "tot": true
+            },
+            {
+              "op": "Less:",
+              "l": "30% of ₹3,60,000",
+              "a": "1,08,000",
+              "trap": true,
+              "struck": true
+            },
+            {
+              "op": "Less:",
+              "l": "30% of ₹3,40,000",
+              "sec": "s.22(1)(a)",
+              "a": "1,02,000",
+              "ok": true
+            }
+          ],
+          "from": 3
+        }
+      },
+      {
+        "say": "Then the full loan interest. A let-out house has no ₹2 lakh cap. Income from house property: ₹88,000.",
+        "card": {
+          "kind": "stmt",
+          "title": "Income from House Property",
+          "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+          "rows": [
+            {
+              "l": "Gross annual value",
+              "sec": "s.21(1)",
+              "a": "3,60,000"
+            },
+            {
+              "op": "Less:",
+              "l": "Municipal tax paid",
+              "sec": "s.21(3)",
+              "a": "20,000"
+            },
+            {
+              "l": "Annual value",
+              "a": "3,40,000",
+              "tot": true
+            },
+            {
+              "op": "Less:",
+              "l": "30% of ₹3,60,000",
+              "a": "1,08,000",
+              "trap": true,
+              "struck": true
+            },
+            {
+              "op": "Less:",
+              "l": "30% of ₹3,40,000",
+              "sec": "s.22(1)(a)",
+              "a": "1,02,000",
+              "ok": true
+            },
+            {
+              "op": "Less:",
+              "l": "Interest on loan",
+              "sec": "s.22(1)(b)",
+              "a": "1,50,000"
+            },
+            {
+              "l": "House property income",
+              "a": "88,000",
+              "tot": true,
+              "final": true
+            }
+          ],
+          "from": 5
+        }
+      },
+      {
+        "say": "Save this for your tax revision. Follow for one computation every week.",
+        "card": {
+          "kind": "cta",
+          "text": "Save this for your **tax revision**"
+        }
+      }
+    ],
+    "prop": "house"
+  },
   "tried": [
     "ca_foundation_qt|S25-2"
   ],
-  "error": "Claude Code didn't return a usable answer: success: Your organization has disabled Claude subscription access for Claude Code · Use an Anthropic API key instead, or ask your admin to enable access"
+  "video": "pyq.mp4",
+  "cover": "pyq_cover.jpg",
+  "seconds": 62.8,
+  "thumb_ms": null,
+  "voice": "en-IN-AaravNeural (Azure)",
+  "caption": "Most students take the 30% deduction on the wrong number. 🪤\n\nHouse property under the Income-tax Act, 2025 (tax year 2026-27):\nExpected rent ₹3,00,000 · Actual rent ₹30,000/month · Municipal tax paid ₹20,000 · Loan interest ₹1,50,000\n\nIs the 30% on ₹3,60,000 or ₹3,40,000? Watch till the end 👀\nSections 20–22, Income-tax Act, 2025.\nSave 🔖 this for your tax revision.\n\nFollow @cacmagyan for one tax computation every week.\n\n#IncomeTax #ITA2025 #CAInter #CMAInter #TaxComputation\n\nref pyq-261128"
 }

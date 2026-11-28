@@ -749,13 +749,15 @@ def publish_due(cfg: Config, date: dt.date | None = None, at: dt.time | None = N
         why = {"github_pr": "no batch on the main branch (the review PR isn't merged)",
                "auto": "no batch was prepared for this day"}.get(
             cfg.review_mode, "the batch isn't approved yet (run the approve command)")
-        print(f"Nothing posted for {date}: {why}.")
-        return 1 if strict else 0
+        print(f"No MCQ batch for {date}: {why}. Only the day's other videos and Stories can post.")
+        if strict:
+            return 1
+        batch = {"items": []}                # the trap/tax reel, explainers and countdown don't need the MCQ batch
 
     from .reel import problem as reel_problem
 
     posted = B.load_posted(date)
-    reel = B.load_reel(date) if cfg.reels.get("enabled") else None
+    reel = B.load_reel(date) if cfg.reels.get("enabled") and batch["items"] else None
     if reel and not reel.get("error") and not reel.get("hold") and REEL not in posted:
         why = reel_problem(reel, batch)
         if why:                                  # follows its MCQ: held or changed means no post

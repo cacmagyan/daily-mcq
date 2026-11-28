@@ -668,6 +668,280 @@
     }
    ],
    "prop": null
+  },
+  {
+   "id": "marginal-relief",
+   "badge": "ITA 2025 · REBATE",
+   "prop": null,
+   "topic": "Marginal relief just above ₹12 lakh",
+   "hook": "Earn ₹10,000 more than ₹12 lakh, and most students charge ₹61,500 tax.",
+   "facts": "Total income ₹12,10,000 (business income, no salary), new tax regime. Income-tax Act, 2025, tax year 2026-27.",
+   "ask": "₹61,500 or ₹10,000? Watch till the end 👀",
+   "law": "Sections 156 and 202, Income-tax Act, 2025.",
+   "lines": [
+    {
+     "say": "Earn ₹10,000 more than ₹12 lakh, and most students charge ₹61,500 tax.",
+     "card": {
+      "kind": "hook",
+      "small": "Rebate · new regime",
+      "big": "₹10,000 extra → ₹61,500 tax?"
+     }
+    },
+    {
+     "say": "This is the new regime under the Income-tax Act, 2025, tax year 2026-27.",
+     "card": {
+      "kind": "attempt",
+      "tag": "AS PER",
+      "exam": "Income-tax Act, 2025",
+      "when": "Tax year 2026-27",
+      "sub": "Sections 156 and 202 · Rebate"
+     }
+    },
+    {
+     "say": "Total income, ₹12,10,000, all business income. New tax regime.",
+     "card": {
+      "kind": "step",
+      "title": "The facts",
+      "rows": [
+       "Total income: **₹12,10,000**",
+       "Business income, no salary",
+       "New tax regime (section 202)"
+      ]
+     }
+    },
+    {
+     "say": "Income is above ₹12 lakh, so no rebate. Most students then pay the full slab tax, ₹61,500.",
+     "card": {
+      "kind": "stmt",
+      "title": "Tax at ₹12.1 lakh · New regime",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Total income",
+        "a": "12,10,000"
+       },
+       {
+        "l": "Tax payable = slab tax",
+        "a": "61,500",
+        "trap": true
+       }
+      ],
+      "from": 0
+     }
+    },
+    {
+     "say": "Wrong. Slab tax is ₹61,500, but you earned only ₹10,000 above ₹12 lakh.",
+     "card": {
+      "kind": "stmt",
+      "title": "Tax at ₹12.1 lakh · New regime",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Total income",
+        "a": "12,10,000"
+       },
+       {
+        "l": "Tax payable = slab tax",
+        "a": "61,500",
+        "trap": true,
+        "struck": true
+       },
+       {
+        "l": "Tax on slabs",
+        "sec": "s.202",
+        "a": "61,500"
+       },
+       {
+        "l": "Income above ₹12 lakh",
+        "a": "10,000"
+       }
+      ],
+      "from": 2
+     }
+    },
+    {
+     "say": "Marginal relief under section 156 means the tax can't be more than that extra income. Tax payable: ₹10,000, plus cess.",
+     "card": {
+      "kind": "stmt",
+      "title": "Tax at ₹12.1 lakh · New regime",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Total income",
+        "a": "12,10,000"
+       },
+       {
+        "l": "Tax payable = slab tax",
+        "a": "61,500",
+        "trap": true,
+        "struck": true
+       },
+       {
+        "l": "Tax on slabs",
+        "sec": "s.202",
+        "a": "61,500"
+       },
+       {
+        "l": "Income above ₹12 lakh",
+        "a": "10,000"
+       },
+       {
+        "op": "Less:",
+        "l": "Marginal relief",
+        "sec": "s.156",
+        "a": "51,500",
+        "ok": true
+       },
+       {
+        "l": "Tax payable (+ cess)",
+        "a": "10,000",
+        "tot": true,
+        "final": true
+       }
+      ],
+      "from": 4
+     }
+    },
+    {
+     "say": "Save this. Examiners love incomes just above ₹12 lakh.",
+     "card": {
+      "kind": "cta",
+      "text": "Save this for your **rebate questions**"
+     }
+    }
+   ]
+  },
+  {
+   "id": "stcg-shares",
+   "badge": "ITA 2025 · CAPITAL GAINS",
+   "prop": null,
+   "topic": "STCG on listed shares: 20%, not 15%",
+   "hook": "Still taxing short-term gains on shares at 15%? That rate is gone.",
+   "facts": "Listed shares held 8 months, STT paid, short-term capital gain ₹1,50,000. Income-tax Act, 2025, tax year 2026-27.",
+   "ask": "15% or 20%? Watch till the end 👀",
+   "law": "Section 196, Income-tax Act, 2025.",
+   "lines": [
+    {
+     "say": "Still taxing short-term gains on shares at 15%? That rate is gone.",
+     "card": {
+      "kind": "hook",
+      "small": "Capital gains · ITA 2025",
+      "big": "15% or 20%?"
+     }
+    },
+    {
+     "say": "This is section 196 of the Income-tax Act, 2025, tax year 2026-27.",
+     "card": {
+      "kind": "attempt",
+      "tag": "AS PER",
+      "exam": "Income-tax Act, 2025",
+      "when": "Tax year 2026-27",
+      "sub": "Section 196 · Capital gains"
+     }
+    },
+    {
+     "say": "Listed shares held for eight months, securities transaction tax paid. Short-term gain, ₹1,50,000.",
+     "card": {
+      "kind": "step",
+      "title": "The facts",
+      "rows": [
+       "Listed shares, held 8 months",
+       "STT paid",
+       "Short-term gain: **₹1,50,000**"
+      ]
+     }
+    },
+    {
+     "say": "Most students still use 15%. That gives ₹22,500.",
+     "card": {
+      "kind": "stmt",
+      "title": "STCG on Listed Shares",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Short-term capital gain",
+        "sec": "s.196",
+        "a": "1,50,000"
+       },
+       {
+        "l": "15% of ₹1,50,000",
+        "a": "22,500",
+        "trap": true
+       }
+      ],
+      "from": 0
+     }
+    },
+    {
+     "say": "Wrong. 15% was the old rate, for sales before 23 July 2024. Section 196 now charges a flat 20%. That's ₹30,000.",
+     "card": {
+      "kind": "stmt",
+      "title": "STCG on Listed Shares",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Short-term capital gain",
+        "sec": "s.196",
+        "a": "1,50,000"
+       },
+       {
+        "l": "15% of ₹1,50,000",
+        "a": "22,500",
+        "trap": true,
+        "struck": true
+       },
+       {
+        "l": "20% of ₹1,50,000",
+        "sec": "s.196",
+        "a": "30,000",
+        "ok": true
+       }
+      ],
+      "from": 2
+     }
+    },
+    {
+     "say": "Plus cess. And there's no ₹1.25 lakh exemption here, that's only for long-term gains. Tax payable: ₹30,000.",
+     "card": {
+      "kind": "stmt",
+      "title": "STCG on Listed Shares",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Short-term capital gain",
+        "sec": "s.196",
+        "a": "1,50,000"
+       },
+       {
+        "l": "15% of ₹1,50,000",
+        "a": "22,500",
+        "trap": true,
+        "struck": true
+       },
+       {
+        "l": "20% of ₹1,50,000",
+        "sec": "s.196",
+        "a": "30,000",
+        "ok": true
+       },
+       {
+        "l": "Tax payable (+ cess)",
+        "a": "30,000",
+        "tot": true,
+        "final": true
+       }
+      ],
+      "from": 3
+     }
+    },
+    {
+     "say": "Save this for your capital gains revision.",
+     "card": {
+      "kind": "cta",
+      "text": "Save this for your **capital gains revision**"
+     }
+    }
+   ]
   }
  ]
 }

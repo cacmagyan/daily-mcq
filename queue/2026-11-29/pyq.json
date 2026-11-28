@@ -1,0 +1,231 @@
+{
+  "kind": "pyq",
+  "format": "qt_video",
+  "subject": "qt",
+  "course_id": "ca_foundation",
+  "paper_code": "Paper 3",
+  "paper_name": "Quantitative Aptitude: Business Mathematics",
+  "topic_key": "Equations",
+  "ref": "ca_foundation_qt|M25-6",
+  "tried": [
+    "ca_foundation_qt|M25-6"
+  ],
+  "topic": "Equations: Relative motion",
+  "script": {
+    "theme": "navy",
+    "badge": {
+      "tag": "ASKED IN",
+      "text": "CA FOUNDATION MAY 2025 · QT"
+    },
+    "header": "CA Foundation May 2025 · Paper 3 · QT",
+    "question": "Puru gets on the elevator at the **11th floor** and rides up at **57 floors per minute**. At the same time, Ishu gets on an elevator at the **51st floor** and rides down at **63 floors per minute**. At which floor will their paths cross?",
+    "options": [
+      "17",
+      "19",
+      "27",
+      "30"
+    ],
+    "answer": 3,
+    "scene": {
+      "type": "line",
+      "from": 0,
+      "to": 60,
+      "tick": 10,
+      "jumps": [
+        {
+          "from": 11,
+          "to": 51,
+          "label": "gap 40"
+        }
+      ],
+      "points": [
+        {
+          "at": 11,
+          "label": "Puru 11"
+        },
+        {
+          "at": 51,
+          "label": "Ishu 51"
+        }
+      ],
+      "note": "Who meets where?"
+    },
+    "lines": [
+      {
+        "say": "This question came in the CA Foundation May 2025 exam.",
+        "card": {
+          "kind": "attempt",
+          "exam": "CA Foundation",
+          "when": "May 2025",
+          "sub": "Paper 3 · Quantitative Aptitude"
+        }
+      },
+      {
+        "say": "Puru starts at floor 11, going up 57 floors a minute. Ishu starts at floor 51, going down 63 floors a minute. At which floor do they cross?",
+        "card": {
+          "kind": "hook",
+          "small": "Elevators crossing",
+          "big": "Where do they cross?"
+        }
+      },
+      {
+        "say": "Gap is 40. Speeds add to 120. Time is 1/3 minute. Puru climbs 19. So floor 19. Right?",
+        "card": {
+          "kind": "hook",
+          "small": "So...",
+          "big": "Puru climbs 19, so 19?"
+        }
+      },
+      {
+        "say": "Wrong. 19 is the trap.",
+        "card": {
+          "kind": "trap",
+          "small": "CA FOUNDATION MAY 2025 · QT",
+          "big": "19 ×",
+          "sub": "that is the trap"
+        }
+      },
+      {
+        "say": "The right answer is 30. Here's why.",
+        "card": {
+          "kind": "answer",
+          "small": "The right answer",
+          "big": "30"
+        }
+      },
+      {
+        "say": "Step one. The gap is 40 floors. They approach each other, so speeds add to 120 per minute.",
+        "card": {
+          "kind": "step",
+          "title": "Step 1 · Gap and closing speed",
+          "rows": [
+            "Gap = 51 − 11 = 40",
+            "Speed = 57 + 63 = 120"
+          ]
+        },
+        "scene": {
+          "type": "line",
+          "from": 0,
+          "to": 60,
+          "tick": 10,
+          "jumps": [
+            {
+              "from": 11,
+              "to": 51,
+              "label": "gap 40"
+            }
+          ],
+          "note": "Floors 11 and 51"
+        }
+      },
+      {
+        "say": "Step two. Time is 40 ÷ 120 = 1/3 minute. Puru climbs 57 ÷ 3 = 19 floors.",
+        "card": {
+          "kind": "step",
+          "title": "Step 2 · Time and climb",
+          "rows": [
+            "t = 40 ÷ 120 = 1/3 min",
+            "Puru climbs 57 ÷ 3 = **19**"
+          ]
+        }
+      },
+      {
+        "say": "Step three. 19 is only the climb. He started at floor 11.",
+        "card": {
+          "kind": "step",
+          "title": "Step 3 · The catch",
+          "rows": [
+            "19 = floors climbed",
+            "Not the floor number"
+          ]
+        },
+        "scene": {
+          "type": "line",
+          "from": 0,
+          "to": 60,
+          "tick": 10,
+          "jumps": [
+            {
+              "from": 11,
+              "to": 30,
+              "label": "+19"
+            }
+          ],
+          "note": "Climb from floor 11"
+        }
+      },
+      {
+        "say": "Step four. So 11 + 19 = 30. Check with Ishu: 51 − 21 = 30.",
+        "card": {
+          "kind": "step",
+          "title": "Step 4 · Add the start floor",
+          "rows": [
+            "Puru: 11 + 19 = **30**",
+            "Ishu: 51 − 21 = **30**"
+          ]
+        },
+        "scene": {
+          "type": "line",
+          "from": 0,
+          "to": 60,
+          "tick": 10,
+          "points": [
+            {
+              "at": 30,
+              "label": "cross = 30",
+              "good": true
+            }
+          ],
+          "note": "They cross at 30"
+        }
+      },
+      {
+        "say": "The shortcut. Add the climb to the start floor. Floor equals 11 plus 40 times 57 over 120, which is 30.",
+        "card": {
+          "kind": "shortcut",
+          "rows": [
+            "Start + gap × his speed/total",
+            "11 + 40 × 57/120 = 30"
+          ]
+        }
+      },
+      {
+        "say": "Your turn. Rahul starts at floor 5, going up 40 floors a minute. Meena starts at floor 45, going down 60. At which floor do they cross?",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "Gap 40, speed 100, t = 0.4",
+            "Rahul climbs 16; 5 + 16"
+          ]
+        }
+      },
+      {
+        "say": "Comment your answer. Follow for a new trap every day.",
+        "card": {
+          "kind": "your_turn",
+          "rows": [
+            "Gap 40, speed 100, t = 0.4",
+            "Rahul climbs 16; 5 + 16"
+          ],
+          "all": true
+        }
+      }
+    ],
+    "series": "QT TRAP",
+    "series_no": 7
+  },
+  "correct": "D",
+  "trap": "19",
+  "your_turn_answer": "Floor 21",
+  "asked_in": "May 2025",
+  "check_notes": [],
+  "notes": [],
+  "hold": false,
+  "hold_reason": "",
+  "video": "pyq.mp4",
+  "cover": "pyq_cover.jpg",
+  "seconds": 79.4,
+  "thumb_ms": 25385,
+  "voice": "en-IN-AaravNeural (Azure)",
+  "caption": "Where do they cross?… so 19? That's the trap. 🪤\n\nPuru gets on the elevator at the 11th floor and rides up at 57 floors per minute. At the same time, Ishu gets on an elevator at the 51st floor and rides down at 63 floors per minute. At which floor will their paths cross?\n\n(a) 17\n(b) 19\n(c) 27\n(d) 30\n\nDid you pick the trap too? Tell me in the comments 👇\nAsked in CA Foundation May 2025 · Paper 3 (ICAI's official answer key).\nSave 🔖 it for your Quantitative Aptitude revision.\n\nFollow @cacmagyan for a new trap every day.\n\n#CAFoundation #QuantitativeAptitude #CAStudents #ICAI #MathsTricks\n\nref pyq-261129"
+}

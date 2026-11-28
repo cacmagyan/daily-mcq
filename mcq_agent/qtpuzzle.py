@@ -63,6 +63,10 @@ SUBJECTS = {
     "costing": {"exam": "CA Intermediate", "course_id": "ca_inter", "paper": "Paper 4", "paper_name": "Cost and Management Accounting",
                 "short": "COSTING", "bank": "ca_inter_costing", "topics": COSTING_TOPICS, "hashtags_key": "hashtags_costing",
                 "hashtags": ["#CAInter", "#CostingCA", "#CAStudents", "#ICAI", "#CostAccounting"]},
+    # the tax series: whole scripts from tax_scripts.json (checked against the Income-tax Act, 2025), not written daily
+    "tax": {"exam": "Income-tax Act, 2025", "course_id": "ca_inter", "paper": "Direct Tax", "paper_name": "Taxation",
+            "short": "TAX", "bank": "tax_scripts", "topics": [], "hashtags_key": "hashtags_tax",
+            "hashtags": ["#IncomeTax", "#ITA2025", "#CAInter", "#CMAInter", "#TaxComputation"]},
     "eco": {"exam": "CA Foundation", "course_id": "ca_foundation", "paper": "Paper 4", "paper_name": "Business Economics",
             "short": "ECO", "bank": "ca_foundation_eco", "topics": ECO_TOPICS, "hashtags_key": "hashtags_eco",
             "hashtags": ["#CAFoundation", "#BusinessEconomics", "#CAStudents", "#ICAI", "#Economics"]},
@@ -302,9 +306,39 @@ def subject_for(cfg: Config, date: dt.date) -> str:
     key = str(days.get(DAYS[date.weekday()]) or "qt").lower()
     if key not in SUBJECTS:
         return "qt"
+    if key == "tax":
+        return "tax" if tax_candidate() else "qt"
     if key != "qt" and past_paper_candidate(cfg, date, key) is None:
         return "qt"
     return key
+
+
+TAX_BANK = ROOT / "tax_scripts.json"
+
+
+def tax_candidate() -> dict | None:
+    """The next tax-series script not yet used (tax_scripts.json, in order)."""
+    from .pyqday import used_refs
+    try:
+        scripts = json.loads(TAX_BANK.read_text(encoding="utf-8"))["scripts"]
+    except (OSError, ValueError, KeyError):
+        return None
+    used = used_refs()
+    return next((s for s in scripts if f"tax|{s['id']}" not in used), None)
+
+
+def make_tax(cfg: Config, date: dt.date) -> dict:
+    """The Saturday tax video: a checked script from the bank, in the tax series' own look."""
+    t = tax_candidate()
+    base = {"kind": KIND, "format": "qt_video", "subject": "tax", "course_id": "ca_inter", "paper_code": "Direct Tax",
+            "paper_name": "Income-tax Act, 2025", "date": date.isoformat()}
+    if not t:
+        return {**base, "error": "the tax bank has no unused script"}
+    script = {"theme": "tax", "look": "tax", "sting_style": "receipt", "sting_sub": "ITA 2025 · TY 2026-27",
+              "badge": {"tag": "DIRECT TAX", "text": t["badge"]}, "header": f"Income-tax Act, 2025 · {t['topic']}",
+              "question": "", "options": [], "scene": {"type": "desk", "prop": t.get("prop")},
+              "series": "TAX TRAP", "lines": t["lines"]}
+    return {**base, "ref": f"tax|{t['id']}", "topic": t["topic"], "script": script, "tax": t}
 
 
 def past_paper_candidate(cfg: Config, date: dt.date, subj: str = "qt") -> dict | None:
@@ -338,6 +372,8 @@ def make(cfg: Config, date: dt.date, instruction: str = "", subj: str | None = N
     if instruction.strip().lower() in SUBJECTS:          # "/regen pyq eco": that paper's trap today
         subj, instruction = instruction.strip().lower(), ""
     subj = subj if subj in SUBJECTS else subject_for(cfg, date)
+    if subj == "tax":
+        return make_tax(cfg, date)
     S = subject(subj)
     past = past_paper_candidate(cfg, date, subj)
     part, topic = topic_for(cfg, date, subj)
@@ -404,6 +440,14 @@ def caption(cfg: Config, item: dict, date: dt.date) -> str:
     s = item["script"]
     S = subject(item.get("subject"))
     handle = cfg.brand.get("handle", "").strip()
+    if item.get("subject") == "tax" and item.get("tax"):
+        t = item["tax"]
+        lines = [f"{t['hook']} 🪤", "", t["facts"], "", t["ask"], t["law"], "Save 🔖 this for your tax revision."]
+        if handle:
+            lines += ["", f"Follow {handle} for one tax computation every week."]
+        tags = cfg.pyq.get(S["hashtags_key"]) or S["hashtags"]
+        lines += ["", " ".join(tags[: int(cfg.instagram.get("max_hashtags", 5))]), "", post_ref(KIND, date)]
+        return "\n".join(lines)[:2200]
     asked = item.get("asked_in", "")
     hook = next((ln["card"]["big"] for ln in s["lines"] if ln["card"].get("kind") == "hook"), "")
     lines = [f"{hook}… so {item['trap']}? That's the trap. 🪤",

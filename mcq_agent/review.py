@@ -335,7 +335,9 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
         lines += ["", "## MCQ reel" + (" (backup)" if ex_ok else ""), ""] + _reel_block(cfg, reel, repo, branch, date)
     if pyq_item:
         qt = pyq_item.get("format") == "qt_video"
-        lines += ["", f"## {'🧮 QT trap of the day' if qt else '📜 PYQ of the day'} ({cfg.pyq_time()})", ""]
+        tax = pyq_item.get("subject") == "tax"
+        title = "🧾 Tax computation of the week" if tax else ("🧮 QT trap of the day" if qt else "📜 PYQ of the day")
+        lines += ["", f"## {title} ({cfg.pyq_time()})", ""]
         if pyq_item.get("error"):
             lines += [f"❌ Not made: {pyq_item['error']}. Comment `/regen pyq` to try again.", ""]
         elif qt:
@@ -344,8 +346,10 @@ def report(cfg: Config, date: dt.date, repo: str, branch: str = "main", owner: s
             if pyq_item.get("video"):
                 lines += [f"[▶ Watch the reel]({_img(repo, branch, date, pyq_item['video'])}) · {pyq_item.get('seconds', '?')} s"
                           + (f" · voice: {pyq_item['voice']}" if pyq_item.get("voice") else ""), ""]
-            lines += [f"**{pyq_item.get('topic', '')}** · {pyq_item.get('asked_in', '')} · answer ({pyq_item.get('correct', '').lower()}), "
-                      f"trap: {pyq_item.get('trap', '')} · your-turn answer: {pyq_item.get('your_turn_answer', '')}",
+            lines += ([f"**{pyq_item.get('topic', '')}** · Income-tax Act, 2025 · tax year 2026-27 · script `{pyq_item.get('ref', '')}` "
+                       "(checked; from tax_scripts.json)"] if tax else
+                      [f"**{pyq_item.get('topic', '')}** · {pyq_item.get('asked_in', '')} · answer ({pyq_item.get('correct', '').lower()}), "
+                       f"trap: {pyq_item.get('trap', '')} · your-turn answer: {pyq_item.get('your_turn_answer', '')}"]) + [
                       "", "`/regen pyq` makes another; `/regen pyq <instruction>` to steer it; `/regen pyq video` remakes only the video.", ""]
         else:
             imgs = pyq_item.get("images") or {}

@@ -1,0 +1,673 @@
+{
+ "note": "Tax series (Saturdays). Every figure and section checked against the Income-tax Act, 2025 for tax year 2026-27. Posted in order; one a week.",
+ "law": "Income-tax Act, 2025 · tax year 2026-27",
+ "scripts": [
+  {
+   "id": "hp-30pct",
+   "badge": "ITA 2025 · HOUSE PROPERTY",
+   "topic": "House property: 30% on annual value",
+   "hook": "Most students take the 30% deduction on the wrong number.",
+   "facts": "House property under the Income-tax Act, 2025 (tax year 2026-27):\nExpected rent ₹3,00,000 · Actual rent ₹30,000/month · Municipal tax paid ₹20,000 · Loan interest ₹1,50,000",
+   "ask": "Is the 30% on ₹3,60,000 or ₹3,40,000? Watch till the end 👀",
+   "law": "Sections 20–22, Income-tax Act, 2025.",
+   "lines": [
+    {
+     "say": "Most students take the 30% deduction on the wrong number.",
+     "card": {
+      "kind": "hook",
+      "small": "House property · ITA 2025",
+      "big": "30% of WHAT?"
+     }
+    },
+    {
+     "say": "This is house property under the new Income-tax Act, 2025.",
+     "card": {
+      "kind": "attempt",
+      "tag": "AS PER",
+      "exam": "Income-tax Act, 2025",
+      "when": "Tax year 2026-27",
+      "sub": "Sections 20 to 22 · House property"
+     }
+    },
+    {
+     "say": "A let-out flat. Expected rent, ₹3 lakh. Actual rent, ₹30,000 a month. Municipal tax paid, ₹20,000. Home-loan interest, ₹1.5 lakh.",
+     "card": {
+      "kind": "step",
+      "title": "The facts",
+      "rows": [
+       "Expected rent: ₹3,00,000",
+       "Actual rent: ₹30,000 × 12 = **₹3,60,000**",
+       "Municipal tax paid: ₹20,000",
+       "Loan interest: ₹1,50,000"
+      ]
+     }
+    },
+    {
+     "say": "Under section 21, annual value starts with the higher of expected rent and actual rent. That's ₹3,60,000.",
+     "card": {
+      "kind": "stmt",
+      "title": "Income from House Property",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Gross annual value",
+        "sec": "s.21(1)",
+        "a": "3,60,000"
+       }
+      ],
+      "from": 0
+     }
+    },
+    {
+     "say": "Take off the municipal tax actually paid. Annual value is ₹3,40,000.",
+     "card": {
+      "kind": "stmt",
+      "title": "Income from House Property",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Gross annual value",
+        "sec": "s.21(1)",
+        "a": "3,60,000"
+       },
+       {
+        "op": "Less:",
+        "l": "Municipal tax paid",
+        "sec": "s.21(3)",
+        "a": "20,000"
+       },
+       {
+        "l": "Annual value",
+        "a": "3,40,000",
+        "tot": true
+       }
+      ],
+      "from": 1
+     }
+    },
+    {
+     "say": "Now most students take 30% of ₹3,60,000. That's ₹1,08,000.",
+     "card": {
+      "kind": "stmt",
+      "title": "Income from House Property",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Gross annual value",
+        "sec": "s.21(1)",
+        "a": "3,60,000"
+       },
+       {
+        "op": "Less:",
+        "l": "Municipal tax paid",
+        "sec": "s.21(3)",
+        "a": "20,000"
+       },
+       {
+        "l": "Annual value",
+        "a": "3,40,000",
+        "tot": true
+       },
+       {
+        "op": "Less:",
+        "l": "30% of ₹3,60,000",
+        "a": "1,08,000",
+        "trap": true
+       }
+      ],
+      "from": 3
+     }
+    },
+    {
+     "say": "Wrong. Section 22 gives 30% of the annual value, after municipal tax. 30% of ₹3,40,000 is ₹1,02,000.",
+     "card": {
+      "kind": "stmt",
+      "title": "Income from House Property",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Gross annual value",
+        "sec": "s.21(1)",
+        "a": "3,60,000"
+       },
+       {
+        "op": "Less:",
+        "l": "Municipal tax paid",
+        "sec": "s.21(3)",
+        "a": "20,000"
+       },
+       {
+        "l": "Annual value",
+        "a": "3,40,000",
+        "tot": true
+       },
+       {
+        "op": "Less:",
+        "l": "30% of ₹3,60,000",
+        "a": "1,08,000",
+        "trap": true,
+        "struck": true
+       },
+       {
+        "op": "Less:",
+        "l": "30% of ₹3,40,000",
+        "sec": "s.22(1)(a)",
+        "a": "1,02,000",
+        "ok": true
+       }
+      ],
+      "from": 3
+     }
+    },
+    {
+     "say": "Then the full loan interest. A let-out house has no ₹2 lakh cap. Income from house property: ₹88,000.",
+     "card": {
+      "kind": "stmt",
+      "title": "Income from House Property",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Gross annual value",
+        "sec": "s.21(1)",
+        "a": "3,60,000"
+       },
+       {
+        "op": "Less:",
+        "l": "Municipal tax paid",
+        "sec": "s.21(3)",
+        "a": "20,000"
+       },
+       {
+        "l": "Annual value",
+        "a": "3,40,000",
+        "tot": true
+       },
+       {
+        "op": "Less:",
+        "l": "30% of ₹3,60,000",
+        "a": "1,08,000",
+        "trap": true,
+        "struck": true
+       },
+       {
+        "op": "Less:",
+        "l": "30% of ₹3,40,000",
+        "sec": "s.22(1)(a)",
+        "a": "1,02,000",
+        "ok": true
+       },
+       {
+        "op": "Less:",
+        "l": "Interest on loan",
+        "sec": "s.22(1)(b)",
+        "a": "1,50,000"
+       },
+       {
+        "l": "House property income",
+        "a": "88,000",
+        "tot": true,
+        "final": true
+       }
+      ],
+      "from": 5
+     }
+    },
+    {
+     "say": "Save this for your tax revision. Follow for one computation every week.",
+     "card": {
+      "kind": "cta",
+      "text": "Save this for your **tax revision**"
+     }
+    }
+   ],
+   "prop": "house"
+  },
+  {
+   "id": "hp-self-occupied",
+   "badge": "ITA 2025 · HOUSE PROPERTY",
+   "topic": "Self-occupied house: interest cap and the new regime",
+   "hook": "Your home-loan interest can be worth zero.",
+   "facts": "Self-occupied flat, home-loan interest ₹2,40,000 (Income-tax Act, 2025, tax year 2026-27).",
+   "ask": "How much can you actually deduct? Old regime vs new regime 👀",
+   "law": "Sections 21(6), 22(2) and 202, Income-tax Act, 2025.",
+   "lines": [
+    {
+     "say": "Your home-loan interest can be worth zero.",
+     "card": {
+      "kind": "hook",
+      "small": "Self-occupied house · ITA 2025",
+      "big": "₹2.4 lakh interest → ₹0?"
+     }
+    },
+    {
+     "say": "This is the Income-tax Act, 2025, for tax year 2026-27.",
+     "card": {
+      "kind": "attempt",
+      "tag": "AS PER",
+      "exam": "Income-tax Act, 2025",
+      "when": "Tax year 2026-27",
+      "sub": "Sections 21, 22 and 202 · House property"
+     }
+    },
+    {
+     "say": "You live in your own flat. Home-loan interest for the year: ₹2,40,000.",
+     "card": {
+      "kind": "step",
+      "title": "The facts",
+      "rows": [
+       "You live in your own flat",
+       "Home-loan interest: **₹2,40,000**"
+      ]
+     }
+    },
+    {
+     "say": "Old regime first. A self-occupied house has nil annual value, under section 21(6).",
+     "card": {
+      "kind": "stmt",
+      "title": "Self-occupied · Old regime",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Annual value",
+        "sec": "s.21(6)",
+        "a": "Nil"
+       }
+      ],
+      "from": 0
+     }
+    },
+    {
+     "say": "Most students then deduct the full ₹2,40,000 of interest.",
+     "card": {
+      "kind": "stmt",
+      "title": "Self-occupied · Old regime",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Annual value",
+        "sec": "s.21(6)",
+        "a": "Nil"
+       },
+       {
+        "op": "Less:",
+        "l": "Interest paid",
+        "a": "−2,40,000",
+        "trap": true
+       }
+      ],
+      "from": 1
+     }
+    },
+    {
+     "say": "Wrong. Section 22(2) caps interest on a self-occupied house at ₹2 lakh. So the loss is ₹2,00,000.",
+     "card": {
+      "kind": "stmt",
+      "title": "Self-occupied · Old regime",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Annual value",
+        "sec": "s.21(6)",
+        "a": "Nil"
+       },
+       {
+        "op": "Less:",
+        "l": "Interest paid",
+        "a": "−2,40,000",
+        "trap": true,
+        "struck": true
+       },
+       {
+        "op": "Less:",
+        "l": "Interest, capped",
+        "sec": "s.22(2)",
+        "a": "−2,00,000",
+        "ok": true
+       },
+       {
+        "l": "Loss from house property",
+        "a": "−2,00,000",
+        "tot": true,
+        "final": true
+       }
+      ],
+      "from": 2
+     }
+    },
+    {
+     "say": "And under the new regime, section 202, that interest isn't allowed at all. Income from this house: nil.",
+     "card": {
+      "kind": "stmt",
+      "title": "Self-occupied · New regime",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Annual value",
+        "sec": "s.21(6)",
+        "a": "Nil"
+       },
+       {
+        "op": "Less:",
+        "l": "Interest",
+        "sec": "s.202",
+        "a": "Nil",
+        "ok": true
+       },
+       {
+        "l": "House property income",
+        "a": "Nil",
+        "tot": true,
+        "final": true
+       }
+      ],
+      "from": 0
+     }
+    },
+    {
+     "say": "Before you deduct interest, check the regime. Save this for your tax revision.",
+     "card": {
+      "kind": "cta",
+      "text": "Old or new regime? **Check first**"
+     }
+    }
+   ],
+   "prop": "house"
+  },
+  {
+   "id": "salary-1275",
+   "badge": "ITA 2025 · SALARY",
+   "topic": "₹12.75 lakh salary: zero tax in the new regime",
+   "hook": "A ₹12.75 lakh salary can pay zero tax.",
+   "facts": "Salary ₹12,75,000, new tax regime (section 202), no other income. Income-tax Act, 2025, tax year 2026-27.",
+   "ask": "Zero tax or ₹71,250? Watch till the end 👀",
+   "law": "Sections 19, 156 and 202, Income-tax Act, 2025.",
+   "lines": [
+    {
+     "say": "A ₹12.75 lakh salary can pay zero tax.",
+     "card": {
+      "kind": "hook",
+      "small": "Salary · new regime",
+      "big": "₹12.75 lakh → ₹0 tax?"
+     }
+    },
+    {
+     "say": "This is the new regime under the Income-tax Act, 2025, tax year 2026-27.",
+     "card": {
+      "kind": "attempt",
+      "tag": "AS PER",
+      "exam": "Income-tax Act, 2025",
+      "when": "Tax year 2026-27",
+      "sub": "Sections 19, 156 and 202 · Salary"
+     }
+    },
+    {
+     "say": "Salary, ₹12,75,000. New tax regime. No other income.",
+     "card": {
+      "kind": "step",
+      "title": "The facts",
+      "rows": [
+       "Salary: **₹12,75,000**",
+       "New tax regime (section 202)",
+       "No other income"
+      ]
+     }
+    },
+    {
+     "say": "Most students take the full ₹12.75 lakh as total income. That's above ₹12 lakh, so no rebate, and tax of ₹71,250 plus cess.",
+     "card": {
+      "kind": "stmt",
+      "title": "Tax on Salary · New regime",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Gross salary",
+        "a": "12,75,000"
+       },
+       {
+        "l": "Total income (no deduction)",
+        "a": "12,75,000",
+        "trap": true
+       }
+      ],
+      "from": 0
+     }
+    },
+    {
+     "say": "Wrong. Section 19 gives a ₹75,000 standard deduction first. Total income: exactly ₹12 lakh.",
+     "card": {
+      "kind": "stmt",
+      "title": "Tax on Salary · New regime",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Gross salary",
+        "a": "12,75,000"
+       },
+       {
+        "l": "Total income (no deduction)",
+        "a": "12,75,000",
+        "trap": true,
+        "struck": true
+       },
+       {
+        "op": "Less:",
+        "l": "Standard deduction",
+        "sec": "s.19",
+        "a": "75,000",
+        "ok": true
+       },
+       {
+        "l": "Total income",
+        "a": "12,00,000",
+        "tot": true
+       }
+      ],
+      "from": 1
+     }
+    },
+    {
+     "say": "Slab tax on ₹12 lakh is ₹60,000. The section 156 rebate is up to ₹60,000. Tax payable: zero.",
+     "card": {
+      "kind": "stmt",
+      "title": "Tax on Salary · New regime",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Gross salary",
+        "a": "12,75,000"
+       },
+       {
+        "l": "Total income (no deduction)",
+        "a": "12,75,000",
+        "trap": true,
+        "struck": true
+       },
+       {
+        "op": "Less:",
+        "l": "Standard deduction",
+        "sec": "s.19",
+        "a": "75,000",
+        "ok": true
+       },
+       {
+        "l": "Total income",
+        "a": "12,00,000",
+        "tot": true
+       },
+       {
+        "l": "Tax on slabs",
+        "sec": "s.202",
+        "a": "60,000"
+       },
+       {
+        "op": "Less:",
+        "l": "Rebate",
+        "sec": "s.156",
+        "a": "60,000"
+       },
+       {
+        "l": "Tax payable",
+        "a": "Nil",
+        "tot": true,
+        "final": true
+       }
+      ],
+      "from": 4
+     }
+    },
+    {
+     "say": "Save this. The ₹12 lakh question comes up every attempt.",
+     "card": {
+      "kind": "cta",
+      "text": "Save this for your **₹12 lakh question**"
+     }
+    }
+   ],
+   "prop": null
+  },
+  {
+   "id": "ltcg-shares",
+   "badge": "ITA 2025 · CAPITAL GAINS",
+   "topic": "LTCG on listed shares: 12.5% above ₹1.25 lakh",
+   "hook": "Most students tax the whole gain. The first ₹1.25 lakh is free.",
+   "facts": "Listed shares held for 2 years, STT paid, long-term capital gain ₹3,25,000. Income-tax Act, 2025, tax year 2026-27.",
+   "ask": "₹40,625 or ₹25,000? Watch till the end 👀",
+   "law": "Section 198, Income-tax Act, 2025.",
+   "lines": [
+    {
+     "say": "Most students tax the whole gain. But the first ₹1.25 lakh is free.",
+     "card": {
+      "kind": "hook",
+      "small": "Capital gains · ITA 2025",
+      "big": "12.5% of WHAT?"
+     }
+    },
+    {
+     "say": "This is section 198 of the Income-tax Act, 2025, tax year 2026-27.",
+     "card": {
+      "kind": "attempt",
+      "tag": "AS PER",
+      "exam": "Income-tax Act, 2025",
+      "when": "Tax year 2026-27",
+      "sub": "Section 198 · Capital gains"
+     }
+    },
+    {
+     "say": "Listed shares held for two years, securities transaction tax paid. Long-term gain, ₹3,25,000.",
+     "card": {
+      "kind": "step",
+      "title": "The facts",
+      "rows": [
+       "Listed shares, held 2 years",
+       "STT paid",
+       "Long-term gain: **₹3,25,000**"
+      ]
+     }
+    },
+    {
+     "say": "Most students take 12.5% of the whole ₹3,25,000. That's ₹40,625.",
+     "card": {
+      "kind": "stmt",
+      "title": "LTCG on Listed Shares",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Long-term capital gain",
+        "sec": "s.198",
+        "a": "3,25,000"
+       },
+       {
+        "l": "12.5% of ₹3,25,000",
+        "a": "40,625",
+        "trap": true
+       }
+      ],
+      "from": 0
+     }
+    },
+    {
+     "say": "Wrong. Section 198 taxes only the gain above ₹1.25 lakh. Taxable gain: ₹2 lakh.",
+     "card": {
+      "kind": "stmt",
+      "title": "LTCG on Listed Shares",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Long-term capital gain",
+        "sec": "s.198",
+        "a": "3,25,000"
+       },
+       {
+        "l": "12.5% of ₹3,25,000",
+        "a": "40,625",
+        "trap": true,
+        "struck": true
+       },
+       {
+        "op": "Less:",
+        "l": "Not taxed: first ₹1.25 lakh",
+        "sec": "s.198",
+        "a": "1,25,000",
+        "ok": true
+       },
+       {
+        "l": "Taxable LTCG",
+        "a": "2,00,000",
+        "tot": true
+       }
+      ],
+      "from": 1
+     }
+    },
+    {
+     "say": "12.5% of ₹2 lakh is ₹25,000, plus cess. And the ₹12 lakh rebate does not cover this tax.",
+     "card": {
+      "kind": "stmt",
+      "title": "LTCG on Listed Shares",
+      "sub": "Income-tax Act, 2025 · Tax year 2026-27",
+      "rows": [
+       {
+        "l": "Long-term capital gain",
+        "sec": "s.198",
+        "a": "3,25,000"
+       },
+       {
+        "l": "12.5% of ₹3,25,000",
+        "a": "40,625",
+        "trap": true,
+        "struck": true
+       },
+       {
+        "op": "Less:",
+        "l": "Not taxed: first ₹1.25 lakh",
+        "sec": "s.198",
+        "a": "1,25,000",
+        "ok": true
+       },
+       {
+        "l": "Taxable LTCG",
+        "a": "2,00,000",
+        "tot": true
+       },
+       {
+        "l": "Tax @ 12.5% (+ cess)",
+        "a": "25,000",
+        "tot": true,
+        "final": true
+       }
+      ],
+      "from": 4
+     }
+    },
+    {
+     "say": "Save this for your capital gains revision.",
+     "card": {
+      "kind": "cta",
+      "text": "Save this for your **capital gains revision**"
+     }
+    }
+   ],
+   "prop": null
+  }
+ ]
+}

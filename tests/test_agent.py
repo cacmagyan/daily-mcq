@@ -2429,6 +2429,7 @@ class QTTrapTests(TempQueue):
         self.cfg.raw.setdefault("pyq", {}).update(enabled=True, format="qt_video", qt_from="2026-11-21", start_date="2026-11-01")
         self.cfg.pyq = self.cfg.raw["pyq"]
         p = mock.patch("mcq_agent.qtpuzzle.past_paper_candidate", return_value=None)   # original questions here
+        mock.patch("mcq_agent.qtpuzzle.tax_candidate", return_value=None).start()   # Saturdays stay QT here
         p.start()
         self.addCleanup(p.stop)
 
@@ -2481,11 +2482,49 @@ class QTTrapTests(TempQueue):
         self.assertIn("Paper 4", cap)
         self.assertIn("#BusinessEconomics", cap)
 
+    def test_saturday_is_the_tax_video_from_the_checked_bank(self):
+        from mcq_agent import qtpuzzle as QT
+        mock.patch.stopall()
+        self.cfg.pyq["trap_days"] = {"sat": "tax"}
+        sat = dt.date(2026, 12, 5)
+        self.assertEqual(QT.subject_for(self.cfg, sat), "tax")
+        with mock.patch("mcq_agent.generator._call_claude") as writer:
+            it = QT.make(self.cfg, sat)
+        writer.assert_not_called()                           # tax scripts are never written on the day
+        self.assertFalse(it.get("error"))
+        self.assertTrue(it["ref"].startswith("tax|"))
+        sc = it["script"]
+        self.assertEqual((sc["look"], sc["theme"], sc["sting_style"], sc["series"]), ("tax", "tax", "receipt", "TAX TRAP"))
+        cap = QT.caption(self.cfg, it, sat)
+        self.assertIn("Income-tax Act, 2025", cap)
+        self.assertIn("#ITA2025", cap)
+        with mock.patch("mcq_agent.qtpuzzle.tax_candidate", return_value=None):
+            self.assertEqual(QT.subject_for(self.cfg, sat), "qt")   # bank used up: back to QT
+
+    def test_tax_scripts_add_up(self):
+        import json, re
+        from mcq_agent import qtpuzzle as QT
+        num = lambda v: 0 if not re.search(r"\d", v) else int(re.sub(r"[^0-9]", "", v)) * (-1 if v[:1] in "-−" else 1)
+        for t in json.loads(QT.TAX_BANK.read_text())["scripts"]:
+            last = [l["card"] for l in t["lines"] if l["card"].get("kind") == "stmt"][-1]
+            self.assertTrue(any(r.get("final") for r in last["rows"]), t["id"])
+            self.assertTrue(any(r.get("trap") for l in t["lines"] for r in (l["card"].get("rows") or []) if isinstance(r, dict)), t["id"])
+            for l in t["lines"]:
+                self.assertLessEqual(len(l["card"].get("rows") or []), 7, t["id"])
+        hp = json.loads(QT.TAX_BANK.read_text())["scripts"][0]
+        rows = [l["card"] for l in hp["lines"] if l["card"].get("kind") == "stmt"][-1]["rows"]
+        g = {r["l"]: num(r["a"]) for r in rows}
+        self.assertEqual(g["Gross annual value"] - g["Municipal tax paid"], g["Annual value"])
+        self.assertEqual(g["Annual value"] - g["30% of ₹3,40,000"] - g["Interest on loan"], g["House property income"])
+        self.assertEqual(round(g["Annual value"] * 0.3), g["30% of ₹3,40,000"])
+
     def test_every_bank_question_has_a_key_and_a_different_trap(self):
         from mcq_agent import pyq
         from mcq_agent import qtpuzzle as QT
         from mcq_agent.pyqday import split_mcq
         for key, S in QT.SUBJECTS.items():
+            if key == "tax":
+                continue                                     # whole scripts, checked in test_tax_scripts_add_up
             qs = pyq.questions(S["bank"], {"code": S["paper"]})
             self.assertGreaterEqual(len(qs), 12, key)
             for q in qs:

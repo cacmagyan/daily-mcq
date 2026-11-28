@@ -537,6 +537,8 @@ def _make_qt(cfg: Config, date: dt.date, instruction: str, old: dict) -> dict:
                                       voice=str(cfg.pyq.get("azure_voice") or "") or None)
                 except Exception as exc:  # noqa: BLE001 - the flat 2D reel is the fallback
                     print(f"  ! 3D QT reel failed, making the 2D one: {str(exc)[:200]}")
+            if res is None and item.get("subject") == "tax":
+                raise RuntimeError("the 3D renderer failed (the tax series has no 2D version)")
             if res is None:
                 res = V.render(item["script"], out / "pyq.mp4", out / "pyq_cover.jpg",
                                voice=str(cfg.pyq.get("voice", "am_michael")), handle=handle)
@@ -548,7 +550,7 @@ def _make_qt(cfg: Config, date: dt.date, instruction: str, old: dict) -> dict:
             item.update(hold=True, hold_reason=f"the video could not be made: {str(exc)[:160]}")
     Q.save(date, item)
     print(f"  {'✗' if item.get('error') else '✓'} QT trap for {date}: "
-          + (item.get("error") or f"{item['topic']} ({item['asked_in']}), {item.get('seconds', '?')} s")
+          + (item.get("error") or f"{item['topic']} ({item.get('asked_in', 'tax series')}), {item.get('seconds', '?')} s")
           + (f" (on hold: {item['hold_reason']})" if item.get("hold") else ""))
     return item
 

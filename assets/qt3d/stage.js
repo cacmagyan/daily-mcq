@@ -986,7 +986,9 @@ function drawCard(ev, t, role) {
       const a = rowEl.querySelector('.a'), v = a.dataset.v;
       const num = Number(String(v).replace(/[^0-9.]/g, ''));
       const ca = i < from ? 1 : clamp((lt - 0.25 - (i - from) * 0.45) / 0.55);
-      a.textContent = !v ? '' : (num && ca < 1 ? '₹' + Math.round(num * easeOut(ca)).toLocaleString('en-IN') : (/^[₹\-−]/.test(v) ? v : '₹' + v));
+      const neg = /^[-−]/.test(v), digits = /\d/.test(v);
+      const fmt = (n) => (neg ? '−₹' : '₹') + n;
+      a.textContent = !v ? '' : !digits ? v : (num && ca < 1 ? fmt(Math.round(num * easeOut(ca)).toLocaleString('en-IN')) : (/^₹/.test(v) ? v : fmt(v.replace(/^[-−]/, ''))));
       const s = rowEl.querySelector('.strike');
       if (s) s.style.transform = `scaleX(${(i < from ? 1 : easeOut((lt - 0.2) / 0.4)).toFixed(3)})`;
     });
